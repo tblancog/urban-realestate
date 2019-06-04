@@ -80,8 +80,13 @@ class BuildingController extends Controller
      * @param  \App\Building  $building
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Building $building)
+    public function destroy($id)
     {
-        //
+         $item = Building::findOrFail($id);
+        // delete the item
+
+        $item->delete();
+
+        return ['message' => 'Building deleted'];
     }
 }

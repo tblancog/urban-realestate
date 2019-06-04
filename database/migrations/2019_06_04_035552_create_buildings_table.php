@@ -17,7 +17,7 @@ class CreateBuildingsTable extends Migration
             $table->increments('id');
             $table->string('title', 50);
             $table->string('address', 100);
-            $table->string('url_maps', 2048);
+            $table->string('url_maps', 2048)->nullable();
             $table->boolean('from_price')->default(false);
             $table->float('price')->default(0);
             $table->text('description');

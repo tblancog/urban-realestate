@@ -41,6 +41,14 @@
                         </router-link>
                         Dirección{{ building.address }}
                         USD {{ building.price }}
+
+                        <a href="#" @click="editModal(building)">
+                            <i class="fa fa-edit blue"></i>
+                        </a>
+                        /
+                        <a href="#" @click="deleteItem(building.id)">
+                            <i class="fa fa-trash red"></i>
+                        </a>
                       </div>
                     </div>
                     <!-- <div class="card-body table-responsive p-0">
@@ -69,7 +77,7 @@
                                             <i class="fa fa-edit blue"></i>
                                         </a>
                                         /
-                                        <a href="#" @click="deleteUser(user.id)">
+                                        <a href="#" @click="deleteItem(user.id)">
                                             <i class="fa fa-trash red"></i>
                                         </a>
 
@@ -95,55 +103,60 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Add New</h5>
-                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Update User's Info</h5>
+                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar edificio</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form @submit.prevent="editmode ? updateUser() : createUser()">
+                    <form @submit.prevent="editmode ? updateItem() : createItem()">
                         <div class="modal-body">
                             <div class="form-group">
-                                <input v-model="form.name" type="text" name="name" placeholder="Name"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
-                                <has-error :form="form" field="name"></has-error>
+                                <input v-model="form.title" type="text" name="title" placeholder="Título"
+                                    class="form-control" :class="{ 'is-invalid': form.errors.has('title') }">
+                                <has-error :form="form" field="title"></has-error>
                             </div>
 
                             <div class="form-group">
-                                <input v-model="form.email" type="email" name="email" placeholder="Email Address"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('email') }">
-                                <has-error :form="form" field="email"></has-error>
+                                <input v-model="form.address" type="text" name="address" placeholder="Dirección"
+                                    class="form-control" :class="{ 'is-invalid': form.errors.has('address') }">
+                                <has-error :form="form" field="address"></has-error>
                             </div>
 
                             <div class="form-group">
-                                <textarea v-model="form.bio" name="bio" id="bio"
-                                    placeholder="Short bio for user (Optional)" class="form-control"
-                                    :class="{ 'is-invalid': form.errors.has('bio') }"></textarea>
-                                <has-error :form="form" field="bio"></has-error>
-                            </div>
-
-
-                            <div class="form-group">
-                                <select name="type" v-model="form.type" id="type" class="form-control"
-                                    :class="{ 'is-invalid': form.errors.has('type') }">
-                                    <option value="">Select User Role</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="user">Standard User</option>
-                                    <option value="author">Author</option>
-                                </select>
-                                <has-error :form="form" field="type"></has-error>
+                              <input v-model="form.url_maps" type="text" name="url_maps" placeholder="Url de google maps"
+                                    class="form-control" :class="{ 'is-invalid': form.errors.has('url_maps') }">
+                                <has-error :form="form" field="url_maps"></has-error>
                             </div>
 
                             <div class="form-group">
-                                <input v-model="form.password" type="password" name="password" id="password"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('password') }">
-                                <has-error :form="form" field="password"></has-error>
+                               <label>
+                                  <input class="form-control" :class="{ 'is-invalid': form.errors.has('from_price') }"
+                                         v-model="form.from_price" 
+                                         type="checkbox" value="1">
+                                  ¿Mostrar precio desde?
+                                </label>
+                                <has-error :form="form" field="from_price"></has-error>
                             </div>
+
+                            <div class="form-group">
+                              <input v-model="form.price" type="number" name="price" placeholder="Precio"
+                                    class="form-control" :class="{ 'is-invalid': form.errors.has('price') }">
+                                <has-error :form="form" field="price"></has-error>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea v-model="form.description" name="description" id="description"
+                                    placeholder="Descripción no mayor a 2048 caracteres" class="form-control"
+                                    :class="{ 'is-invalid': form.errors.has('description') }"></textarea>
+                                <has-error :form="form" field="description"></has-error>
+                            </div>
+
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            <button v-show="editmode" type="submit" class="btn btn-success">Update</button>
-                            <button v-show="!editmode" type="submit" class="btn btn-primary">Create</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            <button v-show="editmode" type="submit" class="btn btn-success">Guardar</button>
+                            <button v-show="!editmode" type="submit" class="btn btn-primary">Crear</button>
                         </div>
 
                     </form>
@@ -164,13 +177,14 @@
                 editmode: false,
                 buildings: {},
                 form: new Form({
-                    id: '',
-                    name: '',
-                    email: '',
-                    password: '',
-                    type: '',
-                    bio: '',
-                    photo: ''
+                  'title': '',
+                  'address': '',
+                  'url_maps': '',
+                  'from_price': '',
+                  'price': '',
+                  'description': '',
+                  'status': '',
+                  'is_featured': ''
                 })
             }
         },
@@ -201,18 +215,18 @@
                     });
 
             },
-            editModal(user) {
+            editModal(item) {
                 this.editmode = true;
                 this.form.reset();
                 $('#addNew').modal('show');
-                this.form.fill(user);
+                this.form.fill(item);
             },
             newModal() {
                 this.editmode = false;
                 this.form.reset();
                 $('#addNew').modal('show');
             },
-            deleteUser(id) {
+            deleteItem(id) {
                 swal({
                     title: 'Are you sure?',
                     text: "You won't be able to revert this!",
@@ -225,7 +239,7 @@
 
                     // Send request to the server
                     if (result.value) {
-                        this.form.delete('api/user/' + id).then(() => {
+                        this.form.delete('api/buildings/' + id).then(() => {
                             swal(
                                 'Deleted!',
                                 'Your file has been deleted.',
@@ -246,17 +260,17 @@
                 // }
             },
 
-            createUser() {
+            createItem() {
                 this.$Progress.start();
 
-                this.form.post('api/user')
+                this.form.post('api/buildings')
                     .then(() => {
                         Fire.$emit('AfterCreate');
                         $('#addNew').modal('hide')
 
                         toast({
                             type: 'success',
-                            title: 'User Created in successfully'
+                            title: 'Building Created in successfully'
                         })
                         this.$Progress.finish();
 
