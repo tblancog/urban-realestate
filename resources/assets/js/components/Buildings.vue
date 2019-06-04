@@ -51,41 +51,7 @@
                         </a>
                       </div>
                     </div>
-                    <!-- <div class="card-body table-responsive p-0">
-                        <table class="table table-hover">
-                            <tbody>
-                                <tr>
-                                    <th>(FOTO)</th>
-                                    <th>Título</th>
-                                    <th>Email</th>
-                                    <th>Type</th>
-                                    <th>Registered At</th>
-                                    <th>Modify</th>
-                                </tr>
-
-
-                                <tr v-for="user in users.data" :key="user.id">
-
-                                    <td>{{user.id}}</td>
-                                    <td>{{user.name}}</td>
-                                    <td>{{user.email}}</td>
-                                    <td>{{user.type | upText}}</td>
-                                    <td>{{user.created_at | myDate}}</td>
-
-                                    <td>
-                                        <a href="#" @click="editModal(user)">
-                                            <i class="fa fa-edit blue"></i>
-                                        </a>
-                                        /
-                                        <a href="#" @click="deleteItem(user.id)">
-                                            <i class="fa fa-trash red"></i>
-                                        </a>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div> -->
+                    
                     <!-- /.card-body -->
                     <div class="card-footer">
                         <pagination :data="buildings" @pagination-change-page="getResults"></pagination>
