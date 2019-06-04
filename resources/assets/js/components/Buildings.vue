@@ -1,23 +1,54 @@
 <template>
     <div class="container">
-        <div class="row mt-5" v-if="$gate.isAdminOrAuthor()">
+        <!-- <div class="row mt-5" v-if="$gate.isAdminOrAuthor()"> -->
+        <div class="row mt-5">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Users Table</h3>
-
+                        <h3 class="card-title">Edificios</h3>
                         <div class="card-tools">
-                            <button class="btn btn-success" @click="newModal">Add New <i
+                            <button class="btn btn-success" @click="newModal">Crear Nuevo <i
                                     class="fas fa-user-plus fa-fw"></i></button>
                         </div>
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body table-responsive p-0">
+                    
+                    <div class="media" v-for="building in buildings.data" :key="building.id">
+                      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img class="d-block w-100" src="//via.placeholder.com/170x100/0000FF" alt="First slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="//via.placeholder.com/170x100/FF00FF" alt="Second slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="//via.placeholder.com/170x100/330088" alt="Third slide">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <router-link :to="{ name: 'buildingDetail', params: {  id: building.id } }">
+                          <h5 class="mt-0">{{ building.title }}</h5>
+                        </router-link>
+                        Dirección{{ building.address }}
+                        USD {{ building.price }}
+                      </div>
+                    </div>
+                    <!-- <div class="card-body table-responsive p-0">
                         <table class="table table-hover">
                             <tbody>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
+                                    <th>(FOTO)</th>
+                                    <th>Título</th>
                                     <th>Email</th>
                                     <th>Type</th>
                                     <th>Registered At</th>
@@ -46,19 +77,16 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div> -->
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <pagination :data="users" @pagination-change-page="getResults"></pagination>
+                        <pagination :data="buildings" @pagination-change-page="getResults"></pagination>
                     </div>
                 </div>
                 <!-- /.card -->
             </div>
         </div>
 
-        <div v-if="!$gate.isAdminOrAuthor()">
-            <not-found></not-found>
-        </div>
 
         <!-- Modal -->
         <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNewLabel"
@@ -134,7 +162,7 @@
         data() {
             return {
                 editmode: false,
-                users: {},
+                buildings: {},
                 form: new Form({
                     id: '',
                     name: '',
@@ -148,9 +176,9 @@
         },
         methods: {
             getResults(page = 1) {
-                axios.get('api/user?page=' + page)
+                axios.get('api/buildings?page=' + page)
                     .then(response => {
-                        this.users = response.data;
+                        this.buildings = response.data;
                     });
             },
             updateUser() {
@@ -210,12 +238,12 @@
                     }
                 })
             },
-            loadUsers() {
-                if (this.$gate.isAdminOrAuthor()) {
-                    axios.get("api/user").then(({
+            loadItems() {
+                // if (this.$gate.isAdminOrAuthor()) {
+                    axios.get("api/buildings").then(({
                         data
-                    }) => (this.users = data));
-                }
+                    }) => (this.buildings = data));
+                // }
             },
 
             createUser() {
@@ -239,21 +267,21 @@
             }
         },
         created() {
-            Fire.$on('searching', () => {
-                let query = this.$parent.search;
-                axios.get('api/findUser?q=' + query)
-                    .then((data) => {
-                        this.users = data.data
-                    })
-                    .catch(() => {
+            // Fire.$on('searching', () => {
+            //     let query = this.$parent.search;
+            //     axios.get('api/findUser?q=' + query)
+            //         .then((data) => {
+            //             this.users = data.data
+            //         })
+            //         .catch(() => {
 
-                    })
-            })
-            this.loadUsers();
+            //         })
+            // })
+            this.loadItems();
             Fire.$on('AfterCreate', () => {
-                this.loadUsers();
+                this.loadItems();
             });
-            //    setInterval(() => this.loadUsers(), 3000);
+            //    setInterval(() => this.loadItems(), 3000);
         }
 
     }
