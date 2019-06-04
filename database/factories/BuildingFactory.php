@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 use App\Building;
 
 $factory->define(Building::class, function (Faker $faker) {
-    $buildingName = $faker->unique()->numerify('Departamento ####');
+    $buildingName = $faker->unique()->numerify('Edificio ####');
 
     return [
       'title'=> $buildingName,

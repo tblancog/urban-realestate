@@ -54,7 +54,7 @@ let routes = [
     // User
     { path: '/buildings', component: require('./components/Buildings.vue') },
     {
-        name: 'buildingDetail', path: '/buildings/:id', component: require('./components/BuildingDetail.vue') },
+      name: 'buildingDetail', path: '/buildings/:id', component: require('./components/BuildingDetail.vue') },
     // { path: '/apartments', component: require('./components/Apartments.vue') },
 
 
