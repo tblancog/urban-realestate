@@ -261,7 +261,7 @@
             Fire.$on('AfterCreate', () => {
                 this.loadItems();
             });
-            //    setInterval(() => this.loadItems(), 3000);
+            setInterval(() => this.loadItems(), 3000);
         }
 
     }

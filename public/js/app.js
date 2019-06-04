@@ -74046,7 +74046,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Fire.$on('AfterCreate', function () {
             _this6.loadItems();
         });
-        //    setInterval(() => this.loadItems(), 3000);
+        setInterval(function () {
+            return _this6.loadItems();
+        }, 3000);
     }
 });
 
