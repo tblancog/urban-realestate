@@ -13,3 +13,6 @@ Route::get('invoice', function(){
 });
 
 Route::get('{path}','HomeController@index')->where( 'path', '([A-z\d-/_.]+)?' );
+Route::post('images-upload', 'ImageController@upload');
+
+

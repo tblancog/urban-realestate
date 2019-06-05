@@ -17,16 +17,16 @@
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img class="d-block w-100" src="//via.placeholder.com/170x100/0000FF"
-                                        alt="First slide">
+                                    <!-- <img class="d-block w-100" src="//via.placeholder.com/170x100/0000FF"
+                                        alt="First slide"> -->
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" src="//via.placeholder.com/170x100/FF00FF"
-                                        alt="Second slide">
+                                    <!-- <img class="d-block w-100" src="//via.placeholder.com/170x100/FF00FF"
+                                        alt="Second slide"> -->
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" src="//via.placeholder.com/170x100/330088"
-                                        alt="Third slide">
+                                    <!-- <img class="d-block w-100" src="//via.placeholder.com/170x100/330088"
+                                        alt="Third slide"> -->
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
@@ -82,6 +82,11 @@
                     <form @submit.prevent="editmode ? updateItem() : createItem()">
                         <div class="modal-body">
                             
+                            
+                            <!-- Image uploader -->
+                            <div class="form-group">
+                              <image-uploader :files="form.files"></image-uploader>
+                            </div>
                             <!-- Title -->
                             <div class="form-group">
                                 <input v-model="form.title" type="text" name="title" placeholder="Título"
@@ -161,7 +166,12 @@
 </template>
 
 <script>
+    import ImageUploader from './ImageUploader';
+
     export default {
+       components: {
+            'image-uploader': ImageUploader
+        },
         data() {
             return {
                 editmode: false,
@@ -175,7 +185,8 @@
                     price: '',
                     description: '',
                     status: '',
-                    is_featured: ''
+                    is_featured: '',
+                    files: []
                 })
             }
         },
@@ -251,24 +262,30 @@
             },
 
             createItem() {
-                this.$Progress.start();
+              this.$Progress.start();
 
-                this.form.post('api/buildings')
-                    .then(() => {
-                        Fire.$emit('AfterCreate');
-                        $('#addNew').modal('hide')
+              const formData = new FormData();
+          
+              this.form.files.forEach(file => {
+                  formData.append('images[]', file, file.name);
+              });
+              console.log(this.form)
 
-                        toast({
-                            type: 'success',
-                            title: 'Edificio creado!'
-                        })
-                        this.$Progress.finish();
+              const p1 = this.form.post('api/buildings')
 
-                    })
-                    .catch(() => {
-
-                    })
-            }
+              p1.then(res => {
+                  formData.append('id', res.data.id)
+                  axios.post('images-upload', formData)
+                    .then(()=> {
+                      Fire.$emit('AfterCreate');
+                      toast({
+                        type: 'success',
+                        title: 'Edificio creado!'
+                      })
+                    this.$Progress.finish();
+                  })
+              })
+            },
         },
         created() {
             // Fire.$on('searching', () => {
@@ -285,7 +302,7 @@
             Fire.$on('AfterCreate', () => {
                 this.loadItems();
             });
-            setInterval(() => this.loadItems(), 3000);
+            // setInterval(() => this.loadItems(), 3000);
         }
 
     }

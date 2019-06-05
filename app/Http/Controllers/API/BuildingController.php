@@ -38,9 +38,10 @@ class BuildingController extends Controller
      */
     public function store(BuildingRequest $request)
     {
-        Building::create($request->all());
-        return ['message' => 'Edificio creado'];
+        $building = Building::create($request->all());
+        return ['message' => 'Edificio creado', 'id'=> $building->id];
     }
+
 
     /**
      * Display the specified resource.
