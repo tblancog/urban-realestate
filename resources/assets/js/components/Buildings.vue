@@ -67,7 +67,7 @@
         </div>
 
 
-        <!-- Modal -->
+        <!-- Form Modal -->
         <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNewLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
