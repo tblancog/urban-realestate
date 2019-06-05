@@ -262,19 +262,20 @@
             },
 
             createItem() {
-              this.$Progress.start();
+              this.$Progress.start()
 
-              const formData = new FormData();
-          
-              this.form.files.forEach(file => {
-                  formData.append('images[]', file, file.name);
-              });
-              console.log(this.form)
+              const formData = new FormData()
+              if(this.form.files && this.form.files.length > 0){
+                this.form.files.forEach(file => {
+                    formData.append('images[]', file, file.name)
+                })
+              }
 
-              const p1 = this.form.post('api/buildings')
+              const buildingCreate = this.form.post('api/buildings')
 
-              p1.then(res => {
+              buildingCreate.then(res => {
                   formData.append('id', res.data.id)
+                  formData.append('type', 'building')
                   axios.post('images-upload', formData)
                     .then(()=> {
                       Fire.$emit('AfterCreate');

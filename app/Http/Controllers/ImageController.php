@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Building;
 
 class ImageController extends Controller
 {
      public function upload(Request $request)
     {
         if (count($request->images)) {
-            foreach ($request->images as $image) {
+          
+          // get property id and attach to it
+          if($request->type == 'building'){
+            $property = Building::find($request->id);
+          }
 
-                // get property id and attach to it
+            foreach ($request->images as $image) {
+                
+                // $property;
                 $image->store('images');
             }
         }
