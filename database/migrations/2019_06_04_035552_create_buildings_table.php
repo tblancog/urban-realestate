@@ -20,9 +20,8 @@ class CreateBuildingsTable extends Migration
             $table->string('url_maps', 2048)->nullable();
             $table->boolean('from_price')->default(false);
             $table->float('price')->default(0);
-            $table->text('description');
+            $table->text('description', 2048);
             $table->string('status')->default('on_sale');
-            $table->boolean('is_featured')->default(false);
             $table->timestamps();
         });
     }

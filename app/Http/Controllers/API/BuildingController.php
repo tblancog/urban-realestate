@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Building;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BuildingRequest;
 
 
 class BuildingController extends Controller
@@ -35,9 +36,10 @@ class BuildingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BuildingRequest $request)
     {
-        //
+        Building::create($request->all());
+        return ['message' => 'Edificio creado'];
     }
 
     /**
@@ -69,9 +71,11 @@ class BuildingController extends Controller
      * @param  \App\Building  $building
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Building $building)
+    public function update(BuildingRequest $request, $id)
     {
-        //
+        $building = Building::findOrFail($id);
+        $building->update($request->all());
+        return ['message' => 'Edificio actualizado'];
     }
 
     /**
@@ -82,8 +86,7 @@ class BuildingController extends Controller
      */
     public function destroy($id)
     {
-         $item = Building::findOrFail($id);
-        // delete the item
+        $item = Building::findOrFail($id);
 
         $item->delete();
 

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Building extends Model
 {
+    protected $table = 'buildings';
     protected $fillable = [
       'title',
       'address',
@@ -14,6 +15,5 @@ class Building extends Model
       'price',
       'description',
       'status',
-      'is_featured'
     ];
 }
