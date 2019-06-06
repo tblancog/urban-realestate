@@ -48,11 +48,11 @@ Vue.use(VueProgressBar, {
 let routes = [
     // { path: '/dashboard', component: require('./components/Dashboard.vue') },
     // { path: '/developer', component: require('./components/Developer.vue') },
-    { path: '/users', component: require('./components/Users.vue') },
+    { path: '/users', component: require('./components/User.vue') },
     // { path: '/profile', component: require('./components/Profile.vue') },
     
     // User
-    { path: '/buildings', component: require('./components/Buildings.vue') },
+    { path: '/buildings', component: require('./components/Building.vue') },
     {
       name: 'buildingDetail', path: '/buildings/:id', component: require('./components/BuildingDetail.vue') },
     // { path: '/apartments', component: require('./components/Apartments.vue') },

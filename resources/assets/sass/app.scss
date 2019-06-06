@@ -45,3 +45,339 @@ $fa-font-path: "../webfonts";
 @page {
     margin: 0;
 }
+
+
+@font-face {
+    font-family: 'AvantGarde';
+    src: url('../fonts/Avant Garde Book BT.ttf');
+}
+
+@import '../css/bootstrap.min.css';
+
+body {
+    font-family: "AvantGarde";
+}
+
+a.list-group-item {
+    height: auto;
+    min-height: 220px;
+}
+
+a.list-group-item.active small {
+    color: #fff;
+}
+
+.stars {
+    margin: 20px auto 1px;
+}
+
+.counters {
+    padding: .5em 1em;
+}
+
+.card {
+    .card-header {
+        h2 {
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+        .ml-auto {
+            a {
+                background-color: #51B848;
+                border: 0;
+                border-radius: 0;
+                color: #fff;
+                font-weight: 700;
+                transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+                &:hover {
+                    background-color: #000000;
+                }
+            }
+        }
+    }
+
+    .card-body {
+        .media {
+            .media-body {
+                .d-flex {
+                    height: 80px;
+                }
+
+                h3 {
+                    a {
+                        color: #51B848;
+                        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+                        &:hover {
+                            color: #000000;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .ml-auto {
+                    text-align: center;
+
+                    a {
+                        background-color: #51B848;
+                        margin-bottom: 5px;
+                        border: 0;
+                        border-radius: 0;
+                        color: #fff;
+                        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+                        &:hover {
+                            background-color: #000000;
+                        }
+                    }
+
+                    form {
+                        button {
+                            background-color: #909295;
+                            border: 0;
+                            border-radius: 0;
+                            color: #fff;
+                            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+                            &:hover {
+                                background-color: #000000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .mx-auto {
+            .pagination {
+                justify-content: center;
+
+                li {
+                    span {
+                        background-color: #51B848;
+                        border: 0;
+                        color: #ffffff;
+                    }
+
+                    a {
+                        background-color: #51B848;
+                        border: 0;
+                        color: #ffffff;
+                    }
+
+                    &:active {
+                        span {
+                            background-color: #000000;
+                        }
+
+                        a {
+                            background-color: #000000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.form-group {
+    button {
+        background-color: #51B848;
+        margin-bottom: 5px;
+        border: 0;
+        border-radius: 0;
+        color: #fff;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+        &:hover {
+            background-color: #000000;
+        }
+    }
+}
+
+.property-cont {
+    position: relative;
+
+    .ml-auto {
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+
+        .ml-auto {
+            a {
+                background-color: #51B848;
+                margin-bottom: 5px;
+                border: 0;
+                border-radius: 0;
+                color: #fff;
+                transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+                &:hover {
+                    background-color: #000000;
+                }
+            }
+        }
+    }
+}
+
+.py-4 {
+    .card-header {
+        margin-top: 20px;
+        border: 1px solid rgba(0, 0, 0, .125);
+        border-radius: 4px;
+
+        .ml-auto {
+            a {
+                background-color: #909295;
+                border: 0;
+                border-radius: 0;
+                color: #fff;
+                transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+                &:hover {
+                    background-color: #000000;
+                }
+            }
+        }
+    }
+
+    .create-header {
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+}
+
+#my-strictly-unique-vue-upload-multiple-image {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+}
+
+h1,
+h2 {
+    font-weight: normal;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+a {
+    color: #42b983;
+}
+
+.nav-dash {
+    .container {
+        .navbar-brand {
+            img {
+                width: 200px;
+            }
+        }
+
+        .collapse.navbar-collapse {
+            .navbar-nav {
+                .nav-item {
+                    .nav-link {
+                        font-family: "AvantGarde";
+                        text-transform: uppercase;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// LOGIN & REGISTER
+
+.login,
+.register {
+    font-family: "AvantGarde";
+
+    .card {
+        .card-header {
+            text-align: center;
+            text-transform: uppercase;
+            font-family: "AvantGarde";
+            font-weight: 700;
+            font-size: 1.5rem;
+            border-radius: 0;
+            border: 0;
+        }
+
+        .card-body {
+            form {
+                .form-group {
+                    .btn-verde {
+                        background-color: #51B848;
+                        font-size: 1rem;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                    }
+
+                    .btn-link {
+                        padding: 12px;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// PROPERTIES
+
+.prop-container {
+    font-family: "AvantGarde";
+
+    .card {
+        .card-header {
+            border-radius: 0;
+            border: 0;
+
+            h2 {
+                font-weight: 700;
+            }
+
+            .btn-verde {
+                background-color: #51B848;
+                font-size: 1rem;
+            }
+        }
+
+        .card-body {
+            .media {
+                .media-body {
+                    .btn-verde {
+                        background-color: #51B848;
+                        padding: 6px 30px;
+                    }
+
+                    form {
+                        .btn-gris {
+                            padding: 6px 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// HOME SIDE-MENU
+
+.home-side {
+    margin-top: 30px;
+}
