@@ -7,7 +7,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', function(){
+  return view('dashboard');
+})->middleware('auth');
 
 // Route::get('{path}','HomeController@index')->where( 'path', '([A-z\d-/_.]+)?' );
 Route::post('images-upload', 'ImageController@upload');
