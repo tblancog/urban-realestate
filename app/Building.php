@@ -15,5 +15,16 @@ class Building extends Model
       'price',
       'description',
       'status',
+      'highlighted'
     ];
+
+    public function amenities(){
+
+      return $this->hasMany('App\Amenity');
+    }
+
+    public function images(){
+
+      return $this->hasMany('App\Image');
+    }
 }
