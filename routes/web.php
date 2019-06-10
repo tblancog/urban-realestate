@@ -1,9 +1,11 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+Route::get('/', 'HomeController@index');
+
 
 Auth::routes();
 
@@ -39,7 +41,7 @@ Route::get('/houses_details', function () {
   return view('houses-details');
 });
 
-Route::get('/{path}',function(){
-  return view('dashboard');
-})->where( 'path', '([A-z\d-/_.]+)?' );
+// Route::get('/{path}',function(){
+//   return view('dashboard');
+// })->where( 'path', '([A-z\d-/_.]+)?' );
 

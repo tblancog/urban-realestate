@@ -225,112 +225,9 @@
             </div>
         </div>
 
-        <div class="row">
 
-            <!-- Single Featured Property -->
-            <div class="col-12 col-md-6 col-xl-6 col-lg-6">
-                <div class="single-featured-property mb-50 wow fadeIn" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <a href="/detail"><img src="img/bg-img/feature1.jpg" alt=""></a>
-                    </div>
-                    <!-- Property Content -->
-                    <div class="property-content">
-                        <div class="top-row">
-                            <p class="bot-status">En obra</p>
-                            <p class="bot-finance">Con financiación</p>
-                        </div>
-                        <div class="bot-row">
-                            <p class="bot-name">Edificio Galván 3051</p>
-                            <p class="bot-price">desde USD 92.250.-</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Single Featured Property -->
-            <div class="col-12 col-md-6 col-xl-6 col-lg-6">
-                <div class="single-featured-property mb-50 wow fadeIn" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <a href="/detail"><img src="img/bg-img/feature2.jpg" alt=""></a>
-                    </div>
-                    <!-- Property Content -->
-                    <div class="property-content">
-                        <div class="top-row">
-                            <p class="bot-status">En obra</p>
-                            <p class="bot-finance">Con financiación</p>
-                        </div>
-                        <div class="bot-row">
-                            <p class="bot-name">Edificio Galván 3051</p>
-                            <p class="bot-price">desde USD 92.250.-</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Featured Property -->
-            <div class="col-12 col-md-6 col-xl-6 col-lg-6">
-                <div class="single-featured-property mb-50 wow fadeIn" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <a href="/detail"><img src="img/bg-img/feature3.jpg" alt=""></a>
-                    </div>
-                    <!-- Property Content -->
-                    <div class="property-content">
-                        <div class="top-row">
-                            <p class="bot-status">En obra</p>
-                            <p class="bot-finance">Con financiación</p>
-                        </div>
-                        <div class="bot-row">
-                            <p class="bot-name">Edificio Galván 3051</p>
-                            <p class="bot-price">desde USD 92.250.-</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Featured Property -->
-            <div class="col-12 col-md-6 col-xl-6 col-lg-6">
-                <div class="single-featured-property mb-50 wow fadeIn" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <a href="/detail"><img src="img/bg-img/feature4.jpg" alt=""></a>
-                    </div>
-                    <!-- Property Content -->
-                    <div class="property-content">
-                        <div class="top-row">
-                            <p class="bot-status">En obra</p>
-                            <p class="bot-finance">Con financiación</p>
-                        </div>
-                        <div class="bot-row">
-                            <p class="bot-name">Edificio Galván 3051</p>
-                            <p class="bot-price">desde USD 92.250.-</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-</section>
-<!-- ##### Propiedades en Venta Area End ##### -->
-
-<!-- ##### Otras propiedades Area Start ##### -->
-<section class="featured-properties-area section-padding-0-50">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-heading-20 wow fadeIn">
-                    <h2>Propiedades</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-
-            <!-- Single Featured Property -->
+          @forelse ($items as $item)
+                      <!-- Single Featured Property -->
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
                     <!-- Property Thumbnail -->
@@ -355,6 +252,28 @@
                     </div>
                 </div>
             </div>
+          @empty
+          <p>No existen propiedades destacadas por el momento</p>
+          @endforelse
+
+    </div>
+</section>
+<!-- ##### Propiedades en Venta Area End ##### -->
+
+<!-- ##### Otras propiedades Area Start ##### -->
+<section class="featured-properties-area section-padding-0-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading-20 wow fadeIn">
+                    <h2>Propiedades</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+
 
             <!-- Single Featured Property -->
             <div class="col-12 col-md-6 col-xl-4">

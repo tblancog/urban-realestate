@@ -73,8 +73,8 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo</h5>
-                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar edificio</h5>
+                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Edificio</h5>
+                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Edificio</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -142,30 +142,30 @@
                                   
                                   <div class="row">
                                     <div class="col-lg-3">
-                                      <input type="checkbox" name="" class="form-check-input" id="cochera">
+                                      <input type="checkbox" v-model="form.amenities" value="cochera" name="amenities[]" class="form-check-input" id="cochera">
                                       <label class="form-check-label" for="cochera">Cochera</label>
                                     </div>
                                     <div class="col-lg-3">
-                                      <input type="checkbox" name="" class="form-check-input" id="piscina">
+                                      <input type="checkbox" v-model="form.amenities" value="piscina" name="amenities[]" class="form-check-input" id="piscina">
                                       <label class="form-check-label" for="piscina">Piscina</label>
                                     </div>
                                     <div class="col-lg-3">
-                                      <input type="checkbox" name="" class="form-check-input" id="seguridad">
+                                      <input type="checkbox" v-model="form.amenities" value="seguridad" name="amenities[]" class="form-check-input" id="seguridad">
                                       <label class="form-check-label" for="seguridad">Seguridad</label>
                                     </div>
                                   </div>
 
                                   <div class="row">
                                     <div class="col-lg-3">
-                                      <input type="checkbox" name="" class="form-check-input" id="gimnasio">
+                                      <input type="checkbox" v-model="form.amenities" value="gimnasio" name="amenities[]" class="form-check-input" id="gimnasio">
                                       <label class="form-check-label" for="gimnasio">Gimnasio</label>
                                     </div>
                                     <div class="col-lg-3">
-                                      <input type="checkbox" name="" class="form-check-input" id="sum">
+                                      <input type="checkbox" v-model="form.amenities" value="sum" name="amenities[]" class="form-check-input" id="sum">
                                       <label class="form-check-label" for="sum">Sum</label>
                                     </div>
                                     <div class="col-lg-3">
-                                      <input type="checkbox" name="" class="form-check-input" id="parrilla">
+                                      <input type="checkbox" v-model="form.amenities" value="parrilla" name="amenities[]" class="form-check-input" id="parrilla">
                                       <label class="form-check-label" for="parrilla">Parrilla</label>
                                     </div>
                                   </div>
@@ -235,7 +235,8 @@
                     description: '',
                     status: '',
                     is_featured: '',
-                    files: []
+                    files: [],
+                    amenities: []
                 })
             }
         },

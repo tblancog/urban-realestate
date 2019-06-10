@@ -12,11 +12,11 @@ class AmenityTableSeeder extends Seeder
     public function run()
     {
       $data = [
-        [ 'title'=> 'Cochera', 'icon'=> 'fa-building'],
-        [ 'title'=> 'Piscina', 'icon'=> 'fa-building'],
-        [ 'title'=> 'Gimnasio', 'icon'=> 'fa-building'],
-        [ 'title'=> 'Sum', 'icon'=> 'fa-building'],
-        [ 'title'=> 'Parrilla', 'icon'=> 'fa-building'],
+        [ 'title'=> 'cochera', 'icon'=> 'fa-building'],
+        [ 'title'=> 'piscina', 'icon'=> 'fa-building'],
+        [ 'title'=> 'gimnasio', 'icon'=> 'fa-building'],
+        [ 'title'=> 'sum', 'icon'=> 'fa-building'],
+        [ 'title'=> 'parrilla', 'icon'=> 'fa-building'],
       ];
 
       Amenity::insert($data);

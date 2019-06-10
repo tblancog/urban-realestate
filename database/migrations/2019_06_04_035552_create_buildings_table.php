@@ -22,7 +22,7 @@ class CreateBuildingsTable extends Migration
             $table->float('price', 10, 0)->unsigned()->default(0);
             $table->text('description', 2048);
             $table->string('status')->default('on_sale');
-            $table->boolean('is_featured')->default(false);
+            $table->boolean('is_featured')->default(false)->nullable();
             $table->timestamps();
         });
     }
