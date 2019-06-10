@@ -186,28 +186,15 @@
                                 <has-error :form="form" field="status"></has-error>
                             </div>
 
-                          <!-- Highlighted -->
+                          <!-- Featured -->
                           <div class="form-group form-check col-lg-9">
                               <div class="col-lg-12">
-                                <input type="checkbox" class="form-check-input" id="highlighted">
-                                <label class="form-check-label" for="highlighted">Propiedad destacada</label>
+                                <input type="checkbox" class="form-check-input" id="featured">
+                                <label class="form-check-label" for="featured">Propiedad destacada</label>
                               </div>
-                              <has-error :form="form" field="highlighted"></has-error>
+                              <has-error :form="form" field="featured"></has-error>
                           </div>
                         </div>
-
-                        <!-- <div class="form-group">
-                          <p>Amenities</p>
-                            <div class="form-group form-check">
-                              
-                              <div class="row">
-                                <div class="col-lg-3">
-                                  <input type="checkbox" name="" class="form-check-input" id="cochera">
-                                  <label class="form-check-label" for="cochera">Cochera</label>
-                                </div>
-                              </div>
-                          </div>
-                        </div> -->
 
                         <!-- Status -->
                         <div class="modal-footer">

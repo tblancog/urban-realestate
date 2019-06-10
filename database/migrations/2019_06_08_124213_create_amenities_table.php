@@ -20,6 +20,8 @@ class CreateAmenitiesTable extends Migration
             $table->timestamps();
         });
 
+        
+
     }
 
     /**

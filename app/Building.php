@@ -15,12 +15,12 @@ class Building extends Model
       'price',
       'description',
       'status',
-      'highlighted'
+      'is_featured'
     ];
 
     public function amenities(){
 
-      return $this->hasMany('App\Amenity');
+      return $this->belongsToMany('App\Amenity', 'building_amenities');
     }
 
     public function images(){
