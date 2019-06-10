@@ -12,6 +12,6 @@ class BuildingTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Building::class, 3)->create();
+        factory(App\Building::class, 30)->create();
     }
 }

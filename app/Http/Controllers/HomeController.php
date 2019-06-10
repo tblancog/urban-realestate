@@ -23,8 +23,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $items = Building::all();
-        $items = [];
-        return view('index', compact('items'));
+        $featured = Building::where('is_featured', true)
+                            ->latest()
+                            ->take(3)
+                            ->get();
+
+        $others = Building::where('is_featured', false)
+                            ->latest()
+                            ->take(9)
+                            ->get();
+
+        return view('index', ['featured'=> $featured, 
+                              'others'=> $others, 
+        ]);
     }
 }

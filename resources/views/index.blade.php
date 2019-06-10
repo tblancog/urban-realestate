@@ -225,37 +225,41 @@
             </div>
         </div>
 
-
-          @forelse ($items as $item)
-                      <!-- Single Featured Property -->
+        <div class="row">
+        {{-- Featured --}}
+        @forelse ($featured as $f)
+            <!-- Single Featured Property -->
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
-                        <a href="/detail"><img src="img/bg-img/feature3.jpg" alt=""></a>
+                        <a href="/detail"><img src="img/bg-img/feature{{ $loop->iteration }}.jpg" alt=""></a>
                     </div>
                     <!-- Property Content -->
                     <div class="property-content">
-
                         <div class="ribbon ribbon-top-left">
-                            <span>VENTA</span>
+                            <span>{{ $f->status }}</span>
                         </div>
-
-                        <div class="other-top">
+                        {{-- <div class="other-top">
                             <p class="top-amb">3 amb.</p>
                             <p class="top-area">150 m<sup>2</sup></p>
+                          </div> --}}
+                          <div class="other-top">
+                              <p class="top-amb">3 amb.</p>
+                          <div class="top-area">USD {{ $f->price }}</div>
                         </div>
                         <div class="other-bot">
-                            <p class="bot-status">Departamento en venta.</p>
-                            <p class="bot-address">Mariano Acha 3458.</p>
+                            <p class="bot-status">{{ $f->title }}</p>
+                            <p class="bot-address">{{ $f->address }}</p>
                         </div>
                     </div>
                 </div>
             </div>
           @empty
-          <p>No existen propiedades destacadas por el momento</p>
+            <div class="col-12">No existen destacados por el momento</div>
           @endforelse
-
+        </div>
+            
     </div>
 </section>
 <!-- ##### Propiedades en Venta Area End ##### -->
@@ -274,128 +278,41 @@
         <div class="row">
 
 
-
+          {{-- Featured --}}
+        @forelse ($others as $oth)
             <!-- Single Featured Property -->
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
-                        <a href="/detail"><img src="img/bg-img/feature3.jpg" alt=""></a>
+                        <a href="/detail"><img src="img/bg-img/feature{{ $loop->iteration }}.jpg" alt=""></a>
                     </div>
                     <!-- Property Content -->
                     <div class="property-content">
                         <div class="ribbon ribbon-top-left">
-                            <span>VENTA</span>
+                            <span>{{ $oth->status }}</span>
                         </div>
-                        <div class="other-top">
+                        {{-- <div class="other-top">
                             <p class="top-amb">3 amb.</p>
                             <p class="top-area">150 m<sup>2</sup></p>
+                          </div> --}}
+                          <div class="other-top">
+                              <p class="top-amb">3 amb.</p>
+                          <div class="top-area">USD {{ $oth->price }}</div>
                         </div>
                         <div class="other-bot">
-                            <p class="bot-status">Departamento en venta.</p>
-                            <p class="bot-address">Mariano Acha 3458.</p>
+                            <p class="bot-status">{{ $oth->title }}</p>
+                            <p class="bot-address">{{ $oth->address }}</p>
                         </div>
                     </div>
                 </div>
             </div>
+          @empty
+            <div class="col-12">No existen destacados por el momento</div>
+          @endforelse
+        </div>
 
-            <!-- Single Featured Property -->
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <a href="/detail"><img src="img/bg-img/feature6.jpg" alt=""></a>
-                    </div>
-                    <!-- Property Content -->
-                    <div class="property-content">
-                        <div class="ribbon ribbon-top-left">
-                            <span>VENTA</span>
-                        </div>
-                        <div class="other-top">
-                            <p class="top-amb">3 amb.</p>
-                            <p class="top-area">150 m<sup>2</sup></p>
-                        </div>
-                        <div class="other-bot">
-                            <p class="bot-status">Departamento en venta.</p>
-                            <p class="bot-address">Mariano Acha 3458.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Featured Property -->
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <a href="/detail"><img src="img/bg-img/feature6.jpg" alt=""></a>
-                    </div>
-                    <!-- Property Content -->
-                    <div class="property-content">
-                        <div class="ribbon ribbon-top-left">
-                            <span>VENTA</span>
-                        </div>
-                        <div class="other-top">
-                            <p class="top-amb">3 amb.</p>
-                            <p class="top-area">150 m<sup>2</sup></p>
-                        </div>
-                        <div class="other-bot">
-                            <p class="bot-status">Departamento en venta.</p>
-                            <p class="bot-address">Mariano Acha 3458.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!-- Single Featured Property -->
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <a href="/detail"><img src="img/bg-img/feature6.jpg" alt=""></a>
-                    </div>
-                    <!-- Property Content -->
-                    <div class="property-content">
-                        <div class="ribbon ribbon-top-left">
-                            <span>VENTA</span>
-                        </div>
-                        <div class="other-top">
-                            <p class="top-amb">3 amb.</p>
-                            <p class="top-area">150 m<sup>2</sup></p>
-                        </div>
-                        <div class="other-bot">
-                            <p class="bot-status">Departamento en venta.</p>
-                            <p class="bot-address">Mariano Acha 3458.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Featured Property -->
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <a href="/detail"><img src="img/bg-img/feature3.jpg" alt=""></a>
-                    </div>
-                    <!-- Property Content -->
-                    <div class="property-content">
-                        <div class="ribbon ribbon-top-left">
-                            <span>VENTA</span>
-                        </div>
-                        <div class="other-top">
-                            <p class="top-amb">3 amb.</p>
-                            <p class="top-area">150 m<sup>2</sup></p>
-                        </div>
-                        <div class="other-bot">
-                            <p class="bot-status">Departamento en venta.</p>
-                            <p class="bot-address">Mariano Acha 3458.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
         </div>
     </div>
 </section>

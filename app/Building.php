@@ -27,4 +27,9 @@ class Building extends Model
 
       return $this->hasMany('App\Image');
     }
+
+    public function getStatusAttribute(){
+
+      return ucwords($this->attributes['status']);
+    }
 }
