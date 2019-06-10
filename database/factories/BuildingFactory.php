@@ -4,15 +4,15 @@ use Faker\Generator as Faker;
 use App\Building;
 
 $factory->define(Building::class, function (Faker $faker) {
-    $buildingName = $faker->unique()->numerify('Edificio ####');
 
     return [
-      'title'=> $buildingName,
+      'title'=> $faker->unique()->numerify('Edificio ####'),
       'address'=> $faker->streetAddress(),
       'url_maps'=> $faker->streetAddress(),
-      'from_price'=> true,
+      'from_price'=> $faker->boolean,
       'price'=> $faker->randomNumber(6),
       'description'=> $faker->paragraph(2),
-      'status'=> 'en_venta',
+      'status'=> 'en venta',
+      'is_featured'=> $faker->boolean,
     ];
 });

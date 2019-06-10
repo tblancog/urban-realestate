@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Building;
+use App\Amenity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BuildingRequest;
@@ -21,16 +22,6 @@ class BuildingController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *    
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -39,6 +30,16 @@ class BuildingController extends Controller
     public function store(BuildingRequest $request)
     {
         $building = Building::create($request->all());
+        $building->amenities()->sync(
+          Amenity::whereIn('title', $request->amenities)->get()
+        );
+
+        //  Image store logic
+
+        $building->images()->sync(
+          Amenity::whereIn('title', $request->amenities)->get()
+        );
+        return $building;
         return ['message' => 'Edificio creado', 'id'=> $building->id];
     }
 
@@ -50,17 +51,6 @@ class BuildingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Building $building)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Building  $building
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Building $building)
     {
         //
     }

@@ -73,8 +73,8 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo</h5>
-                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar edificio</h5>
+                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Edificio</h5>
+                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Edificio</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -84,58 +84,98 @@
                             
                             
                             <!-- Image uploader -->
-                            <div class="form-group">
+                            <div class="form-group col-lg-12">
                               <image-uploader :files="form.files"></image-uploader>
                             </div>
                             <!-- Title -->
-                            <div class="form-group">
-                                <input v-model="form.title" type="text" name="title" placeholder="Título"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('title') }">
-                                <has-error :form="form" field="title"></has-error>
+                            <div class="form-group col-lg-9">
+                                <div class="">
+                                  <input v-model="form.title" type="text" name="title" placeholder="Título"
+                                      class="form-control" :class="{ 'is-invalid': form.errors.has('title') }">
+                                  <has-error :form="form" field="title"></has-error>
+                                </div>
                             </div>
 
                             <!-- Address -->
-                            <div class="form-group">
+                            <div class="form-group col-lg-9">
                                 <input v-model="form.address" type="text" name="address" placeholder="Dirección"
                                     class="form-control" :class="{ 'is-invalid': form.errors.has('address') }">
                                 <has-error :form="form" field="address"></has-error>
                             </div>
 
                             <!-- Google Maps Url -->
-                            <div class="form-group">
+                            <div class="form-group col-lg-9">
                                 <input v-model="form.url_maps" type="text" name="url_maps"
                                     placeholder="Url de google maps" class="form-control"
                                     :class="{ 'is-invalid': form.errors.has('url_maps') }">
                                 <has-error :form="form" field="url_maps"></has-error>
                             </div>
 
-                            <!-- From price (Desde) -->
-                            <div class="form-group">
-                                <label>
-                                    <input class="form-control" :class="{ 'is-invalid': form.errors.has('from_price') }"
-                                        v-model="form.from_price" type="checkbox" value="1">
-                                    ¿Mostrar precio desde?
-                                </label>
-                                <has-error :form="form" field="from_price"></has-error>
-                            </div>
+                             <!-- Highlighted -->
+                          <div class="form-group form-check col-lg-9">
+                              <div class="col-lg-12">
+                                <input type="checkbox" class="form-check-input" id="desde">
+                                <label class="form-check-label" for="desde">¿ Mostrar precio desde ?</label>
+                              </div>
+                              <has-error :form="form" field="desde"></has-error>
+                          </div>
 
                             <!-- Price -->
-                            <div class="form-group">
+                            <div class="form-group col-lg-9">
                                 <input v-model="form.price" type="number" name="price" placeholder="Precio"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('price') }">
+                                    class="form-control col-lg-4" :class="{ 'is-invalid': form.errors.has('price') }">
                                 <has-error :form="form" field="price"></has-error>
                             </div>
 
                             <!-- Description -->
-                            <div class="form-group">
-                                <textarea v-model="form.description" name="description" id="description"
+                            <div class="form-group col-lg-9">
+                                <textarea v-model="form.description" name="description" id="description" rows="5"
                                     placeholder="Descripción no mayor a 2048 caracteres" class="form-control"
                                     :class="{ 'is-invalid': form.errors.has('description') }"></textarea>
                                 <has-error :form="form" field="description"></has-error>
                             </div>
 
+                            <!-- Amenities -->
+                            <div class="form-group col-lg-9">
+                              <p>Amenities</p>
+                                <div class="form-group form-check">
+                                  
+                                  <div class="row">
+                                    <div class="col-lg-3">
+                                      <input type="checkbox" v-model="form.amenities" value="cochera" name="amenities[]" class="form-check-input" id="cochera">
+                                      <label class="form-check-label" for="cochera">Cochera</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                      <input type="checkbox" v-model="form.amenities" value="piscina" name="amenities[]" class="form-check-input" id="piscina">
+                                      <label class="form-check-label" for="piscina">Piscina</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                      <input type="checkbox" v-model="form.amenities" value="seguridad" name="amenities[]" class="form-check-input" id="seguridad">
+                                      <label class="form-check-label" for="seguridad">Seguridad</label>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-lg-3">
+                                      <input type="checkbox" v-model="form.amenities" value="gimnasio" name="amenities[]" class="form-check-input" id="gimnasio">
+                                      <label class="form-check-label" for="gimnasio">Gimnasio</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                      <input type="checkbox" v-model="form.amenities" value="sum" name="amenities[]" class="form-check-input" id="sum">
+                                      <label class="form-check-label" for="sum">Sum</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                      <input type="checkbox" v-model="form.amenities" value="parrilla" name="amenities[]" class="form-check-input" id="parrilla">
+                                      <label class="form-check-label" for="parrilla">Parrilla</label>
+                                    </div>
+                                  </div>
+
+
+                                </div>
+                            </div>
+
                             <!-- Status -->
-                            <div class="form-group">
+                            <div class="form-group col-lg-9">
                                 <select name="type" v-model="form.status" id="status" class="form-control"
                                     :class="{ 'is-invalid': form.errors.has('status') }">
                                     <option value="">Seleccione estado</option>
@@ -145,6 +185,15 @@
                                 </select>
                                 <has-error :form="form" field="status"></has-error>
                             </div>
+
+                          <!-- Featured -->
+                          <div class="form-group form-check col-lg-9">
+                              <div class="col-lg-12">
+                                <input type="checkbox" class="form-check-input" id="featured">
+                                <label class="form-check-label" for="featured">Propiedad destacada</label>
+                              </div>
+                              <has-error :form="form" field="featured"></has-error>
+                          </div>
                         </div>
 
                         <!-- Status -->
@@ -186,7 +235,8 @@
                     description: '',
                     status: '',
                     is_featured: '',
-                    files: []
+                    files: [],
+                    amenities: []
                 })
             }
         },
@@ -309,3 +359,10 @@
     }
 
 </script>
+
+<style scoped lang="scss">
+  .modal-dialog{
+    max-width: 750px;
+  }
+</style>
+

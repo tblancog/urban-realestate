@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use  App\Building;
 class HomeController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -23,6 +23,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $featured = Building::where('is_featured', true)
+                            ->latest()
+                            ->take(3)
+                            ->get();
+
+        $others = Building::where('is_featured', false)
+                            ->latest()
+                            ->take(9)
+                            ->get();
+
+        return view('index', ['featured'=> $featured, 
+                              'others'=> $others, 
+        ]);
     }
 }

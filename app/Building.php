@@ -15,5 +15,21 @@ class Building extends Model
       'price',
       'description',
       'status',
+      'is_featured'
     ];
+
+    public function amenities(){
+
+      return $this->belongsToMany('App\Amenity', 'building_amenities');
+    }
+
+    public function images(){
+
+      return $this->hasMany('App\Image');
+    }
+
+    public function getStatusAttribute(){
+
+      return ucwords($this->attributes['status']);
+    }
 }
