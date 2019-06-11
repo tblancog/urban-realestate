@@ -42,6 +42,6 @@ Route::get('/houses_details', function () {
 });
 
 Route::get('/{path}',function(){
-  return view('dashboard');
+  return abort(404);
 })->where( 'path', '([A-z\d-/_.]+)?' );
 

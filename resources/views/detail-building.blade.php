@@ -1,6 +1,11 @@
 @extends('layouts.front')
 
 @section('content')
+
+<!-- ##### Front Header Area Start ##### -->
+@include('partials.front-header')
+<!-- ##### Front Header Area End ##### -->
+
 <!-- Preloader -->
 <div id="preloader">
     <div class="south-load"></div>
@@ -235,4 +240,8 @@
     </div>
     </div>
 </section>
+
+<!-- ##### Footer Area Start ##### -->
+@include('partials.front-footer')
+
 @endsection
