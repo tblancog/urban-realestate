@@ -278,7 +278,7 @@
         <div class="row">
 
 
-          {{-- Featured --}}
+          {{-- Others --}}
         @forelse ($others as $oth)
             <!-- Single Featured Property -->
             <div class="col-12 col-md-6 col-xl-4">
