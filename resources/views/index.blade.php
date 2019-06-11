@@ -6,85 +6,10 @@
     <div class="south-load"></div>
 </div>
 
-<!-- ##### Header Area Start ##### -->
-<header class="header-area">
+<!-- ##### Front Header Area Start ##### -->
+@include('partials.front-header')
+<!-- ##### Front Header Area End ##### -->
 
-    <!-- Top Header Area -->
-    <!-- <div class="top-header-area">
-            <div class="h-100 d-md-flex justify-content-between align-items-center">
-                <div class="email-address">
-                    <a href="mailto:contact@southtemplate.com">contact@southtemplate.com</a>
-                </div>
-                <div class="phone-number d-flex">
-                    <div class="icon">
-                        <img src="img/icons/phone-call.png" alt="">
-                    </div>
-                    <div class="number">
-                        <a href="tel:+45 677 8993000 223">+45 677 8993000 223</a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-    <!-- Main Header Area -->
-    <div class="main-header-area" id="stickyHeader">
-        <div class="classy-nav-container breakpoint-off">
-            <!-- Classy Menu -->
-            <div class="head-title">Propiedades</div>
-            <nav class="classy-navbar justify-content-between" id="southNav">
-
-                <!-- Logo -->
-                <a class="nav-brand" href="index.html"><img src="img/core-img/logo.png" alt=""></a>
-
-                <!-- Navbar Toggler -->
-                <div class="classy-navbar-toggler">
-                    <span class="navbarToggler"><span></span><span></span><span></span></span>
-                </div>
-
-                <!-- Menu -->
-                <div class="classy-menu">
-
-                    <!-- close btn -->
-                    <div class="classycloseIcon">
-                        <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                    </div>
-
-                    <!-- Nav Start -->
-                    <div class="classynav">
-                        <ul>
-                            <li><a href="#">Inversiones</a></li>
-                            <li><a href="#">Tasaciones</a></li>
-                            <li><a href="#">Crédito</a></li>
-                            <li><a href="#"><i class="fa fa-lg fa-envelope"></i></a></li>
-                            <li class="hamb-toggler">
-                                <a class="hamburger" href="#">
-                                    <span class="navbarToggler"><span></span><span></span><span></span></span>
-                                </a>
-                                <ul class="list-top">
-                                    <li><a href="#">Nosotros</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <!-- Search Form -->
-                        <div class="south-search-form">
-                            <form action="#" method="post">
-                                <input type="search" name="search" id="search"
-                                    placeholder="Busca por nombre o dirección ...">
-                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
-
-                        <!-- Search Button -->
-                        <!-- <a href="#" class="searchbtn"><i class="fa" aria-hidden="true"></i></a> -->
-                    </div>
-                    <!-- Nav End -->
-                </div>
-            </nav>
-        </div>
-    </div>
-</header>
-<!-- ##### Header Area End ##### -->
 
 <!-- ##### Hero Area Start ##### -->
 <section class="hero-area">
@@ -319,67 +244,6 @@
 <!-- ##### Otras propiedades Area End ##### -->
 
 <!-- ##### Footer Area Start ##### -->
-
-<section>
-    <div class="footer">
-        <div class="container footer-info">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="img/core-img/logo.png" alt="">
-                </div>
-                <div class="col-md-4 footer-ad-telf">
-                    <div class="footer-address">
-                        <h3>Dirección</h3>
-                        <p>Direccion completa</p>
-                        <p>Calle y número de la oficina</p>
-                    </div>
-                    <div class="footer-telf">
-                        <h3>Telefonos</h3>
-                        <p>Teléfonos de Contacto</p>
-                        <p>Fijo + Celular</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="footer-social">
-                        <h3>Facebook</h3>
-                        <a href="#">facebook/urbanpropiedades/AR</a>
-                        <h3>Instagram</h3>
-                        <a href="#">instagram/urbanpropiedades/AR</a>
-                        <h3>Whatsapp</h3>
-                        <a href="#">whatsapp/urbanpropiedades/AR</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row footer-pages">
-                <div class="col-md-4 page-box">
-                    <div class="footer-header-dev">
-                        <h4>Arquitectura</h4>
-                    </div>
-                    <div class="logo-box">
-                        <img src="img/core-img/urban_dev_logo_square.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-4 page-box">
-                    <div class="footer-header-houses">
-                        <h4>Constructora</h4>
-                    </div>
-                    <div class="logo-box">
-                        <img src="img/core-img/urban_houses_logo_square.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-4 page-box">
-                    <div class="footer-header-real">
-                        <h4>Propiedades</h4>
-                    </div>
-                    <div class="logo-box">
-                        <img src="img/core-img/urban_real_logo_square.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+@include('partials.front-footer')
 
 @endsection
