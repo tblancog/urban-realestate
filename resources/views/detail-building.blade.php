@@ -1,8 +1,8 @@
 @extends('layouts.front')
 
-@push('styles')
+{{-- @push('styles')
   
-@endpush
+@endpush --}}
 
 @section('content')
 
@@ -216,5 +216,5 @@
 
 @endsection
 
-@push('scripts')
-@endpush
+{{-- @push('scripts')
+@endpush --}}
