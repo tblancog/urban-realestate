@@ -9,15 +9,6 @@ use App\Http\Requests\BuildingRequest;
 
 class BuildingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return Building::latest()->paginate(5);
-    }
 
     /**
      * Store a newly created resource in storage.

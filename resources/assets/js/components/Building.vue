@@ -51,8 +51,8 @@
                                             <router-link :to="{ name: 'buildingDetail', params: {  id: building.id } }">
                                             <h5 class="mt-0">{{ building.title }}</h5>
                                             </router-link>
-                                            Dirección{{ building.address }}
-                                            USD {{ building.price }}
+                                            <i class="fa fa-map-marker-alt fa-fw"></i>{{ building.address }}
+                                            <i class="fa fa-dollar-sign fa-fw"></i>USD {{ building.price }}
                                             <a href="#" @click="editModal(building)">
                                                 <i class="fa fa-edit blue"></i>
                                             </a>
@@ -177,8 +177,8 @@
                                       <label class="form-check-label" for="piscina">Piscina</label>
                                     </div>
                                     <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="seguridad" name="amenities[]" class="form-check-input" id="seguridad">
-                                      <label class="form-check-label" for="seguridad">Seguridad</label>
+                                      <input type="checkbox" v-model="form.amenities" value="ascensor" name="amenities[]" class="form-check-input" id="ascensor">
+                                      <label class="form-check-label" for="ascensor">Ascensor</label>
                                     </div>
                                   </div>
 
@@ -230,6 +230,24 @@
                             <button v-show="!editmode" type="submit" class="btn btn-primary">Crear</button>
                         </div>
 
+                        <!-- Contact -->
+                        <div class="form-group col-lg-9">
+                            <div class="">
+                              <input v-model="form.contact_name" type="text" name="contact_name" placeholder="Nombre del contacto"
+                                  class="form-control" :class="{ 'is-invalid': form.errors.has('contact_name') }">
+                              <has-error :form="form" field="contact_name"></has-error>
+                            </div>
+                        </div
+                        >
+                        <!-- Contact Phone-->
+                        <div class="form-group col-lg-9">
+                            <div class="">
+                              <input v-model="form.contact_phone" type="text" name="contact_phone" placeholder="Teléfono del contacto"
+                                  class="form-control" :class="{ 'is-invalid': form.errors.has('contact_phone') }">
+                              <has-error :form="form" field="contact_phone"></has-error>
+                            </div>
+                        </div>
+
                     </form>
 
                 </div>
@@ -263,7 +281,9 @@
                     status: '',
                     is_featured: '',
                     files: [],
-                    amenities: []
+                    amenities: [],
+                    contact_name: '',
+                    contact_phone: '',
                 })
             }
         },

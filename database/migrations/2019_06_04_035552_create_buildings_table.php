@@ -16,6 +16,7 @@ class CreateBuildingsTable extends Migration
         Schema::create('buildings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 50);
+            $table->string('slug', 75);
             $table->string('address', 100);
             $table->string('url_maps', 2048)->nullable();
             $table->boolean('from_price')->nullable()->default(false);
@@ -23,6 +24,8 @@ class CreateBuildingsTable extends Migration
             $table->text('description', 2048);
             $table->string('status')->default('on_sale');
             $table->boolean('is_featured')->default(false)->nullable();
+            $table->string('contact_name', 50)->nullable();
+            $table->string('contact_phone', 50)->nullable();
             $table->timestamps();
         });
     }

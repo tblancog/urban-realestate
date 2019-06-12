@@ -9,13 +9,16 @@ class Building extends Model
     protected $table = 'buildings';
     protected $fillable = [
       'title',
+      'slug',
       'address',
       'url_maps',
       'from_price',
       'price',
       'description',
       'status',
-      'is_featured'
+      'is_featured',
+      'contact_name',
+      'contact_phone',
     ];
 
     public function amenities(){
@@ -31,5 +34,10 @@ class Building extends Model
     public function getStatusAttribute(){
 
       return ucwords($this->attributes['status']);
+    }
+
+    public function setTitleAttribute($value){
+      $this->attributes['title'] = $value;
+      $this->attributes['slug'] = str_slug($value);
     }
 }

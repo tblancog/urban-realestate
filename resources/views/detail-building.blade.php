@@ -41,29 +41,24 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12 box-icons">
-                                <div class="detail-box">
-                                    <img src="{{ asset('img/icons/amen_01.png') }}" alt="">
-                                    <p>Sum</p>
+                              @forelse( $building->amenities as $amenity)
+                                
+                                <div class="col-3 detail-box">
+                                  <img src="{{ asset('img/icons/'.$amenity->icon) }}" alt="{{ $amenity->title }}">
+                                  <p style="text-transform: capitalize;">{{ $amenity->title }}</p>
                                 </div>
-                                <div class="detail-box">
-                                    <img src="{{ asset('img/icons/amen_02.png') }}" alt="">
-                                    <p>Cochera</p>
-                                </div>
-                                <div class="detail-box">
-                                    <img src="{{ asset('img/icons/amen_03.png') }}" alt="">
-                                    <p>Pileta</p>
-                                </div>
-                                <div class="detail-box">
-                                    <img src="{{ asset('img/icons/amen_04.png') }}" alt="">
-                                    <p>Sauna</p>
-                                </div>
-                                <div class="detail-box">
-                                    <img src="{{ asset('img/icons/amen_05.png') }}" alt="">
-                                    <p>Parrilla</p>
-                                </div>
+
+                              @empty
+                                
+                              <div class="detail-box">
+                                <p>No existen amenities para este edificio</p>
+                              </div>
+                                  
+                              @endforelse 
+
                             </div>
 
-                            <div class="col-12 box-icons">
+                            {{-- <div class="col-12 box-icons">
                                 <div class="detail-box">
                                     <img src="{{ asset('img/icons/amen_06.png') }}" alt="">
                                     <p>WIFI Gratuito</p>
@@ -84,7 +79,7 @@
                                     <img src="{{ asset('img/icons/amen_10.png') }}" alt="">
                                     <p>Conserjeria</p>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -92,23 +87,23 @@
             <div class="col-12">
                 <div class="dept-contact">
                     <form>
-                        <h3 class="contact-title">Contacto:</h3>
-                        <h3 class="contact-title-2">+549 11 53294260</h3>
+                    <h3 class="contact-title">Contacto: {{ $building->contact_name }}</h3>
+                        <h3 class="contact-title-2">{{ $building->contact_phone }}</h3>
                         <div class="contact-info">
                             <div class="contact-info-item">
-                                <input type="text" placeholder="Nombre:">
+                                <input type="text" placeholder="Nombre">
                                 <p class="contact-sub-info"></p>
                             </div>
                             <div class="contact-info-item">
-                                <input type="text" placeholder="Teléfono:">
+                                <input type="text" placeholder="Teléfono">
                                 <p class="contact-sub-info"></p>
                             </div>
                             <div class="contact-info-item">
-                                <input type="email" placeholder="Email:">
+                                <input type="email" placeholder="Email">
                                 <p class="contact-sub-info"></p>
                             </div>
                             <div class="contact-info-item">
-                                <textarea name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje:"></textarea>
+                                <textarea name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
                                 <p class="contact-sub-info"></p>
                             </div>
                         </div>
@@ -126,17 +121,11 @@
                 <h3 class="desc-title">Descripción</h3>
             </div>
             <div class="description-bot">
-                <h5 class="description-header">
+                {{-- <h5 class="description-header">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum ex ac neque iaculis.
-                </h5>
+                </h5> --}}
                 <p class="description-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mi nulla, egestas id dolor a,
-                    tempus malesuada magna. Vestibulum congue rhoncus odio sit amet finibus. Class aptent taciti
-                    sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed et sem ut odio
-                    placerat feugiat. Quisque interdum nunc sed cursus lobortis. Sed accumsan augue ut pharetra
-                    consectetur. Etiam lacinia augue vel purus tristique aliquet. Morbi venenatis magna ac nulla
-                    congue ornare. Nunc vel tortor sed tellus cursus luctus. Suspendisse potenti. Cras id venenatis
-                    libero.
+                    {{ $building->description }}
                 </p>
             </div>
         </div>
