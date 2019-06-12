@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
 use App\Building;
 use App\Amenity;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\BuildingRequest;
-
 
 class BuildingController extends Controller
 {
@@ -50,10 +48,9 @@ class BuildingController extends Controller
      * @param  \App\Building  $building
      * @return \Illuminate\Http\Response
      */
-    public function show($building)
+    public function show(Building $building)
     {
-        return $building;
-        // return view();
+      return view('detail-building', compact('building'));
     }
 
     /**

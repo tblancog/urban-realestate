@@ -12,10 +12,10 @@
     <title>Urban - Desarrollo de proyectos urbanísiticos | Home</title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    {{-- <link rel="icon" href="{{ asset('img/core-img/favicon.ico') }}"> --}}
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ mix('css/front.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/front.css') }}">
 
 </head>
 
@@ -26,17 +26,17 @@
   <!-- ##### Call To Action Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="{{ asset('js/jquery/jquery-2.2.4.min.js') }}"></script>
     <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
     <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
-    <script src="js/classy-nav.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
+    <script src="{{ asset('js/plugins.js') }} "></script>
+    <script src="{{ asset('js/classy-nav.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <!-- Active js -->
-    <script src="js/active.js"></script>
+    <script src="{{ asset('js/active.js') }}"></script>
     <!-- <script src="/js/app.js"></script>  -->
 </body>
 

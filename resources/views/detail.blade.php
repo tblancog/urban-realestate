@@ -1,9 +1,10 @@
 @extends('layouts.front')
 
 @section('content')
-<div id="app">
-    <example-component></example-component>
-</div>
+
+<!-- ##### Front Header Area Start ##### -->
+@include('partials.front-header')
+<!-- ##### Front Header Area End ##### -->
 
 <!-- Preloader -->
 <div id="preloader">
@@ -239,5 +240,9 @@
         </div>
     </div>
 </section>
+
+<!-- ##### Footer Area Start ##### -->
+@include('partials.front-footer')
+
 
 @endsection

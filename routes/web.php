@@ -16,10 +16,13 @@ Route::get('/dashboard', function(){
 Route::post('images-upload', 'ImageController@upload');
 
 
+Route::get('/buildings/{building}', 'BuildingController@show');
+// Route::get('/deparments/{department}', 'DeparmentController@show');
+
 // Static pages
-Route::get('/detail', function () {
-  return view('detail');
-});
+// Route::get('/detail', function () {
+//   return view('detail');
+// });
 
 Route::get('/detail_building', function () {
   return view('detail-building');
@@ -42,6 +45,6 @@ Route::get('/houses_details', function () {
 });
 
 Route::get('/{path}',function(){
-  return view('dashboard');
+  return abort(404);
 })->where( 'path', '([A-z\d-/_.]+)?' );
 

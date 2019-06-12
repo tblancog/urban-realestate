@@ -1,6 +1,11 @@
 @extends('layouts.front')
 
 @section('content')
+
+<!-- ##### Front Header Area Start ##### -->
+{{-- @include('partials.front-header') --}}
+<!-- ##### Front Header Area End ##### -->
+
 <!-- Preloader -->
 <div id="preloader">
     <div class="south-load"></div>
@@ -8,23 +13,6 @@
 
 <!-- ##### Header Area Start ##### -->
 <header class="header-area">
-
-    <!-- Top Header Area -->
-    <!-- <div class="top-header-area">
-            <div class="h-100 d-md-flex justify-content-between align-items-center">
-                <div class="email-address">
-                    <a href="mailto:contact@southtemplate.com">contact@southtemplate.com</a>
-                </div>
-                <div class="phone-number d-flex">
-                    <div class="icon">
-                        <img src="img/icons/phone-call.png" alt="">
-                    </div>
-                    <div class="number">
-                        <a href="tel:+45 677 8993000 223">+45 677 8993000 223</a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
     <!-- Main Header Area -->
     <div class="main-header-area" id="stickyHeader">
@@ -56,44 +44,6 @@
                             <li><a href="#">Inversiones</a></li>
                             <li><a href="#">Tasaciones</a></li>
                             <li><a href="#">Contacto</a></li>
-                            <!-- <li><a href="#">Mega Menu</a>
-                                    <div class="megamenu">
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Headline 1</li>
-                                            <li><a href="#">Mega Menu Item 1</a></li>
-                                            <li><a href="#">Mega Menu Item 2</a></li>
-                                            <li><a href="#">Mega Menu Item 3</a></li>
-                                            <li><a href="#">Mega Menu Item 4</a></li>
-                                            <li><a href="#">Mega Menu Item 5</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Headline 2</li>
-                                            <li><a href="#">Mega Menu Item 1</a></li>
-                                            <li><a href="#">Mega Menu Item 2</a></li>
-                                            <li><a href="#">Mega Menu Item 3</a></li>
-                                            <li><a href="#">Mega Menu Item 4</a></li>
-                                            <li><a href="#">Mega Menu Item 5</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Headline 3</li>
-                                            <li><a href="#">Mega Menu Item 1</a></li>
-                                            <li><a href="#">Mega Menu Item 2</a></li>
-                                            <li><a href="#">Mega Menu Item 3</a></li>
-                                            <li><a href="#">Mega Menu Item 4</a></li>
-                                            <li><a href="#">Mega Menu Item 5</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Headline 4</li>
-                                            <li><a href="#">Mega Menu Item 1</a></li>
-                                            <li><a href="#">Mega Menu Item 2</a></li>
-                                            <li><a href="#">Mega Menu Item 3</a></li>
-                                            <li><a href="#">Mega Menu Item 4</a></li>
-                                            <li><a href="#">Mega Menu Item 5</a></li>
-                                        </ul>
-                                    </div>
-                                </li> 
-                                <li><a href="contact.html">Contact</a></li>
-                                -->
                         </ul>
 
                         <!-- Search Form -->
@@ -458,5 +408,8 @@
         </div>
     </div>
 </section>
+
+<!-- ##### Footer Area Start ##### -->
+{{-- @include('partials.front-footer') --}}
 
 @endsection
