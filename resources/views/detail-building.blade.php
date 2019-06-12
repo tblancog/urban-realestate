@@ -57,29 +57,6 @@
                               @endforelse 
 
                             </div>
-
-                            {{-- <div class="col-12 box-icons">
-                                <div class="detail-box">
-                                    <img src="{{ asset('img/icons/amen_06.png') }}" alt="">
-                                    <p>WIFI Gratuito</p>
-                                </div>
-                                <div class="detail-box">
-                                    <img src="{{ asset('img/icons/amen_07.png') }}" alt="">
-                                    <p>Ascensor</p>
-                                </div>
-                                <div class="detail-box">
-                                    <img src="{{ asset('img/icons/amen_08.png') }}" alt="">
-                                    <p>Gimnasio</p>
-                                </div>
-                                <div class="detail-box">
-                                    <img src="{{ asset('img/icons/amen_09.png') }}" alt="">
-                                    <p>Lavadero</p>
-                                </div>
-                                <div class="detail-box">
-                                    <img src="{{ asset('img/icons/amen_10.png') }}" alt="">
-                                    <p>Conserjeria</p>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </div>

@@ -27,9 +27,9 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
-        // Route::bind('building', function ($value) {
-        //     return Building::find($value) ?? abort(404);
-        // });
+        Route::bind('building', function ($value) {
+            return Building::where('slug', $value)->first() ?? abort(404);
+        });
         // Route::bind('department', function ($value) {
         //     return App\Department::find($value) ?? abort(404);
         // });

@@ -5,8 +5,10 @@ use App\Building;
 
 $factory->define(Building::class, function (Faker $faker) {
 
+    $buildingName = $faker->unique()->numerify('Edificio ####');
     return [
-      'title'=> $faker->unique()->numerify('Edificio ####'),
+      'title'=> $buildingName,
+      'slug'=> str_slug($buildingName),
       'address'=> $faker->streetAddress(),
       'url_maps'=> $faker->streetAddress(),
       'from_price'=> $faker->boolean,
