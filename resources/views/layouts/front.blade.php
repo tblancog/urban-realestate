@@ -16,7 +16,7 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('css/front.css') }}">
-
+    @stack('styles')
 </head>
 
 <body>
@@ -37,7 +37,10 @@
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <!-- Active js -->
     <script src="{{ asset('js/active.js') }}"></script>
+    <!-- Slippery js -->
+    <script src="{{ asset('js/slippery.min.js') }}"></script>
     <!-- <script src="/js/app.js"></script>  -->
+    @stack('scripts')
 </body>
 
 </html>
