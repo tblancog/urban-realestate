@@ -11,6 +11,7 @@ class Building extends Model
       'title',
       'slug',
       'address',
+      'image_name',
       'url_maps',
       'from_price',
       'price',

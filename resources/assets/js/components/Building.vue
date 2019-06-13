@@ -13,7 +13,7 @@
                     </div>
                     <!-- /.card-header -->
 
-                    <div class="media" v-for="building in buildings.data" :key="building.id">
+                    <div class="media" v-for="building in buildings.data" :key="building.slug">
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -44,7 +44,10 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-3">
-                                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/250x180"></a> 
+                                    <!-- <a href="https://placeholder.com"><img src="https://via.placeholder.com/250x180"></a>  -->
+                                    <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }">
+                                      <img :src="building.image_name"/>
+                                    </router-link>
                                     </div>
                                     <div class="col-md-6">                              
                                         <div class="info-card">
@@ -73,10 +76,10 @@
                                                     <a class="btn-more" href="#">Ver más</a>
                                                 </router-link>            
                                             </div>
-                                            <div class="deliver-box">
+                                            <!-- <div class="deliver-box">
                                                 <h6>Entrega</h6>
                                                 <h6 class="deliver-date">Noviembre 2021</h6>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
