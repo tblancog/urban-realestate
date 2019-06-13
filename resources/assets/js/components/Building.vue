@@ -13,7 +13,7 @@
                     </div>
                     <!-- /.card-header -->
 
-                    <div class="media" v-for="building in buildings.data" :key="building.slug">
+                    <div class="media" v-for="building in buildings.data" :key="building.id">
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -224,6 +224,23 @@
                               </div>
                               <has-error :form="form" field="featured"></has-error>
                           </div>
+                        <!-- Contact -->
+                        <div class="form-group col-lg-6">
+                            <div class="">
+                              <input v-model="form.contact_name" type="text" name="contact_name" placeholder="Nombre del contacto"
+                                  class="form-control" :class="{ 'is-invalid': form.errors.has('contact_name') }">
+                              <has-error :form="form" field="contact_name"></has-error>
+                            </div>
+                        </div
+                        >
+                        <!-- Contact Phone-->
+                        <div class="form-group col-lg-6">
+                            <div class="">
+                              <input v-model="form.contact_phone" type="text" name="contact_phone" placeholder="Teléfono del contacto"
+                                  class="form-control" :class="{ 'is-invalid': form.errors.has('contact_phone') }">
+                              <has-error :form="form" field="contact_phone"></has-error>
+                            </div>
+                        </div>
                         </div>
 
                         <!-- Status -->
@@ -233,23 +250,6 @@
                             <button v-show="!editmode" type="submit" class="btn btn-primary">Crear</button>
                         </div>
 
-                        <!-- Contact -->
-                        <div class="form-group col-lg-9">
-                            <div class="">
-                              <input v-model="form.contact_name" type="text" name="contact_name" placeholder="Nombre del contacto"
-                                  class="form-control" :class="{ 'is-invalid': form.errors.has('contact_name') }">
-                              <has-error :form="form" field="contact_name"></has-error>
-                            </div>
-                        </div
-                        >
-                        <!-- Contact Phone-->
-                        <div class="form-group col-lg-9">
-                            <div class="">
-                              <input v-model="form.contact_phone" type="text" name="contact_phone" placeholder="Teléfono del contacto"
-                                  class="form-control" :class="{ 'is-invalid': form.errors.has('contact_phone') }">
-                              <has-error :form="form" field="contact_phone"></has-error>
-                            </div>
-                        </div>
 
                     </form>
 

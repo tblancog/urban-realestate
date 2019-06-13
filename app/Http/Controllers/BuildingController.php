@@ -25,6 +25,7 @@ class BuildingController extends Controller
     public function store(BuildingRequest $request)
     {
         $building = Building::create($request->all());
+        return $request->all();
         $building->amenities()->sync(
           Amenity::whereIn('title', $request->amenities)->get()
         );
