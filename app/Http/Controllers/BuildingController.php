@@ -25,9 +25,9 @@ class BuildingController extends Controller
 
         //  Image store logic
 
-        $building->images()->sync(
-          Amenity::whereIn('title', $request->amenities)->get()
-        );
+        // $building->images()->sync(
+        //   Amenity::whereIn('title', $request->amenities)->get()
+        // );
         return $building;
         return ['message' => 'Edificio creado', 'id'=> $building->id];
     }

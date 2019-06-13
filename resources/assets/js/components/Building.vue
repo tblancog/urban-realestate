@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="col-md-6">                              
                                         <div class="info-card">
-                                            <router-link :to="{ name: 'buildingDetail', params: {  id: building.id } }">
+                                            <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }">
                                             <h5 class="mt-0">{{ building.title }}</h5>
                                             </router-link>
                                             <i class="fa fa-map-marker-alt fa-fw"></i>{{ building.address }}

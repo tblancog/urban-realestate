@@ -16,11 +16,7 @@ Route::get('/dashboard', function(){
 Route::post('images-upload', 'ImageController@upload');
 
 
-Route::get('buildings', 'BuildingController@index');
 Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');
-// Route::get('/buildings/{building}', 'BuildingController@show');
-// Route::resource('buildings', 'BuildingController')
-//        ->except(['create', 'edit']);
 // Route::get('/deparments/{department}', 'DeparmentController@show');
 
 // Static pages
