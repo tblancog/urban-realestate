@@ -42,9 +42,9 @@ class Building extends Model
       $this->attributes['slug'] = str_slug($value);
     }
 
-    public function getImageNameAttribute($value){
+    // public function getImageNameAttribute($value){
 
-      // 
-      $this->attributes['image_name'] = 
-    }
+    //   // 
+    //   $this->attributes['image_name'] = 
+    // }
 }

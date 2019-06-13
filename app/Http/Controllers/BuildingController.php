@@ -10,6 +10,12 @@ use App\Http\Requests\BuildingRequest;
 class BuildingController extends Controller
 {
 
+  public function index(){
+    
+    $buildings = Building::latest()->paginate(5);
+    return view('investments',compact('buildings'));
+  }
+
     /**
      * Store a newly created resource in storage.
      *

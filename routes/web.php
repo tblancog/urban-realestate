@@ -17,7 +17,10 @@ Route::post('images-upload', 'ImageController@upload');
 
 
 Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');
-// Route::get('/deparments/{department}', 'DeparmentController@show');
+Route::get('investments', 'BuildingController@index')->name('buildings.list');
+// Route::get('investments', function(){
+//   return 'abc';
+// });
 
 // Static pages
 // Route::get('/detail', function () {
@@ -44,13 +47,17 @@ Route::get('/houses_details', function () {
   return view('houses-details');
 });
 
-Route::get('/investments', function () {
-  return view('investments');
-});
+// Route::get('/investments', function () {
+//   return view('contact');
+// })->name('investments.index');
 
 Route::get('/appraisals', function () {
-  return view('appraisals');
-});
+  return view('contact');
+})->name('appraisals.index');
+
+Route::get('/credits', function () {
+  return view('contact');
+})->name('credits.index');
 
 Route::get('/{path}',function(){
   return redirect('/dashboard');

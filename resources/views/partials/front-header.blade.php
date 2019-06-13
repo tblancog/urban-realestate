@@ -27,9 +27,9 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="#">Inversiones</a></li>
-                            <li><a href="#">Tasaciones</a></li>
-                            <li><a href="#">Crédito</a></li>
+                            <li><a href="{{ route('buildings.list') }}">Inversiones</a></li>
+                            <li><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
+                            <li><a href="{{ route('credits.index') }}">Crédito</a></li>
                             <li><a href="#"><i class="fa fa-lg fa-envelope"></i></a></li>
                             <li class="hamb-toggler">
                                 <a class="hamburger" href="#">

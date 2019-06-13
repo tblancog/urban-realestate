@@ -3127,7 +3127,7 @@ img {
 /* 23.0 Detail Area CSS */
 
 .detail-page {
-    padding: 130px 30px 50px 30px;
+    padding: 30px 30px 50px 30px;
     background-color: #e8e8e8;
 
     h1,
@@ -3593,7 +3593,6 @@ img {
 
 .investments-page {
     .card {
-        margin-top: 150px;
         .card-header {
             h3 {
                 display: inline-block;
@@ -3697,7 +3696,12 @@ img {
 /* 25.0 Appraisals Area CSS */
 
 .appraisals-page {
+  max-width: 700px;
+  margin: 0 auto;
     form {
         margin-top: 50px;
+        textarea{
+          height: auto;
+        }
     }
 }

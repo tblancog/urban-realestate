@@ -38,7 +38,7 @@
                             <input type="email" class="form-control" id="inputAddress2" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Estoy interesado en contactarlos" rows="3"></textarea>
+                        <textarea rows="4" class="form-control" id="exampleFormControlTextarea1" placeholder="Estoy interesado en contactarlos" rows="3"></textarea>
                     </div>
                 </form>
             </div>
