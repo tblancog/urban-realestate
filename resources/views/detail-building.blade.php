@@ -29,9 +29,12 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="dept-slider">
+            
+          @include('components.carousel')
+
+            {{-- <div class="dept-slider">
                 <img src="{{ asset('img/bg-img/feature1.jpg') }}" alt="">
-            </div>
+            </div> --}}
 
         </div>
     <div class="col-md-6">

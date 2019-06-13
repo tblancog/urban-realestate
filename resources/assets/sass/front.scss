@@ -3175,7 +3175,7 @@ img {
     }
 
     .dept-slider {
-        margin-bottom: 30px;
+        padding: 30px;
     }
 
     .dept-details {
@@ -3183,7 +3183,6 @@ img {
         padding: 10px 30px;
         display: flex;
         justify-content: space-between;
-        background-color: #ffffff;
 
         @media (max-width: 482px) {
             padding: 5px;
@@ -3226,7 +3225,6 @@ img {
 
     .dept-contact {
         padding: 15px 40px;
-        background-color: #ffffff;
 
         .contact-title {
             display: inline-block;
@@ -3256,6 +3254,12 @@ img {
         }
     }
 
+    .dept-slider, 
+    .dept-details, 
+    .dept-contact{
+        background-color: #ffffff;
+    } 
+    
     .btn.contact-send {
         float: right;
         margin-top: 20px;
