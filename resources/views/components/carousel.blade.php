@@ -34,6 +34,9 @@
                 <!-- main slider carousel items -->
                 <div class="carousel-inner">
                     <div class="active carousel-item" data-slide-number="0">
+                        <img src="{{ $item->image_name }}" class="img-fluid">
+                    </div>
+                    {{-- <div class="active carousel-item" data-slide-number="0">
                         <img src="http://placehold.it/1200x480&amp;text=one" class="img-fluid">
                     </div>
                     <div class="carousel-item" data-slide-number="1">
@@ -56,7 +59,7 @@
                     </div>
                     <div class="carousel-item" data-slide-number="7">
                         <img src="http://placehold.it/1200x480&amp;text=eight" class="img-fluid">
-                    </div>
+                    </div> --}}
 
                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -43,10 +43,10 @@
                         <div class="media-body">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 col-sm-12">
                                     <!-- <a href="https://placeholder.com"><img src="https://via.placeholder.com/250x180"></a>  -->
                                     <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }">
-                                      <img :src="building.image_name"/>
+                                      <img :src="building.image_name" class="img-fluid"/>
                                     </router-link>
                                     </div>
                                     <div class="col-md-6">                              

@@ -41,4 +41,10 @@ class Building extends Model
       $this->attributes['title'] = $value;
       $this->attributes['slug'] = str_slug($value);
     }
+
+    public function getImageNameAttribute($value){
+
+      // 
+      $this->attributes['image_name'] = 
+    }
 }
