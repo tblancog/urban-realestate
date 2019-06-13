@@ -48,6 +48,10 @@ Route::get('/investments', function () {
   return view('investments');
 });
 
+Route::get('/appraisals', function () {
+  return view('appraisals');
+});
+
 Route::get('/{path}',function(){
   return redirect('/dashboard');
 })->where( 'path', '([A-z\d-/_.]+)?' );

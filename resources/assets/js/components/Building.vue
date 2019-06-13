@@ -44,7 +44,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-3">
-                                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/250x180"></a> 
+                                    <a href="https://placeholder.com"><img class="img-fluid" src="https://via.placeholder.com/250x180"></a> 
                                     </div>
                                     <div class="col-md-6">                              
                                         <div class="info-card">
