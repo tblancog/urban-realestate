@@ -39,7 +39,6 @@ class BuildingController extends Controller
         $building->images()->sync(
           Amenity::whereIn('title', $request->amenities)->get()
         );
-        return $building;
         return ['message' => 'Edificio creado', 'id'=> $building->id];
     }
 
@@ -53,7 +52,6 @@ class BuildingController extends Controller
     public function show($building)
     {
         return $building;
-        // return view();
     }
 
     /**
@@ -76,9 +74,9 @@ class BuildingController extends Controller
      * @param  \App\Building  $building
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($building)
     {
-        $item = Building::findOrFail($id);
+        $item = Building::where('slug', $building->slug)->first();
 
         $item->delete();
 

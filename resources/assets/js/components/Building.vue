@@ -57,7 +57,7 @@
                                                 <i class="fa fa-edit blue"></i>
                                             </a>
                                             /
-                                            <a href="#" @click="deleteItem(building.id)">
+                                            <a href="#" @click="deleteItem(building.slug)">
                                                 <i class="fa fa-trash red"></i>
                                             </a>
                                         </div>
@@ -324,7 +324,7 @@
                 this.form.reset();
                 $('#addNew').modal('show');
             },
-            deleteItem(id) {
+            deleteItem(slug) {
                 swal({
                     title: 'Estás seguro?',
                     text: "No será posible revertir esta acción!",
@@ -337,7 +337,7 @@
 
                     // Send request to the server
                     if (result.value) {
-                        this.form.delete('api/buildings/' + id).then(() => {
+                        this.form.delete('api/buildings/' + slug).then(() => {
                             swal(
                                 'Borrado!',
                                 'Edificio borrado.',
