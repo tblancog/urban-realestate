@@ -5,14 +5,19 @@ use App\Building;
 
 $factory->define(Building::class, function (Faker $faker) {
 
+    $buildingName = $faker->unique()->numerify('Edificio ####');
     return [
-      'title'=> $faker->unique()->numerify('Edificio ####'),
+      'title'=> $buildingName,
+      'slug'=> str_slug($buildingName),
       'address'=> $faker->streetAddress(),
+      'image_name'=> 'https://via.placeholder.com/250x180',
       'url_maps'=> $faker->streetAddress(),
       'from_price'=> $faker->boolean,
       'price'=> $faker->randomNumber(6),
       'description'=> $faker->paragraph(2),
       'status'=> 'en venta',
       'is_featured'=> $faker->boolean,
+      'contact_name'=> $faker->name,
+      'contact_phone'=> $faker->phoneNumber,
     ];
 });

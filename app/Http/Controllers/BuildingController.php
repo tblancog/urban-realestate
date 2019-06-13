@@ -1,25 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
 use App\Building;
 use App\Amenity;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\BuildingRequest;
-
 
 class BuildingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return Building::latest()->paginate(5);
-    }
+
+  public function index(){
+    
+    $buildings = Building::latest()->paginate(5);
+    return view('investments',compact('buildings'));
+  }
 
     /**
      * Store a newly created resource in storage.
@@ -36,9 +31,10 @@ class BuildingController extends Controller
 
         //  Image store logic
 
-        $building->images()->sync(
-          Amenity::whereIn('title', $request->amenities)->get()
-        );
+        // $building->images()->sync(
+        //   Amenity::whereIn('title', $request->amenities)->get()
+        // );
+        return $building;
         return ['message' => 'Edificio creado', 'id'=> $building->id];
     }
 
@@ -49,9 +45,9 @@ class BuildingController extends Controller
      * @param  \App\Building  $building
      * @return \Illuminate\Http\Response
      */
-    public function show($building)
+    public function show(Building $building)
     {
-        return $building;
+      return view('detail-building', compact('building'));
     }
 
     /**
@@ -74,9 +70,9 @@ class BuildingController extends Controller
      * @param  \App\Building  $building
      * @return \Illuminate\Http\Response
      */
-    public function destroy($building)
+    public function destroy($id)
     {
-        $item = Building::where('slug', $building->slug)->first();
+        $item = Building::findOrFail($id);
 
         $item->delete();
 

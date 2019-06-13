@@ -9,7 +9,7 @@
             <nav class="classy-navbar justify-content-between" id="southNav">
 
                 <!-- Logo -->
-                <a class="nav-brand" href="/"><img src="img/core-img/logo.png" alt=""></a>
+                <a class="nav-brand" href="/"><img src="{{ asset('img/core-img/logo.png') }}" alt=""></a>
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
@@ -27,16 +27,23 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="#">Inversiones</a></li>
-                            <li><a href="#">Tasaciones</a></li>
-                            <li><a href="#">Crédito</a></li>
+                            <li><a href="{{ route('buildings.list') }}">Inversiones</a></li>
+                            <li><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
+                            <li><a href="{{ route('credits.index') }}">Crédito</a></li>
                             <li><a href="#"><i class="fa fa-lg fa-envelope"></i></a></li>
                             <li class="hamb-toggler">
                                 <a class="hamburger" href="#">
                                     <span class="navbarToggler"><span></span><span></span><span></span></span>
                                 </a>
                                 <ul class="list-top">
-                                    <li><a href="#">Nosotros</a></li>
+                                    <!--<li><a href="#">Nosotros</a></li>
+                                    <li><a href="#">Propiedades destacadas</a></li>
+                                    <li><a href="#">Propiedades</a></li>
+                                    <li><a href="#">Crédito hipotecario</a></li>
+                                    <li><a href="#">Financiación</a></li>
+                                    <li><a href="#">Contacto</a></li>
+                                    <li><a href="#">Mail</a></li>
+                                    <li><a href="#">Celular</a></li>-->
                                 </ul>
                             </li>
                         </ul>

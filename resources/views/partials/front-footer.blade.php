@@ -5,7 +5,7 @@
         <div class="container footer-info">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="img/core-img/logo.png" alt="">
+                    <img src="{{ asset('img/core-img/logo.png') }}" alt="">
                 </div>
                 <div class="col-md-4 footer-ad-telf">
                     <div class="footer-address">
@@ -38,7 +38,7 @@
                         <h4>Arquitectura</h4>
                     </div>
                     <div class="logo-box">
-                        <img src="img/core-img/urban_dev_logo_square.png" alt="">
+                        <img src="{{ asset('img/core-img/urban_de') }}v_logo_square.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-4 page-box">
@@ -46,7 +46,7 @@
                         <h4>Constructora</h4>
                     </div>
                     <div class="logo-box">
-                        <img src="img/core-img/urban_houses_logo_square.png" alt="">
+                        <img src="{{ asset('img/core-img/urban_ho') }}uses_logo_square.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-4 page-box">
@@ -54,7 +54,7 @@
                         <h4>Propiedades</h4>
                     </div>
                     <div class="logo-box">
-                        <img src="img/core-img/urban_real_logo_square.png" alt="">
+                        <img src="{{ asset('img/core-img/urban_re') }}al_logo_square.png" alt="">
                     </div>
                 </div>
             </div>

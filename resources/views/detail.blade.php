@@ -33,30 +33,36 @@
             <div class="row">
                 <div class="col-12">
                     <div class="dept-details">
-                        <div class="detail-box">
-                            <img src="img/icons/superficie.svg" alt="">
-                            <p>Superficie</p>
-                            <h4>90m<sup>2</sup></h4>
-                        </div>
-                        <div class="detail-box">
-                            <img src="img/icons/cama.svg" alt="">
-                            <p>Dormitorios</p>
-                            <h4>3</h4>
-                        </div>
-                        <div class="detail-box">
-                            <img src="img/icons/ducha.svg" alt="">
-                            <p>Baños</p>
-                            <h4>2</h4>
-                        </div>
-                        <div class="detail-box">
-                            <img src="img/icons/auto.svg" alt="">
-                            <p>Cochera</p>
-                            <h4>1</h4>
-                        </div>
-                        <div class="detail-box">
-                            <img src="img/icons/pileta.svg" alt="">
-                            <p>Amenities</p>
-                            <h4>Si</h4>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 box-icons">
+                                    <div class="detail-box">
+                                        <img src="img/icons/superficie.svg" alt="">
+                                        <p>Superficie</p>
+                                        <h4>90m<sup>2</sup></h4>
+                                    </div>
+                                    <div class="detail-box">
+                                        <img src="img/icons/cama.svg" alt="">
+                                        <p>Dormitorios</p>
+                                        <h4>3</h4>
+                                    </div>
+                                    <div class="detail-box">
+                                        <img src="img/icons/ducha.svg" alt="">
+                                        <p>Baños</p>
+                                        <h4>2</h4>
+                                    </div>
+                                    <div class="detail-box">
+                                        <img src="img/icons/auto.svg" alt="">
+                                        <p>Cochera</p>
+                                        <h4>1</h4>
+                                    </div>
+                                    <div class="detail-box">
+                                        <img src="img/icons/pileta.svg" alt="">
+                                        <p>Amenities</p>
+                                        <h4>Si</h4>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

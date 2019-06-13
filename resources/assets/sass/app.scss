@@ -385,3 +385,30 @@ a {
 .btn-success{
   background: $green;
 }
+
+// BUILDING VUE
+
+.sidebar-mini {
+    .content-wrapper {
+        .card {
+            .card-footer {
+                .pagination {
+                    .page-item {
+                        .page-link {
+                            background-color: #fff;
+                            border: 1px solid #7d7d7d;
+                            color: #7d7d7d;
+                        }
+                        &.active {
+                            .page-link {
+                                background-color: #51B848;
+                                border: 1px solid #51B848;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
