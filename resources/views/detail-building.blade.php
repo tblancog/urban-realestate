@@ -18,8 +18,19 @@
 <section class="detail-page">
     <div class="row">
         <div class="col-md-6">
-            <div class="dept-name">
-                <h2>{{ $building->title }}</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="dept-name">
+                            <h2>{{ $building->title }}</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 featured-col">
+                        <div class="featured-box">
+                            <a class="featured" href="#">Destacado</a>
+                        </div>
+                    </div>                                
+                </div>
             </div>
         </div>
         <div class="col-md-6">

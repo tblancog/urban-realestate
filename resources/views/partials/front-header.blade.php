@@ -36,7 +36,14 @@
                                     <span class="navbarToggler"><span></span><span></span><span></span></span>
                                 </a>
                                 <ul class="list-top">
-                                    <li><a href="#">Nosotros</a></li>
+                                    <!--<li><a href="#">Nosotros</a></li>
+                                    <li><a href="#">Propiedades destacadas</a></li>
+                                    <li><a href="#">Propiedades</a></li>
+                                    <li><a href="#">Crédito hipotecario</a></li>
+                                    <li><a href="#">Financiación</a></li>
+                                    <li><a href="#">Contacto</a></li>
+                                    <li><a href="#">Mail</a></li>
+                                    <li><a href="#">Celular</a></li>-->
                                 </ul>
                             </li>
                         </ul>
