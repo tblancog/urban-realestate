@@ -202,7 +202,6 @@
 
         <div class="row">
 
-
           {{-- Others --}}
         @forelse ($others as $oth)
             <!-- Single Featured Property -->
@@ -210,7 +209,7 @@
                 <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
-                        <a href="/detail"><img src="img/bg-img/feature{{ $loop->iteration }}.jpg" alt=""></a>
+                        <a href="{{ route('buildings.detail', $oth->slug) }}"><img src="img/bg-img/feature{{ $loop->iteration }}.jpg" alt=""></a>
                     </div>
                     <!-- Property Content -->
                     <div class="property-content">
