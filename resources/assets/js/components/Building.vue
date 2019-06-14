@@ -51,9 +51,11 @@
                                     </div>
                                     <div class="col-md-6">                              
                                         <div class="info-card">
-                                            <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }">
-                                            <h5 class="mt-0">{{ building.title }}</h5>
-                                            </router-link>
+                                            <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
+                                              <h5 class="mt-0">{{ building.title }}</h5>
+                                            </a>
+                                            <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
+                                            <!-- </router-link> -->
                                             <i class="fa fa-map-marker-alt fa-fw"></i>{{ building.address }}
                                             <i class="fa fa-dollar-sign fa-fw"></i>USD {{ building.price }}
                                             <a href="#" @click="editModal(building)">
@@ -256,6 +258,9 @@
                 </div>
             </div>
         </div>
+
+        <!-- Show details modal -->
+        <modal-details-component :item="selected"/>
     </div>
 
 
@@ -264,14 +269,17 @@
 
 <script>
     import ImageUploader from './ImageUploader';
+    import ModalDetailsComponent from './ModalDetailsComponent';
 
     export default {
        components: {
-            'image-uploader': ImageUploader
+            'image-uploader': ImageUploader,
+            ModalDetailsComponent,
         },
         data() {
             return {
                 editmode: false,
+                selected: {},
                 buildings: {},
                 form: new Form({
                     id: '',
@@ -326,6 +334,9 @@
                 this.editmode = false;
                 this.form.reset();
                 $('#addNew').modal('show');
+            },
+            showModal(item) {
+                $('#show').modal('show');
             },
             deleteItem(slug) {
                 swal({
