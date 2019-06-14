@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-md-6 featured-col">
                         <div class="featured-box">
-                            <a class="featured" href="#">Destacado</a>
+                            <span class="featured">Destacado</a>
                         </div>
                     </div>                                
                 </div>

@@ -29,7 +29,7 @@ class Building extends Model
 
     public function images(){
 
-      return $this->hasMany('App\Image');
+      return $this->hasMany('App\Image', 'building_id');
     }
 
     public function getStatusAttribute(){
