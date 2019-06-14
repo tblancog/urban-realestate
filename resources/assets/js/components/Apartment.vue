@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Edificios</h3>
+                        <h3 class="card-title">Departamentos</h3>
                         <div class="card-tools">
                             <button class="btn btn-success" @click="newModal">Crear Nuevo <i
                                     class="fas fa-user-plus fa-fw"></i></button>
@@ -13,7 +13,7 @@
                     </div>
                     <!-- /.card-header -->
 
-                    <div class="media" v-for="building in buildings.data" :key="building.id">
+                    <div class="media" v-for="apartment in apartments.data" :key="apartment.id">
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -45,36 +45,36 @@
                                 <div class="row">
                                     <div class="col-md-3 col-sm-12">
                                     <!-- <a href="https://placeholder.com"><img src="https://via.placeholder.com/250x180"></a>  -->
-                                    <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
-                                      <img src="/images/uploads/building_1.jpg" class="img-fluid"/>
-                                    <!-- </router-link> -->
+                                    <router-link :to="{ name: 'apartmentDetail', params: {  id: apartment.slug } }">
+                                      <img src="https://picsum.photos/id/8/600/350" class="img-fluid"/>
+                                    </router-link>
                                     </div>
                                     <div class="col-md-6">                              
                                         <div class="info-card">
-                                            <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
-                                              <h5 class="mt-0">{{ building.title }}</h5>
+                                            <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = apartment">
+                                              <h5 class="mt-0">{{ apartment.title }}</h5>
                                             </a>
-                                            <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
+                                            <!-- <router-link :to="{ name: 'apartmentDetail', params: {  id: apartment.slug } }"> -->
                                             <!-- </router-link> -->
-                                            <i class="fa fa-map-marker-alt fa-fw"></i>{{ building.address }}
-                                            <i class="fa fa-dollar-sign fa-fw"></i>USD {{ building.price }}
-                                            <a href="#" @click="editModal(building)">
+                                            <i class="fa fa-map-marker-alt fa-fw"></i>{{ apartment.address }}
+                                            <i class="fa fa-dollar-sign fa-fw"></i>USD {{ apartment.price }}
+                                            <a href="#" @click="editModal(apartment)">
                                                 <i class="fa fa-edit blue"></i>
                                             </a>
                                             /
-                                            <a href="#" @click="deleteItem(building.slug)">
+                                            <a href="#" @click="deleteItem(apartment.slug)">
                                                 <i class="fa fa-trash red"></i>
                                             </a>
                                         </div>
                                         <div class="details-card">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer auctor pulvinar ullamcorper. Sed sed egestas ex. Nulla varius at odio non aliquet. Cras maximus a justo non facilisis.</p>
+                                            <p>{{ apartment.description }}</p>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="more-box">
                                             <!-- <h5>Edificio</h5> -->
                                             <div class="cta-more">
-                                                <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.id } }">
+                                                <!-- <router-link :to="{ name: 'apartmentDetail', params: {  id: apartment.id } }">
                                                     <a class="btn-more" href="#">Ver más</a>
                                                 </router-link>             -->
                                             </div>
@@ -91,7 +91,7 @@
 
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <pagination :data="buildings" @pagination-change-page="getResults"></pagination>
+                        <pagination :data="apartments" @pagination-change-page="getResults"></pagination>
                     </div>
                 </div>
                 <!-- /.card -->
@@ -105,8 +105,8 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Edificio</h5>
-                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Edificio</h5>
+                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Departamento</h5>
+                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Departamento</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -280,7 +280,7 @@
             return {
                 editmode: false,
                 selected: {},
-                buildings: {},
+                apartments: {},
                 form: new Form({
                     id: '',
                     title: '',
@@ -301,14 +301,14 @@
         },
         methods: {
             getResults(page = 1) {
-                axios.get('api/buildings?page=' + page)
+                axios.get('api/apartments?page=' + page)
                     .then(response => {
-                        this.buildings = response.data;
+                        this.apartments = response.data;
                     });
             },
             updateItem() {
                 this.$Progress.start();
-                this.form.put('api/buildings/' + this.form.id)
+                this.form.put('api/apartments/' + this.form.id)
                     .then(() => {
                         // success
                         $('#addNew').modal('hide');
@@ -352,7 +352,7 @@
 
                     // Send request to the server
                     if (result.value) {
-                        this.form.delete('api/buildings/' + slug).then(() => {
+                        this.form.delete('api/apartments/' + slug).then(() => {
                             swal(
                                 'Borrado!',
                                 'Edificio borrado.',
@@ -367,9 +367,9 @@
             },
             loadItems() {
                 // if (this.$gate.isAdminOrAuthor()) {
-                axios.get("api/buildings").then(({
+                axios.get("api/apartments").then(({
                     data
-                }) => (this.buildings = data));
+                }) => (this.apartments = data));
                 // }
             },
 
@@ -382,12 +382,12 @@
                 })
               }
 
-              const buildingCreate = this.form.post('api/buildings')
+              const apartmentCreate = this.form.post('api/apartments')
 
-              buildingCreate.then(res => {
+              apartmentCreate.then(res => {
                   console.log(res.data)
                   formData.append('id', res.data.id)
-                  formData.append('type', 'building')
+                  formData.append('type', 'apartment')
                   axios.post('images-upload', formData)
                     .then(()=> {
                       Fire.$emit('AfterCreate');

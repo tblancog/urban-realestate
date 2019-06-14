@@ -37,9 +37,24 @@
                         <img src="https://picsum.photos/id/1/600/350" class="img-fluid">
                     </div> --}}
                     <div class="active carousel-item" data-slide-number="0">
-                        <img src="https://picsum.photos/id/1/600/350" class="img-fluid">
+                        <img src="/images/uploads/building_1.jpg" class="img-fluid">
                     </div>
                     <div class="carousel-item" data-slide-number="1">
+                        <img src="/images/uploads/building_2.jpg" class="img-fluid">
+                    </div>
+                    <div class="carousel-item" data-slide-number="2">
+                        <img src="/images/uploads/building_3.jpg" class="img-fluid">
+                    </div>
+                    <div class="carousel-item" data-slide-number="3">
+                        <img src="/images/uploads/building_4.jpg" class="img-fluid">
+                    </div>
+                    <div class="carousel-item" data-slide-number="4">
+                        <img src="/images/uploads/building_5.jpg" class="img-fluid">
+                    </div>
+                    <div class="carousel-item" data-slide-number="5">
+                        <img src="/images/uploads/building_6.jpg" class="img-fluid">
+                    </div>
+                    {{-- <div class="carousel-item" data-slide-number="1">
                         <img src="https://picsum.photos/id/2/600/350" class="img-fluid">
                     </div>
                     <div class="carousel-item" data-slide-number="2">
@@ -59,7 +74,7 @@
                     </div>
                     <div class="carousel-item" data-slide-number="7">
                         <img src="https://picsum.photos/id/8/600/350" class="img-fluid">
-                    </div>
+                    </div> --}}
 
                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -32,7 +32,7 @@
                               <div class="container">
                                   <div class="row">
                                       <div class="col-md-3">
-                                      <a href="{{ route('buildings.detail', $building->slug) }}"><img src="https://via.placeholder.com/250x180"></a> 
+                                      <a href="{{ route('buildings.detail', $building->slug) }}"><img src="/images/uploads/building_1.jpg"></a> 
                                       </div>
                                       <div class="col-md-6">                              
                                           <div class="info-card">
