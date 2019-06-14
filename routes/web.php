@@ -47,6 +47,10 @@ Route::get('/houses_details', function () {
   return view('houses-details');
 });
 
+Route::get('/modal-details', function () {
+  return view('modalDetails');
+});
+
 // Route::get('/investments', function () {
 //   return view('contact');
 // })->name('investments.index');
