@@ -46,7 +46,7 @@
                                     <div class="col-md-3 col-sm-12">
                                     <!-- <a href="https://placeholder.com"><img src="https://via.placeholder.com/250x180"></a>  -->
                                     <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }">
-                                      <img :src="building.image_name" class="img-fluid"/>
+                                      <img src="https://picsum.photos/id/8/600/350" class="img-fluid"/>
                                     </router-link>
                                     </div>
                                     <div class="col-md-6">                              
@@ -211,9 +211,9 @@
                                 <select name="type" v-model="form.status" id="status" class="form-control"
                                     :class="{ 'is-invalid': form.errors.has('status') }">
                                     <option value="">Seleccione estado</option>
-                                    <option value="en_venta">En Venta</option>
-                                    <option value="en_alquiler">En alquiler</option>
-                                    <option value="alquilado">Alquilado</option>
+                                    <option value="alquiler">Alquiler</option>
+                                    <option value="reservado">Reservado</option>
+                                    <option value="venta">Venta</option>
                                 </select>
                                 <has-error :form="form" field="status"></has-error>
                             </div>
@@ -292,6 +292,7 @@
                     status: '',
                     is_featured: '',
                     files: [],
+                    images: [],
                     amenities: [],
                     contact_name: '',
                     contact_phone: '',
@@ -374,7 +375,6 @@
 
             createItem() {
               this.$Progress.start()
-
               const formData = new FormData()
               if(this.form.files && this.form.files.length > 0){
                 this.form.files.forEach(file => {
@@ -385,6 +385,7 @@
               const buildingCreate = this.form.post('api/buildings')
 
               buildingCreate.then(res => {
+                  console.log(res.data)
                   formData.append('id', res.data.id)
                   formData.append('type', 'building')
                   axios.post('images-upload', formData)

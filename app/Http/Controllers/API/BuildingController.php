@@ -33,12 +33,7 @@ class BuildingController extends Controller
         $building->amenities()->sync(
           Amenity::whereIn('title', $request->amenities)->get()
         );
-
-        //  Image store logic
-
-        $building->images()->sync(
-          Amenity::whereIn('title', $request->amenities)->get()
-        );
+        
         return ['message' => 'Edificio creado', 'id'=> $building->id];
     }
 

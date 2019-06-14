@@ -15,7 +15,7 @@ $factory->define(Building::class, function (Faker $faker) {
       'from_price'=> $faker->boolean,
       'price'=> $faker->randomNumber(6),
       'description'=> $faker->paragraph(2),
-      'status'=> 'en venta',
+      'status'=> 'venta',
       'is_featured'=> $faker->boolean,
       'contact_name'=> $faker->name,
       'contact_phone'=> $faker->phoneNumber,
