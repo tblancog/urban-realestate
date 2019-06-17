@@ -18,14 +18,6 @@ Route::post('images-upload', 'ImageController@upload');
 
 Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');
 Route::get('investments', 'BuildingController@index')->name('buildings.list');
-// Route::get('investments', function(){
-//   return 'abc';
-// });
-
-// Static pages
-// Route::get('/detail', function () {
-//   return view('detail');
-// });
 
 Route::get('/detail_building', function () {
   return view('detail-building');
@@ -51,9 +43,9 @@ Route::get('/modal-details', function () {
   return view('modalDetails');
 });
 
-// Route::get('/investments', function () {
-//   return view('contact');
-// })->name('investments.index');
+Route::get('/investments', function () {
+  return view('contact');
+})->name('investments.index');
 
 Route::get('/appraisals', function () {
   return view('contact');

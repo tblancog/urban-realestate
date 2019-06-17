@@ -14,32 +14,7 @@
                     <!-- /.card-header -->
 
                     <div class="media" v-for="building in buildings.data" :key="building.id">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <!-- <img class="d-block w-100" src="//via.placeholder.com/170x100/0000FF"
-                                        alt="First slide"> -->
-                                </div>
-                                <div class="carousel-item">
-                                    <!-- <img class="d-block w-100" src="//via.placeholder.com/170x100/FF00FF"
-                                        alt="Second slide"> -->
-                                </div>
-                                <div class="carousel-item">
-                                    <!-- <img class="d-block w-100" src="//via.placeholder.com/170x100/330088"
-                                        alt="Third slide"> -->
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
+                        
                         <div class="media-body">
                             <div class="container">
                                 <div class="row">
@@ -260,7 +235,7 @@
         </div>
 
         <!-- Show details modal -->
-        <modal-details-component :item="selected"/>
+        <building-detail :item="selected"/>
     </div>
 
 
@@ -269,12 +244,12 @@
 
 <script>
     import ImageUploader from './ImageUploader';
-    import ModalDetailsComponent from './ModalDetailsComponent';
+    import BuildingDetail from './BuildingDetail';
 
     export default {
        components: {
             'image-uploader': ImageUploader,
-            ModalDetailsComponent,
+            BuildingDetail,
         },
         data() {
             return {

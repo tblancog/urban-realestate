@@ -32,6 +32,11 @@ class Building extends Model
       return $this->hasMany('App\Image', 'building_id');
     }
 
+    public function apartments(){
+
+      return $this->hasMany('App\Apartment');
+    }
+
     public function getStatusAttribute(){
 
       return ucwords($this->attributes['status']);
@@ -47,4 +52,5 @@ class Building extends Model
     //   // 
     //   $this->attributes['image_name'] = 
     // }
+
 }

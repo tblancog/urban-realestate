@@ -54,8 +54,8 @@
                                             <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = apartment">
                                               <h5 class="mt-0">{{ apartment.title }}</h5>
                                             </a>
-                                            <!-- <router-link :to="{ name: 'apartmentDetail', params: {  id: apartment.slug } }"> -->
-                                            <!-- </router-link> -->
+                                            <!-- <router-link :to="{ name: 'apartmentDetail', params: {  id: apartment.slug } }">
+                                            </router-link> -->
                                             <i class="fa fa-map-marker-alt fa-fw"></i>{{ apartment.address }}
                                             <i class="fa fa-dollar-sign fa-fw"></i>USD {{ apartment.price }}
                                             <a href="#" @click="editModal(apartment)">
@@ -260,7 +260,7 @@
         </div>
 
         <!-- Show details modal -->
-        <modal-details-component :item="selected"/>
+        <apartment-detail :item="selected"/>
     </div>
 
 
@@ -269,12 +269,12 @@
 
 <script>
     import ImageUploader from './ImageUploader';
-    import ModalDetailsComponent from './ModalDetailsComponent';
+    import ApartmentDetail from './ApartmentDetail';
 
     export default {
        components: {
             'image-uploader': ImageUploader,
-            ModalDetailsComponent,
+            ApartmentDetail,
         },
         data() {
             return {

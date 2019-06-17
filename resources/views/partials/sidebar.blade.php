@@ -77,7 +77,7 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="#abc" class="nav-link">
+                    <router-link to="/apartments" class="nav-link">
                         <i class="nav-icon fas fa-building green"></i>
                         <p>
                             Departamentos

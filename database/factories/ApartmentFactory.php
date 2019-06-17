@@ -1,6 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
+use App\Building;
 use App\Apartment;
 
 $factory->define(Apartment::class, function (Faker $faker) {
@@ -10,7 +11,7 @@ $factory->define(Apartment::class, function (Faker $faker) {
       'title'=> $apartmentName,
       'slug'=> str_slug($apartmentName),
       'address'=> $faker->streetAddress(),
-      'image_name'=> 'https://via.placeholder.com/250x180',
+      'image_name'=> '',
       'url_maps'=> $faker->streetAddress(),
       'from_price'=> $faker->boolean,
       'price'=> $faker->randomNumber(6),
@@ -19,6 +20,6 @@ $factory->define(Apartment::class, function (Faker $faker) {
       'is_featured'=> $faker->boolean,
       'contact_name'=> $faker->name,
       'contact_phone'=> $faker->phoneNumber,
-      'building_id'=> $faker->randomElement(1, 3, 5, 7, 9)
+      'building_id'=> Building::pluck('id')->random()
     ];
 });

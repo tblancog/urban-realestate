@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Amenity;
-use App\Building;
+// use App\Building;
 class AmenityTableSeeder extends Seeder
 {
     /**
@@ -23,9 +23,9 @@ class AmenityTableSeeder extends Seeder
 
       Amenity::insert($data);
 
-      Building::all()->each(function($item, $key){
-        $item->amenities()->attach(Amenity::all());
-      });
+      // Building::all()->each(function($item, $key){
+      //   $item->amenities()->attach(Amenity::all());
+      // });
 
     }
 }

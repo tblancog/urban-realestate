@@ -15,7 +15,8 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 50);
+            $table->string('filename', 50);
+            $table->string('path', 100);
             $table->integer('order')->default(1);
             $table->integer('building_id')->nullable();
             // $table->integer('apartment_id')->nullable();

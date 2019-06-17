@@ -32,6 +32,10 @@ class Apartment extends Model
 
       return $this->hasMany('App\Image', 'building_id');
     }
+    public function building(){
+
+      return $this->hasMany('App\Building', 'building_id');
+    }
 
     public function getStatusAttribute(){
 
