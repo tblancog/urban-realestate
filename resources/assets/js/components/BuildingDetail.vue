@@ -20,20 +20,19 @@
                                   <!-- <img class="card-img-top img-fluid" src="/images/uploads/building_1.jpg" alt="Card image cap"> -->
                                   <div id="demo" class="card-img-top img-fluid carousel slide" data-ride="carousel">
                                       <!-- Indicators -->
-                                      <ul class="carousel-indicators">
-                                        <li data-target="#demo" data-slide-to="0" class="active"></li>
-                                        <li data-target="#demo" data-slide-to="1"></li>
-                                        <li data-target="#demo" data-slide-to="2"></li>
-                                      </ul>
+                                      <!-- <ul v-for="(image, index) in item.images" :key="image.id" class="carousel-indicators">
+                                        <li data-target="#demo" :data-slide-to="index" class="active"></li>
+                                        <li data-target="#demo" :data-slide-to="index"></li>
+                                      </ul> -->
                                       
                                       <!-- The slideshow -->
                                       <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                          <img src="/images/uploads/building_1.jpg" class="img-fluid" height="300">
+                                        <div v-for="(image, idx) in item.images" :key="image.id" :class="['carousel-item', { active: idx === 0 }]">
+                                          <img :src="image_path(image)" width="100%" height="300">
                                         </div>
-                                        <div class="carousel-item">
-                                          <img src="/images/uploads/building_2.jpg" class="img-fluid" height="300">
-                                        </div>
+                                        <!-- <div class="carousel-item">
+                                          <img src="/images/uploads/building_2.jpg" width="100%" height="300">
+                                        </div> -->
                                       </div>
                                       
                                       <!-- Left and right controls -->
@@ -81,7 +80,12 @@
 
 <script>
 export default{
-  props: ['item']
+  props: ['item'],
+  methods: {
+    image_path(image){
+      return image.path + image.filename
+    }
+  }
 }
 </script>
 
