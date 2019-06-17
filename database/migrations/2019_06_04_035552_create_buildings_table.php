@@ -21,7 +21,7 @@ class CreateBuildingsTable extends Migration
             $table->string('image_name', 50)->nullable();
             $table->string('url_maps', 2048)->nullable();
             $table->boolean('from_price')->nullable()->default(false);
-            $table->float('price', 10, 0)->unsigned()->default(0);
+            $table->float('price')->unsigned()->default(0);
             $table->text('description', 2048);
             $table->string('status')->default('on_sale');
             $table->boolean('is_featured')->default(false)->nullable();

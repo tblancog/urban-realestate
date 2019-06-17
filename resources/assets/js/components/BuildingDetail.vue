@@ -13,65 +13,59 @@
                 <div class="modal-body">
 
                     <!-- Content -->
-                    <div class="container">
-                        <div class="row justify-content-center">
+                    <!-- <div class="container">
+                        <div class="row justify-content-center"> -->
                             <div class="col-md-12">
                                 <div class="card">
+                                  <!-- <img class="card-img-top img-fluid" src="/images/uploads/building_1.jpg" alt="Card image cap"> -->
+                                  <div id="demo" class="card-img-top img-fluid carousel slide" data-ride="carousel">
+                                      <!-- Indicators -->
+                                      <ul class="carousel-indicators">
+                                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                        <li data-target="#demo" data-slide-to="1"></li>
+                                        <li data-target="#demo" data-slide-to="2"></li>
+                                      </ul>
+                                      
+                                      <!-- The slideshow -->
+                                      <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                          <img src="/images/uploads/building_1.jpg" class="img-fluid" height="300">
+                                        </div>
+                                        <div class="carousel-item">
+                                          <img src="/images/uploads/building_2.jpg" class="img-fluid" height="300">
+                                        </div>
+                                      </div>
+                                      
+                                      <!-- Left and right controls -->
+                                      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                        <span class="carousel-control-prev-icon"></span>
+                                      </a>
+                                      <a class="carousel-control-next" href="#demo" data-slide="next">
+                                        <span class="carousel-control-next-icon"></span>
+                                      </a>
+                                    </div>
+
                                     <div class="card-header">
                                         <div class="d-flex align-items-center">
                                             <h1>{{ item.title }}</h1>
-                                            <!-- <div class="ml-auto">
-                                                <a href="{{ route('questions.index') }}"
-                                                    class="btn btn-outline-secondary">Back to all Questions</a>
-                                            </div> -->
                                         </div>
-
                                     </div>
 
                                     <div class="card-body">
-                                        <!-- {!! $question->body_html !!} -->
+                                      <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">{{ item.description  }}</li>
+                                        <!-- <li class="list-group-item">{{ item.amenities   }}</li> -->
+                                        <li class="list-group-item"><strong>Precio</strong> {{ item.from_price ? 'Desde ' : ' ' }} $ {{ item.price }} </li>
+                                        <li class="list-group-item"><strong>Estado</strong> {{ item.status }} </li>
+                                        <li class="list-group-item"><strong>Destacada?</strong> {{ item.is_featured ? 'Sí' : 'No' }} </li>
+                                        <li class="list-group-item"><strong>Contacto</strong> {{ item.contact_name }} </li>
+                                        <li class="list-group-item"><strong>Teléfono</strong> {{ item.contact_phone }} </li>
+                                      </ul>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card-title">
-                                            <!-- <h2>{{ $question->answers_count . " " . str_plural('Answer', $question->answers_count) }}
-                                            </h2> -->
-                                        </div>
-                                        <hr>
-                                        <!-- @foreach($question->answers as $answer) -->
-                                        <div class="media">
-                                            <div class="media-body">
-                                                <!-- {!! $answer->body_html !!} -->
-                                                <div class="float-right">
-                                                    <!-- <div class="text-muted">Answered {{ $answer->created_date  }}</div> -->
-                                                    <div class="media">
-                                                        <!-- {{-- <pre>{{ $answer->user->avatar  }}</pre> --}} -->
-                                                        <a href="#" class="pr-2">
-                                                            <!-- {{-- <img src="{{ $answer->user->url }}"/> --}} -->
-                                                        </a>
-                                                        <div class="media-body">
-                                                            <!-- {{-- <a href="{{ $answer->user->url }}">{{ $answer->user->url  }}</a>
-                                                            --}} -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <!-- @endforeach -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
+                        <!-- </div>
+                    </div> -->
                 </div>
 
                 <!-- Status -->
@@ -90,3 +84,10 @@ export default{
   props: ['item']
 }
 </script>
+
+<style>
+  .modal-dialog.modal-dialog-centered{
+    max-width: 800px;
+    margin: 0 auto;
+  }
+</style>
