@@ -159,6 +159,7 @@
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
                         <a href="{{ route('buildings.detail', $f->slug) }}"><img src="img/bg-img/feature{{ $loop->iteration }}.jpg" alt=""></a>
+                        {{-- <a href="{{ route('buildings.detail', $f->slug) }}"><img src="{{ Storage::url( 'property_0.jpg') }}" alt=""></a> --}}
                     </div>
                     <!-- Property Content -->
                     <div class="property-content">

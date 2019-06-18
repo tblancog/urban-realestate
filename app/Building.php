@@ -11,7 +11,6 @@ class Building extends Model
       'title',
       'slug',
       'address',
-      'image_name',
       'url_maps',
       'from_price',
       'price',
@@ -29,7 +28,12 @@ class Building extends Model
 
     public function images(){
 
-      return $this->hasMany('App\Image');
+      return $this->hasMany('App\BuildingImage', 'building_id');
+    }
+
+    public function apartments(){
+
+      return $this->hasMany('App\Apartment');
     }
 
     public function getStatusAttribute(){
@@ -42,9 +46,4 @@ class Building extends Model
       $this->attributes['slug'] = str_slug($value);
     }
 
-    // public function getImageNameAttribute($value){
-
-    //   // 
-    //   $this->attributes['image_name'] = 
-    // }
 }

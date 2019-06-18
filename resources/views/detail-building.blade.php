@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-md-6 featured-col">
                         <div class="featured-box">
-                            <a class="featured" href="#">Destacado</a>
+                            <span class="featured">Destacado</a>
                         </div>
                     </div>                                
                 </div>
@@ -36,7 +36,7 @@
         <div class="col-md-6">
             <div class="dept-price">
                 <h2 class="status">{{ $building->status }}</h2>
-                <h2 class="price">USD <b>{{ $building->price }}</b></h2>
+            <h2 class="price">{{ $building->from_price ? 'Desde ': ''  }}USD <b>{{ $building->price }}</b></h2>
             </div>
         </div>
         <div class="col-md-6">

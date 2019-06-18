@@ -50,6 +50,7 @@
  :: 23.0 Detail Area CSS
  :: 24.0 Investment Area CSS
  :: 25.0 Appraisals Area CSS
+ :: 26.0 Modal Details Area CSS
  
  ##### Index of Stylesheet ##### /*
  
@@ -3594,6 +3595,7 @@ img {
 .investments-page {
     .card {
         .card-header {
+
             h3 {
                 display: inline-block;
                 font-size: 1.8rem;
@@ -3704,4 +3706,10 @@ img {
           height: auto;
         }
     }
+}
+
+/* 26.0 Modal Details Area CSS */
+
+.modal-details {
+    padding: 0 200px;
 }

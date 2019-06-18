@@ -18,7 +18,9 @@ class BuildingController extends Controller
      */
     public function index()
     {
-        return Building::latest()->paginate(5);
+        return Building::latest()
+                ->with('images')
+                ->paginate(5);
     }
 
     /**
@@ -33,12 +35,7 @@ class BuildingController extends Controller
         $building->amenities()->sync(
           Amenity::whereIn('title', $request->amenities)->get()
         );
-
-        //  Image store logic
-
-        $building->images()->sync(
-          Amenity::whereIn('title', $request->amenities)->get()
-        );
+        
         return ['message' => 'Edificio creado', 'id'=> $building->id];
     }
 

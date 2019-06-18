@@ -15,18 +15,17 @@ class CreateBuildingAmenitiesTable extends Migration
     {
         Schema::create('building_amenities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('amenity_id')->nullable();
-            $table->integer('building_id')->nullable();
-            $table->timestamps();
-
+            $table->unsignedInteger('amenity_id')->nullable();
+            $table->unsignedInteger('building_id')->nullable();
+            
             $table->foreign('amenity_id')
                   ->references('id')
                   ->on('amenities');
-
+            
             $table->foreign('building_id')
                   ->references('id')
                   ->on('buildings');
-        });
+          });
     }
               
     /**

@@ -17,15 +17,7 @@ Route::post('images-upload', 'ImageController@upload');
 
 
 Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');
-Route::get('investments', 'BuildingController@index')->name('buildings.list');
-// Route::get('investments', function(){
-//   return 'abc';
-// });
-
-// Static pages
-// Route::get('/detail', function () {
-//   return view('detail');
-// });
+Route::get('buildings', 'BuildingController@index')->name('buildings.list');
 
 Route::get('/detail_building', function () {
   return view('detail-building');
@@ -47,9 +39,13 @@ Route::get('/houses_details', function () {
   return view('houses-details');
 });
 
-// Route::get('/investments', function () {
-//   return view('contact');
-// })->name('investments.index');
+Route::get('/modal-details', function () {
+  return view('modalDetails');
+});
+
+Route::get('/investments', function () {
+  return view('contact');
+})->name('investments.index');
 
 Route::get('/appraisals', function () {
   return view('contact');
@@ -59,7 +55,11 @@ Route::get('/credits', function () {
   return view('contact');
 })->name('credits.index');
 
-Route::get('/{path}',function(){
-  return redirect('/dashboard');
-})->where( 'path', '([A-z\d-/_.]+)?' );
+Route::get('/contact', function () {
+  return view('contact');
+})->name('contact.index');
+
+// Route::get('/{path}',function(){
+//   return redirect('/dashboard');
+// })->where( 'path', '([A-z\d-/_.]+)?' );
 

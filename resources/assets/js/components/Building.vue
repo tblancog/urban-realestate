@@ -8,52 +8,27 @@
                         <h3 class="card-title">Edificios</h3>
                         <div class="card-tools">
                             <button class="btn btn-success" @click="newModal">Crear Nuevo <i
-                                    class="fas fa-user-plus fa-fw"></i></button>
+                                    class="fas fa-plus fa-fw"></i></button>
                         </div>
                     </div>
                     <!-- /.card-header -->
 
-                    <div class="media" v-for="building in buildings.data" :key="building.slug">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <!-- <img class="d-block w-100" src="//via.placeholder.com/170x100/0000FF"
-                                        alt="First slide"> -->
-                                </div>
-                                <div class="carousel-item">
-                                    <!-- <img class="d-block w-100" src="//via.placeholder.com/170x100/FF00FF"
-                                        alt="Second slide"> -->
-                                </div>
-                                <div class="carousel-item">
-                                    <!-- <img class="d-block w-100" src="//via.placeholder.com/170x100/330088"
-                                        alt="Third slide"> -->
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
+                    <div class="media" v-for="building in buildings.data" :key="building.id">
                         <div class="media-body">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-3 col-sm-12">
-                                    <!-- <a href="https://placeholder.com"><img src="https://via.placeholder.com/250x180"></a>  -->
-                                    <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }">
-                                      <img :src="building.image_name" class="img-fluid"/>
-                                    </router-link>
+                                    <div class="col-md-3 col-sm-12 cropped">
+                                    <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
+                                      <img :src="image_path(building)" class="img-fluid"/>
+                                    <!-- </router-link> -->
                                     </div>
                                     <div class="col-md-6">                              
                                         <div class="info-card">
-                                            <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }">
-                                            <h5 class="mt-0">{{ building.title }}</h5>
-                                            </router-link>
+                                            <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
+                                              <h5 class="mt-0">{{ building.title }}</h5>
+                                            </a>
+                                            <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
+                                            <!-- </router-link> -->
                                             <i class="fa fa-map-marker-alt fa-fw"></i>{{ building.address }}
                                             <i class="fa fa-dollar-sign fa-fw"></i>USD {{ building.price }}
                                             <a href="#" @click="editModal(building)">
@@ -65,16 +40,16 @@
                                             </a>
                                         </div>
                                         <div class="details-card">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer auctor pulvinar ullamcorper. Sed sed egestas ex. Nulla varius at odio non aliquet. Cras maximus a justo non facilisis.</p>
+                                            <p>{{ building.description  }}</p>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="more-box">
-                                            <h5>Edificio</h5>
+                                            <!-- <h5>Edificio</h5> -->
                                             <div class="cta-more">
-                                                <router-link :to="{ name: 'buildingDetail', params: {  id: building.id } }">
+                                                <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.id } }">
                                                     <a class="btn-more" href="#">Ver más</a>
-                                                </router-link>            
+                                                </router-link>             -->
                                             </div>
                                             <!-- <div class="deliver-box">
                                                 <h6>Entrega</h6>
@@ -209,9 +184,9 @@
                                 <select name="type" v-model="form.status" id="status" class="form-control"
                                     :class="{ 'is-invalid': form.errors.has('status') }">
                                     <option value="">Seleccione estado</option>
-                                    <option value="en_venta">En Venta</option>
-                                    <option value="en_alquiler">En alquiler</option>
-                                    <option value="alquilado">Alquilado</option>
+                                    <option value="alquiler">Alquiler</option>
+                                    <option value="reservado">Reservado</option>
+                                    <option value="venta">Venta</option>
                                 </select>
                                 <has-error :form="form" field="status"></has-error>
                             </div>
@@ -224,6 +199,23 @@
                               </div>
                               <has-error :form="form" field="featured"></has-error>
                           </div>
+                        <!-- Contact -->
+                        <div class="form-group col-lg-6">
+                            <div class="">
+                              <input v-model="form.contact_name" type="text" name="contact_name" placeholder="Nombre del contacto"
+                                  class="form-control" :class="{ 'is-invalid': form.errors.has('contact_name') }">
+                              <has-error :form="form" field="contact_name"></has-error>
+                            </div>
+                        </div
+                        >
+                        <!-- Contact Phone-->
+                        <div class="form-group col-lg-6">
+                            <div class="">
+                              <input v-model="form.contact_phone" type="text" name="contact_phone" placeholder="Teléfono del contacto"
+                                  class="form-control" :class="{ 'is-invalid': form.errors.has('contact_phone') }">
+                              <has-error :form="form" field="contact_phone"></has-error>
+                            </div>
+                        </div>
                         </div>
 
                         <!-- Status -->
@@ -233,29 +225,15 @@
                             <button v-show="!editmode" type="submit" class="btn btn-primary">Crear</button>
                         </div>
 
-                        <!-- Contact -->
-                        <div class="form-group col-lg-9">
-                            <div class="">
-                              <input v-model="form.contact_name" type="text" name="contact_name" placeholder="Nombre del contacto"
-                                  class="form-control" :class="{ 'is-invalid': form.errors.has('contact_name') }">
-                              <has-error :form="form" field="contact_name"></has-error>
-                            </div>
-                        </div
-                        >
-                        <!-- Contact Phone-->
-                        <div class="form-group col-lg-9">
-                            <div class="">
-                              <input v-model="form.contact_phone" type="text" name="contact_phone" placeholder="Teléfono del contacto"
-                                  class="form-control" :class="{ 'is-invalid': form.errors.has('contact_phone') }">
-                              <has-error :form="form" field="contact_phone"></has-error>
-                            </div>
-                        </div>
 
                     </form>
 
                 </div>
             </div>
         </div>
+
+        <!-- Show details modal -->
+        <building-detail :item="selected"/>
     </div>
 
 
@@ -264,14 +242,17 @@
 
 <script>
     import ImageUploader from './ImageUploader';
+    import BuildingDetail from './BuildingDetail';
 
     export default {
        components: {
-            'image-uploader': ImageUploader
+            'image-uploader': ImageUploader,
+            BuildingDetail,
         },
         data() {
             return {
                 editmode: false,
+                selected: {},
                 buildings: {},
                 form: new Form({
                     id: '',
@@ -284,6 +265,7 @@
                     status: '',
                     is_featured: '',
                     files: [],
+                    images: [],
                     amenities: [],
                     contact_name: '',
                     contact_phone: '',
@@ -327,6 +309,9 @@
                 this.form.reset();
                 $('#addNew').modal('show');
             },
+            showModal(item) {
+                $('#show').modal('show');
+            },
             deleteItem(slug) {
                 swal({
                     title: 'Estás seguro?',
@@ -363,7 +348,6 @@
 
             createItem() {
               this.$Progress.start()
-
               const formData = new FormData()
               if(this.form.files && this.form.files.length > 0){
                 this.form.files.forEach(file => {
@@ -372,7 +356,6 @@
               }
 
               const buildingCreate = this.form.post('api/buildings')
-
               buildingCreate.then(res => {
                   formData.append('id', res.data.id)
                   formData.append('type', 'building')
@@ -437,6 +420,10 @@
                                 .container {
                                     padding-top: 15px;
                                     padding-bottom: 15px;
+                                    .cropped{
+                                        height: 150px;
+                                        overflow: hidden;
+                                    }
                                     .info-card {
                                         padding-bottom: 10px;
                                         background-image: linear-gradient(to right, #7d7d7d 33%, rgba(255,255,255,0) 0%);

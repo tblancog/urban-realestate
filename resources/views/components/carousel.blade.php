@@ -33,32 +33,47 @@
             <div id="myCarousel" class="carousel slide">
                 <!-- main slider carousel items -->
                 <div class="carousel-inner">
-                    <div class="active carousel-item" data-slide-number="0">
-                        <img src="{{ $item->image_name }}" class="img-fluid">
-                    </div>
                     {{-- <div class="active carousel-item" data-slide-number="0">
-                        <img src="http://placehold.it/1200x480&amp;text=one" class="img-fluid">
+                        <img src="https://picsum.photos/id/1/600/350" class="img-fluid">
+                    </div> --}}
+                    <div class="active carousel-item" data-slide-number="0">
+                        <img src="/images/uploads/building_1.jpg" class="img-fluid">
                     </div>
                     <div class="carousel-item" data-slide-number="1">
-                        <img src="http://placehold.it/1200x480/888/FFF" class="img-fluid">
+                        <img src="/images/uploads/building_2.jpg" class="img-fluid">
                     </div>
                     <div class="carousel-item" data-slide-number="2">
-                        <img src="http://placehold.it/1200x480&amp;text=three" class="img-fluid">
+                        <img src="/images/uploads/building_3.jpg" class="img-fluid">
                     </div>
                     <div class="carousel-item" data-slide-number="3">
-                        <img src="http://placehold.it/1200x480&amp;text=four" class="img-fluid">
+                        <img src="/images/uploads/building_4.jpg" class="img-fluid">
                     </div>
                     <div class="carousel-item" data-slide-number="4">
-                        <img src="http://placehold.it/1200x480&amp;text=five" class="img-fluid">
+                        <img src="/images/uploads/building_5.jpg" class="img-fluid">
                     </div>
                     <div class="carousel-item" data-slide-number="5">
-                        <img src="http://placehold.it/1200x480&amp;text=six" class="img-fluid">
+                        <img src="/images/uploads/building_6.jpg" class="img-fluid">
+                    </div>
+                    {{-- <div class="carousel-item" data-slide-number="1">
+                        <img src="https://picsum.photos/id/2/600/350" class="img-fluid">
+                    </div>
+                    <div class="carousel-item" data-slide-number="2">
+                        <img src="https://picsum.photos/id/3/600/350" class="img-fluid">
+                    </div>
+                    <div class="carousel-item" data-slide-number="3">
+                        <img src="https://picsum.photos/id/4/600/350" class="img-fluid">
+                    </div>
+                    <div class="carousel-item" data-slide-number="4">
+                        <img src="https://picsum.photos/id/5/600/350" class="img-fluid">
+                    </div>
+                    <div class="carousel-item" data-slide-number="5">
+                        <img src="https://picsum.photos/id/6/600/350" class="img-fluid">
                     </div>
                     <div class="carousel-item" data-slide-number="6">
-                        <img src="http://placehold.it/1200x480&amp;text=seven" class="img-fluid">
+                        <img src="https://picsum.photos/id/7/600/350" class="img-fluid">
                     </div>
                     <div class="carousel-item" data-slide-number="7">
-                        <img src="http://placehold.it/1200x480&amp;text=eight" class="img-fluid">
+                        <img src="https://picsum.photos/id/8/600/350" class="img-fluid">
                     </div> --}}
 
                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -74,7 +89,7 @@
                 <!-- main slider carousel nav controls -->
 
 
-                <ul class="carousel-indicators list-inline mx-auto">
+                {{-- <ul class="carousel-indicators list-inline mx-auto">
                     <li class="list-inline-item active">
                         <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
                             <img src="http://placehold.it/80x60&amp;text=one" class="img-fluid">
@@ -115,7 +130,7 @@
                             <img src="http://placehold.it/80x60&amp;text=eight" class="img-fluid">
                         </a>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
         </div>
       </div>

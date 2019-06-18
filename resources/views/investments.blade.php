@@ -22,17 +22,21 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Edificios</h3>
+                        <div class="col-12 text-capitalize">
+                          Si estas interesado en realizar una inversión planificada, tenemos múltiples opciones de corto, mediano o largo plazo. 
+                          Contactáte con nosotros y con gusto podremos asesorarte.
+                        </div>
                     </div>
                     <!-- /.card-header -->
-                    
+                    <div class="row">
+                    </div>
                     @forelse ( $buildings as $building  )
-                    {{-- {{ dump($building) }} --}}
                       <div class="media">
                           <div class="media-body">
                               <div class="container">
                                   <div class="row">
                                       <div class="col-md-3">
-                                      <a href="{{ route('buildings.detail', $building->slug) }}"><img src="https://via.placeholder.com/250x180"></a> 
+                                      <a href="{{ route('buildings.detail', $building->slug) }}"><img src="/images/uploads/building_1.jpg"></a> 
                                       </div>
                                       <div class="col-md-6">                              
                                           <div class="info-card">
