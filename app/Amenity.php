@@ -10,11 +10,11 @@ class Amenity extends Model
 
     public function building(){
 
-      return $this->belongsToMany('App\Building', 'building_amenities');
+      return $this->belongsToMany('App\Building', 'building_amenities', 'building_id');
     }
 
-    // public function apartment(){
+    public function apartment(){
 
-    //   return $this->belongsToMany('App\Apartment');
-    // }
+      return $this->belongsToMany('App\Apartment', 'apartment_amenities', 'apartment_id');
+    }
 }

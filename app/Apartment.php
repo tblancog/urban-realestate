@@ -11,7 +11,6 @@ class Apartment extends Model
       'title',
       'slug',
       'address',
-      'image_name',
       'url_maps',
       'from_price',
       'price',
@@ -25,16 +24,16 @@ class Apartment extends Model
 
     public function amenities(){
 
-      return $this->belongsToMany('App\Amenity', 'building_amenities');
+      return $this->belongsToMany('App\Amenity', 'apartment_amenities');
     }
 
     public function images(){
 
-      return $this->hasMany('App\Image', 'building_id');
+      return $this->hasMany('App\ApartmentImage');
     }
     public function building(){
 
-      return $this->hasMany('App\Building', 'building_id');
+      return $this->hasMany('App\Building');
     }
 
     public function getStatusAttribute(){

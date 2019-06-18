@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagesTable extends Migration
+class CreateApartmentImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,16 @@ class CreateImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('apartment_images', function (Blueprint $table) {
             $table->increments('id');
             $table->string('filename', 50);
             $table->string('path', 100);
             $table->integer('order')->default(1);
-            $table->integer('building_id')->nullable();
-            // $table->integer('apartment_id')->nullable();
+            $table->integer('apartment_id')->nullable();
 
-            $table->foreign('building_id')
+            $table->foreign('apartment_id')
                   ->references('id')
-                  ->on('buildings');
-
-            // $table->foreign('apartment_id')
-            //       ->references('id')
-            //       ->on('apartments');
-
+                  ->on('apartments');
             $table->timestamps();
         });
     }
@@ -40,6 +34,6 @@ class CreateImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('apartment_images');
     }
 }

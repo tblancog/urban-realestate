@@ -3,8 +3,9 @@
 use Illuminate\Database\Seeder;
 use App\Building;
 use App\Amenity;
-use App\Image;
+use App\BuildingImage;
 use App\Apartment;
+use App\ApartmentImage;
 
 class BuildingTableSeeder extends Seeder
 {
@@ -24,13 +25,23 @@ class BuildingTableSeeder extends Seeder
           })->each(function($b){
             $b->images()
               ->saveMany( 
-                factory(Image::class, rand(1, 8))->make()
+                factory(BuildingImage::class, rand(1, 8))->make()
               );
-            })->each(function($b){
+          })->each(function($b){
               $b->apartments()
-              ->saveMany(
-                factory(Apartment::class, rand(1, 8))->make()
-              );
+                ->saveMany(
+                  factory(Apartment::class, rand(1, 8))->make()
+              )->each(function($a){
+                $a->amenities()
+                  ->saveMany(
+                    Amenity::inRandomOrder()->take(rand(1,6))->get()
+                  );
+              })->each(function($a){
+                $a->images()
+                  ->saveMany( 
+                    factory(ApartmentImage::class, rand(1, 8))->make()
+                  );
+              });
           }
         );
     }

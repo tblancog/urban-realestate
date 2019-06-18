@@ -10,7 +10,6 @@ $factory->define(Building::class, function (Faker $faker) {
       'title'=> $buildingName,
       'slug'=> str_slug($buildingName),
       'address'=> $faker->streetAddress(),
-      'image_name'=> '',
       'url_maps'=> $faker->streetAddress(),
       'from_price'=> $faker->boolean,
       'price'=> $faker->randomNumber(6),

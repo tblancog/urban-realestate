@@ -1,14 +1,14 @@
 <?php
 
 use Faker\Generator as Faker;
-use App\Image;
-use App\Building;
+use App\Apartment;
+use App\ApartmentImage;
 
-$factory->define(Image::class, function (Faker $faker) {
+$factory->define(ApartmentImage::class, function (Faker $faker) {
     return [
       'filename'=> 'building_'.rand(1, 8).'.jpg',
       'path'=> '/images/uploads/',
       'order'=> rand(1, 8),
-      'building_id'=> Building::pluck('id')->random()
+      'apartment_id'=> Apartment::pluck('id')->random()
     ];
 });

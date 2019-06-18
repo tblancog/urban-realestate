@@ -15,9 +15,8 @@ class CreateApartmentAmenitiesTable extends Migration
     {
         Schema::create('apartment_amenities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('amenity_id')->nullable();
-            $table->integer('apartment_id')->nullable();
-            $table->timestamps();
+            $table->unsignedInteger('amenity_id')->nullable();
+            $table->unsignedInteger('apartment_id')->nullable();
 
             $table->foreign('amenity_id')
                   ->references('id')

@@ -18,7 +18,9 @@ class BuildingController extends Controller
      */
     public function index()
     {
-        return Building::latest()->with('images')->paginate(5);
+        return Building::latest()
+                ->with('images')
+                ->paginate(5);
     }
 
     /**

@@ -1,59 +1,94 @@
 <template>
-  <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <div class="d-flex align-items-center">
-                        <!-- <h1>{{ "$question->title" }}</h1> -->
-                        <h1>Title</h1>
-                        <div class="ml-auto">
-                            <!-- <a href="{{ route('questions.index') }}" class="btn btn-outline-secondary">Back to all Questions</a> -->
-                            <a href="#" class="btn btn-outline-secondary">Back to all Questions</a>
-                        </div>
-                    </div>
-                    
+    <!-- Form Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="addNewLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
 
-                <div class="card-body">
-                   <!-- {!! $question->body_html !!} -->
-                   Question body
+                <div class="modal-body">
+
+                    <!-- Content -->
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div id="property-img" class="card-img-top img-fluid carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ul class="carousel-indicators">
+                                    <li v-for="(image, idx) in item.images" :key="image.id" data-target="#property-img"
+                                        :data-slide-to="idx" :class="[ { active: idx === 0 } ]"></li>
+                                </ul>
+
+                                <!-- The slideshow -->
+                                <div class="carousel-inner">
+                                    <div v-for="(image, idx) in item.images" :key="image.id"
+                                        :class="['carousel-item', { active: idx === 0 }]">
+                                        <img :src="image_path(image)" width="100%" height="300">
+                                    </div>
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="carousel-control-prev" href="#property-img" data-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#property-img" data-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </a>
+                            </div>
+
+                            <div class="card-header">
+                                <div class="d-flex align-items-center">
+                                    <h1>{{ item.title }}</h1>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">{{ item.description  }}</li>
+                                    <!-- <li class="list-group-item">{{ item.amenities   }}</li> -->
+                                    <li class="list-group-item"><strong>Precio</strong>
+                                        {{ item.from_price ? 'Desde ' : ' ' }} $ {{ item.price }} </li>
+                                    <li class="list-group-item"><strong>Estado</strong> {{ item.status }} </li>
+                                    <li class="list-group-item"><strong>Destacada?</strong>
+                                        {{ item.is_featured ? 'Sí' : 'No' }} </li>
+                                    <li class="list-group-item"><strong>Contacto</strong> {{ item.contact_name }} </li>
+                                    <li class="list-group-item"><strong>Teléfono</strong> {{ item.contact_phone }} </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Status -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+
+
             </div>
         </div>
     </div>
-     <div class="row mt-4">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-body">
-            <div class="card-title">
-              <!-- <h2>{{ $question->answers_count . " " . str_plural('Answer', $question->answers_count) }}</h2> -->
-              <h2>{{ "ABC" }}</h2>
-            </div>
-            <hr>
-            <!-- @foreach($question->answers as $answer) -->
-                <div class="media">
-                  <div class="media-body">
-                    <!-- {!! $answer->body_html !!} -->
-                    <div class="float-right">
-                    <!-- <div class="text-muted">Answered {{ $answer->created_date  }}</div> -->
-                    <div class="media">
-                    <!-- {{-- <pre>{{ $answer->user->avatar  }}</pre> --}} -->
-                      <a href="#" class="pr-2">
-                        <!-- {{-- <img src="{{ $answer->user->url }}"/> --}} -->
-                      </a>
-                      <div class="media-body">
-                      <!-- {{-- <a href="{{ $answer->user->url }}>{{ $answer->user->url  }}</a> --}} -->
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-                <hr>
-            <!-- @endforeach -->
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
 </template>
+
+<script>
+    export default {
+        props: ['item'],
+        methods: {
+            image_path(image) {
+                return image.path + image.filename
+            }
+        }
+    }
+
+</script>
+
+<style>
+    .modal-dialog.modal-dialog-centered {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+</style>

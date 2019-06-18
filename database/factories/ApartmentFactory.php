@@ -11,7 +11,6 @@ $factory->define(Apartment::class, function (Faker $faker) {
       'title'=> $apartmentName,
       'slug'=> str_slug($apartmentName),
       'address'=> $faker->streetAddress(),
-      'image_name'=> '',
       'url_maps'=> $faker->streetAddress(),
       'from_price'=> $faker->boolean,
       'price'=> $faker->randomNumber(6),

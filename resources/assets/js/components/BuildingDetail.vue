@@ -13,58 +13,53 @@
                 <div class="modal-body">
 
                     <!-- Content -->
-                    <!-- <div class="container">
-                        <div class="row justify-content-center"> -->
-                            <div class="col-md-12">
-                                <div class="card">
-                                  <!-- <img class="card-img-top img-fluid" src="/images/uploads/building_1.jpg" alt="Card image cap"> -->
-                                  <div id="demo" class="card-img-top img-fluid carousel slide" data-ride="carousel">
-                                      <!-- Indicators -->
-                                      <!-- <ul v-for="(image, index) in item.images" :key="image.id" class="carousel-indicators">
-                                        <li data-target="#demo" :data-slide-to="index" class="active"></li>
-                                        <li data-target="#demo" :data-slide-to="index"></li>
-                                      </ul> -->
-                                      
-                                      <!-- The slideshow -->
-                                      <div class="carousel-inner">
-                                        <div v-for="(image, idx) in item.images" :key="image.id" :class="['carousel-item', { active: idx === 0 }]">
-                                          <img :src="image_path(image)" width="100%" height="300">
-                                        </div>
-                                        <!-- <div class="carousel-item">
-                                          <img src="/images/uploads/building_2.jpg" width="100%" height="300">
-                                        </div> -->
-                                      </div>
-                                      
-                                      <!-- Left and right controls -->
-                                      <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                                        <span class="carousel-control-prev-icon"></span>
-                                      </a>
-                                      <a class="carousel-control-next" href="#demo" data-slide="next">
-                                        <span class="carousel-control-next-icon"></span>
-                                      </a>
-                                    </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div id="property-img" class="card-img-top img-fluid carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ul class="carousel-indicators">
+                                    <li v-for="(image, idx) in item.images" :key="image.id" data-target="#property-img"
+                                        :data-slide-to="idx" :class="[ { active: idx === 0 } ]"></li>
+                                </ul>
 
-                                    <div class="card-header">
-                                        <div class="d-flex align-items-center">
-                                            <h1>{{ item.title }}</h1>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-body">
-                                      <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">{{ item.description  }}</li>
-                                        <!-- <li class="list-group-item">{{ item.amenities   }}</li> -->
-                                        <li class="list-group-item"><strong>Precio</strong> {{ item.from_price ? 'Desde ' : ' ' }} $ {{ item.price }} </li>
-                                        <li class="list-group-item"><strong>Estado</strong> {{ item.status }} </li>
-                                        <li class="list-group-item"><strong>Destacada?</strong> {{ item.is_featured ? 'Sí' : 'No' }} </li>
-                                        <li class="list-group-item"><strong>Contacto</strong> {{ item.contact_name }} </li>
-                                        <li class="list-group-item"><strong>Teléfono</strong> {{ item.contact_phone }} </li>
-                                      </ul>
+                                <!-- The slideshow -->
+                                <div class="carousel-inner">
+                                    <div v-for="(image, idx) in item.images" :key="image.id"
+                                        :class="['carousel-item', { active: idx === 0 }]">
+                                        <img :src="image_path(image)" width="100%" height="300">
                                     </div>
                                 </div>
+
+                                <!-- Left and right controls -->
+                                <a class="carousel-control-prev" href="#property-img" data-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#property-img" data-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </a>
                             </div>
-                        <!-- </div>
-                    </div> -->
+
+                            <div class="card-header">
+                                <div class="d-flex align-items-center">
+                                    <h1>{{ item.title }}</h1>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">{{ item.description  }}</li>
+                                    <!-- <li class="list-group-item">{{ item.amenities   }}</li> -->
+                                    <li class="list-group-item"><strong>Precio</strong>
+                                        {{ item.from_price ? 'Desde ' : ' ' }} $ {{ item.price }} </li>
+                                    <li class="list-group-item"><strong>Estado</strong> {{ item.status }} </li>
+                                    <li class="list-group-item"><strong>Destacada?</strong>
+                                        {{ item.is_featured ? 'Sí' : 'No' }} </li>
+                                    <li class="list-group-item"><strong>Contacto</strong> {{ item.contact_name }} </li>
+                                    <li class="list-group-item"><strong>Teléfono</strong> {{ item.contact_phone }} </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Status -->
@@ -79,19 +74,21 @@
 </template>
 
 <script>
-export default{
-  props: ['item'],
-  methods: {
-    image_path(image){
-      return image.path + image.filename
+    export default {
+        props: ['item'],
+        methods: {
+            image_path(image) {
+                return image.path + image.filename
+            }
+        }
     }
-  }
-}
+
 </script>
 
 <style>
-  .modal-dialog.modal-dialog-centered{
-    max-width: 800px;
-    margin: 0 auto;
-  }
+    .modal-dialog.modal-dialog-centered {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
 </style>

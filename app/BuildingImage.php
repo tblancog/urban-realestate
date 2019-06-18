@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class BuildingImage extends Model
 {
 
-    protected $table = 'images';
+    protected $table = 'building_images';
     // private $storage_path = 'images';
   
     public function building(){

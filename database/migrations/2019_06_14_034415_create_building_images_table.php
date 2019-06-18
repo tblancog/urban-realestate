@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBuildingAmenitiesTable extends Migration
+class CreateBuildingImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,21 @@ class CreateBuildingAmenitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('building_amenities', function (Blueprint $table) {
+        Schema::create('building_images', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('amenity_id')->nullable();
-            $table->unsignedInteger('building_id')->nullable();
-            
-            $table->foreign('amenity_id')
-                  ->references('id')
-                  ->on('amenities');
-            
+            $table->string('filename', 50);
+            $table->string('path', 100);
+            $table->integer('order')->default(1);
+            $table->integer('building_id')->nullable();
+
             $table->foreign('building_id')
                   ->references('id')
                   ->on('buildings');
-          });
+
+            $table->timestamps();
+        });
     }
-              
+
     /**
      * Reverse the migrations.
      *
@@ -35,6 +35,6 @@ class CreateBuildingAmenitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('building_amenities');
+        Schema::dropIfExists('building_images');
     }
 }
