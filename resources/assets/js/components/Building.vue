@@ -243,12 +243,14 @@
 <script>
     import ImageUploader from './ImageUploader';
     import BuildingDetail from './BuildingDetail';
+    import utils from '../mixins/utils.js'
 
     export default {
        components: {
             'image-uploader': ImageUploader,
             BuildingDetail,
         },
+        mixins: [utils],
         data() {
             return {
                 editmode: false,
