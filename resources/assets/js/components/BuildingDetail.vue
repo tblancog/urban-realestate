@@ -26,7 +26,7 @@
                                 <div class="carousel-inner">
                                     <div v-for="(image, idx) in item.images" :key="image.id"
                                         :class="['carousel-item', { active: idx === 0 }]">
-                                        <img :src="image_path(image)" width="100%" height="300">
+                                        <img :src="image_path(image)" class="img-fluid">
                                     </div>
                                 </div>
 
@@ -74,21 +74,22 @@
 </template>
 
 <script>
+    import {mixin} from '../mixins/utils'
     export default {
         props: ['item'],
-        methods: {
-            image_path(image) {
-                return image.path + image.filename
-            }
-        }
+        // mixins: [mixin],
     }
 
 </script>
 
-<style>
+<style lang="scss">
     .modal-dialog.modal-dialog-centered {
         max-width: 800px;
         margin: 0 auto;
+    }
+    .carousel-item{
+      height: 300px;
+      overflow: hidden;
     }
 
 </style>

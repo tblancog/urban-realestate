@@ -19,8 +19,6 @@ class Building extends Model
       'is_featured',
       'contact_name',
       'contact_phone',
-      'amenities',
-      'images',
     ];
 
     public function amenities(){

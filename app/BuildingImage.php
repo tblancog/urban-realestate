@@ -8,7 +8,7 @@ class BuildingImage extends Model
 {
 
     protected $table = 'building_images';
-    // private $storage_path = 'images';
+    protected $fillable = [ 'filename', 'order', 'is_placeholder', 'building_id' ];
   
     public function building(){
 

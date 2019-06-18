@@ -8,20 +8,18 @@
                         <h3 class="card-title">Edificios</h3>
                         <div class="card-tools">
                             <button class="btn btn-success" @click="newModal">Crear Nuevo <i
-                                    class="fas fa-user-plus fa-fw"></i></button>
+                                    class="fas fa-plus fa-fw"></i></button>
                         </div>
                     </div>
                     <!-- /.card-header -->
 
                     <div class="media" v-for="building in buildings.data" :key="building.id">
-                        
                         <div class="media-body">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-3 col-sm-12">
-                                    <!-- <a href="https://placeholder.com"><img src="https://via.placeholder.com/250x180"></a>  -->
+                                    <div class="col-md-3 col-sm-12 cropped">
                                     <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
-                                      <img src="/images/uploads/building_1.jpg" class="img-fluid"/>
+                                      <img :src="image_path(building)" class="img-fluid"/>
                                     <!-- </router-link> -->
                                     </div>
                                     <div class="col-md-6">                              
@@ -42,7 +40,7 @@
                                             </a>
                                         </div>
                                         <div class="details-card">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer auctor pulvinar ullamcorper. Sed sed egestas ex. Nulla varius at odio non aliquet. Cras maximus a justo non facilisis.</p>
+                                            <p>{{ building.description  }}</p>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -358,9 +356,7 @@
               }
 
               const buildingCreate = this.form.post('api/buildings')
-
               buildingCreate.then(res => {
-                  console.log(res.data)
                   formData.append('id', res.data.id)
                   formData.append('type', 'building')
                   axios.post('images-upload', formData)
@@ -424,6 +420,10 @@
                                 .container {
                                     padding-top: 15px;
                                     padding-bottom: 15px;
+                                    .cropped{
+                                        height: 150px;
+                                        overflow: hidden;
+                                    }
                                     .info-card {
                                         padding-bottom: 10px;
                                         background-image: linear-gradient(to right, #7d7d7d 33%, rgba(255,255,255,0) 0%);

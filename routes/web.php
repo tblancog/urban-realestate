@@ -17,7 +17,7 @@ Route::post('images-upload', 'ImageController@upload');
 
 
 Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');
-Route::get('investments', 'BuildingController@index')->name('buildings.list');
+Route::get('buildings', 'BuildingController@index')->name('buildings.list');
 
 Route::get('/detail_building', function () {
   return view('detail-building');
