@@ -16,9 +16,9 @@ class CreateApartmentImagesTable extends Migration
         Schema::create('apartment_images', function (Blueprint $table) {
             $table->increments('id');
             $table->string('filename', 50);
-            $table->string('path', 100);
             $table->integer('order')->default(1);
             $table->integer('apartment_id')->nullable();
+            $table->boolean('is_placeholder')->default(false);
 
             $table->foreign('apartment_id')
                   ->references('id')
