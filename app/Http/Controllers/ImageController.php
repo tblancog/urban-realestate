@@ -20,7 +20,7 @@ class ImageController extends Controller
 
     if (count($request->images) > 0) {
             
-          $image_path = "public/properties/".$property->slug."/";
+          $image_path = "/uploads/properties/".$property->slug."/";
           foreach ($request->images as $k => $image) {
             $filename = "property_$k".".".$image->getClientOriginalExtension();
             $image->storeAs($image_path, $filename);

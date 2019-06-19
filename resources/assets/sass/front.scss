@@ -1460,6 +1460,10 @@ img {
         position: relative;
         z-index: 1;
 
+        max-width: 350px;
+        max-height: 250px;
+
+
         .property-info {
             background-color: rgba(0, 0, 0, 0.7);
             position: absolute;

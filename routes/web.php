@@ -59,7 +59,7 @@ Route::get('/contact', function () {
   return view('contact');
 })->name('contact.index');
 
-// Route::get('/{path}',function(){
-//   return redirect('/dashboard');
-// })->where( 'path', '([A-z\d-/_.]+)?' );
+Route::get('/{path}',function(){
+  return redirect('/dashboard');
+})->where( 'path', '([A-z\d-/_.]+)?' );
 

@@ -47,6 +47,7 @@ Vue.use(VueProgressBar, {
 
 let routes = [
     { path: '/users', component: require('./components/User.vue') },
+    // { path: '/slider', component: require('./components/Slider.vue') },
     { path: '/buildings', component: require('./components/Building.vue') },
     { path: '/apartments', component: require('./components/Apartment.vue') },
     { name: 'buildingDetail', path: '/buildings/:id', component: require('./components/BuildingDetail.vue') },

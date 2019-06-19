@@ -6,9 +6,9 @@ export default{
          }
          if (item.images[index].is_placeholder === '1') {
 
-             return 'storage/placeholder/' + item.images[index].filename
+             return 'uploads/placeholder/' + item.images[index].filename
          }
-         return 'storage/properties/' + item.slug + '/' + item.images[index].filename
+         return 'uploads/properties/' + item.slug + '/' + item.images[index].filename
      },
   }
 }

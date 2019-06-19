@@ -158,8 +158,17 @@
                 <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
-                        <a href="{{ route('buildings.detail', $f->slug) }}"><img src="img/bg-img/feature{{ $loop->iteration }}.jpg" alt=""></a>
-                        {{-- <a href="{{ route('buildings.detail', $f->slug) }}"><img src="{{ Storage::url( 'property_0.jpg') }}" alt=""></a> --}}
+                        <a href="{{ route('buildings.detail', $f->slug) }}">
+                        @if( $f->images && count($f->images) > 0 )
+
+                          @if($f->images[0]->is_placeholder === '1')
+                            <img src=" {{asset('storage/placeholder/'.$f->images[0]->filename ) }}">
+                          @else
+                            <img src=" {{asset('storage/properties/'.$f->slug.'/'.$f->images[0]->filename ) }}">
+                          @endif
+
+                        @endif
+                        </a>
                     </div>
                     <!-- Property Content -->
                     <div class="property-content">
@@ -171,7 +180,7 @@
                             <p class="top-area">150 m<sup>2</sup></p>
                           </div> --}}
                           <div class="other-top">
-                              <p class="top-amb">3 amb.</p>
+                              <p class="top-amb">{{ $f->rooms }}</p>
                           <div class="top-area">USD {{ $f->price }}</div>
                         </div>
                         <div class="other-bot">

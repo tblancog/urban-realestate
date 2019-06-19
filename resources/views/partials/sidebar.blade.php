@@ -29,11 +29,10 @@
                with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                    <router-link to="/dashboard" class="nav-link">
+                    <router-link to="/sliders" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt orange"></i>
                         <p>
                             Home
-
                         </p>
                     </router-link>
                 </li>
