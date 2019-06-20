@@ -1128,10 +1128,11 @@ img {
     }
 
     .owl-dots {
-        width: 1110px;
+        // width: 1110px;
         position: absolute;
         bottom: 15px;
-        left: 50%;
+        right: 6%;
+        top: 3%;
         @include transform (translateX(-50%));
 
         @media #{$breakpoint-lg} {
@@ -3256,6 +3257,33 @@ img {
         }
     }
 
+
+    .btn.contact-send {
+        float: right;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding: 0;
+
+        @media (max-width: 482px) {
+            float: left;
+        }
+
+        a {
+            text-transform: uppercase;
+            background-color: #51B848;
+            padding: 10px 20px;
+            /*border-radius: 30px;*/
+            font-size: 18px;
+            color: #ffffff;
+            transition: .3s;
+
+            &:hover {
+                background-color: #000000;
+                color: #ffffff;
+            }
+        }
+    }
+
     .dept-contact {
         padding: 15px 40px;
 
@@ -3293,31 +3321,7 @@ img {
         background-color: #ffffff;
     } 
     
-    .btn.contact-send {
-        float: right;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        padding: 0;
-
-        @media (max-width: 482px) {
-            float: left;
-        }
-
-        a {
-            text-transform: uppercase;
-            background-color: #51B848;
-            padding: 10px 20px;
-            /*border-radius: 30px;*/
-            font-size: 18px;
-            color: #ffffff;
-            transition: .3s;
-
-            &:hover {
-                background-color: #000000;
-                color: #ffffff;
-            }
-        }
-    }
+    
 
     .dept-description {
         margin-bottom: 30px;

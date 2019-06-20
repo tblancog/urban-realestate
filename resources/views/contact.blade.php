@@ -44,9 +44,14 @@
                     <div class="form-group">
                         <textarea rows="4" class="form-control" id="exampleFormControlTextarea1" placeholder="Estoy interesado en contactarlos" rows="3"></textarea>
                     </div>
+                    <div class="form-group pull-right">
+                        <div class="btn contact-send">
+                          <a href="#">Enviar</a>
+                        </div>
+                    </div>
                 </form>
                 <div class="text-uppercase">
-                   Directora Comercial: María Ester   Cel. +54 9 11 5329-4260   Mail. info@urbanrealestate.com.ar
+                   Directora Comercial: María Ester Pellizzari  Cel. +54 9 11 5329-4260   Mail. info@urbanrealestate.com.ar
                 </div>
             </div>
         </div>

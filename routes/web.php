@@ -55,6 +55,10 @@ Route::get('/credits', function () {
   return view('contact');
 })->name('credits.index');
 
+Route::get('/nosotros', function () {
+  return view('nosotros');
+})->name('nosotros.index');
+
 Route::get('/contact', function () {
   return view('contact');
 })->name('contact.index');

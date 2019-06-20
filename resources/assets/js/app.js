@@ -35,30 +35,18 @@ Vue.component(AlertError.name, AlertError)
 Vue.component('pagination', require('laravel-vue-pagination'));
 
 
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
-
+// Vue progressbar
 import VueProgressBar from 'vue-progressbar'
 Vue.use(VueProgressBar, {
-    color: 'rgb(143, 255, 199)',
-    failedColor: 'red',
-    height: '3px'
-  })
+  color: 'rgb(143, 255, 199)',
+  failedColor: 'red',
+  height: '3px'
+})
 
-let routes = [
-    { path: '/users', component: require('./components/User.vue') },
-    // { path: '/slider', component: require('./components/Slider.vue') },
-    { path: '/buildings', component: require('./components/Building.vue') },
-    { path: '/apartments', component: require('./components/Apartment.vue') },
-    { name: 'buildingDetail', path: '/buildings/:id', component: require('./components/BuildingDetail.vue') },
-    { name: 'apartmentDetail', path: '/apartments/:id', component: require('./components/ApartmentDetail.vue') },
-
-
-
-    
-    { path: '*', component: require('./components/NotFound.vue') }
-  ]
-
+// Vue router
+import VueRouter from 'vue-router'
+import routes  from './routes.js'
+Vue.use(VueRouter)
 const router = new VueRouter({
     mode: 'history',
     routes

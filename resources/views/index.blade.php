@@ -47,7 +47,9 @@
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="hero-slides-content">
-                                <!-- <h2 data-animation="fadeInUp" data-delay="100ms">La casa de tus sueños</h2> -->
+                                <h2>Torre Acha</h2>
+                                <h4>Una oportunidad para disfrutar de un edificio de calidad en una zona estratégica
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -59,7 +61,9 @@
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="hero-slides-content">
-                                <!-- <h2 data-animation="fadeInUp" data-delay="100ms">Proyectos en marcha</h2> -->
+                                <h2>Torre Acha</h2>
+                                <h4>Una oportunidad para disfrutar de un edificio de calidad en una zona estratégica
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -144,7 +148,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="project-title section-heading wow fadeIn">
+                <div class="project-title section-heading wow fadeInLeftBig">
                     <h2>Propiedades destacadas</h2>
                 </div>
             </div>
@@ -159,7 +163,10 @@
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
                         <a href="{{ route('buildings.detail', $f->slug) }}">
-                        @if( $f->images && count($f->images) > 0 )
+                        <img src="img/bg-img/feature{{ $loop->iteration }}.jpg" alt="">
+                        {{-- <img src=" {{asset('storage/placeholder/'.$f->images[0]->filename ) }}"> --}}
+
+                        {{-- @if( $f->images && count($f->images) > 0 )
 
                           @if($f->images[0]->is_placeholder === '1')
                             <img src=" {{asset('storage/placeholder/'.$f->images[0]->filename ) }}">
@@ -167,7 +174,7 @@
                             <img src=" {{asset('storage/properties/'.$f->slug.'/'.$f->images[0]->filename ) }}">
                           @endif
 
-                        @endif
+                        @endif --}}
                         </a>
                     </div>
                     <!-- Property Content -->

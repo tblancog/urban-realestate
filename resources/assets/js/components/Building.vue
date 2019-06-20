@@ -401,8 +401,11 @@
 </script>
 
 <style scoped lang="scss">
+    #addNew{
+      z-index: 10000;
+    }
     .modal-dialog{
-        max-width: 750px;
+        max-width: 650px;
     }
     .sidebar-mini {
         .wrapper {
