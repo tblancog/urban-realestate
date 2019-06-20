@@ -10,6 +10,7 @@ class ImageController extends Controller
 {
   public function upload(Request $request)
   {
+    // dd($request->all());
     if($request->type == 'building'){
       
       $property = Building::find($request->id);

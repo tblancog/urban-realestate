@@ -4,7 +4,7 @@ export default{
          if (!item.images) {
              return ''
          }
-         if (item.images[index].is_placeholder === '1') {
+         else if (item.images[index] && item.images[index].is_placeholder === '1') {
 
              return 'uploads/placeholder/' + item.images[index].filename
          }
