@@ -1,3 +1,13 @@
+@push('styles')
+  <style>
+    .classynav a:hover,
+    .classynav a:focus
+    {
+      color: #dddddd; 
+    }
+  </style>
+@endpush
+
 <!-- ##### Front Header Area Start ##### -->
 <header class="header-area">
 

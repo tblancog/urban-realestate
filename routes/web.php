@@ -16,7 +16,11 @@ Route::get('/dashboard', function(){
 Route::post('images-upload', 'ImageController@upload');
 
 
-Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');
+// Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');
+Route::get('buildings/{viewName}', function($view){
+  return view($view);
+})->name('buildings.detail');
+
 Route::get('buildings', 'BuildingController@index')->name('buildings.list');
 
 Route::get('/detail_building', function () {

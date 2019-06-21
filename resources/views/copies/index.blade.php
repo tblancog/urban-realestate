@@ -140,31 +140,53 @@
         </div>
 
         <div class="row">
+        {{-- Featured --}}
+        @include('featured-buildings')
+        @forelse ($featured as $f)
+            <!-- Single Featured Property -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
+                    <!-- Property Thumbnail -->
+                    <div class="property-thumb">
+                        {{-- <a href="{{ route('buildings.detail', $f->slug) }}">
+                        <img src="img/bg-img/feature{{ $loop->iteration }}.jpg" alt=""> --}}
+                        {{-- <img src=" {{asset('storage/placeholder/'.$f->images[0]->filename ) }}"> --}}
 
-       
-        @include('components.featured-buildings-box',
-                [
-                'detailView'=> 'components.feature-building-detail_1',
-                'src'=> 'images/uploads/building-boxes/box_1.jpeg',
-                'status'=> 'EN VENTA',
-                'amb'=> '2-3-4 ambientes',
-                'price'=> '169.000',
-                'title'=> 'Edificio PH UH5',
-                'address'=> 'Mariano Acha 3458']
-        )
+                        {{-- @if( $f->images && count($f->images) > 0 )
 
-        @include('components.featured-buildings-box',
-                [
-                'detailView'=> 'components.feature-building-detail_2',
-                'src'=> 'images/uploads/building-boxes/box_2.jpg',
-                'status'=> 'EN VENTA',
-                'amb'=> '2-3 ambientes',
-                'price'=> '169.000',
-                'title'=> 'Edificio G 3051',
-                'address'=> 'Galvan 3051 – Villa Urquiza - CABA ']
-        )
-         </div>
+                          @if($f->images[0]->is_placeholder === '1')
+                            <img src=" {{asset('storage/placeholder/'.$f->images[0]->filename ) }}">
+                          @else
+                            <img src=" {{asset('storage/properties/'.$f->slug.'/'.$f->images[0]->filename ) }}">
+                          @endif
 
+                        @endif 
+                        </a>--}}
+                    </div>
+                    <!-- Property Content -->
+                    <div class="property-content">
+                        <div class="ribbon ribbon-top-left">
+                            <span>{{ $f->status }}</span>
+                        </div>
+                        {{-- <div class="other-top">
+                            <p class="top-amb">3 amb.</p>
+                            <p class="top-area">150 m<sup>2</sup></p>
+                          </div> --}}
+                          <div class="other-top">
+                              <p class="top-amb">{{ $f->rooms }}</p>
+                          <div class="top-area">USD {{ $f->price }}</div>
+                        </div>
+                        <div class="other-bot">
+                            <p class="bot-status">{{ $f->title }}</p>
+                            <p class="bot-address">{{ $f->address }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          @empty
+            <div class="col-12">No existen destacados por el momento</div>
+          @endforelse
+        </div>
             
     </div>
 </section>
@@ -183,25 +205,38 @@
 
         <div class="row">
 
-           @include('components.other-properties-box',
-                  ['src'=> 'images/uploads/apartment-boxes/box_1.JPG',
-                   'detailView'=> 'components.other-apartment-detail_1',
-                   'status'=> 'EN VENTA',
-                   'amb'=> '2 amb.',
-                   'price'=> '169.000',
-                   'title'=> 'UH5 | URQUIZA R',
-                   'address'=> 'Capital Federal, V. Urquiza | Urquiza R'] 
-                   )
-
-           {{-- @include('components.other-properties-box', 
-                  ['src'=> 'images/uploads/apartment-boxes/box_2.JPG',
-                   'detailView'=> 'components.feature-building-detail_1',
-                   'status'=> 'EN VENTA',
-                   'amb'=> '3 amb.',
-                   'price'=> '169.000',
-                   'title'=> 'UH5 | URQUIZA R',
-                   'address'=> 'Capital Federal, V. Urquiza | Urquiza R'] ) --}}
-        
+          {{-- Others --}}
+        @forelse ($others as $oth)
+            <!-- Single Featured Property -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
+                    <!-- Property Thumbnail -->
+                    <div class="property-thumb">
+                        <a href="{{ route('buildings.detail', $oth->slug) }}"><img src="img/bg-img/feature{{ $loop->iteration }}.jpg" alt=""></a>
+                    </div>
+                    <!-- Property Content -->
+                    <div class="property-content">
+                        <div class="ribbon ribbon-top-left">
+                            <span>{{ $oth->status }}</span>
+                        </div>
+                        {{-- <div class="other-top">
+                            <p class="top-amb">3 amb.</p>
+                            <p class="top-area">150 m<sup>2</sup></p>
+                          </div> --}}
+                          <div class="other-top">
+                              <p class="top-amb">3 amb.</p>
+                          <div class="top-area">USD {{ $oth->price }}</div>
+                        </div>
+                        <div class="other-bot">
+                            <p class="bot-status">{{ $oth->title }}</p>
+                            <p class="bot-address">{{ $oth->address }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          @empty
+            <div class="col-12">No existen destacados por el momento</div>
+          @endforelse
         </div>
 
         

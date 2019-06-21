@@ -675,11 +675,12 @@ img {
 
                                     &:hover {
                                         .list-top {
+                                            background: red;
                                             position: absolute;
                                             left: -150%;
                                             top: 164%;
                                             visibility: visible;
-                                            opacity: 1;
+                                            // opacity: 1;
                                         }
                                     }
 
@@ -1043,11 +1044,12 @@ img {
     @media #{$breakpoint-xs-landscape} {
         margin-top: 20%;
     }
-
+    
     h2 {
-        color: $color-white;
-        font-size: 60px;
-        max-width: 350px;
+      color: $color-white;
+      font-size: 60px;
+      max-width: 450px;
+      padding: .5rem;
         //  margin-bottom: 0;
         //  padding: 10px 15px;
         text-transform: uppercase;
@@ -1069,7 +1071,10 @@ img {
     }
 
     h4 {
+        background-color: $color-dark;
+        color: $color-white;
         line-height: 1.5;
+        padding: 1rem;
 
         @media #{$breakpoint-md} {
             font-size: 22px;
@@ -1550,7 +1555,7 @@ img {
             width: 100%;
 
             @media #{$breakpoint-xl} {
-                top: -239%;
+                top: -371%;
                 left: -38%;
             }
 
@@ -1565,7 +1570,7 @@ img {
             }
 
             @media #{$breakpoint-xs} {
-                top: -256%;
+                top: -300%;
                 left: -40%;
 
             }
@@ -2122,6 +2127,10 @@ img {
         }
 
         .footer-social {
+           .social-img {
+               width: 25px;
+               padding: .25em !important;
+           }
             @media (max-width: 768px) {
                 text-align: center;
             }
@@ -3258,31 +3267,7 @@ img {
     }
 
 
-    .btn.contact-send {
-        float: right;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        padding: 0;
 
-        @media (max-width: 482px) {
-            float: left;
-        }
-
-        a {
-            text-transform: uppercase;
-            background-color: #51B848;
-            padding: 10px 20px;
-            /*border-radius: 30px;*/
-            font-size: 18px;
-            color: #ffffff;
-            transition: .3s;
-
-            &:hover {
-                background-color: #000000;
-                color: #ffffff;
-            }
-        }
-    }
 
     .dept-contact {
         padding: 15px 40px;
@@ -3747,3 +3732,28 @@ img {
   }
 }
 
+    .btn.contact-send {
+        float: right;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding: 0;
+
+        @media (max-width: 482px) {
+            float: left;
+        }
+
+        a {
+            text-transform: uppercase;
+            background-color: #51B848;
+            padding: 10px 20px;
+            /*border-radius: 30px;*/
+            font-size: 18px;
+            color: #ffffff;
+            transition: .3s;
+
+            &:hover {
+                background-color: #000000;
+                color: #ffffff;
+            }
+        }
+    }
