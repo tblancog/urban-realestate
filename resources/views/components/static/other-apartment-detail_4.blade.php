@@ -6,14 +6,7 @@
 
 @section('content')
 
-<!-- ##### Front Header Area Start ##### -->
 @include('partials.front-header')
-<!-- ##### Front Header Area End ##### -->
-
-<!-- Preloader -->
-<div id="preloader">
-    <div class="south-load"></div>
-</div>
 
 <section class="detail-page">
     <div class="row">
@@ -22,21 +15,21 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="dept-name">
-                            <h2>Edificio PH UH5</h2>
+                            <h2>2 ambientes - Galvan 3051</h2>
                         </div>
                     </div>
-                    <div class="col-md-6 featured-col">
+                    {{-- <div class="col-md-6 featured-col">
                         <div class="featured-box">
                             <span class="featured">Destacado</a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="dept-price">
                 <h2 class="status">En Venta</h2>
-                <h2 class="price">Desde USD <b>169.000</b></h2>
+                <h2 class="price">Desde USD <b>213.080</b></h2>
             </div>
         </div>
         <div class="col-md-6">
@@ -50,6 +43,14 @@
                                 <div class="carousel-inner">
                                     
                                     <div class="active carousel-item" data-slide-number="0">
+                                        <img src="{{ asset('/images/uploads/other-apartment-detail_4/apartment_1.png') }}" class="img-fluid">
+                                    </div>
+                                    <div class="carousel-item" data-slide-number="1">
+                                        <img src="{{ asset('/images/uploads/other-apartment-detail_4/apartment_2.png') }}" class="img-fluid">
+                                    </div>
+
+
+                                    {{-- <div class="active carousel-item" data-slide-number="0">
                                         <img src="{{ asset('/images/uploads/feature-building-detail_1/detail_1.JPG') }}" class="img-fluid">
                                     </div>
                                     <div class="carousel-item" data-slide-number="1">
@@ -60,7 +61,7 @@
                                     </div>
                                     <div class="carousel-item" data-slide-number="3">
                                         <img src="{{ asset('/images/uploads/feature-building-detail_1/detail_4.JPG') }}" class="img-fluid">
-                                    </div>
+                                    </div> --}}
 
 
                                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -192,24 +193,24 @@
                             <div class="row">
                                 <div class="col-12 box-icons">
 
-                                    <div class="col-3 detail-box">
+                                    <div class="col-2 detail-box">
                                         <img src="/img/icons/amen_03.png" alt="piscina">
                                         <p style="text-transform: capitalize;">piscina</p>
                                     </div>
 
-                                    <div class="col-3 detail-box">
+                                    <div class="col-2 detail-box">
                                         <img src="/img/icons/amen_07.png" alt="ascensor">
                                         <p style="text-transform: capitalize;">ascensor</p>
                                     </div>
 
 
-                                    <div class="col-3 detail-box">
+                                    <div class="col-2 detail-box">
                                         <img src="/img/icons/amen_02.png" alt="cochera">
                                         <p style="text-transform: capitalize;">cochera</p>
                                     </div>
 
 
-                                    <div class="col-3 detail-box">
+                                    <div class="col-2 detail-box">
                                         <img src="/img/icons/amen_05.png" alt="parrilla">
                                         <p style="text-transform: capitalize;">parrilla</p>
                                     </div>
@@ -266,9 +267,7 @@
                     </div>
                     <div class="map-bot">
                         <div class="map-responsive">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6959.996374489853!2d-58.405724992216996!3d-34.58694057808897!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca83d2aa1521%3A0xc7a941fe0d021ba0!2sAlto+Palermo+Shopping!5e0!3m2!1ses!2sar!4v1557097984857!5m2!1ses!2sar"
-                                width="522" height="390" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.454518830625!2d-58.489131484979524!3d-34.56736416308202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6f55c9a4cbb%3A0x910191cd7ab1ace!2sGalv%C3%A1n+3051%2C+C1431FVD+CABA!5e0!3m2!1sen!2sar!4v1561260150424!5m2!1sen!2sar" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -288,5 +287,5 @@
 
 @endsection
 
-{{-- @push('scripts')
-@endpush --}}
+@push('scripts')
+@endpush
