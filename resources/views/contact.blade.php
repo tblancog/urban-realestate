@@ -19,9 +19,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-              <div class="text-uppercase">
-               Contamos con propiedades aptas crédito, y podemos acompañarte en el proceso de búsqueda de la mejor opción de crédito.
-                No dudes en consultar sin compromiso, te daremos el mejor asesoramiento.
+              <div class="appraisals-title">
+              Directora Comercial: María Ester   Cel. +54 9 11 5329-4260   Mail. info@urbanrealestate.com.ar
+               <!--Contamos con propiedades aptas crédito, y podemos acompañarte en el proceso de búsqueda de la mejor opción de crédito.
+                No dudes en consultar sin compromiso, te daremos el mejor asesoramiento.-->
               </div>
                 <form>
                     <div class="form-row">
@@ -45,9 +46,9 @@
                         <textarea rows="4" class="form-control" id="exampleFormControlTextarea1" placeholder="Estoy interesado en contactarlos" rows="3"></textarea>
                     </div>
                 </form>
-                <div class="text-uppercase">
+                <!--<div class="appraisals-bottom">
                    Directora Comercial: María Ester   Cel. +54 9 11 5329-4260   Mail. info@urbanrealestate.com.ar
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
