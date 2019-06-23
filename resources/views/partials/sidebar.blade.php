@@ -28,16 +28,6 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-                <li class="nav-item">
-                    <router-link to="/dashboard" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt orange"></i>
-                        <p>
-                            Home
-
-                        </p>
-                    </router-link>
-                </li>
-
                 @can('isAdmin')
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -58,33 +48,32 @@
                     </ul>
                 </li>
 
+                @endcan
                 <li class="nav-item">
-                    <router-link to="/developer" class="nav-link">
-                        <i class="nav-icon fas fa-cogs"></i>
+                    <router-link to="/sliderAdmin" class="nav-link">
+                        <i class="nav-icon fa fa-images green"></i>
                         <p>
-                            Developer
+                            Sliders
                         </p>
                     </router-link>
                 </li>
-                @endcan
                 <li class="nav-item">
-                    <router-link to="/buildings" class="nav-link">
-                        {{-- <i class="nav-icon fas fa-city green"></i> --}}
-                        <i class="nav-icon fa fa-bullseye green"></i>
+                    <router-link to="/buildingAdmin" class="nav-link">
+                        <i class="nav-icon fa fa-building green"></i>
                         <p>
                             Edificios
                         </p>
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/apartments" class="nav-link">
-                        <i class="nav-icon fas fa-building green"></i>
+                    <router-link to="/apartmentAdmin" class="nav-link">
+                        <i class="nav-icon fas fa-home green"></i>
                         <p>
                             Departamentos
                         </p>
                     </router-link>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <router-link to="#abd" class="nav-link">
                         <i class="nav-icon fa fa-money-check-alt green"></i>
                         <p>
@@ -123,7 +112,7 @@
                             Contacto
                         </p>
                     </router-link>
-                </li>
+                </li> --}}
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();

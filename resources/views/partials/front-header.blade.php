@@ -1,3 +1,13 @@
+@push('styles')
+  <style>
+    .classynav a:hover,
+    .classynav a:focus
+    {
+      color: #dddddd; 
+    }
+  </style>
+@endpush
+
 <!-- ##### Front Header Area Start ##### -->
 <header class="header-area">
 
@@ -36,7 +46,7 @@
                                     <span class="navbarToggler"><span></span><span></span><span></span></span>
                                 </a>
                                 <ul class="list-top">
-                                    <li><a href="#">Nosotros</a></li>
+                                    <li><a href="{{ route('nosotros.index') }}">Nosotros</a></li>
                                     {{-- <li><a href="#">Propiedades destacadas</a></li>
                                     <li><a href="#">Propiedades</a></li>
                                     <li><a href="#">Crédito hipotecario</a></li>

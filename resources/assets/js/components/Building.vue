@@ -19,7 +19,7 @@
                                 <div class="row">
                                     <div class="col-md-3 col-sm-12 cropped">
                                     <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
-                                      <img :src="image_path(building)" class="img-fluid"/>
+                                      <img v-if="building.images" :src="image_path(building)" class="img-fluid"/>
                                     <!-- </router-link> -->
                                     </div>
                                     <div class="col-md-6">                              
@@ -243,12 +243,14 @@
 <script>
     import ImageUploader from './ImageUploader';
     import BuildingDetail from './BuildingDetail';
+    import utils from '../mixins/utils.js'
 
     export default {
        components: {
-            'image-uploader': ImageUploader,
+            ImageUploader,
             BuildingDetail,
         },
+        mixins: [utils],
         data() {
             return {
                 editmode: false,
@@ -362,10 +364,15 @@
                   axios.post('images-upload', formData)
                     .then(()=> {
                       Fire.$emit('AfterCreate');
-                      toast({
-                        type: 'success',
-                        title: 'Edificio creado!'
-                      })
+                      swal(
+                            'Creado!',
+                            'Edificio creado.',
+                            'success'
+                        )
+                      this.form.reset();
+                      this.files = []
+                      $('#addNew').modal('hide');
+
                     this.$Progress.finish();
                   })
               })
@@ -394,8 +401,11 @@
 </script>
 
 <style scoped lang="scss">
+    #addNew{
+      z-index: 10000;
+    }
     .modal-dialog{
-        max-width: 750px;
+        max-width: 650px;
     }
     .sidebar-mini {
         .wrapper {

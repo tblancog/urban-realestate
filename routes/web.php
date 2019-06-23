@@ -16,7 +16,11 @@ Route::get('/dashboard', function(){
 Route::post('images-upload', 'ImageController@upload');
 
 
-Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');
+// Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');
+Route::get('buildings/{viewName}', function($view){
+  return view($view);
+})->name('buildings.detail');
+
 Route::get('buildings', 'BuildingController@index')->name('buildings.list');
 
 Route::get('/detail_building', function () {
@@ -55,11 +59,15 @@ Route::get('/credits', function () {
   return view('contact');
 })->name('credits.index');
 
+Route::get('/nosotros', function () {
+  return view('nosotros');
+})->name('nosotros.index');
+
 Route::get('/contact', function () {
   return view('contact');
 })->name('contact.index');
 
-// Route::get('/{path}',function(){
-//   return redirect('/dashboard');
-// })->where( 'path', '([A-z\d-/_.]+)?' );
+Route::get('/{path}',function(){
+  return redirect('/dashboard');
+})->where( 'path', '([A-z\d-/_.]+)?' );
 
