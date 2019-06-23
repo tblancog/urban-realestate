@@ -8,25 +8,29 @@
                     <img src="{{ asset('img/core-img/logo.png') }}" alt="">
                 </div>
                 <div class="col-md-4 footer-ad-telf">
-                    <div class="footer-address">
-                        <h3>Dirección</h3>
-                        <p>Direccion completa</p>
-                        <p>Calle y número de la oficina</p>
-                    </div>
                     <div class="footer-telf">
-                        <h3>Telefonos</h3>
-                        <p>Teléfonos de Contacto</p>
-                        <p>Fijo + Celular</p>
+                        <h3>Contacto</h3>
+                        <p>María Ester Pellizzari </p>
+                        <p>Cel. +54 9 11 5329-4260</p>
+                        <p>info@urbanrealestate.com.ar</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="footer-social">
                         <h3>Facebook</h3>
-                        <a href="#">facebook/urbanpropiedades/AR</a>
+                        <a href="https://facebook.com/urbanpropiedades/AR" target="_blank">
+                          <img class="social-img" src="/img/icons/facebook.svg" alt="Facebook"/>
+                          facebook/urbanpropiedades/AR</a>
+
                         <h3>Instagram</h3>
-                        <a href="#">instagram/urbanpropiedades/AR</a>
+                        <a href="https://instagram.com/urbanpropiedades/AR" target="_blank">
+                          <img class="social-img" src="/img/icons/instagram.svg" alt="Instagram"/>
+                          instagram/urbanpropiedades/AR</a>
+                        
                         <h3>Whatsapp</h3>
-                        <a href="#">whatsapp/urbanpropiedades/AR</a>
+                        <a href="#" target="_blank">
+                          <img class="social-img" src="/img/icons/whatsapp.svg" alt="Whatsapp"/>
+                          whatsapp/urbanpropiedades/AR</a>
                     </div>
                 </div>
             </div>

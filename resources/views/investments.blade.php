@@ -22,15 +22,48 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Edificios</h3>
-                        <div class="col-12 text-capitalize">
+                        <div class="col-12">
                           Si estas interesado en realizar una inversión planificada, tenemos múltiples opciones de corto, mediano o largo plazo. 
                           Contactáte con nosotros y con gusto podremos asesorarte.
                         </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="row">
+                      <div class="media">
+                          <div class="media-body">
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col-md-3">
+                                      <a href="{{-- route('buildings.detail', $building->slug) --}}"><img src="/images/uploads/building_1.jpg"></a> 
+                                      </div>
+                                      <div class="col-md-6">                              
+                                          <div class="info-card">
+                                            <a href="{{-- route('buildings.detail', $building->slug) --}}">
+                                              <h5 class="mt-0"> {{-- $building->title --}}</h5>
+                                            </a> 
+                                          </div>
+                                          <div class="details-card">
+                                              <p>{{-- $building->description --}}</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                          <div class="more-box">
+                                              <h5>Edificio</h5>
+                                              <div class="cta-more">
+                                                      <a class="btn-more" href="{{-- route('buildings.detail', $building->slug) --}}">Ver más</a>            
+                                              </div>
+                                              <div class="deliver-box">
+                                                  <h6>Entrega</h6>
+                                                  <h6 class="deliver-date">Noviembre 2021</h6>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>             
+                          </div>
+                      </div>
                     </div>
-                    @forelse ( $buildings as $building  )
+                    {{-- @forelse ( $buildings as $building  )
                       <div class="media">
                           <div class="media-body">
                               <div class="container">
@@ -54,10 +87,10 @@
                                               <div class="cta-more">
                                                       <a class="btn-more" href="{{ route('buildings.detail', $building->slug) }}">Ver más</a>            
                                               </div>
-                                              {{-- <div class="deliver-box">
+                                              <div class="deliver-box">
                                                   <h6>Entrega</h6>
                                                   <h6 class="deliver-date">Noviembre 2021</h6>
-                                              </div> --}}
+                                              </div>
                                           </div>
                                       </div>
                                   </div>
@@ -67,7 +100,7 @@
                           
                       @empty
                         <div class="col-12">No existen edificios por el momento </div>
-                    @endforelse
+                    @endforelse --}}
 
                     <!-- /.card-body -->
                     <div class="card-footer">

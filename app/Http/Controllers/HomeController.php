@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use  App\Building;
+use  App\Apartment;
 class HomeController extends Controller
 {
     /**
@@ -23,13 +23,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $featured = Building::where('is_featured', true)
+        $featured = Apartment::where('is_featured', true)
                             ->latest()
+                            ->with('images')
                             ->take(3)
                             ->get();
 
-        $others = Building::where('is_featured', false)
+        $others = Apartment::where('is_featured', false)
                             ->latest()
+                            ->with('images')
                             ->take(9)
                             ->get();
 

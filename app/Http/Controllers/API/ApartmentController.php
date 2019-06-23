@@ -5,7 +5,6 @@ namespace App\Http\Controllers\API;
 use App\Apartment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-// use App\Http\Requests\BuildingRequest;
 
 
 class ApartmentController extends Controller
@@ -17,7 +16,9 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        return Apartment::latest()->paginate(5);
+      return Apartment::latest()
+                ->with('images')
+                ->paginate(5);
     }
 
     /**

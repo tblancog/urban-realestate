@@ -13,53 +13,42 @@
 
 <!-- ##### Hero Area Start ##### -->
 <section class="hero-area">
-    <!-- <h2>TORRE ACHA</h2>
-      <p>Una oportunidad para disfrutar<br/>
-         de un efdicio de calidad<br/>
-         en una zona estratégica</p> -->
-    <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-1.jpg);">
+    <div class="single-hero-slide bg-img" style="background-image: url(images/uploads/static/static_1.jpeg);">
         <div class="hero-slides owl-carousel">
-            <!-- Property Title -->
-            <!-- <div class="property-title">
-                <h2>Torre Acha</h2>
-                <h4>Una oportunidad para disfrutar de un edificio de calidad en una zona estratégica</h4>
-            </div> -->
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-1.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image: url(images/uploads/static/static_1.jpeg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="hero-slides-content">
-                                <h2>Torre Acha</h2>
-                                <h4>Una oportunidad para disfrutar de un edificio de calidad en una zona estratégica
+                                <h2>EDIFICIO PH UH5</h2>
+                                <h4>Una oportunidad para disfrutar de un edificio en una zona estratégica</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(images/uploads/static/static_2.jpeg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="hero-slides-content">
+                                <h2>EDIFICIO PH UH5</h2>
+                                <h4>Moderno y funcional con terraza y parrilla propia. ¡Vení a conocerlo!
                                 </h4>
-
-                                <!-- <h2 data-animation="fadeInUp" data-delay="100ms">Proyectos inmobiliarios</h2> -->
-                                <!-- <a href="#" class="btn south-btn mt-50 wow fadeInUp" data-wow-delay="500ms">Info</a> -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-2.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image: url(images/uploads/static/static_3.jpeg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="hero-slides-content">
-                                <!-- <h2 data-animation="fadeInUp" data-delay="100ms">La casa de tus sueños</h2> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-3.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <!-- <h2 data-animation="fadeInUp" data-delay="100ms">Proyectos en marcha</h2> -->
+                                <h2>EDIFICIO PH UH5</h2>
+                                <h4>Estética y confort en cada detalle. Ameneties para disfrutar en familia y con amigos </h4>
                             </div>
                         </div>
                     </div>
@@ -144,47 +133,38 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="project-title section-heading wow fadeIn">
+                <div class="project-title section-heading wow fadeInLeftBig">
                     <h2>Propiedades destacadas</h2>
                 </div>
             </div>
         </div>
 
         <div class="row">
-        {{-- Featured --}}
-        @forelse ($featured as $f)
-            <!-- Single Featured Property -->
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <a href="{{ route('buildings.detail', $f->slug) }}"><img src="img/bg-img/feature{{ $loop->iteration }}.jpg" alt=""></a>
-                        {{-- <a href="{{ route('buildings.detail', $f->slug) }}"><img src="{{ Storage::url( 'property_0.jpg') }}" alt=""></a> --}}
-                    </div>
-                    <!-- Property Content -->
-                    <div class="property-content">
-                        <div class="ribbon ribbon-top-left">
-                            <span>{{ $f->status }}</span>
-                        </div>
-                        {{-- <div class="other-top">
-                            <p class="top-amb">3 amb.</p>
-                            <p class="top-area">150 m<sup>2</sup></p>
-                          </div> --}}
-                          <div class="other-top">
-                              <p class="top-amb">3 amb.</p>
-                          <div class="top-area">USD {{ $f->price }}</div>
-                        </div>
-                        <div class="other-bot">
-                            <p class="bot-status">{{ $f->title }}</p>
-                            <p class="bot-address">{{ $f->address }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          @empty
-            <div class="col-12">No existen destacados por el momento</div>
-          @endforelse
-        </div>
+
+       
+        @include('components.static.featured-buildings-box',
+                [
+                'detailView'=> 'components.static.feature-building-detail_1',
+                'src'=> 'images/uploads/building-boxes/box_1.jpeg',
+                'status'=> 'EN VENTA',
+                'amb'=> '2-3-4 ambientes',
+                'price'=> '169.000',
+                'title'=> 'Edificio PH UH5',
+                'address'=> 'Mariano Acha 3458']
+        )
+
+        @include('components.static.featured-buildings-box',
+                [
+                'detailView'=> 'components.static.feature-building-detail_2',
+                'src'=> 'images/uploads/building-boxes/box_2.jpg',
+                'status'=> 'EN VENTA',
+                'amb'=> '2-3 ambientes',
+                'price'=> '169.000',
+                'title'=> 'Edificio G 3051',
+                'address'=> 'Galvan 3051 – Villa Urquiza - CABA']
+        )
+         </div>
+
             
     </div>
 </section>
@@ -203,38 +183,105 @@
 
         <div class="row">
 
-          {{-- Others --}}
-        @forelse ($others as $oth)
-            <!-- Single Featured Property -->
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <a href="{{ route('buildings.detail', $oth->slug) }}"><img src="img/bg-img/feature{{ $loop->iteration }}.jpg" alt=""></a>
-                    </div>
-                    <!-- Property Content -->
-                    <div class="property-content">
-                        <div class="ribbon ribbon-top-left">
-                            <span>{{ $oth->status }}</span>
-                        </div>
-                        {{-- <div class="other-top">
-                            <p class="top-amb">3 amb.</p>
-                            <p class="top-area">150 m<sup>2</sup></p>
-                          </div> --}}
-                          <div class="other-top">
-                              <p class="top-amb">3 amb.</p>
-                          <div class="top-area">USD {{ $oth->price }}</div>
-                        </div>
-                        <div class="other-bot">
-                            <p class="bot-status">{{ $oth->title }}</p>
-                            <p class="bot-address">{{ $oth->address }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          @empty
-            <div class="col-12">No existen destacados por el momento</div>
-          @endforelse
+           @include('components.static.other-properties-box',
+                  ['src'=> 'images/uploads/apartment-boxes/box_1.JPG',
+                   'detailView'=> 'components.static.other-apartment-detail_1',
+                   'status'=> 'EN VENTA',
+                   'amb'=> '2 amb.',
+                   'price'=> '169.000',
+                   'title'=> 'UH5 | URQUIZA R',
+                   'address'=> 'Capital Federal, V. Urquiza | Urquiza R'] 
+                   )
+
+           @include('components.static.other-properties-box', 
+                  ['src'=> 'images/uploads/apartment-boxes/box_2.png',
+                   'detailView'=> 'components.static.other-apartment-detail_2',
+                   'status'=> 'EN VENTA',
+                   'amb'=> 'Sup. Total. 44.50 m2',
+                   'price'=> '111.250',
+                   'title'=> 'Monoambiente Modular',
+                   'address'=> 'Galvan 3051 – Villa Urquiza'] )
+
+           @include('components.static.other-properties-box', 
+                  ['src'=> 'images/uploads/apartment-boxes/box_3.png',
+                   'detailView'=> 'components.static.other-apartment-detail_3',
+                   'status'=> 'EN VENTA',
+                   'amb'=> 'Sup. Total. 36.90 m2',
+                   'price'=> '92.250',
+                   'title'=> 'Monoambiente',
+                   'address'=> 'Galvan 3051 – Villa Urquiza'] )
+
+           @include('components.static.other-properties-box', 
+                  ['src'=> 'images/uploads/apartment-boxes/box_4.png',
+                   'detailView'=> 'components.static.other-apartment-detail_4',
+                   'status'=> 'EN VENTA',
+                   'amb'=> 'Sup. Total. 66.10 m2',
+                   'price'=> '213.080',
+                   'title'=> '2 ambientes',
+                   'address'=> 'Galvan 3051 – Villa Urquiza'] )
+        
+           @include('components.static.other-properties-box', 
+                  ['src'=> 'images/uploads/apartment-boxes/box_5.png',
+                   'detailView'=> 'components.static.other-apartment-detail_5',
+                   'status'=> 'EN VENTA',
+                   'amb'=> 'Sup. Total. 76.10 m2',
+                   'price'=> '222.860',
+                   'title'=> '3 ambientes',
+                   'address'=> 'Galvan 3051 – Villa Urquiza'] )
+
+
+
+
+
+
+
+{{-- duped --}}
+          
+           @include('components.static.other-properties-box', 
+                  ['src'=> 'images/uploads/apartment-boxes/box_2.png',
+                   'detailView'=> 'components.static.other-apartment-detail_2',
+                   'status'=> 'EN VENTA',
+                   'amb'=> 'Sup. Total. 44.50 m2',
+                   'price'=> '111.250',
+                   'title'=> 'Monoambiente Modular',
+                   'address'=> 'Galvan 3051 – Villa Urquiza'] )
+
+        
+
+           @include('components.static.other-properties-box', 
+                  ['src'=> 'images/uploads/apartment-boxes/box_4.png',
+                   'detailView'=> 'components.static.other-apartment-detail_4',
+                   'status'=> 'EN VENTA',
+                   'amb'=> 'Sup. Total. 66.10 m2',
+                   'price'=> '213.080',
+                   'title'=> '2 ambientes',
+                   'address'=> 'Galvan 3051 – Villa Urquiza'] )
+         @include('components.static.other-properties-box',
+                  ['src'=> 'images/uploads/apartment-boxes/box_1.JPG',
+                   'detailView'=> 'components.static.other-apartment-detail_1',
+                   'status'=> 'EN VENTA',
+                   'amb'=> '2 amb.',
+                   'price'=> '169.000',
+                   'title'=> 'UH5 | URQUIZA R',
+                   'address'=> 'Capital Federal, V. Urquiza | Urquiza R'] 
+                   )
+   @include('components.static.other-properties-box', 
+                  ['src'=> 'images/uploads/apartment-boxes/box_3.png',
+                   'detailView'=> 'components.static.other-apartment-detail_3',
+                   'status'=> 'EN VENTA',
+                   'amb'=> 'Sup. Total. 36.90 m2',
+                   'price'=> '92.250',
+                   'title'=> 'Monoambiente',
+                   'address'=> 'Galvan 3051 – Villa Urquiza'] )
+           @include('components.static.other-properties-box', 
+                  ['src'=> 'images/uploads/apartment-boxes/box_5.png',
+                   'detailView'=> 'components.static.other-apartment-detail_5',
+                   'status'=> 'EN VENTA',
+                   'amb'=> 'Sup. Total. 76.10 m2',
+                   'price'=> '222.860',
+                   'title'=> '3 ambientes',
+                   'address'=> 'Galvan 3051 – Villa Urquiza'] )
+        
         </div>
 
         

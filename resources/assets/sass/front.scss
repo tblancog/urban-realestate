@@ -675,11 +675,12 @@ img {
 
                                     &:hover {
                                         .list-top {
+                                            background: red;
                                             position: absolute;
                                             left: -150%;
                                             top: 164%;
                                             visibility: visible;
-                                            opacity: 1;
+                                            // opacity: 1;
                                         }
                                     }
 
@@ -1043,11 +1044,12 @@ img {
     @media #{$breakpoint-xs-landscape} {
         margin-top: 20%;
     }
-
+    
     h2 {
-        color: $color-white;
-        font-size: 60px;
-        max-width: 350px;
+      color: $color-white;
+      font-size: 60px;
+      max-width: 450px;
+      padding: .5rem;
         //  margin-bottom: 0;
         //  padding: 10px 15px;
         text-transform: uppercase;
@@ -1069,7 +1071,10 @@ img {
     }
 
     h4 {
+        background-color: $color-dark;
+        color: $color-white;
         line-height: 1.5;
+        padding: 1rem;
 
         @media #{$breakpoint-md} {
             font-size: 22px;
@@ -1128,10 +1133,11 @@ img {
     }
 
     .owl-dots {
-        width: 1110px;
+        // width: 1110px;
         position: absolute;
         bottom: 15px;
-        left: 50%;
+        right: 6%;
+        top: 3%;
         @include transform (translateX(-50%));
 
         @media #{$breakpoint-lg} {
@@ -1460,6 +1466,10 @@ img {
         position: relative;
         z-index: 1;
 
+        // max-width: 350px;
+        // max-height: 250px;
+
+
         .property-info {
             background-color: rgba(0, 0, 0, 0.7);
             position: absolute;
@@ -1545,7 +1555,7 @@ img {
             width: 100%;
 
             @media #{$breakpoint-xl} {
-                top: -239%;
+                top: -371%;
                 left: -38%;
             }
 
@@ -1560,7 +1570,7 @@ img {
             }
 
             @media #{$breakpoint-xs} {
-                top: -256%;
+                top: -300%;
                 left: -40%;
 
             }
@@ -2117,6 +2127,10 @@ img {
         }
 
         .footer-social {
+           .social-img {
+               width: 25px;
+               padding: .25em !important;
+           }
             @media (max-width: 768px) {
                 text-align: center;
             }
@@ -3252,6 +3266,9 @@ img {
         }
     }
 
+
+
+
     .dept-contact {
         padding: 15px 40px;
 
@@ -3289,31 +3306,7 @@ img {
         background-color: #ffffff;
     } 
     
-    .btn.contact-send {
-        float: right;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        padding: 0;
-
-        @media (max-width: 482px) {
-            float: left;
-        }
-
-        a {
-            text-transform: uppercase;
-            background-color: #51B848;
-            padding: 10px 20px;
-            /*border-radius: 30px;*/
-            font-size: 18px;
-            color: #ffffff;
-            transition: .3s;
-
-            &:hover {
-                background-color: #000000;
-                color: #ffffff;
-            }
-        }
-    }
+    
 
     .dept-description {
         margin-bottom: 30px;
@@ -3713,3 +3706,54 @@ img {
 .modal-details {
     padding: 0 200px;
 }
+
+/* 27.0 Nosotros CSS */
+.nosotros-page{
+  .section-heading{
+    margin-bottom: 50px;
+  }
+  p{
+    line-height: 2;
+    font-size: 16px;
+  }
+  .font-bigger{
+    font-size: 130%;
+    color: #51B848;
+    text-decoration: underline;
+  }
+  ul{
+    margin: 1em 0 0 2em;
+    li{
+      list-style-type: disc;
+      line-height: 2;
+      color: #7d7d7d;
+      font-weight: 600;
+    }
+  }
+}
+
+    .btn.contact-send {
+        float: right;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding: 0;
+
+        @media (max-width: 482px) {
+            float: left;
+        }
+
+        a {
+            text-transform: uppercase;
+            background-color: #51B848;
+            padding: 10px 20px;
+            /*border-radius: 30px;*/
+            font-size: 18px;
+            color: #ffffff;
+            transition: .3s;
+
+            &:hover {
+                background-color: #000000;
+                color: #ffffff;
+            }
+        }
+    }
