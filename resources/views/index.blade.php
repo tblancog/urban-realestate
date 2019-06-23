@@ -16,43 +16,49 @@
     <div class="single-hero-slide bg-img" style="background-image: url(images/uploads/static/static_1.jpeg);">
         <div class="hero-slides owl-carousel">
             <div class="single-hero-slide bg-img" style="background-image: url(images/uploads/static/static_1.jpeg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <h2>EDIFICIO PH UH5</h2>
-                                <h4>Una oportunidad para disfrutar de un edificio en una zona estratégica</h4>
+                <a href="#">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                                <div class="hero-slides-content">
+                                    <h2>EDIFICIO PH UH5</h2>
+                                    <h4>Una oportunidad para disfrutar de un edificio en una zona estratégica</h4>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <!-- Single Hero Slide -->
             <div class="single-hero-slide bg-img" style="background-image: url(images/uploads/static/static_2.jpeg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <h2>EDIFICIO PH UH5</h2>
-                                <h4>Moderno y funcional con terraza y parrilla propia. ¡Vení a conocerlo!
-                                </h4>
+                <a href="#"> 
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                                <div class="hero-slides-content">
+                                    <h2>EDIFICIO PH UH5</h2>
+                                    <h4>Moderno y funcional con terraza y parrilla propia. ¡Vení a conocerlo!
+                                    </h4>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <!-- Single Hero Slide -->
             <div class="single-hero-slide bg-img" style="background-image: url(images/uploads/static/static_3.jpeg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <h2>EDIFICIO PH UH5</h2>
-                                <h4>Estética y confort en cada detalle. Ameneties para disfrutar en familia y con amigos </h4>
+                <a href="#">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                                <div class="hero-slides-content">
+                                    <h2>EDIFICIO PH UH5</h2>
+                                    <h4>Estética y confort en cada detalle. Ameneties para disfrutar en familia y con amigos </h4>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
 
