@@ -113,3 +113,11 @@
     </div>
         
 </section>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6 offset-2">
+            @include ('partials.contact-form')
+        </div>
+    </div>
+</div>

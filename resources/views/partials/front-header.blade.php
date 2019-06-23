@@ -40,7 +40,7 @@
                             <li><a href="{{ route('buildings.list') }}">Inversiones</a></li>
                             <li><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
                             <li><a href="{{ route('credits.index') }}">Crédito</a></li>
-                        <li><a href="{{ route('credits.index') }}"><i class="fa fa-lg fa-envelope"></i></a></li>
+                        <li><a href="{{ route('contact.index') }}"><i class="fa fa-lg fa-envelope"></i></a></li>
                             <li class="hamb-toggler">
                                 <a class="hamburger" href="#">
                                     <span class="navbarToggler"><span></span><span></span><span></span></span>

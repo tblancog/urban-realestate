@@ -370,6 +370,18 @@ img {
     z-index: 3;
 }
 
+.btn-verde {
+    background-color: #51B848;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: .2s;
+    &:hover {
+        color: #000;
+    }
+}
+
 /* :: 4.0 Preloader Area CSS */
 
 #preloader {
