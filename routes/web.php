@@ -14,7 +14,11 @@ Route::get('/dashboard', function(){
 })->middleware('auth');
 
 Route::post('images-upload', 'ImageController@upload');
-Route::post('upload-slider', 'ImageController@uploadSlider');
+
+// Sliders
+Route::post('save-sliders', 'SliderController@save');
+Route::post('upload-sliders', 'SliderController@upload');
+Route::get('get-sliders', 'SliderController@getApiSliders');
 
 
 // Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');

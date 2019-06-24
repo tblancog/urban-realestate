@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Slider extends Model
 {
-    protected $fillable = [ 'title', 'subtitle' ];
+    protected $fillable = [ 'index', 'title', 'subtitle' ];
     public $timestamps = false;
 }

@@ -35,8 +35,8 @@
 
                                         <div class="col-md-9">
                                             <div class="file-upload-form"> Subir imagen:
-                                                <input name="image" multiple="multiple" id="attachments" type="file" @change="previewImage($event, idx)"
-                                                    accept="image/jpg">
+                                                <input name="image" id="attachments" type="file" @change="previewImage($event, idx)"
+                                                    accept="image/jpg,image/jpeg,image/png">
                                             </div>
                                             <div class="image-preview" v-if="slide.imageData.length > 0">
                                                 <img class="preview" :src="slide.imageData">
@@ -91,48 +91,33 @@
                 this.slideshow.splice(idx, 1)
             },
             saveSliders() {
-              this.prepareData()
-              axios.post('/upload-slider', this.slideshow)
-                    .then((res) => {
-                              
-                    })
+              let vm = this
+              axios
+                .post('/save-sliders', this.slideshow)
+                .then((res) => {
+
+                  if(res.status == 201){
+                    let config = {
+                      headers: { 'Content-Type': 'multipart/form-data' }
+                    }
+                    vm.prepareImageData()
+                    axios.post('/upload-sliders', vm.formData, config)
+                          .then( (res)=> {
+                            console.log(res)
+                          } )
+                  } 
+                })
               
-              return 
-
-              let config = {
-                headers: { 'Content-Type': 'multipart/form-data' }
-              }
-
-              axios.post('/upload-slider', this.formData, config)
-                    .then((res) => {
-                      
-                      // axios.post()
-                      //      .then( ()=> {
-                             
-                      //      } )
-                    })
-              // let files = this.$refs.uploadBtn.files
-                // let formData = new FormData()
-                // formData.append('file', this.slideshow[0]); 
-
-                // for (let i = 0; i < this.slideshow.length; i++) {
-                    // formData.append('image', this.avatarFile, this.avatarFile.name)
-                    // let rawData = this.slideshow[i]
-                    // formData.append('data', JSON.stringify(rawData))
-                // }
-                // formData.append('data', this.slideshow[0])
-                // console.log(this.slideshow[0])
-
             },
             prepareData() {
 
               this.formData = new FormData()
               if (this.slideshow.length > 0) {
-                for (var i = 0; i < this.slideshow.length; i++) {
+                for (let i = 0; i < this.slideshow.length; i++) {
                   let title = this.slideshow[i].title
                       let subtitle = this.slideshow[i].subtitle
 
-                      this.formData.append('slides[]', JSON.stringify( title, subtitle ))
+                      this.formData.append('slides', JSON.stringify( title, subtitle ))
                   } 
               }      
 
@@ -167,7 +152,20 @@
                     reader.readAsDataURL(input.files[0]);
                 }
             }
-        }
+        },
+        // created(){
+        //   axios.get('/get-sliders').then( (res) => {
+
+
+        //     this.slideshow = res.data.map( (value)=> {
+        //       return {
+        //           title: value.title,
+        //           subtitle: value.subtitle,
+        //           imageData: value.,
+        //       }
+        //     } )
+        //   })
+        // }
     }
 
 </script>
