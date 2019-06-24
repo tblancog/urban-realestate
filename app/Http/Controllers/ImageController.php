@@ -10,7 +10,6 @@ class ImageController extends Controller
 {
   public function upload(Request $request)
   {
-    // dd($request->all());
     if($request->type == 'building'){
       
       $property = Building::find($request->id);
@@ -34,5 +33,9 @@ class ImageController extends Controller
           }
           return response(201);
     } 
+  }
+
+  public function uploadSlider(Request $request){
+    dd($request->all());
   }
 }

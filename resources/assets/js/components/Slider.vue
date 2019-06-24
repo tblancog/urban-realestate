@@ -70,7 +70,10 @@
         data() {
             return {
                 attachments: [],
-                slideshow: [],
+                slideshow: [
+                  { title: 'Uno', subtitle: 'unosub', imageData: '' },
+                  { title: 'Dos', subtitle: 'dossub', imageData: '' },
+                ],
                 formData: new FormData()
             }
 
@@ -84,20 +87,30 @@
                     fileAttached: []
                 }, )
             },
-            removeSlide(idx) {
+            removeSlide(idx) { 
                 this.slideshow.splice(idx, 1)
             },
             saveSliders() {
-              this.prepareFields()
+              this.prepareData()
+              axios.post('/upload-slider', this.slideshow)
+                    .then((res) => {
+                              
+                    })
+              
+              return 
 
               let config = {
                 headers: { 'Content-Type': 'multipart/form-data' }
               }
 
-              axios.post('/images-upload', this.formData, config)
-                .then((res) => { 
-                  console.log(res)
-                })
+              axios.post('/upload-slider', this.formData, config)
+                    .then((res) => {
+                      
+                      // axios.post()
+                      //      .then( ()=> {
+                             
+                      //      } )
+                    })
               // let files = this.$refs.uploadBtn.files
                 // let formData = new FormData()
                 // formData.append('file', this.slideshow[0]); 
@@ -111,27 +124,31 @@
                 // console.log(this.slideshow[0])
 
             },
-            prepareFields() {
-                
-                if (this.attachments.length > 0) {
-                    for (var i = 0; i < this.attachments.length; i++) {
-                        let attachment = this.attachments[i];
-                        this.formData.append('attachments[]', attachment);
-                    }
-                }
-            },
-            previewImage: function (event, idx) {
+            prepareData() {
 
-                // console.log(event.target.files[0])
-                // let formData = new FormData()
-                // formData.append('data[]', this.slideshow[idx])
-                // console.log(formData)
-                // formData.append('data', this.slideshow[idx])
-                // axios.post('/images-upload', formData).then((res)=> {
-                  
-                //   console.log(res)
-                  
-                // })
+              this.formData = new FormData()
+              if (this.slideshow.length > 0) {
+                for (var i = 0; i < this.slideshow.length; i++) {
+                  let title = this.slideshow[i].title
+                      let subtitle = this.slideshow[i].subtitle
+
+                      this.formData.append('slides[]', JSON.stringify( title, subtitle ))
+                  } 
+              }      
+
+            },
+            prepareImageData(){
+              this.formData = new FormData()
+              if (this.attachments.length > 0) {
+                  for (var i = 0; i < this.attachments.length; i++) {
+                      let attachment = this.attachments[i]
+                      this.formData.append('attachments[]', attachment)
+                  }
+              }
+              
+              },
+            previewImage: function (event, idx) {
+              
                 // Reference to the DOM input element
                 var input = event.target;
                 // Ensure that you have a file before attempting to read it

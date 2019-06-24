@@ -14,6 +14,7 @@ Route::get('/dashboard', function(){
 })->middleware('auth');
 
 Route::post('images-upload', 'ImageController@upload');
+Route::post('upload-slider', 'ImageController@uploadSlider');
 
 
 // Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');
