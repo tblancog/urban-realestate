@@ -41,7 +41,7 @@
                 'amb'=> '2-3-4 ambientes',
                 'price'=> '169.000',
                 'title'=> 'Edificio PH UH5',
-                'address'=> 'Mariano Acha 3458']
+                'address'=> 'Mariano Acha 3458 – Villa Urquiza - CABA']
         )
 
         @include('components.static.featured-buildings-box',
@@ -81,7 +81,7 @@
                    'amb'=> '2 amb.',
                    'price'=> '169.000',
                    'title'=> 'UH5 | URQUIZA R',
-                   'address'=> 'Capital Federal, V. Urquiza | Urquiza R'] 
+                   'address'=> 'Capital Federal, Villa Urquiza'] 
                    )
 
            @include('components.static.other-properties-box', 
@@ -154,7 +154,7 @@
                    'amb'=> '2 amb.',
                    'price'=> '169.000',
                    'title'=> 'UH5 | URQUIZA R',
-                   'address'=> 'Capital Federal, V. Urquiza | Urquiza R'] 
+                   'address'=> 'Capital Federal, Villa Urquiza'] 
                    )
    @include('components.static.other-properties-box', 
                   ['src'=> 'images/uploads/apartment-boxes/box_3.png',
