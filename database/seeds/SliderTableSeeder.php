@@ -13,9 +13,9 @@ class SliderTableSeeder extends Seeder
     public function run()
     {
       $data = [
-        [ 'index' => 0, 'title'=> 'EDIFICIO PH UH5', 'subtitle'=> 'Una oportunidad para disfrutar de un edificio en una zona estratégica'],
-        [ 'index' => 1, 'title'=> 'EDIFICIO PH UH5', 'subtitle'=> 'Moderno y funcional con terraza y parrilla propia. ¡Vení a conocerlo!'],
-        [ 'index' => 2, 'title'=> 'EDIFICIO PH UH5', 'subtitle'=> 'Estética y confort en cada detalle. Ameneties para disfrutar en familia y con amigos'],
+        [ 'index' => 0, 'title'=> 'EDIFICIO PH UH5', 'subtitle'=> 'Una oportunidad para disfrutar de un edificio en una zona estratégica', 'filename'=> 'slide_0.jpeg'],
+        [ 'index' => 1, 'title'=> 'EDIFICIO PH UH5', 'subtitle'=> 'Moderno y funcional con terraza y parrilla propia. ¡Vení a conocerlo!', 'filename'=> 'slide_1.jpeg'],
+        [ 'index' => 2, 'title'=> 'EDIFICIO PH UH5', 'subtitle'=> 'Estética y confort en cada detalle. Ameneties para disfrutar en familia y con amigos', 'filename'=> 'slide_2.jpeg'],
       ];
 
       collect($data)->each(function($el){
