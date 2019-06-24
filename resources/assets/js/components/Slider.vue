@@ -70,10 +70,7 @@
         data() {
             return {
                 attachments: [],
-                slideshow: [
-                  { title: 'Uno', subtitle: 'unosub', imageData: '' },
-                  { title: 'Dos', subtitle: 'dossub', imageData: '' },
-                ],
+                slideshow: [],
                 formData: new FormData()
             }
 
