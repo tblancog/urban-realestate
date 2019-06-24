@@ -150,7 +150,7 @@
                 'amb'=> '2-3-4 ambientes',
                 'price'=> '169.000',
                 'title'=> 'Edificio PH UH5',
-                'address'=> 'Mariano Acha 3458']
+                'address'=> 'Mariano Acha 3458 Villa Urquiza - CABA']
         )
 
         @include('components.featured-buildings-box',
