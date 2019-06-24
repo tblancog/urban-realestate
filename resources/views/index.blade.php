@@ -177,7 +177,7 @@
 <!-- ##### Propiedades en Venta Area End ##### -->
 
 <!-- ##### Otras propiedades Area Start ##### -->
-<section class="featured-properties-area section-padding-0-50">
+<section id="real-estate" class="featured-properties-area section-padding-0-50">
     <div class="container">
         <div class="row">
             <div class="col-12">
