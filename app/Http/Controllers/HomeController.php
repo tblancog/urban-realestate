@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  App\Apartment;
+use  App\Slider;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $slides = Slider::orderBy('index')->get();
+
         $featured = Apartment::where('is_featured', true)
                             ->latest()
                             ->with('images')
@@ -37,6 +40,7 @@ class HomeController extends Controller
 
         return view('index', ['featured'=> $featured, 
                               'others'=> $others, 
+                              'slides'=> $slides, 
         ]);
     }
 }
