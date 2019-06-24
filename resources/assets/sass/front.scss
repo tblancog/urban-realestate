@@ -686,11 +686,70 @@ img {
 
     .sticky-wrapper {
         .main-header-area {
+                z-index: inherit;
             .classy-nav-container {
                 .classy-navbar {
                     .classy-menu {
                         .classynav {
                             ul {
+                                .dropdown {
+                                    .dropdown-toggle {
+                                        &::after {
+                                            display: none;
+                                        }
+                                        &:hover {
+                                            text-decoration: none;
+                                        }
+                                        &:focus {
+                                            color: #000;
+                                        }
+                                    }
+                                    &.show {
+                                        .dropdown-menu.show {
+                                            top: 18px !important;
+                                            background-color: rgba(255, 255, 255, 0.7);
+                                            border: 0;
+                                            border-radius: 0;
+                                            a {
+                                                border: 0;
+                                                &:hover {
+                                                    background-color: transparent;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+
+                                /*
+                                .collapsible-menu.hamburger {
+                                    label {
+                                        font-size: 16px;
+                                        display: inline-block;
+                                        cursor: pointer;
+                                        background: url(menu.png) no-repeat left center;
+                                        padding: 10px 0 10px 50px;
+                                    }
+                                    #menu {
+                                        display: none;
+                                    }
+                                    span {
+                                        display: inline-block;
+                                        margin-left: 5px;
+                                        font-size: 20px;
+                                    }
+                                    input {
+                                        &:checked {
+                                            .menu-content {
+                                                max-height: 100%;
+                                            }
+                                        }
+                                    }
+                                    .menu-content {
+                                        max-height: 0;
+                                        overflow: hidden;
+                                    }
+                                }
                                 .hamb-toggler {
                                     position: relative;
 
@@ -703,11 +762,6 @@ img {
                                             visibility: visible;
                                             // opacity: 1;
                                         }
-                                    }
-
-                                    .hamburger {
-                                        align-items: center;
-                                        display: flex;
                                     }
 
                                     .list-top {
@@ -732,7 +786,7 @@ img {
                                     .dd-arrow {
                                         display: none;
                                     }
-                                }
+                                }*/
                             }
 
                             .navbarToggler {
