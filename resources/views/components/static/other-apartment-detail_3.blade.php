@@ -48,6 +48,9 @@
                                     <div class="carousel-item" data-slide-number="1">
                                         <img src="{{ asset('/images/uploads/other-apartment-detail_3/apartment_2.png') }}" class="img-fluid">
                                     </div>
+                                    <div class="carousel-item" data-slide-number="1">
+                                        <img src="{{ asset('/images/uploads/other-apartment-detail_3/apartment_3.JPG') }}" class="img-fluid">
+                                    </div>
 
 
                                     {{-- <div class="active carousel-item" data-slide-number="0">
