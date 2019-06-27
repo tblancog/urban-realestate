@@ -36,7 +36,7 @@
 
                     <!-- Nav Start -->
                     <div class="classynav">
-                        <ul>
+                        <ul id="desktop-nav">
                             <li><a href="{{ route('buildings.list') }}">Inversiones</a></li>
                             <li><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
                             <li><a href="{{ route('credits.index') }}">Crédito</a></li>
@@ -92,6 +92,16 @@
                             -->
 
 
+                        </ul>
+
+                        <ul id="mobile-nav">
+                            <li><a href="{{ route('buildings.list') }}">Inversiones</a></li>
+                            <li><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
+                            <li><a href="{{ route('credits.index') }}">Crédito</a></li>
+                            <li><a href="{{ route('contact.index') }}">Contácto</i></a></li>
+                            <li><a href="{{ route('nosotros.index')  }}">Nosotros</a></li>
+                            <li><a href="#real-estate">Propiedades</a></li>
+                            <li><a href="#real-estate_featured">Destacados</a></li>
                         </ul>
 
                         <!-- Search Form -->
