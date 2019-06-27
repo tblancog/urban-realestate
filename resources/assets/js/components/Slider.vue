@@ -35,8 +35,9 @@
 
                                         <div class="col-md-9">
                                             <div class="file-upload-form"> Subir imagen:
-                                                <input name="image" id="attachments" type="file" @change="previewImage($event, idx)"
-                                                    accept="image/jpg,image/jpeg,image/png">
+                                                <input name="image" id="attachments" type="file" 
+                                                      @change="previewImage($event, idx)"
+                                                      accept="image/jpg,image/jpeg,image/png">
                                             </div>
                                             <div class="image-preview" v-if="slide.imageData.length > 0">
                                                 <img class="preview" :src="slide.imageData">

@@ -47,13 +47,14 @@ class SliderController extends Controller
         
         collect($files)->each(function($img, $idx){
           
+            $config = config('images');
             $ext= $img->getClientOriginalExtension();
             $filename = "slide_$idx.$ext";
             $img= Image::make($img);
-            $img->fit(1140)
-                ->save("images/slides/$filename");
+            $img->fit($config['sliders.width'])
+                ->save($config['sliders.path']."/$filename");
             Slider::where('index', $idx)
-                    ->update(['filename'=> $filename]);
+                ->update(['filename'=> $filename]);
         });
         
       }

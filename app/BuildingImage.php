@@ -8,21 +8,11 @@ class BuildingImage extends Model
 {
 
     protected $table = 'building_images';
-    protected $fillable = [ 'filename', 'order', 'is_placeholder', 'building_id' ];
+    protected $fillable = [ 'filename', 'order', 'building_id' ];
     public $timestamps = false;
   
     public function building(){
 
       return $this->belongsTo('App\Building');
     }
-
-    // public function apartment(){
-
-    //   return $this->belongsTo('App\Apartment');
-    // }
-
-    // public function getStoragePathAttribute(){
-
-    //   return $this->attributes['storage_path'] = $this->storage_path;
-    // }
 }

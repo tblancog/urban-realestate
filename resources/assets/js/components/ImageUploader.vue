@@ -18,13 +18,12 @@
             <div>o</div>
             <div class="file-input">
                 <label for="file">selecciona</label>
-                <input type="file" id="file" @change="onInputChange" multiple>
+                <input type="file" id="file" @change="onInputChange" multiple  accept="image/jpg,image/jpeg,image/png">
             </div>
         </div>
 
         <div class="images-preview" v-show="images.length">
             <div class="img-wrapper" v-for="(image, index) in images" :key="index">
-              <i class="fas fa-times"></i>
                 <img :src="image" :alt="`Image Uplaoder ${index}`">
                 <div class="details">
                     <!-- <span class="name" v-text="files[index].name"></span> -->

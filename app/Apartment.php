@@ -11,14 +11,22 @@ class Apartment extends Model
       'title',
       'slug',
       'address',
+
+      'floor',
+      'department',
+      'code',
+
       'url_maps',
       'from_price',
       'price',
+      'area',
+      'rooms',
+
       'description',
       'status',
-      'is_featured',
       'contact_name',
       'contact_phone',
+      
       'building_id'
     ];
 
