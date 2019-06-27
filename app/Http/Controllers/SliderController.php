@@ -54,7 +54,7 @@ class SliderController extends Controller
                 ->save("images/slides/$filename");
             Slider::where('index', $idx)
                     ->update(['filename'=> $filename]);
-          });
+        });
         
       }
     }

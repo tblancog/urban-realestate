@@ -24,6 +24,7 @@
 
         <div class="images-preview" v-show="images.length">
             <div class="img-wrapper" v-for="(image, index) in images" :key="index">
+              <i class="fas fa-times"></i>
                 <img :src="image" :alt="`Image Uplaoder ${index}`">
                 <div class="details">
                     <!-- <span class="name" v-text="files[index].name"></span> -->
@@ -37,12 +38,14 @@
 <script>
 
 export default {
-    props: ['files'],
+    props: ['files', 
+    'images'
+    ],
     data: () => ({
         isDragging: false,
         dragCount: 0,
         // files: [],
-        images: []
+        // images: []
     }),
     methods: {
         OnDragEnter(e) {

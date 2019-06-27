@@ -28,7 +28,7 @@ class Building extends Model
 
     public function images(){
 
-      return $this->hasMany('App\BuildingImage', 'building_id');
+      return $this->hasMany('App\BuildingImage');
     }
 
     public function apartments(){

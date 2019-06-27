@@ -23,8 +23,6 @@ class CreateBuildingImagesTable extends Migration
             $table->foreign('building_id')
                   ->references('id')
                   ->on('buildings');
-
-            $table->timestamps();
         });
     }
 

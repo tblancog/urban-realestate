@@ -9,6 +9,7 @@ class BuildingImage extends Model
 
     protected $table = 'building_images';
     protected $fillable = [ 'filename', 'order', 'is_placeholder', 'building_id' ];
+    public $timestamps = false;
   
     public function building(){
 

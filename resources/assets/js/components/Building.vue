@@ -12,60 +12,67 @@
                         </div>
                     </div>
                     <!-- /.card-header -->
+                    <div v-if="buildings.data && buildings.data.length">
+                      <div class="media" v-for="building in buildings.data" :key="building.id">
+                          <div class="media-body">
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col-md-3 col-sm-12 cropped">
+                                      <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
+                                      <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
+                                        <img v-if="building.images" :src="image_path(building)" class="img-fluid"/>
+                                      </a>
+                                      <!-- </router-link> -->
+                                      </div>
+                                      <div class="col-md-6">                              
+                                          <div class="info-card">
+                                              <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
+                                                <h5 class="mt-0">{{ building.title }}</h5>
+                                              </a>
+                                              <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
+                                              <!-- </router-link> -->
+                                              <i class="fa fa-map-marker-alt fa-fw"></i>{{ building.address }}
+                                              <i class="fa fa-dollar-sign fa-fw"></i>USD {{ building.price }}
+                                              <a href="#" @click="editModal(building)">
+                                                  <i class="fa fa-edit blue"></i>
+                                              </a>
+                                              /
+                                              <a href="#" @click="deleteItem(building.slug)">
+                                                  <i class="fa fa-trash red"></i>
+                                              </a>
+                                          </div>
+                                          <div class="details-card">
+                                              <p>{{ building.description  }}</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                          <div class="more-box">
+                                              <!-- <h5>Edificio</h5> -->
+                                              <div class="cta-more">
+                                                  <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.id } }">
+                                                      <a class="btn-more" href="#">Ver más</a>
+                                                  </router-link>             -->
+                                              </div>
+                                              <!-- <div class="deliver-box">
+                                                  <h6>Entrega</h6>
+                                                  <h6 class="deliver-date">Noviembre 2021</h6>
+                                              </div> -->
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>             
+                          </div>
+                      </div>
 
-                    <div class="media" v-for="building in buildings.data" :key="building.id">
-                        <div class="media-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-3 col-sm-12 cropped">
-                                    <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
-                                      <img v-if="building.images" :src="image_path(building)" class="img-fluid"/>
-                                    <!-- </router-link> -->
-                                    </div>
-                                    <div class="col-md-6">                              
-                                        <div class="info-card">
-                                            <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
-                                              <h5 class="mt-0">{{ building.title }}</h5>
-                                            </a>
-                                            <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
-                                            <!-- </router-link> -->
-                                            <i class="fa fa-map-marker-alt fa-fw"></i>{{ building.address }}
-                                            <i class="fa fa-dollar-sign fa-fw"></i>USD {{ building.price }}
-                                            <a href="#" @click="editModal(building)">
-                                                <i class="fa fa-edit blue"></i>
-                                            </a>
-                                            /
-                                            <a href="#" @click="deleteItem(building.slug)">
-                                                <i class="fa fa-trash red"></i>
-                                            </a>
-                                        </div>
-                                        <div class="details-card">
-                                            <p>{{ building.description  }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="more-box">
-                                            <!-- <h5>Edificio</h5> -->
-                                            <div class="cta-more">
-                                                <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.id } }">
-                                                    <a class="btn-more" href="#">Ver más</a>
-                                                </router-link>             -->
-                                            </div>
-                                            <!-- <div class="deliver-box">
-                                                <h6>Entrega</h6>
-                                                <h6 class="deliver-date">Noviembre 2021</h6>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>             
-                        </div>
+                      <!-- /.card-body -->
+                      <div class="card-footer">
+                          <pagination :data="buildings" @pagination-change-page="getResults"></pagination>
+                      </div>
                     </div>
-
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <pagination :data="buildings" @pagination-change-page="getResults"></pagination>
+                    <div v-else>
+                      <h5 class="m-5 text-center">No existen edificios cargados</h5>
                     </div>
+                    
                 </div>
                 <!-- /.card -->
             </div>
@@ -84,13 +91,13 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form @submit.prevent="editmode ? updateItem() : createItem()">
+                    <form @submit.prevent="editmode ? updateItem(selected) : createItem()">
                         <div class="modal-body">
                             
                             
                             <!-- Image uploader -->
                             <div class="form-group col-lg-12">
-                              <image-uploader :files="form.files"></image-uploader>
+                              <image-uploader :files="form.files" :images="form.images"></image-uploader>
                             </div>
                             <!-- Title -->
                             <div class="form-group col-lg-9">
@@ -281,26 +288,41 @@
                         this.buildings = response.data;
                     });
             },
-            updateItem() {
-                this.$Progress.start();
-                this.form.put('api/buildings/' + this.form.id)
-                    .then(() => {
-                        // success
-                        $('#addNew').modal('hide');
-                        swal(
-                            'Actualizado!',
-                            'Información de edificio actualizada.',
-                            'success'
-                        )
-                        this.$Progress.finish();
-                        Fire.$emit('AfterCreate');
-                    })
-                    .catch(() => {
-                        this.$Progress.fail();
-                    });
+            updateItem(selected) {
+              this.$Progress.start();
+              const formData = new FormData()
+              if(this.form.files && this.form.files.length > 0){
+                this.form.files.forEach(file => {
+                    formData.append('images[]', file, file.name)
+                })
+              }
+
+
+                this.form.put('api/buildings/' + selected.slug)
+                    .then( () => {
+
+                      axios.post('images-upload', formData)
+                          .then(()=> {
+                            Fire.$emit('AfterCreate');
+                            swal(
+                                  'Actualizado!',
+                                  'Información de edificio actualizada.',
+                                  'success' )
+                            this.form.reset();
+                            this.files = []
+                            $('#addNew').modal('hide');
+
+                          this.$Progress.finish();
+                          Fire.$emit('AfterCreate')
+
+                        }).catch(() => {
+                            this.$Progress.fail();
+                        })
+                  })
 
             },
             editModal(item) {
+                this.selected = item
                 this.editmode = true;
                 this.form.reset();
                 $('#addNew').modal('show');
@@ -317,7 +339,7 @@
             deleteItem(slug) {
                 swal({
                     title: 'Estás seguro?',
-                    text: "No será posible revertir esta acción!",
+                    text: "Tené en cuenta que también se borrarán los departamentos asociados",
                     type: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -431,7 +453,7 @@
                                     padding-top: 15px;
                                     padding-bottom: 15px;
                                     .cropped{
-                                        height: 150px;
+                                        height: 135px;
                                         overflow: hidden;
                                     }
                                     .info-card {

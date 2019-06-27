@@ -19,20 +19,32 @@ class ImageController extends Controller
     }
 
     if (count($request->images) > 0) {
-            
-          $image_path = "/uploads/properties/".$property->slug."/";
-          foreach ($request->images as $k => $image) {
-            $filename = "property_$k".".".$image->getClientOriginalExtension();
-            $image->storeAs($image_path, $filename);
+           
+      
+      $config = config('images.properties');
+      // Flush pictures folder if any
+      \Storage::deleteDirectory($config['upload_path'].$property->slug);
 
-            $img_input = ['filename'=> $filename, 
-                          'path'=> $image_path,
-                          'order'=> $k,
-                        ];
-            $property->images()->create($img_input);
-          }
-          return response(201);
+      // Create new directory
+      \Storage::makeDirectory($config['upload_path'].$property->slug);
+      $image_path = $config['upload_path'].$property->slug;
+
+      collect($request->images)->each(function($img, $idx) use ($property, $request, $config, $image_path) {
+
+        // Get extendsion and make filename
+        $ext= $img->getClientOriginalExtension();
+        $filename = $request->type."_$idx".".".$ext;
+        \Image::make($img)
+              ->fit($config['width'], $config['height'])
+              ->save("$image_path/$filename");
+
+        $img_input = ['filename'=> $filename, 
+                      'order'=> $idx,
+                    ];
+        $property->images()->create($img_input);
+      });
     } 
+    return response()->json(['msg'=> 'Success'], 201);
   }
 
   public function uploadSlider(Request $request){
