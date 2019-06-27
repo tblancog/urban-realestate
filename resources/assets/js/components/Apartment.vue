@@ -1,71 +1,72 @@
 <template>
     <div class="container">
-        <!-- <div class="row mt-5" v-if="$gate.isAdminOrAuthor()"> -->
         <div class="row mt-5">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Departamentos</h3>
+                        <h3 class="card-title">Edificios</h3>
                         <div class="card-tools">
                             <button class="btn btn-success" @click="newModal">Crear Nuevo <i
                                     class="fas fa-plus fa-fw"></i></button>
                         </div>
                     </div>
                     <!-- /.card-header -->
+                    <div v-if="apartments.data && apartments.data.length">
+                      <div class="media" v-for="apartment in apartments.data" :key="apartment.id">
+                          <div class="media-body">
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col-md-3 col-sm-12 cropped">
+                                      <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = apartment">
+                                        <img v-if="apartment.images" :src="image_path(apartment)" class="img-fluid"/>
+                                      </a>
+                                      </div>
+                                      <div class="col-md-6">                              
+                                          <div class="info-card">
+                                              <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = apartment">
+                                                <h5 class="mt-0">{{ apartment.title }}</h5>
+                                              </a>
+                                              <i class="fa fa-map-marker-alt fa-fw"></i>{{ apartment.address }}
+                                              <i class="fa fa-dollar-sign fa-fw"></i>USD {{ apartment.price }}
+                                              <a href="#" @click="editModal(apartment)">
+                                                  <i class="fa fa-edit blue"></i>
+                                              </a>
+                                              /
+                                              <a href="#" @click="deleteItem(apartment.slug)">
+                                                  <i class="fa fa-trash red"></i>
+                                              </a>
+                                          </div>
+                                          <div class="details-card">
+                                              <p>{{ apartment.description  }}</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                          <div class="more-box">
+                                              <div class="cta-more">
+                                                  <!-- <router-link :to="{ name: 'apartmentDetail', params: {  id: apartment.id } }">
+                                                      <a class="btn-more" href="#">Ver más</a>
+                                                  </router-link>             -->
+                                              </div>
+                                              <!-- <div class="deliver-box">
+                                                  <h6>Entrega</h6>
+                                                  <h6 class="deliver-date">Noviembre 2021</h6>
+                                              </div> -->
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>             
+                          </div>
+                      </div>
 
-                    <div class="media" v-for="apartment in apartments.data" :key="apartment.id">
-                        <div class="media-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-3 col-sm-12 cropped">
-                                    <!-- <router-link :to="{ name: 'apartmentDetail', params: {  id: apartment.slug } }"> -->
-                                      <img :src="image_path(apartment)" class="img-fluid"/>
-                                    <!-- </router-link> -->
-                                    </div>
-                                    <div class="col-md-6">                              
-                                        <div class="info-card">
-                                            <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = apartment">
-                                              <h5 class="mt-0">{{ apartment.title }}</h5>
-                                            </a>
-                                            <!-- <router-link :to="{ name: 'apartmentDetail', params: {  id: apartment.slug } }"> -->
-                                            <!-- </router-link> -->
-                                            <i class="fa fa-map-marker-alt fa-fw"></i>{{ apartment.address }}
-                                            <i class="fa fa-dollar-sign fa-fw"></i>USD {{ apartment.price }}
-                                            <a href="#" @click="editModal(apartment)">
-                                                <i class="fa fa-edit blue"></i>
-                                            </a>
-                                            /
-                                            <a href="#" @click="deleteItem(apartment.slug)">
-                                                <i class="fa fa-trash red"></i>
-                                            </a>
-                                        </div>
-                                        <div class="details-card">
-                                            <p>{{ apartment.description  }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="more-box">
-                                            <!-- <h5>Departamento</h5> -->
-                                            <div class="cta-more">
-                                                <!-- <router-link :to="{ name: 'apartmentDetail', params: {  id: apartment.id } }">
-                                                    <a class="btn-more" href="#">Ver más</a>
-                                                </router-link>             -->
-                                            </div>
-                                            <!-- <div class="deliver-box">
-                                                <h6>Entrega</h6>
-                                                <h6 class="deliver-date">Noviembre 2021</h6>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>             
-                        </div>
+                      <!-- /.card-body -->
+                      <div class="card-footer">
+                          <pagination :data="apartments" @pagination-change-page="getResults"></pagination>
+                      </div>
                     </div>
-
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <pagination :data="apartments" @pagination-change-page="getResults"></pagination>
+                    <div v-else>
+                      <h5 class="m-5 text-center">No existen Edificios cargados</h5>
                     </div>
+                    
                 </div>
                 <!-- /.card -->
             </div>
@@ -78,19 +79,19 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Departamento</h5>
-                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Departamento</h5>
+                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Edificio</h5>
+                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Edificio</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form @submit.prevent="editmode ? updateItem() : createItem()">
+                    <form @submit.prevent="editmode ? updateItem(selected) : createItem()">
                         <div class="modal-body">
                             
                             
                             <!-- Image uploader -->
                             <div class="form-group col-lg-12">
-                              <image-uploader :files="form.files"></image-uploader>
+                              <image-uploader :files="form.files" :images="form.images"></image-uploader>
                             </div>
                             <!-- Title -->
                             <div class="form-group col-lg-9">
@@ -224,8 +225,6 @@
                             <button v-show="editmode" type="submit" class="btn btn-success">Guardar</button>
                             <button v-show="!editmode" type="submit" class="btn btn-primary">Crear</button>
                         </div>
-
-
                     </form>
 
                 </div>
@@ -247,7 +246,7 @@
 
     export default {
        components: {
-            'image-uploader': ImageUploader,
+            ImageUploader,
             ApartmentDetail,
         },
         mixins: [utils],
@@ -281,26 +280,41 @@
                         this.apartments = response.data;
                     });
             },
-            updateItem() {
-                this.$Progress.start();
-                this.form.put('api/apartments/' + this.form.id)
-                    .then(() => {
-                        // success
-                        $('#addNew').modal('hide');
-                        swal(
-                            'Actualizado!',
-                            'Información de Departamento actualizada.',
-                            'success'
-                        )
-                        this.$Progress.finish();
-                        Fire.$emit('AfterCreate');
-                    })
-                    .catch(() => {
-                        this.$Progress.fail();
-                    });
+            updateItem(selected) {
+              this.$Progress.start();
+              const formData = new FormData()
+              if(this.form.files && this.form.files.length > 0){
+                this.form.files.forEach(file => {
+                    formData.append('images[]', file, file.name)
+                })
+              }
+
+
+                this.form.put('api/apartments/' + selected.slug)
+                    .then( () => {
+
+                      axios.post('images-upload', formData)
+                          .then(()=> {
+                            Fire.$emit('AfterCreate');
+                            swal(
+                                  'Actualizado!',
+                                  'Información de edificio actualizada.',
+                                  'success' )
+                            this.form.reset();
+                            this.files = []
+                            $('#addNew').modal('hide');
+
+                          this.$Progress.finish();
+                          Fire.$emit('AfterCreate')
+
+                        }).catch(() => {
+                            this.$Progress.fail();
+                        })
+                  })
 
             },
             editModal(item) {
+                this.selected = item
                 this.editmode = true;
                 this.form.reset();
                 $('#addNew').modal('show');
@@ -317,7 +331,7 @@
             deleteItem(slug) {
                 swal({
                     title: 'Estás seguro?',
-                    text: "No será posible revertir esta acción!",
+                    text: "Tené en cuenta que también se borrarán los departamentos asociados",
                     type: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -330,7 +344,7 @@
                         this.form.delete('api/apartments/' + slug).then(() => {
                             swal(
                                 'Borrado!',
-                                'Departamento borrado.',
+                                'Edificio borrado.',
                                 'success'
                             )
                             Fire.$emit('AfterCreate');
@@ -341,11 +355,9 @@
                 })
             },
             loadItems() {
-                // if (this.$gate.isAdminOrAuthor()) {
                 axios.get("api/apartments").then(({
                     data
                 }) => (this.apartments = data));
-                // }
             },
 
             createItem() {
@@ -364,10 +376,15 @@
                   axios.post('images-upload', formData)
                     .then(()=> {
                       Fire.$emit('AfterCreate');
-                      toast({
-                        type: 'success',
-                        title: 'Departamento creado!'
-                      })
+                      swal(
+                            'Creado!',
+                            'Edificio creado.',
+                            'success'
+                        )
+                      this.form.reset();
+                      this.files = []
+                      $('#addNew').modal('hide');
+
                     this.$Progress.finish();
                   })
               })
@@ -388,7 +405,6 @@
             Fire.$on('AfterCreate', () => {
                 this.loadItems();
             });
-            // setInterval(() => this.loadItems(), 3000);
         }
 
     }
@@ -396,8 +412,11 @@
 </script>
 
 <style scoped lang="scss">
+    #addNew{
+      z-index: 10000;
+    }
     .modal-dialog{
-        max-width: 750px;
+        max-width: 650px;
     }
     .sidebar-mini {
         .wrapper {
@@ -423,7 +442,7 @@
                                     padding-top: 15px;
                                     padding-bottom: 15px;
                                     .cropped{
-                                        height: 150px;
+                                        height: 135px;
                                         overflow: hidden;
                                     }
                                     .info-card {

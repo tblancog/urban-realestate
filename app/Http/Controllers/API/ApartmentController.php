@@ -27,14 +27,14 @@ class ApartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BuildingRequest $request)
+    public function store(Request $request)
     {
-        $building = Building::create($request->all());
-        $building->amenities()->sync(
+        $apartment = Apartment::create($request->all());
+        $apartment->amenities()->sync(
           Amenity::whereIn('title', $request->amenities)->get()
         );
         
-        return ['message' => 'Edificio creado', 'id'=> $building->id];
+        return response()->json(['message' => 'Departmento creado', 'id'=> $apartment->id], 201);
     }
 
 

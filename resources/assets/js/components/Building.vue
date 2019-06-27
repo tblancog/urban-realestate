@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <!-- <div class="row mt-5" v-if="$gate.isAdminOrAuthor()"> -->
         <div class="row mt-5">
             <div class="col-md-12">
                 <div class="card">
@@ -18,19 +17,15 @@
                               <div class="container">
                                   <div class="row">
                                       <div class="col-md-3 col-sm-12 cropped">
-                                      <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
                                       <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
                                         <img v-if="building.images" :src="image_path(building)" class="img-fluid"/>
                                       </a>
-                                      <!-- </router-link> -->
                                       </div>
                                       <div class="col-md-6">                              
                                           <div class="info-card">
                                               <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
                                                 <h5 class="mt-0">{{ building.title }}</h5>
                                               </a>
-                                              <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
-                                              <!-- </router-link> -->
                                               <i class="fa fa-map-marker-alt fa-fw"></i>{{ building.address }}
                                               <i class="fa fa-dollar-sign fa-fw"></i>USD {{ building.price }}
                                               <a href="#" @click="editModal(building)">
@@ -47,7 +42,6 @@
                                       </div>
                                       <div class="col-md-3">
                                           <div class="more-box">
-                                              <!-- <h5>Edificio</h5> -->
                                               <div class="cta-more">
                                                   <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.id } }">
                                                       <a class="btn-more" href="#">Ver más</a>
@@ -231,8 +225,6 @@
                             <button v-show="editmode" type="submit" class="btn btn-success">Guardar</button>
                             <button v-show="!editmode" type="submit" class="btn btn-primary">Crear</button>
                         </div>
-
-
                     </form>
 
                 </div>
@@ -363,11 +355,9 @@
                 })
             },
             loadItems() {
-                // if (this.$gate.isAdminOrAuthor()) {
                 axios.get("api/buildings").then(({
                     data
                 }) => (this.buildings = data));
-                // }
             },
 
             createItem() {
@@ -415,7 +405,6 @@
             Fire.$on('AfterCreate', () => {
                 this.loadItems();
             });
-            // setInterval(() => this.loadItems(), 3000);
         }
 
     }
