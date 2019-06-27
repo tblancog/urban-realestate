@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Edificios</h3>
+                        <h3 class="card-title">Departamentos</h3>
                         <div class="card-tools">
                             <button class="btn btn-success" @click="newModal">Crear Nuevo <i
                                     class="fas fa-plus fa-fw"></i></button>
@@ -12,61 +12,64 @@
                     </div>
                     <!-- /.card-header -->
                     <div v-if="apartments.data && apartments.data.length">
-                      <div class="media" v-for="apartment in apartments.data" :key="apartment.id">
-                          <div class="media-body">
-                              <div class="container">
-                                  <div class="row">
-                                      <div class="col-md-3 col-sm-12 cropped">
-                                      <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = apartment">
-                                        <img v-if="apartment.images" :src="image_path(apartment)" class="img-fluid"/>
-                                      </a>
-                                      </div>
-                                      <div class="col-md-6">                              
-                                          <div class="info-card">
-                                              <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = apartment">
-                                                <h5 class="mt-0">{{ apartment.title }}</h5>
-                                              </a>
-                                              <i class="fa fa-map-marker-alt fa-fw"></i>{{ apartment.address }}
-                                              <i class="fa fa-dollar-sign fa-fw"></i>USD {{ apartment.price }}
-                                              <a href="#" @click="editModal(apartment)">
-                                                  <i class="fa fa-edit blue"></i>
-                                              </a>
-                                              /
-                                              <a href="#" @click="deleteItem(apartment.slug)">
-                                                  <i class="fa fa-trash red"></i>
-                                              </a>
-                                          </div>
-                                          <div class="details-card">
-                                              <p>{{ apartment.description  }}</p>
-                                          </div>
-                                      </div>
-                                      <div class="col-md-3">
-                                          <div class="more-box">
-                                              <div class="cta-more">
-                                                  <!-- <router-link :to="{ name: 'apartmentDetail', params: {  id: apartment.id } }">
+                        <div class="media" v-for="apartment in apartments.data" :key="apartment.id">
+                            <div class="media-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-12 cropped">
+                                            <a data-toggle="modal" data-target="#exampleModalLong" href="#"
+                                                @click="selected = apartment">
+                                                <img v-if="apartment.images" :src="image_path(apartment)"
+                                                    class="img-fluid" />
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="info-card">
+                                                <a data-toggle="modal" data-target="#exampleModalLong" href="#"
+                                                    @click="selected = apartment">
+                                                    <h5 class="mt-0">{{ apartment.title }}</h5>
+                                                </a>
+                                                <i class="fa fa-map-marker-alt fa-fw"></i>{{ apartment.address }}
+                                                <i class="fa fa-dollar-sign fa-fw"></i>USD {{ apartment.price }}
+                                                <a href="#" @click="editModal(apartment)">
+                                                    <i class="fa fa-edit blue"></i>
+                                                </a>
+                                                /
+                                                <a href="#" @click="deleteItem(apartment.slug)">
+                                                    <i class="fa fa-trash red"></i>
+                                                </a>
+                                            </div>
+                                            <div class="details-card">
+                                                <p>{{ apartment.description  }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="more-box">
+                                                <div class="cta-more">
+                                                    <!-- <router-link :to="{ name: 'apartmentDetail', params: {  id: apartment.id } }">
                                                       <a class="btn-more" href="#">Ver más</a>
                                                   </router-link>             -->
-                                              </div>
-                                              <!-- <div class="deliver-box">
+                                                </div>
+                                                <!-- <div class="deliver-box">
                                                   <h6>Entrega</h6>
                                                   <h6 class="deliver-date">Noviembre 2021</h6>
                                               </div> -->
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>             
-                          </div>
-                      </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                      <!-- /.card-body -->
-                      <div class="card-footer">
-                          <pagination :data="apartments" @pagination-change-page="getResults"></pagination>
-                      </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <pagination :data="apartments" @pagination-change-page="getResults"></pagination>
+                        </div>
                     </div>
                     <div v-else>
-                      <h5 class="m-5 text-center">No existen Edificios cargados</h5>
+                        <h5 class="m-5 text-center">No existen Departamentos cargados</h5>
                     </div>
-                    
+
                 </div>
                 <!-- /.card -->
             </div>
@@ -79,27 +82,31 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Edificio</h5>
-                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Edificio</h5>
+                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Departamento</h5>
+                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Departamento</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <form @submit.prevent="editmode ? updateItem(selected) : createItem()">
                         <div class="modal-body">
-                            
-                            
+
+
                             <!-- Image uploader -->
                             <div class="form-group col-lg-12">
-                              <image-uploader :files="form.files" :images="form.images"></image-uploader>
+                                <image-uploader :files="form.files" :images="form.images"></image-uploader>
                             </div>
+                            
+                            <!-- Building -->
+                            <div class="form-group col-lg-9">
+                                        
+                            </div>
+
                             <!-- Title -->
                             <div class="form-group col-lg-9">
-                                <div class="">
-                                  <input v-model="form.title" type="text" name="title" placeholder="Título"
-                                      class="form-control" :class="{ 'is-invalid': form.errors.has('title') }">
-                                  <has-error :form="form" field="title"></has-error>
-                                </div>
+                              <input v-model="form.title" type="text" name="title" placeholder="Título"
+                                  class="form-control" :class="{ 'is-invalid': form.errors.has('title') }">
+                              <has-error :form="form" field="title"></has-error>
                             </div>
 
                             <!-- Address -->
@@ -117,21 +124,51 @@
                                 <has-error :form="form" field="url_maps"></has-error>
                             </div>
 
-                             <!-- Highlighted -->
-                          <div class="form-group form-check col-lg-9">
-                              <div class="col-lg-12">
-                                <input type="checkbox" class="form-check-input" id="desde">
-                                <label class="form-check-label" for="desde">¿ Mostrar precio desde ?</label>
-                              </div>
-                              <has-error :form="form" field="desde"></has-error>
-                          </div>
+                            <!-- Floor, department and ID (code) -->
+                            <div class="col-lg-9">
+                                <div class="row">
+                                    <div class="form-group col-lg-4">
+                                        <input v-model="form.floor" type="text" name="floor" placeholder="Piso"
+                                            class="form-control" :class="{ 'is-invalid': form.errors.has('floor') }">
+                                        <has-error :form="form" field="floor"></has-error>
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <input v-model="form.department" type="text" name="department"
+                                            placeholder="Apartamento" class="form-control"
+                                            :class="{ 'is-invalid': form.errors.has('department') }">
+                                        <has-error :form="form" field="department"></has-error>
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <input v-model="form.code" type="text" name="code" placeholder="ID"
+                                            class="form-control" :class="{ 'is-invalid': form.errors.has('code') }">
+                                        <has-error :form="form" field="code"></has-error>
+                                    </div>
+                                </div>
+                            </div>
 
                             <!-- Price -->
-                            <div class="form-group col-lg-9">
-                                <input v-model="form.price" type="number" name="price" placeholder="Precio"
-                                    class="form-control col-lg-4" :class="{ 'is-invalid': form.errors.has('price') }">
-                                <has-error :form="form" field="price"></has-error>
-                            </div>
+                            <div class="col-lg-9">
+                              <div class="row">
+                                    <div class="form-group col-lg-4">
+                                        <input v-model="form.price" type="number" name="price" placeholder="Precio"
+                                            class="form-control" :class="{ 'is-invalid': form.errors.has('price') }">
+                                        <has-error :form="form" field="price"></has-error>
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                       <input v-model="form.area" type="number" name="area"
+                                          placeholder="Área m²"
+                                          class="form-control" :class="{ 'is-invalid': form.errors.has('area') }" />
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <input v-model="form.rooms" type="number" name="rooms"
+                                            placeholder="Ambientes" 
+                                            class="form-control" :class="{ 'is-invalid': form.errors.has('area') }"/>
+                                    </div>
+                                    <has-error :form="form" field="rooms"></has-error>
+                                </div>
+                              </div>
+                              
+                            
 
                             <!-- Description -->
                             <div class="form-group col-lg-9">
@@ -143,38 +180,44 @@
 
                             <!-- Amenities -->
                             <div class="form-group col-lg-9">
-                              <p>Amenities</p>
+                                <p>Amenities</p>
                                 <div class="form-group form-check">
-                                  
-                                  <div class="row">
-                                    <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="cochera" name="amenities[]" class="form-check-input" id="cochera">
-                                      <label class="form-check-label" for="cochera">Cochera</label>
-                                    </div>
-                                    <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="piscina" name="amenities[]" class="form-check-input" id="piscina">
-                                      <label class="form-check-label" for="piscina">Piscina</label>
-                                    </div>
-                                    <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="ascensor" name="amenities[]" class="form-check-input" id="ascensor">
-                                      <label class="form-check-label" for="ascensor">Ascensor</label>
-                                    </div>
-                                  </div>
 
-                                  <div class="row">
-                                    <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="gimnasio" name="amenities[]" class="form-check-input" id="gimnasio">
-                                      <label class="form-check-label" for="gimnasio">Gimnasio</label>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <input type="checkbox" v-model="form.amenities" value="cochera"
+                                                name="amenities[]" class="form-check-input" id="cochera">
+                                            <label class="form-check-label" for="cochera">Cochera</label>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <input type="checkbox" v-model="form.amenities" value="piscina"
+                                                name="amenities[]" class="form-check-input" id="piscina">
+                                            <label class="form-check-label" for="piscina">Piscina</label>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <input type="checkbox" v-model="form.amenities" value="ascensor"
+                                                name="amenities[]" class="form-check-input" id="ascensor">
+                                            <label class="form-check-label" for="ascensor">Ascensor</label>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="sum" name="amenities[]" class="form-check-input" id="sum">
-                                      <label class="form-check-label" for="sum">Sum</label>
+
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <input type="checkbox" v-model="form.amenities" value="gimnasio"
+                                                name="amenities[]" class="form-check-input" id="gimnasio">
+                                            <label class="form-check-label" for="gimnasio">Gimnasio</label>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <input type="checkbox" v-model="form.amenities" value="sum"
+                                                name="amenities[]" class="form-check-input" id="sum">
+                                            <label class="form-check-label" for="sum">Sum</label>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <input type="checkbox" v-model="form.amenities" value="parrilla"
+                                                name="amenities[]" class="form-check-input" id="parrilla">
+                                            <label class="form-check-label" for="parrilla">Parrilla</label>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="parrilla" name="amenities[]" class="form-check-input" id="parrilla">
-                                      <label class="form-check-label" for="parrilla">Parrilla</label>
-                                    </div>
-                                  </div>
 
 
                                 </div>
@@ -192,31 +235,24 @@
                                 <has-error :form="form" field="status"></has-error>
                             </div>
 
-                          <!-- Featured -->
-                          <div class="form-group form-check col-lg-9">
-                              <div class="col-lg-12">
-                                <input type="checkbox" class="form-check-input" id="featured">
-                                <label class="form-check-label" for="featured">Propiedad destacada</label>
-                              </div>
-                              <has-error :form="form" field="featured"></has-error>
-                          </div>
-                        <!-- Contact -->
-                        <div class="form-group col-lg-6">
-                            <div class="">
-                              <input v-model="form.contact_name" type="text" name="contact_name" placeholder="Nombre del contacto"
-                                  class="form-control" :class="{ 'is-invalid': form.errors.has('contact_name') }">
-                              <has-error :form="form" field="contact_name"></has-error>
+                            <!-- Contact -->
+                            <div class="form-group col-lg-6">
+                                <div class="">
+                                    <input v-model="form.contact_name" type="text" name="contact_name"
+                                        placeholder="Nombre del contacto" class="form-control"
+                                        :class="{ 'is-invalid': form.errors.has('contact_name') }">
+                                    <has-error :form="form" field="contact_name"></has-error>
+                                </div>
                             </div>
-                        </div
-                        >
-                        <!-- Contact Phone-->
-                        <div class="form-group col-lg-6">
-                            <div class="">
-                              <input v-model="form.contact_phone" type="text" name="contact_phone" placeholder="Teléfono del contacto"
-                                  class="form-control" :class="{ 'is-invalid': form.errors.has('contact_phone') }">
-                              <has-error :form="form" field="contact_phone"></has-error>
+                            <!-- Contact Phone-->
+                            <div class="form-group col-lg-6">
+                                <div class="">
+                                    <input v-model="form.contact_phone" type="text" name="contact_phone"
+                                        placeholder="Teléfono del contacto" class="form-control"
+                                        :class="{ 'is-invalid': form.errors.has('contact_phone') }">
+                                    <has-error :form="form" field="contact_phone"></has-error>
+                                </div>
                             </div>
-                        </div>
                         </div>
 
                         <!-- Status -->
@@ -232,7 +268,7 @@
         </div>
 
         <!-- Show details modal -->
-        <apartment-detail :item="selected"/>
+        <apartment-detail :item="selected" />
     </div>
 
 
@@ -245,7 +281,7 @@
     import utils from '../mixins/utils.js'
 
     export default {
-       components: {
+        components: {
             ImageUploader,
             ApartmentDetail,
         },
@@ -259,17 +295,24 @@
                     id: '',
                     title: '',
                     address: '',
+
+                    floor: '',
+                    department: '',
+                    code: '',
+
                     url_maps: '',
-                    from_price: '',
                     price: '',
+                    area: '',
+                    rooms: '',
+
                     description: '',
                     status: '',
-                    is_featured: '',
                     files: [],
                     images: [],
                     amenities: [],
                     contact_name: '',
                     contact_phone: '',
+                    building_id: ''
                 })
             }
         },
@@ -281,36 +324,36 @@
                     });
             },
             updateItem(selected) {
-              this.$Progress.start();
-              const formData = new FormData()
-              if(this.form.files && this.form.files.length > 0){
-                this.form.files.forEach(file => {
-                    formData.append('images[]', file, file.name)
-                })
-              }
+                this.$Progress.start();
+                const formData = new FormData()
+                if (this.form.files && this.form.files.length > 0) {
+                    this.form.files.forEach(file => {
+                        formData.append('images[]', file, file.name)
+                    })
+                }
 
 
                 this.form.put('api/apartments/' + selected.slug)
-                    .then( () => {
+                    .then(() => {
 
-                      axios.post('images-upload', formData)
-                          .then(()=> {
-                            Fire.$emit('AfterCreate');
-                            swal(
-                                  'Actualizado!',
-                                  'Información de edificio actualizada.',
-                                  'success' )
-                            this.form.reset();
-                            this.files = []
-                            $('#addNew').modal('hide');
+                        axios.post('images-upload', formData)
+                            .then(() => {
+                                Fire.$emit('AfterCreate');
+                                swal(
+                                    'Actualizado!',
+                                    'Información de Departamento actualizada.',
+                                    'success')
+                                this.form.reset();
+                                this.files = []
+                                $('#addNew').modal('hide');
 
-                          this.$Progress.finish();
-                          Fire.$emit('AfterCreate')
+                                this.$Progress.finish();
+                                Fire.$emit('AfterCreate')
 
-                        }).catch(() => {
-                            this.$Progress.fail();
-                        })
-                  })
+                            }).catch(() => {
+                                this.$Progress.fail();
+                            })
+                    })
 
             },
             editModal(item) {
@@ -344,7 +387,7 @@
                         this.form.delete('api/apartments/' + slug).then(() => {
                             swal(
                                 'Borrado!',
-                                'Edificio borrado.',
+                                'Departamento borrado.',
                                 'success'
                             )
                             Fire.$emit('AfterCreate');
@@ -361,33 +404,33 @@
             },
 
             createItem() {
-              this.$Progress.start()
-              const formData = new FormData()
-              if(this.form.files && this.form.files.length > 0){
-                this.form.files.forEach(file => {
-                    formData.append('images[]', file, file.name)
+                this.$Progress.start()
+                const formData = new FormData()
+                if (this.form.files && this.form.files.length > 0) {
+                    this.form.files.forEach(file => {
+                        formData.append('images[]', file, file.name)
+                    })
+                }
+
+                const apartmentCreate = this.form.post('api/apartments')
+                apartmentCreate.then(res => {
+                    formData.append('id', res.data.id)
+                    formData.append('type', 'apartment')
+                    axios.post('images-upload', formData)
+                        .then(() => {
+                            Fire.$emit('AfterCreate');
+                            swal(
+                                'Creado!',
+                                'Departamento creado.',
+                                'success'
+                            )
+                            this.form.reset();
+                            this.files = []
+                            $('#addNew').modal('hide');
+
+                            this.$Progress.finish();
+                        })
                 })
-              }
-
-              const apartmentCreate = this.form.post('api/apartments')
-              apartmentCreate.then(res => {
-                  formData.append('id', res.data.id)
-                  formData.append('type', 'apartment')
-                  axios.post('images-upload', formData)
-                    .then(()=> {
-                      Fire.$emit('AfterCreate');
-                      swal(
-                            'Creado!',
-                            'Edificio creado.',
-                            'success'
-                        )
-                      this.form.reset();
-                      this.files = []
-                      $('#addNew').modal('hide');
-
-                    this.$Progress.finish();
-                  })
-              })
             },
         },
         created() {
@@ -412,12 +455,14 @@
 </script>
 
 <style scoped lang="scss">
-    #addNew{
-      z-index: 10000;
+    #addNew {
+        z-index: 10000;
     }
-    .modal-dialog{
+
+    .modal-dialog {
         max-width: 650px;
     }
+
     .sidebar-mini {
         .wrapper {
             .content-wrapper {
@@ -432,41 +477,49 @@
                                 margin-bottom: 0;
                                 padding: 10px;
                             }
+
                             .card-tools {
                                 padding: 10px;
                             }
                         }
+
                         .media {
                             .media-body {
                                 .container {
                                     padding-top: 15px;
                                     padding-bottom: 15px;
-                                    .cropped{
+
+                                    .cropped {
                                         height: 135px;
                                         overflow: hidden;
                                     }
+
                                     .info-card {
                                         padding-bottom: 10px;
-                                        background-image: linear-gradient(to right, #7d7d7d 33%, rgba(255,255,255,0) 0%);
+                                        background-image: linear-gradient(to right, #7d7d7d 33%, rgba(255, 255, 255, 0) 0%);
                                         background-position: bottom;
                                         background-size: 6px 2px;
                                         background-repeat: repeat-x;
+
                                         a {
                                             h5 {
                                                 font-size: 1.7rem;
                                                 font-weight: 700;
                                                 color: #007c3e;
                                             }
+
                                             &:hover {
                                                 text-decoration: none;
                                             }
                                         }
                                     }
+
                                     a {
                                         &:hover {
                                             text-decoration: none;
                                         }
                                     }
+
                                     .btn-more {
                                         width: 70%;
                                         color: #51B848;
@@ -477,6 +530,7 @@
                                         letter-spacing: 1px;
                                         font-size: 1.4rem;
                                         transition: 0.2s;
+
                                         &:hover {
                                             text-decoration: none;
                                             background-color: #51B848;
@@ -484,21 +538,26 @@
                                             border: #51B848 1px solid;
                                         }
                                     }
+
                                     .details-card {
                                         margin-top: 10px;
                                     }
+
                                     .more-box {
-                                        background-image: linear-gradient(#7d7d7d 33%, rgba(255,255,255,0) 0%);
+                                        background-image: linear-gradient(#7d7d7d 33%, rgba(255, 255, 255, 0) 0%);
                                         background-position: left;
                                         background-size: 2px 7px;
                                         background-repeat: repeat-y;
                                         padding-left: 20px;
+
                                         h5 {
                                             margin-bottom: 2rem;
                                         }
+
                                         .cta-more {
                                             margin-bottom: 2rem;
                                         }
+
                                         .deliver-box {
                                             .deliver-date {
                                                 font-weight: 700;
@@ -511,9 +570,11 @@
                                 }
                             }
                         }
+
                         .card-footer {
                             .pagination {
                                 justify-content: center;
+
                                 li {
                                     a {
                                         background-color: #51B848;
@@ -526,5 +587,5 @@
             }
         }
     }
-</style>
 
+</style>

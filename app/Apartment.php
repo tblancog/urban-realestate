@@ -17,7 +17,6 @@ class Apartment extends Model
       'code',
 
       'url_maps',
-      'from_price',
       'price',
       'area',
       'rooms',

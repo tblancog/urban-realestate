@@ -17,9 +17,8 @@ $factory->define(Apartment::class, function (Faker $faker) {
       'code'=> '#'.rand(1, 1000),
       
       'url_maps'=> $faker->streetAddress(),
-      'from_price'=> $faker->boolean,
       'price'=> $faker->randomNumber(6),
-      'area'=> rand(30, 60).'m2',
+      'area'=> rand(30, 60),
       'rooms'=> rand(1, 4),
 
       'description'=> $faker->paragraph(2),

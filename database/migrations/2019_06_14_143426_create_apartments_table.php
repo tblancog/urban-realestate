@@ -24,7 +24,6 @@ class CreateApartmentsTable extends Migration
             $table->string('code', 2);
 
             $table->string('url_maps', 2048)->nullable();
-            $table->boolean('from_price')->nullable()->default(false);
             $table->unsignedBigInteger('price')->default(0);
             $table->string('area', 3);
             $table->string('rooms', 3);
