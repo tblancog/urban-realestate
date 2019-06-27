@@ -101,7 +101,17 @@
                     vm.prepareImageData()
                     axios.post('/upload-sliders', vm.formData, config)
                           .then( (res)=> {
-                            console.log(res)
+                            
+                              Fire.$emit('AfterCreate');
+                                swal(
+                                  'Sliders guardados.',
+                                  'Sliders de homepage guardados!',
+                                  'success')
+                                $('#addNew').modal('hide');
+
+                                this.$Progress.finish();
+                                Fire.$emit('AfterCreate')
+
                           } )
                   } 
                 })

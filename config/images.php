@@ -1,13 +1,12 @@
 <?php
 return [
-
-  'sliders'=> [
-    'path'=>'images/slides/',
-    'width'=> 1140,
-  ],
-  'properties' => [
-    'upload_path' => "uploads/properties/",
-    "width"=> 800,
-    "height"=> 430,
-  ],
+  'slider_path'=> 'images/slides/',
+  
+  'slider_width'=> 1140,
+  
+  'properties_upload_path' => 'uploads/properties/',
+  
+  'properties_width'=> 800,
+  
+  'properties_height'=> 430,
 ];

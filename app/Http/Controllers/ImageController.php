@@ -21,13 +21,12 @@ class ImageController extends Controller
     if (count($request->images) > 0) {
            
       
-      $config = config('images.properties');
       // Flush pictures folder if any
-      \Storage::deleteDirectory($config['upload_path'].$property->slug);
+      \Storage::deleteDirectory(config('images.properties_upload_path').$property->slug);
 
       // Create new directory
-      \Storage::makeDirectory($config['upload_path'].$property->slug);
-      $image_path = $config['upload_path'].$property->slug;
+      \Storage::makeDirectory(config('images.properties_upload_path').$property->slug);
+      $image_path = config('images.properties_upload_path').$property->slug;
 
       collect($request->images)->each(function($img, $idx) use ($property, $request, $config, $image_path) {
 
@@ -35,7 +34,7 @@ class ImageController extends Controller
         $ext= $img->getClientOriginalExtension();
         $filename = $request->type."_$idx".".".$ext;
         \Image::make($img)
-              ->fit($config['width'], $config['height'])
+              ->fit(config('images.properties_width'), config('images.properties_height'))
               ->save("$image_path/$filename");
 
         $img_input = ['filename'=> $filename, 
@@ -45,9 +44,5 @@ class ImageController extends Controller
       });
     } 
     return response()->json(['msg'=> 'Success'], 201);
-  }
-
-  public function uploadSlider(Request $request){
-    dd($request->all());
   }
 }
