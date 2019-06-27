@@ -99,7 +99,12 @@
                             
                             <!-- Building -->
                             <div class="form-group col-lg-9">
-                                        
+                              <select v-model="selected" class="form-control">
+                                <option v-for="option in form.buildings" :key="option.value" v-bind:value="option.id">
+                                  {{ option.title }}
+                                </option>
+                              </select>
+                              <span>Selected: {{ selected }}</span>
                             </div>
 
                             <!-- Title -->
@@ -312,6 +317,8 @@
                     amenities: [],
                     contact_name: '',
                     contact_phone: '',
+                    buildings: [],
+
                     building_id: ''
                 })
             }
@@ -366,6 +373,12 @@
             newModal() {
                 this.editmode = false;
                 this.form.reset();
+
+                // get list of buildings
+                axios.get("/api/buildings/list").then(({
+                    data
+                }) => (this.form.buildings = data));
+
                 $('#addNew').modal('show');
             },
             showModal(item) {

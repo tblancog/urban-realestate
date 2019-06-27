@@ -24,6 +24,12 @@ class BuildingController extends Controller
                 ->paginate(5);
     }
 
+    public function buildingList(){
+
+      return Building::orderBy('title')
+                          ->get(['id','title']);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

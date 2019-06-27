@@ -40,7 +40,7 @@ class Apartment extends Model
     }
     public function building(){
 
-      return $this->hasMany('App\Building');
+      return $this->belongsTo('App\Building');
     }
 
     public function getStatusAttribute(){
@@ -52,10 +52,4 @@ class Apartment extends Model
       $this->attributes['title'] = $value;
       $this->attributes['slug'] = str_slug($value);
     }
-
-    // public function getImageNameAttribute($value){
-
-    //   // 
-    //   $this->attributes['image_name'] = 
-    // }
 }
