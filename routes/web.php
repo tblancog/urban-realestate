@@ -19,6 +19,7 @@ Route::post('images-upload', 'ImageController@upload');
 Route::post('save-sliders', 'SliderController@save');
 Route::post('upload-sliders', 'SliderController@upload');
 Route::get('get-sliders', 'SliderController@getApiSliders');
+Route::delete('delete-sliders/{id}', 'SliderController@deleteSlide');
 
 
 // Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');

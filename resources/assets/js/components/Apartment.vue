@@ -104,7 +104,6 @@
                                   {{ option.title }}
                                 </option>
                               </select>
-                              <span>Selected: {{ selected }}</span>
                             </div>
 
                             <!-- Title -->
@@ -139,7 +138,7 @@
                                     </div>
                                     <div class="form-group col-lg-4">
                                         <input v-model="form.department" type="text" name="department"
-                                            placeholder="Apartamento" class="form-control"
+                                            placeholder="Departamento" class="form-control"
                                             :class="{ 'is-invalid': form.errors.has('department') }">
                                         <has-error :form="form" field="department"></has-error>
                                     </div>

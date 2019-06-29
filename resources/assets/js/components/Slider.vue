@@ -14,7 +14,8 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <ul class="list-group list-group-flush">
+                            <div v-if="slideshow">
+                              <ul class="list-group list-group-flush">
                                 <li v-for="(slide, idx) in slideshow" v-bind:key="idx" class="list-group-item">
                                     <h3>{{ 'Slide '+idx }}</h3>
                                     <div class="row">
@@ -39,7 +40,7 @@
                                                       @change="previewImage($event, idx)"
                                                       accept="image/jpg,image/jpeg,image/png">
                                             </div>
-                                            <div class="image-preview" v-if="slide.imageData.length > 0">
+                                            <div class="image-preview" v-if="slide && slide.imageData">
                                                 <img class="preview" :src="slide.imageData">
                                             </div>
                                         </div>
@@ -49,7 +50,11 @@
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
+                              </ul>
+                            </div>
+                            <div v-else>
+                               <h5 class="m-5 text-center">No existen slides de home cargados</h5>
+                            </div>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
@@ -87,6 +92,9 @@
             },
             removeSlide(idx) { 
                 this.slideshow.splice(idx, 1)
+                 axios
+                .delete('/delete-sliders/'+idx)
+                .then((res) => {})
             },
             saveSliders() {
               let vm = this
@@ -161,19 +169,19 @@
                 }
             }
         },
-        // created(){
-        //   axios.get('/get-sliders').then( (res) => {
-
-
-        //     this.slideshow = res.data.map( (value)=> {
-        //       return {
-        //           title: value.title,
-        //           subtitle: value.subtitle,
-        //           imageData: value.,
-        //       }
-        //     } )
-        //   })
-        // }
+        created(){
+          axios.get('/get-sliders').then( (res) => {
+            console.log(res.data)
+            // this.slideshow = res.data
+            this.slideshow = res.data.sliders.map( (el)=> {
+              return {
+                  title: el.title,
+                  subtitle: el.subtitle,
+                  imageData: el.base64img
+              }
+            } )
+          })
+        }
     }
 
 </script>

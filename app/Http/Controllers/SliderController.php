@@ -13,19 +13,17 @@ class SliderController extends Controller
       if( count($request->input()) > 0 ){
 
         // Delete all first
-        Slider::truncate();
         collect($request->input())->each(function($req, $idx){
-          Slider::create([
-            'index'=> $idx,
-            'title'=> $req['title'],
-            'subtitle'=> $req['subtitle'],
+          Slider::updateOrCreate(
+            ['index'=> $idx ],
+            ['title'=> $req['title'], 'subtitle'=> $req['subtitle'] 
             ]);
             
           });
 
-        return response()->json('OK', 201);
+        return response()->json(['msg'=> 'OK'], 201);
       }
-      return response()->json('Bad request', 400);
+      return response()->json(['msg'=> 'Bad request'], 400);
     }
       
     public function upload(Request $request){
@@ -49,11 +47,19 @@ class SliderController extends Controller
           
             $ext= $img->getClientOriginalExtension();
             $filename = "slide_$idx.$ext";
+            $path = config('images.slider_path')."/$filename";
             $img= Image::make($img);
             $img->fit(config('images.slider_width'))
-                ->save(config('images.slider_path')."/$filename");
+                ->save($path);
+
+            // Base64
+            $type = pathinfo($path, PATHINFO_EXTENSION);
+            $data = file_get_contents($path);
+            $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+
             Slider::where('index', $idx)
-                ->update(['filename'=> $filename]);
+                ->update(['filename'=> $filename, 
+                          'base64img'=> $base64 ]);
         });
         
       }
@@ -65,4 +71,21 @@ class SliderController extends Controller
 
       return response()->json(compact('sliders'), 200);
     }
+
+    public function deleteSlide($idx){
+
+      $slide = Slider::where('index', $idx )
+                      ->first();
+      $file = config('images.slider_path')."/".$slide->filename;
+      if(\Storage::exists($file) && $slide){
+        \Storage::delete($file);
+        $slide->delete();
+      }
+
+      return response()->json(['msg'=> 'Deleted'], 200);
+          
+
+
+    }
+
 }

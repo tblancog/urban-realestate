@@ -19,6 +19,7 @@ class CreateSlidersTable extends Migration
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->string('filename')->nullable();
+            $table->text('base64img')->nullable();
         });
     }
 
