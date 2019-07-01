@@ -27,7 +27,7 @@ class BuildingController extends Controller
     public function buildingList(){
 
       return Building::orderBy('title')
-                          ->get(['id','title']);
+                          ->get(['id','title as label']);
     }
 
     /**

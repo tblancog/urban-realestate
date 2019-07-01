@@ -96,21 +96,17 @@
                             <div class="form-group col-lg-12">
                                 <image-uploader :files="form.files" :images="form.images"></image-uploader>
                             </div>
-                            
-                            <!-- Building -->
-                            <div class="form-group col-lg-9">
-                              <select v-model="selected" class="form-control">
-                                <option v-for="option in form.buildings" :key="option.value" v-bind:value="option.id">
-                                  {{ option.title }}
-                                </option>
-                              </select>
-                            </div>
 
                             <!-- Title -->
                             <div class="form-group col-lg-9">
                               <input v-model="form.title" type="text" name="title" placeholder="Título"
                                   class="form-control" :class="{ 'is-invalid': form.errors.has('title') }">
                               <has-error :form="form" field="title"></has-error>
+                            </div>
+
+                            <!-- Building -->
+                            <div class="form-group col-lg-9">
+                              <v-select v-model="form.building_id"  :options="form.buildings"></v-select>
                             </div>
 
                             <!-- Address -->
@@ -138,7 +134,7 @@
                                     </div>
                                     <div class="form-group col-lg-4">
                                         <input v-model="form.department" type="text" name="department"
-                                            placeholder="Departamento" class="form-control"
+                                            placeholder="# Departamento" class="form-control"
                                             :class="{ 'is-invalid': form.errors.has('department') }">
                                         <has-error :form="form" field="department"></has-error>
                                     </div>
@@ -166,7 +162,7 @@
                                     <div class="form-group col-lg-4">
                                         <input v-model="form.rooms" type="number" name="rooms"
                                             placeholder="Ambientes" 
-                                            class="form-control" :class="{ 'is-invalid': form.errors.has('area') }"/>
+                                            class="form-control" :class="{ 'is-invalid': form.errors.has('rooms') }"/>
                                     </div>
                                     <has-error :form="form" field="rooms"></has-error>
                                 </div>
@@ -283,11 +279,14 @@
     import ImageUploader from './ImageUploader';
     import ApartmentDetail from './ApartmentDetail';
     import utils from '../mixins/utils.js'
+    import vSelect from 'vue-select'
+    import 'vue-select/dist/vue-select.css';
 
     export default {
         components: {
             ImageUploader,
             ApartmentDetail,
+            vSelect
         },
         mixins: [utils],
         data() {
@@ -295,6 +294,8 @@
                 editmode: false,
                 selected: {},
                 apartments: {},
+                selectedBuilding: {},
+                // buildings: [],
                 form: new Form({
                     id: '',
                     title: '',
@@ -446,6 +447,11 @@
             },
         },
         created() {
+            // axios.get('/api/buildings/list')
+            //       .then( (res) => {
+            //         console.log(res.data)
+            //           this.form.buildings = res.data
+            //        })
             // Fire.$on('searching', () => {
             //     let query = this.$parent.search;
             //     axios.get('api/findUser?q=' + query)
@@ -467,6 +473,7 @@
 </script>
 
 <style scoped lang="scss">
+
     #addNew {
         z-index: 10000;
     }
