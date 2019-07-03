@@ -8,6 +8,10 @@ use Image;
 
 class SliderController extends Controller
 {
+  private $path = '';
+  public function __construct(){
+    $this->path = config('images.slider_path')."/";
+  }
     public function save(Request $request){
       
       if( count($request->input()) > 0 ){
@@ -47,14 +51,14 @@ class SliderController extends Controller
           
             $ext= $img->getClientOriginalExtension();
             $filename = "slide_$idx.$ext";
-            $path = config('images.slider_path')."/$filename";
+            $this->path.="/$filename";
             $img= Image::make($img);
             $img->fit(config('images.slider_width'))
-                ->save($path);
+                ->save($this->path);
 
             // Base64
-            $type = pathinfo($path, PATHINFO_EXTENSION);
-            $data = file_get_contents($path);
+            $type = pathinfo($this->path, PATHINFO_EXTENSION);
+            $data = file_get_contents($this->path);
             $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
             Slider::where('index', $idx)
@@ -67,8 +71,20 @@ class SliderController extends Controller
 
     public function getApiSliders(){
       // Get base64 
-      $sliders = Slider::orderBy('index')->get();
-
+      $path = $this->path;
+      $sliders = Slider::orderBy('index')
+                  ->get()->transform(
+                    function($item) use ($path) {
+                      
+                      $path .= $item->filename;
+                      // Base64
+                      $type = pathinfo($path, PATHINFO_EXTENSION);
+                      $data = file_get_contents($path);
+                      $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                      $item->base64img = $base64;
+                      return $item;
+                    }
+                  );
       return response()->json(compact('sliders'), 200);
     }
 
@@ -76,7 +92,7 @@ class SliderController extends Controller
 
       $slide = Slider::where('index', $idx )
                       ->first();
-      $file = config('images.slider_path')."/".$slide->filename;
+      $file = $this->path.$slide->filename;
       if(\Storage::exists($file) && $slide){
         \Storage::delete($file);
         $slide->delete();

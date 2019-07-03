@@ -94,7 +94,9 @@
 
                             <!-- Image uploader -->
                             <div class="form-group col-lg-12">
-                                <image-uploader :files="form.files" :images="form.images"></image-uploader>
+                                <image-uploader 
+                                  :files="form.files" 
+                                  :images="form.images"/>
                             </div>
 
                             <!-- Title -->
@@ -387,7 +389,7 @@
             deleteItem(slug) {
                 swal({
                     title: 'Estás seguro?',
-                    text: "Tené en cuenta que también se borrarán los departamentos asociados",
+                    text: "No es posible revertir esta acción",
                     type: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',

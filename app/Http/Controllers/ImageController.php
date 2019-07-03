@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Building;
+use App\Apartment;
 use App\BuildingImage;
+use App\ApartmentImage;
 
 class ImageController extends Controller
 {
@@ -28,7 +30,7 @@ class ImageController extends Controller
       \Storage::makeDirectory(config('images.properties_upload_path').$property->slug);
       $image_path = config('images.properties_upload_path').$property->slug;
 
-      collect($request->images)->each(function($img, $idx) use ($property, $request, $config, $image_path) {
+      collect($request->images)->each(function($img, $idx) use ($property, $request, $image_path) {
 
         // Get extendsion and make filename
         $ext= $img->getClientOriginalExtension();

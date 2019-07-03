@@ -33,14 +33,16 @@ class ApartmentController extends Controller
     {
       $input = collect($request->input())
                               ->except('buildings', 'amenities', 'building_id');
-      dd($request->input());
+      
+      $building_id = $request->input('building_id')['id'];
+      $input->put('building_id', $building_id);
 
-        $apartment = Apartment::create($input->toArray());
-        $apartment->amenities()->sync(
-          Amenity::whereIn('title', $request->amenities)->get()
-        );
-        
-        return response()->json(['message' => 'Departmento creado', 'id'=> $apartment->id], 201);
+      $apartment = Apartment::create($input->toArray());
+      $apartment->amenities()->sync(
+        Amenity::whereIn('title', $request->amenities)->get()
+      );
+      
+      return response()->json(['message' => 'Departmento creado', 'id'=> $apartment->id], 201);
     }
 
 

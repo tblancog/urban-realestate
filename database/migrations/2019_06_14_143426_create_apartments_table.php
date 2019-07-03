@@ -33,11 +33,13 @@ class CreateApartmentsTable extends Migration
             $table->string('contact_name', 50)->nullable();
             $table->string('contact_phone', 50)->nullable();
             $table->unsignedInteger('building_id')->nullable();
-            $table->timestamps();
             
             $table->foreign('building_id')
-                  ->references('id')
-                  ->on('buildings');
+                  ->references('id')  
+                  ->on('buildings')
+                  ->onDelete('cascade');
+
+            $table->timestamps();
         });
     }
 

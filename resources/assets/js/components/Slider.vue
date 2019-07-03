@@ -13,7 +13,7 @@
                             </div>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body">
+                        <div v-cloak class="card-body">
                             <div v-if="slideshow">
                               <ul class="list-group list-group-flush">
                                 <li v-for="(slide, idx) in slideshow" v-bind:key="idx" class="list-group-item">
@@ -41,7 +41,7 @@
                                                       accept="image/jpg,image/jpeg,image/png">
                                             </div>
                                             <div class="image-preview" v-if="slide && slide.imageData">
-                                                <img class="preview" :src="slide.imageData">
+                                              <img class="preview" :src="slide.imageData">
                                             </div>
                                         </div>
 
@@ -187,6 +187,9 @@
 </script>
 
 <style>
+  [v-cloak] > * { display:none; }
+  [v-cloak]::before { content: "Cargando..."; }
+
     .file-upload-form,
     .image-preview {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
