@@ -19,6 +19,7 @@ use Illuminate\Http\Request;
 
 // Route::apiResources(['user' => 'API\UserController']);
 Route::get('buildings/list', 'API\BuildingController@buildingList');
+Route::get('amenities', 'API\BuildingController@index');
 Route::apiResources(['buildings' => 'API\BuildingController']);
 Route::apiResources(['apartments' => 'API\ApartmentController']);
 // Route::get('profile', 'API\UserController@profile');

@@ -181,50 +181,23 @@
                             </div>
 
                             <!-- Amenities -->
-                            <div class="form-group col-lg-9">
-                                <p>Amenities</p>
-                                <div class="form-group form-check">
-
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <input type="checkbox" v-model="form.amenities" value="cochera"
-                                                name="amenities[]" class="form-check-input" id="cochera">
-                                            <label class="form-check-label" for="cochera">Cochera</label>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <input type="checkbox" v-model="form.amenities" value="piscina"
-                                                name="amenities[]" class="form-check-input" id="piscina">
-                                            <label class="form-check-label" for="piscina">Piscina</label>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <input type="checkbox" v-model="form.amenities" value="ascensor"
-                                                name="amenities[]" class="form-check-input" id="ascensor">
-                                            <label class="form-check-label" for="ascensor">Ascensor</label>
-                                        </div>
+                            <div class="form-group col-lg-12">
+                              <p>
+                              <a class="btn btn-primary" data-toggle="collapse" href="#amenitiesForm" role="button" aria-expanded="false" aria-controls="amenitiesForm">
+                                Amenities
+                              </a>
+                                <div id="amenitiesForm" class="form-group form-check collapse">
+                                  <div class="row">
+                                    <div v-for="amenity in amenities" :key="amenity.id" class="col-lg-4">
+                                      <input type="checkbox" :id="amenity.title"
+                                                             :value="amenity.id" 
+                                                             v-model="form.amenities"  
+                                                             name="amenities[]" class="form-check-input">
+                                      <label class="form-check-label" :for="amenity.title">{{ amenity.title }}</label>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <input type="checkbox" v-model="form.amenities" value="gimnasio"
-                                                name="amenities[]" class="form-check-input" id="gimnasio">
-                                            <label class="form-check-label" for="gimnasio">Gimnasio</label>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <input type="checkbox" v-model="form.amenities" value="sum"
-                                                name="amenities[]" class="form-check-input" id="sum">
-                                            <label class="form-check-label" for="sum">Sum</label>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <input type="checkbox" v-model="form.amenities" value="parrilla"
-                                                name="amenities[]" class="form-check-input" id="parrilla">
-                                            <label class="form-check-label" for="parrilla">Parrilla</label>
-                                        </div>
-                                    </div>
-
-
+                                  </div>
                                 </div>
                             </div>
-
                             <!-- Status -->
                             <div class="form-group col-lg-9">
                                 <select name="type" v-model="form.status" id="status" class="form-control"
@@ -296,8 +269,8 @@
                 editmode: false,
                 selected: {},
                 apartments: {},
+                amenities: [],
                 selectedBuilding: {},
-                // buildings: [],
                 form: new Form({
                     id: '',
                     title: '',
@@ -412,10 +385,22 @@
                     }
                 })
             },
-            loadItems() {
-                axios.get("api/apartments").then(({
-                    data
-                }) => (this.apartments = data));
+            // loadItems() {
+            //     axios.get("api/apartments").then(({
+            //         data
+            //     }) => (this.apartments = data));
+            // },
+            async loadItems() {
+              let vm = this
+              axios.all([
+                axios.get('api/apartments'),
+                axios.get('amenities')
+              ]).then(
+                axios.spread(function(res1, res2){
+                  vm.apartments = res1.data
+                  vm.amenities = res2.data
+                })
+              );
             },
 
             createItem() {

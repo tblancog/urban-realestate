@@ -28,6 +28,9 @@ Route::get('buildings/{viewName}', function($view){
 })->name('buildings.detail');
 
 Route::get('buildings', 'BuildingController@index')->name('buildings.list');
+Route::get('amenities', function(){
+   return $items= App\Amenity::orderBy('title')->get();
+})->name('amenity.list');
 
 Route::get('/detail_building', function () {
   return view('detail-building');

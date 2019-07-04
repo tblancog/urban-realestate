@@ -39,7 +39,7 @@ class ApartmentController extends Controller
 
       $apartment = Apartment::create($input->toArray());
       $apartment->amenities()->sync(
-        Amenity::whereIn('title', $request->amenities)->get()
+        $request->amenities
       );
       
       return response()->json(['message' => 'Departmento creado', 'id'=> $apartment->id], 201);
