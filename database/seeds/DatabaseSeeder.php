@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AmenityTableSeeder::class);
         $this->call(BuildingTableSeeder::class);
         $this->call(SliderTableSeeder::class);
+        $this->call(ConfigTableSeeder::class);
     }
 }
