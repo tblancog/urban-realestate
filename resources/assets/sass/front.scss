@@ -82,6 +82,13 @@
     padding: 0;
 }
 
+html,body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
     font-family: $font-family;
 }
@@ -679,6 +686,9 @@ img {
     letter-spacing: 30px;
     background: #C8C8C8;
     color: #7C7C7C;
+    @media (max-width: 520px) {
+        letter-spacing: 15px;
+    }
 }
 
 .sticky-wrapper {
