@@ -19,6 +19,22 @@ export default [{
           component: require('./components/Apartment.vue')
       },
       {
+          path: '/investmentAdmin',
+          component: require('./components/InvestmentAdmin.vue')
+      },
+      {
+          path: '/appraissalAdmin',
+          component: require('./components/AppraissalAdmin.vue')
+      },
+      {
+          path: '/creditAdmin',
+          component: require('./components/creditAdmin.vue')
+      },
+      {
+          path: '/contactAdmin',
+        component: require('./components/contactAdmin.vue')
+      },
+      {
           name: 'buildingDetail',
           path: '/buildingList/:id',
           component: require('./components/BuildingDetail.vue')

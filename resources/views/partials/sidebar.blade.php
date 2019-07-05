@@ -73,6 +73,38 @@
                         </p>
                     </router-link>
                 </li>
+                <li class="nav-item">
+                    <router-link to="/investmentAdmin" class="nav-link">
+                        <i class="nav-icon fa fa-dollar-sign green"></i>
+                        <p>
+                            Inversiones
+                        </p>
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link to="/appraissalAdmin" class="nav-link">
+                        <i class="nav-icon fa fa-percentage green"></i>
+                        <p>
+                            Tasaciones
+                        </p>
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link to="/creditAdmin" class="nav-link">
+                        <i class="nav-icon fa fa-money-check-alt green"></i>
+                        <p>
+                            Creditos
+                        </p>
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link to="/contactAdmin" class="nav-link">
+                        <i class="nav-icon fa fa-envelope green"></i>
+                        <p>
+                            Contacto
+                        </p>
+                    </router-link>
+                </li>
                 {{-- <li class="nav-item">
                     <router-link to="#abd" class="nav-link">
                         <i class="nav-icon fa fa-money-check-alt green"></i>
