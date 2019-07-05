@@ -648,9 +648,10 @@ img {
 
 .dark.classy-nav-container {
     a {
+        transition: 0s;
         &:hover {
             color: #000000;
-            text-decoration: underline;
+            font-weight: 600;
         }
     }
 }
@@ -695,6 +696,11 @@ img {
 }
 
 #desktop-nav {
+    li {
+        a {
+            font-size: 20px;
+        }
+    }
     @media (max-width: 991px) {
         display: none;
     }
@@ -739,6 +745,7 @@ img {
                                     &.show {
                                         .dropdown-menu.show {
                                             top: 18px !important;
+                                            left: -60px!important;
                                             background-color: rgba(255, 255, 255, 0.7);
                                             border: 0;
                                             border-radius: 0;
@@ -960,7 +967,7 @@ img {
     .classynav ul li a {
         color: $color-dark;
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: 400;
         font-size: 22px;
         border-left: 1px solid white;
     }
@@ -1334,6 +1341,7 @@ img {
 
 .nice-select {
     line-height: 34px;
+    font-size: 20px;
 
     .list {
         left: 0 !important;
@@ -1382,6 +1390,7 @@ img {
 
                     .form-control.location {
                         background-color: #ffffff;
+                        font-size: 20px;
                     }
                 }
             }
@@ -1556,6 +1565,12 @@ img {
             select.form-control {
                 text-transform: uppercase;
                 font-weight: bolder;
+            }
+
+            .form-group {
+                .south-btn {
+                    font-size: 18px;
+                }
             }
         }
     }
@@ -3379,6 +3394,10 @@ img {
     .dept-contact {
         padding: 15px 40px;
 
+        .send-box {
+            height: 70px;
+        }
+
         .contact-title {
             display: inline-block;
             text-transform: uppercase;
@@ -3413,7 +3432,12 @@ img {
         background-color: #ffffff;
     } 
     
-    
+    .description-top {
+        .desc-title {
+            display: inline-block;
+            font-weight: 700;
+        }
+    }
 
     .dept-description {
         margin-bottom: 30px;
