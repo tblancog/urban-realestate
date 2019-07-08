@@ -14,21 +14,21 @@ class ConfigTableSeeder extends Seeder
     {
 
       $data = [
-        [ 'key' => 'investments.title', 'value'=> 'Edificios', 'type'=> 'string'],
-        [ 'key' => 'investments.subtitle', 'value'=> 'Si estas interesado en realizar una inversión planificada, tenemos múltiples opciones de corto, mediano o largo plazo. Contactáte con nosotros y con gusto podremos asesorarte.', 'type'=> 'string'],
-        [ 'key' => 'investments.form', 'value'=> 1, 'type'=> 'boolean'],
+        [ 'module'=> 'investments', 'key' => 'title', 'value'=> 'Edificios'],
+        [ 'module'=> 'investments', 'key' => 'subtitle', 'value'=> 'Si estas interesado en realizar una inversión planificada, tenemos múltiples opciones de corto, mediano o largo plazo. Contactáte con nosotros y con gusto podremos asesorarte.'],
+        [ 'module'=> 'investments', 'key' => 'form', 'value'=> 1],
 
-        [ 'key' => 'appraissals.title', 'value'=> 'Título', 'type'=> 'string'],
-        [ 'key' => 'appraissals.subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar', 'type'=> 'string'],
-        [ 'key' => 'appraissals.form', 'value'=> 1, 'type'=> 'boolean'],
+        [ 'module'=> 'appraissals', 'key' => 'title', 'value'=> 'Título'],
+        [ 'module'=> 'appraissals', 'key' => 'subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
+        [ 'module'=> 'appraissals', 'key' => 'form', 'value'=> 1],
 
-        [ 'key' => 'credits.title', 'value'=> 'Título', 'type'=> 'string'],
-        [ 'key' => 'credits.subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar', 'type'=> 'string'],
-        [ 'key' => 'credits.form', 'value'=> 1, 'type'=> 'boolean'],
+        [ 'module'=> 'credits', 'key' => 'title', 'value'=> 'Título'],
+        [ 'module'=> 'credits', 'key' => 'subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
+        [ 'module'=> 'credits', 'key' => 'form', 'value'=> 1],
 
-        [ 'key' => 'contacts.title', 'value'=> 'Título', 'type'=> 'string'],
-        [ 'key' => 'contacts.subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar', 'type'=> 'string'],
-        [ 'key' => 'contacts.form', 'value'=> 1, 'type'=> 'boolean'],
+        [ 'module'=> 'contacts', 'key' => 'title', 'value'=> 'Título'],
+        [ 'module'=> 'contacts', 'key' => 'subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
+        [ 'module'=> 'contacts', 'key' => 'form', 'value'=> 1],
       ];
 
       collect($data)->each(function($el){

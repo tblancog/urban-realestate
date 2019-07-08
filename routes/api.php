@@ -22,7 +22,7 @@ Route::get('buildings/list', 'API\BuildingController@buildingList');
 Route::get('amenities', 'API\BuildingController@index');
 Route::apiResources(['buildings' => 'API\BuildingController']);
 Route::apiResources(['apartments' => 'API\ApartmentController']);
-// Route::get('profile', 'API\UserController@profile');
+Route::resource('config', 'API\ConfigController')->only('index','update');
 // Route::get('findUser', 'API\UserController@search');
 // Route::put('profile', 'API\UserController@updateProfile');
 
