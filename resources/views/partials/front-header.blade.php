@@ -49,8 +49,8 @@
                                 </a>
                                 <div class="dropdown-menu py-2" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item my-2" href="{{ route('nosotros.index')  }}">Nosotros</a>
-                                    <a class="dropdown-item my-2" href="#real-estate">Propiedades</a>
-                                    <a class="dropdown-item my-2" href="#real-estate_featured">Destacados</a>
+                                    <a class="dropdown-item my-2" href="{{ route('home.index')  }}#real-estate">Propiedades</a>
+                                    <a class="dropdown-item my-2" href="{{ route('home.index')  }}#real-estate_featured">Destacados</a>
                                 </div>
                             </li>
 

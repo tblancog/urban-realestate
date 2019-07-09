@@ -4,7 +4,7 @@
 // Route::get('/', function () {
 //     return view('index');
 // });
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home.index');
 
 
 Auth::routes();
@@ -56,25 +56,12 @@ Route::get('/modal-details', function () {
   return view('modalDetails');
 });
 
-Route::get('/investments', function () {
-  return view('contact');
-})->name('investments.index');
-
-Route::get('/appraisals', function () {
-  return view('contact');
-})->name('appraisals.index');
-
-Route::get('/credits', function () {
-  return view('contact');
-})->name('credits.index');
-
-Route::get('/nosotros', function () {
-  return view('nosotros');
-})->name('nosotros.index');
-
-Route::get('/contact', function () {
-  return view('contact');
-})->name('contact.index');
+// Static
+Route::get('/investments', 'HomeController@staticPage')->name('investments.index');
+Route::get('/appraisals', 'HomeController@staticPage')->name('appraisals.index');
+Route::get('/credits', 'HomeController@staticPage')->name('credits.index');
+Route::get('/contact', 'HomeController@staticPage')->name('contact.index');
+Route::get('/nosotros', 'HomeController@staticPage')->name('nosotros.index');
 
 Route::get('/{path}',function(){
   return redirect('/dashboard');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use  App\Apartment;
 use  App\Slider;
+use  App\Config;
 class HomeController extends Controller
 {
     /**
@@ -42,5 +43,18 @@ class HomeController extends Controller
                               'others'=> $others, 
                               'slides'=> $slides, 
         ]);
+    }
+
+    public function staticPage(Request $request){
+
+      $page = str_replace('/', '', $request->getRequestUri());
+      $config = Config::where('module', $page)
+                      ->get()
+                      ->pluck('value', 'key');
+      if (in_array($page, ['investments', 'appraisals', 'credits', 'contact']))
+      {
+        return view('contact', compact('config'));
+      }
+      return view($page);
     }
 }

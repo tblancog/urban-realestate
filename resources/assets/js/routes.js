@@ -23,8 +23,8 @@ export default [{
           component: require('./components/InvestmentAdmin.vue')
       },
       {
-          path: '/appraissalAdmin',
-          component: require('./components/AppraissalAdmin.vue')
+          path: '/appraisalAdmin',
+          component: require('./components/AppraisalAdmin.vue')
       },
       {
           path: '/creditAdmin',

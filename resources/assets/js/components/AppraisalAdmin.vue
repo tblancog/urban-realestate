@@ -47,7 +47,7 @@
         methods: {
           save() {
               this.$Progress.start();
-              const endpoint = 'api/config/appraissals'
+              const endpoint = 'api/config/appraisals'
               let vm = this
               axios.put(endpoint, vm.config)
                    .then((res) => { 
@@ -64,7 +64,7 @@
           }
         },
         created() {
-            const endpoint = 'api/config?module=appraissals'
+            const endpoint = 'api/config?module=appraisals'
             const vm = this
             axios.get(endpoint).then((res) => {
                 vm.config = res.data

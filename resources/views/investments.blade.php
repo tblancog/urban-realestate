@@ -21,10 +21,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Edificios</h3>
+                        <h3 class="card-title">{{ $config['title'] }}</h3>
                         <div class="col-12">
-                          Si estas interesado en realizar una inversión planificada, tenemos múltiples opciones de corto, mediano o largo plazo. 
-                          Contactáte con nosotros y con gusto podremos asesorarte.
+                          {{ $config['subtitle'] }}
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -145,10 +144,12 @@
         
 </section>
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-6 offset-2">
-            @include ('partials.contact-form')
-        </div>
-    </div>
-</div>
+@if( $config['form'] === '1' )
+  <div class="container mt-5">
+      <div class="row">
+          <div class="col-6 offset-2">
+              @include ('partials.contact-form')
+          </div>
+      </div>
+  </div>
+@endif

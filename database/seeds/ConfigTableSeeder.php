@@ -18,9 +18,9 @@ class ConfigTableSeeder extends Seeder
         [ 'module'=> 'investments', 'key' => 'subtitle', 'value'=> 'Si estas interesado en realizar una inversión planificada, tenemos múltiples opciones de corto, mediano o largo plazo. Contactáte con nosotros y con gusto podremos asesorarte.'],
         [ 'module'=> 'investments', 'key' => 'form', 'value'=> 1],
 
-        [ 'module'=> 'appraissals', 'key' => 'title', 'value'=> 'Tasaciones'],
-        [ 'module'=> 'appraissals', 'key' => 'subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
-        [ 'module'=> 'appraissals', 'key' => 'form', 'value'=> 1],
+        [ 'module'=> 'appraisals', 'key' => 'title', 'value'=> 'Tasaciones'],
+        [ 'module'=> 'appraisals', 'key' => 'subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
+        [ 'module'=> 'appraisals', 'key' => 'form', 'value'=> 1],
 
         [ 'module'=> 'credits', 'key' => 'title', 'value'=> 'Créditos'],
         [ 'module'=> 'credits', 'key' => 'subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
