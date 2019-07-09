@@ -28,11 +28,11 @@ export default [{
       },
       {
           path: '/creditAdmin',
-          component: require('./components/creditAdmin.vue')
+          component: require('./components/CreditAdmin.vue')
       },
       {
           path: '/contactAdmin',
-        component: require('./components/contactAdmin.vue')
+          component: require('./components/ContactAdmin.vue')
       },
       {
           name: 'buildingDetail',

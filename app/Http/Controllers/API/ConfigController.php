@@ -21,7 +21,7 @@ class ConfigController extends Controller
         for($i=0; $i < count($config); $i++){
           $newConfig[ $config[$i]['key'] ] = $config[$i]['value'];
         }
-        return $newConfig;
+        return response()->json($newConfig, 200);
     }
 
     /**
@@ -33,31 +33,10 @@ class ConfigController extends Controller
      */
     public function update(Request $request, $module)
     {
-      $input = collect($request->input());
-      // $keys= $input->keys();
-      // dd($input);
-
-      // dd($input->combine($keys)->all());
-
-      // $data = [];
-      // foreach($input as $key => $value){
-      //   $data[] = [ $key => $value];
-      // }
-      // return $input;
-
-      // return Config::where('module', $module)->get();
-        foreach($input as $key => $in){
-          // dump($in);
-          // dump($key);
-          return Config::where( ['module'=> $module])
-                        ->update(['key'=> $key, 'value'=> $in ]);
-        }
-      // return Config::where([
-      //               ['module'=> $module],
-      //               ['key'=> $input->keys() ],
-      //               ])
-      //             ->update(
-      //               ['value'=> $input['title']],
-      //             );
+      foreach($request->input() as $key => $values){
+        Config::where( ['module'=> $module, 'key'=> $key])
+              ->update(['value'=> $values ]);
+      }
+      return response()->json(['msg'=> 'Config updated'], 200);
     }
 }

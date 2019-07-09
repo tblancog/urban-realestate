@@ -5,7 +5,7 @@
                 <div class="card">
                     <form action="">
                         <div class="card-header">
-                            <h3 class="card-title"> Campos de Inversiones </h3>
+                            <h3 class="card-title"> Administración de página Inversiones </h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-9">
@@ -47,13 +47,21 @@
         },
         methods: {
           save() {
+              this.$Progress.start();
               const endpoint = 'api/config/investments'
               let vm = this
-              axios
-                .put(endpoint, vm.config)
-                .then((res) => { 
-                  console.log(res)
-                })
+              axios.put(endpoint, vm.config)
+                   .then((res) => { 
+                      Fire.$emit('AfterCreate');
+                      swal(
+                            'Actualizado!',
+                            'Información actualizada.',
+                            'success' )
+                       this.$Progress.finish();
+                      Fire.$emit('AfterCreate')
+                    }).catch(() => {
+                        this.$Progress.fail();
+                    })
           }
         },
         created() {
