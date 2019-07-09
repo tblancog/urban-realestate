@@ -82,6 +82,13 @@
     padding: 0;
 }
 
+html,body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
     font-family: $font-family;
 }
@@ -372,6 +379,18 @@ img {
 
 .btn-verde {
     background-color: #51B848;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: .2s;
+    &:hover {
+        color: #000;
+    }
+}
+
+.btn-gris {
+    background-color: #C8C8C8;
     color: #fff;
     font-size: 1rem;
     font-weight: 700;
@@ -679,6 +698,9 @@ img {
     letter-spacing: 30px;
     background: #C8C8C8;
     color: #7C7C7C;
+    @media (max-width: 520px) {
+        letter-spacing: 15px;
+    }
 }
 
 .sticky-wrapper {
@@ -1578,6 +1600,36 @@ img {
 
 /* :: 11.0 Single Property Area CSS */
 
+#real-estate-featured {
+    .single-featured-property {
+        .property-content {
+            position: absolute;
+            .ribbon {
+                top: -300%;
+                left: -41%;
+                @media (max-width: 1200px) {
+                    top: -230%;
+                    left: -40%;
+                }
+            }
+        }
+    }
+}
+
+
+#real-estate {
+    .single-featured-property {
+        .property-content {
+            position: absolute;
+            .ribbon {
+                top: -160%;
+                left: -41%;
+            }
+        }
+    }
+}
+
+
 .single-featured-property {
     position: relative;
     z-index: 1;
@@ -1655,7 +1707,7 @@ img {
     }
 
     .property-content {
-        position: relative;
+        position: absolute;
         bottom: 0;
         z-index: 1;
         width: 100%;
@@ -1677,8 +1729,8 @@ img {
             width: 100%;
 
             @media #{$breakpoint-xl} {
-                top: -371%;
-                left: -38%;
+                top: -300%;
+                left: -41%;
             }
 
             @media #{$breakpoint-lg} {
@@ -3841,10 +3893,22 @@ img {
         textarea{
           height: auto;
         }
+        .btn {
+            float: right;
+            background-color: #7c7c7c;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: .2s;
+            &:hover {
+                color: #000;
+                background-color: #c8c8c8;
+            }
+        }
     }
     .appraisals-bottom {
-        border-left: 6px solid #51B848;
-        padding-left: 20px;
+        margin-top: 85px;
     }
 }
 

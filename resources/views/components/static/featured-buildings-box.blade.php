@@ -7,26 +7,13 @@
           <img src="{{ $src }}" alt=""> 
         
         </a>
-            {{-- <a href="{{ route('buildings.detail', $f->slug) }}">
-            <img src="img/bg-img/feature{{ $loop->iteration }}.jpg" alt=""> --}}
-            {{-- <img src=" {{asset('storage/placeholder/'.$f->images[0]->filename ) }}"> --}}
 
-            {{-- @if( $f->images && count($f->images) > 0 )
 
-                          @if($f->images[0]->is_placeholder === '1')
-                            <img src=" {{asset('storage/placeholder/'.$f->images[0]->filename ) }}">
-            @else
-            <img src=" {{asset('storage/properties/'.$f->slug.'/'.$f->images[0]->filename ) }}">
-            @endif
-
-            @endif
-            </a>--}}
-        </div>
-        <!-- Property Content -->
         <div class="property-content">
             <div class="ribbon ribbon-top-left">
                 <span>{{ $status }}</span>
             </div>
+            
             {{-- <div class="other-top">
                             <p class="top-amb">3 amb.</p>
                             <p class="top-area">150 m<sup>2</sup></p>
@@ -40,5 +27,11 @@
                 <p class="bot-address">{{ $address }}</p>
             </div>
         </div>
+
+
+
+        </div>
+        <!-- Property Content -->
+
     </div>
 </div>

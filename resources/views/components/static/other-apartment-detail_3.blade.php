@@ -13,9 +13,9 @@
         <div class="col-md-6">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="dept-name">
-                            <h2>Moambiente - Galvan 3051</h2>
+                            <h2>Monoambiente - Galvan 3051</h2>
                         </div>
                     </div>
                     {{-- <div class="col-md-6 featured-col">
