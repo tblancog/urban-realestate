@@ -14,21 +14,21 @@ class ConfigTableSeeder extends Seeder
     {
 
       $data = [
-        [ 'module'=> 'investments', 'key' => 'title', 'value'=> 'Edificios'],
+        [ 'module'=> 'investments', 'key' => 'title', 'value'=> 'Inversiones'],
         [ 'module'=> 'investments', 'key' => 'subtitle', 'value'=> 'Si estas interesado en realizar una inversión planificada, tenemos múltiples opciones de corto, mediano o largo plazo. Contactáte con nosotros y con gusto podremos asesorarte.'],
         [ 'module'=> 'investments', 'key' => 'form', 'value'=> 1],
 
-        [ 'module'=> 'appraissals', 'key' => 'title', 'value'=> 'Título'],
+        [ 'module'=> 'appraissals', 'key' => 'title', 'value'=> 'Tasaciones'],
         [ 'module'=> 'appraissals', 'key' => 'subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
         [ 'module'=> 'appraissals', 'key' => 'form', 'value'=> 1],
 
-        [ 'module'=> 'credits', 'key' => 'title', 'value'=> 'Título'],
+        [ 'module'=> 'credits', 'key' => 'title', 'value'=> 'Créditos'],
         [ 'module'=> 'credits', 'key' => 'subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
         [ 'module'=> 'credits', 'key' => 'form', 'value'=> 1],
 
-        [ 'module'=> 'contacts', 'key' => 'title', 'value'=> 'Título'],
-        [ 'module'=> 'contacts', 'key' => 'subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
-        [ 'module'=> 'contacts', 'key' => 'form', 'value'=> 1],
+        [ 'module'=> 'contact', 'key' => 'title', 'value'=> 'Contacto'],
+        [ 'module'=> 'contact', 'key' => 'subtitle', 'value'=> 'Directora Comercial: María Ester Cel. +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
+        [ 'module'=> 'contact', 'key' => 'form', 'value'=> 1],
       ];
 
       collect($data)->each(function($el){

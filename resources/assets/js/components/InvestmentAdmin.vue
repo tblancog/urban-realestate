@@ -19,8 +19,7 @@
                           </textarea>
                                 </div>
                                 <div class="form-check">
-                                    <input v-model="config.form" class="form-check-input" type="checkbox"
-                                        id="defaultCheck1">
+                                    <input v-model="config.form" v-bind:true-value="1" v-bind:false-value="0" class="form-check-input" type="checkbox" id="defaultCheck1">
                                     <label class="form-check-label" for="defaultCheck1">
                                         Mostrar formulario
                                     </label>
