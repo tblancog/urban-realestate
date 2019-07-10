@@ -111,12 +111,11 @@
 
                             <!-- Google Maps Url -->
                             <div class="form-group col-lg-9">
-                                <input v-model="form.url_maps" type="text" name="url_maps"
-                                    placeholder="Url de google maps" class="form-control"
-                                    :class="{ 'is-invalid': form.errors.has('url_maps') }">
+                                <textarea v-model="form.url_maps" name="url_maps" id="url_maps" rows="2"
+                                    placeholder="Embed de google maps" class="form-control"
+                                    :class="{ 'is-invalid': form.errors.has('url_maps') }"></textarea>
                                 <has-error :form="form" field="url_maps"></has-error>
                             </div>
-
                           
                             <!-- Price -->
                             <div class="form-group col-lg-9">

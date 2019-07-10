@@ -44,8 +44,7 @@ class BuildingController extends Controller
      */
     public function show(Building $building)
     {
-      dd($building);
-      // return view('detail-building', compact('building'));
+      return view('building.show', compact('building'));
     }
 
     /**
