@@ -23,7 +23,7 @@ use Illuminate\Http\Request;
 // Route::apiResources(['buildings' => 'API\BuildingController']);
 Route::resource('buildings', 'API\BuildingController')->only('store', 'update', 'destroy');
 // Route::apiResources(['apartments' => 'API\ApartmentController']);
-// Route::resource('config', 'API\ConfigController')->only('index','update');
+Route::resource('config', 'API\ConfigController')->only('index','update');
 
 // Route::get('findUser', 'API\UserController@search');
 // Route::put('profile', 'API\UserController@updateProfile');
