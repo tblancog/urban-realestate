@@ -117,21 +117,23 @@
                                 <has-error :form="form" field="url_maps"></has-error>
                             </div>
 
-                             <!-- Highlighted -->
-                          <div class="form-group form-check col-lg-9">
-                              <div class="col-lg-12">
-                                <input type="checkbox" class="form-check-input" id="desde">
-                                <label class="form-check-label" for="desde">¿ Mostrar precio desde ?</label>
-                              </div>
-                              <has-error :form="form" field="desde"></has-error>
-                          </div>
-
+                          
                             <!-- Price -->
                             <div class="form-group col-lg-9">
                                 <input v-model="form.price" type="number" name="price" placeholder="Precio"
                                     class="form-control col-lg-4" :class="{ 'is-invalid': form.errors.has('price') }">
                                 <has-error :form="form" field="price"></has-error>
                             </div>
+                            
+                            <!-- From price -->
+                          <div class="form-group form-check col-lg-9">
+                              <div class="col-lg-12">
+                                <input v-model="form.from_price" v-bind:true-value="1" v-bind:false-value="0"  type="checkbox" class="form-check-input" id="desde">
+                                <label class="form-check-label" for="desde">¿ Mostrar precio desde ?</label>
+                              </div>
+                              <has-error :form="form" field="desde"></has-error>
+                          </div>
+
 
                             <!-- Description -->
                             <div class="form-group col-lg-9">
@@ -240,7 +242,7 @@
                     title: '',
                     address: '',
                     url_maps: '',
-                    from_price: '',
+                    from_price: '0',
                     price: '',
                     description: '',
                     status: '',
