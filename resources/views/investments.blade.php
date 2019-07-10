@@ -33,11 +33,11 @@
                               <div class="container">
                                   <div class="row m-2">
                                       <div class="col-md-3">
-                                      <a href="{{ route('buildings.detail', 'components.static.feature-building-detail_1') }}"><img src="{{  asset('/images/uploads/building-boxes/box_1.jpeg') }}"></a> 
+                                      <a href="{{ route('buildings.show', 'components.static.feature-building-detail_1') }}"><img src="{{  asset('/images/uploads/building-boxes/box_1.jpeg') }}"></a> 
                                       </div>
                                       <div class="col-md-6">                              
                                           <div class="info-card">
-                                            <a href="{{ route('buildings.detail', 'components.static.feature-building-detail_1') }}">
+                                            <a href="{{ route('buildings.show', 'components.static.feature-building-detail_1') }}">
                                               <h5 class="mt-0"> Edificio PH UH5 - Mariano Acha 3458 {{-- $building->title --}}</h5>
                                             </a> 
                                           </div>
@@ -51,7 +51,7 @@
                                           <div class="more-box">
                                               <h5>Edificio</h5>
                                               <div class="cta-more">
-                                                      <a class="btn-more" href="{{ route('buildings.detail', 'components.static.feature-building-detail_1') }}{{-- route('buildings.detail', $building->slug) --}}">Ver más</a>            
+                                                      <a class="btn-more" href="{{ route('buildings.show', 'components.static.feature-building-detail_1') }}{{-- route('buildings.show', $building->slug) --}}">Ver más</a>            
                                               </div>
                                               {{-- <div class="deliver-box">
                                                   <h6>Entrega</h6>
@@ -64,11 +64,11 @@
                                   
                                   <div class="row m-2">
                                       <div class="col-md-3">
-                                      <a href="{{ route('buildings.detail', 'components.static.feature-building-detail_2') }}"><img src="{{  asset('images/uploads/building-boxes/box_2.jpg') }}"></a> 
+                                      <a href="{{ route('buildings.show', 'components.static.feature-building-detail_2') }}"><img src="{{  asset('images/uploads/building-boxes/box_2.jpg') }}"></a> 
                                       </div>
                                       <div class="col-md-6">                              
                                           <div class="info-card">
-                                            <a href="{{ route('buildings.detail', 'components.static.feature-building-detail_2') }}">
+                                            <a href="{{ route('buildings.show', 'components.static.feature-building-detail_2') }}">
                                               <h5 class="mt-0"> Galvan 3051 – Villa Urquiza - CABA {{-- $building->title --}}</h5>
                                             </a> 
                                           </div>
@@ -80,7 +80,7 @@
                                           <div class="more-box">
                                               <h5>Edificio</h5>
                                               <div class="cta-more">
-                                                      <a class="btn-more" href="{{ route('buildings.detail', 'components.static.feature-building-detail_2') }}{{-- route('buildings.detail', $building->slug) --}}">Ver más</a>            
+                                                      <a class="btn-more" href="{{ route('buildings.show', 'components.static.feature-building-detail_2') }}{{-- route('buildings.show', $building->slug) --}}">Ver más</a>            
                                               </div>
                                               {{-- <div class="deliver-box">
                                                   <h6>Entrega</h6>
@@ -99,11 +99,11 @@
                               <div class="container">
                                   <div class="row">
                                       <div class="col-md-3">
-                                      <a href="{{ route('buildings.detail', $building->slug) }}"><img src="/images/uploads/building_1.jpg"></a> 
+                                      <a href="{{ route('buildings.show', $building->slug) }}"><img src="/images/uploads/building_1.jpg"></a> 
                                       </div>
                                       <div class="col-md-6">                              
                                           <div class="info-card">
-                                            <a href="{{ route('buildings.detail', $building->slug) }}">
+                                            <a href="{{ route('buildings.show', $building->slug) }}">
                                               <h5 class="mt-0"> {{ $building->title }}</h5>
                                             </a> 
                                           </div>
@@ -115,7 +115,7 @@
                                           <div class="more-box">
                                               <h5>Edificio</h5>
                                               <div class="cta-more">
-                                                      <a class="btn-more" href="{{ route('buildings.detail', $building->slug) }}">Ver más</a>            
+                                                      <a class="btn-more" href="{{ route('buildings.show', $building->slug) }}">Ver más</a>            
                                               </div>
                                               <div class="deliver-box">
                                                   <h6>Entrega</h6>

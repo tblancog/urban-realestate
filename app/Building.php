@@ -46,4 +46,8 @@ class Building extends Model
       $this->attributes['slug'] = str_slug($value);
     }
 
+    public function getImgPath($value){
+      return config('images.properties_upload_path').$this->attributes['slug'].'/'.$value;
+    }
+
 }

@@ -165,9 +165,8 @@
                                 <select name="type" v-model="form.status" id="status" class="form-control"
                                     :class="{ 'is-invalid': form.errors.has('status') }">
                                     <option value="">Seleccione estado</option>
-                                    <option value="alquiler">Alquiler</option>
-                                    <option value="reservado">Reservado</option>
-                                    <option value="venta">Venta</option>
+                                    <option value="En obra">En obra</option>
+                                    <option value="A estrenar">A estrenar</option>
                                 </select>
                                 <has-error :form="form" field="status"></has-error>
                             </div>
@@ -175,7 +174,7 @@
                           <!-- Featured -->
                           <div class="form-group form-check col-lg-9">
                               <div class="col-lg-12">
-                                <input type="checkbox" class="form-check-input" id="featured">
+                                <input v-model="form.is_featured" v-bind:true-value="1" v-bind:false-value="0" type="checkbox" class="form-check-input" id="featured">
                                 <label class="form-check-label" for="featured">Propiedad destacada</label>
                               </div>
                               <has-error :form="form" field="featured"></has-error>
@@ -245,7 +244,7 @@
                     price: '',
                     description: '',
                     status: '',
-                    is_featured: '',
+                    is_featured: '0',
                     files: [],
                     images: [],
                     amenities: [],

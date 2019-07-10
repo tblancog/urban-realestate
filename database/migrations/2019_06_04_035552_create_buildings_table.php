@@ -23,7 +23,7 @@ class CreateBuildingsTable extends Migration
             $table->bigInteger('price')->unsigned()->default(0);
             $table->text('description', 2048);
             $table->string('status')->default('on_sale');
-            $table->boolean('is_featured')->default(false)->nullable();
+            $table->boolean('is_featured')->default(false);
             $table->string('contact_name', 50)->nullable();
             $table->string('contact_phone', 50)->nullable();
             $table->timestamps();

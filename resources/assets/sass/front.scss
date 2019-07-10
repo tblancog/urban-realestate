@@ -3968,3 +3968,29 @@ img {
             }
         }
     }
+    
+    .box{
+      font-weight: bolder;
+      .box-img{
+        height: 400px;
+        background-size: cover;
+      }
+      .box-info{
+        position: absolute;
+        background: #FFF;
+        bottom: 0;
+        opacity: .6;
+        width: 100%;
+        
+      }
+      a, a:visited, a:hover, a:active, a:focus{
+        text-decoration: none;
+        color: inherit;  
+      }
+      .status{
+        color: red;
+      }
+      .title, .price{
+        font-size: 18px;
+      }
+    }

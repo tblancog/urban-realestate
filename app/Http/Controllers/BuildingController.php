@@ -15,7 +15,7 @@ class BuildingController extends Controller
     
     $buildings = Building::latest()->paginate(5);
     $config = Config::where('module','investments')->get()->pluck('value', 'key');
-    return view( 'investments',['buildings'=> $buildings, 
+    return view('index', ['buildings'=> $buildings, 
                                'config'=> $config] );
   }
 
@@ -44,7 +44,8 @@ class BuildingController extends Controller
      */
     public function show(Building $building)
     {
-      return view('detail-building', compact('building'));
+      dd($building);
+      // return view('detail-building', compact('building'));
     }
 
     /**

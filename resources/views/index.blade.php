@@ -31,29 +31,12 @@
         </div>
 
         <div class="row">
+          
+          {{-- Building box --}}
+          @foreach ($featured as $building)
+            @include('building.box', ['building'=> $building ])
+          @endforeach
 
-       
-        @include('components.static.featured-buildings-box',
-                [
-                'detailView'=> 'components.static.feature-building-detail_1',
-                'src'=> 'images/uploads/building-boxes/box_1.jpeg',
-                'status'=> 'EN VENTA',
-                'amb'=> '2-3-4 ambientes',
-                'price'=> '169.000',
-                'title'=> 'Edificio PH UH5',
-                'address'=> 'Mariano Acha 3458 – Villa Urquiza - CABA']
-        )
-
-        @include('components.static.featured-buildings-box',
-                [
-                'detailView'=> 'components.static.feature-building-detail_2',
-                'src'=> 'images/uploads/building-boxes/box_2.jpg',
-                'status'=> 'EN VENTA',
-                'amb'=> '2-3 ambientes',
-                'price'=> '169.000',
-                'title'=> 'Edificio G 3051',
-                'address'=> 'Galvan 3051 – Villa Urquiza - CABA']
-        )
          </div>
 
             

@@ -18,11 +18,13 @@ use Illuminate\Http\Request;
 // });
 
 // Route::apiResources(['user' => 'API\UserController']);
-Route::get('buildings/list', 'API\BuildingController@buildingList');
-Route::get('amenities', 'API\BuildingController@index');
-Route::apiResources(['buildings' => 'API\BuildingController']);
-Route::apiResources(['apartments' => 'API\ApartmentController']);
-Route::resource('config', 'API\ConfigController')->only('index','update');
+// Route::get('buildings/list', 'API\BuildingController@buildingList');
+// Route::get('amenities', 'API\BuildingController@index');
+// Route::apiResources(['buildings' => 'API\BuildingController']);
+Route::resource('buildings', 'API\BuildingController')->only('store', 'update', 'destroy');
+// Route::apiResources(['apartments' => 'API\ApartmentController']);
+// Route::resource('config', 'API\ConfigController')->only('index','update');
+
 // Route::get('findUser', 'API\UserController@search');
 // Route::put('profile', 'API\UserController@updateProfile');
 

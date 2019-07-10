@@ -171,7 +171,6 @@
         },
         created(){
           axios.get('/get-sliders').then( (res) => {
-            console.log(res.data)
             // this.slideshow = res.data
             this.slideshow = res.data.sliders.map( (el)=> {
               return {

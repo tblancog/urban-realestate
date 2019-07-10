@@ -3,7 +3,7 @@
     <div class="single-featured-property other-properties mb-50 wow fadeIn" data-wow-delay="100ms">
         <!-- Property Thumbnail -->
         <div class="property-thumb">
-        <a href="{{ route('buildings.detail', $detailView) }}">
+        <a href="{{ route('buildings.show', $detailView) }}">
           <img src="{{ $src }}" alt=""> 
         
         </a>

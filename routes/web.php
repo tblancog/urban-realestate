@@ -1,19 +1,28 @@
 <?php
 
-
-// Route::get('/', function () {
-//     return view('index');
-// });
-Route::get('/', 'HomeController@index')->name('home.index');
-
-
+// Auth
 Auth::routes();
 
-Route::get('/dashboard', function(){
-  return view('dashboard');
-})->middleware('auth');
+// Index
+Route::get('/', 'HomeController@index')->name('home.index');
 
-Route::post('images-upload', 'ImageController@upload');
+// Dashboard
+Route::get('/dashboard', 'HomeController@dashboard')->middleware('auth');
+
+// Buildings
+Route::resource('buildings', 'BuildingController')->only('show', 'index');
+// Route::get('buildings/{viewName}', function($view){
+//   return view($view);
+// })->name('buildings.show');
+
+// Route::get('buildings', 'BuildingController@index')->name('buildings.list');
+
+// Apartments
+
+// Amenities
+Route::get('amenities', function(){
+   return $items= App\Amenity::orderBy('title')->get();
+})->name('amenity.list');
 
 // Sliders
 Route::post('save-sliders', 'SliderController@save');
@@ -21,48 +30,41 @@ Route::post('upload-sliders', 'SliderController@upload');
 Route::get('get-sliders', 'SliderController@getApiSliders');
 Route::delete('delete-sliders/{id}', 'SliderController@deleteSlide');
 
+// Image uplooader route
+Route::post('images-upload', 'ImageController@upload');
 
-// Route::get('buildings/{building}', 'BuildingController@show')->name('buildings.detail');
-Route::get('buildings/{viewName}', function($view){
-  return view($view);
-})->name('buildings.detail');
+// Route::get('/detail_building', function () {
+//   return view('detail-building');
+// });
 
-Route::get('buildings', 'BuildingController@index')->name('buildings.list');
-Route::get('amenities', function(){
-   return $items= App\Amenity::orderBy('title')->get();
-})->name('amenity.list');
+// Route::get('/developers', function () {
+//   return view('index-developers');
+// });
 
-Route::get('/detail_building', function () {
-  return view('detail-building');
-});
+// Route::get('/houses', function () {
+//   return view('index-houses');
+// });
 
-Route::get('/developers', function () {
-  return view('index-developers');
-});
+// Route::get('/developers_details', function () {
+//   return view('developers-details');
+// });
 
-Route::get('/houses', function () {
-  return view('index-houses');
-});
+// Route::get('/houses_details', function () {
+//   return view('houses-details');
+// });
 
-Route::get('/developers_details', function () {
-  return view('developers-details');
-});
+// Route::get('/modal-details', function () {
+//   return view('modalDetails');
+// });
 
-Route::get('/houses_details', function () {
-  return view('houses-details');
-});
-
-Route::get('/modal-details', function () {
-  return view('modalDetails');
-});
-
-// Static
+// Static Pages
 Route::get('/investments', 'HomeController@staticPage')->name('investments.index');
 Route::get('/appraisals', 'HomeController@staticPage')->name('appraisals.index');
 Route::get('/credits', 'HomeController@staticPage')->name('credits.index');
 Route::get('/contact', 'HomeController@staticPage')->name('contact.index');
 Route::get('/nosotros', 'HomeController@staticPage')->name('nosotros.index');
 
+// Fallback page
 Route::get('/{path}',function(){
   return redirect('/dashboard');
 })->where( 'path', '([A-z\d-/_.]+)?' );

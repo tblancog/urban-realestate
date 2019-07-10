@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  App\Apartment;
+use  App\Building;
 use  App\Slider;
 use  App\Config;
 class HomeController extends Controller
@@ -27,10 +28,10 @@ class HomeController extends Controller
     {
         $slides = Slider::orderBy('index')->get();
 
-        $featured = Apartment::where('is_featured', true)
+        $featured = Building::where('is_featured', true)
                             ->latest()
                             ->with('images')
-                            ->take(3)
+                            ->take(2)
                             ->get();
 
         $others = Apartment::where('is_featured', false)
@@ -45,7 +46,8 @@ class HomeController extends Controller
         ]);
     }
 
-    public function staticPage(Request $request){
+    public function staticPage(Request $request)
+    {
 
       $page = str_replace('/', '', $request->getRequestUri());
       $config = Config::where('module', $page)
@@ -56,5 +58,9 @@ class HomeController extends Controller
         return view('contact', compact('config'));
       }
       return view($page);
+    }
+
+    public function dashboard(){
+      return view('dashboard');
     }
 }
