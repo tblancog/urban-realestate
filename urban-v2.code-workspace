@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+  "settings": {
+    "sqltools.connections": [
+      {
+        "database": "./database/database.sqlite",
+        "dialect": "SQLite",
+        "name": "sqlite"
+      }
+    ]
+  }
+}
