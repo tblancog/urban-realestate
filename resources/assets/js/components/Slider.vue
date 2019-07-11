@@ -13,8 +13,9 @@
                             </div>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
+                        <div v-cloak class="card-body">
+                            <div v-if="slideshow">
+                              <ul class="list-group list-group-flush">
                                 <li v-for="(slide, idx) in slideshow" v-bind:key="idx" class="list-group-item">
                                     <h3>{{ 'Slide '+idx }}</h3>
                                     <div class="row">
@@ -35,11 +36,12 @@
 
                                         <div class="col-md-9">
                                             <div class="file-upload-form"> Subir imagen:
-                                                <input name="image" multiple="multiple" id="attachments" type="file" @change="previewImage($event, idx)"
-                                                    accept="image/jpg">
+                                                <input name="image" id="attachments" type="file" 
+                                                      @change="previewImage($event, idx)"
+                                                      accept="image/jpg,image/jpeg,image/png">
                                             </div>
-                                            <div class="image-preview" v-if="slide.imageData.length > 0">
-                                                <img class="preview" :src="slide.imageData">
+                                            <div class="image-preview" v-if="slide && slide.imageData">
+                                              <img class="preview" :src="slide.imageData">
                                             </div>
                                         </div>
 
@@ -48,7 +50,11 @@
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
+                              </ul>
+                            </div>
+                            <div v-else>
+                               <h5 class="m-5 text-center">No existen slides de home cargados</h5>
+                            </div>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
@@ -84,54 +90,66 @@
                     fileAttached: []
                 }, )
             },
-            removeSlide(idx) {
+            removeSlide(idx) { 
                 this.slideshow.splice(idx, 1)
+                 axios
+                .delete('/delete-sliders/'+idx)
+                .then((res) => {})
             },
             saveSliders() {
-              this.prepareFields()
+              let vm = this
+              axios
+                .post('/save-sliders', this.slideshow)
+                .then((res) => {
 
-              let config = {
-                headers: { 'Content-Type': 'multipart/form-data' }
-              }
-
-              axios.post('/images-upload', this.formData, config)
-                .then((res) => { 
-                  console.log(res)
-                })
-              // let files = this.$refs.uploadBtn.files
-                // let formData = new FormData()
-                // formData.append('file', this.slideshow[0]); 
-
-                // for (let i = 0; i < this.slideshow.length; i++) {
-                    // formData.append('image', this.avatarFile, this.avatarFile.name)
-                    // let rawData = this.slideshow[i]
-                    // formData.append('data', JSON.stringify(rawData))
-                // }
-                // formData.append('data', this.slideshow[0])
-                // console.log(this.slideshow[0])
-
-            },
-            prepareFields() {
-                
-                if (this.attachments.length > 0) {
-                    for (var i = 0; i < this.attachments.length; i++) {
-                        let attachment = this.attachments[i];
-                        this.formData.append('attachments[]', attachment);
+                  if(res.status == 201){
+                    let config = {
+                      headers: { 'Content-Type': 'multipart/form-data' }
                     }
-                }
-            },
-            previewImage: function (event, idx) {
+                    vm.prepareImageData()
+                    axios.post('/upload-sliders', vm.formData, config)
+                          .then( (res)=> {
+                            
+                              Fire.$emit('AfterCreate');
+                                swal(
+                                  'Sliders guardados.',
+                                  'Sliders de homepage guardados!',
+                                  'success')
+                                $('#addNew').modal('hide');
 
-                // console.log(event.target.files[0])
-                // let formData = new FormData()
-                // formData.append('data[]', this.slideshow[idx])
-                // console.log(formData)
-                // formData.append('data', this.slideshow[idx])
-                // axios.post('/images-upload', formData).then((res)=> {
-                  
-                //   console.log(res)
-                  
-                // })
+                                this.$Progress.finish();
+                                Fire.$emit('AfterCreate')
+
+                          } )
+                  } 
+                })
+              
+            },
+            prepareData() {
+
+              this.formData = new FormData()
+              if (this.slideshow.length > 0) {
+                for (let i = 0; i < this.slideshow.length; i++) {
+                  let title = this.slideshow[i].title
+                      let subtitle = this.slideshow[i].subtitle
+
+                      this.formData.append('slides', JSON.stringify( title, subtitle ))
+                  } 
+              }      
+
+            },
+            prepareImageData(){
+              this.formData = new FormData()
+              if (this.attachments.length > 0) {
+                  for (var i = 0; i < this.attachments.length; i++) {
+                      let attachment = this.attachments[i]
+                      this.formData.append('attachments[]', attachment)
+                  }
+              }
+              
+              },
+            previewImage: function (event, idx) {
+              
                 // Reference to the DOM input element
                 var input = event.target;
                 // Ensure that you have a file before attempting to read it
@@ -150,12 +168,27 @@
                     reader.readAsDataURL(input.files[0]);
                 }
             }
+        },
+        created(){
+          axios.get('/get-sliders').then( (res) => {
+            // this.slideshow = res.data
+            this.slideshow = res.data.sliders.map( (el)=> {
+              return {
+                  title: el.title,
+                  subtitle: el.subtitle,
+                  imageData: el.base64img
+              }
+            } )
+          })
         }
     }
 
 </script>
 
 <style>
+  [v-cloak] > * { display:none; }
+  [v-cloak]::before { content: "Cargando..."; }
+
     .file-upload-form,
     .image-preview {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

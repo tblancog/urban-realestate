@@ -20,7 +20,14 @@ class BuildingController extends Controller
     {
         return Building::latest()
                 ->with('images')
+                ->with('amenities')
                 ->paginate(5);
+    }
+
+    public function buildingList(){
+
+      return Building::orderBy('title')
+                          ->get(['id','title as label']);
     }
 
     /**
@@ -32,9 +39,7 @@ class BuildingController extends Controller
     public function store(BuildingRequest $request)
     {
         $building = Building::create($request->all());
-        $building->amenities()->sync(
-          Amenity::whereIn('title', $request->amenities)->get()
-        );
+        $building->amenities()->sync( $request->amenities );
         
         return ['message' => 'Edificio creado', 'id'=> $building->id];
     }
@@ -58,9 +63,8 @@ class BuildingController extends Controller
      * @param  \App\Building  $building
      * @return \Illuminate\Http\Response
      */
-    public function update(BuildingRequest $request, $id)
+    public function update(BuildingRequest $request, Building $building)
     {
-        $building = Building::findOrFail($id);
         $building->update($request->all());
         return ['message' => 'Edificio actualizado'];
     }
@@ -71,12 +75,19 @@ class BuildingController extends Controller
      * @param  \App\Building  $building
      * @return \Illuminate\Http\Response
      */
-    public function destroy($building)
+    public function destroy($item)
     {
-        $item = Building::where('slug', $building->slug)->first();
+        // Get model
+        $item = Building::where('slug', $item->slug)->firstOrFail();
+        
+        // Delete pictures folder if any
+        \Storage::deleteDirectory("uploads/properties/".$item->slug);
 
-        $item->delete();
+        // Delete the model
+        $itemDeleted = $item->delete();
 
-        return ['message' => 'Building deleted'];
+        return response()->json(
+          ['message' => ( $itemDeleted ? 'Item deleted' : 'Could not delete item')]
+        );
     }
 }

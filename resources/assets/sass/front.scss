@@ -82,6 +82,13 @@
     padding: 0;
 }
 
+html,body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
     font-family: $font-family;
 }
@@ -370,6 +377,30 @@ img {
     z-index: 3;
 }
 
+.btn-verde {
+    background-color: #51B848;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: .2s;
+    &:hover {
+        color: #000;
+    }
+}
+
+.btn-gris {
+    background-color: #C8C8C8;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: .2s;
+    &:hover {
+        color: #000;
+    }
+}
+
 /* :: 4.0 Preloader Area CSS */
 
 #preloader {
@@ -631,7 +662,34 @@ img {
 .dark .classynav ul li .megamenu,
 .dark.breakpoint-on .classynav>ul>li>a,
 .dark.breakpoint-on .classy-navbar .classy-menu {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dark.classy-nav-container {
+    a {
+        transition: 0s;
+        &:hover {
+            color: #000000;
+            font-weight: 600;
+        }
+    }
+}
+
+.dark {
+    .classy-navbar-toggler {
+        .navbarToggler {
+            span {
+                @media (max-width: 992px) {
+                    background-color: #000;
+                }
+            }
+        }
+    }
+    .classy-menu {
+        .classycloseIcon {
+            display: none;
+        }
+    }
 }
 
 .head-title {
@@ -640,6 +698,9 @@ img {
     letter-spacing: 30px;
     background: #C8C8C8;
     color: #7C7C7C;
+    @media (max-width: 520px) {
+        letter-spacing: 15px;
+    }
 }
 
 .sticky-wrapper {
@@ -656,6 +717,23 @@ img {
     }
 }
 
+#desktop-nav {
+    li {
+        a {
+            font-size: 20px;
+        }
+    }
+    @media (max-width: 991px) {
+        display: none;
+    }
+}
+
+#mobile-nav {
+    @media (min-width: 992px) {
+        display: none;
+    }
+}
+
 .header-area {
     /*position: absolute;*/
     z-index: 10000;
@@ -665,11 +743,74 @@ img {
 
     .sticky-wrapper {
         .main-header-area {
+                z-index: inherit;
+                @media (max-width: 992px) {
+                    box-shadow: none;
+                }
             .classy-nav-container {
                 .classy-navbar {
                     .classy-menu {
                         .classynav {
                             ul {
+                                .dropdown {
+                                    .dropdown-toggle {
+                                        &::after {
+                                            display: none;
+                                        }
+                                        &:hover {
+                                            text-decoration: none;
+                                        }
+                                        &:focus {
+                                            color: #000;
+                                        }
+                                    }
+                                    &.show {
+                                        .dropdown-menu.show {
+                                            top: 18px !important;
+                                            left: -60px!important;
+                                            background-color: rgba(255, 255, 255, 0.7);
+                                            border: 0;
+                                            border-radius: 0;
+                                            a {
+                                                border: 0;
+                                                &:hover {
+                                                    background-color: transparent;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+
+                                /*
+                                .collapsible-menu.hamburger {
+                                    label {
+                                        font-size: 16px;
+                                        display: inline-block;
+                                        cursor: pointer;
+                                        background: url(menu.png) no-repeat left center;
+                                        padding: 10px 0 10px 50px;
+                                    }
+                                    #menu {
+                                        display: none;
+                                    }
+                                    span {
+                                        display: inline-block;
+                                        margin-left: 5px;
+                                        font-size: 20px;
+                                    }
+                                    input {
+                                        &:checked {
+                                            .menu-content {
+                                                max-height: 100%;
+                                            }
+                                        }
+                                    }
+                                    .menu-content {
+                                        max-height: 0;
+                                        overflow: hidden;
+                                    }
+                                }
                                 .hamb-toggler {
                                     position: relative;
 
@@ -682,11 +823,6 @@ img {
                                             visibility: visible;
                                             // opacity: 1;
                                         }
-                                    }
-
-                                    .hamburger {
-                                        align-items: center;
-                                        display: flex;
                                     }
 
                                     .list-top {
@@ -711,7 +847,7 @@ img {
                                     .dd-arrow {
                                         display: none;
                                     }
-                                }
+                                }*/
                             }
 
                             .navbarToggler {
@@ -853,7 +989,7 @@ img {
     .classynav ul li a {
         color: $color-dark;
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: 400;
         font-size: 22px;
         border-left: 1px solid white;
     }
@@ -1227,6 +1363,7 @@ img {
 
 .nice-select {
     line-height: 34px;
+    font-size: 20px;
 
     .list {
         left: 0 !important;
@@ -1275,6 +1412,7 @@ img {
 
                     .form-control.location {
                         background-color: #ffffff;
+                        font-size: 20px;
                     }
                 }
             }
@@ -1450,11 +1588,47 @@ img {
                 text-transform: uppercase;
                 font-weight: bolder;
             }
+
+            .form-group {
+                .south-btn {
+                    font-size: 18px;
+                }
+            }
         }
     }
 }
 
 /* :: 11.0 Single Property Area CSS */
+
+#real-estate-featured {
+    .single-featured-property {
+        .property-content {
+            position: absolute;
+            .ribbon {
+                top: -300%;
+                left: -41%;
+                @media (max-width: 1200px) {
+                    top: -230%;
+                    left: -40%;
+                }
+            }
+        }
+    }
+}
+
+
+#real-estate {
+    .single-featured-property {
+        .property-content {
+            position: absolute;
+            .ribbon {
+                top: -160%;
+                left: -41%;
+            }
+        }
+    }
+}
+
 
 .single-featured-property {
     position: relative;
@@ -1533,7 +1707,7 @@ img {
     }
 
     .property-content {
-        position: relative;
+        position: absolute;
         bottom: 0;
         z-index: 1;
         width: 100%;
@@ -1555,8 +1729,8 @@ img {
             width: 100%;
 
             @media #{$breakpoint-xl} {
-                top: -371%;
-                left: -38%;
+                top: -300%;
+                left: -41%;
             }
 
             @media #{$breakpoint-lg} {
@@ -3232,7 +3406,6 @@ img {
         }
 
         .box-icons {
-            text-align: center;
 
             .detail-box {
                 margin: 0 20px;
@@ -3272,6 +3445,10 @@ img {
     .dept-contact {
         padding: 15px 40px;
 
+        .send-box {
+            height: 70px;
+        }
+
         .contact-title {
             display: inline-block;
             text-transform: uppercase;
@@ -3306,7 +3483,12 @@ img {
         background-color: #ffffff;
     } 
     
-    
+    .description-top {
+        .desc-title {
+            display: inline-block;
+            font-weight: 700;
+        }
+    }
 
     .dept-description {
         margin-bottom: 30px;
@@ -3693,11 +3875,39 @@ img {
 .appraisals-page {
   max-width: 700px;
   margin: 0 auto;
+  margin-top: 80px;
+  .appraisals-title {
+    text-align: center;
+    &::after {
+        content: '';
+        display: block;
+        border-bottom: 6px solid #51B848;
+        width: 50%;
+        margin: auto;
+        margin-top: 30px;
+    }
+  }
     form {
         margin-top: 50px;
         textarea{
           height: auto;
         }
+        .btn {
+            float: right;
+            background-color: #7c7c7c;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: .2s;
+            &:hover {
+                color: #000;
+                background-color: #c8c8c8;
+            }
+        }
+    }
+    .appraisals-bottom {
+        margin-top: 85px;
     }
 }
 
@@ -3756,4 +3966,30 @@ img {
                 color: #ffffff;
             }
         }
+    }
+    
+    .box{
+      font-weight: bolder;
+      .box-img{
+        height: 400px;
+        background-size: cover;
+      }
+      .box-info{
+        position: absolute;
+        background: #FFF;
+        bottom: 0;
+        opacity: .6;
+        width: 100%;
+        
+      }
+      a, a:visited, a:hover, a:active, a:focus{
+        text-decoration: none;
+        color: inherit;  
+      }
+      .status{
+        color: red;
+      }
+      .title, .price{
+        font-size: 18px;
+      }
     }

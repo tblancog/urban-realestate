@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Apartment;
+use App\Amenity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ApartmentRequest;
 
 
 class ApartmentController extends Controller
@@ -27,14 +29,20 @@ class ApartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BuildingRequest $request)
+    public function store(ApartmentRequest $request)
     {
-        $building = Building::create($request->all());
-        $building->amenities()->sync(
-          Amenity::whereIn('title', $request->amenities)->get()
-        );
-        
-        return ['message' => 'Edificio creado', 'id'=> $building->id];
+      $input = collect($request->input())
+                              ->except('buildings', 'amenities', 'building_id');
+      
+      $building_id = $request->input('building_id')['id'];
+      $input->put('building_id', $building_id);
+
+      $apartment = Apartment::create($input->toArray());
+      $apartment->amenities()->sync(
+        $request->amenities
+      );
+      
+      return response()->json(['message' => 'Departmento creado', 'id'=> $apartment->id], 201);
     }
 
 

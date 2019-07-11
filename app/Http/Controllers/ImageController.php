@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Building;
+use App\Apartment;
 use App\BuildingImage;
+use App\ApartmentImage;
 
 class ImageController extends Controller
 {
   public function upload(Request $request)
   {
-    // dd($request->all());
     if($request->type == 'building'){
       
       $property = Building::find($request->id);
@@ -20,19 +21,30 @@ class ImageController extends Controller
     }
 
     if (count($request->images) > 0) {
-            
-          $image_path = "/uploads/properties/".$property->slug."/";
-          foreach ($request->images as $k => $image) {
-            $filename = "property_$k".".".$image->getClientOriginalExtension();
-            $image->storeAs($image_path, $filename);
+           
+      
+      // Flush pictures folder if any
+      \Storage::deleteDirectory(config('images.properties_upload_path').$property->slug);
 
-            $img_input = ['filename'=> $filename, 
-                          'path'=> $image_path,
-                          'order'=> $k,
-                        ];
-            $property->images()->create($img_input);
-          }
-          return response(201);
+      // Create new directory
+      \Storage::makeDirectory(config('images.properties_upload_path').$property->slug);
+      $image_path = config('images.properties_upload_path').$property->slug;
+
+      collect($request->images)->each(function($img, $idx) use ($property, $request, $image_path) {
+
+        // Get extendsion and make filename
+        $ext= $img->getClientOriginalExtension();
+        $filename = $request->type."_$idx".".".$ext;
+        \Image::make($img)
+              ->fit(config('images.properties_width'), config('images.properties_height'))
+              ->save("$image_path/$filename");
+
+        $img_input = ['filename'=> $filename, 
+                      'order'=> $idx,
+                    ];
+        $property->images()->create($img_input);
+      });
     } 
+    return response()->json(['msg'=> 'Success'], 201);
   }
 }

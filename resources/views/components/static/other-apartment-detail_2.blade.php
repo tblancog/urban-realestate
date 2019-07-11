@@ -13,7 +13,7 @@
         <div class="col-md-6">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="dept-name">
                             <h2>Moambiente modular - Galvan 3051</h2>
                         </div>
@@ -47,6 +47,9 @@
                                     </div>
                                     <div class="carousel-item" data-slide-number="1">
                                         <img src="{{ asset('/images/uploads/other-apartment-detail_2/apartment_2.png') }}" class="img-fluid">
+                                    </div>
+                                    <div class="carousel-item" data-slide-number="1">
+                                        <img src="{{ asset('/images/uploads/other-apartment-detail_2/apartment_3.JPG') }}" class="img-fluid">
                                     </div>
 
 

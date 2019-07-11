@@ -28,7 +28,7 @@ class Building extends Model
 
     public function images(){
 
-      return $this->hasMany('App\BuildingImage', 'building_id');
+      return $this->hasMany('App\BuildingImage');
     }
 
     public function apartments(){
@@ -44,6 +44,10 @@ class Building extends Model
     public function setTitleAttribute($value){
       $this->attributes['title'] = $value;
       $this->attributes['slug'] = str_slug($value);
+    }
+
+    public function getImgPath($value){
+      return config('images.properties_upload_path').$this->attributes['slug'].'/'.$value;
     }
 
 }

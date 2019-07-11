@@ -18,7 +18,7 @@
             <div>o</div>
             <div class="file-input">
                 <label for="file">selecciona</label>
-                <input type="file" id="file" @change="onInputChange" multiple>
+                <input type="file" id="file" @change="onInputChange" multiple  accept="image/jpg,image/jpeg,image/png">
             </div>
         </div>
 
@@ -37,12 +37,14 @@
 <script>
 
 export default {
-    props: ['files'],
+    props: ['files', 
+    'images'
+    ],
     data: () => ({
         isDragging: false,
         dragCount: 0,
         // files: [],
-        images: []
+        // images: []
     }),
     methods: {
         OnDragEnter(e) {

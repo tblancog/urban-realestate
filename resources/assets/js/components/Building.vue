@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <!-- <div class="row mt-5" v-if="$gate.isAdminOrAuthor()"> -->
         <div class="row mt-5">
             <div class="col-md-12">
                 <div class="card">
@@ -12,60 +11,62 @@
                         </div>
                     </div>
                     <!-- /.card-header -->
+                    <div v-if="buildings.data && buildings.data.length">
+                      <div class="media" v-for="building in buildings.data" :key="building.id">
+                          <div class="media-body">
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col-md-3 col-sm-12 cropped">
+                                      <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
+                                        <img v-if="building.images" :src="image_path(building)" class="img-fluid"/>
+                                      </a>
+                                      </div>
+                                      <div class="col-md-6">                              
+                                          <div class="info-card">
+                                              <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
+                                                <h5 class="mt-0">{{ building.title }}</h5>
+                                              </a>
+                                              <i class="fa fa-map-marker-alt fa-fw"></i>{{ building.address }}
+                                              <i class="fa fa-dollar-sign fa-fw"></i>USD {{ building.price }}
+                                              <a href="#" @click="editModal(building)">
+                                                  <i class="fa fa-edit blue"></i>
+                                              </a>
+                                              /
+                                              <a href="#" @click="deleteItem(building.slug)">
+                                                  <i class="fa fa-trash red"></i>
+                                              </a>
+                                          </div>
+                                          <div class="details-card">
+                                              <p>{{ building.description  }}</p>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                          <div class="more-box">
+                                              <div class="cta-more">
+                                                  <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.id } }">
+                                                      <a class="btn-more" href="#">Ver más</a>
+                                                  </router-link>             -->
+                                              </div>
+                                              <!-- <div class="deliver-box">
+                                                  <h6>Entrega</h6>
+                                                  <h6 class="deliver-date">Noviembre 2021</h6>
+                                              </div> -->
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>             
+                          </div>
+                      </div>
 
-                    <div class="media" v-for="building in buildings.data" :key="building.id">
-                        <div class="media-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-3 col-sm-12 cropped">
-                                    <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
-                                      <img v-if="building.images" :src="image_path(building)" class="img-fluid"/>
-                                    <!-- </router-link> -->
-                                    </div>
-                                    <div class="col-md-6">                              
-                                        <div class="info-card">
-                                            <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
-                                              <h5 class="mt-0">{{ building.title }}</h5>
-                                            </a>
-                                            <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.slug } }"> -->
-                                            <!-- </router-link> -->
-                                            <i class="fa fa-map-marker-alt fa-fw"></i>{{ building.address }}
-                                            <i class="fa fa-dollar-sign fa-fw"></i>USD {{ building.price }}
-                                            <a href="#" @click="editModal(building)">
-                                                <i class="fa fa-edit blue"></i>
-                                            </a>
-                                            /
-                                            <a href="#" @click="deleteItem(building.slug)">
-                                                <i class="fa fa-trash red"></i>
-                                            </a>
-                                        </div>
-                                        <div class="details-card">
-                                            <p>{{ building.description  }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="more-box">
-                                            <!-- <h5>Edificio</h5> -->
-                                            <div class="cta-more">
-                                                <!-- <router-link :to="{ name: 'buildingDetail', params: {  id: building.id } }">
-                                                    <a class="btn-more" href="#">Ver más</a>
-                                                </router-link>             -->
-                                            </div>
-                                            <!-- <div class="deliver-box">
-                                                <h6>Entrega</h6>
-                                                <h6 class="deliver-date">Noviembre 2021</h6>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>             
-                        </div>
+                      <!-- /.card-body -->
+                      <div class="card-footer">
+                          <pagination :data="buildings" @pagination-change-page="getResults"></pagination>
+                      </div>
                     </div>
-
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <pagination :data="buildings" @pagination-change-page="getResults"></pagination>
+                    <div v-else>
+                      <h5 class="m-5 text-center">No existen edificios cargados</h5>
                     </div>
+                    
                 </div>
                 <!-- /.card -->
             </div>
@@ -84,13 +85,13 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form @submit.prevent="editmode ? updateItem() : createItem()">
+                    <form @submit.prevent="editmode ? updateItem(selected) : createItem()">
                         <div class="modal-body">
                             
                             
                             <!-- Image uploader -->
                             <div class="form-group col-lg-12">
-                              <image-uploader :files="form.files"></image-uploader>
+                              <image-uploader :files="form.files" :images="form.images"></image-uploader>
                             </div>
                             <!-- Title -->
                             <div class="form-group col-lg-9">
@@ -110,27 +111,28 @@
 
                             <!-- Google Maps Url -->
                             <div class="form-group col-lg-9">
-                                <input v-model="form.url_maps" type="text" name="url_maps"
-                                    placeholder="Url de google maps" class="form-control"
-                                    :class="{ 'is-invalid': form.errors.has('url_maps') }">
+                                <textarea v-model="form.url_maps" name="url_maps" id="url_maps" rows="2"
+                                    placeholder="Embed de google maps" class="form-control"
+                                    :class="{ 'is-invalid': form.errors.has('url_maps') }"></textarea>
                                 <has-error :form="form" field="url_maps"></has-error>
                             </div>
-
-                             <!-- Highlighted -->
-                          <div class="form-group form-check col-lg-9">
-                              <div class="col-lg-12">
-                                <input type="checkbox" class="form-check-input" id="desde">
-                                <label class="form-check-label" for="desde">¿ Mostrar precio desde ?</label>
-                              </div>
-                              <has-error :form="form" field="desde"></has-error>
-                          </div>
-
+                          
                             <!-- Price -->
                             <div class="form-group col-lg-9">
                                 <input v-model="form.price" type="number" name="price" placeholder="Precio"
                                     class="form-control col-lg-4" :class="{ 'is-invalid': form.errors.has('price') }">
                                 <has-error :form="form" field="price"></has-error>
                             </div>
+                            
+                            <!-- From price -->
+                          <div class="form-group form-check col-lg-9">
+                              <div class="col-lg-12">
+                                <input v-model="form.from_price" v-bind:true-value="1" v-bind:false-value="0"  type="checkbox" class="form-check-input" id="desde">
+                                <label class="form-check-label" for="desde">¿ Mostrar precio desde ?</label>
+                              </div>
+                              <has-error :form="form" field="desde"></has-error>
+                          </div>
+
 
                             <!-- Description -->
                             <div class="form-group col-lg-9">
@@ -141,41 +143,21 @@
                             </div>
 
                             <!-- Amenities -->
-                            <div class="form-group col-lg-9">
-                              <p>Amenities</p>
-                                <div class="form-group form-check">
-                                  
+                            <div class="form-group col-lg-12">
+                              <p>
+                              <a class="btn btn-primary" data-toggle="collapse" href="#amenitiesForm" role="button" aria-expanded="false" aria-controls="amenitiesForm">
+                                Amenities
+                              </a>
+                                <div id="amenitiesForm" class="form-group form-check collapse">
                                   <div class="row">
-                                    <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="cochera" name="amenities[]" class="form-check-input" id="cochera">
-                                      <label class="form-check-label" for="cochera">Cochera</label>
-                                    </div>
-                                    <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="piscina" name="amenities[]" class="form-check-input" id="piscina">
-                                      <label class="form-check-label" for="piscina">Piscina</label>
-                                    </div>
-                                    <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="ascensor" name="amenities[]" class="form-check-input" id="ascensor">
-                                      <label class="form-check-label" for="ascensor">Ascensor</label>
+                                    <div v-for="amenity in amenities" :key="amenity.id" class="col-lg-4">
+                                      <input type="checkbox" :id="amenity.title"
+                                                             :value="amenity.id" 
+                                                             v-model="form.amenities"  
+                                                             name="amenities[]" class="form-check-input">
+                                      <label class="form-check-label" :for="amenity.title">{{ amenity.title }}</label>
                                     </div>
                                   </div>
-
-                                  <div class="row">
-                                    <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="gimnasio" name="amenities[]" class="form-check-input" id="gimnasio">
-                                      <label class="form-check-label" for="gimnasio">Gimnasio</label>
-                                    </div>
-                                    <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="sum" name="amenities[]" class="form-check-input" id="sum">
-                                      <label class="form-check-label" for="sum">Sum</label>
-                                    </div>
-                                    <div class="col-lg-3">
-                                      <input type="checkbox" v-model="form.amenities" value="parrilla" name="amenities[]" class="form-check-input" id="parrilla">
-                                      <label class="form-check-label" for="parrilla">Parrilla</label>
-                                    </div>
-                                  </div>
-
-
                                 </div>
                             </div>
 
@@ -184,9 +166,8 @@
                                 <select name="type" v-model="form.status" id="status" class="form-control"
                                     :class="{ 'is-invalid': form.errors.has('status') }">
                                     <option value="">Seleccione estado</option>
-                                    <option value="alquiler">Alquiler</option>
-                                    <option value="reservado">Reservado</option>
-                                    <option value="venta">Venta</option>
+                                    <option value="En obra">En obra</option>
+                                    <option value="A estrenar">A estrenar</option>
                                 </select>
                                 <has-error :form="form" field="status"></has-error>
                             </div>
@@ -194,7 +175,7 @@
                           <!-- Featured -->
                           <div class="form-group form-check col-lg-9">
                               <div class="col-lg-12">
-                                <input type="checkbox" class="form-check-input" id="featured">
+                                <input v-model="form.is_featured" v-bind:true-value="1" v-bind:false-value="0" type="checkbox" class="form-check-input" id="featured">
                                 <label class="form-check-label" for="featured">Propiedad destacada</label>
                               </div>
                               <has-error :form="form" field="featured"></has-error>
@@ -224,8 +205,6 @@
                             <button v-show="editmode" type="submit" class="btn btn-success">Guardar</button>
                             <button v-show="!editmode" type="submit" class="btn btn-primary">Crear</button>
                         </div>
-
-
                     </form>
 
                 </div>
@@ -256,16 +235,17 @@
                 editmode: false,
                 selected: {},
                 buildings: {},
+                amenities: [],
                 form: new Form({
                     id: '',
                     title: '',
                     address: '',
                     url_maps: '',
-                    from_price: '',
+                    from_price: '0',
                     price: '',
                     description: '',
                     status: '',
-                    is_featured: '',
+                    is_featured: '0',
                     files: [],
                     images: [],
                     amenities: [],
@@ -281,26 +261,41 @@
                         this.buildings = response.data;
                     });
             },
-            updateItem() {
-                this.$Progress.start();
-                this.form.put('api/buildings/' + this.form.id)
-                    .then(() => {
-                        // success
-                        $('#addNew').modal('hide');
-                        swal(
-                            'Actualizado!',
-                            'Información de edificio actualizada.',
-                            'success'
-                        )
-                        this.$Progress.finish();
-                        Fire.$emit('AfterCreate');
-                    })
-                    .catch(() => {
-                        this.$Progress.fail();
-                    });
+            updateItem(selected) {
+              this.$Progress.start();
+              const formData = new FormData()
+              if(this.form.files && this.form.files.length > 0){
+                this.form.files.forEach(file => {
+                    formData.append('images[]', file, file.name)
+                })
+              }
+
+
+                this.form.put('api/buildings/' + selected.slug)
+                    .then( () => {
+
+                      axios.post('images-upload', formData)
+                          .then(()=> {
+                            Fire.$emit('AfterCreate');
+                            swal(
+                                  'Actualizado!',
+                                  'Información de edificio actualizada.',
+                                  'success' )
+                            this.form.reset();
+                            this.files = []
+                            $('#addNew').modal('hide');
+
+                          this.$Progress.finish();
+                          Fire.$emit('AfterCreate')
+
+                        }).catch(() => {
+                            this.$Progress.fail();
+                        })
+                  })
 
             },
             editModal(item) {
+                this.selected = item
                 this.editmode = true;
                 this.form.reset();
                 $('#addNew').modal('show');
@@ -317,7 +312,7 @@
             deleteItem(slug) {
                 swal({
                     title: 'Estás seguro?',
-                    text: "No será posible revertir esta acción!",
+                    text: "Tené en cuenta que también se borrarán los departamentos asociados",
                     type: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -340,12 +335,17 @@
                     }
                 })
             },
-            loadItems() {
-                // if (this.$gate.isAdminOrAuthor()) {
-                axios.get("api/buildings").then(({
-                    data
-                }) => (this.buildings = data));
-                // }
+            async loadItems() {
+              let vm = this
+              axios.all([
+                axios.get('api/buildings'),
+                axios.get('amenities')
+              ]).then(
+                axios.spread(function(res1, res2){
+                  vm.buildings = res1.data
+                  vm.amenities = res2.data
+                })
+              );
             },
 
             createItem() {
@@ -393,7 +393,6 @@
             Fire.$on('AfterCreate', () => {
                 this.loadItems();
             });
-            // setInterval(() => this.loadItems(), 3000);
         }
 
     }
@@ -431,7 +430,7 @@
                                     padding-top: 15px;
                                     padding-bottom: 15px;
                                     .cropped{
-                                        height: 150px;
+                                        height: 135px;
                                         overflow: hidden;
                                     }
                                     .info-card {

@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use App\Building;
+use App\Apartment;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -29,10 +30,10 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
         Route::bind('building', function ($value) {
             return Building::where('slug', $value)->first() ?? abort(404);
+          });
+          Route::bind('apartment', function ($value) {
+            return Apartment::where('slug', $value)->first() ?? abort(404);
         });
-        // Route::bind('department', function ($value) {
-        //     return App\Department::find($value) ?? abort(404);
-        // });
     }
 
     /**

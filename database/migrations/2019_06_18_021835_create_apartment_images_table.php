@@ -18,12 +18,10 @@ class CreateApartmentImagesTable extends Migration
             $table->string('filename', 50);
             $table->integer('order')->default(1);
             $table->integer('apartment_id')->nullable();
-            $table->boolean('is_placeholder')->default(false);
 
             $table->foreign('apartment_id')
                   ->references('id')
                   ->on('apartments');
-            $table->timestamps();
         });
     }
 

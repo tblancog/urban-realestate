@@ -88,7 +88,7 @@
         margin: 0 auto;
     }
     .carousel-item{
-      height: 300px;
+      height: 400px;
       overflow: hidden;
     }
 

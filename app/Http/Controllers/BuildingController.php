@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Building;
 use App\Amenity;
+use App\Config;
 use Illuminate\Http\Request;
 use App\Http\Requests\BuildingRequest;
 
@@ -13,7 +14,9 @@ class BuildingController extends Controller
   public function index(){
     
     $buildings = Building::latest()->paginate(5);
-    return view('investments',compact('buildings'));
+    $config = Config::where('module','investments')->get()->pluck('value', 'key');
+    return view('index', ['buildings'=> $buildings, 
+                               'config'=> $config] );
   }
 
     /**
@@ -41,7 +44,7 @@ class BuildingController extends Controller
      */
     public function show(Building $building)
     {
-      return view('detail-building', compact('building'));
+      return view('building.show', compact('building'));
     }
 
     /**

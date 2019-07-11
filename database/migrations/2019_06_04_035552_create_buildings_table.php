@@ -18,12 +18,12 @@ class CreateBuildingsTable extends Migration
             $table->string('title', 50);
             $table->string('slug', 75);
             $table->string('address', 100);
-            $table->string('url_maps', 2048)->nullable();
+            $table->text('url_maps')->nullable();
             $table->boolean('from_price')->nullable()->default(false);
             $table->bigInteger('price')->unsigned()->default(0);
             $table->text('description', 2048);
             $table->string('status')->default('on_sale');
-            $table->boolean('is_featured')->default(false)->nullable();
+            $table->boolean('is_featured')->default(false);
             $table->string('contact_name', 50)->nullable();
             $table->string('contact_phone', 50)->nullable();
             $table->timestamps();

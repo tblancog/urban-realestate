@@ -3,7 +3,9 @@
 /public/fonts/**/*
 /public/js/app.js
 /public/css/**/*
+public/images/slides/**/*
 /public/storage
+/public/uploads
 /public/mix-manifest.json
 /storage/*.key
 /storage/framework/cache/data
@@ -18,3 +20,4 @@ yarn-error.log
 .env
 .phpunit.result.cache
 *.DS_Store
+*.code-workspace

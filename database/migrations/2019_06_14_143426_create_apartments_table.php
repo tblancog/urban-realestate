@@ -18,20 +18,28 @@ class CreateApartmentsTable extends Migration
             $table->string('title', 50);
             $table->string('slug', 75);
             $table->string('address', 100);
+            
+            $table->string('floor', 2);
+            $table->string('department', 2);
+            $table->string('code', 2);
+
             $table->string('url_maps', 2048)->nullable();
-            $table->boolean('from_price')->nullable()->default(false);
-            $table->bigInteger('price')->unsigned()->default(0);
+            $table->unsignedBigInteger('price')->default(0);
+            $table->string('area', 3);
+            $table->string('rooms', 3);
+
             $table->text('description', 2048);
             $table->string('status')->default('on_sale');
-            $table->boolean('is_featured')->default(false)->nullable();
             $table->string('contact_name', 50)->nullable();
             $table->string('contact_phone', 50)->nullable();
-            $table->integer('building_id')->unsigned()->nullable();
-            $table->timestamps();
-
+            $table->unsignedInteger('building_id')->nullable();
+            
             $table->foreign('building_id')
-                  ->references('id')
-                  ->on('buildings');
+                  ->references('id')  
+                  ->on('buildings')
+                  ->onDelete('cascade');
+
+            $table->timestamps();
         });
     }
 

@@ -11,14 +11,21 @@ class Apartment extends Model
       'title',
       'slug',
       'address',
+
+      'floor',
+      'department',
+      'code',
+
       'url_maps',
-      'from_price',
       'price',
+      'area',
+      'rooms',
+
       'description',
       'status',
-      'is_featured',
       'contact_name',
       'contact_phone',
+      
       'building_id'
     ];
 
@@ -33,7 +40,7 @@ class Apartment extends Model
     }
     public function building(){
 
-      return $this->hasMany('App\Building');
+      return $this->belongsTo('App\Building');
     }
 
     public function getStatusAttribute(){
@@ -46,9 +53,7 @@ class Apartment extends Model
       $this->attributes['slug'] = str_slug($value);
     }
 
-    // public function getImageNameAttribute($value){
-
-    //   // 
-    //   $this->attributes['image_name'] = 
-    // }
+    public function getImgPath($value){
+      return config('images.properties_upload_path').$this->attributes['slug'].'/'.$value;
+    }
 }
