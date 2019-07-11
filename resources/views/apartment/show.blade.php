@@ -51,14 +51,11 @@
                                 <div class="carousel-inner">
                                   @foreach ($apartment->images as $key => $img )
                                     <div class="{{ $key == 0 ? 'active' : '' }} carousel-item" data-slide-number="{{ $key }}">
-                                      @if(!$apartment->images->count())
-                                        <img src="{{ imageUrl($width = 640, $height = 480) }}" class="img-fluid">
+                                      @if(!is_file($apartment->getImgPath($img->filename)))
+                                        <img src="{{  Faker\Factory::create()->imageUrl($width = 640, $height = 480) }}" class="img-fluid">
                                       @else
                                         <img src="{{ $apartment->getImgPath($img->filename) }}" class="img-fluid">
                                       @endif
-                                        {{-- <img src="{{ $apartment->getImgPath($img->filename) }}" class="img-fluid"> --}}
-                                        {{-- <img src="{{ asset('/images/uploads/feature-apartment-detail_1/detail_1.JPG') }}"
-                                            class="img-fluid"> --}}
                                     </div>
                                   @endforeach
 

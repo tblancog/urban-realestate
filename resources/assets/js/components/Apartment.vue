@@ -434,11 +434,11 @@
             },
         },
         created() {
-            // axios.get('/api/buildings/list')
-            //       .then( (res) => {
-            //         console.log(res.data)
-            //           this.form.buildings = res.data
-            //        })
+            axios.get('/api/buildings/list')
+                  .then( (res) => {
+                    console.log(res.data)
+                      this.form.buildings = res.data
+                   })
             // Fire.$on('searching', () => {
             //     let query = this.$parent.search;
             //     axios.get('api/findUser?q=' + query)
