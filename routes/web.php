@@ -12,12 +12,13 @@ Route::get('/dashboard', 'HomeController@dashboard')->middleware('auth');
 // Buildings
 Route::resource('buildings', 'BuildingController')->only('show', 'index');
 // Route::get('buildings/{viewName}', function($view){
-//   return view($view);
-// })->name('buildings.show');
-
-// Route::get('buildings', 'BuildingController@index')->name('buildings.list');
-
+  //   return view($view);
+  // })->name('buildings.show');
+  
+  // Route::get('buildings', 'BuildingController@index')->name('buildings.list');
+  
 // Apartments
+Route::resource('apartments', 'ApartmentController')->only('show', 'index');
 
 // Amenities
 Route::get('amenities', function(){

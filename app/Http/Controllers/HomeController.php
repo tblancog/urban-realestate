@@ -28,20 +28,19 @@ class HomeController extends Controller
     {
         $slides = Slider::orderBy('index')->get();
 
-        $featured = Building::where('is_featured', true)
+        $buildings = Building::where('is_featured', true)
                             ->latest()
                             ->with('images')
                             ->take(2)
                             ->get();
 
-        $others = Apartment::where('is_featured', false)
-                            ->latest()
+        $apartments = Apartment::latest()
                             ->with('images')
                             ->take(9)
                             ->get();
 
-        return view('index', ['featured'=> $featured, 
-                              'others'=> $others, 
+        return view('index', ['buildings'=> $buildings, 
+                              'apartments'=> $apartments, 
                               'slides'=> $slides, 
         ]);
     }

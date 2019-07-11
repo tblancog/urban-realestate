@@ -33,7 +33,7 @@
         <div class="row">
           
           {{-- Building box --}}
-          @foreach ($featured as $building)
+          @foreach ($buildings as $building)
             @include('building.box', ['building'=> $building ])
           @endforeach
 
@@ -57,8 +57,13 @@
 
         <div class="row">
 
-           @include('components.static.other-properties-box',
-                  ['src'=> 'images/uploads/apartment-boxes/box_1.JPG',
+          {{-- Apartment box --}}
+          @foreach ($apartments as $apartment)
+            @include('apartment.box', $apartment)
+          @endforeach
+                   
+{{-- 
+            ['src'=> 'images/uploads/apartment-boxes/box_1.JPG',
                    'detailView'=> 'components.static.other-apartment-detail_1',
                    'status'=> 'EN VENTA',
                    'amb'=> '2 amb.',
@@ -109,7 +114,7 @@
 
 
 
-{{-- duped --}}
+          duped 
           
            @include('components.static.other-properties-box', 
                   ['src'=> 'images/uploads/apartment-boxes/box_2.png',
@@ -154,7 +159,7 @@
                    'amb'=> 'Sup. Total. 76.10 m2',
                    'price'=> '222.860',
                    'title'=> '3 ambientes',
-                   'address'=> 'Galvan 3051 – Villa Urquiza'] )
+                   'address'=> 'Galvan 3051 – Villa Urquiza'] ) --}}
         
         </div>
 
