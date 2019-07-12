@@ -18,6 +18,7 @@ class CreateApartmentsTable extends Migration
             $table->string('title', 50);
             $table->string('slug', 75);
             $table->string('address', 100);
+            $table->string('location', 250);
             
             $table->string('floor', 2);
             $table->string('department', 2);

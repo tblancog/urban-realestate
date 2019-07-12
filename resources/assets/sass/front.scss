@@ -3993,3 +3993,9 @@ img {
         font-size: 18px;
       }
     }
+.nice-select .list{
+    z-index: 0 !important;
+}
+.project-title {
+  z-index: -1000 !important;
+}

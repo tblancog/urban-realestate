@@ -15,6 +15,9 @@ Route::resource('buildings', 'BuildingController')->only('show', 'index');
 // Apartments
 Route::resource('apartments', 'ApartmentController')->only('show', 'index');
 
+// Search
+Route::get('search', 'HomeController@search')->name('search.index');
+
 // Amenities
 Route::get('amenities', function(){
    return $items= App\Amenity::orderBy('title')->get();

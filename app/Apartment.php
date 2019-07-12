@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 
 class Apartment extends Model
@@ -11,6 +12,7 @@ class Apartment extends Model
       'title',
       'slug',
       'address',
+      'location',
 
       'floor',
       'department',
@@ -55,5 +57,18 @@ class Apartment extends Model
 
     public function getImgPath($value){
       return config('images.properties_upload_path').$this->attributes['slug'].'/'.$value;
+    }
+
+     public function scopeFilterByRequest($query, Request $request)
+    {
+        if ($request->has('location')) {
+            $query->where('location', '=', $request->get('location'));
+        }
+
+        if ($request->has('status')) {
+            $query->where('status', 'like', '%'.$request->get('status'));
+        }
+
+        return $query;
     }
 }

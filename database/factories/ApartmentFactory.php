@@ -11,6 +11,7 @@ $factory->define(Apartment::class, function (Faker $faker) {
       'title'=> $apartmentName,
       'slug'=> str_slug($apartmentName),
       'address'=> $faker->streetAddress(),
+      'location'=> $faker->city(),
 
       'floor'=> rand(0, 10),
       'department'=> rand(1, 4),
@@ -22,7 +23,7 @@ $factory->define(Apartment::class, function (Faker $faker) {
       'rooms'=> rand(1, 4),
 
       'description'=> $faker->paragraph(2),
-      'status'=> 'on_sale',
+      'status'=> $faker->randomElement(['alquiler', 'reservado', 'venta']),
       'contact_name'=> $faker->name,
       'contact_phone'=> $faker->phoneNumber,
       'building_id'=> Building::pluck('id')->random()

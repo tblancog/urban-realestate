@@ -30,11 +30,12 @@
                             <p>Buscador de propiedades</p>
                         </div> -->
                             <!-- Search Form -->
-                            <form action="#" method="post" id="advanceSearch">
+                      <form action="{{ route('search.index') }}" method="GET" id="advanceSearch">
+                               @csrf
                                 <div class="row">
                                     <div class="col-12 col-md-6 col-lg-2">
                                         <div class="form-group">
-                                            <select class="form-control" id="operation" placeholder="Comprar">
+                                            <select class="form-control" name="status" id="status" placeholder="Comprar">
                                                 <option>Venta</option>
                                                 <option>Alquiler</option>
                                             </select>
@@ -42,7 +43,7 @@
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-2">
                                         <div class="form-group">
-                                            <select class="form-control" id="type">
+                                            <select name="type" class="form-control" id="type">
                                                 <option>Departamento</option>
                                                 <option>Casa</option>
                                                 <option>Local</option>
@@ -50,18 +51,18 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-md-12 col-lg-4">
-                                        <div class="form-group wrapper">
-                                            <input type="input" class="form-control location" name="input"
-                                                placeholder="Ingrese Zona, Localidad o Provincia" />
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="form-group">
+                                          <select name="location" class="form-control" id="location">
+                                              <option value="">Barrio</option>
+                                              @foreach ($locations as $location)
+                                                  <option value="{{ $location->location }}">{{ $location->location }}</option>
+                                              @endforeach
+                                          </select>
                                         </div>
                                     </div>
 
                                     <div class="col-12 col-lg-2">
-                                        <!-- More Filter -->
-                                        <!-- <div class="more-filter">
-                                        <a href="#" id="moreFilter">+ Más filtros</a>
-                                    </div> -->
                                         <!-- Submit -->
                                         <div class="form-group mb-0">
                                             <button type="submit" class="btn south-btn btn-4">Buscar &nbsp;<i

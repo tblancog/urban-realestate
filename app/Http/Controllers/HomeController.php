@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use  App\Apartment;
 use  App\Building;
 use  App\Slider;
@@ -39,9 +40,15 @@ class HomeController extends Controller
                             ->take(9)
                             ->get();
 
+        // All Locations
+        $locations = Apartment::groupBy('location')
+                              ->orderBy('location')
+                              ->get(['location']);
+
         return view('index', ['buildings'=> $buildings, 
                               'apartments'=> $apartments, 
-                              'slides'=> $slides, 
+                              'slides'=> $slides,
+                              'locations'=> $locations,
         ]);
     }
 
@@ -61,5 +68,14 @@ class HomeController extends Controller
 
     public function dashboard(){
       return view('dashboard');
+    }
+
+    public function search(Request $request){
+
+      $apartments = Apartment::filterByRequest($request)->paginate();
+      return view('search', [
+        'apartments'=> $apartments,
+        'input'=> $request
+      ]);
     }
 }

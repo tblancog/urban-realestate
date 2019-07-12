@@ -111,6 +111,13 @@
                               <v-select v-model="form.building_id"  :options="form.buildings"></v-select>
                             </div>
 
+                            <!-- Location -->
+                            <div class="form-group col-lg-9">
+                                <input v-model="form.location" type="text" name="location" placeholder="Barrio"
+                                    class="form-control" :class="{ 'is-invalid': form.errors.has('location') }">
+                                <has-error :form="form" field="location"></has-error>
+                            </div>
+
                             <!-- Address -->
                             <div class="form-group col-lg-9">
                                 <input v-model="form.address" type="text" name="address" placeholder="Dirección"
@@ -275,6 +282,7 @@
                     id: '',
                     title: '',
                     address: '',
+                    location: '',
 
                     floor: '',
                     department: '',

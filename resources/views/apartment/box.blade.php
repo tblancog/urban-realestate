@@ -29,7 +29,7 @@
             </div>
             <div class="other-bot">
                 <p class="bot-status">{{ $apartment->title }}</p>
-                <p class="bot-address">{{ $apartment->address }}</p>
+                <p class="bot-address">{{ $apartment->address }}, {{ $apartment->location }}</p>
             </div>
         </div>
     </div>
