@@ -32,6 +32,12 @@
                                                 <input :id="slide.subtitle.idx" class="form-control" type="text"
                                                     v-model="slide.subtitle" />
                                             </div>
+
+                                            <div class="form-group">
+                                                <label :for="slide.link+idx">Link</label>
+                                                <input :id="slide.link.idx" class="form-control" type="text"
+                                                    v-model="slide.link" />
+                                            </div>
                                         </div>
 
                                         <div class="col-md-9">
@@ -86,6 +92,7 @@
                 this.slideshow.push({
                     title: '',
                     subtitle: '',
+                    link: '',
                     imageData: '',
                     fileAttached: []
                 }, )
@@ -176,6 +183,7 @@
               return {
                   title: el.title,
                   subtitle: el.subtitle,
+                  link: el.link,
                   imageData: el.base64img
               }
             } )
