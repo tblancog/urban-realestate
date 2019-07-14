@@ -3,7 +3,7 @@
           @foreach($slides as $slide)
             <div class="single-hero-slide bg-img" 
                 style="background-image: url({{ asset('/images/slides/').'/'.$slide->filename }});">
-                <a href="#">
+                  <a href="{{ $slide->link }}">
                     <div class="container h-100">
                         <div class="row h-100 align-items-center">
                             <div class="col-12">
