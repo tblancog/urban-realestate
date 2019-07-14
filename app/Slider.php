@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Slider extends Model
 {
-    protected $fillable = [ 'index', 'title', 'subtitle', 'base64img' ];
+    protected $fillable = [ 'index', 'title', 'link', 'subtitle', 'base64img' ];
     public $timestamps = false;
 }
