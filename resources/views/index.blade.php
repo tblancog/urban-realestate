@@ -21,7 +21,7 @@
 
 <!-- ##### Propiedades en Venta Area Start ##### -->
 <section id="real-estate_featured" class="featured-properties-area my-10 section-padding-20-0">
-    <div class="container">
+    <div class="container-fluid px-5">
         <div class="row">
             <div class="col-12">
                 <div class="project-title section-heading wow my-5 fadeInLeftBig">
@@ -46,7 +46,7 @@
 
 <!-- ##### Otras propiedades Area Start ##### -->
 <section id="real-estate" class="featured-properties-area section-padding-0-50">
-    <div class="container">
+    <div class="container-fluid px-5">
         <div class="row">
             <div class="col-12">
                 <div class="section-heading-20 mt-5 wow fadeIn">

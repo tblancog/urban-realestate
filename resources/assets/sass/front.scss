@@ -1602,16 +1602,18 @@ img {
 
 #real-estate-featured {
     .single-featured-property {
+
+
         .property-content {
             position: absolute;
-            .ribbon {
-                top: -300%;
-                left: -41%;
-                @media (max-width: 1200px) {
-                    top: -230%;
-                    left: -40%;
-                }
-            }
+            // .ribbon {
+            //     top: -300%;
+            //     left: -41%;
+            //     @media (max-width: 1200px) {
+            //         top: -230%;
+            //         left: -40%;
+            //     }
+            // }
         }
     }
 }
@@ -1621,10 +1623,10 @@ img {
     .single-featured-property {
         .property-content {
             position: absolute;
-            .ribbon {
-                top: -160%;
-                left: -41%;
-            }
+            // .ribbon {
+            //     top: -160%;
+            //     left: -41%;
+            // }
         }
     }
 }
@@ -1642,6 +1644,62 @@ img {
 
         // max-width: 350px;
         // max-height: 250px;
+                .ribbon {
+                    position: absolute;
+                    left: -5px;
+                    top: -5px;
+                    z-index: 1;
+                    overflow: hidden;
+                    width: 160px;
+                    height: 160px;
+                    text-align: right;
+                }
+
+                .ribbon span {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #FFF;
+                    text-transform: uppercase;
+                    text-align: center;
+                    line-height: 20px;
+                    transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg);
+                    width: 170px;
+                    display: block;
+                    &.Venta{
+                      background: #007D3E;
+                    }
+                    &.Reservado{
+                      background: #FF695C;
+                    }
+                    position: absolute;
+                    top: 44px;
+                    left: -35px;
+                }
+
+                .ribbon span::before {
+                    content: "";
+                    position: absolute;
+                    left: 0px;
+                    top: 100%;
+                    z-index: -1;
+                    border-left: 3px solid #79A70A;
+                    border-right: 3px solid transparent;
+                    border-bottom: 3px solid transparent;
+                    border-top: 3px solid #79A70A;
+                }
+
+                .ribbon span::after {
+                    content: "";
+                    position: absolute;
+                    right: 0px;
+                    top: 100%;
+                    z-index: -1;
+                    border-left: 3px solid transparent;
+                    border-right: 3px solid #79A70A;
+                    border-bottom: 3px solid transparent;
+                    border-top: 3px solid #79A70A;
+                }
 
 
         .property-info {
@@ -1713,42 +1771,44 @@ img {
         width: 100%;
         background-color: rgba(255, 255, 255, 0.7);
         padding: 10px;
+
+
         /*border: 1px solid $border-color;*/
 
-        .ribbon-holder {
-            overflow: hidden;
-            position: relative
-        }
+        // .ribbon-holder {
+        //     overflow: hidden;
+        //     position: relative
+        // }
 
-        .ribbon {
-            position: absolute;
-            background: green;
-            color: $color-white;
-            transform: rotate(-45deg);
-            text-align: center;
-            width: 100%;
+        // .ribbon {
+        //     position: absolute;
+        //     background: green;
+        //     color: $color-white;
+        //     transform: rotate(-45deg);
+        //     text-align: center;
+        //     width: 100%;
 
-            @media #{$breakpoint-xl} {
-                top: -300%;
-                left: -41%;
-            }
+        //     @media #{$breakpoint-xl} {
+        //         top: -300%;
+        //         left: -41%;
+        //     }
 
-            @media #{$breakpoint-lg} {
-                top: -304%;
-                left: -38%;
-            }
+        //     @media #{$breakpoint-lg} {
+        //         top: -304%;
+        //         left: -38%;
+        //     }
 
-            @media #{$breakpoint-md} {
-                top: -209%;
-                left: -33%;
-            }
+        //     @media #{$breakpoint-md} {
+        //         top: -209%;
+        //         left: -33%;
+        //     }
 
-            @media #{$breakpoint-xs} {
-                top: -300%;
-                left: -40%;
+        //     @media #{$breakpoint-xs} {
+        //         top: -300%;
+        //         left: -40%;
 
-            }
-        }
+        //     }
+        // }
 
         .bot-status {
             display: inline-block;
@@ -2245,10 +2305,11 @@ img {
 }
 
 .footer {
+  
+  .footer-info {
+    padding: 40px 0;
     background-color: #dbdbdb;
-
-    .footer-info {
-        padding: 40px 0;
+    font-size: 18px;  
 
         .footer-ad-telf {
             @media (max-width: 768px) {

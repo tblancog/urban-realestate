@@ -2,8 +2,8 @@
 
 <section>
     <div class="footer">
-        <div class="container footer-info">
-            <div class="row">
+        <div class="container-fluid footer-info">
+            {{-- <div class="row">
                 <div class="col-md-4">
                     <img src="{{ asset('img/core-img/logo.png') }}" alt="">
                 </div>
@@ -33,30 +33,42 @@
                           whatsapp/urbanpropiedades/AR</a>
                     </div>
                 </div>
+            </div> --}}
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="text-center"><i class="fa fa-globe"></i>&nbsp;Pacheco 2709 6 "B" (G1431 FMI) CABA</div>
+              </div>
+              <div class="col-lg-4">
+                <div class="text-center"><i class="fa fa-phone"></i>&nbsp;+5411-5329-4260</div>
+              </div>
+              <div class="col-lg-4">
+                <div class="text-center"><i class="fa fa-envelope"></i>&nbsp;info@urbanrealrestate.com.ar</div>
+              </div>
             </div>
+
         </div>
         <div class="container-fluid">
             <div class="row footer-pages">
                 <div class="col-md-4 page-box">
-                    <div class="footer-header-dev">
+                    {{-- <div class="footer-header-dev">
                         <h4>Arquitectura</h4>
-                    </div>
+                    </div> --}}
                     <div class="logo-box">
                         <img src="{{ asset('img/core-img/urban_de') }}v_logo_square.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-4 page-box">
-                    <div class="footer-header-houses">
+                    {{-- <div class="footer-header-houses">
                         <h4>Constructora</h4>
-                    </div>
+                    </div> --}}
                     <div class="logo-box">
                         <img src="{{ asset('img/core-img/urban_ho') }}uses_logo_square.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-4 page-box">
-                    <div class="footer-header-real">
+                    {{-- <div class="footer-header-real">
                         <h4>Propiedades</h4>
-                    </div>
+                    </div> --}}
                     <div class="logo-box">
                         <img src="{{ asset('img/core-img/urban_re') }}al_logo_square.png" alt="">
                     </div>
