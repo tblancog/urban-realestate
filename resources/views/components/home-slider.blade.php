@@ -9,7 +9,7 @@
                             <div class="col-12">
                                 <div class="hero-slides-content">
                                     <h2>{{ $slide->title }}</h2>
-                                    <h4>{{ $slide->subtitle }}</h4>
+                                    {{-- <h4>{{ $slide->subtitle }}</h4> --}}
                                 </div>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
         <div id="search-area" class="south-search-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="offset-lg-2  col-xs-12 col-lg-10">
                         <div class="advanced-search-form">
                             <!-- Search Title -->
                             <!-- <div class="search-title">
@@ -55,26 +55,30 @@
                                         <div class="form-group">
                                           <select name="location" class="form-control" id="location">
                                               <option value="">Barrio</option>
-                                              @foreach ($locations as $location)
-                                                  <option value="{{ $location->location }}">{{ $location->location }}</option>
-                                              @endforeach
+                                              <option value="caba">CABA</option>
+                                              <option value="provincia">Provincia de Buenos Aires</option>
+                                              {{-- @foreach ($locations as $location) --}}
+                                                  {{-- <option value="{{ $location->location }}">{{ $location->location }}</option> --}}
+                                              {{-- @endforeach --}}
                                           </select>
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-lg-2">
+                                    <div class="col-12 col-lg-1">
                                         <!-- Submit -->
                                         <div class="form-group mb-0">
-                                            <button type="submit" class="btn south-btn btn-4">Buscar &nbsp;<i
-                                                    class="fa fa-lg fa-search"></i></button>
+                                            <button type="submit" class="btn south-btn">
+                                              <div class="img-search"></div>
+                                            </button>
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-lg-2">
-                                        <div class="form-group mb-0">
-                                            <button class="btn south-btn">Consultas &nbsp;<i
-                                                    class="fa fa-lg fa-envelope"></i></button>
-                                        </div>
+                                    <div class="col-12 col-lg-1">
+                                    <a href="{{ route('contact.index') }}" class="btn south-btn btn-4 btn-5 d-none d-sm-block
+">
+                                          {{-- <i class="fa fa-lg fa-envelope"></i> --}}
+                                          <div class="img-contact"></div>
+                                        </a>
                                     </div>
 
                                 </div>

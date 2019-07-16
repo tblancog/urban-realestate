@@ -47,32 +47,23 @@
             </div>
 
         </div>
-        <div class="container-fluid">
-            <div class="row footer-pages">
-                <div class="col-md-4 page-box">
-                    {{-- <div class="footer-header-dev">
-                        <h4>Arquitectura</h4>
-                    </div> --}}
-                    <div class="logo-box">
-                        <img src="{{ asset('img/core-img/urban_de') }}v_logo_square.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-4 page-box">
-                    {{-- <div class="footer-header-houses">
-                        <h4>Constructora</h4>
-                    </div> --}}
-                    <div class="logo-box">
-                        <img src="{{ asset('img/core-img/urban_ho') }}uses_logo_square.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-4 page-box">
-                    {{-- <div class="footer-header-real">
-                        <h4>Propiedades</h4>
-                    </div> --}}
-                    <div class="logo-box">
-                        <img src="{{ asset('img/core-img/urban_re') }}al_logo_square.png" alt="">
-                    </div>
-                </div>
+        <div class="container py-5">
+            <div class="row">
+              <div class="col-4">
+                 <div class="logo-box">
+                    <img src="{{ asset('img/core-img/urban_de') }}v_logo_square.png" alt="">
+                  </div>
+              </div>
+              <div class="col-4">
+                 <div class="logo-box">
+                    <img src="{{ asset('img/core-img/urban_ho') }}uses_logo_square.png" alt="">
+                  </div>
+              </div>
+              <div class="col-4">
+                 <div class="logo-box">
+                    <img src="{{ asset('img/core-img/urban_re') }}al_logo_square.png" alt="">
+                  </div>
+              </div>
             </div>
         </div>
     </div>

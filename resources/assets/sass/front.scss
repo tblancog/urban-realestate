@@ -58,8 +58,12 @@
 
 
 @font-face {
-    font-family: 'AvantGarde';
-    src: url('../fonts/Avant Garde Book BT.ttf');
+  font-family: 'AvantGarde';
+  src: url('../fonts/Avant Garde Book BT.ttf');
+}
+@font-face {
+  font-family: 'AvantGarde-Bold';
+  src: url('../fonts/ITCAvantGardeStd-Bold.otf');
 }
 
 
@@ -653,6 +657,9 @@ img {
         //      background-color: $color-dark;
         //  }
     }
+    &.btn-5{
+       background: transparent;
+    }
 }
 
 /* :: 8.0 Header Area CSS */
@@ -1162,12 +1169,9 @@ img {
 }
 
 .hero-slides-content {
-    //  text-align: center;
-    top: 0;
-    z-index: 1;
-    width: 50%;
-    padding: 15px;
-    margin-top: -20%;
+    top: -230px;
+    left: 20px;
+    position: absolute;
 
     @media #{$breakpoint-md} {
         margin-top: -10%;
@@ -1183,13 +1187,14 @@ img {
     
     h2 {
       color: $color-white;
-      font-size: 60px;
+      text-shadow: 4px 4px 2px #5d5d5d;
+      font-size: 45px;
       max-width: 450px;
       padding: .5rem;
         //  margin-bottom: 0;
         //  padding: 10px 15px;
         text-transform: uppercase;
-        background-color: $color-dark;
+        // background-color: $color-dark;
         //  line-height: 1;
         //  display: inline-block;
 
@@ -1271,10 +1276,10 @@ img {
     .owl-dots {
         // width: 1110px;
         position: absolute;
-        bottom: 15px;
-        right: 6%;
-        top: 3%;
-        @include transform (translateX(-50%));
+        left: 50%;
+        right: 0;
+        bottom: 45px;
+        // @include transform (translateX(-50%));
 
         @media #{$breakpoint-lg} {
             width: calc(100% - 6%);
@@ -1297,16 +1302,19 @@ img {
 
     .owl-dot {
         display: inline-block;
-        width: 20px;
-        height: 20px;
-        background-color: $bg-default;
+        width: 17px;
+        height: 17px;
+        background-color: $color-white;
         font-size: 12px;
         color: $color-white;
         text-align: center;
+        margin: 0 .25em;
         margin-bottom: 5px;
+        border-radius: 10px;
 
         &.active {
-            background-color: $color-dark;
+            background-color: #868781;
+            color: #868781;
         }
     }
 }
@@ -1370,6 +1378,10 @@ img {
         right: 0 !important;
         border-radius: 0;
     }
+    &.form-control{
+      opacity: 0.9;
+      color: #000;
+    }
 }
 
 .south-search-area {
@@ -1408,6 +1420,7 @@ img {
 
                     .nice-select {
                         background-color: #ffffff;
+                        opacity: 0.7;
                     }
 
                     .form-control.location {
@@ -1558,7 +1571,7 @@ img {
 
         #advanceSearch {
             height: 38px;
-
+            opacity: 0.7;
             .col-12 {
                 padding-left: 0px;
                 padding-right: 0px;
@@ -1572,6 +1585,16 @@ img {
                 }
 
             }
+            .img-search{
+              background: url('/img/core-img/icSearch.png');
+              height: 100%;
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-color: #4C8954;
+              width: 55px;
+              margin: 0 auto;
+            }
+           
 
             .wrapper:before {
                 font-family: 'FontAwesome';
@@ -1589,10 +1612,10 @@ img {
                 font-weight: bolder;
             }
 
-            .form-group {
-                .south-btn {
-                    font-size: 18px;
-                }
+            .south-btn {
+              background: #4C8954;
+              font-size: 18px;
+              min-width: 110px;
             }
         }
     }
@@ -1666,7 +1689,8 @@ img {
                     -webkit-transform: rotate(-45deg);
                     width: 170px;
                     display: block;
-                    &.Venta{
+                    &.Venta,
+                    &.Alquiler {
                       background: #007D3E;
                     }
                     &.Reservado{
@@ -1952,6 +1976,13 @@ img {
 
 }
 
+ .img-contact{
+    background: url('/img/core-img/icMailto.png');
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+  }
 
 /* :: 12.0 Testimonials Area CSS */
 
@@ -2384,21 +2415,21 @@ img {
         .page-box {
             padding: 0;
 
-            .footer-header-dev {
-                padding: 10px 0;
-                background-color: #0064b4;
+            // .footer-header-dev {
+            //     padding: 10px 0;
+            //     background-color: #0064b4;
 
-                h4 {
-                    color: #ffffff;
-                    text-transform: uppercase;
-                    text-align: center;
-                    letter-spacing: 5px;
-                }
+            //     h4 {
+            //         color: #ffffff;
+            //         text-transform: uppercase;
+            //         text-align: center;
+            //         letter-spacing: 5px;
+            //     }
 
-                img {
-                    max-width: 25%;
-                }
-            }
+            //     img {
+            //         max-width: 25%;
+            //     }
+            // }
 
             .footer-header-houses {
                 padding: 10px 0;
@@ -2588,6 +2619,7 @@ img {
         line-height: 34px;
         position: relative;
         z-index: 100;
+        opacity: .9;
 
         .list {
             position: absolute;
@@ -4032,7 +4064,7 @@ img {
     .box{
       font-weight: bolder;
       .box-img{
-        height: 400px;
+        height: 500px;
         background-size: cover;
       }
       .box-info{
