@@ -18,7 +18,7 @@
             <div>o</div>
             <div class="file-input">
                 <label for="file">selecciona</label>
-                <input type="file" id="file" @change="onInputChange" multiple  accept="image/jpg,image/jpeg,image/png">
+                <input type="file" id="file" @change="onInputChange" multiple  accept="image/jpg,image/png">
             </div>
         </div>
 

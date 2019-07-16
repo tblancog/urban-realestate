@@ -24,12 +24,12 @@ class CreateApartmentsTable extends Migration
             $table->string('department', 2);
             $table->string('code', 2);
 
-            $table->string('url_maps', 2048)->nullable();
+            $table->text('url_maps')->nullable();
             $table->unsignedBigInteger('price')->default(0);
             $table->string('area', 3);
             $table->string('rooms', 3);
 
-            $table->text('description', 2048);
+            $table->text('description');
             $table->string('status')->default('on_sale');
             $table->string('contact_name', 50)->nullable();
             $table->string('contact_phone', 50)->nullable();
