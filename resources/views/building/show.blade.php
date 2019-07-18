@@ -155,15 +155,11 @@
                 <div class="dept-map mt-4">
                     <div class="map-top">
                         <h3 class="map-title">Ubicación / Mapa</h3>
-                        <div class="map-socialmedia">
-                            <a href="#" target="_blank"><img src="/img/icons/whatsapp.svg" alt="Whatsapp"></a>
-                            <a href="#" target="_blank"><img src="/img/icons/facebook.svg" alt="Facebook"></a>
-                            <a href="#" target="_blank"><img src="/img/icons/instagram.svg" alt="Instagram"></a>
-                        </div>
+                        @include('partials.map-social')
                     </div>
                     <div class="map-bot">
                         <div class="map-responsive">
-                            {{ $building->url_maps }}
+                            {{!! $apartment->url_maps !!}}
                         </div>
                     </div>
                 </div>
