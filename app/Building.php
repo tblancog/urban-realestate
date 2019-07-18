@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Faker\Factory;
 
 class Building extends Model
 {
@@ -46,8 +47,16 @@ class Building extends Model
       $this->attributes['slug'] = str_slug($value);
     }
 
-    public function getImgPath($value){
+    public function getImgPath($value) {
       return config('images.properties_upload_path').$this->attributes['slug'].'/'.$value;
+    }
+
+    public function findOrDefaultImage() {
+      if($this->images()->exists() && file_exists($this->getImgPath( $this->images[0]->filename )) ){
+        return $this->getImgPath( $this->images[0]->filename );
+      }
+      $faker = Factory::create();
+      return $faker->imageUrl($width = 640, $height = 480); 
     }
 
 }

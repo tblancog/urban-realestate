@@ -19,7 +19,7 @@
             <nav class="classy-navbar justify-content-between" id="southNav">
 
                 <!-- Logo -->
-                <a class="nav-brand" href="/"><img src="{{ asset('img/core-img/logo.jpeg') }}" alt=""></a>
+                <a class="nav-brand" href="/"><img src="{{ asset('img/core-img/logo.png') }}" alt=""></a>
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
@@ -40,7 +40,11 @@
                             <li><a href="{{ route('investments.index') }}">Inversiones</a></li>
                             <li><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
                             <li><a href="{{ route('credits.index') }}">Crédito</a></li>
-                            <li><a href="{{ route('contact.index') }}"><i class="fa fa-lg fa-envelope"></i></a></li>
+                            {{-- <li><a href="{{ route('contact.index') }}"> --}}
+                            <li><a href="mailto:info@urbanrealestate.com.ar">
+                              {{-- <i class="fa fa-lg fa-envelope"></i> --}}
+                              <img class="contact-link" src="img/core-img/icContacto.png" alt="">
+                            </a></li>
                             
 
                             <li class="nav-item dropdown">

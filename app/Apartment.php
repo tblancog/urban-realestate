@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use Faker\Factory;
 
 class Apartment extends Model
 {
@@ -70,5 +71,25 @@ class Apartment extends Model
         }
 
         return $query;
+    }
+    public function findOrDefaultImage() {
+      if($this->images()->exists() && file_exists($this->getImgPath( $this->images[0]->filename )) ){
+        return $this->getImgPath( $this->images[0]->filename );
+      }
+      $faker = Factory::create();
+      return $faker->imageUrl($width = 640, $height = 480); 
+    }
+
+    public function findOrDefaultImages() {
+      $images = collect();
+      if( $this->images()->exists() ){
+        $this->images()->each(function($img) use ($images) {
+          $images->push($img);
+        });
+      } else {
+        $faker = Factory::create();
+        $images->push(['filename'=> $faker->imageUrl($width = 640, $height = 480)]); 
+      }
+      return $images;
     }
 }

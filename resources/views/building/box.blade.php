@@ -1,9 +1,8 @@
 <section class="col-lg-6 col-xl-6">
     <div class="box">
         <a href="{{ route('buildings.show', $building->slug) }}">
-            <div class="box-img" style="background-image: url({{ is_file($building->getImgPath($building->images[0]->filename)) ? 
-                                        $building->getImgPath($building->images[0]->filename) : 
-                                        Faker\Factory::create()->imageUrl($width = 640, $height = 480) }});">
+            <div class="box-img" style="background-image: url({{ $building->findOrDefaultImage() }});">
+            {{-- <div class="box-img" style="background-image: url({{ $building->findOrDefaultImage() }});"> --}}
                 <div class="box-info px-2 py-1">
                     <div class="row">
                         <div class="col-6">

@@ -1173,8 +1173,8 @@ img {
 }
 
 .hero-slides-content {
-    top: -230px;
-    left: 20px;
+    top: -310px;
+    left: -130px;
     position: absolute;
 
     @media #{$breakpoint-md} {
@@ -1194,13 +1194,11 @@ img {
       text-shadow: 4px 4px 2px #5d5d5d;
       font-size: 45px;
       max-width: 450px;
+      color: #ffffff;
+      -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
       padding: .5rem;
-        //  margin-bottom: 0;
-        //  padding: 10px 15px;
-        text-transform: uppercase;
-        // background-color: $color-dark;
-        //  line-height: 1;
-        //  display: inline-block;
+      text-transform: uppercase;
 
         @media #{$breakpoint-md} {
             font-size: 40px;
@@ -1666,6 +1664,7 @@ img {
     overflow: hidden;
 
     .property-thumb {
+        height: 350px;
         position: relative;
         z-index: 1;
 
@@ -4095,4 +4094,8 @@ img {
 }
 .project-title {
   z-index: -1000 !important;
+}
+
+.contact-link {
+    width: 35px;
 }

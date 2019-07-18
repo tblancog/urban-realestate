@@ -40,7 +40,7 @@
                                                 </a>
                                             </div>
                                             <div class="details-card">
-                                                <p>{{ apartment.description  }}</p>
+                                                <p>{{ apartment.description.substr(0,200)+'...'  }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-3">

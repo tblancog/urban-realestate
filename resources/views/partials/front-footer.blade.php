@@ -49,17 +49,17 @@
         </div>
         <div class="container py-5">
             <div class="row">
-              <div class="col-4">
+              <div class="offset-3 col-2">
                  <div class="logo-box">
                     <img src="{{ asset('img/core-img/urban_de') }}v_logo_square.png" alt="">
                   </div>
               </div>
-              <div class="col-4">
+              <div class="col-2">
                  <div class="logo-box">
                     <img src="{{ asset('img/core-img/urban_ho') }}uses_logo_square.png" alt="">
                   </div>
               </div>
-              <div class="col-4">
+              <div class="col-2">
                  <div class="logo-box">
                     <img src="{{ asset('img/core-img/urban_re') }}al_logo_square.png" alt="">
                   </div>
