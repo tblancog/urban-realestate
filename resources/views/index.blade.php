@@ -173,3 +173,4 @@
 @include('partials.front-footer')
 
 @endsection
+    

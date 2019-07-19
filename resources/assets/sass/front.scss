@@ -1191,12 +1191,10 @@ img {
     
     h2 {
       color: $color-white;
-      text-shadow: 4px 4px 2px #5d5d5d;
+      -webkit-text-shadow:  1px 1px 5px #9C9C9C;;
+      text-shadow:  1px 1px 5px #9C9C9C;;
       font-size: 45px;
       max-width: 450px;
-      color: #ffffff;
-      -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
-      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
       padding: .5rem;
       text-transform: uppercase;
 
@@ -1386,21 +1384,23 @@ img {
     }
 }
 
+.search-box {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    left: 10%;  
+    &.fixed{
+      position: fixed;
+      top: 108px;
+      @media #{$breakpoint-xs} {
+        position: absolute;
+      }
+    }
+}
 .south-search-area {
     position: relative;
     z-index: 1;
 
-    #advanceSearch {
-        .form-group {
-            .btn.south-btn {
-                min-width: 100%;
-            }
-
-            .btn.south-btn.btn-4 {
-                min-width: 100%;
-            }
-        }
-    }
 
     @media (min-width: 1250px) {
         margin-top: -10%;
@@ -1422,7 +1422,7 @@ img {
 
                     .nice-select {
                         background-color: #ffffff;
-                        opacity: 0.7;
+                        opacity: 0.9;
                     }
 
                     .form-control.location {
@@ -1622,6 +1622,8 @@ img {
         }
     }
 }
+
+
 
 /* :: 11.0 Single Property Area CSS */
 

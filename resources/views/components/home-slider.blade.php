@@ -20,10 +20,10 @@
         </div>
 
         <!-- ##### Advance Search Area Start ##### -->
-        <div id="search-area" class="south-search-area">
+        <div  class="south-search-area">
             <div class="container">
                 <div class="row">
-                    <div class="offset-lg-2  col-xs-12 col-lg-10">
+                    <div id="search-area" class="search-box">
                         <div class="advanced-search-form">
                             <!-- Search Title -->
                             <!-- <div class="search-title">
@@ -92,5 +92,29 @@
         <!-- ##### Advance Search Area End ##### -->
     </div>
 
+
+@push('scripts')
+  <script>
+      // When the user scrolls the page, execute myFunction 
+      window.onscroll = function() {checkScroll()};
+
+      // Get the header
+      var header = document.getElementById("search-area");
+
+      // Get the offset position of the navbar
+      // var sticky = header.offsetTop;
+      var sticky = 624;
+
+      // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+      function checkScroll() {
+        if (window.pageYOffset > sticky) {
+          header.classList.add("fixed");
+        } else {
+          header.classList.remove("fixed");
+        }
+      }
+  </script>
+
+@endpush
 
   
