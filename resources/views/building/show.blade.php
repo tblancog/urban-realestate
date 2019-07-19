@@ -159,7 +159,7 @@
                     </div>
                     <div class="map-bot">
                         <div class="map-responsive">
-                            {{!! $apartment->url_maps !!}}
+                            {{!! $building->url_maps !!}}
                         </div>
                     </div>
                 </div>
