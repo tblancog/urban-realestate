@@ -23,7 +23,7 @@
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
-                    <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    <img class="contact-link" src="img/core-img/icMenu.png" alt="">
                 </div>
 
                 <!-- Menu -->
@@ -46,8 +46,9 @@
                             
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span><i class="fa fa-bars"></i></span>
+                                <a class="nav-link dropdo wn-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{-- <span><i class="fa fa-bars"></i></span> --}}
+                                 <img class="contact-link" src="img/core-img/icMenu.png" alt="">
                                   <div class="dropdown-menu py-2" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item my-2" href="{{ route('nosotros.index')  }}">Nosotros</a>
                                     <a class="dropdown-item my-2" href="{{ route('home.index')  }}#real-estate">Propiedades</a>
