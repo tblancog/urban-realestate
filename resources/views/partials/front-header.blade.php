@@ -23,7 +23,7 @@
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
-                    <img class="contact-link" src="img/core-img/icMenu.png" alt="">
+                    <img class="link menu" src="img/core-img/icMenu.png" alt="">
                 </div>
 
                 <!-- Menu -->
@@ -41,14 +41,14 @@
                             <li><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
                             <li><a href="{{ route('credits.index') }}">Crédito</a></li>
                             <li><a href="mailto:info@urbanrealestate.com.ar">
-                              <img class="contact-link" src="img/core-img/icContacto.png" alt="">
+                              <img class="link" src="img/core-img/icContacto.png" alt="">
                             </a></li>
                             
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdo wn-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{-- <span><i class="fa fa-bars"></i></span> --}}
-                                 <img class="contact-link" src="img/core-img/icMenu.png" alt="">
+                                 <img class="link menu" src="img/core-img/icMenu.png" alt="">
                                   <div class="dropdown-menu py-2" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item my-2" href="{{ route('nosotros.index')  }}">Nosotros</a>
                                     <a class="dropdown-item my-2" href="{{ route('home.index')  }}#real-estate">Propiedades</a>

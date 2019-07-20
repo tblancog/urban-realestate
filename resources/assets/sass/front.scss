@@ -688,13 +688,9 @@ img {
 
 .dark {
     .classy-navbar-toggler {
-        .navbarToggler {
-            span {
-                @media (max-width: 992px) {
-                    background-color: #000;
-                }
-            }
-        }
+      .menu {
+        width: 50px;
+      }
     }
     .classy-menu {
         .classycloseIcon {
@@ -792,73 +788,12 @@ img {
                                     }
                                 }
 
-
-                                /*
-                                .collapsible-menu.hamburger {
-                                    label {
-                                        font-size: 16px;
-                                        display: inline-block;
-                                        cursor: pointer;
-                                        background: url(menu.png) no-repeat left center;
-                                        padding: 10px 0 10px 50px;
-                                    }
-                                    #menu {
-                                        display: none;
-                                    }
-                                    span {
-                                        display: inline-block;
-                                        margin-left: 5px;
-                                        font-size: 20px;
-                                    }
-                                    input {
-                                        &:checked {
-                                            .menu-content {
-                                                max-height: 100%;
-                                            }
-                                        }
-                                    }
-                                    .menu-content {
-                                        max-height: 0;
-                                        overflow: hidden;
-                                    }
-                                }
-                                .hamb-toggler {
-                                    position: relative;
-
-                                    &:hover {
-                                        .list-top {
-                                            background: red;
-                                            position: absolute;
-                                            left: -150%;
-                                            top: 164%;
-                                            visibility: visible;
-                                            // opacity: 1;
-                                        }
-                                    }
-
-                                    .list-top {
-                                        visibility: hidden;
-                                        position: absolute;
-                                        left: -150%;
-                                        top: 100%;
-                                        transition: 0.1s;
-                                        opacity: 0;
-
-                                        li {
-                                            background-color: rgba(255, 255, 255, 0.3);
-                                            padding: 10px 0;
-
-                                            a {
-                                                border-left: 0;
-                                            }
-                                        }
-                                    }
-
-                                    .dd-trigger,
-                                    .dd-arrow {
-                                        display: none;
-                                    }
-                                }*/
+                            }
+                            .link{
+                              width: 40px;
+                              &.menu {
+                                width: 50px;
+                              }
                             }
 
                             .navbarToggler {
@@ -4099,5 +4034,5 @@ img {
 }
 
 .contact-link {
-    width: 35px;
+    width: 50px;
 }
