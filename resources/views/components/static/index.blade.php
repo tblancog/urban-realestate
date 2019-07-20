@@ -129,11 +129,11 @@
 
 
 <!-- ##### Propiedades en Venta Area Start ##### -->
-<section id="real-estate_featured" class="featured-properties-area section-padding-20-0">
+<section id="real-estate_featured" class="featured-properties-area">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="project-title section-heading wow fadeInLeftBig">
+                <div class="project-title section-heading my-5 wow fadeInLeftBig">
                     <h2>Propiedades destacadas</h2>
                 </div>
             </div>
@@ -175,7 +175,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="section-heading-20 wow fadeIn">
+                <div class="section-heading wow fadeIn">
                     <h2>Propiedades</h2>
                 </div>
             </div>

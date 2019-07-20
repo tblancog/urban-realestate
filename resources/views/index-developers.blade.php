@@ -243,7 +243,7 @@
 
 
 <!-- ##### Propiedades en Venta Area Start ##### -->
-<section class="featured-properties-area section-padding-20-0">
+<section class="featured-properties-area 
     <div class="container">
         <div class="row">
             <div class="col-12">

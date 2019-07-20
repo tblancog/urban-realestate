@@ -12,7 +12,7 @@
 <section class="container">
   <div class="row">
       <div class="col-12">
-          <div class="section-heading-20 wow fadeIn">
+          <div class="section-heading wow fadeIn">
               @if($apartments->count())
                 <h4 class="my-4">{{ $apartments->count(). " ". Illuminate\Support\Str::plural('Resultado', $apartments->count()) }}
                                   para <span class="font-weight-bold">'{{ $input->get('status') }}' 

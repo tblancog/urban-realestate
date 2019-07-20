@@ -20,7 +20,7 @@
 
 
 <!-- ##### Propiedades en Venta Area Start ##### -->
-<section id="real-estate_featured" class="featured-properties-area my-10 section-padding-20-0">
+<section id="real-estate_featured" class="featured-properties-area my-10 
     <div class="container-fluid px-5">
         <div class="row">
             <div class="col-12">
@@ -49,7 +49,7 @@
     <div class="container-fluid px-5">
         <div class="row">
             <div class="col-12">
-                <div class="section-heading-20 mt-5 wow fadeIn">
+                <div class="section-heading my-5 wow fadeInRightBig">
                     <h2 class="text-uppercase">Propiedades</h2>
                 </div>
             </div>
