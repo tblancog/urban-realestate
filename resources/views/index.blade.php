@@ -20,7 +20,7 @@
 
 
 <!-- ##### Propiedades en Venta Area Start ##### -->
-<section id="real-estate_featured" class="featured-properties-area my-10 
+<section id="real-estate_featured" class="featured-properties-area my-10"> 
     <div class="container-fluid px-5">
         <div class="row">
             <div class="col-12">
