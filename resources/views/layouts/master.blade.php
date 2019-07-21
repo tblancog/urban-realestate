@@ -11,8 +11,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>Urban | Dashboard</title>
+    <!-- Favicon  -->
+    <link rel="icon" type="image/png" href="{{ asset('img/core-img/favicon/favicon-16x16.png') }}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ asset('img/core-img/favicon/favicon-32x32.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ asset('img/core-img/favicon/favicon-96x96.png') }}" sizes="96x96">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 </head>
 
 <body class="hold-transition sidebar-mini">
