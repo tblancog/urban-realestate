@@ -10,8 +10,8 @@
                             <div class="col-12 title">{{ $building->title }}</div>
                         </div>
                         <div class="col-6">
-                            <div class="col-12 text-right finance text-uppercase">{{ 'Con financiación'}}</div>
-                            <div class="col-12 text-right price"> {{ $building->from_price ? 'desde  ' : '' }} USD
+                            <div class="text-right finance text-uppercase">{{ 'Con financiación'}}</div>
+                            <div class="text-right price"> {{ $building->from_price ? 'desde  ' : '' }} USD
                                 @convert($building->price) </div>
                         </div>
                     </div>
