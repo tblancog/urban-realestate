@@ -55,11 +55,9 @@
                                         <div class="form-group">
                                           <select name="location" class="form-control" id="location">
                                               <option value="">Barrio</option>
-                                              <option value="caba">CABA</option>
-                                              <option value="provincia">Provincia de Buenos Aires</option>
-                                              {{-- @foreach ($locations as $location) --}}
-                                                  {{-- <option value="{{ $location->location }}">{{ $location->location }}</option> --}}
-                                              {{-- @endforeach --}}
+                                              @foreach ($locations as $location)
+                                                  <option value="{{ $location->location }}">{{ $location->location }}</option>
+                                              @endforeach
                                           </select>
                                         </div>
                                     </div>
