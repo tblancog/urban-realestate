@@ -3449,13 +3449,16 @@ img {
             display: inline-block;
             margin-bottom: 0;
             font-size: 1.4rem;
+            text-transform: uppercase;
         }
 
         .price {
             display: inline-block;
             float: right;
             margin-bottom: 0;
-            font-size: 1.4rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            padding: 10px;
         }
     }
 
@@ -3555,6 +3558,7 @@ img {
         .desc-title {
             display: inline-block;
             font-weight: 700;
+            text-transform: uppercase;
         }
     }
 
@@ -3588,6 +3592,7 @@ img {
                 margin-bottom: 20px;
                 font-weight: 700;
                 display: inline-block;
+                text-transform: uppercase;
             }
 
             .map-socialmedia {
@@ -3615,6 +3620,38 @@ img {
                     height: 100%;
                     width: 100%;
                     position: absolute;
+                }
+            }
+        }
+    }
+
+    .dept-build-misc {
+        background-color: #e8e8e8;
+        padding-top: 30px;
+        .misc-box {
+            margin: 25px 0;
+        }
+        .misc-info {
+            background-color: #fff;
+            padding: 20px 35px;
+            height: 100%;
+            .misc-title {
+                color: #007c3e;
+            }
+            ul {
+                column-count: 3;
+                @media (max-width: 992px) {
+                    column-count: 1;
+                }
+                li {
+                    padding: 5px 0;
+                    &::before {
+                        content: "\2022";
+                        color: #51B848;
+                        font-weight: bold;
+                        display: inline-block;
+                        width: 1em;
+                    }
                 }
             }
         }
@@ -4010,10 +4047,37 @@ img {
 }
 
 /* 27.0 Nosotros CSS */
-.nosotros-page {
-    .section-heading {
-        margin-bottom: 50px;
+.nosotros-page{
+  .section-heading{
+    margin-bottom: 50px;
+  }
+  p{
+    line-height: 2;
+    font-size: 16px;
+  }
+  .font-bigger{
+    font-size: 130%;
+    color: #51B848;
+    text-decoration: underline;
+  }
+  ul{
+    margin: 1em 0 0 2em;
+    li{
+      list-style-type: disc;
+      line-height: 2;
+      color: #7d7d7d;
+      font-weight: 600;
     }
+  }
+}
+
+    .btn.contact-send {
+        /*float: right;
+        margin-top: 20px;
+        margin-bottom: 30px;*/
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
 
     p {
         line-height: 2;
@@ -4036,33 +4100,23 @@ img {
             font-weight: 600;
         }
     }
-}
 
-.btn.contact-send {
-    float: right;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    padding: 0;
+        a {
+            text-transform: uppercase;
+            background-color: #fff;
+            border: #51B848 2px solid;
+            padding: 10px 20px;
+            /*border-radius: 30px;*/
+            font-size: 18px;
+            color: #51B848;
+            transition: .3s;
 
-    @media (max-width: 482px) {
-        float: left;
-    }
-
-    a {
-        text-transform: uppercase;
-        background-color: #51B848;
-        padding: 10px 20px;
-        /*border-radius: 30px;*/
-        font-size: 18px;
-        color: #ffffff;
-        transition: .3s;
-
-        &:hover {
-            background-color: #000000;
-            color: #ffffff;
+            &:hover {
+                background-color: #51B848;
+                color: #ffffff;
+            }
         }
     }
-}
 
 .box {
     font-weight: bolder;
