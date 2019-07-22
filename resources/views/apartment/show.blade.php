@@ -80,19 +80,6 @@
                 <!--/main slider carousel-->
             </div>
 
-
-            <div class="dept-description mt-4">
-                <div class="description-top">
-                    <h3 class="desc-title">Descripción</h3>
-                </div>
-                <div class="description-bot">
-
-                    <p class="description-body">
-                      {{ $apartment->description }}      
-                    </p>
-                </div>
-            </div>
-
         </div>
         <div class="col-md-6">
             <div class="row">
@@ -102,7 +89,7 @@
                             <div class="row">
                                 <div class="col-12 box-icons">
                                   @foreach ($apartment->amenities as $amenity)
-                                    <div class="col-2 detail-box">
+                                    <div class="detail-box">
                                       <img src="/img/icons/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
                                       <p style="text-transform: capitalize;">{{ $amenity->title }}</p>
                                     </div>
@@ -115,8 +102,8 @@
                 <div class="col-12">
                     <div class="dept-contact">
                         <form>
-                            <h3 class="contact-title">Comercializa: {{ $apartment->contact_name }}</h3>
-                            <h3 class="contact-title-2">Cel. {{ $apartment->contact_phone }}</h3>
+                            <h3 class="contact-title">Contacto<!--{{ $apartment->contact_name }}--></h3>
+                            <h3 class="contact-title-2">{{ $apartment->contact_phone }}</h3>
                             <div class="contact-info">
                                 <div class="contact-info-item">
                                     <input type="text" placeholder="Nombre">
@@ -134,28 +121,44 @@
                                     <textarea name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
                                     <p class="contact-sub-info"></p>
                                 </div>
-                                <div class="btn contact-send">
-                                    <a href="#">Enviar</a>
-                                </div>
                             </div>
                         </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="dept-map mt-4">
-                    <div class="map-top">
-                        <h3 class="map-title">Ubicación / Mapa</h3>
-                        @include('partials.map-social')
-                    </div>
-                    <div class="map-bot">
-                        <div class="map-responsive">
-                            {{!! $apartment->url_maps !!}}
+                        <div class="btn contact-send">
+                            <a href="#">Enviar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="col-md-6">
+            <div class="dept-description mt-4">
+                <div class="description-top">
+                    <h3 class="desc-title">Descripción</h3>
+                </div>
+                <div class="description-bot">
+
+                    <p class="description-body">
+                      {{ $apartment->description }}      
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="dept-map mt-4">
+                <div class="map-top">
+                    <h3 class="map-title">Ubicación / Mapa</h3>
+                    @include('partials.map-social')
+                </div>
+                <div class="map-bot">
+                    <div class="map-responsive">
+                        {{!! $apartment->url_maps !!}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container-fluid">
             <div class="row dept-build-misc">
                 <div class="col-md-6 misc-box">
