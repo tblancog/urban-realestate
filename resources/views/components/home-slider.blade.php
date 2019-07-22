@@ -56,7 +56,7 @@
                                     <div class="col-md-6 col-lg-4 px-0">
                                         <div class="form-group">
                                           <select name="location" class="form-control" id="location">
-                                              <option value="">Barrio</option>
+                                              <option value="">Ingrese Zona, Localidad o Provincia</option>
                                               @foreach ($locations as $location)
                                                   <option value="{{ $location->location }}">{{ $location->location }}</option>
                                               @endforeach
@@ -65,20 +65,22 @@
                                     </div>
 
                                     {{-- Submit --}}
-                                    <div class="col-lg-1 px-0">
-                                          <div class="form-search">
-                                            <div class="img-search">
-                                              <input type="image" name="submit" src="{{ asset('/img/core-img/icSearch.png') }}" />
-                                            </div>
-                                          </div>
+                                    <div class="px-0">
+                                      <div class="form-inline form-search">
+                                        <div class="img-search">
+                                          <input type="image" name="submit" src="{{ asset('/img/core-img/icSearch.png') }}" />
+                                        </div>
+                                      </div>
                                     </div>
 
                                     {{-- Contact --}}
-                                    <div class="col-lg-1 px-0">
-                                      <div class="form-group">
+                                    <div class="px-0">
+                                      <div class="form-inline form-contact">
                                           <div class="form-contact">
                                             <a href="{{ route('contact.index') }}" class="btn">
-                                              <div class="img-contact"></div>
+                                              <div class="img-contact">
+                                                <img src="{{ asset('/img/core-img/icMailto.png') }}" alt="">
+                                              </div>
                                             </a>
                                           </div>
                                       </div>

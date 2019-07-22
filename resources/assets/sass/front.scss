@@ -1318,8 +1318,10 @@ img {
 }
 
 .nice-select {
-    line-height: 34px;
+    line-height: 2.5;
     font-size: 20px;
+    text-transform: uppercase;
+    height: 50px;
 
     .list {
         left: 0 !important;
@@ -1328,8 +1330,7 @@ img {
     }
 
     &.form-control {
-        opacity: 0.9;
-        color: #000;
+        color: $color-white;
     }
 }
 
@@ -1372,9 +1373,11 @@ img {
                     border: 0;
                     box-shadow: none;
 
-                    .nice-select {
-                        background-color: #ffffff;
-                        opacity: 0.9;
+                    .nice-select, 
+                    .nice-select ul 
+                      {
+                        background-color: rgba(255, 255, 255, 0.5);
+                        // opacity: 0.9;
                     }
 
                     .form-control.location {
@@ -1525,7 +1528,7 @@ img {
 
         #advanceSearch {
             height: 38px;
-            opacity: 0.7;
+            // opacity: 0.7;
 
             .col-12 {
                 padding-left: 0px;
@@ -1541,7 +1544,10 @@ img {
 
             }
 
-            // .img-search{
+            .img-search{
+              input{
+                width: 57px;
+              }
             //   background: url('/img/core-img/icSearch.png');
             //   height: 100%;
             //   background-size: contain;
@@ -1550,7 +1556,7 @@ img {
             //   background-size: 90%;
             //   background-position: center center;
             //   margin: 0 auto;
-            // }
+            }
 
 
             .wrapper:before {
@@ -1560,28 +1566,22 @@ img {
                 top: 9px;
                 content: "\f124";
             }
-
-            // .wrapper input[type="text"] {
-            //     position: relative;
-            // }
             select.form-control {
                 text-transform: uppercase;
                 font-weight: bolder;
             }
 
-            // .south-btn {
-            //   background: #4C8954;
-            //   font-size: 18px;
-            //   min-width: 110px;
-            // }
-            // .search-submit-btn{
-            //   margin: 0;
-            // }
             .form-search,
             .form-contact {
-                width: 38px;
-                background: #4C8954;
-
+                width: 57px;
+            }
+            .form-search{
+              background: #4C8954;
+            }
+            .form-contact a{
+              &.btn{
+                background: rgba(255, 255, 255, .5);
+              }
             }
         }
     }
