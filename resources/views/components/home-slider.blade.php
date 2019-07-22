@@ -33,15 +33,17 @@
                       <form action="{{ route('search.index') }}" method="GET" id="advanceSearch">
                                @csrf
                                 <div class="row">
-                                    <div class="col-12 col-md-6 col-lg-2">
-                                        <div class="form-group">
-                                            <select class="form-control" name="status" id="status" placeholder="Comprar">
-                                                <option>Venta</option>
-                                                <option>Alquiler</option>
-                                            </select>
-                                        </div>
+                                    {{-- Operación --}}
+                                    <div class="col-md-6 col-lg-2 px-0">
+                                      <div class="form-group">
+                                        <select class="form-control" name="status" id="status" placeholder="Comprar">
+                                          <option>Venta</option>
+                                          <option>Alquiler</option>
+                                        </select>
+                                      </div>
                                     </div>
-                                    <div class="col-12 col-md-6 col-lg-2">
+                                    {{-- Tipo --}}
+                                    <div class="col-md-6 col-lg-2 px-0">
                                         <div class="form-group">
                                             <select name="type" class="form-control" id="type">
                                                 <option>Departamento</option>
@@ -50,8 +52,8 @@
                                             </select>
                                         </div>
                                     </div>
-
-                                    <div class="col-12 col-md-6 col-lg-4">
+                                     {{-- Barrios --}}
+                                    <div class="col-md-6 col-lg-4 px-0">
                                         <div class="form-group">
                                           <select name="location" class="form-control" id="location">
                                               <option value="">Barrio</option>
@@ -62,21 +64,24 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-lg-1">
-                                        <!-- Submit -->
-                                        <div class="form-group mb-0">
-                                            <button type="submit" class="btn south-btn">
-                                              <div class="img-search"></div>
-                                            </button>
-                                        </div>
+                                    {{-- Submit --}}
+                                    <div class="col-lg-1 px-0">
+                                          <div class="form-search">
+                                            <div class="img-search">
+                                              <input type="image" name="submit" src="{{ asset('/img/core-img/icSearch.png') }}" />
+                                            </div>
+                                          </div>
                                     </div>
 
-                                    <div class="col-12 col-lg-1">
-                                    <a href="{{ route('contact.index') }}" class="btn south-btn btn-4 btn-5 d-none d-sm-block
-">
-                                          {{-- <i class="fa fa-lg fa-envelope"></i> --}}
-                                          <div class="img-contact"></div>
-                                        </a>
+                                    {{-- Contact --}}
+                                    <div class="col-lg-1 px-0">
+                                      <div class="form-group">
+                                          <div class="form-contact">
+                                            <a href="{{ route('contact.index') }}" class="btn">
+                                              <div class="img-contact"></div>
+                                            </a>
+                                          </div>
+                                      </div>
                                     </div>
 
                                 </div>

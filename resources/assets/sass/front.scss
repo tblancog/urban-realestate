@@ -1514,15 +1514,16 @@ img {
                 }
 
             }
-            .img-search{
-              background: url('/img/core-img/icSearch.png');
-              height: 100%;
-              background-size: contain;
-              background-repeat: no-repeat;
-              background-color: #4C8954;
-              width: 55px;
-              margin: 0 auto;
-            }
+            // .img-search{
+            //   background: url('/img/core-img/icSearch.png');
+            //   height: 100%;
+            //   background-size: contain;
+            //   background-repeat: no-repeat;
+            //   background-color: #4C8954;
+            //   background-size: 90%;
+            //   background-position: center center;
+            //   margin: 0 auto;
+            // }
            
 
             .wrapper:before {
@@ -1541,10 +1542,18 @@ img {
                 font-weight: bolder;
             }
 
-            .south-btn {
+            // .south-btn {
+            //   background: #4C8954;
+            //   font-size: 18px;
+            //   min-width: 110px;
+            // }
+            // .search-submit-btn{
+            //   margin: 0;
+            // }
+            .form-search, .form-contact{
+              width: 38px;
               background: #4C8954;
-              font-size: 18px;
-              min-width: 110px;
+
             }
         }
     }
