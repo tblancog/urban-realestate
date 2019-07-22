@@ -59,9 +59,19 @@ class HomeController extends Controller
       $config = Config::where('module', $page)
                       ->get()
                       ->pluck('value', 'key');
-      if (in_array($page, ['investments', 'appraisals', 'credits', 'contact']))
+      if (in_array($page, ['appraisals', 'credits', 'contact']))
       {
         return view('contact', compact('config'));
+      }
+      elseif (in_array($page, ['investments'])) {
+        
+        $buildings = Building::where('is_featured', true)
+                            ->latest()
+                            ->with('images')
+                            ->paginate(5);
+        return view('investments', 
+                    compact('config'), compact('buildings')
+        );
       }
       return view($page);
     }

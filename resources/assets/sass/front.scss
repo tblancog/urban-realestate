@@ -58,16 +58,18 @@
 
 
 @font-face {
-  font-family: 'AvantGarde';
-  src: url('../fonts/Avant Garde Book BT.ttf');
+    font-family: 'AvantGarde';
+    src: url('../fonts/Avant Garde Book BT.ttf');
 }
+
 @font-face {
-  font-family: 'AvantGarde-Bold';
-  src: url('../fonts/ITCAvantGardeStd-Bold.otf');
+    font-family: 'AvantGarde-Bold';
+    src: url('../fonts/ITCAvantGardeStd-Bold.otf');
 }
+
 @font-face {
-  font-family: 'MyriadPro-Bold';
-  src: url('../fonts/MyriadPro-Bold.otf');
+    font-family: 'MyriadPro-Bold';
+    src: url('../fonts/MyriadPro-Bold.otf');
 }
 
 
@@ -90,7 +92,8 @@
     padding: 0;
 }
 
-html,body {
+html,
+body {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -392,6 +395,7 @@ img {
     font-weight: 700;
     letter-spacing: 1px;
     transition: .2s;
+
     &:hover {
         color: #000;
     }
@@ -404,6 +408,7 @@ img {
     font-weight: 700;
     letter-spacing: 1px;
     transition: .2s;
+
     &:hover {
         color: #000;
     }
@@ -661,8 +666,9 @@ img {
         //      background-color: $color-dark;
         //  }
     }
-    &.btn-5{
-       background: transparent;
+
+    &.btn-5 {
+        background: transparent;
     }
 }
 
@@ -679,6 +685,7 @@ img {
 .dark.classy-nav-container {
     a {
         transition: 0s;
+
         &:hover {
             color: #000000;
             font-weight: 600;
@@ -688,10 +695,11 @@ img {
 
 .dark {
     .classy-navbar-toggler {
-      .menu {
-        width: 50px;
-      }
+        .menu {
+            width: 50px;
+        }
     }
+
     .classy-menu {
         .classycloseIcon {
             display: none;
@@ -705,6 +713,7 @@ img {
     letter-spacing: 30px;
     background: #C8C8C8;
     color: #7C7C7C;
+
     @media (max-width: 520px) {
         letter-spacing: 15px;
     }
@@ -730,6 +739,7 @@ img {
             font-size: 20px;
         }
     }
+
     @media (max-width: 991px) {
         display: none;
     }
@@ -750,10 +760,12 @@ img {
 
     .sticky-wrapper {
         .main-header-area {
-                z-index: inherit;
-                @media (max-width: 992px) {
-                    box-shadow: none;
-                }
+            z-index: inherit;
+
+            @media (max-width: 992px) {
+                box-shadow: none;
+            }
+
             .classy-nav-container {
                 .classy-navbar {
                     .classy-menu {
@@ -764,22 +776,27 @@ img {
                                         &::after {
                                             display: none;
                                         }
+
                                         &:hover {
                                             text-decoration: none;
                                         }
+
                                         &:focus {
                                             color: #000;
                                         }
                                     }
+
                                     &.show {
                                         .dropdown-menu.show {
                                             top: 18px !important;
-                                            left: -60px!important;
+                                            left: -60px !important;
                                             background-color: rgba(255, 255, 255, 0.7);
                                             border: 0;
                                             border-radius: 0;
+
                                             a {
                                                 border: 0;
+
                                                 &:hover {
                                                     background-color: transparent;
                                                 }
@@ -789,11 +806,13 @@ img {
                                 }
 
                             }
-                            .link{
-                              width: 40px;
-                              &.menu {
-                                width: 50px;
-                              }
+
+                            .link {
+                                width: 40px;
+
+                                &.menu {
+                                    width: 50px;
+                                }
                             }
 
                             .navbarToggler {
@@ -1123,15 +1142,17 @@ img {
     @media #{$breakpoint-xs-landscape} {
         margin-top: 20%;
     }
-    
+
     h2 {
-      color: $color-white;
-      -webkit-text-shadow:  1px 1px 5px #9C9C9C;;
-      text-shadow:  1px 1px 5px #9C9C9C;;
-      font-size: 45px;
-      max-width: 450px;
-      padding: .5rem;
-      text-transform: uppercase;
+        color: $color-white;
+        -webkit-text-shadow: 1px 1px 5px #9C9C9C;
+        ;
+        text-shadow: 1px 1px 5px #9C9C9C;
+        ;
+        font-size: 45px;
+        max-width: 450px;
+        padding: .5rem;
+        text-transform: uppercase;
 
         @media #{$breakpoint-md} {
             font-size: 40px;
@@ -1305,9 +1326,10 @@ img {
         right: 0 !important;
         border-radius: 0;
     }
-    &.form-control{
-      opacity: 0.9;
-      color: #000;
+
+    &.form-control {
+        opacity: 0.9;
+        color: #000;
     }
 }
 
@@ -1315,15 +1337,18 @@ img {
     position: absolute;
     z-index: 1000;
     width: 100%;
-    left: 10%;  
-    &.fixed{
-      position: fixed;
-      top: 108px;
-      @media #{$breakpoint-xs} {
-        position: absolute;
-      }
+    left: 10%;
+
+    &.fixed {
+        position: fixed;
+        top: 108px;
+
+        @media #{$breakpoint-xs} {
+            position: absolute;
+        }
     }
 }
+
 .south-search-area {
     position: relative;
     z-index: 1;
@@ -1501,6 +1526,7 @@ img {
         #advanceSearch {
             height: 38px;
             opacity: 0.7;
+
             .col-12 {
                 padding-left: 0px;
                 padding-right: 0px;
@@ -1514,6 +1540,7 @@ img {
                 }
 
             }
+
             // .img-search{
             //   background: url('/img/core-img/icSearch.png');
             //   height: 100%;
@@ -1524,7 +1551,7 @@ img {
             //   background-position: center center;
             //   margin: 0 auto;
             // }
-           
+
 
             .wrapper:before {
                 font-family: 'FontAwesome';
@@ -1550,9 +1577,10 @@ img {
             // .search-submit-btn{
             //   margin: 0;
             // }
-            .form-search, .form-contact{
-              width: 38px;
-              background: #4C8954;
+            .form-search,
+            .form-contact {
+                width: 38px;
+                background: #4C8954;
 
             }
         }
@@ -1608,63 +1636,66 @@ img {
 
         // max-width: 350px;
         // max-height: 250px;
-                .ribbon {
-                    position: absolute;
-                    left: -5px;
-                    top: -5px;
-                    z-index: 1;
-                    overflow: hidden;
-                    width: 160px;
-                    height: 160px;
-                    text-align: right;
-                }
+        .ribbon {
+            position: absolute;
+            left: -5px;
+            top: -5px;
+            z-index: 1;
+            overflow: hidden;
+            width: 160px;
+            height: 160px;
+            text-align: right;
+        }
 
-                .ribbon span {
-                    font-size: 16px;
-                    font-weight: bold;
-                    color: #FFF;
-                    text-transform: uppercase;
-                    text-align: center;
-                    line-height: 20px;
-                    transform: rotate(-45deg);
-                    -webkit-transform: rotate(-45deg);
-                    width: 170px;
-                    display: block;
-                    &.Venta,
-                    &.Alquiler {
-                      background: #007D3E;
-                    }
-                    &.Reservado{
-                      background: #FF695C;
-                    }
-                    position: absolute;
-                    top: 44px;
-                    left: -35px;
-                }
+        .ribbon span {
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFF;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 20px;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            width: 170px;
+            display: block;
 
-                .ribbon span::before {
-                    content: "";
-                    position: absolute;
-                    left: 0px;
-                    top: 100%;
-                    z-index: -1;
-                    border-left: 3px solid #79A70A;
-                    border-right: 3px solid transparent;
-                    border-bottom: 3px solid transparent;
-                    border-top: 3px solid #79A70A;
-                }
+            &.Venta,
+            &.Alquiler {
+                background: #007D3E;
+            }
 
-                .ribbon span::after {
-                    content: "";
-                    position: absolute;
-                    right: 0px;
-                    top: 100%;
-                    z-index: -1;
-                    border-left: 3px solid transparent;
-                    border-right: 3px solid #79A70A;
-                    border-bottom: 3px solid transparent;
-                    border-top: 3px solid #79A70A;
-                }
+            &.Reservado {
+                background: #FF695C;
+            }
+
+            position: absolute;
+            top: 44px;
+            left: -35px;
+        }
+
+        .ribbon span::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 100%;
+            z-index: -1;
+            border-left: 3px solid #79A70A;
+            border-right: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid #79A70A;
+        }
+
+        .ribbon span::after {
+            content: "";
+            position: absolute;
+            right: 0px;
+            top: 100%;
+            z-index: -1;
+            border-left: 3px solid transparent;
+            border-right: 3px solid #79A70A;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid #79A70A;
+        }
 
 
         .property-info {
@@ -1917,13 +1948,13 @@ img {
 
 }
 
- .img-contact{
+.img-contact {
     background: url('/img/core-img/icMailto.png');
     height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
     width: 50px;
-  }
+}
 
 /* :: 12.0 Testimonials Area CSS */
 
@@ -2277,11 +2308,11 @@ img {
 }
 
 .footer {
-  
-  .footer-info {
-    padding: 40px 0;
-    background-color: #dbdbdb;
-    font-size: 18px;  
+
+    .footer-info {
+        padding: 40px 0;
+        background-color: #dbdbdb;
+        font-size: 18px;
 
         .footer-ad-telf {
             @media (max-width: 768px) {
@@ -2334,10 +2365,11 @@ img {
         }
 
         .footer-social {
-           .social-img {
-               width: 25px;
-               padding: .25em !important;
-           }
+            .social-img {
+                width: 25px;
+                padding: .25em !important;
+            }
+
             @media (max-width: 768px) {
                 text-align: center;
             }
@@ -3379,6 +3411,7 @@ img {
                 }
             }
         }
+
         .featured-col {
             padding: 0;
 
@@ -3394,10 +3427,11 @@ img {
                     letter-spacing: 1px;
                     text-transform: uppercase;
                     transition: .3s;
+
                     &:hover {
                         background-color: #000000;
                         color: #ffffff;
-                    } 
+                    }
                 }
             }
         }
@@ -3511,12 +3545,12 @@ img {
         }
     }
 
-    .dept-slider, 
-    .dept-details, 
-    .dept-contact{
+    .dept-slider,
+    .dept-details,
+    .dept-contact {
         background-color: #ffffff;
-    } 
-    
+    }
+
     .description-top {
         .desc-title {
             display: inline-block;
@@ -3802,6 +3836,8 @@ img {
 /* 24.0 Investment Area CSS */
 
 .investments-page {
+    background: #E4E4E4;
+
     .card {
         .card-header {
 
@@ -3814,39 +3850,46 @@ img {
                 margin-bottom: 0;
                 padding: 10px;
             }
+
             .card-tools {
                 padding: 10px;
                 display: inline-block;
                 float: right;
             }
         }
+
         .media {
             .media-body {
                 .container {
                     padding-top: 15px;
                     padding-bottom: 15px;
+
                     .info-card {
                         padding-bottom: 10px;
-                        background-image: linear-gradient(to right, #7d7d7d 33%, rgba(255,255,255,0) 0%);
+                        background-image: linear-gradient(to right, #7d7d7d 33%, rgba(255, 255, 255, 0) 0%);
                         background-position: bottom;
                         background-size: 6px 2px;
                         background-repeat: repeat-x;
+
                         h5 {
                             font-size: 1.7rem;
                             font-weight: 700;
                             color: #007c3e;
                         }
+
                         a {
                             &:hover {
                                 text-decoration: none;
                             }
                         }
                     }
+
                     a {
                         &:hover {
                             text-decoration: none;
                         }
                     }
+
                     .btn-more {
                         width: 70%;
                         color: #51B848;
@@ -3857,6 +3900,7 @@ img {
                         letter-spacing: 1px;
                         font-size: 1.4rem;
                         transition: 0.2s;
+
                         &:hover {
                             text-decoration: none;
                             background-color: #51B848;
@@ -3864,21 +3908,26 @@ img {
                             border: #51B848 1px solid;
                         }
                     }
+
                     .details-card {
                         margin-top: 10px;
                     }
+
                     .more-box {
-                        background-image: linear-gradient(#7d7d7d 33%, rgba(255,255,255,0) 0%);
+                        background-image: linear-gradient(#7d7d7d 33%, rgba(255, 255, 255, 0) 0%);
                         background-position: left;
                         background-size: 2px 7px;
                         background-repeat: repeat-y;
                         padding-left: 20px;
+
                         h5 {
                             margin-bottom: 2rem;
                         }
+
                         .cta-more {
                             margin-bottom: 2rem;
                         }
+
                         .deliver-box {
                             .deliver-date {
                                 font-weight: 700;
@@ -3891,9 +3940,11 @@ img {
                 }
             }
         }
+
         .card-footer {
             .pagination {
                 justify-content: center;
+
                 li {
                     a {
                         background-color: #51B848;
@@ -3907,25 +3958,30 @@ img {
 /* 25.0 Appraisals Area CSS */
 
 .appraisals-page {
-  max-width: 700px;
-  margin: 0 auto;
-  margin-top: 80px;
-  .appraisals-title {
-    text-align: center;
-    &::after {
-        content: '';
-        display: block;
-        border-bottom: 6px solid #51B848;
-        width: 50%;
-        margin: auto;
-        margin-top: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 80px;
+
+    .appraisals-title {
+        text-align: center;
+
+        &::after {
+            content: '';
+            display: block;
+            border-bottom: 6px solid #51B848;
+            width: 50%;
+            margin: auto;
+            margin-top: 30px;
+        }
     }
-  }
+
     form {
         margin-top: 50px;
-        textarea{
-          height: auto;
+
+        textarea {
+            height: auto;
         }
+
         .btn {
             float: right;
             background-color: #7c7c7c;
@@ -3934,12 +3990,14 @@ img {
             font-weight: 700;
             letter-spacing: 1px;
             transition: .2s;
+
             &:hover {
                 color: #000;
                 background-color: #c8c8c8;
             }
         }
     }
+
     .appraisals-bottom {
         margin-top: 85px;
     }
@@ -3952,86 +4010,102 @@ img {
 }
 
 /* 27.0 Nosotros CSS */
-.nosotros-page{
-  .section-heading{
-    margin-bottom: 50px;
-  }
-  p{
-    line-height: 2;
-    font-size: 16px;
-  }
-  .font-bigger{
-    font-size: 130%;
-    color: #51B848;
-    text-decoration: underline;
-  }
-  ul{
-    margin: 1em 0 0 2em;
-    li{
-      list-style-type: disc;
-      line-height: 2;
-      color: #7d7d7d;
-      font-weight: 600;
+.nosotros-page {
+    .section-heading {
+        margin-bottom: 50px;
     }
-  }
+
+    p {
+        line-height: 2;
+        font-size: 16px;
+    }
+
+    .font-bigger {
+        font-size: 130%;
+        color: #51B848;
+        text-decoration: underline;
+    }
+
+    ul {
+        margin: 1em 0 0 2em;
+
+        li {
+            list-style-type: disc;
+            line-height: 2;
+            color: #7d7d7d;
+            font-weight: 600;
+        }
+    }
 }
 
-    .btn.contact-send {
-        float: right;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        padding: 0;
+.btn.contact-send {
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 0;
 
-        @media (max-width: 482px) {
-            float: left;
-        }
+    @media (max-width: 482px) {
+        float: left;
+    }
 
-        a {
-            text-transform: uppercase;
-            background-color: #51B848;
-            padding: 10px 20px;
-            /*border-radius: 30px;*/
-            font-size: 18px;
+    a {
+        text-transform: uppercase;
+        background-color: #51B848;
+        padding: 10px 20px;
+        /*border-radius: 30px;*/
+        font-size: 18px;
+        color: #ffffff;
+        transition: .3s;
+
+        &:hover {
+            background-color: #000000;
             color: #ffffff;
-            transition: .3s;
-
-            &:hover {
-                background-color: #000000;
-                color: #ffffff;
-            }
         }
     }
-    
-    .box{
-      font-weight: bolder;
-      .box-img{
+}
+
+.box {
+    font-weight: bolder;
+
+    .box-img {
         height: 500px;
         background-size: cover;
-      }
-      .box-info{
+    }
+
+    .box-info {
         position: absolute;
         background: #FFF;
         bottom: 0;
         opacity: .6;
         width: 100%;
-        
-      }
-      a, a:visited, a:hover, a:active, a:focus{
-        text-decoration: none;
-        color: inherit;  
-      }
-      .status{
-        color: red;
-      }
-      .title, .price{
-        font-size: 18px;
-      }
+
     }
-.nice-select .list{
+
+    a,
+    a:visited,
+    a:hover,
+    a:active,
+    a:focus {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .status {
+        color: red;
+    }
+
+    .title,
+    .price {
+        font-size: 18px;
+    }
+}
+
+.nice-select .list {
     z-index: 0 !important;
 }
+
 .project-title {
-  z-index: -1000 !important;
+    z-index: -1000 !important;
 }
 
 .contact-link {

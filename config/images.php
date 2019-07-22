@@ -8,5 +8,5 @@ return [
   
   'properties_width'=> 800,
   
-  'properties_height'=> 430,
+  'properties_height'=> 800,
 ];
