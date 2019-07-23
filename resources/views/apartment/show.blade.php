@@ -118,7 +118,7 @@
                                     <p class="contact-sub-info"></p>
                                 </div>
                                 <div class="contact-info-item">
-                                    <textarea name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                                    <textarea name="Mensaje" id="" cols="30" rows="10" placeholder="Estoy interesado/a en contactarlos..."></textarea>
                                     <p class="contact-sub-info"></p>
                                 </div>
                             </div>

@@ -1295,6 +1295,16 @@ img {
     }
 }
 
+.home-social {
+    text-align: center;
+    padding: 25px;
+    a {
+        img {
+            max-width: 60px;
+        }
+    }
+}
+
 /* :: 10.0 Advanced Search Area */
 
 .form-control {
@@ -1751,6 +1761,13 @@ img {
             line-height: 1;
             @include trans-duration(500ms);
         }
+        a {
+            img {
+                width: 600px;
+                height: 600px;
+                max-width: 600px;
+            }
+        }
     }
 
     &:hover {
@@ -1911,7 +1928,7 @@ img {
                     margin-bottom: 0;
                     display: inline-block;
                     color: #ffffff;
-                    font-size: 12px;
+                    font-size: 18px;
                 }
 
                 .top-area {
@@ -1919,7 +1936,7 @@ img {
                     display: inline-block;
                     color: #ffffff;
                     float: right;
-                    font-size: 12px;
+                    font-size: 18px;
                 }
             }
 
@@ -1935,12 +1952,14 @@ img {
                 .bot-status {
                     color: #000000;
                     text-transform: initial;
-                    font-size: 12px;
+                    font-size: 16px;
+                    font-weight: 400;
                 }
 
                 .bot-address {
                     color: #000000;
-                    font-size: 12px;
+                    font-size: 16px;
+                    font-weight: 700;
                 }
             }
         }
@@ -2314,6 +2333,10 @@ img {
         background-color: #dbdbdb;
         font-size: 18px;
 
+        .footer-icons {
+            max-width: 40px;
+        }
+
         .footer-ad-telf {
             @media (max-width: 768px) {
                 margin: 50px 0;
@@ -2322,7 +2345,7 @@ img {
 
         img {
             @media (max-width: 768px) {
-                padding: 30px;
+                /*padding: 30px;*/
             }
         }
 
@@ -3874,8 +3897,11 @@ img {
 
 .investments-page {
     background: #E4E4E4;
+    height: 100%;
 
     .card {
+        background-color: #E4E4E4;
+        border: 0;
         .card-header {
 
             h3 {
@@ -3900,78 +3926,99 @@ img {
                 .container {
                     padding-top: 15px;
                     padding-bottom: 15px;
-
-                    .info-card {
-                        padding-bottom: 10px;
-                        background-image: linear-gradient(to right, #7d7d7d 33%, rgba(255, 255, 255, 0) 0%);
-                        background-position: bottom;
-                        background-size: 6px 2px;
-                        background-repeat: repeat-x;
-
-                        h5 {
-                            font-size: 1.7rem;
-                            font-weight: 700;
-                            color: #007c3e;
+                    .row {
+                        background-color: #fff;
+                        .media-left {
+                            padding: 0;
                         }
+                        .media-mid {
+                            padding: 15px;
+                        }
+                            .info-card {
+                                padding-bottom: 10px;
+                                background-image: linear-gradient(to right, #7d7d7d 33%, rgba(255, 255, 255, 0) 0%);
+                                background-position: bottom;
+                                background-size: 6px 2px;
+                                background-repeat: repeat-x;
 
-                        a {
-                            &:hover {
-                                text-decoration: none;
+                                h5 {
+                                    font-size: 1.7rem;
+                                    font-weight: 700;
+                                    color: #007c3e;
+                                }
+
+                                a {
+                                    &:hover {
+                                        text-decoration: none;
+                                    }
+                                }
+                                p {
+                                    margin-bottom: 0;
+                                }
                             }
-                        }
-                    }
 
-                    a {
-                        &:hover {
-                            text-decoration: none;
-                        }
-                    }
+                            a {
+                                &:hover {
+                                    text-decoration: none;
+                                }
+                            }
 
-                    .btn-more {
-                        width: 70%;
-                        color: #51B848;
-                        border: 1px solid #7d7d7d;
-                        padding: 10px 25px;
-                        text-transform: uppercase;
-                        font-weight: 700;
-                        letter-spacing: 1px;
-                        font-size: 1.4rem;
-                        transition: 0.2s;
-
-                        &:hover {
-                            text-decoration: none;
-                            background-color: #51B848;
-                            color: #fff;
-                            border: #51B848 1px solid;
-                        }
-                    }
-
-                    .details-card {
-                        margin-top: 10px;
-                    }
-
-                    .more-box {
-                        background-image: linear-gradient(#7d7d7d 33%, rgba(255, 255, 255, 0) 0%);
-                        background-position: left;
-                        background-size: 2px 7px;
-                        background-repeat: repeat-y;
-                        padding-left: 20px;
-
-                        h5 {
-                            margin-bottom: 2rem;
-                        }
-
-                        .cta-more {
-                            margin-bottom: 2rem;
-                        }
-
-                        .deliver-box {
-                            .deliver-date {
-                                font-weight: 700;
+                            .btn-more {
+                                width: 70%;
+                                color: #51B848;
+                                border: 1px solid #7d7d7d;
+                                padding: 10px 25px;
                                 text-transform: uppercase;
-                                font-size: 1.2rem;
-                                color: #007c3e;
+                                font-weight: 700;
+                                letter-spacing: 1px;
+                                font-size: 1.4rem;
+                                transition: 0.2s;
+
+                                &:hover {
+                                    text-decoration: none;
+                                    background-color: #51B848;
+                                    color: #fff;
+                                    border: #51B848 1px solid;
+                                }
                             }
+
+                            .details-card {
+                                margin-top: 10px;
+                                p {
+                                    margin-bottom: 0;
+                                }
+                            }
+
+                            .more-box {
+                                background-image: linear-gradient(#7d7d7d 33%, rgba(255, 255, 255, 0) 0%);
+                                background-position: left;
+                                background-size: 2px 7px;
+                                background-repeat: repeat-y;
+                                padding-left: 20px;
+                                @media (max-width: 768px) {
+                                    background-image: none;
+                                    text-align: center;
+                                }
+
+                                h5 {
+                                    margin-bottom: 2rem;
+                                }
+
+                                .cta-more {
+                                    margin-bottom: 2rem;
+                                }
+
+                                .deliver-box {
+                                    .deliver-date {
+                                        font-weight: 700;
+                                        text-transform: uppercase;
+                                        font-size: 1.2rem;
+                                        color: #007c3e;
+                                    }
+                                }
+                            }
+                        .media-right {
+                            padding: 15px;
                         }
                     }
                 }
@@ -4124,6 +4171,7 @@ img {
     .box-img {
         height: 500px;
         background-size: cover;
+        position: relative;
     }
 
     .box-info {

@@ -27,10 +27,10 @@
                             <div class="media-body">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 media-left">
                                         <a href="{{ route('buildings.show', $building->slug) }}"><img src="{{ $building->findOrDefaultImage() }}"></a> 
                                         </div>
-                                        <div class="col-md-6">                              
+                                        <div class="col-md-6 media-mid">                              
                                             <div class="info-card">
                                               <a href="{{ route('buildings.show', $building->slug) }}">
                                                 <h5 class="mt-0"> {{ $building->title }}</h5>
@@ -41,16 +41,16 @@
                                                 <p>{{ str_limit($building->description, 200, '...') }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 media-right">
                                             <div class="more-box">
                                                 <h5>Edificio</h5>
                                                 <div class="cta-more">
                                                         <a class="btn-more" href="{{ route('buildings.show', $building->slug) }}">Ver más</a>            
                                                 </div>
-                                                <!--<div class="deliver-box">
+                                                <div class="deliver-box">
                                                     <h6>Entrega</h6>
                                                     <h6 class="deliver-date">Noviembre 2021</h6>
-                                                </div> -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -64,11 +64,9 @@
                       
                     </div>  
                     <!-- /.card-body -->
-                    @if( count($buildings->count() > 5))
-                      <div class="card-footer">
+                      <!--<div class="card-footer">
                         {{ $buildings->links() }}
-                      </div>
-                    @endif
+                      </div>-->
                 </div>
                 <!-- /.card -->
             </div>
@@ -76,7 +74,7 @@
       </div>
       
     </section>
-    
+    {{--  
     @if( $config['form'] === '1' )
       <div class="container mt-5">
           <div class="row">
@@ -94,3 +92,4 @@
         </div>
       </div>
     @endif
+    --}}
