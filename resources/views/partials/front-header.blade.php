@@ -40,7 +40,7 @@
                             <li><a href="{{ route('investments.index') }}">Inversiones</a></li>
                             <li><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
                             <li><a href="{{ route('credits.index') }}">Crédito</a></li>
-                            <li><a href="mailto:info@urbanrealestate.com.ar">
+                            <li><a href="">
                               <img class="link" src="img/core-img/icContacto.png" alt="">
                             </a></li>
                             

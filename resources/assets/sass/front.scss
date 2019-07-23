@@ -1308,7 +1308,7 @@ img {
     padding: 25px;
     a {
         img {
-            max-width: 60px;
+            max-width: 50px;
         }
     }
 }
@@ -2342,7 +2342,7 @@ img {
 .footer {
 
     .footer-info {
-        padding: 40px 0;
+        padding: 20px 0;
         background-color: #dbdbdb;
         font-size: 18px;
 
@@ -2468,15 +2468,16 @@ img {
                 }
             }
 
-            .logo-box {
-                text-align: center;
-                padding: 10% 0;
-
-                img {
-                    max-width: 25%;
-                }
-            }
+            
         }
+    }
+}
+.logo-box {
+    text-align: center;
+    padding: 10% 0;
+
+    img {
+        max-width: 50%;
     }
 }
 
