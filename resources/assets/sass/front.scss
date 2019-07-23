@@ -1097,6 +1097,14 @@ img {
     width: 100%;
     height: 800px;
 
+    .title-box {
+      position: relative;
+      .hero-slides-content{
+        top: -250px;
+        left: 35px;
+        position: absolute;
+      }
+    }
     // .property-title {
     //     position: absolute;
     //     top: 0;
@@ -1633,6 +1641,11 @@ img {
         height: 350px;
         position: relative;
         z-index: 1;
+        img {
+          height: 100%;
+          width: auto;
+          max-width: fit-content;
+        }
 
         // max-width: 350px;
         // max-height: 250px;

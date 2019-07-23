@@ -5,7 +5,7 @@
                 style="background-image: url({{ asset('/images/slides/').'/'.$slide->filename }});">
                   <a href="{{ $slide->link }}">
                     <div class="container h-100">
-                        <div class="row h-100 align-items-center">
+                        <div class="row h-100 align-items-center title-box">
                             <div class="col-12">
                                 <div class="hero-slides-content">
                                     <h2>{{ $slide->title }}</h2>
