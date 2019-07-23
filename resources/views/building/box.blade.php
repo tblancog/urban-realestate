@@ -4,10 +4,10 @@
             <div class="box-img" style="background-image: url({{ $building->findOrDefaultImage() }});">
             {{-- <div class="box-img" style="background-image: url({{ $building->findOrDefaultImage() }});"> --}}
                 <div class="box-info px-2 py-1">
-                    <div class="row">
+                    <div class="row col-12">
                         <div class="col-6">
-                            <div class="col-12 status text-uppercase">{{ $building->status }}</div>
-                            <div class="col-12 title">{{ $building->title }}</div>
+                            <div class="status text-uppercase">{{ $building->status }}</div>
+                            <div class="title">{{ $building->title }}</div>
                         </div>
                         <div class="col-6">
                             <div class="text-right finance text-uppercase">{{ 'Con financiación'}}</div>
