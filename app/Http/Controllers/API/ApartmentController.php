@@ -20,6 +20,7 @@ class ApartmentController extends Controller
     {
       return Apartment::latest()
                 ->with('images')
+                ->with('building')
                 ->paginate(5);
     }
 
@@ -49,40 +50,39 @@ class ApartmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Building  $building
+     * @param  \App\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function show($building)
+    public function show($apartment)
     {
-        return $building;
+        return $apartment;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Building  $building
+     * @param  \App\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function update(BuildingRequest $request, $id)
+    public function update(ApartmentRequest $request, $apartment)
     {
-        $building = Building::findOrFail($id);
-        $building->update($request->all());
+        $apartment->update($request->all());
         return ['message' => 'Edificio actualizado'];
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Building  $building
+     * @param  \App\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function destroy($building)
+    public function destroy($apartment)
     {
-        $item = Building::where('slug', $building->slug)->first();
+        $item = Apartment::where('slug', $apartment->slug)->first();
 
         $item->delete();
 
-        return ['message' => 'Building deleted'];
+        return ['message' => 'Apartment deleted'];
     }
 }
