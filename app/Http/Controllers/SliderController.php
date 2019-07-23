@@ -33,7 +33,7 @@ class SliderController extends Controller
     public function upload(Request $request){
 
       $files = $request->file('attachments');
-      if(count($files) > 0){
+      if($files && count($files) > 0){
         
           $this->validate($request, [
               'attachments.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2000'
