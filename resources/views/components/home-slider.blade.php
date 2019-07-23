@@ -3,7 +3,7 @@
           @foreach($slides as $slide)
             <div class="single-hero-slide bg-img" 
                 style="background-image: url({{ asset('/images/slides/').'/'.$slide->filename }});">
-                  <a href="mailto:info@urbanrealestate.com.ar">
+                  <a href="">
                     <div class="container h-100">
                         <div class="row h-100 align-items-center title-box">
                             <div class="col-12">
@@ -77,7 +77,7 @@
                                     <div class="px-0">
                                       <div class="form-inline form-contact">
                                           <div class="form-contact">
-                                            <a href="{{ route('contact.index') }}" class="btn">
+                                            <a href="mailto:info@urbanrealestate.com.ar" class="btn">
                                               <div class="img-contact">
                                                 <img src="{{ asset('/img/core-img/icMailto.png') }}" alt="">
                                               </div>

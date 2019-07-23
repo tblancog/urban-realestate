@@ -755,6 +755,15 @@ img {
             padding: 0 25px;
             height: 100%;
         }
+
+        a:hover {
+            -webkit-text-stroke: 1px #000;
+        }
+        &.active {
+            -webkit-text-stroke: 1px #000;
+        }
+
+        
     }
 
     @media (max-width: 991px) {
