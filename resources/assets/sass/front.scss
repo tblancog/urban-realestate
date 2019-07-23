@@ -766,6 +766,10 @@ img {
         
     }
 
+    li:hover {
+        -webkit-text-stroke: 1px #000;
+    }
+
     @media (max-width: 991px) {
         display: none;
     }
