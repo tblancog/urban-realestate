@@ -37,10 +37,10 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul id="desktop-nav">
-                            <li><a class="{{ Request::segment(1)=== 'investments' ? 'active' : '' }}" href="{{ route('investments.index') }}">Inversiones</a></li>
-                            <li><a class="{{ Request::segment(1)=== 'appraisals' ? 'active' : '' }}" href="{{ route('appraisals.index') }}">Tasaciones</a></li>
-                            <li><a class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}" href="{{ route('credits.index') }}">Crédito</a></li>
-                            <li><a class="{{ Request::segment(1)=== 'contact' ? 'active' : '' }}" href="{{ route('contact.index') }}">
+                            <li class="{{ Request::segment(1)=== 'investments' ? 'active' : '' }}"><a href="{{ route('investments.index') }}">Inversiones</a></li>
+                            <li class="{{ Request::segment(1)=== 'appraisals' ? 'active' : '' }}"><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
+                            <li class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}"><a href="{{ route('credits.index') }}">Crédito</a></li>
+                            <li class="{{ Request::segment(1)=== 'contact' ? 'active' : '' }}"><a href="{{ route('contact.index') }}">
                               <img class="link" src="{{ asset('img/core-img/icContacto.png') }}" alt="">
                             </a></li>
                             
