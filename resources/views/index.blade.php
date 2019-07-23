@@ -166,6 +166,17 @@
         
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="home-social">
+                    <a href="#" target="_blank"><img src="/img/icons/icWhatsapp.png" alt="Whatsapp"></a>
+                    <a href="https://facebook.com/urbanpropiedades/AR" target="_blank"><img src="/img/icons/icFacebook.png" alt="Facebook"></a>
+                    <a href="https://instagram.com/urbanpropiedades/AR" target="_blank"><img src="/img/icons/icInstagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- ##### Otras propiedades Area End ##### -->
 
