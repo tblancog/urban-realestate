@@ -940,8 +940,8 @@ img {
     }
 
     .classy-navbar {
-        height: 75px;
-        padding: .5em 60px;
+        height: 110px;
+        padding: 0 60px;
 
         @media #{$breakpoint-md} {
             height: 70px;
@@ -1172,7 +1172,6 @@ img {
         font-size: 45px;
         max-width: 450px;
         padding: .5rem;
-        text-transform: uppercase;
 
         @media #{$breakpoint-md} {
             font-size: 40px;
@@ -1209,6 +1208,11 @@ img {
 
 .hero-area {
 
+    /*
+    position: absolute;
+    top: 0;
+*/
+    margin-top: -7%;
     .owl-prev,
     .owl-next {
         width: 38px;
