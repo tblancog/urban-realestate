@@ -9,7 +9,7 @@
                             <div class="col-12">
                                 <div class="hero-slides-content">
                                     <h2>{{ $slide->title }}</h2>
-                                    {{-- <h4>{{ $slide->subtitle }}</h4> --}}
+                                    <h4>{{ $slide->subtitle }}</h4>
                                 </div>
                             </div>
                         </div>
