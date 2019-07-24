@@ -26,11 +26,11 @@
                         </div>
                     </div>
                     <div class="col-md-6 featured-col">
-                      @if($building->is_featured == '1')
+                        @if($building->is_featured == '1')
                         <div class="featured-box">
                             <span class="featured">Destacado</a>
                         </div>
-                      @endif
+                        @endif
                     </div>
                 </div>
             </div>
@@ -39,11 +39,11 @@
             <div class="dept-price">
                 <h2 class="status">{{ $building->status }}</h2>
                 <h2 class="price">
-                  @if($building->from_price)
+                    @if($building->from_price)
                     <span>Desde </span>
-                  @endif
-                  USD <b>@convert($building->price)</b>
-                
+                    @endif
+                    USD <b>@convert($building->price)</b>
+
                 </h2>
             </div>
         </div>
@@ -67,7 +67,8 @@
                                     <img src="{{ '/uploads/properties/'.$building->slug.'/'.$img->filename }}" alt="" class="property-img"/>
 
                                   @endforeach
-
+                                    
+--}}
                                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Previous</span>
@@ -75,13 +76,22 @@
                                     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Next</span>
-                                    </a>
+                                    </a> 
 
                                 </div>
                                 <!-- main slider carousel nav controls -->
 
-
-
+                                <ul class="carousel-indicators list-inline mx-auto py-2">
+                                  @foreach ( $building->images as $key => $img  )
+                                    <li class="list-inline-item active">
+                                        <a id="carousel-selector-{{ $key }}" class="{{ $key == 0 ? 'selected' : '' }}" data-slide-to="{{ $key + 1 }}"
+                                            data-target="#myCarousel">
+                                            <img src="{{ '/uploads/properties/'.$building->slug.'/'.$img->filename }}" class="img-fluid" style="width: 80px; height: 60px;">
+                                        </a>
+                                    </li>
+                                  @endforeach
+                                  
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -97,7 +107,7 @@
                 <div class="description-bot">
 
                     <p class="description-body">
-                      {{ $building->description }}      
+                        {{ $building->description }}
                     </p>
                 </div>
             </div>
@@ -110,12 +120,12 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-12 box-icons">
-                                  @foreach ($building->amenities as $amenity)
+                                    @foreach ($building->amenities as $amenity)
                                     <div class="col-2 detail-box">
-                                      <img src="/img/icons/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
-                                      <p style="text-transform: capitalize;">{{ $amenity->title }}</p>
+                                        <img src="/img/icons/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
+                                        <p style="text-transform: capitalize;">{{ $amenity->title }}</p>
                                     </div>
-                                  @endforeach
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -166,11 +176,11 @@
             </div>
         </div>
         <div class="col-md-6">
-        
-        <div class="col-md-8">
 
+            <div class="col-md-8">
+
+            </div>
         </div>
-    </div>
     </div>
 </section>
 <!-- ##### Footer Area Start ##### -->
