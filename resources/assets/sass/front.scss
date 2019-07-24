@@ -1229,7 +1229,7 @@ img {
     position: absolute;
     top: 0;
 */
-    margin-top: -135;
+    margin-top: -135px;
     .owl-prev,
     .owl-next {
         width: 38px;
@@ -1427,7 +1427,7 @@ img {
                     .nice-select, 
                     .nice-select ul 
                       {
-                        background-color: rgba(255, 255, 255, 0.5);
+                        background-color: rgba(151, 151, 151, 0.6);
                         // opacity: 0.9;
                     }
 
@@ -1987,8 +1987,8 @@ img {
             }
 
             .other-bot {
-                background-color: rgba(255, 255, 255, 0.8);
-                padding: 5px;
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 15px 0;
                 text-align: center;
 
                 p {
@@ -2000,12 +2000,14 @@ img {
                     text-transform: initial;
                     font-size: 16px;
                     font-weight: 400;
+                    line-height: 21px;
                 }
 
                 .bot-address {
                     color: #000000;
                     font-size: 16px;
                     font-weight: 700;
+                    line-height: 21px;
                 }
             }
         }
@@ -4243,10 +4245,12 @@ img {
         color: red;
     }
 
-    .title,
-    .price {
+    .title, .price {
         font-size: 18px;
+        font-family: MyriadPro-Black;
+        font-weight: bold
     }
+
 }
 
 .nice-select .list {
