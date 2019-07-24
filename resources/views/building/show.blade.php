@@ -58,17 +58,12 @@
                                 <div class="carousel-inner">
                                   @foreach ($building->images as $key => $img )
                                     <div class="{{ $key == 0 ? 'active' : '' }} carousel-item" data-slide-number="{{ $key }}">
-                                        {{-- <img src="{{ asset('/images/uploads/feature-building-detail_1/detail_1.JPG') }}"
-                                            class="img-fluid"> --}}
-                                    {{-- <img class="property-img" src="{{ is_file($building->getImgPath($img->filename)) ? 
-                                        $building->getImgPath($img->filename) : 
-                                        Faker\Factory::create()->imageUrl($width = 640, $height = 480) }}" alt=""> --}}
                                     </div>
                                     <img src="{{ '/uploads/properties/'.$building->slug.'/'.$img->filename }}" alt="" class="property-img"/>
 
                                   @endforeach
                                     
---}}
+
                                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Previous</span>
