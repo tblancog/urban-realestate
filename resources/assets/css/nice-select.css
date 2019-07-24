@@ -163,7 +163,7 @@
 .nice-select .option:hover,
 .nice-select .option.focus,
 .nice-select .option.selected.focus {
-    background-color: #f6f6f6;
+    background-color: #747474;
 }
 
 .nice-select .option.selected {
