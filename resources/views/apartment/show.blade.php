@@ -70,7 +70,17 @@
 
                                 </div>
                                 <!-- main slider carousel nav controls -->
-
+                                
+                               <ul class="carousel-indicators list-inline mx-auto py-2">
+                                  @foreach ( $apartment->images as $key => $img  )
+                                    <li class="list-inline-item active">
+                                        <a id="carousel-selector-{{ $key }}" class="{{ $key == 0 ? 'selected' : '' }}" data-slide-to="{{ $key + 1 }}"
+                                            data-target="#myCarousel">
+                                            <img src="{{ '/uploads/properties/'.$apartment->slug.'/'.$img->filename }}" class="img-fluid" style="width: 80px; height: 60px;">
+                                        </a>
+                                    </li>
+                                  @endforeach
+                                </ul>
 
 
                             </div>
