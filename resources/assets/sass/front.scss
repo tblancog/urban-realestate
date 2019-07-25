@@ -4283,7 +4283,7 @@ img {
 #myCarousel {
   .list-inline {
     white-space: nowrap;
-    overflow-x: auto;
+    overflow: hidden;
   }
   .carousel-indicators {
     position: static;
@@ -4298,11 +4298,6 @@ img {
   }
   .carousel-indicators>li.active img {
     opacity: 0.7;
-  }
-  .carousel-thumbnail {
-    img {
-      overflow: hidden;
-    }
   }
 }
 
