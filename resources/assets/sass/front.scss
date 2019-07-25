@@ -2384,6 +2384,8 @@ img {
 
 .footer {
 
+    background: #edeeee;
+
     .footer-info {
         padding: 20px 0;
         background-color: #dbdbdb;
@@ -3482,6 +3484,7 @@ img {
             background-color: #ffffff;
 
             h2 {
+                font-family: "MyriadPro-Black";
                 margin-bottom: 0;
                 padding: 15px;
                 font-weight: 700;
@@ -3507,11 +3510,8 @@ img {
                     letter-spacing: 1px;
                     text-transform: uppercase;
                     transition: .3s;
+                    font-family: "MyriadPro-Black";
 
-                    &:hover {
-                        background-color: #000000;
-                        color: #ffffff;
-                    }
                 }
             }
         }
@@ -3520,6 +3520,7 @@ img {
     .dept-price {
         margin-bottom: 30px;
         background-color: #ffffff;
+        padding: 7px;
 
         h2 {
             padding: 15px;
@@ -3539,6 +3540,11 @@ img {
             font-size: 1.8rem;
             font-weight: 700;
             padding: 10px;
+           
+            b {
+                font-family: "MyriadPro-Black";
+                font-size: 2.4rem;
+            }
         }
     }
 

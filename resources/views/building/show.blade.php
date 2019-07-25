@@ -40,7 +40,7 @@
                 <h2 class="status">{{ $building->status }}</h2>
                 <h2 class="price">
                     @if($building->from_price)
-                    <span>Desde </span>
+                    <span>desde </span>
                     @endif
                     USD <b>@convert($building->price)</b>
 
