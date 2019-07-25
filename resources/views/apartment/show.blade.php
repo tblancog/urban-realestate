@@ -111,10 +111,13 @@
                     </div>
                 </div>
                 <div class="col-12">
+                    <div class="titForm">
+                        <h3 class="contact-title left">Contacto<!--{{ $apartment->contact_name }}--></h3>
+                        <h3 class="contact-title-2 right">{{ $apartment->contact_phone }}</h3>
+                    </div>
+                    <div class="clear"></div>
                     <div class="dept-contact">
                         <form>
-                            <h3 class="contact-title">Contacto<!--{{ $apartment->contact_name }}--></h3>
-                            <h3 class="contact-title-2">{{ $apartment->contact_phone }}</h3>
                             <div class="contact-info">
                                 <div class="contact-info-item">
                                     <input type="text" placeholder="Nombre">

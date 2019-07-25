@@ -737,6 +737,7 @@ img {
 
         .classy-nav-container {
             background-color: transparent;
+            width: 100%;
 
             .classy-navbar {
                 background-color: rgba(255, 255, 255, 0.3);
@@ -1816,9 +1817,9 @@ img {
         }
         a {
             img {
-                width: 600px;
+               /* width: 600px;
                 height: 600px;
-                max-width: 600px;
+                max-width: 600px;*/
             }
         }
     }
@@ -3596,29 +3597,25 @@ img {
         }
     }
 
-
-
-
-    .dept-contact {
-        padding: 15px 40px;
-
-        .send-box {
-            height: 70px;
-        }
-
+    .titForm {
         .contact-title {
-            display: inline-block;
             text-transform: uppercase;
             font-size: 24px;
             font-weight: 700;
         }
 
         .contact-title-2 {
-            display: inline-block;
-            float: right;
-            margin-bottom: 1.5rem;
             font-size: 24px;
             font-weight: 700;
+        }
+    }
+
+
+    .dept-contact {
+        padding: 40px;
+
+        .send-box {
+            height: 70px;
         }
 
         .contact-info-item {
@@ -4330,3 +4327,7 @@ img {
 .form-group input{
 border: 1px solid #e1dddd !important;
 }
+
+.left{float: left !important;}
+.right{float: right !important;}
+.clear{clear: both !important;}

@@ -166,10 +166,14 @@
                 </div>
             </div>
             <div class="col-12">
-                <div class="dept-contact">
+                    <div class="titForm">
+                        <h3 class="contact-title left">Contacto: {{ $building->contact_name }}</h3>
+                        <h3 class="contact-title-2 right">{{ $building->contact_phone }}</h3>
+                    </div>
+                    <div class="clear"></div>
+                     <div class="dept-contact">
                     <form>
-                    <h3 class="contact-title">Contacto: {{ $building->contact_name }}</h3>
-                        <h3 class="contact-title-2">{{ $building->contact_phone }}</h3>
+                    
                         <div class="contact-info">
                             <div class="contact-info-item">
                                 <input type="text" placeholder="Nombre">
