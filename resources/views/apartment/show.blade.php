@@ -54,7 +54,7 @@
                                       @if(!is_file($apartment->getImgPath($img->filename)))
                                         <img src="{{  Faker\Factory::create()->imageUrl($width = 640, $height = 480) }}" class="img-fluid">
                                       @else
-                                        <img src="{{ $apartment->getImgPath($img->filename) }}" class="img-fluid">
+                                        <img src="{{ asset($apartment->getImgPath($img->filename)) }}" class="img-fluid">
                                       @endif
                                     </div>
                                   @endforeach
@@ -71,11 +71,12 @@
                                 </div>
                                 <!-- main slider carousel nav controls -->
                                 
-                               <ul class="carousel-indicators list-inline mx-auto py-2">
+                               <ul class="carousel-indicators list-inline mx-auto py-2 pull-left">
                                   @foreach ( $apartment->images as $key => $img  )
-                                    <li class="list-inline-item active">
-                                        <a id="carousel-selector-{{ $key }}" class="{{ $key == 0 ? 'selected' : '' }}" data-slide-to="{{ $key + 1 }}"
-                                            data-target="#myCarousel">
+                               <li class="list-inline-item active" data-index="{{ $key }}">
+                                        <a class="carousel-thumbnail {{ $key == 0 ? 'selected' : '' }}" data-slide-to="{{ $key }}"
+                                            data-target="#myCarousel"
+                                            onclick="goToSlide({{ $key }})">
                                             <img src="{{ '/uploads/properties/'.$apartment->slug.'/'.$img->filename }}" class="img-fluid" style="width: 80px; height: 60px;">
                                         </a>
                                     </li>
@@ -233,5 +234,10 @@
 
 @endsection
 
-{{-- @push('scripts')
-@endpush --}}
+@push('scripts')
+  <script>
+    function goToSlide(number) {
+      $("#myCarousel").carousel(number);
+    }
+  </script>
+@endpush
