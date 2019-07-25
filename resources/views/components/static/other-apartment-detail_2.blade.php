@@ -226,10 +226,14 @@
                     </div>
                 </div>
                 <div class="col-12">
+                    <div class="titForm">
+                        <h3 class="contact-title left">Contacto<!--{{ $apartment->contact_name }}--></h3>
+                        <h3 class="contact-title-2 right">{{ $apartment->contact_phone }}</h3>
+                    </div>
+                    <div class="clear"></div>
+                    
                     <div class="dept-contact">
                         <form>
-                            <h3 class="contact-title">Comercializa: María</h3>
-                            <h3 class="contact-title-2">Cel. +549 1153294260</h3>
                             <div class="contact-info">
                                 <div class="contact-info-item">
                                     <input type="text" placeholder="Nombre">
