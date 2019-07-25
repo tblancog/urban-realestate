@@ -14,9 +14,13 @@
                         </div>
                         <!-- /.card-header -->
                         <div v-cloak class="card-body">
-                            <div v-if="slideshow">
+                          <pre>
+
+                            {{ slideshow  }}
+                          </pre>
+                            <div v-if="slideshow.length">
                               <ul class="list-group list-group-flush">
-                                <li v-for="(slide, idx) in slideshow" v-bind:key="idx" class="list-group-item">
+                                <!-- <li v-for="(slide, idx) in slideshow" v-bind:key="idx" class="list-group-item">
                                     <h3>{{ 'Slide '+idx }}</h3>
                                     <div class="row">
 
@@ -55,7 +59,7 @@
                                             <button type="button" class="btn btn-danger" @click="removeSlide(idx)"> Borrar </button>
                                         </div>
                                     </div>
-                                </li>
+                                </li> -->
                               </ul>
                             </div>
                             <div v-else>

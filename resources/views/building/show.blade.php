@@ -58,33 +58,36 @@
                                 <div class="carousel-inner">
                                   @foreach ($building->images as $key => $img )
                                     <div class="{{ $key == 0 ? 'active' : '' }} carousel-item" data-slide-number="{{ $key }}">
+                                      @if(!is_file($building->getImgPath($img->filename)))
+                                        <img src="{{  Faker\Factory::create()->imageUrl($width = 640, $height = 480) }}" class="img-fluid">
+                                      @else
+                                        <img src="{{ asset($building->getImgPath($img->filename)) }}" class="img-fluid">
+                                      @endif
                                     </div>
-                                    <img src="{{ '/uploads/properties/'.$building->slug.'/'.$img->filename }}" alt="" class="property-img"/>
-
                                   @endforeach
-                                    
-
-                                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a> 
-
+                                  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Previous</span>
+                                  </a>
+                                  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Next</span>
+                                  </a> 
                                 </div>
                                 <!-- main slider carousel nav controls -->
 
-                                <ul class="carousel-indicators list-inline mx-auto py-2">
-                                  @foreach ( $building->images as $key => $img  )
-                                    <li class="list-inline-item active">
-                                        <a id="carousel-selector-{{ $key }}" class="{{ $key == 0 ? 'selected' : '' }}" data-slide-to="{{ $key + 1 }}"
-                                            data-target="#myCarousel">
-                                            <img src="{{ '/uploads/properties/'.$building->slug.'/'.$img->filename }}" class="img-fluid" style="width: 80px; height: 60px;">
+                                <!-- main slider carousel nav controls -->
+                                <ul class="carousel-indicators list-inline mx-auto py-2 pull-left">
+                                    @foreach ( $building->images as $key => $img )
+                                    <li class="list-inline-item active" data-index="{{ $key }}">
+                                        <a class="carousel-thumbnail {{ $key == 0 ? 'selected' : '' }}"
+                                            data-slide-to="{{ $key }}" data-target="#myCarousel"
+                                            onclick="goToSlide({{ $key }})">
+                                            <img src="{{ '/uploads/properties/'.$building->slug.'/'.$img->filename }}"
+                                                class="img-fluid" style="width: 80px; height: 60px;">
                                         </a>
                                     </li>
-                                  @endforeach
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
