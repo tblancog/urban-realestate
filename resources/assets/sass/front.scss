@@ -2015,6 +2015,7 @@ img {
                     font-size: 16px;
                     font-weight: 700;
                     line-height: 21px;
+                    font-family: "MyriadPro-Black";
                 }
             }
         }
@@ -4249,7 +4250,7 @@ img {
     }
 
     .finance{
-        font-family: MyriadPro-Black;
+        font-family: "MyriadPro-Black";
     }
     .status {
         color: #cf0000;
@@ -4314,4 +4315,8 @@ img {
     border-style: solid;
     border-width: 10px 10px 0 10px;
     border-color: #ffffff transparent transparent transparent;
+}
+
+.form-group input{
+border: 1px solid #e1dddd !important;
 }
