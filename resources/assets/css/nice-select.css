@@ -38,25 +38,6 @@
     border-color: #999;
 }
 
-.nice-select:after {
-    content: '';
-    display: block;
-    pointer-events: none;
-    position: absolute;
-    right: 18px;
-    top: 50%;
-    -webkit-transform-origin: 66% 66%;
-    transform-origin: 66% 66%;
-    -webkit-transition: all 0.15s ease-in-out;
-    transition: all 0.15s ease-in-out;
-
-    width: 0;
-height: 0;
-border-style: solid;
-border-width: 10px 10px 0 10px;
-border-color: #ffffff transparent transparent transparent;
-}
-
 .nice-select.open:after {
     -webkit-transform: rotate(-180deg);
     -ms-transform: rotate(-180deg);
