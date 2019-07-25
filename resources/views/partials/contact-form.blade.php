@@ -7,9 +7,11 @@
             <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido">
         </div>
     </div>
+    <!--
     <div class="form-group">
         <input type="text" class="form-control" id="inputAddress" placeholder="Dirección">
     </div>
+    -->
     <div class="form-group">
         <input type="text" class="form-control" id="inputAddress2" placeholder="Teléfono">
     </div>
@@ -21,6 +23,6 @@
             placeholder="Estoy interesado en contactarlos" rows="3"></textarea>
     </div>
     <button type="submit" class="btn btn-verde">
-        Entrar
+        ENVIAR
     </button>
 </form>

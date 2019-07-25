@@ -4111,7 +4111,7 @@ img {
 
         &::after {
             content: '';
-            display: block;
+            display: none;
             border-bottom: 6px solid #51B848;
             width: 50%;
             margin: auto;
@@ -4121,15 +4121,19 @@ img {
 
     form {
         margin-top: 50px;
+        overflow: hidden;
 
         textarea {
             height: auto;
         }
 
         .btn {
+            text-decoration: none;
+    background-color: #51B848;
+    color: #fff;
+    border: #51B848 1px solid;
+
             float: right;
-            background-color: #7c7c7c;
-            color: #fff;
             font-size: 1rem;
             font-weight: 700;
             letter-spacing: 1px;
@@ -4143,7 +4147,8 @@ img {
     }
 
     .appraisals-bottom {
-        margin-top: 85px;
+        margin: 30px 0 50px;
+        text-align: left !important;
     }
 }
 
@@ -4319,7 +4324,7 @@ img {
     border-color: #ffffff transparent transparent transparent;
 }
 
-.form-group input{
+.form-group input, .form-group textarea{
 border: 1px solid #e1dddd !important;
 }
 
