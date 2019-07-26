@@ -11,6 +11,10 @@
 <!-- ##### Front Header Area End ##### -->
 
 
+ <!-- ##### Advance Search Area Start ##### -->
+@include('components.search-area')
+<!-- ##### Advance Search Area End ##### -->
+
 <!-- ##### Hero Area Start ##### -->
 <section class="hero-area">
    @include('components.home-slider', ['slides'=> $slides])
