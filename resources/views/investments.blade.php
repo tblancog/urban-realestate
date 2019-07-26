@@ -35,7 +35,9 @@
                                               <a href="{{ route('buildings.show', $building->slug) }}">
                                                 <h5 class="mt-0"> {{ $building->title }}</h5>
                                               </a>
-                                            <p>{{ $building->address }} | {{ $building->apartments->first()->location }} </p> 
+                                            <p>{{ $building->address }} 
+                                              {{-- | {{ $building->apartments->first()->location }}  --}}
+                                            </p> 
                                             </div>
                                             <div class="details-card">
                                                 <p>{{ str_limit($building->description, 200, '...') }}</p>
