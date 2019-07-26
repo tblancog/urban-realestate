@@ -1405,12 +1405,15 @@ img {
 }
 
 .south-search-area {
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: 9999;
+    top: 75%;
+    width: 100%;
 
 
     @media (min-width: 1250px) {
-        margin-top: -10%;
+       
+       // margin-top: -10%;
 
         .container {
             margin: 0;
