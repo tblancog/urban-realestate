@@ -66,5 +66,5 @@ Route::get('/nosotros', 'HomeController@staticPage')->name('nosotros.index');
 // Fallback page
 Route::get('/{path}',function(){
   return redirect('/dashboard');
-})->where( 'path', '([A-z\d-/_.]+)?' );
+})->where( 'path', '([A-z\d\-/_.]+)?' );
 

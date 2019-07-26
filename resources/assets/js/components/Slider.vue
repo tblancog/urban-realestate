@@ -14,32 +14,28 @@
                         </div>
                         <!-- /.card-header -->
                         <div v-cloak class="card-body">
-                          <pre>
-
-                            {{ slideshow  }}
-                          </pre>
-                            <div v-if="slideshow.length">
+                          <!-- {{ slideshow.length > 0 ? slideshow : 'Still loading' }} -->
+                            <div v-if="slideshow.length > 0">
                               <ul class="list-group list-group-flush">
-                                <!-- <li v-for="(slide, idx) in slideshow" v-bind:key="idx" class="list-group-item">
+                                <li v-for="(slide, idx) in slideshow" :key="idx" class="list-group-item">
                                     <h3>{{ 'Slide '+idx }}</h3>
                                     <div class="row">
-
                                         <div class="col-md-9">
                                             <div class="form-group">
                                                 <label :for="slide.title+idx">Título</label>
-                                                <input :id="slide.title.idx" class="form-control" type="text"
+                                                <input :id="slide.title+idx" class="form-control" type="text"
                                                     v-model="slide.title" />
                                             </div>
 
                                             <div class="form-group">
                                                 <label :for="slide.subtitle+idx">Subtítulo</label>
-                                                <input :id="slide.subtitle.idx" class="form-control" type="text"
+                                                <input :id="slide.subtitle+idx" class="form-control" type="text"
                                                     v-model="slide.subtitle" />
                                             </div>
 
                                             <div class="form-group">
                                                 <label :for="slide.link+idx">Link</label>
-                                                <input :id="slide.link.idx" class="form-control" type="text"
+                                                <input :id="slide.link+idx" class="form-control" type="text"
                                                     v-model="slide.link" />
                                             </div>
                                         </div>
@@ -59,7 +55,7 @@
                                             <button type="button" class="btn btn-danger" @click="removeSlide(idx)"> Borrar </button>
                                         </div>
                                     </div>
-                                </li> -->
+                                </li>
                               </ul>
                             </div>
                             <div v-else>
@@ -181,8 +177,7 @@
             }
         },
         created(){
-          axios.get('/get-sliders').then( (res) => {
-            // this.slideshow = res.data
+          axios.get('/get-sliders').then( (res) => {  
             this.slideshow = res.data.sliders.map( (el)=> {
               return {
                   title: el.title,
