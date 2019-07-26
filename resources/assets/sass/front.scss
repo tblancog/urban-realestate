@@ -1283,7 +1283,7 @@ img {
 
         @media #{$breakpoint-lg} {
             width: calc(100% - 6%);
-            left: 5%;
+            //left: 5%;
             @include transform (translateX(0%));
         }
 
@@ -1325,7 +1325,7 @@ img {
     }
 
     @media (min-width: 992px) and (max-width: 1250px) {
-        padding-top: 100px;
+        //padding-top: 100px;
     }
 }
 
@@ -3552,6 +3552,7 @@ img {
         }
     }
 
+
     .dept-slider {
         padding: 30px;
     }
@@ -4334,3 +4335,8 @@ border: 1px solid #e1dddd !important;
 .left{float: left !important;}
 .right{float: right !important;}
 .clear{clear: both !important;}
+
+
+.south-search-area .container .row .advanced-search-form .nice-select, .south-search-area .container .row .advanced-search-form .nice-select ul {
+    background-color: rgba(255, 255, 255, 0.5);
+}
