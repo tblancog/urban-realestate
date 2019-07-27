@@ -66,7 +66,7 @@ class BuildingController extends Controller
     public function update(BuildingRequest $request, Building $building)
     {
         $building->update($request->all());
-        return ['message' => 'Edificio actualizado'];
+        return ['message' => 'Edificio actualizado', 'id'=> $building->id];
     }
 
     /**
