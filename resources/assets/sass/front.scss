@@ -4345,6 +4345,7 @@ img {
     margin-bottom: 0;
     background: red;
     overflow: inherit !important;
+    z-index: 8888;
 }
 
 .form-group input, .form-group textarea{
@@ -4356,6 +4357,16 @@ border: 1px solid #e1dddd !important;
 .clear{clear: both !important;}
 
 
+.south-search-area, .south-search-area  {
+    @media only screen and (max-width: 677px) and (min-width: 375px) {
+       top: 10%
+    }
+
+    @media only screen and (max-width: 568px) and (min-width: 320px) {
+        top: 44%;
+    }
+}
+
 .south-search-area .container .row .advanced-search-form .nice-select, .south-search-area .container .row .advanced-search-form .nice-select ul {
     background-color: rgba(255, 255, 255, 0.5);
     width: 100%;
@@ -4364,12 +4375,16 @@ border: 1px solid #e1dddd !important;
         margin: 0 0 10px 0;
         width: 335px;
         margin-bottom: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 9999;
     }
 
-    @media only screen and (max-width: 320px) and (min-width: 568px) {
+    @media only screen and (max-width: 568px) and (min-width: 320px) {
         margin: 0 0 10px 0;
-        width: 335px;
+        width: 286px;
         margin-bottom: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 9999;
     }
 
 
