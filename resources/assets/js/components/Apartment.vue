@@ -19,7 +19,8 @@
                                         <div class="col-md-3 col-sm-12 cropped">
                                             <a data-toggle="modal" data-target="#exampleModalLong" href="#"
                                                 @click="selected = apartment">
-                                                <img v-if="apartment.images" :src="image_path(apartment)"
+                                                <img v-if="apartment.images" 
+                                                  :src="apartment.images[0].path"
                                                     class="img-fluid" />
                                             </a>
                                         </div>
@@ -88,14 +89,14 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    
                     <form @submit.prevent="editmode ? updateItem(selected) : createItem()">
                         <div class="modal-body">
-
 
                             <!-- Image uploader -->
                             <div class="form-group col-lg-12">
                                 <image-uploader 
-                                  :files="form.files" 
+                                  :files="files" 
                                   :images="form.images"/>
                             </div>
 
@@ -278,6 +279,7 @@
                 apartments: {},
                 amenities: [],
                 selectedBuilding: {},
+                files: [],
                 form: new Form({
                     id: '',
                     title: '',
@@ -295,7 +297,6 @@
 
                     description: '',
                     status: '',
-                    files: [],
                     images: [],
                     amenities: [],
                     contact_name: '',
@@ -311,17 +312,24 @@
                 axios.get('api/apartments?page=' + page)
                     .then(response => {
                         this.apartments = response.data;
+                        let newImgArr = [];
+                        res1.data.data.forEach( (current, index)=> {
+                          current.images.forEach((img, idx) => {
+                              newImgArr.push(img.path);
+                          });
+                        });
+
+                        this.apartments.images = newImgArr;
                     });
             },
             updateItem(selected) {
                 this.$Progress.start();
                 const formData = new FormData()
-                if (this.form.files && this.form.files.length > 0) {
-                    this.form.files.forEach(file => {
+                if (this.files && this.files.length > 0) {
+                    this.files.forEach(file => {
                         formData.append('images[]', file, file.name)
                     })
                 }
-
 
                 this.form.put('api/apartments/' + selected.slug)
                     .then(() => {
@@ -405,7 +413,16 @@
                 axios.get('amenities')
               ]).then(
                 axios.spread(function(res1, res2){
-                  vm.apartments = res1.data
+                  vm.apartments = res1.data;
+
+                  let newImgArr = [];
+                  res1.data.data.forEach( (current, index)=> {
+                    current.images.forEach((img, idx) => {
+                        newImgArr.push(img.path);
+                    });
+                  });
+
+                  vm.apartments.images = newImgArr;
                   vm.amenities = res2.data
                 })
               );
@@ -414,8 +431,8 @@
             createItem() {
                 this.$Progress.start()
                 const formData = new FormData()
-                if (this.form.files && this.form.files.length > 0) {
-                    this.form.files.forEach(file => {
+                if (this.files && this.files.length > 0) {
+                    this.files.forEach(file => {
                         formData.append('images[]', file, file.name)
                     })
                 }
@@ -442,9 +459,9 @@
             },
         },
         created() {
+            this.files = []
             axios.get('/api/buildings/list')
                   .then( (res) => {
-                    console.log(res.data)
                       this.form.buildings = res.data
                    })
             // Fire.$on('searching', () => {

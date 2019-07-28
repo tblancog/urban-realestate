@@ -68,7 +68,8 @@ class ApartmentController extends Controller
     public function update(ApartmentRequest $request, $apartment)
     {
         $apartment->update($request->all());
-        return ['message' => 'Edificio actualizado'];
+        return response()->json(['message' => 'Departamento creado', 'id'=> $apartment->id], 200);
+
     }
 
     /**
