@@ -25,7 +25,7 @@
         <div class="images-preview" v-if="images.length">
             <div class="img-wrapper" v-for="(image, index) in images" :key="index">
                 <span class="remove-img" @click="removeImage(index)">&times;</span>
-                <img :src="image.path" :alt="`Image Uplaoder ${index}`">
+                <img :src="image.path" :alt="`Image Uploader ${index}`">
             </div>
         </div>
     </div>
@@ -73,7 +73,6 @@ export default {
                 this.$toastr.e(`${file.name} is not an image`);
                 return;
             }
-
             this.files.push(file);
             const img = new Image(),
             reader = new FileReader();
@@ -91,8 +90,14 @@ export default {
             return `${(Math.round(size * 100) / 100)} ${fSExt[i]}`;
         },
         removeImage(idx) {
-          this.files.splice(idx, 1)
-          this.images.splice(idx, 1)
+          if(this.images.length > 1 || this.files.length > 1) {
+            // Check if image comes from backend if so then emit and delete
+            if(this.images[idx].hasOwnProperty('id') ) { 
+              this.$emit('imageDeleted', this.images[idx])
+            }
+            this.files.splice(idx, 1)
+            this.images.splice(idx, 1)
+          }
         }
     }
 }

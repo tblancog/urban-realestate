@@ -83,7 +83,6 @@ class ApartmentController extends Controller
         $item = Apartment::where('slug', $apartment->slug)->first();
 
         $item->delete();
-
         return ['message' => 'Apartment deleted'];
     }
 }

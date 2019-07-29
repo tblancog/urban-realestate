@@ -13,24 +13,19 @@ use Illuminate\Http\Request;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
-// Route::apiResources(['user' => 'API\UserController']);
 Route::get('buildings/list', 'API\BuildingController@buildingList');
-// Route::get('amenities', 'API\BuildingController@index');
-// Route::apiResources(['buildings' => 'API\BuildingController']);
 Route::resource('buildings', 'API\BuildingController')
        ->only('index','store', 'update', 'destroy')
        ->names(['index'=> '']);
+
+// Apartment or building images  
+Route::delete('images/{id}/apartment', 'ImageController@destroyApartmentImage');
+// Route::delete('images/{id}/building', 'ImageController@destroyBuildingImage');
+
 Route::resource('apartments', 'API\ApartmentController')
         ->only('index', 'store', 'update', 'destroy')
         ->names(['index'=> '']);
 Route::resource('config', 'API\ConfigController')->only('index','update');
-
-// Route::get('findUser', 'API\UserController@search');
-// Route::put('profile', 'API\UserController@updateProfile');
 
 
 

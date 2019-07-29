@@ -19,7 +19,7 @@
                                         <div class="col-md-3 col-sm-12 cropped">
                                             <a data-toggle="modal" data-target="#exampleModalLong" href="#"
                                                 @click="selected = apartment">
-                                                <img v-if="apartment.images" 
+                                                <img v-if="apartment.images.length" 
                                                   :src="apartment.images[0].path"
                                                     class="img-fluid" />
                                             </a>
@@ -95,7 +95,8 @@
 
                             <!-- Image uploader -->
                             <div class="form-group col-lg-12">
-                                <image-uploader 
+                                <image-uploader
+                                  v-on:imageDeleted="deleteImage($event)" 
                                   :files="files" 
                                   :images="form.images"/>
                             </div>
@@ -332,8 +333,9 @@
                 }
 
                 this.form.put('api/apartments/' + selected.slug)
-                    .then(() => {
-
+                    .then((res) => {
+                        formData.append('id', res.data.id)
+                        formData.append('type', 'apartment')
                         axios.post('images-upload', formData)
                             .then(() => {
                                 Fire.$emit('AfterCreate');
@@ -401,11 +403,10 @@
                     }
                 })
             },
-            // loadItems() {
-            //     axios.get("api/apartments").then(({
-            //         data
-            //     }) => (this.apartments = data));
-            // },
+            deleteImage(event) {
+              const id = event.id
+              this.form.delete('api/images/'+ id +'/apartment/')
+            },
             async loadItems() {
               let vm = this
               axios.all([
