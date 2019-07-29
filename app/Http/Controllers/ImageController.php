@@ -23,9 +23,6 @@ class ImageController extends Controller
     if (count($request->images) > 0) {
            
       
-      // Flush pictures folder if any
-      \Storage::deleteDirectory(config('images.properties_upload_path').$property->slug);
-
       // Create new directory
       \Storage::makeDirectory(config('images.properties_upload_path').$property->slug);
       $image_path = config('images.properties_upload_path').$property->slug;
@@ -46,5 +43,14 @@ class ImageController extends Controller
       });
     } 
     return response()->json(['msg'=> 'Success'], 201);
+  }
+  
+  public function destroyApartmentImage($id) {
+    $img = ApartmentImage::findOrFail($id);
+    $result = false;
+    if($img) {
+      $result = \Storage::delete($img->path) && $img->delete();
+    }
+    return response()->json(['msg'=> 'Delete', compact('result')], 202);
   }
 }

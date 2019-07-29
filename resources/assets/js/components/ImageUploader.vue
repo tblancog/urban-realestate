@@ -22,12 +22,10 @@
             </div>
         </div>
 
-        <div class="images-preview" v-if="images">
+        <div class="images-preview" v-if="images.length">
             <div class="img-wrapper" v-for="(image, index) in images" :key="index">
-                <img :src="image" :alt="`Image Uplaoder ${index}`">
-                <div class="details">
-                    <span class="size" v-text="getFileSize(files[index].size)"></span>
-                </div>
+                <span class="remove-img" @click="removeImage(index)">&times;</span>
+                <img :src="image.path" :alt="`Image Uploader ${index}`">
             </div>
         </div>
     </div>
@@ -77,8 +75,8 @@ export default {
             }
             this.files.push(file);
             const img = new Image(),
-                reader = new FileReader();
-            reader.onload = (e) => this.images.push(e.target.result);
+            reader = new FileReader();
+            reader.onload = (e) => this.images.push({ path: e.target.result });
             reader.readAsDataURL(file);
         },
         getFileSize(size) {
@@ -91,20 +89,15 @@ export default {
             }
             return `${(Math.round(size * 100) / 100)} ${fSExt[i]}`;
         },
-        upload() {
-            // const formData = new FormData();
-            
-            // this.files.forEach(file => {
-            //     formData.append('images[]', file, file.name);
-            // });
-            // console.log('ImageUploader.files')
-            // console.log(this.files)
-            // axios.post('/images-upload', formData)
-            //     .then(response => {
-            //         this.$toastr.s('All images uplaoded successfully');
-            //         this.images = [];
-            //         this.files = [];
-            //     })
+        removeImage(idx) {
+          if(this.images.length > 1 || this.files.length > 1) {
+            // Check if image comes from backend if so then emit and delete
+            if(this.images[idx].hasOwnProperty('id') ) { 
+              this.$emit('imageDeleted', this.images[idx])
+            }
+            this.files.splice(idx, 1)
+            this.images.splice(idx, 1)
+          }
         }
     }
 }
@@ -161,6 +154,7 @@ export default {
         flex-wrap: wrap;
         margin-top: 20px;
         .img-wrapper {
+            position: relative;
             width: 160px;
             display: flex;
             flex-direction: column;
@@ -170,8 +164,14 @@ export default {
             background: #fff;
             box-shadow: 5px 5px 20px #3e3737;
             img {
-                max-height: 105px;
+                max-height: 160px;
             }
+        }
+        .remove-img {
+          position: absolute;
+          cursor: pointer;
+          right: 0;
+          padding: 0 5px;
         }
         .details {
             font-size: 12px;
