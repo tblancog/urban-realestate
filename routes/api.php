@@ -20,7 +20,7 @@ Route::resource('buildings', 'API\BuildingController')
 
 // Apartment or building images  
 Route::delete('images/{id}/apartment', 'ImageController@destroyApartmentImage');
-// Route::delete('images/{id}/building', 'ImageController@destroyBuildingImage');
+Route::delete('images/{id}/building', 'ImageController@destroyBuildingImage');
 
 Route::resource('apartments', 'API\ApartmentController')
         ->only('index', 'store', 'update', 'destroy')

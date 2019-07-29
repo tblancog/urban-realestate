@@ -18,7 +18,9 @@
                                   <div class="row">
                                       <div class="col-md-3 col-sm-12 cropped">
                                       <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
-                                        <img v-if="building.images" :src="image_path(building)" class="img-fluid"/>
+                                        <img v-if="building.images.length" 
+                                              :src="building.images[0].path" 
+                                              class="img-fluid"/>
                                       </a>
                                       </div>
                                       <div class="col-md-6">                              
@@ -91,7 +93,10 @@
                             
                             <!-- Image uploader -->
                             <div class="form-group col-lg-12">
-                              <image-uploader :files="form.files" :images="form.images"></image-uploader>
+                              <image-uploader 
+                                 v-on:imageDeleted="deleteImage($event)"
+                                :files="files" 
+                                :images="form.images"></image-uploader>
                             </div>
                             <!-- Title -->
                             <div class="form-group col-lg-9">
@@ -236,6 +241,7 @@
                 selected: {},
                 buildings: {},
                 amenities: [],
+                files: [],
                 form: new Form({
                     id: '',
                     title: '',
@@ -246,7 +252,6 @@
                     description: '',
                     status: '',
                     is_featured: '0',
-                    files: [],
                     images: [],
                     amenities: [],
                     contact_name: '',
@@ -259,13 +264,21 @@
                 axios.get('api/buildings?page=' + page)
                     .then(response => {
                         this.buildings = response.data;
+                        let newImgArr = [];
+                        res1.data.data.forEach( (current, index)=> {
+                          current.images.forEach((img, idx) => {
+                              newImgArr.push(img.path);
+                          });
+                        });
+
+                        this.buildings.images = newImgArr;
                     });
             },
             updateItem(selected) {
               this.$Progress.start();
               const formData = new FormData()
-              if(this.form.files && this.form.files.length > 0){
-                this.form.files.forEach(file => {
+              if(this.files && this.files.length > 0){
+                this.files.forEach(file => {
                     formData.append('images[]', file, file.name)
                 })
               }
@@ -273,10 +286,10 @@
 
                 this.form.put('api/buildings/' + selected.slug)
                     .then( (res) => {
-                      
                   formData.append('id', res.data.id)
                   formData.append('type', 'building')
-
+                      // console.log(formData)
+                      // return 
                       axios.post('images-upload', formData)
                           .then(()=> {
                             Fire.$emit('AfterCreate');
@@ -338,6 +351,10 @@
                     }
                 })
             },
+            deleteImage(event) {
+              const id = event.id
+              this.form.delete('api/images/'+ id +'/building/')
+            },
             async loadItems() {
               let vm = this
               axios.all([
@@ -346,6 +363,14 @@
               ]).then(
                 axios.spread(function(res1, res2){
                   vm.buildings = res1.data
+                  let newImgArr = [];
+                  res1.data.data.forEach( (current, index)=> {
+                    current.images.forEach((img, idx) => {
+                        newImgArr.push(img.path);
+                    });
+                  });
+
+                  vm.buildings.images = newImgArr;
                   vm.amenities = res2.data
                 })
               );
@@ -354,8 +379,8 @@
             createItem() {
               this.$Progress.start()
               const formData = new FormData()
-              if(this.form.files && this.form.files.length > 0){
-                this.form.files.forEach(file => {
+              if(this.files && this.files.length > 0){
+                this.files.forEach(file => {
                     formData.append('images[]', file, file.name)
                 })
               }

@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
 use App\Observers\ApartmentObserver;
 use App\Apartment;
+use App\Observers\BuildingObserver;
+use App\Building;
 
 
 
@@ -25,6 +27,9 @@ class AppServiceProvider extends ServiceProvider
 
         // Apartment Observer
         Apartment::observe(ApartmentObserver::class);
+       
+        // Building Observer
+        Building::observe(BuildingObserver::class);
     }
 
     /**
