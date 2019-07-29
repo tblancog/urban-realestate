@@ -62,7 +62,7 @@
                             <li><a href="{{ route('buildings.index') }}">Inversiones</a></li>
                             <li><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
                             <li><a href="{{ route('credits.index') }}">Crédito</a></li>
-                            <li><a href="{{ route('contact.index') }}">Contácto</i></a></li>
+                            <li><a href="{{ route('contact.index') }}">Contacto</i></a></li>
                             <li><a href="{{ route('nosotros.index')  }}">Nosotros</a></li>
                             <li><a href="#real-estate">Propiedades</a></li>
                             <li><a href="#real-estate_featured">Destacados</a></li>

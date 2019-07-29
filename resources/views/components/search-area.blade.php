@@ -16,6 +16,7 @@
                             <div class="col-md-6 col-lg-2 px-0">
                               <div class="form-group">
                                 <select class="form-control" name="status" id="status" placeholder="Comprar">
+                                  <option>Operacion</option>
                                   <option>Venta</option>
                                   <option>Alquiler</option>
                                 </select>
@@ -25,6 +26,7 @@
                             <div class="col-md-6 col-lg-2 px-0">
                                 <div class="form-group">
                                     <select name="type" class="form-control" id="type">
+                                        <option>Tipo</option>
                                         <option>Departamento</option>
                                         <option>Casa</option>
                                         <option>Local</option>
@@ -35,7 +37,7 @@
                             <div class="col-md-6 col-lg-4 px-0">
                                 <div class="form-group">
                                   <select name="location" class="form-control" id="location">
-                                      <option value="">Ingrese Zona, Localidad o Provincia</option>
+                                      <option value="">Zona</option>
                                       @foreach ($locations as $location)
                                           <option value="{{ $location->location }}">{{ $location->location }}</option>
                                       @endforeach
