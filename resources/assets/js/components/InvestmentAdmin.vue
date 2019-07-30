@@ -5,7 +5,7 @@
                 <div class="card">
                     <form action="">
                         <div class="card-header">
-                            <h3 class="card-title"> Administración de página Inversiones </h3>
+                            <h3 class="card-title">Inversiones</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-9">

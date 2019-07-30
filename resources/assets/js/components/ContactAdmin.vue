@@ -5,7 +5,7 @@
                 <div class="card">
                     <form action="">
                         <div class="card-header">
-                            <h3 class="card-title"> Administración de página Contacto </h3>
+                            <h3 class="card-title">Contacto</h3>
                         </div>
                         <div class="card-body">
                             <div class="col-md-9">
