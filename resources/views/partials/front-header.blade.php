@@ -59,7 +59,7 @@
                         </ul>
 
                         <ul id="mobile-nav">
-                            <li><a href="{{ route('buildings.index') }}">Inversiones</a></li>
+                            <li><a href="{{ route('investments.index') }}">Inversiones</a></li>
                             <li><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
                             <li><a href="{{ route('credits.index') }}">Crédito</a></li>
                             <li><a href="{{ route('contact.index') }}">Contacto</i></a></li>
