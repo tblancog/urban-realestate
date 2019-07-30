@@ -21,16 +21,16 @@
             <div class="col-md-12">
               <div class="appraisals-title">
                 <h2>{{ $config['title'] }}</h2>
-              <!--Directora Comercial: María Ester   Cel. +54 9 11 5329-4260   Mail. info@urbanrealestate.com.ar
-               Contamos con propiedades aptas crédito, y podemos acompañarte en el proceso de búsqueda de la mejor opción de crédito.
-                No dudes en consultar sin compromiso, te daremos el mejor asesoramiento.-->
+              </div>
+               <div class="appraisals-bottom text-center">
+                <p>{{ $config['top_text'] }}</p>
               </div>
                 @if( $config['form'] === '1' )
                   @include ('partials.contact-form')
                 @endif
                 <div class="appraisals-bottom text-center">
                    <p>
-                       {{ $config['subtitle'] }}
+                       {{ $config['bottom_text'] }}
                    </p>
                 </div>
             </div>

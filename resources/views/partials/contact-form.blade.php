@@ -22,7 +22,7 @@
         <textarea rows="4" class="form-control" id="exampleFormControlTextarea1"
             placeholder="Estoy interesado en contactarlos" rows="3"></textarea>
     </div>
-    <button type="submit" class="btn btn-verde">
+  <button type="submit" class="btn btn-verde">
         ENVIAR
     </button>
 </form>
