@@ -14,20 +14,28 @@ class ConfigTableSeeder extends Seeder
     {
 
       $data = [
+        // Investments
         [ 'module'=> 'investments', 'key' => 'title', 'value'=> 'Inversiones'],
-        [ 'module'=> 'investments', 'key' => 'subtitle', 'value'=> 'Si estas interesado en realizar una inversión planificada, tenemos múltiples opciones de corto, mediano o largo plazo. Contactáte con nosotros y con gusto podremos asesorarte.'],
+        [ 'module'=> 'investments', 'key' => 'top_text', 'value'=> 'Si estas interesado en realizar una inversión planificada, tenemos múltiples opciones de corto, mediano o largo plazo. Contactáte con nosotros y con gusto podremos asesorarte.'],
+        [ 'module'=> 'investments', 'key' => 'button_text', 'value'=> ''],
         [ 'module'=> 'investments', 'key' => 'form', 'value'=> 1],
-
+        
+        // Appraissals
         [ 'module'=> 'appraisals', 'key' => 'title', 'value'=> 'Tasaciones'],
-        [ 'module'=> 'appraisals', 'key' => 'subtitle', 'value'=> 'Contacto Comercial: +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
+        [ 'module'=> 'appraisals', 'key' => 'top_text', 'value'=> 'Contacto Comercial: +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
+        [ 'module'=> 'appraisals', 'key' => 'button_text', 'value'=> ''],
         [ 'module'=> 'appraisals', 'key' => 'form', 'value'=> 1],
 
+        // Credits
         [ 'module'=> 'credits', 'key' => 'title', 'value'=> 'Créditos'],
-        [ 'module'=> 'credits', 'key' => 'subtitle', 'value'=> 'Contacto Comercial: +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
+        [ 'module'=> 'credits', 'key' => 'top_text', 'value'=> 'Contacto Comercial: +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
+        [ 'module'=> 'credits', 'key' => 'button_text', 'value'=> ''],
         [ 'module'=> 'credits', 'key' => 'form', 'value'=> 1],
-
+        
+        // Contact
         [ 'module'=> 'contact', 'key' => 'title', 'value'=> 'Contacto'],
-        [ 'module'=> 'contact', 'key' => 'subtitle', 'value'=> 'Contacto Comercial: +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
+        [ 'module'=> 'contact', 'key' => 'top_text', 'value'=> 'Contacto Comercial: +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
+        [ 'module'=> 'contact', 'key' => 'button_text', 'value'=> ''],
         [ 'module'=> 'contact', 'key' => 'form', 'value'=> 1],
       ];
 
