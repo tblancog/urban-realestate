@@ -28,7 +28,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-3 media-left">
-                                        <a href="{{ route('buildings.show', $building->slug) }}"><img src="{{ $building->findOrDefaultImage() }}"></a> 
+                                        <a href="{{ route('buildings.show', $building->slug) }}"><img class="thumbDetail" src="{{ $building->findOrDefaultImage() }}"></a> 
                                         </div>
                                         <div class="col-md-6 media-mid">                              
                                             <div class="info-card">
