@@ -29,18 +29,9 @@
 
                 {{-- Formulario --}}
                 @if( $config['form'] === '1' )
-                <div class="container mt-5" style="margin-top: 0 !important;">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="row">
-                                <h3 class="card-title">{{ $config['bottom_text'] }}</h3>
-                            </div>
-                            <div id="formInvestments" class="col-xs-12 col-lg-9">
+                <div id="formInvestments" class="col-xs-12">
                                 @include ('partials.contact-form', ['btn_class' => 'pull-right'])
                             </div>
-                        </div>
-                    </div>
-                </div>
                 @endif
 
                 <div class="row">
