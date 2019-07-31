@@ -115,6 +115,7 @@ body {
 
 body {
     font-family: $font-family;
+    background: #e4e4e4;
 }
 
 h1,
@@ -4474,4 +4475,9 @@ border: 1px solid #e1dddd !important;
   .form-control {
     background-color: #FFF; 
   }
+}
+
+form{
+    background: #fff;
+    padding: 35px;
 }
