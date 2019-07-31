@@ -29,7 +29,7 @@
 
                 {{-- Formulario --}}
                 @if( $config['form'] === '1' )
-                <div class="container mt-5">
+                <div class="container mt-5" style="margin-top: 0 !important;">
                     <div class="row">
                         <div class="col-12">
                             <div class="row">
