@@ -21,42 +21,51 @@ class ImageController extends Controller
       $propertyImg = new ApartmentImage();
       $foreign = 'apartment_id';
     }
-    
     if (count($request->images) > 0) {
       
       // Create new directory
       \Storage::makeDirectory(config('images.properties_upload_path').$property->slug);
       $image_path = config('images.properties_upload_path').$property->slug;
       
-      collect($request->images)->each(function($img, $idx) use ($property, $request, $image_path, $propertyImg, $foreign) {
+      collect($request->images)->each(function($img, $index) use ($property, $request, $image_path, $propertyImg, $foreign) {
         
         // Get extension and make filename
         $ext= $img->getClientOriginalExtension();
-        $filename = $request->type."_$idx".".".$ext;
+        $id = uniqid();
         
+        $filename = $request->type."_$id.$ext";
         // Check first if image is being used 
-        $imgUsed = $propertyImg->where([$foreign => $request->id, 
-                                       'filename'=> $filename ])
-                              ->select('filename')
-                              ->groupBy('filename')
-                              ->orderBy('filename', 'desc')
-                              ->first();
+        // $imgUsed = $propertyImg->where([$foreign => $request->id, 
+        //                                'filename'=> $filename ])
+        //                       ->select('filename')
+        //                       ->groupBy('filename')
+        //                       ->orderBy('filename', 'desc')
+        //                       ->first();
         // If image already exists then extract image index: building_X.jpg
-        if($imgUsed) {
-          $idx = explode('_',$imgUsed->filename)[1][0] * 1;
-          $idx++;
-          $filename = $request->type."_$idx".".".$ext;
-        }
-
+        // if($imgUsed) {
+        //   $idx = explode('_',$imgUsed->filename)[1][0] * 1;
+        //   $idx++;
+        //   $filename = $request->type."_$idx".".".$ext;
+        // }
+        
         \Image::make($img)
-                ->fit(config('images.properties_width'), config('images.properties_height'))
-                ->save("$image_path/$filename");
+              ->fit(config('images.properties_width'), config('images.properties_height'))
+              ->save("$image_path/$filename");
+        
+        // \DB::enableQueryLog(); // Enable query log
+
+        // Your Eloquent query
 
 
-        $obj = $propertyImg->create([ $foreign=> $request->id, 
-                                      'filename'=> $filename,
-                                      'order'=> $idx]);
+        // dd([ $foreign => $request->id, 
+        //                             'filename'=> $filename,
+        //                             'order'=> $index ]);      
+        $obj = $propertyImg->save([ $foreign => 1, 
+                                    'filename'=> 'dsada',
+                                    'order'=> 1 ])
+                                   ;
 
+        // dd(\DB::getQueryLog()); // S      
         $property->images()->save($obj);
       });
     } 
