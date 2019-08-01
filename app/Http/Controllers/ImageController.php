@@ -32,40 +32,15 @@ class ImageController extends Controller
         // Get extension and make filename
         $ext= $img->getClientOriginalExtension();
         $id = uniqid();
-        
         $filename = $request->type."_$id.$ext";
-        // Check first if image is being used 
-        // $imgUsed = $propertyImg->where([$foreign => $request->id, 
-        //                                'filename'=> $filename ])
-        //                       ->select('filename')
-        //                       ->groupBy('filename')
-        //                       ->orderBy('filename', 'desc')
-        //                       ->first();
-        // If image already exists then extract image index: building_X.jpg
-        // if($imgUsed) {
-        //   $idx = explode('_',$imgUsed->filename)[1][0] * 1;
-        //   $idx++;
-        //   $filename = $request->type."_$idx".".".$ext;
-        // }
-        
         \Image::make($img)
               ->fit(config('images.properties_width'), config('images.properties_height'))
               ->save("$image_path/$filename");
         
-        // \DB::enableQueryLog(); // Enable query log
+        $obj = $propertyImg->create([ $foreign => $request->id, 
+                                      'filename'=> $filename,
+                                      'order'=> $index ]);
 
-        // Your Eloquent query
-
-
-        // dd([ $foreign => $request->id, 
-        //                             'filename'=> $filename,
-        //                             'order'=> $index ]);      
-        $obj = $propertyImg->save([ $foreign => 1, 
-                                    'filename'=> 'dsada',
-                                    'order'=> 1 ])
-                                   ;
-
-        // dd(\DB::getQueryLog()); // S      
         $property->images()->save($obj);
       });
     } 
