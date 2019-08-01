@@ -17,7 +17,7 @@ class Apartment extends Model
 
       'floor',
       'department',
-      'code',
+      // 'code',
 
       'url_maps',
       'price',

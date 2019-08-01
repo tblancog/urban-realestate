@@ -44,6 +44,15 @@ class ImageController extends Controller
         $property->images()->save($obj);
       });
     } 
+
+    // If title has been updated then rename the whole folder
+    if(count($property->images) > 0 
+        && ($request->selected_slug !== $property->slug)
+        && $request->action === 'edit') {
+      $old = config('images.properties_upload_path').$request->selected_slug;
+      $new = config('images.properties_upload_path').$property->slug;
+      \Storage::move( $old, $new );
+    }
     return response()->json(['msg'=> 'Success'], 201);
   }
   

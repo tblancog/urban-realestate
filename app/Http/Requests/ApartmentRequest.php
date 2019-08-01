@@ -30,7 +30,6 @@ class ApartmentRequest extends FormRequest
           
           'floor'=> 'required',
           'department'=> 'required',
-          'code'=> 'required',
           
           'url_maps' => 'string|max:2048',
           'price' => 'numeric|between:0,10000000',

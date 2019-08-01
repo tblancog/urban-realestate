@@ -6,7 +6,7 @@
           <span class="{{ $apartment->status }}">{{ $apartment->status }}</span>
           </div>
             <a href="{{ route('apartments.show', $apartment->slug) }}">
-              <img src="{{ $apartment->images[0]->path }}" alt="">
+              <img src="{{ count($apartment->images) > 0 ? $apartment->images->first()->path : '' }}" alt="">
             </a>
         </div>
         <!-- Property Content -->
