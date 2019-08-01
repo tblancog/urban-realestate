@@ -149,11 +149,11 @@
                                             :class="{ 'is-invalid': form.errors.has('department') }">
                                         <has-error :form="form" field="department"></has-error>
                                     </div>
-                                    <div class="form-group col-lg-4">
+                                    <!-- <div class="form-group col-lg-4">
                                         <input v-model="form.code" type="text" name="code" placeholder="ID"
                                             class="form-control" :class="{ 'is-invalid': form.errors.has('code') }">
                                         <has-error :form="form" field="code"></has-error>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
