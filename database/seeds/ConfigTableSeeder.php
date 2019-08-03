@@ -17,9 +17,9 @@ class ConfigTableSeeder extends Seeder
         // Investments
         [ 'module'=> 'investments', 'key' => 'title', 'value'=> 'Inversiones'],
         [ 'module'=> 'investments', 'key' => 'top_text', 'value'=> 'Si estás interesado en que visitemos tu propiedad y la tasemos, contactate con nosotros y nos estaremos comunicando a la brevedad.'],
-        [ 'module'=> 'investments', 'key' => 'bottom_text', 'value'=> ''],
+        [ 'module'=> 'investments', 'key' => 'bottom_text', 'value'=> 'Contacto Comercial: +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
         [ 'module'=> 'investments', 'key' => 'form', 'value'=> 1],
-        
+
         // Appraissals
         [ 'module'=> 'appraisals', 'key' => 'title', 'value'=> 'Tasaciones'],
         [ 'module'=> 'appraisals', 'key' => 'top_text', 'value'=> 'Si estás interesado en que visitemos tu propiedad y la tasemos, contactate con nosotros y nos estaremos comunicando a la brevedad.'],
@@ -31,7 +31,7 @@ class ConfigTableSeeder extends Seeder
         [ 'module'=> 'credits', 'key' => 'top_text', 'value'=> 'Si estás interesado en que visitemos tu propiedad y la tasemos, contactate con nosotros y nos estaremos comunicando a la brevedad.'],
         [ 'module'=> 'credits', 'key' => 'bottom_text', 'value'=> 'Contacto Comercial: +54 9 11 5329-4260 Mail. info@urbanrealestate.com.ar'],
         [ 'module'=> 'credits', 'key' => 'form', 'value'=> 1],
-        
+
         // Contact
         [ 'module'=> 'contact', 'key' => 'title', 'value'=> 'Contacto'],
         [ 'module'=> 'contact', 'key' => 'top_text', 'value'=> 'Si estás interesado en que visitemos tu propiedad y la tasemos, contactate con nosotros y nos estaremos comunicando a la brevedad.'],
