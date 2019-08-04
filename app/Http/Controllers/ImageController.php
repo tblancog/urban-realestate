@@ -21,14 +21,14 @@ class ImageController extends Controller
       $propertyImg = new ApartmentImage();
       $foreign = 'apartment_id';
     }
-    if (count($request->images) > 0) {
-      
+    if ($request->images && count($request->images) > 0) {
+
       // Create new directory
       \Storage::makeDirectory(config('images.properties_upload_path').$property->slug);
       $image_path = config('images.properties_upload_path').$property->slug;
-      
+
       collect($request->images)->each(function($img, $index) use ($property, $request, $image_path, $propertyImg, $foreign) {
-        
+
         // Get extension and make filename
         $ext= $img->getClientOriginalExtension();
         $id = uniqid();
@@ -36,17 +36,17 @@ class ImageController extends Controller
         \Image::make($img)
               ->fit(config('images.properties_width'), config('images.properties_height'))
               ->save("$image_path/$filename");
-        
-        $obj = $propertyImg->create([ $foreign => $request->id, 
+
+        $obj = $propertyImg->create([ $foreign => $request->id,
                                       'filename'=> $filename,
                                       'order'=> $index ]);
 
         $property->images()->save($obj);
       });
-    } 
+    }
 
     // If title has been updated then rename the whole folder
-    if(count($property->images) > 0 
+    if(count($property->images) > 0
         && ($request->selected_slug !== $property->slug)
         && $request->action === 'edit') {
       $old = config('images.properties_upload_path').$request->selected_slug;
@@ -55,7 +55,7 @@ class ImageController extends Controller
     }
     return response()->json(['msg'=> 'Success'], 201);
   }
-  
+
   public function destroyApartmentImage($id) {
     $img = ApartmentImage::findOrFail($id);
     $result = false;
