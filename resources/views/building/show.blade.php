@@ -27,9 +27,6 @@
                     </div>
                     <div class="col-md-6 featured-col">
                         @if($building->is_featured == '1')
-                        <div class="featured-box">
-                            <span class="featured">Destacado</a>
-                        </div>
                         @endif
                     </div>
                 </div>

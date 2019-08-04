@@ -1,0 +1,26 @@
+body{
+  
+}
+
+.txtHeaderTop{
+  background: #333333;
+    padding: 5px 0;color: #8c8c8c;
+    letter-spacing: 10px;
+    font-size: 1em;
+    text-align: center
+}
+
+nav{
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0.5+100 */
+background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.7) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#80000000',GradientType=1 ); /* IE6-9 */
+
+}
+
+
+.navbar-brand img{
+  max-width: 100% ;
+  width: 25%;
+}

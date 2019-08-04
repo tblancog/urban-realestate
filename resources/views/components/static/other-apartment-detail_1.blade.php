@@ -19,9 +19,6 @@
                         </div>
                     </div>
                     {{-- <div class="col-md-6 featured-col">
-                        <div class="featured-box">
-                            <span class="featured">Destacado</a>
-                        </div>
                     </div> --}}
                 </div>
             </div>

@@ -1,10 +1,13 @@
 <?php
+Route::get('/', function() {
+  return view('new.index');
+});
 
 // Auth
 Auth::routes();
 
 // Index
-Route::get('/', 'HomeController@index')->name('home.index');
+//Route::get('/', 'HomeController@index')->name('home.index');
 
 // Dashboard
 Route::get('/dashboard', 'HomeController@dashboard')->middleware('auth');
