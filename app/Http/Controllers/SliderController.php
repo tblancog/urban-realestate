@@ -32,7 +32,7 @@ class SliderController extends Controller
 
     public function upload(Request $request){
 
-        $image = $request->file('image');
+        $image = $request->file('attachments');
         $slide = json_decode($request->slide);
         $idx = $request->index;
 
@@ -50,7 +50,7 @@ class SliderController extends Controller
         $image_path = config('images.slider_path');
         \Image::make($image)
             ->fit(config('images.properties_width'), config('images.properties_height'))
-            ->save("$image_path/$filename");
+            ->save($image_path.$filename);
 
             $slider = Slider::updateOrCreate(
                         [ 'index'=> $idx ],

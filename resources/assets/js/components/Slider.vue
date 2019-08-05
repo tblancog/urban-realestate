@@ -139,11 +139,12 @@
             },
             prepareImageData(){
               this.formData = new FormData()
+              this.formData.set('attachments', this.attachments)
               if (this.attachments.length > 0) {
-                  for (var i = 0; i < this.attachments.length; i++) {
-                      let attachment = this.attachments[i]
-                      this.formData.append('attachments[]', attachment)
-                  }
+                //   let attachment = this.attachments[0]
+                //   for (var i = 0; i < this.attachments.length; i++) {
+                //       let attachment = this.attachments[i]
+                //   }
               }
 
               },
@@ -154,7 +155,7 @@
                 // Ensure that you have a file before attempting to read it
                 if (input.files && input.files[0]) {
 
-                    this.attachments.push(input.files[0]);
+                    this.attachments =input.files[0];
                     // create a new FileReader to read this image and convert to base64 format
                     var reader = new FileReader();
                     // Define a callback function to run, when FileReader finishes its job

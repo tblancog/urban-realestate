@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 {{-- @push('styles')
-  
+
 @endpush --}}
 
 @section('content')
@@ -98,3 +98,7 @@
             </div>
 
 </section>
+
+<!-- ##### Front footer Area Start ##### -->
+@include('partials.front-footer')
+<!-- ##### Front footer Area End ##### -->

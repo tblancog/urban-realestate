@@ -1,8 +1,8 @@
  <div class="single-hero-slide bg-img">
         <div class="hero-slides owl-carousel">
           @foreach($slides as $slide)
-            <div class="single-hero-slide bg-img" 
-                style="background-image: url({{ asset('/images/slides/').'/'.$slide->filename }});">
+            <div class="single-hero-slide bg-img"
+                style="background-image: url({{ asset($slide->path) }});">
                   <a href="">
                     <div class="container h-100">
                         <div class="hero-slides-content">
@@ -17,7 +17,6 @@
           @endforeach
         </div>
 
-       
+
     </div>
 
-  

@@ -45,8 +45,8 @@ class HomeController extends Controller
                               ->orderBy('location')
                               ->get(['location']);
 
-        return view('index', ['buildings'=> $buildings, 
-                              'apartments'=> $apartments, 
+        return view('index', ['buildings'=> $buildings,
+                              'apartments'=> $apartments,
                               'slides'=> $slides,
                               'locations'=> $locations,
         ]);
@@ -64,12 +64,12 @@ class HomeController extends Controller
         return view('contact', compact('config'));
       }
       elseif (in_array($page, ['investments'])) {
-        
+
         $buildings = Building::where('is_featured', true)
                             ->latest()
                             ->with('images')
                             ->paginate(5);
-        return view('investments', 
+        return view('investments',
                     compact('config'), compact('buildings')
         );
       }
