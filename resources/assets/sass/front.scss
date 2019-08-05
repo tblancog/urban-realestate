@@ -532,6 +532,7 @@ img {
         font-size: 30px;
         text-transform: uppercase;
         margin-bottom: 5px;
+        font-family: "AvantGarde", sans-serif;
 
         @media #{$breakpoint-lg} {
             font-size: 24px;
@@ -759,23 +760,24 @@ img {
         vertical-align: bottom;
 
         a {
-            font-size: 1.5em;
+            font-size: 1.3em;
             padding: 0 25px;
             height: 100%;
+            font-family: "AvantGarde", sans-serif;
         }
 
         a:hover {
-            -webkit-text-stroke: 1px #fff;
+            font-weight: bold;
         }
         &.active {
-            -webkit-text-stroke: 1px #fff;
+            font-weight: bold;
         }
 
         
     }
 
     li:hover {
-        -webkit-text-stroke: 1px #fff;
+       
     }
 
     @media (max-width: 991px) {
@@ -999,11 +1001,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
         text-transform: uppercase;
         font-weight: 400;
         font-size: 22px;
-        border-left: 1px solid white;
     }
 
     .nav-brand {
-        max-width: 250px;
+        max-width: 200px;
         
 
         @media (max-width: 776px) {
@@ -1399,6 +1400,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
     font-size: 20px;
     text-transform: uppercase;
     height: 50px;
+    font-family: "AvantGarde", sans-serif;
 
     .list {
         left: 0 !important;
