@@ -702,7 +702,7 @@ img {
         transition: 0s;
 
         &:hover {
-            color: #000000;
+            color: #fff;
             font-weight: 600;
         }
     }
@@ -2190,8 +2190,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
         padding: 100px 5%;
 
         .section-heading {
-            text-align: left;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
         }
 
         .address {
@@ -4247,16 +4248,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 /* 27.0 Nosotros CSS */
 .nosotros-page{
   .section-heading{
-    margin-bottom: 50px;
+    margin-bottom: 15px;
   }
   p{
     line-height: 2;
     font-size: 16px;
   }
   .font-bigger{
-    font-size: 130%;
-    color: #51B848;
-    text-decoration: underline;
+    font-size: 100%;
+    color: #000;
+    margin-bottom: 20px
   }
   ul{
     margin: 1em 0 0 2em;
