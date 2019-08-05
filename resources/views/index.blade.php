@@ -170,14 +170,19 @@
         
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="home-social">
-                    <a href="#" target="_blank"><img src="/img/icons/icWhatsapp.png" alt="Whatsapp"></a>
-                    <a href="https://facebook.com/urbanpropiedades/AR" target="_blank"><img src="/img/icons/icFacebook.png" alt="Facebook"></a>
-                    <a href="https://instagram.com/urbanpropiedades/AR" target="_blank"><img src="/img/icons/icInstagram.png" alt="Instagram"></a>
-                </div>
+    <div class="">
+        <div class="row logosUrbanFooter">
+            <div class="col-4 colLogos">
+                <a href="" target="_blank"><img src="img/core-img/icLogoFooter1.png" alt=""></a>
+                <p style="background:#007d3f;">PROPIEDADES</p>
+            </div>
+            <div class="col-4 colLogos">
+                <a href="" target="_blank"><img src="img/core-img/icLogoFooter2.png" alt=""></a>
+                <p  style="background:#b62126;">CONSTRUCTORA</p>
+            </div>
+            <div class="col-4 colLogos">
+                <a href="" target="_blank"><img src="img/core-img/icLogoFooter3.png" alt=""></a>
+                <p style="background:#006fcb;">ARQUITECTURA</p>
             </div>
         </div>
     </div>

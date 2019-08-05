@@ -726,8 +726,8 @@ img {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 30px;
-    background: #C8C8C8;
-    color: #7C7C7C;
+    background: #333;
+    color: #8c8c8c;
 
     @media (max-width: 520px) {
         letter-spacing: 15px;
@@ -4502,3 +4502,28 @@ textarea{
 #slider{
     padding: 0% !important
 }
+
+.logosUrbanFooter{
+    background: #000
+}
+.logosUrbanFooter .colLogos{
+    text-align: center;
+    padding: 0;
+}
+.logosUrbanFooter .colLogos a{
+    display: block;
+    padding: 15px 0;
+}
+.logosUrbanFooter .colLogos img{
+    max-width: 20%;
+}
+.logosUrbanFooter .colLogos p{
+    clear: both;
+    width: 100%;
+    color: white;
+    padding: 3px 0;
+}
+
+
+
+
