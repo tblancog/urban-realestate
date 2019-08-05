@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 {{-- @push('styles')
-  
+
 @endpush --}}
 
 @section('content')
@@ -177,14 +177,14 @@
                     <div class="misc-info">
                         <h4 class="misc-title">Información Básica</h4>
                         <ul>
-                            <li>Ambientes: <span class="misc-value">2</span></li>
-                            <li>Dormitorios: <span class="misc-value">1</span></li>
-                            <li>Baños: <span class="misc-value">1</span></li>
-                            <li>Toilettes: <span class="misc-value">0</span></li>
-                            <li>Antigüedad: <span class="misc-value">50</span></li>
-                            <li>Expensas: <span class="misc-value">3700</span></li>
-                            <li>Orientación: <span class="misc-value">Suroeste</span></li>
-                            <li>Disposición: <span class="misc-value">Frente</span></li>
+                            <li>Ambientes: <span class="misc-value">{{ $apartment->rooms }}</span></li>
+                            <li>Dormitorios: <span class="misc-value">{{ $apartment->rooms }}</span></li>
+                            <li>Baños: <span class="misc-value">{{ $apartment->rooms }}</span></li>
+                            <li>Toilettes: <span class="misc-value">{{ $apartment->rooms }}</span></li>
+                            <li>Antigüedad: <span class="misc-value">{{ $apartment->rooms }}</span></li>
+                            <li>Expensas: <span class="misc-value">{{ $apartment->rooms }}</span></li>
+                            <li>Orientación: <span class="misc-value">{{ $apartment->rooms }}</span></li>
+                            <li>Disposición: <span class="misc-value">{{ $apartment->rooms }}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -192,13 +192,14 @@
                     <div class="misc-info">
                         <h4 class="misc-title">Superficies</h4>
                         <ul>
-                            <li>Cubierta: <span class="misc-value">74.30m<sup>2</sup></span></li>
-                            <li>Semicubierta: <span class="misc-value">3.50m<sup>2</sup></span></li>
-                            <li>Total Construido: <span class="misc-value">77.80m<sup>2</sup></span></li>
+                        <li>Cubierta: <span class="misc-value">{{ $apartment->area }}m<sup>2</sup></span></li>
+                            <li>Semicubierta: <span class="misc-value">{{ $apartment->area }}m<sup>2</sup></span></li>
+                            <li>Total Construido: <span class="misc-value">{{ $apartment->area }}m<sup>2</sup></span></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 misc-box">
+                {{-- Adicionales --}}
+                {{-- <div class="col-md-6 misc-box">
                     <div class="misc-info">
                         <h4 class="misc-title">Adicionales</h4>
                         <ul>
@@ -210,8 +211,9 @@
                             <li>Expensas: <span class="misc-value">3700</span></li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-md-6 misc-box">
+                </div> --}}
+                {{-- Ambientes --}}
+                {{-- <div class="col-md-6 misc-box">
                     <div class="misc-info">
                         <h4 class="misc-title">Ambientes</h4>
                         <ul>
@@ -224,7 +226,7 @@
                             <li>Entrada Servicio</li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

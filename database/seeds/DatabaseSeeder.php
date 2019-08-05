@@ -10,10 +10,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UserTableSeeder::class);
-        $this->call(AmenityTableSeeder::class);
+        // $this->call(UserTableSeeder::class);
+        // $this->call(AmenityTableSeeder::class);
         // $this->call(BuildingTableSeeder::class);
-        $this->call(SliderTableSeeder::class);
-        $this->call(ConfigTableSeeder::class);
+        // $this->call(SliderTableSeeder::class);
+        // $this->call(ConfigTableSeeder::class);
+        $this->call(AmenitiesTableAutoSeeder::class);
+        $this->call(BuildingsTableAutoSeeder::class);
+        $this->call(ApartmentsTableAutoSeeder::class);
+        $this->call(SlidersTableAutoSeeder::class);
+        $this->call(ConfigsTableAutoSeeder::class);
+        $this->call(UsersTableAutoSeeder::class);
+        $this->call(BuildingAmenitiesTableAutoSeeder::class);
+        $this->call(BuildingImagesTableAutoSeeder::class);
+        $this->call(ApartmentAmenitiesTableAutoSeeder::class);
+        $this->call(ApartmentImagesTableAutoSeeder::class);
+        $this->call(PasswordResetsTableAutoSeeder::class);
     }
 }

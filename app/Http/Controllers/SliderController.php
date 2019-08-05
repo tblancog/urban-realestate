@@ -32,7 +32,7 @@ class SliderController extends Controller
 
     public function upload(Request $request){
 
-        $image = $request->file('attachments')[0];
+        $image = $request->file('image');
         $slide = json_decode($request->slide);
         $idx = $request->index;
 
