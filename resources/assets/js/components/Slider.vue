@@ -4,7 +4,7 @@
         <div class="row mt-5">
             <div class="col-md-10">
                 <div class="card">
-                    <form @submit.prevent="saveSliders()" enctype="multipart/form-data">
+                    <form enctype="multipart/form-data">
                         <div class="card-header">
                             <h3 class="card-title">Administrar slider de Home</h3>
                             <div class="card-tools">
@@ -40,19 +40,21 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-9">
-                                            <div class="file-upload-form"> Subir imagen:
-                                                <input name="image" id="attachments" type="file" 
-                                                      @change="previewImage($event, idx)"
-                                                      accept="image/jpg,image/jpeg,image/png">
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <div class="file-upload-form"> Subir imagen:
+                                                    <input name="image" id="attachments" type="file"
+                                                        @change="previewImage($event, idx)"
+                                                        accept="image/jpg,image/jpeg,image/png">
+                                                </div>
+                                                <div class="image-preview" v-if="slide && (slide.path || slide.imageData)">
+                                                <img class="preview" :src="slide.imageData || slide.path">
+                                                </div>
                                             </div>
-                                            <div class="image-preview" v-if="slide && slide.imageData">
-                                              <img class="preview" :src="slide.imageData">
+                                            <div class="col-md-3">
+                                                <button type="button" class="btn btn-danger" @click="removeSlide(slide.id, idx)"> Borrar </button>
+                                                <button type="button"  class="btn btn-primary" @click="saveSlide(slide, idx)">Guardar</button >
                                             </div>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <button type="button" class="btn btn-danger" @click="removeSlide(idx)"> Borrar </button>
                                         </div>
                                     </div>
                                 </li>
@@ -63,9 +65,7 @@
                             </div>
                         </div>
                         <!-- /.card-body -->
-                        <div class="card-footer">
-                            <button type="submit"  class="btn btn-primary">Guardar</button >
-                        </div>
+
 
                     </form>
                 </div>
@@ -97,40 +97,32 @@
                     fileAttached: []
                 }, )
             },
-            removeSlide(idx) { 
+            removeSlide(id, idx) {
                 this.slideshow.splice(idx, 1)
                  axios
-                .delete('/delete-sliders/'+idx)
-                .then((res) => {})
+                    .delete('/delete-sliders/'+id)
+                    .then((res) => {})
             },
-            saveSliders() {
-              let vm = this
-              axios
-                .post('/save-sliders', this.slideshow)
-                .then((res) => {
+            saveSlide( slide, index) {
+                let config = {
+                    headers: { 'Content-Type': 'multipart/form-data' }
+                }
+                this.prepareImageData()
+                this.formData.append( 'slide', JSON.stringify(slide) )
+                this.formData.append( 'index', index )
+                axios.post('/upload-sliders', this.formData, config)
+                    .then( (res)=> {
+                        Fire.$emit('AfterCreate');
+                        toast({
+                            type: 'success',
+                            title: `Slide ${slide.title} guardado`
+                        })
+                        $('#addNew').modal('hide');
 
-                  if(res.status == 201){
-                    let config = {
-                      headers: { 'Content-Type': 'multipart/form-data' }
-                    }
-                    vm.prepareImageData()
-                    axios.post('/upload-sliders', vm.formData, config)
-                          .then( (res)=> {
-                            
-                              Fire.$emit('AfterCreate');
-                                swal(
-                                  'Sliders guardados.',
-                                  'Sliders de homepage guardados!',
-                                  'success')
-                                $('#addNew').modal('hide');
+                        this.$Progress.finish();
+                        Fire.$emit('AfterCreate')
 
-                                this.$Progress.finish();
-                                Fire.$emit('AfterCreate')
-
-                          } )
-                  } 
-                })
-              
+                    } )
             },
             prepareData() {
 
@@ -141,8 +133,8 @@
                       let subtitle = this.slideshow[i].subtitle
 
                       this.formData.append('slides', JSON.stringify( title, subtitle ))
-                  } 
-              }      
+                  }
+              }
 
             },
             prepareImageData(){
@@ -153,10 +145,10 @@
                       this.formData.append('attachments[]', attachment)
                   }
               }
-              
+
               },
             previewImage: function (event, idx) {
-              
+
                 // Reference to the DOM input element
                 var input = event.target;
                 // Ensure that you have a file before attempting to read it
@@ -177,13 +169,15 @@
             }
         },
         created(){
-          axios.get('/get-sliders').then( (res) => {  
+          axios.get('/get-sliders').then( (res) => {
             this.slideshow = res.data.sliders.map( (el)=> {
               return {
+                  id: el.id,
                   title: el.title,
                   subtitle: el.subtitle,
                   link: el.link,
-                  imageData: el.base64img
+                  imageData: el.base64img,
+                  path: el.path
               }
             } )
           })

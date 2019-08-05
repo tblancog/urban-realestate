@@ -20,6 +20,5 @@ yarn-error.log
 .phpunit.result.cache
 *.DS_Store
 *.code-workspace
-database/database.sqlite
 public/mix-manifest.json
 public/css/auth.css

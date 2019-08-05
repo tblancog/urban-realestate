@@ -21,48 +21,41 @@ class ImageController extends Controller
       $propertyImg = new ApartmentImage();
       $foreign = 'apartment_id';
     }
-    
-    if (count($request->images) > 0) {
-      
+    if ($request->images && count($request->images) > 0) {
+
       // Create new directory
       \Storage::makeDirectory(config('images.properties_upload_path').$property->slug);
       $image_path = config('images.properties_upload_path').$property->slug;
-      
-      collect($request->images)->each(function($img, $idx) use ($property, $request, $image_path, $propertyImg, $foreign) {
-        
+
+      collect($request->images)->each(function($img, $index) use ($property, $request, $image_path, $propertyImg, $foreign) {
+
         // Get extension and make filename
         $ext= $img->getClientOriginalExtension();
-        $filename = $request->type."_$idx".".".$ext;
-        
-        // Check first if image is being used 
-        $imgUsed = $propertyImg->where([$foreign => $request->id, 
-                                       'filename'=> $filename ])
-                              ->select('filename')
-                              ->groupBy('filename')
-                              ->orderBy('filename', 'desc')
-                              ->first();
-        // If image already exists then extract image index: building_X.jpg
-        if($imgUsed) {
-          $idx = explode('_',$imgUsed->filename)[1][0] * 1;
-          $idx++;
-          $filename = $request->type."_$idx".".".$ext;
-        }
-
+        $id = uniqid();
+        $filename = $request->type."_$id.$ext";
         \Image::make($img)
-                ->fit(config('images.properties_width'), config('images.properties_height'))
-                ->save("$image_path/$filename");
+              ->fit(config('images.properties_width'), config('images.properties_height'))
+              ->save("$image_path/$filename");
 
-
-        $obj = $propertyImg->create([ $foreign=> $request->id, 
+        $obj = $propertyImg->create([ $foreign => $request->id,
                                       'filename'=> $filename,
-                                      'order'=> $idx]);
+                                      'order'=> $index ]);
 
         $property->images()->save($obj);
       });
-    } 
+    }
+
+    // If title has been updated then rename the whole folder
+    if(count($property->images) > 0
+        && ($request->selected_slug !== $property->slug)
+        && $request->action === 'edit') {
+      $old = config('images.properties_upload_path').$request->selected_slug;
+      $new = config('images.properties_upload_path').$property->slug;
+      \Storage::move( $old, $new );
+    }
     return response()->json(['msg'=> 'Success'], 201);
   }
-  
+
   public function destroyApartmentImage($id) {
     $img = ApartmentImage::findOrFail($id);
     $result = false;

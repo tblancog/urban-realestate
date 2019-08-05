@@ -14,12 +14,18 @@
                                     <input class="form-control" type="text" v-model="config.title" />
                                 </div>
                                 <div class="form-group">
-                                    <label id="subtitulo">Subtítulo</label>
-                                    <textarea class="form-control" v-model="config.subtitle" id="subtitulo" rows="4">
+                                    <label id="top_text">Texto superior</label>
+                                    <textarea class="form-control" v-model="config.top_text" id="top_text" rows="4">
+                          </textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label id="bottom_text">Texto posterior</label>
+                                    <textarea class="form-control" v-model="config.bottom_text" id="bottom_text" rows="4">
                           </textarea>
                                 </div>
                                 <div class="form-check">
-                                    <input v-model="config.form" v-bind:true-value="1" v-bind:false-value="0" class="form-check-input" type="checkbox" id="defaultCheck1">
+                                    <input v-model="config.form" v-bind:true-value="1" v-bind:false-value="0"
+                                        class="form-check-input" type="checkbox" id="defaultCheck1">
                                     <label class="form-check-label" for="defaultCheck1">
                                         Mostrar formulario
                                     </label>
@@ -45,23 +51,23 @@
             }
         },
         methods: {
-          save() {
-              this.$Progress.start();
-              const endpoint = 'api/config/appraisals'
-              let vm = this
-              axios.put(endpoint, vm.config)
-                   .then((res) => { 
-                      Fire.$emit('AfterCreate');
-                      swal(
+            save() {
+                this.$Progress.start();
+                const endpoint = 'api/config/appraisals'
+                let vm = this
+                axios.put(endpoint, vm.config)
+                    .then((res) => {
+                        Fire.$emit('AfterCreate');
+                        swal(
                             'Actualizado!',
                             'Información actualizada.',
-                            'success' )
-                       this.$Progress.finish();
-                      Fire.$emit('AfterCreate')
+                            'success')
+                        this.$Progress.finish();
+                        Fire.$emit('AfterCreate')
                     }).catch(() => {
                         this.$Progress.fail();
                     })
-          }
+            }
         },
         created() {
             const endpoint = 'api/config?module=appraisals'

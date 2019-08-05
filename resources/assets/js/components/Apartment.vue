@@ -149,8 +149,8 @@
                                             :class="{ 'is-invalid': form.errors.has('department') }">
                                         <has-error :form="form" field="department"></has-error>
                                     </div>
-                                    <div class="form-group col-lg-4">
-                                        <input v-model="form.code" type="text" name="code" placeholder="ID"
+                                    <div class="form-group col-lg-4 invisible">
+                                        <input value="A" type="text" name="code" placeholder="ID"
                                             class="form-control" :class="{ 'is-invalid': form.errors.has('code') }">
                                         <has-error :form="form" field="code"></has-error>
                                     </div>
@@ -289,7 +289,7 @@
 
                     floor: '',
                     department: '',
-                    code: '',
+                    code: 'A',
 
                     url_maps: '',
                     price: '',
@@ -335,6 +335,8 @@
                 this.form.put('api/apartments/' + selected.slug)
                     .then((res) => {
                         formData.append('id', res.data.id)
+                        formData.append('selected_slug',  selected.slug)
+                        formData.append('action',  'edit')
                         formData.append('type', 'apartment')
                         axios.post('images-upload', formData)
                             .then(() => {

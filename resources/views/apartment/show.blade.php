@@ -50,16 +50,10 @@
                                 <!-- main slider carousel items -->
                                 <div class="carousel-inner">
                                     @foreach ($apartment->images as $key => $img )
-                                    <div class="{{ $key == 0 ? 'active' : '' }} carousel-item"
-                                        data-slide-number="{{ $key }}">
-                                        @if(!is_file($apartment->getImgPath($img->filename)))
-                                        <img src="{{  Faker\Factory::create()->imageUrl($width = 640, $height = 480) }}"
-                                            class="img-fluid">
-                                        @else
-                                        <img src="{{ asset($apartment->getImgPath($img->filename)) }}"
-                                            class="img-fluid">
-                                        @endif
-                                    </div>
+                                      <div class="{{ $key == 0 ? 'active' : '' }} carousel-item"
+                                          data-slide-number="{{ $key }}">
+                                          <img src="{{ asset($img->path) }}" class="img-fluid">
+                                      </div>
                                     @endforeach
 
                                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -79,7 +73,7 @@
                                         <a class="carousel-thumbnail {{ $key == 0 ? 'selected' : '' }}"
                                             data-slide-to="{{ $key }}" data-target="#myCarousel"
                                             onclick="goToSlide({{ $key }})">
-                                            <img src="{{ '/uploads/properties/'.$apartment->slug.'/'.$img->filename }}"
+                                            <img src="{{ asset($img->path) }}"
                                                 class="img-fluid" style="width: 80px; height: 60px;">
                                         </a>
                                     </li>
