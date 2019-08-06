@@ -694,7 +694,11 @@ img {
 .dark .classynav ul li .megamenu,
 .dark.breakpoint-on .classynav>ul>li>a,
 .dark.breakpoint-on .classy-navbar .classy-menu {
-    background-color: rgba(255, 255, 255, 0.8);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.6+0,0.5+99 */
+background: -moz-linear-gradient(top,  rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 99%, rgba(0,0,0,0.5) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.5) 99%,rgba(0,0,0,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.5) 99%,rgba(0,0,0,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
     z-index: 10000;
 }
 
@@ -760,8 +764,8 @@ img {
         vertical-align: bottom;
 
         a {
-            font-size: 1.3em;
-            padding: 0 25px;
+            font-size: 1.1em;
+            padding: 25px 25px 0;
             height: 100%;
             font-family: "AvantGarde", sans-serif;
         }
@@ -1005,6 +1009,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 
     .nav-brand {
         max-width: 200px;
+        margin-left: 30px;
         
 
         @media (max-width: 776px) {
@@ -1768,7 +1773,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 
             &.Venta,
             &.Alquiler {
-                background: #007D3E;
+                background: #00961e;
             }
 
             &.Reservado {
@@ -2019,7 +2024,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 
             .other-top {
                 padding: 5px 25px;
-                background-color: rgba(0, 0, 0, 0.8);
+                background-color: rgba(0, 0, 0, 0.75);
 
                 .top-amb {
                     margin-bottom: 0;
@@ -2038,7 +2043,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
             }
 
             .other-bot {
-                background-color: rgba(255, 255, 255, 0.9);
+                background-color: rgba(0, 0, 0, 0.45);
                 padding: 15px 0;
                 text-align: center;
 
@@ -2047,7 +2052,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
                 }
 
                 .bot-status {
-                    color: #000000;
+                    color: #fff;
                     text-transform: initial;
                     font-size: 16px;
                     font-weight: 400;
@@ -2055,7 +2060,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
                 }
 
                 .bot-address {
-                    color: #000000;
+                    color: #fff;
                     font-size: 16px;
                     font-weight: 700;
                     line-height: 21px;
@@ -4336,9 +4341,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 
     .box-info {
         position: absolute;
-        background: #FFF;
+        background: rgba(0,0,0,0.45);
         bottom: 0;
-        opacity: .6;
         width: 100%;
 
     }
@@ -4354,16 +4358,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 
     .finance{
         font-family: "MyriadPro-Black";
+        color: #fff
     }
     .status {
-        color: #cf0000;
-        font-family: MyriadPro-Black;
+        color: #fff;
+        font-family: "MyriadPro-Black";
     }
 
     .title, .price {
         font-size: 18px;
-        font-family: MyriadPro-Black;
-        font-weight: bold
+        font-family: "MyriadPro-Black";
+        font-weight: bold;
+        color: #fff
     }
 
 }
@@ -4511,7 +4517,7 @@ textarea{
 }
 .logosUrbanFooter .colLogos{
     text-align: center;
-    padding: 0;
+    padding: 0;    
 }
 .logosUrbanFooter .colLogos a{
     display: block;
@@ -4525,6 +4531,7 @@ textarea{
     width: 100%;
     color: white;
     padding: 3px 0;
+    font-family: "AvantGarde", sans-serif;
 }
 
 
