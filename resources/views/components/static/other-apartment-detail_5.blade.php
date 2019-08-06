@@ -9,7 +9,10 @@
 @include('partials.front-header')
 
 <section class="detail-page">
+   
     <div class="row">
+
+        <!--nombre edificio-->
         <div class="col-md-6">
             <div class="container">
                 <div class="row">
@@ -18,17 +21,19 @@
                             <h2>3 ambientes - Galvan 3051</h2>
                         </div>
                     </div>
-                    {{-- <div class="col-md-6 featured-col">
-                    </div> --}}
                 </div>
             </div>
         </div>
+
         <div class="col-md-6">
             <div class="dept-price">
                 <h2 class="status">En Venta</h2>
                 <h2 class="price">Desde USD <b>222.860</b></h2>
             </div>
         </div>
+        
+        <div class="clear"></div>
+        
         <div class="col-md-6">
 
             <div class="container">
@@ -182,6 +187,10 @@
             </div> --}}
 
         </div>
+
+        <div class="clear"></div>
+
+        <!--mapa-->
         <div class="col-md-6">
             <div class="row">
                 <div class="col-12">
@@ -273,13 +282,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
 
-        </div>
-        <div class="col-md-8">
-
-        </div>
-    </div>
     </div>
 </section>
 <!-- ##### Footer Area Start ##### -->

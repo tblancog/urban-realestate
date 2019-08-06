@@ -122,12 +122,10 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <div class="titForm">
-                        <h3 class="contact-title left">Contacto: {{ $building->contact_name }}</h3>
-                        <h3 class="contact-title-2 right">{{ $building->contact_phone }}</h3>
-                    </div>
                     <div class="clear"></div>
                     <div class="dept-contact">
+                        <h3 class="contact-title left">CONTACTO: {{ $building->contact_name }}</h3>
+                        <h3 class="contact-title-2 right">{{ $building->contact_phone }}</h3>
                         <form>
                             <div class="contact-info">
                                 <div class="contact-info-item">
