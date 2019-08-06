@@ -52,8 +52,11 @@
                                  <img class="link menu" src="img/core-img/icMenu.png" alt="">
                                   <div class="dropdown-menu py-2" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item my-2" href="{{ route('nosotros.index')  }}">Nosotros</a>
+                                    <a class="dropdown-item my-2" href="{{ route('home.index')  }}#real-estate_featured">Propiedades Destacadas</a>
                                     <a class="dropdown-item my-2" href="{{ route('home.index')  }}#real-estate">Propiedades</a>
-                                    <a class="dropdown-item my-2" href="{{ route('home.index')  }}#real-estate_featured">Destacados</a>
+                                    <a class="dropdown-item my-2" href="{{ route('credits.index') }}">Crédito Hipotecario</a>
+                                    <a class="dropdown-item my-2" href="{{ route('credits.index') }}">Financiación</a>
+                                    <a class="dropdown-item my-2" href="{{ route('contact.index') }}">Contacto</a>
                                   </div>
                                 </a>
                             </li>

@@ -695,9 +695,9 @@ img {
 .dark.breakpoint-on .classynav>ul>li>a,
 .dark.breakpoint-on .classy-navbar .classy-menu {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.6+0,0.5+99 */
-background: -moz-linear-gradient(top,  rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 99%, rgba(0,0,0,0.5) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.5) 99%,rgba(0,0,0,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.5) 99%,rgba(0,0,0,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+background: -moz-linear-gradient(top,  rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 99%, rgba(0,0,0,0.7) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.5) 99%,rgba(0,0,0,0.7) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.5) 99%,rgba(0,0,0,0.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
     z-index: 10000;
 }
@@ -749,9 +749,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 
             .classy-navbar {
                 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0.5+100 */
-                background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.7) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#80000000',GradientType=1 ); /* IE6-9 */
             }
         }
@@ -765,7 +765,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 
         a {
             font-size: 1.1em;
-            padding: 25px 25px 0;
+            padding: 0px 25px 0px;
             height: 100%;
             font-family: "AvantGarde", sans-serif;
         }
@@ -4257,10 +4257,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
   .section-heading{
     margin-bottom: 15px;
   }
-  p{
-    line-height: 2;
-    font-size: 16px;
-  }
   .font-bigger{
     font-size: 100%;
     color: #000;
@@ -4534,6 +4530,39 @@ textarea{
     font-family: "AvantGarde", sans-serif;
 }
 
+.boxLaEmpresa{
+    background:#fff;
+    padding: 5% 0 3%;
+}
+.titNosotros{
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-family: "AvantGarde", sans-serif;
+    text-align: center;
+}
+.txtNosotros{
+    font-family: "AvantGarde", sans-serif;
+    font-size: 0.8em;
+    padding: 0 16%;
+    text-align: justify;
+}
 
+.txtNosotros img{
+    width: 35%;
+    margin: 0 0 20px 25px;
+
+    @media only screen and (max-width: 677px) and (min-width: 375px) {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 568px) and (min-width: 320px) {
+        width: 100%;
+    }
+}
+
+.boxLaEmpresaBottom{
+    padding: 4% 0;
+}   
 
 
