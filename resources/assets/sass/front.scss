@@ -3699,9 +3699,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
         }
     }
 
+    .dept-contact form{
+        padding: 0;
+    }
+    .dept-contact .contact-title{
+        font-weight: bold;
+    }
 
     .dept-contact {
-        padding: 40px;
+        padding: 25px;
 
         .send-box {
             height: 70px;
