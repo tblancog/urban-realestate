@@ -16,11 +16,12 @@
 </div>
 
 <section class="detail-page">
+
     <div class="row">
         <div class="col-md-6">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="dept-name">
                             <h2>{{ $apartment->title }}</h2>
                         </div>
@@ -40,6 +41,9 @@
                 </h2>
             </div>
         </div>
+
+        <div class="clear"></div>
+
         <div class="col-md-6">
 
             <div class="container">
@@ -143,6 +147,8 @@
             </div>
         </div>
 
+        <div class="clear"></div>
+
         <div class="col-md-6">
             <div class="dept-description mt-4">
                 <div class="description-top">
@@ -171,6 +177,8 @@
             </div>
         </div>
 
+        <div class="clear"></div>
+        
         <div class="container-fluid">
             <div class="row dept-build-misc">
                 <div class="col-md-6 misc-box">
