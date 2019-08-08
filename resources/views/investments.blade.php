@@ -46,7 +46,7 @@
                                                 <div class="col-md-3 media-left">
                                                     <a href="{{ route('buildings.show', $building->slug) }}"><img
                                                             class="thumbDetail"
-                                                            src="{{ $building->findOrDefaultImage() }}"></a>
+                                                            src="{{ count($building->images) > 0 ? $building->images->first()->path : '' }}"></a>
                                                 </div>
                                                 <div class="col-md-6 media-mid">
                                                     <div class="info-card">
@@ -68,10 +68,10 @@
                                                                 href="{{ route('buildings.show', $building->slug) }}">Ver
                                                                 más</a>
                                                         </div>
-                                                        <div class="deliver-box">
+                                                        {{-- <div class="deliver-box">
                                                             <h6>Entrega</h6>
                                                             <h6 class="deliver-date">Noviembre 2021</h6>
-                                                        </div>
+                                                        </div> --}}
                                                     </div>
                                                 </div>
                                             </div>

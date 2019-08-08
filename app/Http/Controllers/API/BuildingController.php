@@ -19,15 +19,17 @@ class BuildingController extends Controller
     public function index()
     {
         return Building::latest()
-                ->with('images')
-                ->with('amenities')
-                ->paginate(5);
+            ->with('images')
+            ->with(['amenities' => function ($q) {
+                $q->select('amenities.id as id', 'amenities.title');
+            }])->paginate(5);
     }
 
-    public function buildingList(){
+    public function buildingList()
+    {
 
-      return Building::orderBy('title')
-                          ->get(['id','title as label']);
+        return Building::orderBy('title')
+            ->get(['id', 'title as label']);
     }
 
     /**
@@ -39,9 +41,9 @@ class BuildingController extends Controller
     public function store(BuildingRequest $request)
     {
         $building = Building::create($request->all());
-        $building->amenities()->sync( $request->amenities );
-        
-        return ['message' => 'Edificio creado', 'id'=> $building->id];
+        $building->amenities()->sync($request->amenities);
+
+        return ['message' => 'Edificio creado', 'id' => $building->id];
     }
 
 
@@ -66,7 +68,8 @@ class BuildingController extends Controller
     public function update(BuildingRequest $request, Building $building)
     {
         $building->update($request->all());
-        return ['message' => 'Edificio actualizado', 'id'=> $building->id];
+        $building->amenities()->sync($request->amenities);
+        return ['message' => 'Edificio actualizado', 'id' => $building->id];
     }
 
     /**
@@ -79,15 +82,15 @@ class BuildingController extends Controller
     {
         // Get model
         $item = Building::where('slug', $item->slug)->firstOrFail();
-        
+
         // Delete pictures folder if any
-        \Storage::deleteDirectory("uploads/properties/".$item->slug);
+        \Storage::deleteDirectory("uploads/properties/" . $item->slug);
 
         // Delete the model
         $itemDeleted = $item->delete();
 
         return response()->json(
-          ['message' => ( $itemDeleted ? 'Item deleted' : 'Could not delete item')]
+            ['message' => ($itemDeleted ? 'Item deleted' : 'Could not delete item')]
         );
     }
 }

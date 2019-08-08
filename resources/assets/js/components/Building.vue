@@ -18,12 +18,12 @@
                                   <div class="row">
                                       <div class="col-md-3 col-sm-12 cropped">
                                       <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
-                                        <img v-if="building.images.length" 
-                                              :src="building.images[0].path" 
+                                        <img v-if="building.images.length"
+                                              :src="building.images[0].path"
                                               class="img-fluid"/>
                                       </a>
                                       </div>
-                                      <div class="col-md-6">                              
+                                      <div class="col-md-6">
                                           <div class="info-card">
                                               <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
                                                 <h5 class="mt-0">{{ building.title }}</h5>
@@ -56,7 +56,7 @@
                                           </div>
                                       </div>
                                   </div>
-                              </div>             
+                              </div>
                           </div>
                       </div>
 
@@ -68,7 +68,7 @@
                     <div v-else>
                       <h5 class="m-5 text-center">No existen edificios cargados</h5>
                     </div>
-                    
+
                 </div>
                 <!-- /.card -->
             </div>
@@ -89,13 +89,13 @@
                     </div>
                     <form @submit.prevent="editmode ? updateItem(selected) : createItem()">
                         <div class="modal-body">
-                            
-                            
+
+
                             <!-- Image uploader -->
                             <div class="form-group col-lg-12">
-                              <image-uploader 
+                              <image-uploader
                                  v-on:imageDeleted="deleteImage($event)"
-                                :files="files" 
+                                :files="files"
                                 :images="form.images"></image-uploader>
                             </div>
                             <!-- Title -->
@@ -121,14 +121,14 @@
                                     :class="{ 'is-invalid': form.errors.has('url_maps') }"></textarea>
                                 <has-error :form="form" field="url_maps"></has-error>
                             </div>
-                          
+
                             <!-- Price -->
                             <div class="form-group col-lg-9">
                                 <input v-model="form.price" type="number" name="price" placeholder="Precio"
                                     class="form-control col-lg-4" :class="{ 'is-invalid': form.errors.has('price') }">
                                 <has-error :form="form" field="price"></has-error>
                             </div>
-                            
+
                             <!-- From price -->
                           <div class="form-group form-check col-lg-9">
                               <div class="col-lg-12">
@@ -157,8 +157,8 @@
                                   <div class="row">
                                     <div v-for="amenity in amenities" :key="amenity.id" class="col-lg-4">
                                       <input type="checkbox" :id="amenity.title"
-                                                             :value="amenity.id" 
-                                                             v-model="form.amenities"  
+                                                             :value="amenity.id"
+                                                             v-model="selectedAmenities"
                                                              name="amenities[]" class="form-check-input">
                                       <label class="form-check-label" :for="amenity.title">{{ amenity.title }}</label>
                                     </div>
@@ -168,11 +168,14 @@
 
                             <!-- Status -->
                             <div class="form-group col-lg-9">
-                                <select name="type" v-model="form.status" id="status" class="form-control"
-                                    :class="{ 'is-invalid': form.errors.has('status') }">
-                                    <option value="">Seleccione estado</option>
+                                <select name="type" id="status" class="form-control"
+                                    :class="{ 'is-invalid': form.errors.has('status') }"
+                                    v-model="form.status">
                                     <option value="En obra">En obra</option>
                                     <option value="A estrenar">A estrenar</option>
+                                    <option value="Reservado">Reservado</option>
+                                    <option value="En venta">En venta</option>
+                                    <option value="Alquiler">Alquiler</option>
                                 </select>
                                 <has-error :form="form" field="status"></has-error>
                             </div>
@@ -241,6 +244,15 @@
                 selected: {},
                 buildings: {},
                 amenities: [],
+                selectedAmenities: [],
+                statuses: [
+                    'En obra',
+                    'A estrenar',
+                    'Vendido',
+                    'Reservado',
+                    'En venta',
+                    'Alquiler'
+                ],
                 files: [],
                 form: new Form({
                     id: '',
@@ -260,6 +272,19 @@
             }
         },
         methods: {
+            changeSelect(ev){
+                console.log(ev)
+            },
+            isCheckedAmenity(id) {
+                let checked = false
+                this.form.amenities.forEach( (el) => {
+                    if (el.id === id) {
+                        checked = true
+                        return
+                    }
+                } )
+                return checked
+            },
             getResults(page = 1) {
                 axios.get('api/buildings?page=' + page)
                     .then(response => {
@@ -284,6 +309,7 @@
               }
 
 
+                this.form.amenities = this.selectedAmenities
                 this.form.put('api/buildings/' + selected.slug)
                     .then( (res) => {
                   formData.append('id', res.data.id)
@@ -311,6 +337,7 @@
 
             },
             editModal(item) {
+                this.selectedAmenities = item.amenities.map( am => am.id);
                 this.selected = item
                 this.editmode = true;
                 this.form.reset();

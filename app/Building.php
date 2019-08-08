@@ -37,11 +37,6 @@ class Building extends Model
       return $this->hasMany('App\Apartment');
     }
 
-    public function getStatusAttribute(){
-
-      return ucwords($this->attributes['status']);
-    }
-
     public function setTitleAttribute($value){
       $this->attributes['title'] = $value;
       $this->attributes['slug'] = str_slug($value);
@@ -56,7 +51,7 @@ class Building extends Model
         return $this->getImgPath( $this->images[0]->filename );
       }
       $faker = Factory::create();
-      return $faker->imageUrl($width = 640, $height = 480); 
+      return $faker->imageUrl($width = 640, $height = 480);
     }
 
 }

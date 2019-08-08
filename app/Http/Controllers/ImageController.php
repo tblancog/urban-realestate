@@ -46,7 +46,7 @@ class ImageController extends Controller
     }
 
     // If title has been updated then rename the whole folder
-    if(count($property->images) > 0
+    if( isset($property->images) && count($property->images) > 0
         && ($request->selected_slug !== $property->slug)
         && $request->action === 'edit') {
       $old = config('images.properties_upload_path').$request->selected_slug;
