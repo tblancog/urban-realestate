@@ -19,7 +19,7 @@
                                         <div class="col-md-3 col-sm-12 cropped">
                                             <a data-toggle="modal" data-target="#exampleModalLong" href="#"
                                                 @click="selected = apartment">
-                                                <img v-if="apartment.images.length" 
+                                                <img v-if="apartment.images.length"
                                                   :src="apartment.images[0].path"
                                                     class="img-fluid" />
                                             </a>
@@ -89,15 +89,15 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    
+
                     <form @submit.prevent="editmode ? updateItem(selected) : createItem()">
                         <div class="modal-body">
 
                             <!-- Image uploader -->
                             <div class="form-group col-lg-12">
                                 <image-uploader
-                                  v-on:imageDeleted="deleteImage($event)" 
-                                  :files="files" 
+                                  v-on:imageDeleted="deleteImage($event)"
+                                  :files="files"
                                   :images="form.images"/>
                             </div>
 
@@ -172,14 +172,14 @@
                                     </div>
                                     <div class="form-group col-lg-4">
                                         <input v-model="form.rooms" type="number" name="rooms"
-                                            placeholder="Ambientes" 
+                                            placeholder="Ambientes"
                                             class="form-control" :class="{ 'is-invalid': form.errors.has('rooms') }"/>
                                     </div>
                                     <has-error :form="form" field="rooms"></has-error>
                                 </div>
                               </div>
-                              
-                            
+
+
 
                             <!-- Description -->
                             <div class="form-group col-lg-9">
@@ -199,22 +199,25 @@
                                   <div class="row">
                                     <div v-for="amenity in amenities" :key="amenity.id" class="col-lg-4">
                                       <input type="checkbox" :id="amenity.title"
-                                                             :value="amenity.id" 
-                                                             v-model="form.amenities"  
+                                                             :value="amenity.id"
+                                                             v-model="selectedAmenities"
                                                              name="amenities[]" class="form-check-input">
                                       <label class="form-check-label" :for="amenity.title">{{ amenity.title }}</label>
                                     </div>
                                   </div>
                                 </div>
                             </div>
-                            <!-- Status -->
+
+                             <!-- Status -->
                             <div class="form-group col-lg-9">
-                                <select name="type" v-model="form.status" id="status" class="form-control"
-                                    :class="{ 'is-invalid': form.errors.has('status') }">
-                                    <option value="">Seleccione estado</option>
-                                    <option value="alquiler">Alquiler</option>
-                                    <option value="reservado">Reservado</option>
-                                    <option value="venta">Venta</option>
+                                <select name="type" id="status" class="form-control"
+                                    :class="{ 'is-invalid': form.errors.has('status') }"
+                                    v-model="form.status">
+                                    <option value="En obra">En obra</option>
+                                    <option value="A estrenar">A estrenar</option>
+                                    <option value="Reservado">Reservado</option>
+                                    <option value="En venta">En venta</option>
+                                    <option value="Alquiler">Alquiler</option>
                                 </select>
                                 <has-error :form="form" field="status"></has-error>
                             </div>
@@ -279,6 +282,15 @@
                 selected: {},
                 apartments: {},
                 amenities: [],
+                selectedAmenities: [],
+                statuses: [
+                    'En obra',
+                    'A estrenar',
+                    'Vendido',
+                    'Reservado',
+                    'En venta',
+                    'Alquiler'
+                ],
                 selectedBuilding: {},
                 files: [],
                 form: new Form({
@@ -295,6 +307,7 @@
                     price: '',
                     area: '',
                     rooms: '',
+                    amenities: [],
 
                     description: '',
                     status: '',
@@ -332,6 +345,7 @@
                     })
                 }
 
+                this.form.amenities = this.selectedAmenities
                 this.form.put('api/apartments/' + selected.slug)
                     .then((res) => {
                         formData.append('id', res.data.id)
@@ -359,6 +373,7 @@
 
             },
             editModal(item) {
+                this.selectedAmenities = item.amenities.map( am => am.id);
                 this.selected = item
                 this.editmode = true;
                 this.form.reset();

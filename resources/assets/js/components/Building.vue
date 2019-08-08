@@ -272,19 +272,6 @@
             }
         },
         methods: {
-            changeSelect(ev){
-                console.log(ev)
-            },
-            isCheckedAmenity(id) {
-                let checked = false
-                this.form.amenities.forEach( (el) => {
-                    if (el.id === id) {
-                        checked = true
-                        return
-                    }
-                } )
-                return checked
-            },
             getResults(page = 1) {
                 axios.get('api/buildings?page=' + page)
                     .then(response => {

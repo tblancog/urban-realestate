@@ -21,6 +21,9 @@ class ApartmentController extends Controller
       return Apartment::latest()
                 ->with('images')
                 ->with('building')
+                ->with(['amenities' => function ($q) {
+                    $q->select('amenities.id as id', 'amenities.title');
+                }])
                 ->paginate(5);
     }
 
@@ -34,7 +37,7 @@ class ApartmentController extends Controller
     {
       $input = collect($request->input())
                               ->except('buildings', 'amenities', 'building_id');
-      
+
       $building_id = $request->input('building_id')['id'];
       $input->put('building_id', $building_id);
 
@@ -42,7 +45,7 @@ class ApartmentController extends Controller
       $apartment->amenities()->sync(
         $request->amenities
       );
-      
+
       return response()->json(['message' => 'Departmento creado', 'id'=> $apartment->id], 201);
     }
 
@@ -68,6 +71,7 @@ class ApartmentController extends Controller
     public function update(ApartmentRequest $request, $apartment)
     {
         $apartment->update($request->all());
+        $apartment->amenities()->sync( $request->amenities );
         return response()->json(['message' => 'Departamento creado', 'id'=> $apartment->id], 200);
 
     }
