@@ -25,10 +25,6 @@
                             <h2>{{ $building->title }}</h2>
                         </div>
                     </div>
-                    <div class="col-md-6 featured-col">
-                        @if($building->is_featured == '1')
-                        @endif
-                    </div>
                 </div>
             </div>
         </div>
@@ -37,7 +33,6 @@
                 <h2 class="status">{{ $building->status }}</h2>
                 <h2 class="price">
                     @if($building->from_price)
-                    <span>desde </span>
                     @endif
                     USD <b>@convert($building->price)</b>
 
@@ -104,23 +99,17 @@
 
         </div>
         <div class="col-md-6">
-            <div class="row">
-                <div class="col-12">
-                    <div class="dept-details">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12 box-icons">
-                                    @foreach ($building->amenities as $amenity)
-                                    <div class="col-2 detail-box">
-                                        <img src="/img/icons/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
-                                        <p style="text-transform: capitalize;">{{ $amenity->title }}</p>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
+            <div class="row ">
+            <div class="dept-details">
+                    <div class="col-12 box-icons">
+                        @foreach ($building->amenities as $amenity)
+                        <div class="detail-box">
+                            <img src="/img/icons/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
+                            <p style="text-transform: capitalize;">{{ $amenity->title }}</p>
                         </div>
+                        @endforeach
                     </div>
-                </div>
+                </div>    
                 <div class="col-12">
                     <div class="clear"></div>
                     <div class="dept-contact">
