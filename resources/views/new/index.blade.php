@@ -78,7 +78,36 @@
     </nav>
     <!--/.Navbar -->
  
-    
+    <div class="container">
+  <div class="row">
+    <div class="col" style="background:red">
+      1 of 2
+    </div>
+    <div class="col" style="background:blue">
+      2 of 2
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">

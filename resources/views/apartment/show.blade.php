@@ -34,7 +34,6 @@
                 <h2 class="status">{{ $apartment->status }}</h2>
                 <h2 class="price">
                     @if($apartment->from_price)
-                    <span>Desde </span>
                     @endif
                     USD <b>@convert($apartment->price)</b>
 
