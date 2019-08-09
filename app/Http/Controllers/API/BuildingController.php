@@ -32,6 +32,11 @@ class BuildingController extends Controller
             ->get(['id', 'title as label']);
     }
 
+    public function buildingAmenities($id)
+    {
+         return Building::find($id)->amenities;
+    }
+
     /**
      * Store a newly created resource in storage.
      *

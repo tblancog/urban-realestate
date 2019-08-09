@@ -110,7 +110,20 @@
 
                             <!-- Building -->
                             <div class="form-group col-lg-9">
-                              <v-select v-model="form.building_id"  :options="form.buildings"></v-select>
+                              <!-- <v-select :value="form.building_id"  :options="form.buildings" @input="setSelectedBuilding"></v-select> -->
+                                <!--
+                                v-model="form.building_id" -->
+
+                              <!-- <v-select v-if="buildings"
+                                item-text="label"
+                                item-value="id"
+                                :items="buildings"
+                                v-model="form.building_id"
+                              ></v-select> -->
+                            <select class="form-control" v-model="form.building_id">
+                                <option value="">--Edificio--</option>
+                                <option v-for="building in buildings" :value="building.id" :key="building.id">{{ building.label }}</option>
+                            </select>
                             </div>
 
                             <!-- Location -->
@@ -197,13 +210,18 @@
                               </a>
                                 <div id="amenitiesForm" class="form-group form-check collapse">
                                   <div class="row">
-                                    <div v-for="amenity in amenities" :key="amenity.id" class="col-lg-4">
+                                      <ul>
+                                        <li v-for="amenity in amenities" :key="amenity.id" class="col-lg-3">
+                                            {{ amenity.title }}
+                                        </li>
+                                      </ul>
+                                    <!-- <div v-for="amenity in amenities" :key="amenity.id" class="col-lg-4">
                                       <input type="checkbox" :id="amenity.title"
                                                              :value="amenity.id"
                                                              v-model="selectedAmenities"
                                                              name="amenities[]" class="form-check-input">
                                       <label class="form-check-label" :for="amenity.title">{{ amenity.title }}</label>
-                                    </div>
+                                    </div> -->
                                   </div>
                                 </div>
                             </div>
@@ -315,23 +333,36 @@
                     amenities: [],
                     contact_name: '',
                     contact_phone: '',
-                    buildings: [],
 
                     building_id: ''
-                })
+                }),
+                buildings: [],
             }
         },
+        watch: {
+            'form.building_id': function (val) {
+                this.reloadAmenities(val)
+            },
+        },
         methods: {
+            reloadAmenities(buildingId) {
+                if(buildingId !== '') {
+                    axios.get(`/api/buildings/${buildingId}/amenities`)
+                      .then( (res) => {
+                          this.amenities = res.data
+                       })
+                }
+            },
             getResults(page = 1) {
                 axios.get('api/apartments?page=' + page)
                     .then(response => {
                         this.apartments = response.data;
                         let newImgArr = [];
-                        res1.data.data.forEach( (current, index)=> {
-                          current.images.forEach((img, idx) => {
-                              newImgArr.push(img.path);
-                          });
-                        });
+                        // response.data.forEach( (current, index)=> {
+                        //   current.images.forEach((img, idx) => {
+                            //   newImgArr.push(img.path);
+                        //   });
+                        // });
 
                         this.apartments.images = newImgArr;
                     });
@@ -439,7 +470,6 @@
                         newImgArr.push(img.path);
                     });
                   });
-
                   vm.apartments.images = newImgArr;
                   vm.amenities = res2.data
                 })
@@ -480,7 +510,7 @@
             this.files = []
             axios.get('/api/buildings/list')
                   .then( (res) => {
-                      this.form.buildings = res.data
+                      this.buildings = res.data
                    })
             // Fire.$on('searching', () => {
             //     let query = this.$parent.search;
@@ -493,9 +523,11 @@
             //         })
             // })
             this.loadItems();
+            // this.reloadAmenities(this.form.building_id);
             Fire.$on('AfterCreate', () => {
                 this.loadItems();
             });
+            // console.log(this.form.building_id);
         }
 
     }

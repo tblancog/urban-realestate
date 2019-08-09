@@ -14,13 +14,17 @@ use Illuminate\Http\Request;
 */
 
 Route::get('buildings/list', 'API\BuildingController@buildingList');
+Route::get('buildings/{id}/amenities', 'API\BuildingController@buildingAmenities');
 Route::resource('buildings', 'API\BuildingController')
        ->only('index','store', 'update', 'destroy')
        ->names(['index'=> '']);
 
-// Apartment or building images  
+// Building amenities
+
+// Apartment or building images
 Route::delete('images/{id}/apartment', 'ImageController@destroyApartmentImage');
 Route::delete('images/{id}/building', 'ImageController@destroyBuildingImage');
+
 
 Route::resource('apartments', 'API\ApartmentController')
         ->only('index', 'store', 'update', 'destroy')
