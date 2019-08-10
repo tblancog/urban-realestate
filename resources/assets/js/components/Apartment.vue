@@ -231,11 +231,11 @@
                                 <select name="type" id="status" class="form-control"
                                     :class="{ 'is-invalid': form.errors.has('status') }"
                                     v-model="form.status">
-                                    <option value="En obra">En obra</option>
-                                    <option value="A estrenar">A estrenar</option>
+                                    <option value="En_obra">En obra</option>
+                                    <option value="A_estrenar">A estrenar</option>
                                     <option value="Reservado">Reservado</option>
-                                    <option value="En venta">En venta</option>
-                                    <option value="Alquiler">Alquiler</option>
+                                    <option value="En_venta">En venta</option>
+                                    <option value="En_Alquiler">Alquiler</option>
                                 </select>
                                 <has-error :form="form" field="status"></has-error>
                             </div>

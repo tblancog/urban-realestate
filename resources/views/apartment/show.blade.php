@@ -31,7 +31,7 @@
         </div>
         <div class="col-md-6">
             <div class="dept-price">
-                <h2 class="status">{{ $apartment->status }}</h2>
+                <h2 class="status">@status_show($apartment->status)</h2>
                 <h2 class="price">
                     @if($apartment->from_price)
                     @endif
@@ -177,7 +177,7 @@
         </div>
 
         <div class="clear"></div>
-        
+
         <div class="container-fluid">
             <div class="row dept-build-misc">
                 <div class="col-md-6 misc-box">

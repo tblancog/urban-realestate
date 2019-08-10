@@ -3,7 +3,7 @@
       <!-- Property Thumbnail -->
       <div class="property-thumb">
           <div class="ribbon">
-          <span class="{{ $apartment->status }}">{{ $apartment->status }}</span>
+          <span class="@status_class($apartment->status)">@status_show($apartment->status)</span>
           </div>
             <a href="{{ route('apartments.show', $apartment->slug) }}">
               <img src="{{ count($apartment->images) > 0 ? $apartment->images->first()->path : '' }}" alt="">
@@ -11,7 +11,7 @@
         </div>
         <!-- Property Content -->
         <div class="property-content">
-          
+
             <div class="other-top">
                 <p class="top-amb">{{ $apartment->rooms }} amb.</p>
                 <div class="top-area">

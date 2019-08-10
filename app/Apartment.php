@@ -28,7 +28,7 @@ class Apartment extends Model
       'status',
       'contact_name',
       'contact_phone',
-      
+
       'building_id'
     ];
 
@@ -44,11 +44,6 @@ class Apartment extends Model
     public function building(){
 
       return $this->belongsTo('App\Building');
-    }
-
-    public function getStatusAttribute(){
-
-      return ucwords($this->attributes['status']);
     }
 
     public function setTitleAttribute($value){
@@ -71,25 +66,5 @@ class Apartment extends Model
         }
 
         return $query;
-    }
-    public function findOrDefaultImage() {
-      if($this->images()->exists() && file_exists($this->getImgPath( $this->images[0]->filename )) ){
-        return $this->getImgPath( $this->images[0]->filename );
-      }
-      $faker = Factory::create();
-      return $faker->imageUrl($width = 640, $height = 480); 
-    }
-
-    public function findOrDefaultImages() {
-      $images = collect();
-      if( $this->images()->exists() ){
-        $this->images()->each(function($img) use ($images) {
-          $images->push($img);
-        });
-      } else {
-        $faker = Factory::create();
-        $images->push(['filename'=> $faker->imageUrl($width = 640, $height = 480)]); 
-      }
-      return $images;
     }
 }

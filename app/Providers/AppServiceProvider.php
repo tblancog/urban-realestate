@@ -24,10 +24,16 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('convert', function ($money) {
             return "<?php echo number_format($money, 0, '', '.'); ?>";
         });
+        Blade::directive('status_class', function ($class) {
+            return "<?php echo str_replace(' ', '_', $class); ?>";
+        });
+        Blade::directive('status_show', function ($class) {
+            return "<?php echo str_replace('_', ' ', $class); ?>";
+        });
 
         // Apartment Observer
         Apartment::observe(ApartmentObserver::class);
-       
+
         // Building Observer
         Building::observe(BuildingObserver::class);
     }

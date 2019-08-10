@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 {{-- @push('styles')
-  
+
 @endpush --}}
 
 @section('content')
@@ -30,7 +30,7 @@
         </div>
         <div class="col-md-6">
             <div class="dept-price">
-                <h2 class="status">{{ $building->status }}</h2>
+                <h2 class="status">@status_show($building->status)</h2>
                 <h2 class="price">
                     @if($building->from_price)
                     @endif
@@ -60,7 +60,7 @@
                                   <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
                                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                       <span class="sr-only">Next</span>
-                                  </a> 
+                                  </a>
                                 </div>
                                 <!-- main slider carousel nav controls -->
 
@@ -109,7 +109,7 @@
                         </div>
                         @endforeach
                     </div>
-                </div>    
+                </div>
                 <div class="col-12">
                     <div class="clear"></div>
                     <div class="dept-contact">

@@ -1,4 +1,4 @@
-/* Laravel styles 
+/* Laravel styles
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
@@ -24,8 +24,8 @@
 
 
 /* ##### Index of Stylesheet #####
- 
- :: 1.0 Import Fonts 
+
+ :: 1.0 Import Fonts
  :: 2.0 Import All CSS
  :: 3.0 Base CSS
  :: 4.0 Preloader Area CSS
@@ -44,16 +44,16 @@
  :: 17.0 About Us Area CSS
  :: 18.0 Team Member Area CSS
  :: 19.0 Listings Area CSS
- :: 20.0 Blog Area CSS 
+ :: 20.0 Blog Area CSS
  :: 21.0 Contact Area CSS
  :: 22.0 Shortcode Area CSS
  :: 23.0 Detail Area CSS
  :: 24.0 Investment Area CSS
  :: 25.0 Appraisals Area CSS
  :: 26.0 Modal Details Area CSS
- 
+
  ##### Index of Stylesheet ##### /*
- 
+
  /* :: 1.0 Import Fonts */
 
 
@@ -760,7 +760,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 
 #desktop-nav {
     li {
-        
+
         vertical-align: bottom;
 
         a {
@@ -777,11 +777,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
             font-weight: bold;
         }
 
-        
+
     }
 
     li:hover {
-       
+
     }
 
     @media (max-width: 991px) {
@@ -1010,12 +1010,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
     .nav-brand {
         max-width: 200px;
         margin-left: 30px;
-        
+
 
         @media (max-width: 776px) {
             max-width: 200px;
         }
-    
+
         @media only screen and (max-width: 1076px) and (min-width: 744px) {
             max-width: 200px;
         }
@@ -1307,7 +1307,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
         right: 0;
         //bottom: 45px;
         bottom: 10px;
-        
+
         // @include transform (translateX(-50%));
 
         @media #{$breakpoint-lg} {
@@ -1439,11 +1439,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
     z-index: 9999;
     top: 75%;
     width: 100%;
-    
+
     @media only screen and (max-width: 1920px) and (min-width: 1080px) {
         top: 75%;
     }
-    
+
     @media only screen and (max-width: 677px) and (min-width: 375px)  {
         top:35%;
     }
@@ -1467,8 +1467,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
                     border: 0;
                     box-shadow: none;
 
-                    .nice-select, 
-                    .nice-select ul 
+                    .nice-select,
+                    .nice-select ul
                       {
                         background-color: rgba(255, 255, 255, 0.5);
                         // opacity: 0.9;
@@ -1771,8 +1771,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
             width: 170px;
             display: block;
 
-            &.Venta,
-            &.Alquiler {
+            &.En_obra,
+            &.A_estrenar,
+            &.En_venta,
+            &.En_alquiler {
                 background: #00961e;
             }
 
@@ -2567,7 +2569,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
                 }
             }
 
-            
+
         }
     }
 }
@@ -2575,7 +2577,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
     text-align: center;
     padding: 10% 0;
 
-    
+
     @media only screen and (max-width: 677px) and (min-width: 375px) {
         width: 90px;
         margin: 0 46px;
@@ -3562,7 +3564,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
                 @media only screen and (max-width: 1920px) and (min-width: 1080px) {
                     font-size: 1.5rem;
                 }
-                
+
             }
         }
 
@@ -3589,7 +3591,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
                         width: 100%;
                         text-align: center;
                     }
-                
+
                     @media only screen and (max-width: 568px) and (min-width: 320px) {
                         width: 100%;
                         text-align: center;
@@ -3598,7 +3600,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
                     @media only screen and (max-width: 1920px) and (min-width: 1080px) {
                         font-size: 1.8rem;
                     }
-                    
+
 
                 }
             }
@@ -3628,7 +3630,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
             margin-bottom: 0;
             font-size: 1.5rem;
             font-family: 'MyriadPro-Regular';
-           
+
             b {
                 font-family: "MyriadPro-Black";
                 font-size: 1.5rem;
@@ -3638,7 +3640,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 
 
     .dept-slider {
-        
+
     }
 
     .dept-details {
@@ -4441,7 +4443,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
     height: 100%;
     max-height: 210px;
     width: 100%;
-    max-width: 281px;   
+    max-width: 281px;
 }
 
 .left{float: left !important;}
@@ -4484,7 +4486,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 }
 
 .offset-3 {
-            
+
     @media only screen and (max-width: 677px) and (min-width: 375px) {
         margin-left: 0;
     }
@@ -4496,7 +4498,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 
 #formInvestments {
   .form-control {
-    background-color: #FFF; 
+    background-color: #FFF;
   }
 }
 
@@ -4518,7 +4520,7 @@ textarea{
 }
 .logosUrbanFooter .colLogos{
     text-align: center;
-    padding: 0;    
+    padding: 0;
 }
 .logosUrbanFooter .colLogos a{
     display: block;
@@ -4568,6 +4570,6 @@ textarea{
 
 .boxLaEmpresaBottom{
     padding: 4% 0;
-}   
+}
 
 

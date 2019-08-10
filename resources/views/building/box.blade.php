@@ -5,7 +5,7 @@
                 <div class="box-info px-2 py-1">
                     <div class="row col-12">
                         <div class="col-6">
-                            <div class="status text-uppercase">{{ $building->status }}</div>
+                            <div class="status text-uppercase">@status_show($building->status)</div>
                             <div class="title">{{ $building->title }}</div>
                         </div>
                         <div class="col-6">
