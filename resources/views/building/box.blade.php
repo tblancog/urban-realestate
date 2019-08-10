@@ -1,5 +1,5 @@
 <section class="col-lg-6 col-xl-6">
-    <div class="box">
+    <div class="box mt-4">
         <a href="{{ route('buildings.show', $building->slug) }}">
             <div class="box-img" style="background-image: url({{ count($building->images) > 0 ? $building->images->first()->path : '' }});">
                 <div class="box-info px-2 py-1">

@@ -32,7 +32,7 @@ class HomeController extends Controller
         $buildings = Building::where('is_featured', true)
                             ->latest()
                             ->with('images')
-                            ->take(2)
+                            ->take(4)
                             ->get();
 
         $apartments = Apartment::latest()
