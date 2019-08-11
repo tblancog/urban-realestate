@@ -39,6 +39,10 @@
                                                 <a href="#" @click="deleteItem(apartment.slug)">
                                                     <i class="fa fa-trash red"></i>
                                                 </a>
+                                                /
+                                                <a href="#" @click="cloneItem(apartment)">
+                                                    <i class="fa fa-clone blue"></i>
+                                                </a>
                                             </div>
                                             <div class="details-card">
                                                 <p>{{ apartment.description.substr(0,200)+'...'  }}</p>
@@ -443,6 +447,36 @@
                             swal(
                                 'Borrado!',
                                 'Departamento borrado.',
+                                'success'
+                            )
+                            Fire.$emit('AfterCreate');
+                        }).catch(() => {
+                            swal("Error!", "Ups, ocurrió un error.", "warning");
+                        });
+                    }
+                })
+            },
+            cloneItem(item) {
+                console.log(item)
+                swal({
+                    title: 'Deseas duplicar "'+ item.title +'" ?',
+                    text: "El duplicado resultante se llamará (Copia XXX) "+item.title,
+                    type: 'info',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Duplicar',
+                    cancelButtonText: 'Cancelar',
+                }).then((result) => {
+
+                    // Send request to the server
+                    if (result.value) {
+                        console.log('Respondí sí')
+                        axios.post('api/apartments/' + item.slug + '/clone').then((res) => {
+                            const data = res.data
+                            swal(
+                                'Duplicado!',
+                                'La nueva propierdad tiene como título: "' + data.title + '".',
                                 'success'
                             )
                             Fire.$emit('AfterCreate');

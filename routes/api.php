@@ -26,6 +26,7 @@ Route::delete('images/{id}/apartment', 'ImageController@destroyApartmentImage');
 Route::delete('images/{id}/building', 'ImageController@destroyBuildingImage');
 
 
+Route::post('apartments/{apartment}/clone', 'API\ApartmentController@clone');
 Route::resource('apartments', 'API\ApartmentController')
         ->only('index', 'store', 'update', 'destroy')
         ->names(['index'=> '']);

@@ -7,7 +7,7 @@ use App\Amenity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ApartmentRequest;
-
+use Faker\Factory;
 
 class ApartmentController extends Controller
 {
@@ -73,6 +73,35 @@ class ApartmentController extends Controller
         $apartment->update($request->all());
         return response()->json(['message' => 'Departamento creado', 'id'=> $apartment->id], 200);
 
+    }
+
+    /**
+     * Clone existing resource
+     *
+     * @param  \App\Apartment  $apartment
+     * @return \Illuminate\Http\Response
+     */
+    public function clone(Apartment $apartment)
+    {
+        $apartment->load('amenities', 'images', 'building');
+        $clone = $apartment->replicate();
+        // $clone->push();
+
+        // foreach ($apartment->amenities as $amenity) {
+        //     $clone->amenity()->sync($amenity);
+        // }
+
+        // foreach ($apartment->images as $images) {
+        //     $clone->images()->sync($images);
+        // }
+
+        $faker = Factory::create();
+        $random = $faker->unique->randomNumber(3);
+        $clone->title = "(Copia $random) ".$apartment->title;
+        // copy image folder if any
+
+        $clone->save();
+        return $clone;
     }
 
     /**
