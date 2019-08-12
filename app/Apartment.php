@@ -67,4 +67,28 @@ class Apartment extends Model
 
         return $query;
     }
+
+    public function duplicateApartament()
+    {
+        $clone = $this->load('images', 'building')
+                      ->replicate();
+        $faker = Factory::create();
+        $random = $faker->unique->randomNumber(3);
+        $clone->title = "(Copia $random) " . $this->title;
+        $saved = $clone->save();
+
+        // Copy images in new location if there are images
+        $dir = config('images.properties_upload_path') . $this->slug;
+        if( $saved &&
+            $this->images()->exists() &&
+            is_dir( $dir ) ) {
+
+            \File::copyDirectory($dir, config('images.properties_upload_path') . str_slug($clone->title));
+
+            foreach ($this->images as $image) {
+                $clone->images()->create($image->toArray());
+            }
+        }
+        return $clone;
+    }
 }

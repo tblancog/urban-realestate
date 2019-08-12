@@ -38,7 +38,9 @@ class ApartmentController extends Controller
       $input = collect($request->input())
                               ->except('buildings', 'amenities', 'building_id');
 
-      $building_id = $request->input('building_id')['id'];
+      $input = collect($request->input());
+
+      $building_id = $request->input('building_id');
       $input->put('building_id', $building_id);
 
       $apartment = Apartment::create($input->toArray());
@@ -83,24 +85,7 @@ class ApartmentController extends Controller
      */
     public function clone(Apartment $apartment)
     {
-        $apartment->load('amenities', 'images', 'building');
-        $clone = $apartment->replicate();
-        // $clone->push();
-
-        // foreach ($apartment->amenities as $amenity) {
-        //     $clone->amenity()->sync($amenity);
-        // }
-
-        // foreach ($apartment->images as $images) {
-        //     $clone->images()->sync($images);
-        // }
-
-        $faker = Factory::create();
-        $random = $faker->unique->randomNumber(3);
-        $clone->title = "(Copia $random) ".$apartment->title;
-        // copy image folder if any
-
-        $clone->save();
+        $clone = $apartment->duplicateApartament();
         return $clone;
     }
 
