@@ -8,6 +8,8 @@
                         <div class="card-tools">
                             <button class="btn btn-success" @click="newModal">Crear Nuevo <i
                                     class="fas fa-plus fa-fw"></i></button>
+                            <button class="btn btn-info" @click="newBatch">Carga Masiva<i
+                                    class="fas fa-file-excel fa-fw"></i></button>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -279,6 +281,8 @@
 
         <!-- Show details modal -->
         <apartment-detail :item="selected" />
+
+        <batch-load></batch-load>
     </div>
 
 
@@ -288,6 +292,7 @@
 <script>
     import ImageUploader from './ImageUploader';
     import ApartmentDetail from './ApartmentDetail';
+    import BatchLoad from './BatchLoad';
     import utils from '../mixins/utils.js'
     import vSelect from 'vue-select'
     import 'vue-select/dist/vue-select.css';
@@ -296,7 +301,8 @@
         components: {
             ImageUploader,
             ApartmentDetail,
-            vSelect
+            vSelect,
+            BatchLoad
         },
         mixins: [utils],
         data() {
@@ -426,6 +432,9 @@
                 }) => (this.form.buildings = data));
 
                 $('#addNew').modal('show');
+            },
+            newBatch() {
+                $('#batch').modal('show');
             },
             showModal(item) {
                 $('#show').modal('show');
@@ -596,6 +605,9 @@
 
                             .card-tools {
                                 padding: 10px;
+                                .btn {
+                                    color: #FFF;
+                                }
                             }
                         }
 

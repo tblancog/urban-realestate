@@ -14,7 +14,7 @@ Route::get('/dashboard', 'HomeController@dashboard')->middleware('auth');
 
 // Buildings
 Route::resource('buildings', 'BuildingController')->only('show', 'index');
-  
+
 // Apartments
 Route::resource('apartments', 'ApartmentController')->only('show', 'index');
 
@@ -34,6 +34,10 @@ Route::delete('delete-sliders/{id}', 'SliderController@deleteSlide');
 
 // Image uplooader route
 Route::post('images-upload', 'ImageController@upload');
+
+// CSV read
+route::post('batch', 'ApartmentController@batchUpload');
+
 
 // Route::get('/detail_building', function () {
 //   return view('detail-building');
