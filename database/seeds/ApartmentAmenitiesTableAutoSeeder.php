@@ -73,47 +73,35 @@ class ApartmentAmenitiesTableAutoSeeder extends Seeder
             ),
             9 => 
             array (
-                'id' => '10',
-                'amenity_id' => '8',
-                'apartment_id' => '4',
-            ),
-            10 => 
-            array (
-                'id' => '11',
-                'amenity_id' => '9',
-                'apartment_id' => '4',
-            ),
-            11 => 
-            array (
                 'id' => '12',
                 'amenity_id' => '24',
                 'apartment_id' => '14',
             ),
-            12 => 
+            10 => 
             array (
                 'id' => '13',
                 'amenity_id' => '16',
                 'apartment_id' => '14',
             ),
-            13 => 
+            11 => 
             array (
                 'id' => '14',
                 'amenity_id' => '26',
                 'apartment_id' => '15',
             ),
-            14 => 
+            12 => 
             array (
                 'id' => '15',
                 'amenity_id' => '37',
                 'apartment_id' => '15',
             ),
-            15 => 
+            13 => 
             array (
                 'id' => '16',
                 'amenity_id' => '16',
                 'apartment_id' => '16',
             ),
-            16 => 
+            14 => 
             array (
                 'id' => '17',
                 'amenity_id' => '38',

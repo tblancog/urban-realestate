@@ -12,49 +12,40 @@ class SlidersTableAutoSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('sliders')->delete();
-
+        
         \DB::table('sliders')->insert(array (
-            0 =>
+            0 => 
             array (
-                'id' => '1',
+                'id' => '26',
                 'index' => '0',
-                'title' => 'Edificio PH UH5',
-                'subtitle' => NULL,
-                'link' => '#',
-                'filename' => 'slide_0.jpg',
+                'title' => '',
+                'subtitle' => '',
+                'link' => '',
+                'filename' => 'slide_5d47b2c28b127.jpg',
             ),
-            1 =>
+            1 => 
             array (
-                'id' => '2',
+                'id' => '27',
                 'index' => '1',
-                'title' => 'Edificio PH UH5',
-                'subtitle' => NULL,
-                'link' => '#',
-                'filename' => 'slide_1.jpeg',
+                'title' => '',
+                'subtitle' => '',
+                'link' => '',
+                'filename' => 'slide_5d47b2bb4ecba.jpg',
             ),
-            2 =>
+            2 => 
             array (
-                'id' => '3',
+                'id' => '28',
                 'index' => '2',
-                'title' => 'Edificio PH UH5',
-                'subtitle' => NULL,
-                'link' => '#',
-                'filename' => 'slide_2.jpeg',
-            ),
-            3 =>
-            array (
-                'id' => '4',
-                'index' => '3',
-                'title' => 'Prueba 3',
-                'subtitle' => 'Subtítulo de prueba',
-                'link' => '#',
-                'filename' => NULL,
+                'title' => '',
+                'subtitle' => '',
+                'link' => '',
+                'filename' => 'slide_5d47b2b3789bd.jpg',
             ),
         ));
-
-
+        
+        
     }
 }

@@ -24,7 +24,7 @@ class ConfigsTableAutoSeeder extends Seeder
                 'key' => 'title',
                 'value' => 'Inversiones',
                 'created_at' => '2019-07-30 20:23:21',
-                'updated_at' => '2019-07-30 20:23:21',
+                'updated_at' => '2019-08-08 13:10:48',
             ),
             1 => 
             array (
@@ -33,16 +33,16 @@ class ConfigsTableAutoSeeder extends Seeder
                 'key' => 'top_text',
                 'value' => 'Si estás interesado en que visitemos tu propiedad y la tasemos, contactate con nosotros y nos estaremos comunicando a la brevedad.',
                 'created_at' => '2019-07-30 20:23:21',
-                'updated_at' => '2019-07-30 20:23:21',
+                'updated_at' => '2019-08-08 13:10:48',
             ),
             2 => 
             array (
                 'id' => '15',
                 'module' => 'investments',
                 'key' => 'bottom_text',
-                'value' => '',
+                'value' => 'Contacto: mep.urban@gmail.com',
                 'created_at' => '2019-07-30 20:23:21',
-                'updated_at' => '2019-07-30 20:23:21',
+                'updated_at' => '2019-08-08 13:10:48',
             ),
             3 => 
             array (
@@ -51,7 +51,7 @@ class ConfigsTableAutoSeeder extends Seeder
                 'key' => 'form',
                 'value' => '1',
                 'created_at' => '2019-07-30 20:23:21',
-                'updated_at' => '2019-07-30 20:23:21',
+                'updated_at' => '2019-08-08 13:10:48',
             ),
             4 => 
             array (
