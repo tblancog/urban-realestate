@@ -156,7 +156,7 @@
                 <div class="description-bot">
 
                     <p class="description-body">
-                        {{ $apartment->description }}
+                        {!! nl2br($apartment->description) !!}
                     </p>
                 </div>
             </div>

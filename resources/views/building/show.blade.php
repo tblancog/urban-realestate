@@ -92,7 +92,7 @@
                 <div class="description-bot">
 
                     <p class="description-body">
-                        {{ $building->description }}
+                        {!! nl2br($building->description) !!}
                     </p>
                 </div>
             </div>

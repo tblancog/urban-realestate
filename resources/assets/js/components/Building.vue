@@ -116,7 +116,7 @@
 
                             <!-- Google Maps Url -->
                             <div class="form-group col-lg-9">
-                                <textarea v-model="form.url_maps" name="url_maps" id="url_maps" rows="2"
+                                <textarea style="white-space: pre-line;" v-model="form.url_maps" name="url_maps" id="url_maps" rows="2"
                                     placeholder="Embed de google maps" class="form-control"
                                     :class="{ 'is-invalid': form.errors.has('url_maps') }"></textarea>
                                 <has-error :form="form" field="url_maps"></has-error>

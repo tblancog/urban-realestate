@@ -202,7 +202,7 @@
 
                             <!-- Description -->
                             <div class="form-group col-lg-9">
-                                <textarea v-model="form.description" name="description" id="description" rows="5"
+                                <textarea style="white-space: pre-line;" v-model="form.description" name="description" id="description" rows="5"
                                     placeholder="Descripción no mayor a 2048 caracteres" class="form-control"
                                     :class="{ 'is-invalid': form.errors.has('description') }"></textarea>
                                 <has-error :form="form" field="description"></has-error>
