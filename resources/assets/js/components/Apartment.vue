@@ -124,7 +124,7 @@
 
                             <!-- Location -->
                             <div class="form-group col-lg-9">
-                                <input v-model="form.location" type="text" name="location" placeholder="Barrio"
+                                <input v-model="form.building.location" type="text" name="location" placeholder="Barrio"
                                     class="form-control" :class="{ 'is-invalid': form.errors.has('location') }">
                                 <has-error :form="form" field="location"></has-error>
                             </div>

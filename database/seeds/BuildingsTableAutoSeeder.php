@@ -12,25 +12,26 @@ class BuildingsTableAutoSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('buildings')->delete();
-        
+
         \DB::table('buildings')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => '21',
                 'title' => 'Edificio UH 5',
                 'slug' => 'edificio-uh-5',
                 'address' => 'Mariano Acha 3458',
+                'location'=> 'Villa Urquiza',
                 'url_maps' => '<iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
                 'from_price' => '0',
                 'price' => '169000',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -45,12 +46,13 @@ con deck.',
                 'created_at' => '2019-08-06 17:38:17',
                 'updated_at' => '2019-08-06 19:07:20',
             ),
-            1 => 
+            1 =>
             array (
                 'id' => '23',
                 'title' => 'Edificio G 3051',
                 'slug' => 'edificio-g-3051',
                 'address' => 'Galvan 3051',
+                'location'=> 'Belgrano R',
                 'url_maps' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.4543443022717!2d-58.48913148477123!3d-34.567368580468965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6f55c9a4cbb%3A0x910191cd7ab1ace!2sGalv%C3%A1n+3051%2C+C1431FVD+CABA!5e0!3m2!1ses!2sar!4v1565124413839!5m2!1ses!2sar" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
                 'from_price' => '1',
                 'price' => '92250',
@@ -63,7 +65,7 @@ con deck.',
                 'updated_at' => '2019-08-06 19:50:06',
             ),
         ));
-        
-        
+
+
     }
 }

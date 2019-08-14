@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="dept-name">
-                            <h2>{{ $apartment->title }}</h2>
+                            <h2>{{ $apartment->title }} - {{ $apartment->building->location }}</h2>
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-12 box-icons">
-                                    @foreach ($apartment->amenities as $amenity)
+                                    @foreach ($apartment->building->amenities as $amenity)
                                     <div class="detail-box">
                                         <img src="/img/icons/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
                                         <p style="text-transform: capitalize;">{{ $amenity->title }}</p>
@@ -170,7 +170,7 @@
                 </div>
                 <div class="map-bot">
                     <div class="map-responsive">
-                        {{!! $apartment->url_maps !!}}
+                        {{!! $apartment->building->url_maps !!}}
                     </div>
                 </div>
             </div>
@@ -185,13 +185,13 @@
                         <h4 class="misc-title">Información Básica</h4>
                         <ul>
                             <li>Ambientes: <span class="misc-value">{{ $apartment->rooms }}</span></li>
-                            <li>Dormitorios: <span class="misc-value">{{ $apartment->rooms }}</span></li>
-                            <li>Baños: <span class="misc-value">{{ $apartment->rooms }}</span></li>
-                            <li>Toilettes: <span class="misc-value">{{ $apartment->rooms }}</span></li>
-                            <li>Antigüedad: <span class="misc-value">{{ $apartment->rooms }}</span></li>
-                            <li>Expensas: <span class="misc-value">{{ $apartment->rooms }}</span></li>
-                            <li>Orientación: <span class="misc-value">{{ $apartment->rooms }}</span></li>
-                            <li>Disposición: <span class="misc-value">{{ $apartment->rooms }}</span></li>
+                            <li>Dormitorios: <span class="misc-value">{{ $apartment->dormitorios }}</span></li>
+                            <li>Baños: <span class="misc-value">{{ $apartment->banios }}</span></li>
+                            <li>Toilettes: <span class="misc-value">{{ $apartment->toilettes }}</span></li>
+                            <li>Antigüedad: <span class="misc-value">{{ $apartment->antiguedad }}</span></li>
+                            <li>Expensas: <span class="misc-value">{{ $apartment->expensas }}</span></li>
+                            <li>Orientación: <span class="misc-value">{{ $apartment->orientacion }}</span></li>
+                            <li>Disposición: <span class="misc-value">{{ $apartment->dispocicion }}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -200,8 +200,8 @@
                         <h4 class="misc-title">Superficies</h4>
                         <ul>
                         <li>Cubierta: <span class="misc-value">{{ $apartment->area }}m<sup>2</sup></span></li>
-                            <li>Semicubierta: <span class="misc-value">{{ $apartment->area }}m<sup>2</sup></span></li>
-                            <li>Total Construido: <span class="misc-value">{{ $apartment->area }}m<sup>2</sup></span></li>
+                        <li>Semicubierta: <span class="misc-value">{{ $apartment->area_semicubierta }}m<sup>2</sup></span></li>
+                        <li>Total Construido: <span class="misc-value">{{ $apartment->area_total_construido }}m<sup>2</sup></span></li>
                         </ul>
                     </div>
                 </div>
