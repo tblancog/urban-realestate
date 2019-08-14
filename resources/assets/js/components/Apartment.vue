@@ -116,16 +116,6 @@
 
                             <!-- Building -->
                             <div class="form-group col-lg-9">
-                              <!-- <v-select :value="form.building_id"  :options="form.buildings" @input="setSelectedBuilding"></v-select> -->
-                                <!--
-                                v-model="form.building_id" -->
-
-                              <!-- <v-select v-if="buildings"
-                                item-text="label"
-                                item-value="id"
-                                :items="buildings"
-                                v-model="form.building_id"
-                              ></v-select> -->
                             <select class="form-control" v-model="form.building_id">
                                 <option value="">--Edificio--</option>
                                 <option v-for="building in buildings" :value="building.id" :key="building.id">{{ building.label }}</option>
@@ -221,13 +211,6 @@
                                             {{ amenity.title }}
                                         </li>
                                       </ul>
-                                    <!-- <div v-for="amenity in amenities" :key="amenity.id" class="col-lg-4">
-                                      <input type="checkbox" :id="amenity.title"
-                                                             :value="amenity.id"
-                                                             v-model="selectedAmenities"
-                                                             name="amenities[]" class="form-check-input">
-                                      <label class="form-check-label" :for="amenity.title">{{ amenity.title }}</label>
-                                    </div> -->
                                   </div>
                                 </div>
                             </div>
@@ -567,11 +550,9 @@
             //         })
             // })
             this.loadItems();
-            // this.reloadAmenities(this.form.building_id);
             Fire.$on('AfterCreate', () => {
                 this.loadItems();
             });
-            // console.log(this.form.building_id);
         }
 
     }
