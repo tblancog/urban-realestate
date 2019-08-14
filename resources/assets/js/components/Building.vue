@@ -107,11 +107,21 @@
                                 </div>
                             </div>
 
-                            <!-- Address -->
+                            <!-- Address and location -->
                             <div class="form-group col-lg-9">
-                                <input v-model="form.address" type="text" name="address" placeholder="Dirección"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('address') }">
-                                <has-error :form="form" field="address"></has-error>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input v-model="form.address" type="text" name="address" placeholder="Dirección"
+                                            class="form-control" :class="{ 'is-invalid': form.errors.has('address') }">
+                                        <has-error :form="form" field="address"></has-error>
+                                    </div>
+                                    <div class="col-lg-6">
+                                         <select class="form-control text-capitalize" v-model="form.location">
+                                            <option disabled value="">--Selecciona Barrio--</option>
+                                            <option v-for="loc in locations" :value="loc" :key="loc">{{ loc }}</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Google Maps Url -->
@@ -258,16 +268,20 @@
                     id: '',
                     title: '',
                     address: '',
+                    location: '',
                     url_maps: '',
+
                     from_price: '0',
                     price: '',
                     description: '',
                     status: '',
+
                     is_featured: '0',
-                    images: [],
-                    amenities: [],
                     contact_name: '',
                     contact_phone: '',
+
+                    images: [],
+                    amenities: [],
                 })
             }
         },

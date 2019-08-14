@@ -12,11 +12,14 @@ class Building extends Model
       'title',
       'slug',
       'address',
+      'location',
       'url_maps',
+
       'from_price',
       'price',
       'description',
       'status',
+
       'is_featured',
       'contact_name',
       'contact_phone',
