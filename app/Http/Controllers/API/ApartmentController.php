@@ -42,9 +42,6 @@ class ApartmentController extends Controller
       $input->put('building_id', $building_id);
 
       $apartment = Apartment::create($input->toArray());
-      $apartment->amenities()->sync(
-        $request->amenities
-      );
 
       return response()->json(['message' => 'Departmento creado', 'id'=> $apartment->id], 201);
     }

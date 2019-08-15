@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="dept-name">
+                        <div class="dept-name text-capitalize">
                             <h2>{{ $apartment->title }} - {{ $apartment->building->location }}</h2>
                         </div>
                     </div>
@@ -189,9 +189,9 @@
                             <li>Baños: <span class="misc-value">{{ $apartment->banios }}</span></li>
                             <li>Toilettes: <span class="misc-value">{{ $apartment->toilettes }}</span></li>
                             <li>Antigüedad: <span class="misc-value">{{ $apartment->antiguedad }}</span></li>
-                            <li>Expensas: <span class="misc-value">{{ $apartment->expensas }}</span></li>
+                            <li>Expensas: <span class="misc-value">$ @convert($apartment->expensas)</span></li>
                             <li>Orientación: <span class="misc-value">{{ $apartment->orientacion }}</span></li>
-                            <li>Disposición: <span class="misc-value">{{ $apartment->dispocicion }}</span></li>
+                            <li>Disposición: <span class="misc-value">{{ $apartment->disposicion }}</span></li>
                         </ul>
                     </div>
                 </div>

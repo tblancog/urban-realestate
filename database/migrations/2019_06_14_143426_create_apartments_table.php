@@ -31,7 +31,7 @@ class CreateApartmentsTable extends Migration
             $table->integer('antiguedad')->nullable();
             $table->unsignedBigInteger('expensas')->nullable();
             $table->string('orientacion')->nullable();
-            $table->string('dispocicion')->nullable();
+            $table->string('disposicion')->nullable();
 
             // Area
             $table->string('area')->nullable();

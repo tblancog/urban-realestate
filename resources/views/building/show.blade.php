@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="dept-name">
+                        <div class="dept-name text-capitalize">
                             <h2>{{ $building->title }} - {{ $building->location }}</h2>
                         </div>
                     </div>

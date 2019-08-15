@@ -21,8 +21,7 @@
                                         <div class="col-md-3 col-sm-12 cropped">
                                             <a data-toggle="modal" data-target="#exampleModalLong" href="#"
                                                 @click="selected = apartment">
-                                                <img v-if="apartment.images.length"
-                                                  :src="apartment.images[0].path"
+                                                <img v-if="apartment.images.length" :src="apartment.images[0].path"
                                                     class="img-fluid" />
                                             </a>
                                         </div>
@@ -32,7 +31,7 @@
                                                     @click="selected = apartment">
                                                     <h5 class="mt-0">{{ apartment.title }}</h5>
                                                 </a>
-                                                <i class="fa fa-map-marker-alt fa-fw"></i>{{ apartment.address }}
+                                                <i class="fa fa-map-marker-alt fa-fw"></i>{{ apartment.building.address }}
                                                 <i class="fa fa-dollar-sign fa-fw"></i>USD {{ apartment.price }}
                                                 <a href="#" @click="editModal(apartment)">
                                                     <i class="fa fa-edit blue"></i>
@@ -101,37 +100,36 @@
 
                             <!-- Image uploader -->
                             <div class="form-group col-lg-12">
-                                <image-uploader
-                                  v-on:imageDeleted="deleteImage($event)"
-                                  :files="files"
-                                  :images="form.images"/>
+                                <image-uploader v-on:imageDeleted="deleteImage($event)" :files="files"
+                                    :images="form.images" />
                             </div>
 
                             <!-- Title -->
                             <div class="form-group col-lg-9">
-                              <input v-model="form.title" type="text" name="title" placeholder="Título"
-                                  class="form-control" :class="{ 'is-invalid': form.errors.has('title') }">
-                              <has-error :form="form" field="title"></has-error>
+                                <input v-model="form.title" type="text" name="title" placeholder="Título"
+                                    class="form-control" :class="{ 'is-invalid': form.errors.has('title') }">
+                                <has-error :form="form" field="title"></has-error>
                             </div>
 
                             <!-- Building -->
                             <div class="form-group col-lg-9">
-                            <select class="form-control" v-model="form.building_id">
-                                <option value="">--Edificio--</option>
-                                <option v-for="building in buildings" :value="building.id" :key="building.id">{{ building.label }}</option>
-                            </select>
+                                <select class="form-control" v-model="form.building_id">
+                                    <option value="">--Edificio--</option>
+                                    <option v-for="building in buildings" :value="building.id" :key="building.id">
+                                        {{ building.label }}</option>
+                                </select>
                             </div>
 
                             <!-- Location -->
                             <div class="form-group col-lg-9">
-                                <input disabled v-model="form.building.location" type="text" name="location" placeholder="Barrio"
-                                    class="form-control text-capitalize">
+                                <input disabled v-model="form.building.location" type="text" name="location"
+                                    placeholder="Barrio" class="form-control text-capitalize">
                             </div>
 
                             <!-- Address -->
                             <div class="form-group col-lg-9">
-                                <input disabled v-model="form.building.address" type="text" name="address" placeholder="Dirección"
-                                    class="form-control">
+                                <input disabled v-model="form.building.address" type="text" name="address"
+                                    placeholder="Dirección" class="form-control">
                             </div>
 
                             <!-- Google Maps Url -->
@@ -139,82 +137,212 @@
                                 <div v-html="form.building.url_maps"> </div>
                             </div>
 
-                            <!-- Floor, department and ID (code) -->
-                            <div class="col-lg-9">
-                                <div class="row">
-                                    <div class="form-group col-lg-4">
-                                        <input v-model="form.floor" type="text" name="floor" placeholder="Piso"
-                                            class="form-control" :class="{ 'is-invalid': form.errors.has('floor') }">
-                                        <has-error :form="form" field="floor"></has-error>
-                                    </div>
-                                    <div class="form-group col-lg-4">
-                                        <input v-model="form.department" type="text" name="department"
-                                            placeholder="# Departamento" class="form-control"
-                                            :class="{ 'is-invalid': form.errors.has('department') }">
-                                        <has-error :form="form" field="department"></has-error>
-                                    </div>
-                                    <div class="form-group col-lg-4 invisible">
-                                        <input value="A" type="text" name="code" placeholder="ID"
-                                            class="form-control" :class="{ 'is-invalid': form.errors.has('code') }">
-                                        <has-error :form="form" field="code"></has-error>
-                                    </div>
-                                </div>
-                            </div>
-
                             <!-- Price -->
                             <div class="col-lg-9">
-                              <div class="row">
+                                <div class="row">
                                     <div class="form-group col-lg-4">
                                         <input v-model="form.price" type="number" name="price" placeholder="Precio"
                                             class="form-control" :class="{ 'is-invalid': form.errors.has('price') }">
                                         <has-error :form="form" field="price"></has-error>
                                     </div>
-                                    <div class="form-group col-lg-4">
-                                       <input v-model="form.area" type="number" name="area"
-                                          placeholder="Área m²"
-                                          class="form-control" :class="{ 'is-invalid': form.errors.has('area') }" />
-                                    </div>
-                                    <div class="form-group col-lg-4">
-                                        <input v-model="form.rooms" type="number" name="rooms"
-                                            placeholder="Ambientes"
-                                            class="form-control" :class="{ 'is-invalid': form.errors.has('rooms') }"/>
-                                    </div>
-                                    <has-error :form="form" field="rooms"></has-error>
                                 </div>
-                              </div>
-
-
+                            </div>
 
                             <!-- Description -->
                             <div class="form-group col-lg-9">
-                                <textarea style="white-space: pre-line;" v-model="form.description" name="description" id="description" rows="5"
-                                    placeholder="Descripción no mayor a 2048 caracteres" class="form-control"
+                                <textarea style="white-space: pre-line;" v-model="form.description" name="description"
+                                    id="description" rows="5" placeholder="Descripción no mayor a 2048 caracteres"
+                                    class="form-control"
                                     :class="{ 'is-invalid': form.errors.has('description') }"></textarea>
                                 <has-error :form="form" field="description"></has-error>
                             </div>
 
                             <!-- Amenities -->
-                            <div class="form-group col-lg-12">
-                              <p>
-                              <a class="btn btn-primary" data-toggle="collapse" href="#amenitiesForm" role="button" aria-expanded="false" aria-controls="amenitiesForm">
-                                Amenities
-                              </a>
-                                <div id="amenitiesForm" class="form-group form-check collapse">
-                                  <div class="row">
-                                      <ul>
-                                        <li v-for="amenity in amenities" :key="amenity.id" class="col-lg-3">
-                                            {{ amenity.title }}
-                                        </li>
-                                      </ul>
-                                  </div>
+                            <div class="form-group col-lg-9">
+                                <div class="row">
+                                    <div class="m-2">
+                                        <a class="btn btn-primary" data-toggle="collapse" href="#basicForm"
+                                            role="button" aria-expanded="false" aria-controls="basicForm">
+                                            Información de departamento
+                                        </a>
+                                    </div>
+                                    <div class="m-2">
+                                        <a class="btn btn-primary" data-toggle="collapse" href="#superficieForm"
+                                            role="button" aria-expanded="false" aria-controls="superficieForm">
+                                            Superficie
+                                        </a>
+                                    </div>
+                                    <div class="m-2">
+                                        <a class="btn btn-primary" data-toggle="collapse" href="#amenitiesForm"
+                                            role="button" aria-expanded="false" aria-controls="amenitiesForm">
+                                            Amenities de edificio
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <!-- Basic Form -->
+                                    <div id="basicForm" class="form-group form-check collapse">
+
+                                        <!-- Floor  -->
+                                        <div class="row">
+                                            <div class="form-group col-lg-4">
+                                                <label for="floor">Piso</label>
+                                                <input v-model="form.floor" type="text" name="floor" placeholder="Piso"
+                                                    class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('floor') }">
+                                                <has-error :form="form" field="floor"></has-error>
+                                            </div>
+                                            <!-- Department #  -->
+                                            <div class="form-group col-lg-4">
+                                                <label for="department"># dpto.</label>
+                                                <input v-model="form.department" type="text" name="department"
+                                                    placeholder="# Departamento" class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('department') }">
+                                                <has-error :form="form" field="department"></has-error>
+                                            </div>
+
+                                            <!-- Ambientes -->
+                                            <div class="form-group col-lg-4">
+                                                <label for="rooms">Ambientes</label>
+                                                <input id="rooms" v-model="form.rooms" type="number" name="rooms"
+                                                    placeholder="Ambientes" class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('rooms') }" />
+                                            </div>
+                                            <has-error :form="form" field="rooms"></has-error>
+
+                                            <!-- Dormitorios -->
+                                            <div class="form-group col-lg-4">
+                                                <label for="dormitorios">Dormitorios</label>
+                                                <input id="dormitorios" v-model="form.dormitorios" type="number"
+                                                    name="dormitorios" placeholder="Dormitorios" class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('dormitorios') }" />
+                                            </div>
+                                            <has-error :form="form" field="dormitorios"></has-error>
+
+                                            <!-- Baños -->
+                                            <div class="form-group col-lg-4">
+                                                <label for="banios">Baños</label>
+                                                <input id="banios" v-model="form.banios" type="number" name="baños"
+                                                    placeholder="banios" class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('banios') }" />
+                                            </div>
+                                            <has-error :form="form" field="banios"></has-error>
+
+                                            <!-- Toilettes -->
+                                            <div class="form-group col-lg-4">
+                                                <label for="toilettes">Toilettes</label>
+                                                <input v-model="form.toilettes" type="number" name="toilettes"
+                                                    placeholder="toilettes" class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('toilettes') }" />
+                                            </div>
+                                            <has-error :form="form" field="toilettes"></has-error>
+
+                                            <!-- Antigüedad -->
+                                            <div class="form-group col-lg-4">
+                                                <label for="antiguedad">Antigüedad (años)</label>
+                                                <input v-model="form.antiguedad" type="number" name="antiguedad"
+                                                    placeholder="antiguedad" class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('antiguedad') }" />
+                                            </div>
+                                            <has-error :form="form" field="antiguedad"></has-error>
+
+                                            <!-- Expensas -->
+                                            <div class="form-group col-lg-4">
+                                                <label for="expensas">Expensas</label>
+                                                <input v-model="form.expensas" type="number" name="expensas"
+                                                    placeholder="expensas" class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('expensas') }" />
+                                            </div>
+                                            <has-error :form="form" field="expensas"></has-error>
+
+                                            <!-- Disposición -->
+                                            <div class="form-group col-lg-4">
+                                                <label for="disposicion">Disposición</label>
+                                                <select class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('disposicion') }"
+                                                    id="disposicion" v-model="form.disposicion">
+                                                    <option selected value="">--Disposición--</option>
+                                                    <option value="Frente">Frente</option>
+                                                    <option value="Contrafrente">Contrafrente</option>
+                                                </select>
+                                                <has-error :form="form" field="disposicion"></has-error>
+                                            </div>
+
+                                            <!-- Orientación -->
+                                            <div class="form-group col-lg-4">
+                                                <label for="orientacion">Orientación</label>
+                                                <select class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('orientacion') }"
+                                                    id="orientacion" v-model="form.orientacion">
+                                                    <option selected value="">--Orientación--</option>
+                                                    <option value="Norte">Norte</option>
+                                                    <option value="Noroeste">Noroeste</option>
+                                                    <option value="Oeste">Oeste</option>
+                                                    <option value="Suroeste">Suroeste</option>
+                                                    <option value="Este">Este</option>
+                                                    <option value="Sureste">Sureste</option>
+                                                    <option value="Noroeste">Noroeste</option>
+                                                </select>
+                                                <has-error :form="form" field="orientacion"></has-error>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Superficie Form -->
+                                    <div id="superficieForm" class="form-group form-check collapse">
+
+                                        <div class="row">
+                                            <!-- Area -->
+                                            <div class="form-group col-lg-4">
+                                                <label for="area">Area</label>
+                                                <input v-model="form.area" type="text" name="area" placeholder="m²"
+                                                    class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('area') }">
+                                                <has-error :form="form" field="area"></has-error>
+                                            </div>
+
+                                            <!-- Area semicubierta -->
+                                            <div class="form-group col-lg-4">
+                                                <label for="area">Area semicubierta</label>
+                                                <input v-model="form.area_semicubierta" type="text" name="area_semicubierta" placeholder="m²"
+                                                    class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('area_semicubierta') }">
+                                                <has-error :form="form" field="area_semicubierta"></has-error>
+                                            </div>
+
+                                            <!-- Area total construido-->
+                                            <div class="form-group col-lg-4">
+                                                <label for="area">Area total</label>
+                                                <input v-model="form.area_total_construido" type="text" name="area_total_construido" placeholder="m²"
+                                                    class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('area_total_construido') }">
+                                                <has-error :form="form" field="area_total_construido"></has-error>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Amenities Form -->
+                                    <div id="amenitiesForm" class="form-group form-check collapse">
+                                        <div class="row">
+                                            <ul>
+                                                <li v-for="amenity in amenities" :key="amenity.id" class="col-lg-3">
+                                                    {{ amenity.title }}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
-                             <!-- Status -->
+                            <!-- Status -->
                             <div class="form-group col-lg-9">
                                 <select name="type" id="status" class="form-control"
-                                    :class="{ 'is-invalid': form.errors.has('status') }"
-                                    v-model="form.status">
+                                    :class="{ 'is-invalid': form.errors.has('status') }" v-model="form.status">
                                     <option selected value="">--Estado--</option>
                                     <option value="En_obra">En obra</option>
                                     <option value="A_estrenar">A estrenar</option>
@@ -245,7 +373,7 @@
                             </div>
                         </div>
 
-                        <!-- Status -->
+                        <!-- Buttons -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                             <button v-show="editmode" type="submit" class="btn btn-success">Guardar</button>
@@ -308,12 +436,26 @@
                     floor: '',
                     department: '',
                     code: 'A',
+                    price: '',
 
                     url_maps: '',
-                    price: '',
-                    area: '',
                     rooms: '',
                     amenities: [],
+
+                    // Información Básica
+                    rooms: '',
+                    dormitorios: '',
+                    banios: '',
+                    toilettes: '',
+                    antiguedad: '',
+                    expensas: '',
+                    orientacion: '',
+                    disposicion: '',
+
+                    // Area
+                    area: '',
+                    area_semicubierta: '',
+                    area_total_construido: '',
 
                     description: '',
                     status: '',
@@ -335,12 +477,12 @@
         },
         methods: {
             reloadBuildingData(buildingId) {
-                if(buildingId !== '') {
+                if (buildingId !== '') {
                     axios.get(`api/buildings/${buildingId}`)
-                      .then( (res) => {
-                          this.form.building = res.data
-                          this.amenities = this.form.building.amenities
-                       })
+                        .then((res) => {
+                            this.form.building = res.data
+                            this.amenities = this.form.building.amenities
+                        })
                 }
             },
             getResults(page = 1) {
@@ -350,7 +492,7 @@
                         // let newImgArr = [];
                         // response.data.forEach( (current, index)=> {
                         //   current.images.forEach((img, idx) => {
-                            //   newImgArr.push(img.path);
+                        //   newImgArr.push(img.path);
                         //   });
                         // });
 
@@ -370,8 +512,8 @@
                 this.form.put('api/apartments/' + selected.slug)
                     .then((res) => {
                         formData.append('id', res.data.id)
-                        formData.append('selected_slug',  selected.slug)
-                        formData.append('action',  'edit')
+                        formData.append('selected_slug', selected.slug)
+                        formData.append('action', 'edit')
                         formData.append('type', 'apartment')
                         axios.post('images-upload', formData)
                             .then(() => {
@@ -446,8 +588,8 @@
             },
             cloneItem(item) {
                 swal({
-                    title: 'Deseas duplicar "'+ item.title +'" ?',
-                    text: "El duplicado resultante se llamará (Copia XXX) "+item.title,
+                    title: 'Deseas duplicar "' + item.title + '" ?',
+                    text: "El duplicado resultante se llamará (Copia XXX) " + item.title,
                     type: 'info',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -474,28 +616,28 @@
                 })
             },
             deleteImage(event) {
-              const id = event.id
-              this.form.delete('api/images/'+ id +'/apartment/')
+                const id = event.id
+                this.form.delete('api/images/' + id + '/apartment/')
             },
             async loadItems() {
-              let vm = this
-              axios.all([
-                axios.get('api/apartments'),
-                axios.get('amenities')
-              ]).then(
-                axios.spread(function(res1, res2){
-                  vm.apartments = res1.data;
+                let vm = this
+                axios.all([
+                    axios.get('api/apartments'),
+                    axios.get('amenities')
+                ]).then(
+                    axios.spread(function (res1, res2) {
+                        vm.apartments = res1.data;
 
-                  let newImgArr = [];
-                  res1.data.data.forEach( (current, index)=> {
-                    current.images.forEach((img, idx) => {
-                        newImgArr.push(img.path);
-                    });
-                  });
-                  vm.apartments.images = newImgArr;
-                  vm.amenities = res2.data
-                })
-              );
+                        let newImgArr = [];
+                        res1.data.data.forEach((current, index) => {
+                            current.images.forEach((img, idx) => {
+                                newImgArr.push(img.path);
+                            });
+                        });
+                        vm.apartments.images = newImgArr;
+                        vm.amenities = res2.data
+                    })
+                );
             },
 
             createItem() {
@@ -531,9 +673,9 @@
         created() {
             this.files = []
             axios.get('/api/buildings/list')
-                  .then( (res) => {
-                      this.buildings = res.data
-                   })
+                .then((res) => {
+                    this.buildings = res.data
+                })
             // Fire.$on('searching', () => {
             //     let query = this.$parent.search;
             //     axios.get('api/findUser?q=' + query)
@@ -551,11 +693,9 @@
         }
 
     }
-
 </script>
 
 <style scoped lang="scss">
-
     #addNew {
         z-index: 10000;
     }
@@ -581,6 +721,7 @@
 
                             .card-tools {
                                 padding: 10px;
+
                                 .btn {
                                     color: #FFF;
                                 }
@@ -691,5 +832,4 @@
             }
         }
     }
-
 </style>
