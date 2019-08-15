@@ -105,47 +105,6 @@
                         </p>
                     </router-link>
                 </li>
-                {{-- <li class="nav-item">
-                    <router-link to="#abd" class="nav-link">
-                        <i class="nav-icon fa fa-money-check-alt green"></i>
-                        <p>
-                            Inversiones
-                        </p>
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="#abe" class="nav-link">
-                        <i class="nav-icon fas fa-percent green"></i>
-                        <p>
-                            Créditos
-                        </p>
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="#abf" class="nav-link">
-                        <i class="nav-icon fas fa-calculator green"></i>
-                        <p>
-                            Tasaciones
-                        </p>
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="#abg" class="nav-link">
-                        <i class="nav-icon fas fa-rss green"></i>
-                        <p>
-                            News
-                        </p>
-                    </router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="#abh" class="nav-link">
-                        <i class="nav-icon fas fa-envelope green"></i>
-                        <p>
-                            Contacto
-                        </p>
-                    </router-link>
-                </li> --}}
-
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">
