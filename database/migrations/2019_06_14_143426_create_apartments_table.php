@@ -21,7 +21,6 @@ class CreateApartmentsTable extends Migration
             $table->string('floor', 2);
             $table->string('department', 2);
             $table->string('code', 2);
-
             $table->unsignedBigInteger('price')->default(0);
 
             // Información Básica
