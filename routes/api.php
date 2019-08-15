@@ -14,7 +14,8 @@ use Illuminate\Http\Request;
 */
 
 Route::get('buildings/list', 'API\BuildingController@buildingList');
-Route::get('buildings/{id}/amenities', 'API\BuildingController@buildingAmenities');
+// Route::get('buildings/{id}/amenities', 'API\BuildingController@buildingAmenities');
+Route::get('buildings/{id}', 'API\BuildingController@show');
 Route::resource('buildings', 'API\BuildingController')
        ->only('index','store', 'update', 'destroy')
        ->names(['index'=> '']);

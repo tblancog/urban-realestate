@@ -18,13 +18,11 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-      return Apartment::latest()
+        $apartments = Apartment::latest()
                 ->with('images')
                 ->with('building')
-                ->with(['amenities' => function ($q) {
-                    $q->select('amenities.id as id', 'amenities.title');
-                }])
                 ->paginate(5);
+        return $apartments;
     }
 
     /**

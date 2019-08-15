@@ -124,24 +124,19 @@
 
                             <!-- Location -->
                             <div class="form-group col-lg-9">
-                                <input v-model="form.building.location" type="text" name="location" placeholder="Barrio"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('location') }">
-                                <has-error :form="form" field="location"></has-error>
+                                <input disabled v-model="form.building.location" type="text" name="location" placeholder="Barrio"
+                                    class="form-control text-capitalize">
                             </div>
 
                             <!-- Address -->
                             <div class="form-group col-lg-9">
-                                <input v-model="form.address" type="text" name="address" placeholder="Dirección"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('address') }">
-                                <has-error :form="form" field="address"></has-error>
+                                <input disabled v-model="form.building.address" type="text" name="address" placeholder="Dirección"
+                                    class="form-control">
                             </div>
 
                             <!-- Google Maps Url -->
                             <div class="form-group col-lg-9">
-                                <input v-model="form.url_maps" type="text" name="url_maps"
-                                    placeholder="Url de google maps" class="form-control"
-                                    :class="{ 'is-invalid': form.errors.has('url_maps') }">
-                                <has-error :form="form" field="url_maps"></has-error>
+                                <div v-html="form.building.url_maps"> </div>
                             </div>
 
                             <!-- Floor, department and ID (code) -->
@@ -309,7 +304,6 @@
                     id: '',
                     title: '',
                     address: '',
-                    location: '',
 
                     floor: '',
                     department: '',
@@ -328,22 +322,24 @@
                     contact_name: '',
                     contact_phone: '',
 
-                    building_id: ''
+                    building_id: '',
+                    building: {}
                 }),
                 buildings: [],
             }
         },
         watch: {
             'form.building_id': function (val) {
-                this.reloadAmenities(val)
+                this.reloadBuildingData(val)
             },
         },
         methods: {
-            reloadAmenities(buildingId) {
+            reloadBuildingData(buildingId) {
                 if(buildingId !== '') {
-                    axios.get(`/api/buildings/${buildingId}/amenities`)
+                    axios.get(`api/buildings/${buildingId}`)
                       .then( (res) => {
-                          this.amenities = res.data
+                          this.form.building = res.data
+                          this.amenities = this.form.building.amenities
                        })
                 }
             },
@@ -351,14 +347,14 @@
                 axios.get('api/apartments?page=' + page)
                     .then(response => {
                         this.apartments = response.data;
-                        let newImgArr = [];
+                        // let newImgArr = [];
                         // response.data.forEach( (current, index)=> {
                         //   current.images.forEach((img, idx) => {
                             //   newImgArr.push(img.path);
                         //   });
                         // });
 
-                        this.apartments.images = newImgArr;
+                        // this.apartments.images = newImgArr;
                     });
             },
             updateItem(selected) {
@@ -398,7 +394,7 @@
 
             },
             editModal(item) {
-                this.selectedAmenities = item.amenities.map( am => am.id);
+                // this.selectedAmenities = item.building.amenities.map( am => am.id);
                 this.selected = item
                 this.editmode = true;
                 this.form.reset();
@@ -449,7 +445,6 @@
                 })
             },
             cloneItem(item) {
-                console.log(item)
                 swal({
                     title: 'Deseas duplicar "'+ item.title +'" ?',
                     text: "El duplicado resultante se llamará (Copia XXX) "+item.title,

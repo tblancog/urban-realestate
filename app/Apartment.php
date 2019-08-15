@@ -17,12 +17,23 @@ class Apartment extends Model
 
       'floor',
       'department',
-      // 'code',
-
-      'url_maps',
+      'code',
       'price',
-      'area',
+
+      // Información Básica
       'rooms',
+      'dormitorios',
+      'banios',
+      'toilettes',
+      'antiguedad',
+      'expensas',
+      'orientacion',
+      'disposicion',
+
+      // Area
+      'area',
+      'area_semicubierta',
+      'area_total_construido',
 
       'description',
       'status',
@@ -31,11 +42,6 @@ class Apartment extends Model
 
       'building_id'
     ];
-
-    public function amenities(){
-
-      return $this->belongsToMany('App\Amenity', 'apartment_amenities');
-    }
 
     public function images(){
 

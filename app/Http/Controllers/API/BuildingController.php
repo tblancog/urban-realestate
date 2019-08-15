@@ -58,8 +58,9 @@ class BuildingController extends Controller
      * @param  \App\Building  $building
      * @return \Illuminate\Http\Response
      */
-    public function show($building)
+    public function show($buildingId)
     {
+        $building = Building::with('amenities')->find($buildingId);
         return $building;
     }
 
