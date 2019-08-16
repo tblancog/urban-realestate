@@ -21,7 +21,7 @@
                                         <input type="file" class="custom-file-input" id="file" name="file" ref="file" v-on:change="handleFileUpload()" accept="text/csv">
                                         <label class="custom-file-label" for="customFile">Choose file</label>
                                         <small id="passwordHelpInline" class="text-muted">
-                                            únicamente formato CSV
+                                            solo CSV
                                         </small>
                                     </div>
                                 </div>

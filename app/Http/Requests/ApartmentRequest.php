@@ -25,14 +25,7 @@ class ApartmentRequest extends FormRequest
     {
         return [
           'title' => 'required|string|max:191|unique:buildings,'.$this->id,
-
-          'floor'=> 'required',
-          'department'=> 'required',
-
           'price' => 'numeric|between:0,10000000',
-          'area'=> 'required|numeric',
-          'rooms'=> 'required|numeric',
-
           'description' => 'required|string|max:2048',
           'status' => 'required',
         ];
