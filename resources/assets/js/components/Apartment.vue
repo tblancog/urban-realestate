@@ -194,13 +194,14 @@
                                                     :class="{ 'is-invalid': form.errors.has('floor') }">
                                                 <has-error :form="form" field="floor"></has-error>
                                             </div>
+
                                             <!-- Department #  -->
                                             <div class="form-group col-lg-4">
-                                                <label for="code"># dpto.</label>
-                                                <input v-model="form.code" type="text" name="code"
+                                                <label for=""># dpto.</label>
+                                                <input v-model="form.departament" type="text" name="departament"
                                                     placeholder="# Departamento" class="form-control"
-                                                    :class="{ 'is-invalid': form.errors.has('code') }">
-                                                <has-error :form="form" field="code"></has-error>
+                                                    :class="{ 'is-invalid': form.errors.has('departament') }">
+                                                <has-error :form="form" field=""></has-error>
                                             </div>
 
                                             <!-- Ambientes -->
@@ -434,6 +435,7 @@
                     address: '',
 
                     floor: '',
+                    departament: '',
                     code: 'A',
                     price: '',
 
