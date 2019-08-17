@@ -5,7 +5,7 @@
         @dragover.prevent
         @drop="onDrop"
         :class="{ dragging: isDragging }">
-        
+
         <div class="upload-control" v-show="images.length">
             <label for="file">Seleccionar archivos</label>
             <!-- <button @click="upload">Cargar</button> -->
@@ -34,7 +34,7 @@
 <script>
 
 export default {
-    props: ['files', 
+    props: ['files',
     'images'
     ],
     data: () => ({
@@ -46,7 +46,7 @@ export default {
     methods: {
         OnDragEnter(e) {
             e.preventDefault();
-            
+
             this.dragCount++;
             this.isDragging = true;
             return false;
@@ -82,7 +82,7 @@ export default {
         getFileSize(size) {
             const fSExt = ['Bytes', 'KB', 'MB', 'GB'];
             let i = 0;
-            
+
             while(size > 900) {
                 size /= 1024;
                 i++;
@@ -90,14 +90,14 @@ export default {
             return `${(Math.round(size * 100) / 100)} ${fSExt[i]}`;
         },
         removeImage(idx) {
-          if(this.images.length > 1 || this.files.length > 1) {
+        //   if(this.images.length > 1 || this.files.length > 1) {
             // Check if image comes from backend if so then emit and delete
-            if(this.images[idx].hasOwnProperty('id') ) { 
+            if(this.images[idx].hasOwnProperty('id') ) {
               this.$emit('imageDeleted', this.images[idx])
             }
             this.files.splice(idx, 1)
             this.images.splice(idx, 1)
-          }
+        //   }
         }
     }
 }
