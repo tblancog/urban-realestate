@@ -92,7 +92,7 @@
 
 
                             <!-- Image uploader -->
-                            <div class="form-group col-lg-12">
+                            <div class="form-group col-lg-12 d-none d-lg-block">
                               <image-uploader
                                  v-on:imageDeleted="deleteImage($event)"
                                 :files="files"
