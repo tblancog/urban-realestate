@@ -35,29 +35,29 @@ Route::delete('delete-sliders/{id}', 'SliderController@deleteSlide');
 // Image uplooader route
 Route::post('images-upload', 'ImageController@upload');
 
-// CSV read
-route::post('batch', 'ApartmentController@batchUpload');
+// excel read
+route::post('import', 'ApartmentController@import');
 
 
 // Route::get('/detail_building', function () {
 //   return view('detail-building');
 // });
 
-// Route::get('/developers', function () {
-//   return view('index-developers');
-// });
+Route::get('/developers', function () {
+  return view('index-developers');
+});
 
-// Route::get('/houses', function () {
-//   return view('index-houses');
-// });
+Route::get('/houses', function () {
+  return view('index-houses');
+});
 
-// Route::get('/developers_details', function () {
-//   return view('developers-details');
-// });
+Route::get('/developers_details', function () {
+  return view('developers-details');
+});
 
-// Route::get('/houses_details', function () {
-//   return view('houses-details');
-// });
+Route::get('/houses_details', function () {
+  return view('houses-details');
+});
 
 // Route::get('/modal-details', function () {
 //   return view('modalDetails');
