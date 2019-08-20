@@ -24,8 +24,8 @@ class ImageController extends Controller
     if ($request->images && count($request->images) > 0) {
 
       // Create new directory
-      \Storage::makeDirectory(config('images.properties_upload_path').$property->slug);
-      $image_path = config('images.properties_upload_path').$property->slug;
+      $image_path = $property->img_path;
+      \Storage::makeDirectory($image_path);
 
       collect($request->images)->each(function($img, $index) use ($property, $request, $image_path, $propertyImg, $foreign) {
 
@@ -46,13 +46,13 @@ class ImageController extends Controller
     }
 
     // If title has been updated then rename the whole folder
-    if( isset($property->images) && count($property->images) > 0
-        && ($request->selected_slug !== $property->slug)
-        && $request->action === 'edit') {
-      $old = config('images.properties_upload_path').$request->selected_slug;
-      $new = config('images.properties_upload_path').$property->slug;
-      \Storage::move( $old, $new );
-    }
+    // if( isset($property->images) && count($property->images) > 0
+    //     && ($request->selected_slug !== $property->slug)
+    //     && $request->action === 'edit') {
+    //   $old = config('images.properties_upload_path').$request->selected_slug;
+    //   $new = config('images.properties_upload_path').$property->slug;
+    //   \Storage::move( $old, $new );
+    // }
     return response()->json(['msg'=> 'Success'], 201);
   }
 

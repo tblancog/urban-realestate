@@ -38,7 +38,7 @@ class ApartmentObserver
     {
       //
     }
-    
+
     /**
      * Handle the apartment "deleting" event.
      *
@@ -48,7 +48,7 @@ class ApartmentObserver
     public function deleting(Apartment $apartment)
     {
       // Before deleting apartment make sure it deletes its image folder and apartment image relations as well
-      $dir = config('images.properties_upload_path').$apartment->slug;
+      $dir = $apartment->img_path;
       if(file_exists($dir)){
         \Storage::deleteDirectory($dir);
       }

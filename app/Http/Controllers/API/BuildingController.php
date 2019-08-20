@@ -90,7 +90,7 @@ class BuildingController extends Controller
         $item = Building::where('slug', $item->slug)->firstOrFail();
 
         // Delete pictures folder if any
-        \Storage::deleteDirectory("uploads/properties/" . $item->slug);
+        \Storage::deleteDirectory($item->img_path);
 
         // Delete the model
         $itemDeleted = $item->delete();

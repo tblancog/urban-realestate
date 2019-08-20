@@ -55,11 +55,13 @@ data(){
     }
 },
   methods: {
-     image_path(item, index= 0) {
+     image_path(item, index= 0, property= 'buildings') {
       if (!item.hasOwnProperty('images') || item.images.length === 0) {
           return 'img/core-img/placeholder.svg'
         }
-        return 'uploads/properties/' + item.slug + '/' + item.images[index].filename
+          return 'uploads/properties/' + property + '/'
+                                       + item.id + '/'
+                                       + item.images[index].filename
      }
   }
 }

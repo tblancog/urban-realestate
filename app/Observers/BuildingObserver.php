@@ -38,7 +38,7 @@ class BuildingObserver
     {
       //
     }
-    
+
     /**
      * Handle the building "deleting" event.
      *
@@ -48,7 +48,8 @@ class BuildingObserver
     public function deleting(Building $building)
     {
       // Before deleting building make sure it deletes its image folder and building image relations as well
-      $dir = config('images.properties_upload_path').$building->slug;
+      $dir = $building->img_path;
+
       if(file_exists($dir)){
         \Storage::deleteDirectory($dir);
       }

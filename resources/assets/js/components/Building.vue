@@ -314,7 +314,7 @@
                 this.form.put('api/buildings/' + selected.slug)
                     .then( (res) => {
                   formData.append('id', res.data.id)
-                  formData.append('selected_slug',  selected.slug)
+                //   formData.append('selected_slug',  selected.slug)
                   formData.append('action',  'edit')
                   formData.append('type', 'building')
                       axios.post('images-upload', formData)
