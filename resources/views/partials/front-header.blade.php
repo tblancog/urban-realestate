@@ -3,7 +3,7 @@
     .classynav a:hover,
     .classynav a:focus
     {
-      color: #dddddd; 
+      color: #dddddd;
     }
   </style>
 @endpush
@@ -40,11 +40,11 @@
                             <li class="{{ Request::segment(1)=== 'investments' ? 'active' : '' }}"><a href="{{ route('investments.index') }}">Inversiones</a></li>
                             <li class="{{ Request::segment(1)=== 'appraisals' ? 'active' : '' }}"><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
                             <li class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}"><a href="{{ route('credits.index') }}">Crédito</a></li>
-                            <li class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}"><a href="{{ route('credits.index') }}">News</a></li>
+                            {{-- <li class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}"><a href="{{ route('credits.index') }}">News</a></li> --}}
                             <li class="{{ Request::segment(1)=== 'contact' ? 'active' : '' }}"><a href="{{ route('contact.index') }}">
                               <img class="link" src="{{ asset('img/core-img/icContacto.png') }}" alt="">
                             </a></li>
-                            
+
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdo wn-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

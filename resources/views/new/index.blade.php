@@ -21,7 +21,7 @@
 
   <body>
 
-    
+
 
     <div class="row">
         <div class="col-12 txtHeaderTop">PROPIEDADES</div>
@@ -50,10 +50,10 @@
             <a class="nav-link" href="#">
             <i class="fab fa-instagram"></i> CRÉDITO</a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link" href="#">
             <i class="fab fa-instagram"></i> NEWS</a>
-        </li>
+        </li> --}}
         <li class="nav-item">
             <a class="nav-link" href="#">
             <i class="fab fa-instagram"></i> SOBRE</a>
@@ -77,7 +77,7 @@
     </div>
     </nav>
     <!--/.Navbar -->
- 
+
     <div class="container">
   <div class="row">
     <div class="col" style="background:red">
@@ -176,7 +176,7 @@
 
 
     <div class="container-fluid">
-    
+
     </div>
 
 

@@ -70,7 +70,8 @@ class ImageController extends Controller
     $result = false;
     if($img) {
       $result = \Storage::delete($img->path) && $img->delete();
+      return response()->json(['msg'=> 'Delete', compact('result')], 202);
     }
-    return response()->json(['msg'=> 'Delete', compact('result')], 202);
+    return response()->json(['msg'=> 'Delete failed', compact('result')], 500);
   }
 }

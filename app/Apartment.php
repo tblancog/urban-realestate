@@ -55,8 +55,11 @@ class Apartment extends Model
       $this->attributes['slug'] = str_slug($value);
     }
 
-    public function getImgPath($value){
-      return config('images.properties_upload_path').$this->attributes['slug'].'/'.$value;
+    public function getImgPathAttribute()
+    {
+        return config('images.properties_upload_path') .
+            $this->table . '/' .
+            $this->attributes['id'] . '/';
     }
 
      public function scopeFilterByRequest($query, Request $request)
@@ -82,12 +85,13 @@ class Apartment extends Model
         $saved = $clone->save();
 
         // Copy images in new location if there are images
-        $dir = config('images.properties_upload_path') . $this->slug;
+        $dir = $this->img_path;
         if( $saved &&
             $this->images()->exists() &&
             is_dir( $dir ) ) {
 
-            \File::copyDirectory($dir, config('images.properties_upload_path') . str_slug($clone->title));
+            // \File::copyDirectory($dir, config('images.properties_upload_path') . str_slug($clone->title));
+            \File::copyDirectory($dir, $clone->img_path);
 
             foreach ($this->images as $image) {
                 $clone->images()->create($image->toArray());

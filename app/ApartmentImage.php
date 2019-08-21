@@ -15,9 +15,11 @@ class ApartmentImage extends Model
     public function apartment() {
       return $this->belongsTo('App\Apartment');
     }
-    public function getPathAttribute() {
-      $path = config('images.properties_upload_path')
-              .$this->apartment->slug.'/'.$this->filename;
-      return $path;
+    public function getPathAttribute()
+    {
+        $path = config('images.properties_upload_path') .
+            'apartments/' .
+            $this->apartment->id . '/' . $this->filename;
+        return $path;
     }
 }
