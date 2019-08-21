@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-12">
               <div class="appraisals-title">
-                <h2>{{ $config['title'] }}</h2>
+                <h2>{{ $config['title'] }}</h2><br>
               </div>
                <div class="appraisals-bottom text-center">
                 <p>{{ $config['top_text'] }}</p>
