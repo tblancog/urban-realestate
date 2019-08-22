@@ -53,7 +53,7 @@
                     <router-link to="/sliderAdmin" class="nav-link">
                         <i class="nav-icon fa fa-images green"></i>
                         <p>
-                            Sliders
+                            Slideshow
                         </p>
                     </router-link>
                 </li>
@@ -61,7 +61,7 @@
                     <router-link to="/buildingAdmin" class="nav-link">
                         <i class="nav-icon fa fa-building green"></i>
                         <p>
-                            Edificios
+                            Propiedades
                         </p>
                     </router-link>
                 </li>
@@ -69,7 +69,7 @@
                     <router-link to="/apartmentAdmin" class="nav-link">
                         <i class="nav-icon fas fa-home green"></i>
                         <p>
-                            Departamentos
+                            Unidades
                         </p>
                     </router-link>
                 </li>
