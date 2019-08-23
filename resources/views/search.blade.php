@@ -15,12 +15,12 @@
           <div class="section-heading wow fadeIn">
               @if($apartments->count())
                 <h4 class="my-4">{{ $apartments->count(). " ". Illuminate\Support\Str::plural('Resultado', $apartments->count()) }}
-                                  para <span class="font-weight-bold">'{{ $input->get('status') }}' 
+                                  para <span class="font-weight-bold">'@status_show($input->get('status'))'
                                   en <span class="font-weight-bold">'{{ $input->get('location') }}'</span></h4>
               @else
                 <h2 class="my-4">{{ $apartments->count() }} Resultados</h2>
                 <h3 class="my-4">No se hallaron propiedades</h3>
-             
+
                       <a href="{{ route('home.index') }}" class="btn south-btn btn-4">Busca de nuevo &nbsp;<i class="fa fa-lg fa-search"></i></a>
               @endif
           </div>
@@ -29,7 +29,7 @@
 </section>
 
 
-<section id="real-estate" class="featured-properties-area section-padding-0-50">
+{{-- <section id="real-estate" class="featured-properties-area section-padding-0-50">
   <div class="container">
       @forelse ( $apartments as $apartment)
         <div class="row">
@@ -38,8 +38,8 @@
                   <!-- Property Thumbnail -->
                   <div class="property-thumb">
                       <a href="{{ route('apartments.show', $apartment->slug) }}">
-                          <img src="{{ is_file($apartment->getImgPath($apartment->images[0]->filename)) ? 
-                                                  $apartment->getImgPath($apartment->images[0]->filename) : 
+                          <img src="{{ is_file($apartment->getImgPath($apartment->images[0]->filename)) ?
+                                                  $apartment->getImgPath($apartment->images[0]->filename) :
                                                   Faker\Factory::create()->imageUrl($width = 640, $height = 480) }}" alt="">
                       </a>
                   </div>
@@ -72,7 +72,20 @@
       </div>
       @endforelse
   </div>
-</section>
+</section> --}}
+@if($apartments)
+    <section id="real-estate" class="featured-properties-area section-padding-0-50">
+        <div class="container-fluid px-5">
+            <div class="row">
+
+                {{-- Apartment box --}}
+                @foreach ($apartments as $apartment)
+                    @include('apartment.box', $apartment)
+                @endforeach
+            </div>
+        </div>
+    </section>
+@endif
 
 
 @include('partials.front-footer')

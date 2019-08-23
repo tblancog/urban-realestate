@@ -17,8 +17,8 @@
                               <div class="form-group">
                                 <select class="form-control" name="status" id="status" placeholder="Comprar">
                                   <option>Operacion</option>
-                                  <option>Venta</option>
-                                  <option>Alquiler</option>
+                                  <option value="En_venta">Venta</option>
+                                  <option value="En_Alquiler">Alquiler</option>
                                 </select>
                               </div>
                             </div>
@@ -28,8 +28,8 @@
                                     <select name="type" class="form-control" id="type">
                                         <option>Tipo</option>
                                         <option>Departamento</option>
-                                        <option>Casa</option>
-                                        <option>Local</option>
+                                        {{-- <option>Casa</option>
+                                        <option>Local</option> --}}
                                     </select>
                                 </div>
                             </div>

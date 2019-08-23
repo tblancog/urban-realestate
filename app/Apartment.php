@@ -65,12 +65,14 @@ class Apartment extends Model
      public function scopeFilterByRequest($query, Request $request)
     {
         if ($request->has('location')) {
-            $query->where('location', '=', $request->get('location'));
+            $query->whereHas('building', function ($q) use ($request) {
+                $q->where('buildings.location', 'like', '%'.$request->input('location').'%');
+            });
+        }
+        if ($request->has('status')) {
+            $query->where('status', 'like', '%'.$request->get('status').'%');
         }
 
-        if ($request->has('status')) {
-            $query->where('status', 'like', '%'.$request->get('status'));
-        }
 
         return $query;
     }
