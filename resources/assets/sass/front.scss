@@ -572,7 +572,18 @@
  .project-title {
      margin-bottom: 20px;
  }
+
+ .project-title2 {
+    margin: 20px 0;
+}
  
+ .project-title2 h2{
+    font-family: "AvantGarde", sans-serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+    text-transform: initial !important
+ }
+
  .project-grid {
      padding: 0;
  }
@@ -1847,6 +1858,29 @@
                  text-align: center;
                  font-weight: 400;
                  color: #ffffff;
+             }
+
+             .title2{
+                font-family: "AvantGarde", sans-serif;
+                font-weight: 100;
+                font-size: 1.8rem;
+                margin-bottom: 2    px;
+             }
+
+             .content2{
+                font-family: "AvantGarde", sans-serif;
+                font-weight: 100;
+                font-size: 1.3rem;
+                margin-bottom: 3px;
+             }
+
+             .txtInfo{
+                font-family: "AvantGarde", sans-serif;
+                font-weight: 100;
+                font-size: 1.1rem;
+                text-align: center;
+                color: #fff;
+                margin-bottom: 3px;
              }
          }
  
@@ -4794,6 +4828,7 @@
  
  .formDetail{
      padding: 0 15px;
+     overflow: hidden;
  }
  .formDetail input, .formDetail textarea{
       width: 100%;

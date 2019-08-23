@@ -52,9 +52,9 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="#">Nosotros</a></li>
-                            <li><a href="#">Inversiones</a></li>
-                            <li><a href="#">Tasaciones</a></li>
+                            <li><a href="#">Proyecto</a></li>
+                            <li><a href="#">Constructora</a></li>
+                            <li><a href="#">Servicios</a></li>
                             <li><a href="#">Contacto</a></li>
                             <!-- <li><a href="#">Mega Menu</a>
                                     <div class="megamenu">
@@ -247,7 +247,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="project-title section-heading wow fadeInUp">
+                <div class="project-title project-title2 section-heading wow fadeInUp">
                     <h2>Proyectos</h2>
                 </div>
             </div>
@@ -261,8 +261,9 @@
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
                         <div class="property-info">
-                            <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
+                            <h4 class="content content2">Torre</h4>
+                            <h2 class="title title2">Quesevenda</h2>                            
+                            <h5 class="content txtInfo">+ info</h5>
                         </div>
                         <img src="img/bg-img/feature1.jpg" alt="">
                     </div>
