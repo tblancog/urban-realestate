@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 {{-- @push('styles')
-  
+
 @endpush --}}
 
 @section('content')
@@ -19,9 +19,9 @@
 
 <div class="container-fluid">
 
-  
+
 <div class="row first-row"> <!-- start row 1 -->
-    
+
     <div class="col-md-6 col-sm-12 boxDetail">
       <div class="">
         <h2 class="titleDetail">{{ $building->title }}</h2>
@@ -30,7 +30,7 @@
 
     <div class="col-md-6 col-sm-12 boxDetail">
       <div class="" >
-        <h2 class="detailStatus left">{{ $building->status }}</h2>
+        <h2 class="detailStatus left">@status_show($building->status)</h2>
         <h2 class="detailPrice right"> @if($building->from_price)
                     @endif
                     USD <b>@convert($building->price)</b></h2>
@@ -43,8 +43,8 @@
   <div class="row"><!-- start row 2-->
 
     <div class="col-md-6 col-sm-12 boxDetail">
-    
-    
+
+
     <div id="myCarousel" class="carousel slide">
       <!-- main slider carousel items -->
       <div class="carousel-inner">
@@ -60,9 +60,9 @@
         <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a> 
+        </a>
       </div><!-- main slider carousel nav controls -->
-      
+
 
       <!-- main slider carousel nav controls -->
       <ul class="carousel-indicators list-inline mx-auto py-2 pull-left">
@@ -78,7 +78,7 @@
           @endforeach
       </ul>
     </div>
-        
+
         </div><!-- end boxDetail -->
 
         <div class="col-md-6 col-sm-12"  >
@@ -90,7 +90,7 @@
                 <ul class="amenitieBox list-inline">
                   @foreach ($building->amenities as $amenity)
                     <li class="list-inline-item">
-                      <img class="amenitieIcon" src="/img/icons/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
+                      <img class="amenitieIcon" src="/img/icons/amenities/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
                       <p class="amenitieText" style="text-transform: capitalize;">{{ $amenity->title }}</p>
                     </li>
                   @endforeach
@@ -136,7 +136,7 @@
     </div><!-- end row 2-->
 
     <div class="row"> <!-- start row 3 -->
-    
+
       <div class="col-md-6 col-sm-12 boxDetail">
         <div class="">
         <div class="description-top">
@@ -149,12 +149,12 @@
       </div><!-- end boxDetail -->
 
       <div class="col-md-6 col-sm-12 boxDetail">
-          
+
           <div class="description-top">
               <h3 class="detailTitle2 left">Ubicación / Mapa</h3>
               <div class="detailSocialIcons right">
                 @include('partials.map-social')
-              </div> 
+              </div>
           </div>
           <div class="clear"></div>
           <div class="detailMap">
@@ -165,9 +165,9 @@
     </div> <!-- end row 3 -->
 
 
-    
+
     <div class="row"> <!-- start row 3 -->
-    
+
       <div class="col-md-6 col-sm-12 boxDetail">
         <div class="">
         <div class="description-top">
