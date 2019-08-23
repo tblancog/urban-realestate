@@ -19,7 +19,7 @@
 <div class="container-fluid">
 
 <div class="row first-row"> <!-- start row 1 -->
-    
+
     <div class="col-md-6 col-sm-12 boxDetail">
       <div class="">
         <h2 class="titleDetail">{{ $apartment->title }} - {{ $apartment->building->location }}</h2>
@@ -36,9 +36,9 @@
     </div>
 
   </div> <!-- end row 1 -->
-  
-  
-  
+
+
+
   <div class="row"><!-- start row 2-->
 
     <div class="col-md-6 col-sm-12 boxDetail" id="slider">
@@ -76,9 +76,9 @@
                 </li>
                 @endforeach
             </ul>
-            
+
         </div>
-    
+
     </div><!-- end boxDetail -->
 
 
@@ -91,7 +91,7 @@
                 <ul class="amenitieBox list-inline">
                   @foreach ($apartment->building->amenities as $amenity)
                     <li class="list-inline-item">
-                      <img class="amenitieIcon" src="/img/icons/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
+                      <img class="amenitieIcon" src="/img/icons/amenities/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
                       <p class="amenitieText" style="text-transform: capitalize;">{{ $amenity->title }}</p>
                     </li>
                   @endforeach
@@ -137,7 +137,7 @@
   </div><!-- end row 2-->
 
   <div class="row"> <!-- start row 3 -->
-    
+
     <div class="col-md-6 col-sm-12 boxDetail">
       <div class="">
       <div class="description-top">
@@ -150,12 +150,12 @@
     </div><!-- end boxDetail -->
 
     <div class="col-md-6 col-sm-12 boxDetail">
-        
+
         <div class="description-top">
             <h3 class="detailTitle2 left">Ubicación / Mapa</h3>
             <div class="detailSocialIcons right">
               @include('partials.map-social')
-            </div> 
+            </div>
         </div>
         <div class="clear"></div>
         <div class="detailMap">
@@ -165,10 +165,10 @@
 
   </div> <!-- end row 3 -->
 
-  
+
 
   <div class="row"> <!-- start row 4 -->
-    
+
     <div class="col-md-6 col-sm-12 boxDetail">
               <div class="">
                 <h2 class="titleMoreInfo left"><b>Información Básica</b></h2>
@@ -185,8 +185,8 @@
                 <li>Disposición: <span class="misc-value">{{ $apartment->disposicion }}</span></li>
              </ul>
     </div><!-- end boxDetail -->
-    
-    
+
+
     <div class="col-md-6 col-sm-12 boxDetail">
               <div class="">
                 <h2 class="titleMoreInfo titleMoreInfo1 left"><b>Superficies</b></h2>
@@ -200,10 +200,10 @@
     </div><!-- end boxDetail -->
 
   </div> <!-- end row 4 -->
-  
+
 
   <div class="row"> <!-- start row 5 -->
-    
+
     <div class="col-md-6 col-sm-12 boxDetail">
               <div class="">
                 <h2 class="titleMoreInfo left"><b>Adicionales</b></h2>
@@ -215,11 +215,11 @@
                 <li>Calefacción por Aire</li>
                 <li>Luminoso</li>
                 <li>Antigüedad: <span class="misc-value">50</span></li>
-                <li>Expensas: <span class="misc-value">3700</span></li> 
+                <li>Expensas: <span class="misc-value">3700</span></li>
              </ul>
     </div><!-- end boxDetail -->
-    
-    
+
+
     <div class="col-md-6 col-sm-12 boxDetail">
               <div class="">
                 <h2 class="titleMoreInfo left"><b>Ambientes</b></h2>

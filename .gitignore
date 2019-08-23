@@ -24,3 +24,4 @@ public/mix-manifest.json
 public/css/auth.css
 public/uploads/**/*
 database/database.sqlite
+database/database.sqlite

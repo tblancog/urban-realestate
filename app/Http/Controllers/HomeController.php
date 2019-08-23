@@ -83,6 +83,7 @@ class HomeController extends Controller
     public function search(Request $request){
 
       $apartments = Apartment::filterByRequest($request)->paginate();
+    //   dd($apartments);
       return view('search', [
         'apartments'=> $apartments,
         'input'=> $request
