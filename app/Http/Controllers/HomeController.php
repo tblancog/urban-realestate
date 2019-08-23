@@ -41,7 +41,7 @@ class HomeController extends Controller
                             ->get();
 
         // All Locations
-        $locations = Apartment::groupBy('location')
+        $locations = Building::groupBy('location')
                               ->orderBy('location')
                               ->get(['location']);
 
