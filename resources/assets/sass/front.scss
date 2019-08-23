@@ -2457,7 +2457,6 @@
  .footer {
 
      background: #000;
-     margin-top: 30px;
 
      .footer-info {
          padding: 20px 0;
@@ -4796,6 +4795,8 @@
 
  .formDetail{
      padding: 0 15px;
+    overflow: hidden;
+
  }
  .formDetail input, .formDetail textarea{
       width: 100%;
