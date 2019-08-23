@@ -143,7 +143,7 @@
               <h3 class="detailTitle2">Descripción</h3>
           </div>
           <div class="description-bot">
-                  {{ $building->description }}
+            {!! nl2br($building->description) !!}
           </div>
         </div>
       </div><!-- end boxDetail -->
