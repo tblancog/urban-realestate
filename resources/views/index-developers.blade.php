@@ -42,7 +42,7 @@
                 </div>
 
                 <!-- Menu -->
-                <div class="classy-menu">
+                <div class="classy-menu classy-menu-others">
 
                     <!-- close btn -->
                     <div class="classycloseIcon">
@@ -50,50 +50,12 @@
                     </div>
 
                     <!-- Nav Start -->
-                    <div class="classynav">
+                    <div class="classynav classynav2">
                         <ul>
                             <li><a href="#">Proyecto</a></li>
                             <li><a href="#">Constructora</a></li>
                             <li><a href="#">Servicios</a></li>
                             <li><a href="#">Contacto</a></li>
-                            <!-- <li><a href="#">Mega Menu</a>
-                                    <div class="megamenu">
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Headline 1</li>
-                                            <li><a href="#">Mega Menu Item 1</a></li>
-                                            <li><a href="#">Mega Menu Item 2</a></li>
-                                            <li><a href="#">Mega Menu Item 3</a></li>
-                                            <li><a href="#">Mega Menu Item 4</a></li>
-                                            <li><a href="#">Mega Menu Item 5</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Headline 2</li>
-                                            <li><a href="#">Mega Menu Item 1</a></li>
-                                            <li><a href="#">Mega Menu Item 2</a></li>
-                                            <li><a href="#">Mega Menu Item 3</a></li>
-                                            <li><a href="#">Mega Menu Item 4</a></li>
-                                            <li><a href="#">Mega Menu Item 5</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Headline 3</li>
-                                            <li><a href="#">Mega Menu Item 1</a></li>
-                                            <li><a href="#">Mega Menu Item 2</a></li>
-                                            <li><a href="#">Mega Menu Item 3</a></li>
-                                            <li><a href="#">Mega Menu Item 4</a></li>
-                                            <li><a href="#">Mega Menu Item 5</a></li>
-                                        </ul>
-                                        <ul class="single-mega cn-col-4">
-                                            <li class="title">Headline 4</li>
-                                            <li><a href="#">Mega Menu Item 1</a></li>
-                                            <li><a href="#">Mega Menu Item 2</a></li>
-                                            <li><a href="#">Mega Menu Item 3</a></li>
-                                            <li><a href="#">Mega Menu Item 4</a></li>
-                                            <li><a href="#">Mega Menu Item 5</a></li>
-                                        </ul>
-                                    </div>
-                                </li> 
-                                <li><a href="contact.html">Contact</a></li>
-                                -->
                         </ul>
 
                         <!-- Search Form -->
@@ -118,32 +80,9 @@
 
 <!-- ##### Hero Area Start ##### -->
 <section class="hero-area">
-    <!-- <h2>TORRE ACHA</h2>
-      <p>Una oportunidad para disfrutar<br/>
-         de un efdicio de calidad<br/>
-         en una zona estratégica</p> -->
     <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-1.jpg);">
         <div class="hero-slides owl-carousel">
-            <!-- Property Title -->
-            <!-- <div class="property-title">
-                <h2>Torre Acha</h2>
-                <h4>Una oportunidad para disfrutar de un edificio de calidad en una zona estratégica</h4>
-            </div> -->
-            <!-- Single Hero Slide -->
             <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-1.jpg);">
-                <!--<div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <h2>Torre Acha</h2>
-                                <h4>Una oportunidad para disfrutar de un edificio de calidad en una zona estratégica</h4>
-
-                                <!-- <h2 data-animation="fadeInUp" data-delay="100ms">Proyectos inmobiliarios</h2> -->
-                <!-- <a href="#" class="btn south-btn mt-50 wow fadeInUp" data-wow-delay="500ms">Info</a> -->
-                <!--</div>
-                        </div>
-                    </div>
-                </div>-->
             </div>
             <!-- Single Hero Slide -->
             <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-2.jpg);">
@@ -243,8 +182,8 @@
 
 
 <!-- ##### Propiedades en Venta Area Start ##### -->
-<section class="featured-properties-area 
-    <div class="container">
+<section class="featured-properties-area"> 
+    <div class="">
         <div class="row">
             <div class="col-12">
                 <div class="project-title project-title2 section-heading wow fadeInUp">
@@ -257,7 +196,7 @@
 
             <!-- Single Featured Property -->
             <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
+                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
                         <div class="property-info">
@@ -265,7 +204,7 @@
                             <h2 class="title title2">Quesevenda</h2>                            
                             <h5 class="content txtInfo">+ info</h5>
                         </div>
-                        <img src="img/bg-img/feature1.jpg" alt="">
+                        <img src="img/developers/1.jpg" alt="">
                     </div>
                     <!-- Property Content -->
 
@@ -274,14 +213,14 @@
 
             <!-- Single Featured Property -->
             <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
+                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
                             <h4 class="content">by Horace</h4>
                         </div>
-                        <img src="img/bg-img/feature2.jpg" alt="">
+                        <img src="img/developers/2.jpg" alt="">
                     </div>
                     <!-- Property Content -->
 
@@ -289,30 +228,14 @@
             </div>
             <!-- Single Featured Property -->
             <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
+                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
                             <h4 class="content">by Horace</h4>
                         </div>
-                        <img src="img/bg-img/feature3.jpg" alt="">
-                    </div>
-                    <!-- Property Content -->
-
-                </div>
-            </div>
-
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
-                        </div>
-                        <img src="img/bg-img/feature4.jpg" alt="">
+                        <img src="img/developers/3.jpg" alt="">
                     </div>
                     <!-- Property Content -->
 
@@ -321,14 +244,14 @@
 
             <!-- Single Featured Property -->
             <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
+                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
                             <h4 class="content">by Horace</h4>
                         </div>
-                        <img src="img/bg-img/feature4.jpg" alt="">
+                        <img src="img/developers/4.jpg" alt="">
                     </div>
                     <!-- Property Content -->
 
@@ -337,14 +260,30 @@
 
             <!-- Single Featured Property -->
             <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
+                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
                             <h4 class="content">by Horace</h4>
                         </div>
-                        <img src="img/bg-img/feature4.jpg" alt="">
+                        <img src="img/developers/5.jpg" alt="">
+                    </div>
+                    <!-- Property Content -->
+
+                </div>
+            </div>
+
+            <!-- Single Featured Property -->
+            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
+                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
+                    <!-- Property Thumbnail -->
+                    <div class="property-thumb">
+                        <div class="property-info">
+                            <h2 class="title">Torre Quesevenda</h2>
+                            <h4 class="content">by Horace</h4>
+                        </div>
+                        <img src="img/developers/6.jpg" alt="">
                     </div>
                     <!-- Property Content -->
 
@@ -358,105 +297,85 @@
 <!-- ##### Propiedades en Venta Area End ##### -->
 
 <!-- ##### Developers Section ##### -->
-<section class="developers-section section-padding-0-50">
+<section class="developers-section">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="developers-title section-heading-20 wow fadeInUp">
-                    <h2>Constructora</h2>
+                
+
+                                
+                <div class="col-12 secDevelopers">
+                    <p class="txtOtherSection"> <img src="img/core-img/imgDevelopers.jpg" align="left"  alt="Developers"><b >Constructora</b> <br>URBAN DEVELOPERS es una empresa constructora que brinda a sus clientes un sistema integral de soluciones, abarcando todos los servicios necesarios para la materialización, puesta en marcha, desarrollo y mantenimiento de obras. Las prestaciones ofrecidas por la empresa le permiten brindar soluciones constructivas en obras civiles e industriales de infraestructura urbana y regional.
+                    </p>
+                    
+                    <div class="clear"></div>   
+                    <p class="txtOtherSection">
+                        Somos una empresa 20 años de trayectoria, enfocada en la construcción, gerenciamiento y negocios inmobiliarios. Creemos en el trabajo en equipo como herramienta para superar obstáculos y general alianzas positivas. <br> 
+                        Trabajamos día a día en una gestión integral que cumpla con los plazos pactados, la optimización de costos, la calidad de nuestro producto y, como prioridad, generar la confianza de nuestros clientes. Nuestro trabajo es innovador, moderno, de calidad y enfocado en la excelencia. 
+                    </p>
+
+                    <p class="txtOtherSection">
+                        <img src="img/core-img/imgDevelopers2.jpg" class="imgLarge"  alt="Developers">  
+                    </p>
+
+                    <p class="txtOtherSection"> 
+                    En URBAN DEVELOPERS  entendemos que “LA OBRA” no es una simple construcción o remodelación, sino que representa sueños, esfuerzos, proyectos y objetivos de nuestros clientes.
+                    </p>
+
+                    <p class="txtOtherSection"> 
+                        Tanto la calidad de nuestras obras como los profesionales con los que trabajamos, hacen que nuestra empresa sea líder en el rubro. Lo hacemos con profesionalismo y entrega, atendiendo las necesidades de quienes nos eligen para que sus proyectos y sueños se vean reflejados al final de nuestro trabajo.
+                    </p>
+                    <p class="txtOtherSection"> 
+                    Convertimos ideas en proyectos con historia. 
+                    </p>
+
                 </div>
-                <div class="developers-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in facilisis ipsum. Donec accumsan
-                        tortor non feugiat rutrum. Aliquam id faucibus nunc. Etiam congue volutpat urna, non dignissim
-                        ex faucibus eu. Sed dictum sem at orci viverra volutpat. In non mattis diam. Sed eu libero a est
-                        tempus euismod. Sed quis libero posuere, auctor ex non, suscipit arcu. Nunc efficitur ac velit
-                        at aliquam. Proin in libero porta, euismod quam vel, rhoncus nisi. Vivamus ac arcu feugiat,
-                        sagittis orci eu, pharetra ante. Nulla euismod odio ac dolor bibendum, non consequat magna
-                        porta. Duis porttitor varius massa cursus viverra.</p>
-                    <h6>Concepto</h6>
-                    <p>Sed bibendum eros tincidunt aliquam malesuada. Vivamus tempus tortor non arcu pretium, nec
-                        blandit purus condimentum. Duis libero nibh, vulputate id pellentesque vitae, sollicitudin quis
-                        ligula. Integer a auctor felis. Duis ultrices interdum suscipit. Donec rutrum enim sit amet
-                        congue condimentum. Quisque convallis justo non ultricies posuere. Donec aliquet elementum
-                        convallis. In neque dolor, pellentesque ut magna ac, elementum vestibulum libero. Sed turpis
-                        eros, dictum id ipsum sed, elementum tincidunt ex. Nam suscipit commodo erat ac semper.</p>
-                    <p>Fusce at felis egestas, venenatis magna et, pulvinar nunc. Mauris vel consequat eros. Etiam diam
-                        massa, sodales at tortor et, semper imperdiet mauris. Sed sed erat erat. Mauris in dolor
-                        rhoncus, pellentesque augue non, rutrum mauris. Curabitur velit nibh, luctus at dolor et,
-                        ullamcorper condimentum erat. Nam a leo mauris. Pellentesque sed felis egestas, luctus lectus
-                        non, faucibus lorem. Praesent tempor dui ut velit vulputate egestas quis vel odio. Nullam mattis
-                        ullamcorper luctus. Etiam euismod rutrum lacus, a mattis est. Aliquam dignissim eleifend
-                        imperdiet. Donec condimentum ex ac libero posuere malesuada. In mauris risus, molestie id
-                        pretium sed, consequat ac dolor. Curabitur sed felis feugiat, tincidunt purus et, bibendum
-                        dolor. Nunc eget consectetur erat, ac porttitor ligula.</p>
-                    <h6>Socios</h6>
-                    <p>Nullam nec mattis tellus. Phasellus semper luctus nulla nec suscipit. Nullam ut condimentum est.
-                        Phasellus faucibus euismod lorem, at eleifend velit elementum eu. Fusce elementum tortor leo,
-                        sed luctus lorem accumsan quis. Nunc libero urna, commodo a lectus eu, lacinia venenatis lorem.
-                        Nunc et nibh eu dui eleifend finibus. Ut non tortor id orci gravida sollicitudin sagittis et
-                        purus. Donec tincidunt, tortor in aliquet porttitor, odio ante ultrices risus, a ullamcorper
-                        purus magna in urna. Aliquam efficitur gravida diam, eu imperdiet elit. Sed et eros id ligula
-                        mollis consectetur. Phasellus diam felis, tempor in ultricies ut, consectetur ac libero.</p>
+
+                <div class="col-12 wow fadeInUp titleOhterSection">
+                    <h2 class="text-left">Servicios</h2>
                 </div>
-                <div class="developers-title developers-heading section-padding-20-20 wow fadeInUp">
-                    <h2>Servicios</h2>
-                </div>
-                <div class="developers-content">
-                    <p>Donec molestie nec eros nec finibus. Fusce gravida bibendum placerat. Praesent cursus justo sit
-                        amet risus volutpat vehicula nec quis magna. Integer blandit quis lacus sed ultricies.
-                        Pellentesque sed arcu quis tellus tempor cursus. Praesent a neque eget eros vulputate porta.
-                        Nunc vel vehicula sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec
-                        rhoncus lacus facilisis tortor commodo sollicitudin. Integer et pretium nisl. Integer commodo
-                        tortor dolor, vitae luctus turpis tincidunt non. Pellentesque habitant morbi tristique senectus
-                        et netus et malesuada fames ac turpis egestas:</p>
-                    <ul>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
-                        <li>Lorem ipsum dolor sit. </li>
+                <div class="col-12 developers-content">
+                    <p class="txtOtherSection">URBAN DEVELOPERS ofrece un completo portfolio con los servicios que el cliente requiere para la construcción de un proyecto concentrando en una sola firma las diferentes fases para su ejecución: 
+                    </p>
+
+                    <ul class="ulOtherSection">
+                        <li>Construcción</li>
+                        <li>Dirección de obra.</li>
+                        <li>Administración de obra.</li>
+                        <li>Gerenciamiento de obra</li>
+                        <li>Servicio postventa</li>
+                        <li>Comercialización</li>
                     </ul>
                 </div>
-                <div class="developers-title developers-heading section-padding-20-20 wow fadeInUp">
-                    <h2>Prensa</h2>
-                </div>
             </div>
-            <div class="col-12 col-md-6 press-img">
-                <div class="property-thumb">
-                    <img src="http://lorempixel.com/426/308/city/1/" alt="">
-                </div>
+            <div class="col-12 wow fadeInUp titleOhterSection">
+                <h2 class="text-center">Prensa</h2>
             </div>
-            <div class="col-12 col-md-6 press-img">
-                <div class="property-thumb">
-                    <img src="http://lorempixel.com/426/308/city/3/" alt="">
-                </div>
+            <div class="col-12 pressSection">
+                <ul>
+                    <li><a href=""><img src="img/core-img/imgDevelopers-prensa1.jpg" alt="Prensa"></a></li>
+                    <li><a href=""><img src="img/core-img/imgDevelopers-prensa2.jpg" alt="Prensa"></a></li>
+                    <li><a href=""><img src="img/core-img/imgDevelopers-prensa3.jpg" alt="Prensa"></a></li>
+                </ul>
             </div>
-        </div>
-    </div>
-    <div class="footer-developers">
-        <div class="row">
-            <div class="col-12 col-md-4">
-                <img src="#" alt="">
-                <p>+5411 4523-4418</p>
+            
+            <div class="col-12 wow fadeInUp titleOhterSection">
+                <h2 class="text-center">Contacto</h2>
             </div>
-            <div class="col-12 col-md-4">
-                <img src="#" alt="">
-                <p>info@urbanhouses.com.ar</p>
+
+            <div class="col-12 pressSection">
+                  @include ('partials.contact-form')
             </div>
-            <div class="col-12 col-md-4">
-                <img src="#" alt="">
-                <p>Pacheco 2709 6"B" (C1431FMI) CABA</p>
-            </div>
+
         </div>
     </div>
 </section>
+
+
+<!-- ##### Footer Area Start ##### -->
+@include('partials.front-footer')
+
 @endsection
+
+{{-- @push('scripts')
+@endpush --}}

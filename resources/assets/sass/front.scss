@@ -152,7 +152,7 @@
          text-decoration: none;
          outline: none;
          font-size: 14px;
-         font-weight: 600;
+         font-weight: bold;
      }
  }
 
@@ -580,7 +580,7 @@
  .project-title2 h2{
     font-family: "AvantGarde", sans-serif;
     font-weight: 100;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-transform: initial !important
  }
 
@@ -588,8 +588,10 @@
      padding: 0;
  }
 
- 
+
  .developers-section {
+     margin: 4% 0 0 0;
+
      .container {
          margin-bottom: 60px;
      }
@@ -611,11 +613,9 @@
 
      /*margin-bottom: 50px;*/
      ul {
-         columns: 2;
-         margin-left: 80px;
 
          li {
-             list-style-type: disc;
+             list-style-type: none;
          }
      }
  }
@@ -724,7 +724,7 @@
 
          &:hover {
              color: #fff;
-             font-weight: 600;
+             font-weight: bold;
          }
      }
  }
@@ -1037,7 +1037,8 @@
          color: white;
          text-transform: uppercase;
          font-weight: 400;
-         font-size: 22px;
+         font-size: 1.1rem;
+         font-family: 'AvantGarde', sans-serif;
      }
 
      .nav-brand {
@@ -1763,7 +1764,7 @@
      overflow: hidden;
 
      .property-thumb {
-         height: 350px;
+         height: 400px;
          position: relative;
          z-index: 1;
          img {
@@ -1774,7 +1775,7 @@
            height: 100%;
            width: 100%;
            max-width: 656px;
-           max-height: 351px;
+           max-height: 400px;
          }
 
          // max-width: 350px;
@@ -1844,7 +1845,7 @@
 
 
          .property-info {
-             background-color: rgba(0, 0, 0, 0.7);
+             background-color: rgba(35, 31, 32, 0.8);
              position: absolute;
              padding: 20px;
              width: 100%;
@@ -4935,3 +4936,74 @@
     width: 1em;
 }
 
+
+.secDevelopers .txtOtherSection img {
+    width: 40%;
+    margin: 0 25px 25px 0;
+}
+
+.txtOtherSection b{
+    font-family: "AvantGarde", sans-serif;
+    font-weight: 100;  
+    font-size: 2em; 
+}
+.txtOtherSection .imgLarge{
+    width: 100% !important;
+}
+.txtOtherSection{
+font-family: "AvantGarde", sans-serif;
+font-size: 0.8em;
+text-align: justify;
+color:#000000;
+}
+.titleOhterSection {
+    margin: 5% 0 2%;
+}
+.titleOhterSection h2{
+    font-family: "AvantGarde", sans-serif;
+    font-weight: 100;  
+    font-size: 2em; 
+}
+
+.classy-menu-others{
+    margin: 35px 0 0 0;
+}
+
+
+.classynav2 ul li{
+    margin: 0 30px;
+}
+
+.ulOtherSection{
+    padding: 0px 25%;
+    -webkit-columns: 2;
+    columns: 2;
+
+    @media only screen and (max-width: 677px) and (min-width: 375px) {
+        -webkit-column-count:1;
+        column-count: 1;
+        padding: 0px;
+    }
+
+    @media only screen and (max-width: 568px) and (min-width: 320px) {
+        -webkit-column-count: 1;
+        column-count: 1;
+        padding: 0px;
+    }
+
+}
+
+.ulOtherSection li::before{
+    content: "\2022";
+    color: #0082c8;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+}
+
+.pressSection ul{
+    display: inline-flex;
+    padding: 1% 0;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+}
