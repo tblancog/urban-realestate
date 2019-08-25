@@ -141,7 +141,8 @@
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
+                            <h4 class="content">by Horace</h4>                           
+                            <h5 class="content txtInfo">+ info</h5>
                         </div>
                         <img src="img/developers/2.jpg" alt="">
                     </div>
@@ -156,7 +157,8 @@
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
+                            <h4 class="content">by Horace</h4>                           
+                            <h5 class="content txtInfo">+ info</h5>
                         </div>
                         <img src="img/developers/3.jpg" alt="">
                     </div>
@@ -172,7 +174,8 @@
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
+                            <h4 class="content">by Horace</h4>                           
+                            <h5 class="content txtInfo">+ info</h5>
                         </div>
                         <img src="img/developers/4.jpg" alt="">
                     </div>
@@ -188,7 +191,8 @@
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
+                            <h4 class="content">by Horace</h4>                           
+                            <h5 class="content txtInfo">+ info</h5>
                         </div>
                         <img src="img/developers/5.jpg" alt="">
                     </div>
@@ -204,7 +208,8 @@
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
+                            <h4 class="content">by Horace</h4>                           
+                            <h5 class="content txtInfo">+ info</h5>
                         </div>
                         <img src="img/developers/6.jpg" alt="">
                     </div>
