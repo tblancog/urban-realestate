@@ -4939,7 +4939,10 @@
 
 .secDevelopers .txtOtherSection img {
     width: 40%;
-    margin: 0 25px 25px 0;
+    margin: 25px 25px 25px 0;
+}
+.secDevelopers .txtOtherSection img.imgRight {
+    margin: 25px 0 25px 25px
 }
 
 .txtOtherSection b{
@@ -4955,6 +4958,7 @@ font-family: "AvantGarde", sans-serif;
 font-size: 0.8em;
 text-align: justify;
 color:#000000;
+margin: 0;
 }
 .titleOhterSection {
     margin: 5% 0 2%;
@@ -4993,9 +4997,21 @@ color:#000000;
 
 }
 
+.ulOtherSection2{
+    padding: 0px 15%;
+
+}
+
 .ulOtherSection li::before{
     content: "\2022";
     color: #0082c8;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+}
+.ulOtherSection2 li::before{
+    content: "\2022";
+    color: #d92128 !important;
     font-weight: bold;
     display: inline-block;
     width: 1em;

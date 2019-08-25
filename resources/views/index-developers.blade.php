@@ -9,23 +9,6 @@
 <!-- ##### Header Area Start ##### -->
 <header class="header-area">
 
-    <!-- Top Header Area -->
-    <!-- <div class="top-header-area">
-            <div class="h-100 d-md-flex justify-content-between align-items-center">
-                <div class="email-address">
-                    <a href="mailto:contact@southtemplate.com">contact@southtemplate.com</a>
-                </div>
-                <div class="phone-number d-flex">
-                    <div class="icon">
-                        <img src="img/icons/phone-call.png" alt="">
-                    </div>
-                    <div class="number">
-                        <a href="tel:+45 677 8993000 223">+45 677 8993000 223</a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
     <!-- Main Header Area -->
     <div class="main-header-area" id="stickyHeader">
         <div class="classy-nav-container breakpoint-off">
@@ -52,10 +35,11 @@
                     <!-- Nav Start -->
                     <div class="classynav classynav2">
                         <ul>
-                            <li><a href="#">Proyecto</a></li>
-                            <li><a href="#">Constructora</a></li>
-                            <li><a href="#">Servicios</a></li>
-                            <li><a href="#">Contacto</a></li>
+                        <li><a href="#proyectos">Proyecto</a></li>
+                            <li><a href="#constructora">Constructora</a></li>
+                            <li><a href="#servicios">Servicios</a></li>
+                            <li><a href="#prensa">Prensa</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
                         </ul>
 
                         <!-- Search Form -->
@@ -110,71 +94,6 @@
             </div>
         </div>
 
-        <!-- ##### Advance Search Area Start ##### -->
-
-        <!--<div id="search-area" class="south-search-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="advanced-search-form">
-                        <!-- Search Title -->
-        <!-- <div class="search-title">
-                            <p>Buscador de propiedades</p>
-                        </div> -->
-        <!-- Search Form -->
-        <!--<form action="#" method="post" id="advanceSearch">
-                            <div class="row">
-                                <div class="col-12 col-md-6 col-lg-2">
-                                    <div class="form-group">
-                                        <select class="form-control" id="operation" placeholder="Comprar">
-                                            <option>Comprar</option>
-                                            <option>Vender</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-2">
-                                    <div class="form-group">
-                                        <select class="form-control" id="type">
-                                            <option>Departamento</option>
-                                            <option>Casa</option>
-                                            <option>Local</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-md-12 col-lg-4">
-                                    <div class="form-group wrapper">
-                                        <input type="input" class="form-control location" name="input" placeholder="Ingrese Zona, Localidad o Provincia"/>
-                                    </div> 
-                                </div>
-
-                                <div class="col-12 col-lg-2">
-                                    <!-- More Filter -->
-        <!-- <div class="more-filter">
-                                        <a href="#" id="moreFilter">+ Más filtros</a>
-                                    </div> -->
-        <!-- Submit -->
-        <!--<div class="form-group mb-0">
-                                        <button type="submit" class="btn south-btn btn-4">Buscar &nbsp;<i class="fa fa-lg fa-search"></i></button>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-2">
-                                  <div class="form-group mb-0">
-                                         <button class="btn south-btn">Consultas &nbsp;<i class="fa fa-lg fa-envelope"></i></button>
-                                    </div>
-                                </div>
-                                
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
--->
-        <!-- ##### Advance Search Area End ##### -->
 
 </section>
 <!-- ##### Hero Area End ##### -->
@@ -301,11 +220,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                
-
                                 
                 <div class="col-12 secDevelopers">
-                    <p class="txtOtherSection"> <img src="img/core-img/imgDevelopers.jpg" align="left"  alt="Developers"><b >Constructora</b> <br>URBAN DEVELOPERS es una empresa constructora que brinda a sus clientes un sistema integral de soluciones, abarcando todos los servicios necesarios para la materialización, puesta en marcha, desarrollo y mantenimiento de obras. Las prestaciones ofrecidas por la empresa le permiten brindar soluciones constructivas en obras civiles e industriales de infraestructura urbana y regional.
+                    <p id="constructora" class="txtOtherSection"> <img src="img/core-img/imgDevelopers.jpg" align="left"  alt="Developers"><b >Constructora</b> <br>URBAN DEVELOPERS es una empresa constructora que brinda a sus clientes un sistema integral de soluciones, abarcando todos los servicios necesarios para la materialización, puesta en marcha, desarrollo y mantenimiento de obras. Las prestaciones ofrecidas por la empresa le permiten brindar soluciones constructivas en obras civiles e industriales de infraestructura urbana y regional.
                     </p>
                     
                     <div class="clear"></div>   
@@ -332,7 +249,7 @@
                 </div>
 
                 <div class="col-12 wow fadeInUp titleOhterSection">
-                    <h2 class="text-left">Servicios</h2>
+                    <h2 id="servicios" class="text-left">Servicios</h2>
                 </div>
                 <div class="col-12 developers-content">
                     <p class="txtOtherSection">URBAN DEVELOPERS ofrece un completo portfolio con los servicios que el cliente requiere para la construcción de un proyecto concentrando en una sola firma las diferentes fases para su ejecución: 
@@ -349,7 +266,7 @@
                 </div>
             </div>
             <div class="col-12 wow fadeInUp titleOhterSection">
-                <h2 class="text-center">Prensa</h2>
+                <h2 id="prensa" class="text-center">Prensa</h2>
             </div>
             <div class="col-12 pressSection">
                 <ul>
@@ -360,7 +277,7 @@
             </div>
             
             <div class="col-12 wow fadeInUp titleOhterSection">
-                <h2 class="text-center">Contacto</h2>
+                <h2 id="contacto" class="text-center">Contacto</h2>
             </div>
 
             <div class="col-12 pressSection">
