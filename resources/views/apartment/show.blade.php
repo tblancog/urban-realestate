@@ -82,11 +82,11 @@
     </div><!-- end boxDetail -->
 
 
-    <div class="col-md-6 col-sm-12"  >
+    <div class="col-md-6 col-sm-12" >
 
           <div class="row"><!-- start row a -->
 
-            <div class="col-md-12 col-sm-12 boxDetail">
+            <div class="col-md-12 col-sm-12 boxDetail boxAmenitiesDepto">
               <div class="">
                 <ul class="amenitieBox list-inline">
                   @foreach ($apartment->building->amenities as $amenity)
@@ -105,7 +105,7 @@
                 <h2 class="detailStatus right">{{ $apartment->contact_phone }}</h2>
               </div>
               <div style="clear:both"aca></div>
-              <form class="formDetail">
+              <form class="formDetail formDepto">
                 <div class="contact-info">
                     <div class="contact-info-item">
                         <input type="text" placeholder="Nombre">

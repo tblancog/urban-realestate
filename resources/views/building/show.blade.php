@@ -104,7 +104,7 @@
                 <h2 class="detailStatus right">{{ $building->contact_phone }}</h2>
               </div>
               <div style="clear:both"aca></div>
-              <form class="formDetail">
+              <form class="formDetail formBuilding">
                 <div class="contact-info">
                     <div class="contact-info-item">
                         <input type="text" placeholder="Nombre">
@@ -173,7 +173,7 @@
         <div class="description-top">
               <h3 class="detailTitle2">Unidades</h3>
           </div>
-          <div class="description-bot">
+          <div class="description-bot table-responsive-sm">
           <table class="table">
                         <thead>
                             <tr>
