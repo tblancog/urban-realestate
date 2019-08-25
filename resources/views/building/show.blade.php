@@ -91,7 +91,7 @@
                   @foreach ($building->amenities as $amenity)
                     <li class="list-inline-item">
                       <img class="amenitieIcon" src="/img/icons/amenities/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
-                      <p class="amenitieText" style="text-transform: capitalize;">{{ $amenity->title }}</p>
+                      <p class="amenitieText text-uppercase">{{ $amenity->title }}</p>
                     </li>
                   @endforeach
                 </ul>

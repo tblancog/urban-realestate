@@ -89,12 +89,46 @@
             <div class="col-md-12 col-sm-12 boxDetail">
               <div class="">
                 <ul class="amenitieBox list-inline">
-                  @foreach ($apartment->building->amenities as $amenity)
+                   @foreach ([
+                              'superficie' => [
+                                  'icon' => '/img/icons/superficie.svg',
+                                  'title' => 'superficie',
+                                  'value' => $apartment->area. 'm<sup>2</sup>'
+                                ],
+                                'rooms' => [
+                                    'icon' => '/img/icons/cama.svg',
+                                    'title' => 'dormitorios',
+                                    'value' => $apartment->dormitorios
+                                ],
+                                'bathrooms' => [
+                                    'icon' => '/img/icons/ducha.svg',
+                                    'title' => 'baños',
+                                    'value' => $apartment->banios
+                                ],
+                                'cochera' => [
+                                    'icon' => '/img/icons/amen_02.png',
+                                    'title' => 'cochera',
+                                    'value' => 1
+                                ],
+                                'amenities' => [
+                                    'icon' => '/img/icons/pileta.svg',
+                                    'title' => 'amenities',
+                                    'value' => $apartment->building->amenities->count()
+                                ],
+                    ] as $overview)
+                        <li class="list-inline-item">
+                            <img class="amenitieIcon" src="{{ $overview['icon'] }}" alt="{{ $overview['title'] }}">
+                            <p class="amenitieText text-uppercase">{{ $overview['title'] }}</p>
+                            <p class="amenitieText amenitieValue">{!! $overview['value'] !!}</p>
+                        </li>
+
+                  @endforeach
+                  {{-- @foreach ($apartment->building->amenities as $amenity)
                     <li class="list-inline-item">
                       <img class="amenitieIcon" src="/img/icons/amenities/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
                       <p class="amenitieText" style="text-transform: capitalize;">{{ $amenity->title }}</p>
                     </li>
-                  @endforeach
+                  @endforeach --}}
                 </ul>
               </div>
             </div>

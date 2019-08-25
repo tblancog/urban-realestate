@@ -537,7 +537,7 @@
          font-size: 30px;
          text-transform: uppercase;
          margin-bottom: 5px;
-         font-family: "MyriadPro-Black", sans-serif;         
+         font-family: "MyriadPro-Black", sans-serif;
 
          @media #{$breakpoint-lg} {
              font-size: 24px;
@@ -577,7 +577,7 @@
  .project-title2 {
     margin: 20px 0;
 }
- 
+
  .project-title2 h2{
     font-family: "AvantGarde", sans-serif;
     font-weight: 100;
@@ -4435,35 +4435,35 @@
             text-align: center;
         }
 
-        @media only screen and (max-width: 568px) and (min-width: 320px) {        
+        @media only screen and (max-width: 568px) and (min-width: 320px) {
             text-align: center;
-        } 
+        }
 
      }
-     
+
      .status {
          color: #72bf44;
-         font-family: "MyriadPro-Black";         
+         font-family: "MyriadPro-Black";
 
         @media only screen and (max-width: 677px) and (min-width: 375px) {
             text-align: center;
         }
 
-        @media only screen and (max-width: 568px) and (min-width: 320px) {        
+        @media only screen and (max-width: 568px) and (min-width: 320px) {
             text-align: center;
-        } 
+        }
      }
 
-    .price{    
-        text-align: right;        
+    .price{
+        text-align: right;
 
         @media only screen and (max-width: 677px) and (min-width: 375px) {
             text-align: center;
         }
 
-        @media only screen and (max-width: 568px) and (min-width: 320px) {        
+        @media only screen and (max-width: 568px) and (min-width: 320px) {
             text-align: center;
-        } 
+        }
 
     }
     .title{
@@ -4471,9 +4471,9 @@
             text-align: center;
         }
 
-        @media only screen and (max-width: 568px) and (min-width: 320px) {        
+        @media only screen and (max-width: 568px) and (min-width: 320px) {
             text-align: center;
-        } 
+        }
     }
      .title, .price {
          font-size: 18px;
@@ -4852,7 +4852,6 @@
      display: inline-block;
      font-weight: normal;
      margin-bottom: 0;
-     text-transform: uppercase !important;
      font-family: 'MyriadPro-Regular', sans-serif;
      color: #000;
      line-height: normal;
@@ -4861,6 +4860,9 @@
      overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
+    &.amenitieValue {
+        font-size: 2rem;
+    }
 
      @media only screen and (max-width: 1920px) and (min-width: 1080px) {
          font-size: .9rem;
@@ -4988,8 +4990,8 @@
 
 .txtOtherSection b{
     font-family: "AvantGarde", sans-serif;
-    font-weight: 100;  
-    font-size: 2em; 
+    font-weight: 100;
+    font-size: 2em;
 }
 .txtOtherSection .imgLarge{
     width: 100% !important;
@@ -5006,8 +5008,8 @@ margin: 0;
 }
 .titleOhterSection h2{
     font-family: "AvantGarde", sans-serif;
-    font-weight: 100;  
-    font-size: 2em; 
+    font-weight: 100;
+    font-size: 2em;
 }
 
 .classy-menu-others{
