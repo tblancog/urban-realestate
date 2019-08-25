@@ -2,8 +2,8 @@
     <div class="box mt-4">
         <a href="{{ route('buildings.show', $building->slug) }}">
             <div class="box-img" style="background-image: url({{ count($building->images) > 0 ? $building->images->first()->path : '' }});">
-                <div class="box-info px-2 py-1">
-                    <div class="row">
+                <div class="box-info">
+                    <div class="row bottomFeature">
                         <div class="col-md-6 col-sm-12">
                             <div class="status text-uppercase">@status_show($building->status)</div>
                             <div class="title">{{ $building->title }}</div>

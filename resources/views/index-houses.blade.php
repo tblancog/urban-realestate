@@ -18,7 +18,7 @@
     <div class="main-header-area" id="stickyHeader">
         <div class="classy-nav-container breakpoint-off">
             <!-- Classy Menu -->
-            <div class="head-title">Constructora</div>
+            <div class="head-title">ARQUITECTURA</div>
             <nav class="classy-navbar justify-content-between" id="southNav">
 
                 <!-- Logo -->

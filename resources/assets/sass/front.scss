@@ -526,6 +526,7 @@
      position: relative;
      z-index: 1;
      text-align: center;
+     margin: 2% 0;;
      // margin-bottom: 100px;
 
      img {
@@ -536,7 +537,7 @@
          font-size: 30px;
          text-transform: uppercase;
          margin-bottom: 5px;
-         font-family: "AvantGarde", sans-serif;
+         font-family: "MyriadPro-Black", sans-serif;         
 
          @media #{$breakpoint-lg} {
              font-size: 24px;
@@ -3607,7 +3608,7 @@
              background-color: #ffffff;
 
              h2 {
-                 font-family: "MyriadPro-Black";
+                 font-family: "MyriadPro-Black", sans-serif;
                  margin-bottom: 0;
                  padding: 15px;
                  font-weight: 700;
@@ -4413,7 +4414,7 @@
          background: rgba(0,0,0,0.45);
          bottom: 0;
          width: 100%;
-
+         padding: 2% 3%;
      }
 
      a,
@@ -4427,13 +4428,53 @@
 
      .finance{
          font-family: "MyriadPro-Black";
-         color: #fff
-     }
-     .status {
          color: #fff;
-         font-family: "MyriadPro-Black";
+         text-align: right;
+
+        @media only screen and (max-width: 677px) and (min-width: 375px) {
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 568px) and (min-width: 320px) {        
+            text-align: center;
+        } 
+
+     }
+     
+     .status {
+         color: #72bf44;
+         font-family: "MyriadPro-Black";         
+
+        @media only screen and (max-width: 677px) and (min-width: 375px) {
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 568px) and (min-width: 320px) {        
+            text-align: center;
+        } 
      }
 
+    .price{    
+        text-align: right;        
+
+        @media only screen and (max-width: 677px) and (min-width: 375px) {
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 568px) and (min-width: 320px) {        
+            text-align: center;
+        } 
+
+    }
+    .title{
+        @media only screen and (max-width: 677px) and (min-width: 375px) {
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 568px) and (min-width: 320px) {        
+            text-align: center;
+        } 
+    }
      .title, .price {
          font-size: 18px;
          font-family: "MyriadPro-Black";
@@ -5022,4 +5063,8 @@ margin: 0;
     padding: 1% 0;
     border-bottom: 1px solid #000;
     border-top: 1px solid #000;
+}
+
+.bottomFeature{
+    padding: 0
 }
