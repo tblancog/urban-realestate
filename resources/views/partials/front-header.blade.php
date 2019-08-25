@@ -23,7 +23,7 @@
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
-                    <img class="link menu" src="img/core-img/icMenu.png" alt="">
+                    <img class="link menu" src="{{ asset('img/core-img/icMenu.png') }}" alt="">
                 </div>
 
                 <!-- Menu -->

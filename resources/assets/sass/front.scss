@@ -763,7 +763,6 @@
      .main-header-area {
          background-color: transparent;
          height: auto;
-         overflow: hidden;
 
          .classy-nav-container {
              background-color: transparent;
@@ -771,9 +770,9 @@
 
              .classy-navbar {
                  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0.5+100 */
-                 background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 100%); /* FF3.6-15 */
-                 background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.7) 100%); /* Chrome10-25,Safari5.1-6 */
-                 background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                 background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 100%); /* FF3.6-15 */
+                 background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+                 background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
                  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#80000000',GradientType=1 ); /* IE6-9 */
              }
          }
@@ -868,14 +867,15 @@
                                      &.show {
                                          .dropdown-menu.show {
                                              top: 35px !important;
-                                             left: -35px !important;
+                                             left: -30px !important;
                                              /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.6+0,0.5+99 */
-                                             background: -moz-linear-gradient(top,  rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 99%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
-                                             background: -webkit-linear-gradient(top,  rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.8) 99%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
-                                             background: linear-gradient(to bottom,  rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.8) 99%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                                             background: -moz-linear-gradient(top,  rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 99%, rgba(0,0,0,0.6) 100%); /* FF3.6-15 */
+                                             background: -webkit-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 99%,rgba(0,0,0,0.6) 100%); /* Chrome10-25,Safari5.1-6 */
+                                             background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 99%,rgba(0,0,0,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
                                              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
                                              border: 0;
                                              border-radius: 0;
+                                             padding: 0 2%;
 
                                              a {
                                                  border: 0;
@@ -986,10 +986,7 @@
      height: 134px;
      position: relative;
      z-index: 1;
-     //  background-color: rgba(255, 255, 255, 0.8);
      background-color: $color-white;
-     //  color: $color-dark;
-     @include trans-duration(500ms);
 
      @media #{$breakpoint-md} {
          height: 70px;
@@ -1056,7 +1053,15 @@
 
          @media #{$breakpoint-lg} {
              margin-right: 0;
+         }         
+
+         @media only screen and (max-width: 677px) and (min-width: 375px) {
+            max-width: 135px;
          }
+
+         @media only screen and (max-width: 568px) and (min-width: 320px) {        
+            max-width: 135px;
+         } 
      }
 
      .classynav ul {
@@ -1167,8 +1172,7 @@
  .is-sticky .main-header-area {
      width: 100%;
      z-index: 10000 !important;
-     height: 135px;
-     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+     height: 134px;
      background-color: transparent;
 
      @media #{$breakpoint-md} {
@@ -4407,6 +4411,15 @@
          height: 500px;
          background-size: cover;
          position: relative;
+
+         @media only screen and (max-width: 677px) and (min-width: 375px) {
+            height: 400px;
+         }
+    
+         @media only screen and (max-width: 568px) and (min-width: 320px) {        
+            height: 400px;
+         } 
+         
      }
 
      .box-info {
@@ -4634,6 +4647,14 @@
  }
  .logosUrbanFooter .colLogos img{
      max-width: 20%;
+
+     @media only screen and (max-width: 677px) and (min-width: 375px) {
+        max-width: 50%;
+     }
+
+     @media only screen and (max-width: 568px) and (min-width: 320px) {        
+        max-width: 50%;
+     } 
  }
  .logosUrbanFooter .colLogos p{
      clear: both;
@@ -4853,7 +4874,7 @@
  .amenitieBox li{
      text-align: center;
      width: 18%;
-     padding: 0 2%;
+     padding: 0 3%;
      vertical-align: text-top;
  }
  .amenitieIcon{
