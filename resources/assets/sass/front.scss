@@ -1339,12 +1339,10 @@
      }
 
      .owl-dots {
-         // width: 1110px;
          position: absolute;
-         left: 50%;
-         right: 0;
-         //bottom: 45px;
          bottom: 10px;
+         width: 100%;
+         text-align: center;
 
          // @include transform (translateX(-50%));
 
@@ -1503,7 +1501,15 @@
                  .advanced-search-form {
                      // height: 100px;
                      border: 0;
-                     box-shadow: none;
+                     box-shadow: none;                     
+
+                    @media only screen and (max-width: 677px) and (min-width: 375px) {
+                        text-align: center;
+                    }
+
+                    @media only screen and (max-width: 568px) and (min-width: 320px) {        
+                        text-align: center;
+                    } 
 
                      .nice-select,
                      .nice-select ul
@@ -4874,7 +4880,7 @@
  .amenitieBox li{
      text-align: center;
      width: 18%;
-     padding: 0 3%;
+     padding: 0 2%;
      vertical-align: text-top;
  }
  .amenitieIcon{
@@ -4899,7 +4905,7 @@
     }
     
      @media only screen and (max-width: 1920px) and (min-width: 1080px) {
-         font-size: .8rem;
+         font-size: .7rem;
          padding-bottom: 2%;
      }
 
