@@ -4618,7 +4618,7 @@
  }
 
  textarea{
-     height: auto !important;
+     height: auto;
  }
 
  .logosUrbanFooter{
@@ -4711,6 +4711,10 @@
  .boxDetail:first-child{
 
  }
+
+.boxAmenitiesDepto > div{
+    min-height: 261px;
+}
 
  .boxDetail > div{
      background: white;
@@ -4871,6 +4875,15 @@
 
  }
 
+
+ .formBuilding textarea{
+    height: 215px;
+    min-height: 215px;
+ }
+ .formDepto textarea{
+    height: 162px;
+    min-height: 162px;
+ }
 
  .formDetail{
      padding: 0 15px;
@@ -5069,4 +5082,7 @@ margin: 0;
 
 .bottomFeature{
     padding: 0
+}
+.fa-arrow-right:before {
+    color: #000;
 }
