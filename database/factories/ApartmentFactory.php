@@ -10,14 +10,11 @@ $factory->define(Apartment::class, function (Faker $faker) {
     return [
       'title'=> $apartmentName,
       'slug'=> str_slug($apartmentName),
-      'address'=> $faker->streetAddress(),
-      'location'=> $faker->city(),
 
       'floor'=> rand(0, 10),
       'department'=> rand(1, 4),
       'code'=> '#'.rand(1, 1000),
-      
-      'url_maps'=> $faker->streetAddress(),
+
       'price'=> $faker->randomNumber(6),
       'area'=> rand(30, 60),
       'rooms'=> rand(1, 4),

@@ -22,7 +22,7 @@
 
     <div class="col-md-6 col-sm-12 boxDetail">
       <div class="">
-        <h2 class="titleDetail">{{ $apartment->title }} - {{ $apartment->building->location }}</h2>
+        <h2 class="titleDetail">{{ $apartment->title }}</h2>
       </div>
     </div>
 
@@ -244,12 +244,14 @@
               </div>
               <div style="clear:both"></div>
               <ul class="moreInfo">
-                <li>Aire Acondic. Individual</li>
-                <li>Agua Caliente Individual</li>
-                <li>Calefacción por Aire</li>
-                <li>Luminoso</li>
-                <li>Antigüedad: <span class="misc-value">50</span></li>
-                <li>Expensas: <span class="misc-value">3700</span></li>
+
+                @foreach ( $apartment->features as $feature )
+                    @continue($feature->type == 'additional')
+                    <li>
+                        {{ $feature->title }}
+                        {{ !empty($feature->value) ? ': '.$feature->value : '' }}
+                    </li>
+                @endforeach
              </ul>
     </div><!-- end boxDetail -->
 
@@ -260,13 +262,13 @@
               </div>
               <div style="clear:both"></div>
               <ul class="moreInfo">
-                <li>Cocina</li>
-                <li>Living Comedor</li>
-                <li>Hall</li>
-                <li>Escritorio</li>
-                <li>Lavadero</li>
-                <li>Dependencia</li>
-                <li>Entrada Servicio</li>
+                @foreach ( $apartment->features as $feature )
+                    @continue($feature->type == 'rooms')
+                    <li>
+                        {{ $feature->title }}
+                        {{ !empty($feature->value) ? ': '.$feature->value : '' }}
+                    </li>
+                @endforeach
              </ul>
     </div><!-- end boxDetail -->
 

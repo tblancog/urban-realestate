@@ -19,66 +19,73 @@ class BuildingImagesTableAutoSeeder extends Seeder
         \DB::table('building_images')->insert(array (
             0 => 
             array (
-                'id' => '58',
-                'filename' => 'building_5d49fa18f238c.jpeg',
+                'id' => '1',
+                'filename' => 'building_5d5c05f213dd8.jpeg',
                 'order' => '0',
-                'building_id' => '21',
+                'building_id' => '1',
             ),
             1 => 
             array (
-                'id' => '59',
-                'filename' => 'building_5d49fa67ba11f.jpg',
+                'id' => '13',
+                'filename' => 'building_5d5c28c38c11b.png',
                 'order' => '0',
-                'building_id' => '21',
+                'building_id' => '2',
             ),
             2 => 
             array (
-                'id' => '60',
-                'filename' => 'building_5d49fa6824b64.jpg',
+                'id' => '14',
+                'filename' => 'building_5d5c28c4c33bf.png',
                 'order' => '1',
-                'building_id' => '21',
+                'building_id' => '2',
             ),
             3 => 
             array (
-                'id' => '61',
-                'filename' => 'building_5d49fa687cb12.jpg',
+                'id' => '15',
+                'filename' => 'building_5d5c28c5dd48b.png',
                 'order' => '2',
-                'building_id' => '21',
+                'building_id' => '2',
             ),
             4 => 
             array (
-                'id' => '76',
-                'filename' => 'building_5d4a050a4a25d.png',
-                'order' => '0',
-                'building_id' => '23',
+                'id' => '16',
+                'filename' => 'building_5d5c28c6c03db.png',
+                'order' => '3',
+                'building_id' => '2',
             ),
             5 => 
             array (
-                'id' => '77',
-                'filename' => 'building_5d4a050b676f0.png',
-                'order' => '1',
-                'building_id' => '23',
+                'id' => '17',
+                'filename' => 'building_5d5c28c7d1190.png',
+                'order' => '4',
+                'building_id' => '2',
             ),
             6 => 
             array (
-                'id' => '78',
-                'filename' => 'building_5d4a050c74195.png',
-                'order' => '2',
-                'building_id' => '23',
+                'id' => '18',
+                'filename' => 'building_5d6033b23228b.jpeg',
+                'order' => '0',
+                'building_id' => '1',
             ),
             7 => 
             array (
-                'id' => '79',
-                'filename' => 'building_5d4a050d5a7be.png',
-                'order' => '3',
-                'building_id' => '23',
+                'id' => '19',
+                'filename' => 'building_5d6033b5c3e18.jpeg',
+                'order' => '1',
+                'building_id' => '1',
             ),
             8 => 
             array (
-                'id' => '80',
-                'filename' => 'building_5d4a050e63868.png',
-                'order' => '4',
-                'building_id' => '23',
+                'id' => '20',
+                'filename' => 'building_5d6033b666745.jpeg',
+                'order' => '2',
+                'building_id' => '1',
+            ),
+            9 => 
+            array (
+                'id' => '21',
+                'filename' => 'building_5d6033b6c33d4.jpeg',
+                'order' => '3',
+                'building_id' => '1',
             ),
         ));
         
