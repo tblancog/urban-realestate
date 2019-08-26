@@ -236,7 +236,7 @@
   </div> <!-- end row 4 -->
 
 
-  <div class="row"> <!-- start row 5 -->
+  {{-- <div class="row"> <!-- start row 5 -->
 
     <div class="col-md-6 col-sm-12 boxDetail">
               <div class="">
@@ -272,7 +272,7 @@
              </ul>
     </div><!-- end boxDetail -->
 
-  </div> <!-- end row 5 -->
+  </div> <!-- end row 5 --> --}}
 
 
 
