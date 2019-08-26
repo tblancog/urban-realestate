@@ -4879,7 +4879,7 @@
  }
  .amenitieBox li{
      text-align: center;
-     width: 18%;
+     width: 17%;
      padding: 0 2%;
      vertical-align: text-top;
  }
@@ -4899,9 +4899,10 @@
      overflow-wrap: break-word;
      word-wrap: break-word;
      hyphens: auto;
+     font-size: .5rem;
     
      &.amenitieValue {
-        font-size: 1.6rem;
+        font-size: 1.1rem;
     }
     
      @media only screen and (max-width: 1920px) and (min-width: 1080px) {
