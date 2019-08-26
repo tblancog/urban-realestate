@@ -12,12 +12,12 @@ class AmenitiesTableAutoSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('amenities')->delete();
-
+        
         \DB::table('amenities')->insert(array (
-            0 =>
+            0 => 
             array (
                 'id' => '1',
                 'title' => 'ascensor',
@@ -25,7 +25,7 @@ class AmenitiesTableAutoSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            1 =>
+            1 => 
             array (
                 'id' => '2',
                 'title' => 'cocheras',
@@ -33,7 +33,7 @@ class AmenitiesTableAutoSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            2 =>
+            2 => 
             array (
                 'id' => '3',
                 'title' => 'conserjeria',
@@ -41,7 +41,7 @@ class AmenitiesTableAutoSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            3 =>
+            3 => 
             array (
                 'id' => '4',
                 'title' => 'gimnasio',
@@ -49,7 +49,7 @@ class AmenitiesTableAutoSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            4 =>
+            4 => 
             array (
                 'id' => '5',
                 'title' => 'lavadero',
@@ -57,7 +57,7 @@ class AmenitiesTableAutoSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            5 =>
+            5 => 
             array (
                 'id' => '6',
                 'title' => 'parrilla',
@@ -65,7 +65,7 @@ class AmenitiesTableAutoSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            6 =>
+            6 => 
             array (
                 'id' => '7',
                 'title' => 'pileta',
@@ -73,7 +73,7 @@ class AmenitiesTableAutoSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            7 =>
+            7 => 
             array (
                 'id' => '8',
                 'title' => 'sauna',
@@ -81,7 +81,7 @@ class AmenitiesTableAutoSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            8 =>
+            8 => 
             array (
                 'id' => '9',
                 'title' => 'sum',
@@ -89,7 +89,7 @@ class AmenitiesTableAutoSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            9 =>
+            9 => 
             array (
                 'id' => '10',
                 'title' => 'wifi',
@@ -97,7 +97,8 @@ class AmenitiesTableAutoSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-        )
-        );
+        ));
+        
+        
     }
 }

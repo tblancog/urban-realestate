@@ -198,9 +198,9 @@
                                             <!-- Department #  -->
                                             <div class="form-group col-lg-4">
                                                 <label for=""># dpto.</label>
-                                                <input v-model="form.departament" type="text" name="departament"
+                                                <input v-model="form.code" type="text" name="code"
                                                     placeholder="# Departamento" class="form-control"
-                                                    :class="{ 'is-invalid': form.errors.has('departament') }">
+                                                    :class="{ 'is-invalid': form.errors.has('code') }">
                                                 <has-error :form="form" field=""></has-error>
                                             </div>
 

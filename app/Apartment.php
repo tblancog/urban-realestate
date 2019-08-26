@@ -47,7 +47,11 @@ class Apartment extends Model
     }
     public function building(){
 
-      return $this->belongsTo('App\Building');
+        return $this->belongsTo('App\Building');
+    }
+    public function features(){
+
+        return $this->hasMany('App\ApartmentFeature');
     }
 
     public function setTitleAttribute($value){
