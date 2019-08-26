@@ -1343,7 +1343,7 @@
      .owl-dots {
          position: absolute;
          bottom: 10px;
-         width: 100%;
+         width: 100% !important;
          text-align: center;
 
          // @include transform (translateX(-50%));
