@@ -160,22 +160,34 @@
                             <!-- Amenities -->
                             <div class="form-group col-lg-9">
                                 <div class="row">
-                                    <div class="m-2">
+                                    <div class="m-1">
                                         <a class="btn btn-primary" data-toggle="collapse" href="#basicForm"
                                             role="button" aria-expanded="false" aria-controls="basicForm">
-                                            Información de departamento
+                                            Info
                                         </a>
                                     </div>
-                                    <div class="m-2">
+                                    <div class="m-1">
                                         <a class="btn btn-primary" data-toggle="collapse" href="#superficieForm"
                                             role="button" aria-expanded="false" aria-controls="superficieForm">
                                             Superficie
                                         </a>
                                     </div>
-                                    <div class="m-2">
+                                    <div class="m-1">
                                         <a class="btn btn-primary" data-toggle="collapse" href="#amenitiesForm"
                                             role="button" aria-expanded="false" aria-controls="amenitiesForm">
-                                            Amenities de edificio
+                                            Amenities
+                                        </a>
+                                    </div>
+                                    <div class="m-1">
+                                        <a class="btn btn-primary" data-toggle="collapse" href="#additionalsForm"
+                                            role="button" aria-expanded="false" aria-controls="additionalsForm">
+                                            Adicionales
+                                        </a>
+                                    </div>
+                                    <div class="m-1">
+                                        <a class="btn btn-primary" data-toggle="collapse" href="#roomsForm"
+                                            role="button" aria-expanded="false" aria-controls="roomsForm">
+                                            Ambientes
                                         </a>
                                     </div>
 
@@ -337,6 +349,37 @@
                                         </div>
                                     </div>
 
+                                    <!--additionalsForm Form -->
+                                    <div id="additionalsForm" class="col-lg-12 collapse">
+                                        <div class="input-group" v-for="(af, idx) in form.additionalFeatures" :key="idx">
+                                            <input class="col-lg-6 form-control" v-model="af.title" placeholder="Ej: Acepta mascotas">
+                                            <input class="col-lg-6 form-control" v-model="af.value" placeholder="Sí/No">
+                                             <div style="cursor: pointer; position: absolute; right: -20px; top: -5px; font-size: 17px;" @click="deleteFeature(idx, 'additional')">
+                                                <span aria-hidden="true">&times;</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                <input type="button" class="btn btn-primary" value="Agregar" @click="addFeature('additional')"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--roomsForm Form -->
+                                    <div id="roomsForm" class="col-lg-12 collapse">
+                                        <div class="input-group" v-for="(rf, idx) in form.roomFeatures" :key="idx">
+                                            <input class="col-lg-6 form-control" v-model="rf.title" placeholder="Ej: Living Comedor">
+                                            <input class="col-lg-6 form-control" v-model="rf.value" placeholder="(opcional)">
+                                             <div style="cursor: pointer; position: absolute; right: -20px; top: -5px; font-size: 17px;" @click="deleteFeature(idx, 'rooms')">
+                                                <span aria-hidden="true">&times;</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                <input type="button" class="btn btn-primary" value="Agregar" @click="addFeature('rooms')"/>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -466,9 +509,12 @@
                     contact_phone: '',
 
                     building_id: '',
-                    building: {}
+                    building: {},
+                    additionalFeatures: [],
+                    roomFeatures: []
                 }),
                 buildings: [],
+                chosen: null,
             }
         },
         watch: {
@@ -537,7 +583,8 @@
 
             },
             editModal(item) {
-                // this.selectedAmenities = item.building.amenities.map( am => am.id);
+                item.additionalFeatures = item.features.filter( el => el.type === 'additional');
+                item.roomFeatures = item.features.filter( el => el.type === 'rooms');
                 this.selected = item
                 this.editmode = true;
                 this.form.reset();
@@ -629,18 +676,19 @@
                     axios.spread(function (res1, res2) {
                         vm.apartments = res1.data;
 
+                        // Set image path for each image obteined
                         let newImgArr = [];
-                        res1.data.data.forEach((current, index) => {
-                            current.images.forEach((img, idx) => {
-                                newImgArr.push(img.path);
-                            });
-                        });
-                        vm.apartments.images = newImgArr;
+                        // res1.data.data.forEach((current, index) => {
+                        //     current.images.forEach((img, idx) => {
+                        //         newImgArr.push(img.path);
+                        //     });
+                        // });
+
+                        // vm.apartments.images = newImgArr;
                         vm.amenities = res2.data
                     })
                 );
             },
-
             createItem() {
                 this.$Progress.start()
                 const formData = new FormData()
@@ -670,6 +718,20 @@
                         })
                 })
             },
+            addFeature(type) {
+                if(type == 'additional') {
+                    this.form.additionalFeatures.push({ title: '', value: '', type })
+                } else {
+                    this.form.roomFeatures.push({ title: '', value: '', type })
+                }
+            },
+            deleteFeature(index, type) {
+                if(type == 'additional') {
+                    this.form.additionalFeatures.splice(index, 1)
+                } else {
+                    this.form.roomFeatures.splice(index, 1)
+                }
+            }
         },
         created() {
             this.files = []

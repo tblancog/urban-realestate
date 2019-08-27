@@ -15,12 +15,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label id="top_text">Texto superior</label>
-                                    <textarea class="form-control" v-model="config.top_text" id="top_text" rows="4">
+                                    <textarea style="white-space: pre-line;" class="form-control" v-model="config.top_text" id="top_text" rows="4">
                                     </textarea>
                                 </div>
                                 <div class="form-group">
                                     <label id="bottom_text">Texto posterior</label>
-                                    <textarea class="form-control" v-model="config.bottom_text" id="bottom_text" rows="4">
+                                    <textarea style="white-space: pre-line;" class="form-control" v-model="config.bottom_text" id="bottom_text" rows="4">
                                     </textarea>
                                 </div>
                                 <div class="form-check">

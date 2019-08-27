@@ -141,7 +141,7 @@
                             You may now use this token to make API requests.
                         </p>
 
-                        <textarea class="form-control" rows="10">{{ accessToken }}</textarea>
+                        <textarea style="white-space: pre-line;" class="form-control" rows="10">{{ accessToken }}</textarea>
                     </div>
 
                     <!-- Modal Actions -->

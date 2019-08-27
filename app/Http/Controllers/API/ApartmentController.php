@@ -7,6 +7,7 @@ use App\Amenity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ApartmentRequest;
+use App\ApartmentFeature;
 use Faker\Factory;
 
 class ApartmentController extends Controller
@@ -18,10 +19,13 @@ class ApartmentController extends Controller
      */
     public function index()
     {
+        // The array we're going to return
+        $data = [];
         $apartments = Apartment::latest()
                 ->with('images')
                 ->with('building')
-                ->paginate(5);
+                ->with('features')
+                ->paginate(10);
         return $apartments;
     }
 
@@ -33,15 +37,26 @@ class ApartmentController extends Controller
      */
     public function store(ApartmentRequest $request)
     {
-      $input = collect($request->input())
-                              ->except('buildings', 'amenities', 'building_id');
 
-      $input = collect($request->input());
+        $input = collect($request->input())
+        ->except('buildings', 'amenities', 'building_id');
 
-      $building_id = $request->input('building_id');
-      $input->put('building_id', $building_id);
+        $input = collect($request->input());
 
-      $apartment = Apartment::create($input->toArray());
+        $building_id = $request->input('building_id');
+        $input->put('building_id', $building_id);
+
+        $apartment = Apartment::create($input->toArray());
+
+        // Bind features
+        $additionalFeatures = collect($request->input('additionalFeatures'));
+        $roomFeatures = collect($request->input('roomFeatures'));
+        $features = $additionalFeatures->merge($roomFeatures);
+
+        if( !$features->isEmpty() ){
+            $apartment->features()
+                     ->createMany($features->toArray());
+        }
 
       return response()->json(['message' => 'Departmento creado', 'id'=> $apartment->id], 201);
     }
@@ -68,7 +83,20 @@ class ApartmentController extends Controller
     public function update(ApartmentRequest $request, $apartment)
     {
         $apartment->update($request->all());
-        return response()->json(['message' => 'Departamento creado', 'id'=> $apartment->id], 200);
+
+        // Bind features
+        $additionalFeatures = collect($request->input('additionalFeatures'));
+        $roomFeatures = collect($request->input('roomFeatures'));
+        $features = $additionalFeatures->merge($roomFeatures);
+
+        if( !$features->isEmpty() ){
+            $apartment->features()
+                      ->delete();
+            $apartment->features()
+                      ->createMany($features->toArray());
+        }
+
+        return response()->json(['message' => 'Departamento actualizado', 'id'=> $apartment->id], 200);
 
     }
 
