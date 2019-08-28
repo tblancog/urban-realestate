@@ -24,7 +24,7 @@
                     <h2>{{ $config['title'] }}</h2>
                 </div>
                 <div class="appraisals-bottom text-center">
-                    <p class="">{{ $config['top_text'] }}</p>
+                    <p class="">{!! nl2br( $config['top_text']) !!}</p>
                 </div>
 
                 {{-- Formulario --}}

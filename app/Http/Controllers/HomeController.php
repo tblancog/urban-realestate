@@ -37,8 +37,7 @@ class HomeController extends Controller
 
         $apartments = Apartment::latest()
                             ->with('images')
-                            ->take(9)
-                            ->get();
+                            ->paginate(9);
 
         // All Locations
         $locations = Building::groupBy('location')

@@ -33,7 +33,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
 
             {{-- Building box --}}
@@ -46,6 +45,7 @@
 
     </div>
 </section>
+<div id="apartments-fragment"></div>
 <!-- ##### Propiedades en Venta Area End ##### -->
 
 <!-- ##### Otras propiedades Area Start ##### -->
@@ -65,6 +65,9 @@
             @foreach ($apartments as $apartment)
                 @include('apartment.box', $apartment)
             @endforeach
+        </div>
+        <div class="row">
+            <div class="col-lg-1 pull-right">{{ $apartments->fragment('apartments-fragment')->links() }}</div>
         </div>
     </div>
     </div>
