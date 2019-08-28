@@ -53,9 +53,12 @@ class ApartmentController extends Controller
         $roomFeatures = collect($request->input('roomFeatures'));
         $features = $additionalFeatures->merge($roomFeatures);
 
-        if( !$features->isEmpty() ){
-            $apartment->features()
-                     ->createMany($features->toArray());
+        // Remove blanks
+        $features = array_filter($features->toArray(), function($item) {
+            return $item['title'] !== null;
+        });
+        if( !empty($features) ) {
+            $apartment->features()->createMany($features);
         }
 
       return response()->json(['message' => 'Departmento creado', 'id'=> $apartment->id], 201);
@@ -89,11 +92,13 @@ class ApartmentController extends Controller
         $roomFeatures = collect($request->input('roomFeatures'));
         $features = $additionalFeatures->merge($roomFeatures);
 
-        if( !$features->isEmpty() ){
-            $apartment->features()
-                      ->delete();
-            $apartment->features()
-                      ->createMany($features->toArray());
+        // Remove blanks
+        $features = array_filter($features->toArray(), function($item) {
+            return $item['title'] !== null;
+        });
+        if( !empty($features) ) {
+            $apartment->features()->delete();
+            $apartment->features()->createMany($features);
         }
 
         return response()->json(['message' => 'Departamento actualizado', 'id'=> $apartment->id], 200);

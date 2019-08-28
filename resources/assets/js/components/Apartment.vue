@@ -360,7 +360,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-2">
-                                                <input type="button" class="btn btn-primary" value="Agregar" @click="addFeature('additional')"/>
+                                                <input type="button" class="btn btn-primary" value="Agregar otro" @click="addFeature('additional')"/>
                                             </div>
                                         </div>
                                     </div>
@@ -376,7 +376,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-2">
-                                                <input type="button" class="btn btn-primary" value="Agregar" @click="addFeature('rooms')"/>
+                                                <input type="button" class="btn btn-primary" value="Agregar otro" @click="addFeature('rooms')"/>
                                             </div>
                                         </div>
                                     </div>
@@ -510,8 +510,12 @@
 
                     building_id: '',
                     building: {},
-                    additionalFeatures: [],
-                    roomFeatures: []
+                    additionalFeatures: [
+                        { title: '', value: '', type: 'additional' }
+                    ],
+                    roomFeatures: [
+                        { title: '', value: '', type: 'rooms' }
+                    ]
                 }),
                 buildings: [],
                 chosen: null,
