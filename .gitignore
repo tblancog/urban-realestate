@@ -22,5 +22,5 @@ yarn-error.log
 *.code-workspace
 public/mix-manifest.json
 public/css/auth.css
-public/uploads/**/*
+public/uploads/
 database/*.sqlite

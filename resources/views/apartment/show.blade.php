@@ -154,7 +154,7 @@
                         <p class="contact-sub-info"></p>
                     </div>
                     <div class="contact-info-item">
-                        <textarea name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                        <textarea  style="white-space: pre-line;" name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
                         <p class="contact-sub-info"></p>
                     </div>
                     <div class="btn contact-send right">
@@ -236,8 +236,7 @@
   </div> <!-- end row 4 -->
 
 
-  {{-- <div class="row"> <!-- start row 5 -->
-
+  <div class="row"> <!-- start row 5 -->
     <div class="col-md-6 col-sm-12 boxDetail">
               <div class="">
                 <h2 class="titleMoreInfo left"><b>Adicionales</b></h2>
@@ -246,7 +245,7 @@
               <ul class="moreInfo">
 
                 @foreach ( $apartment->features as $feature )
-                    @continue($feature->type == 'additional')
+                    @continue($feature->type !== 'additional')
                     <li>
                         {{ $feature->title }}
                         {{ !empty($feature->value) ? ': '.$feature->value : '' }}
@@ -263,7 +262,7 @@
               <div style="clear:both"></div>
               <ul class="moreInfo">
                 @foreach ( $apartment->features as $feature )
-                    @continue($feature->type == 'rooms')
+                    @continue($feature->type !== 'rooms')
                     <li>
                         {{ $feature->title }}
                         {{ !empty($feature->value) ? ': '.$feature->value : '' }}
@@ -272,11 +271,7 @@
              </ul>
     </div><!-- end boxDetail -->
 
-  </div> <!-- end row 5 --> --}}
-
-
-
-
+  </div> <!-- end row 5 -->
 
 </div> <!-- end container-fluid -->
 

@@ -119,7 +119,7 @@
                         <p class="contact-sub-info"></p>
                     </div>
                     <div class="contact-info-item">
-                        <textarea name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                        <textarea  style="white-space: pre-line;" name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
                         <p class="contact-sub-info"></p>
                     </div>
                     <div class="btn contact-send right">

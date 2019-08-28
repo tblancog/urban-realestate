@@ -23,7 +23,7 @@
                 <h2>{{ $config['title'] }}</h2>
               </div>
                <div class="appraisals-bottom text-center">
-                <p>{{ $config['top_text'] }}</p>
+                <p>{!! nl2br( $config['top_text'] ) !!}</p>
               </div>
                 @if( $config['form'] === '1' )
                   @include ('partials.contact-form')

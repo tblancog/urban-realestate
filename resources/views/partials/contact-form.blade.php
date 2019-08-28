@@ -19,7 +19,7 @@
         <input type="email" class="form-control" id="inputAddress2" placeholder="Email">
     </div>
     <div class="form-group">
-        <textarea rows="4" class="form-control" id="exampleFormControlTextarea1"
+        <textarea  style="white-space: pre-line;"  rows="4" class="form-control" id="exampleFormControlTextarea1"
             placeholder="Estoy interesado en contactarlos" rows="3"></textarea>
     </div>
   <button type="submit" class="btn btn-verde">
