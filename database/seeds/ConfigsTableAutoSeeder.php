@@ -61,16 +61,17 @@ Contactamos y con gusto podremos asesorarte.',
                 'key' => 'title',
                 'value' => 'Tasaciones',
                 'created_at' => '2019-07-30 20:23:21',
-                'updated_at' => '2019-08-23 15:10:56',
+                'updated_at' => '2019-08-27 17:46:10',
             ),
             5 => 
             array (
                 'id' => '18',
                 'module' => 'appraisals',
                 'key' => 'top_text',
-                'value' => 'Si estás interesado en que visitemos tu propiedad y la tasemos, contactate con nosotros y nos estaremos comunicando a la brevedad.',
+                'value' => 'Si estás interesado en que visitemos tu propiedad y la tasemos. 
+Contactate con nosotros y nos estaremos comunicando a la brevedad.',
                 'created_at' => '2019-07-30 20:23:21',
-                'updated_at' => '2019-08-23 15:10:56',
+                'updated_at' => '2019-08-27 17:46:10',
             ),
             6 => 
             array (
@@ -80,7 +81,7 @@ Contactamos y con gusto podremos asesorarte.',
                 'value' => 'Contacto Comercial: +54 9 11 5329-4260 
 Mail. info@urbanrealestate.com.ar',
                 'created_at' => '2019-07-30 20:23:21',
-                'updated_at' => '2019-08-23 15:10:57',
+                'updated_at' => '2019-08-27 17:46:10',
             ),
             7 => 
             array (
@@ -89,7 +90,7 @@ Mail. info@urbanrealestate.com.ar',
                 'key' => 'form',
                 'value' => '1',
                 'created_at' => '2019-07-30 20:23:21',
-                'updated_at' => '2019-08-23 15:10:57',
+                'updated_at' => '2019-08-27 17:46:10',
             ),
             8 => 
             array (
@@ -98,7 +99,7 @@ Mail. info@urbanrealestate.com.ar',
                 'key' => 'title',
                 'value' => 'Créditos',
                 'created_at' => '2019-07-30 20:23:21',
-                'updated_at' => '2019-08-23 15:12:03',
+                'updated_at' => '2019-08-27 17:38:47',
             ),
             9 => 
             array (
@@ -109,7 +110,7 @@ Mail. info@urbanrealestate.com.ar',
 También ofrecemos nuestro asesoramiento para la solicitud de créditos hipotecarios.
 Por favor completá el formulario y nos comunicaremos a la brevedad.',
                 'created_at' => '2019-07-30 20:23:21',
-                'updated_at' => '2019-08-23 15:12:03',
+                'updated_at' => '2019-08-27 17:38:47',
             ),
             10 => 
             array (
@@ -119,7 +120,7 @@ Por favor completá el formulario y nos comunicaremos a la brevedad.',
                 'value' => 'Contacto Comercial: +54 9 11 5329-4260 
 Mail. info@urbanrealestate.com.ar',
                 'created_at' => '2019-07-30 20:23:21',
-                'updated_at' => '2019-08-23 15:12:04',
+                'updated_at' => '2019-08-27 17:38:47',
             ),
             11 => 
             array (
@@ -128,7 +129,7 @@ Mail. info@urbanrealestate.com.ar',
                 'key' => 'form',
                 'value' => '1',
                 'created_at' => '2019-07-30 20:23:21',
-                'updated_at' => '2019-08-23 15:12:04',
+                'updated_at' => '2019-08-27 17:38:47',
             ),
             12 => 
             array (

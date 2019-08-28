@@ -411,8 +411,8 @@ con deck.',
                 'contact_phone' => '1153294260',
                 'building_id' => '1',
                 'created_at' => '2019-08-20 15:01:46',
-                'updated_at' => '2019-08-20 15:04:35',
-                'code' => 'A',
+                'updated_at' => '2019-08-25 21:28:07',
+                'code' => 'F',
             ),
         ));
         
