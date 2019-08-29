@@ -45,7 +45,7 @@
 
     </div>
 </section>
-<div id="apartments-fragment"></div>
+<div id="apartments"></div>
 <!-- ##### Propiedades en Venta Area End ##### -->
 
 <!-- ##### Otras propiedades Area Start ##### -->
@@ -67,7 +67,7 @@
             @endforeach
         </div>
         <div class="row pull-right mr-3 paginadoHome">
-            <div class="col-lg-1">{{ $apartments->fragment('apartments-fragment')->links() }}</div>
+            <div class="col-lg-1">{{ $apartments->fragment('apartments')->links() }}</div>
         </div>
     </div>
     </div>
