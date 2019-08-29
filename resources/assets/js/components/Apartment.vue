@@ -113,11 +113,12 @@
 
                             <!-- Building -->
                             <div class="form-group col-lg-9">
-                                <select class="form-control" v-model="form.building_id">
+                                <select :class="{ 'form-control': true, 'is-invalid': form.errors.has('title') }" v-model="form.building_id">
                                     <option value="">--Edificio--</option>
                                     <option v-for="building in buildings" :value="building.id" :key="building.id">
                                         {{ building.label }}</option>
                                 </select>
+                                <has-error :form="form" field="building_id"></has-error>
                             </div>
 
                             <!-- Location -->
@@ -393,6 +394,7 @@
                                     <option value="Reservado">Reservado</option>
                                     <option value="En_venta">En venta</option>
                                     <option value="En_Alquiler">Alquiler</option>
+                                    <option value="Vendido">Vendido</option>
                                 </select>
                                 <has-error :form="form" field="status"></has-error>
                             </div>

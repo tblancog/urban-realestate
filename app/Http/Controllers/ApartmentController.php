@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Apartment;
 use League\Csv\Reader;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ApartmentInquiry;
+
 
 
 class ApartmentController extends Controller
@@ -51,6 +54,14 @@ class ApartmentController extends Controller
             // );
             //
         }
+    }
 
+    public function mail(Request $request, Apartment $apartment) {
+
+        $user = collect($request->except('_token'));
+        Mail::to( $user['email'], $user['name'])
+             ->send(new ApartmentInquiry($apartment, $user));
+
+        return back()->with('success', 'Gracias por contactarte con nostros, respondemos a la brevedad');
     }
 }

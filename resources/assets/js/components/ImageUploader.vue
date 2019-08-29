@@ -14,11 +14,11 @@
 
         <div v-show="!images.length">
             <i class="fa fa-cloud-upload"></i>
-            <p>Arrastra hasta 5 imágenes</p>
+            <p>Arrastra hasta 5 imágenes (max 700kb)</p>
             <div>o</div>
             <div class="file-input">
                 <label for="file">selecciona</label>
-                <input type="file" id="file" @change="onInputChange" multiple  accept="image/jpg,image/png">
+                <input type="file" id="file" @change="onInputChange"  accept="image/jpg,image/png">
             </div>
         </div>
 
@@ -32,16 +32,27 @@
 </template>
 
 <script>
-
 export default {
     props: ['files',
     'images'
     ],
+    watch: {
+        images() {
+            if(this.images.length > this.MAX_IMAGES) {
+                toast({ type: 'warning',
+                        title: `Hasta ${this.MAX_IMAGES + 1} imágenes` });
+                this.cannotAdd = true;
+            } else {
+                this.cannotAdd = false;
+            }
+        }
+    },
     data: () => ({
         isDragging: false,
         dragCount: 0,
-        // files: [],
-        // images: []
+        MAX_SIZE: 600,
+        MAX_IMAGES: 4,
+        cannotAdd: false
     }),
     methods: {
         OnDragEnter(e) {
@@ -49,7 +60,7 @@ export default {
 
             this.dragCount++;
             this.isDragging = true;
-            return false;
+            return ;
         },
         OnDragLeave(e) {
             e.preventDefault();
@@ -59,6 +70,10 @@ export default {
         },
         onInputChange(e) {
             const files = e.target.files;
+            // No more than MAX_IMAGES
+            if(this.cannotAdd || files.length > this.MAX_IMAGES) {
+                return ;
+            }
             Array.from(files).forEach(file => this.addImage(file));
         },
         onDrop(e) {
@@ -69,8 +84,17 @@ export default {
             Array.from(files).forEach(file => this.addImage(file));
         },
         addImage(file) {
+            // File checks !!
+            // Only image file types
             if (!file.type.match('image.*')) {
-                this.$toastr.e(`${file.name} is not an image`);
+                toast({ type: 'warning',
+                    title: `${file.name} no es una imagen` });
+                return;
+            }
+            // No more than MAX_SIXE kb
+            if (file.size > this.MAX_SIZE * 1024) {
+                toast({ type: 'warning',
+                        title: `${file.name} es muy grande` });
                 return;
             }
             this.files.push(file);
@@ -90,14 +114,21 @@ export default {
             return `${(Math.round(size * 100) / 100)} ${fSExt[i]}`;
         },
         removeImage(idx) {
-        //   if(this.images.length > 1 || this.files.length > 1) {
             // Check if image comes from backend if so then emit and delete
             if(this.images[idx].hasOwnProperty('id') ) {
               this.$emit('imageDeleted', this.images[idx])
             }
             this.files.splice(idx, 1)
             this.images.splice(idx, 1)
-        //   }
+        },
+        hasMaxImages(files){
+            if(files.length > this.MAX_IMAGES ||
+               this.files.length > this.MAX_IMAGES ) {
+                toast({ type: 'warning',
+                    title: `Hasta ${this.MAX_IMAGES + 1} imágenes` });
+                return true;
+            }
+            return false;
         }
     }
 }

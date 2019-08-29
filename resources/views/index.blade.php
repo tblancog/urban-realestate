@@ -45,7 +45,7 @@
 
     </div>
 </section>
-<div id="apartments-fragment"></div>
+<div id="apartments"></div>
 <!-- ##### Propiedades en Venta Area End ##### -->
 
 <!-- ##### Otras propiedades Area Start ##### -->
@@ -67,22 +67,22 @@
             @endforeach
         </div>
         <div class="row pull-right mr-3 paginadoHome">
-            <div class="col-lg-1">{{ $apartments->fragment('apartments-fragment')->links() }}</div>
+            <div class="col-lg-1">{{ $apartments->fragment('apartments')->links() }}</div>
         </div>
     </div>
     </div>
     <div class="">
         <div class="row logosUrbanFooter">
             <div class="col-4 colLogos">
-                <a href="" target="_blank"><img src="img/core-img/icLogoFooter1.png" alt=""></a>
+                <a href="{{ route('home.index') }}" target="_blank"><img src="img/core-img/icLogoFooter1.png" alt=""></a>
                 <p style="background:#007d3f;">PROPIEDADES</p>
             </div>
             <div class="col-4 colLogos">
-                <a href="" target="_blank"><img src="img/core-img/icLogoFooter2.png" alt=""></a>
+                <a href="{{ route('developers.index') }}" target="_blank"><img src="img/core-img/icLogoFooter2.png" alt=""></a>
                 <p style="background:#b62126;">CONSTRUCTORA</p>
             </div>
             <div class="col-4 colLogos">
-                <a href="" target="_blank"><img src="img/core-img/icLogoFooter3.png" alt=""></a>
+                <a href="{{ route('houses.index') }}" target="_blank"><img src="img/core-img/icLogoFooter3.png" alt=""></a>
                 <p style="background:#006fcb;">ARQUITECTURA</p>
             </div>
         </div>

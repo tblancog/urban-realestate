@@ -1055,15 +1055,15 @@
 
          @media #{$breakpoint-lg} {
              margin-right: 0;
-         }         
+         }
 
          @media only screen and (max-width: 677px) and (min-width: 375px) {
             max-width: 135px;
          }
 
-         @media only screen and (max-width: 568px) and (min-width: 320px) {        
+         @media only screen and (max-width: 568px) and (min-width: 320px) {
             max-width: 135px;
-         } 
+         }
      }
 
      .classynav ul {
@@ -1503,15 +1503,15 @@
                  .advanced-search-form {
                      // height: 100px;
                      border: 0;
-                     box-shadow: none;                     
+                     box-shadow: none;
 
                     @media only screen and (max-width: 677px) and (min-width: 375px) {
                         text-align: center;
                     }
 
-                    @media only screen and (max-width: 568px) and (min-width: 320px) {        
+                    @media only screen and (max-width: 568px) and (min-width: 320px) {
                         text-align: center;
-                    } 
+                    }
 
                      .nice-select,
                      .nice-select ul
@@ -1786,7 +1786,7 @@
            max-width: fit-content;*/
 
            height: 100%;
-           width: 100%; 
+           width: 100%;
            max-width: 656px;
            max-height: 300px;
          }
@@ -1823,7 +1823,9 @@
                  background: #00961e;
              }
 
-             &.Reservado {
+             &.Reservado,
+             &.Vendido
+              {
                  background: #FF695C;
              }
 
@@ -4390,7 +4392,7 @@
          }
      }
 
-         a {
+         a, button {
              text-transform: uppercase;
              background-color: #fff;
              border: #51B848 2px solid;
@@ -4399,6 +4401,7 @@
              font-size: 18px;
              color: #51B848;
              transition: .3s;
+             cursor: pointer;
 
              &:hover {
                  background-color: #51B848;
@@ -4424,11 +4427,11 @@
          @media only screen and (max-width: 677px) and (min-width: 375px) {
             height: 400px;
          }
-    
-         @media only screen and (max-width: 568px) and (min-width: 320px) {        
+
+         @media only screen and (max-width: 568px) and (min-width: 320px) {
             height: 400px;
-         } 
-         
+         }
+
      }
 
      .box-info {
@@ -4662,9 +4665,9 @@
         max-width: 50%;
      }
 
-     @media only screen and (max-width: 568px) and (min-width: 320px) {        
+     @media only screen and (max-width: 568px) and (min-width: 320px) {
         max-width: 50%;
-     } 
+     }
  }
  .logosUrbanFooter .colLogos p{
      clear: both;
@@ -4744,14 +4747,14 @@
  }
 
  .boxAmenitiesDepto > div{
- 
+
      @media only screen and (max-width: 677px) and (min-width: 375px) {
          min-height: auto;
       }
- 
-      @media only screen and (max-width: 568px) and (min-width: 320px) {        
+
+      @media only screen and (max-width: 568px) and (min-width: 320px) {
          min-height: auto;
-      } 
+      }
 }
 
  .boxDetail > div{
@@ -4903,11 +4906,11 @@
      word-wrap: break-word;
      hyphens: auto;
      font-size: .4rem;
-    
+
      &.amenitieValue {
         font-size: 1.1rem;
     }
-    
+
      @media only screen and (max-width: 1920px) and (min-width: 1080px) {
          font-size: .6rem;
          padding-bottom: 2%;
@@ -4917,9 +4920,9 @@
         display: none;
      }
 
-     @media only screen and (max-width: 568px) and (min-width: 320px) {        
+     @media only screen and (max-width: 568px) and (min-width: 320px) {
         display: none;
-     } 
+     }
 
  }
 
@@ -5146,13 +5149,6 @@ margin: 0;
     clear: both;
     margin-top: 35px;
 }
-.paginadoHome .pagination .page-item:first-child .page-link{
-    background: transparent url('/img/core-img/arrow-paginator.png') 0 0 no-repeat;
-}
-
-.paginadoHome .pagination .page-item:last-child .page-link{
-    background: transparent url('/img/core-img/arrow-paginator.png') 0 0 no-repeat;
-}
 .paginadoHome .page-item .page-link {
     font-family: "AvantGarde", sans-serif;
     color: #000;
@@ -5163,6 +5159,9 @@ margin: 0;
     height: 40px;
     line-height: inherit;
     font-weight: bold;
+    img {
+        max-width: 16px;
+    }
 }
 
 .paginadoHome .page-item.active .page-link {

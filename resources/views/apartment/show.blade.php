@@ -18,6 +18,18 @@
 
 <div class="container-fluid">
 
+<div class="col-lg-12">
+    <div class="row">
+        <div class="col-lg-6 text-center mx-auto">
+            @if(Session::has('success'))
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        </div>
+        @endif
+    </div>
+</div>
+
 <div class="row first-row"> <!-- start row 1 -->
 
     <div class="col-md-6 col-sm-12 boxDetail">
@@ -139,26 +151,28 @@
                 <h2 class="detailStatus right">{{ $apartment->contact_phone }}</h2>
               </div>
               <div style="clear:both"aca></div>
-              <form class="formDetail formDepto">
+
+            <form class="formDetail formDepto" method="POST" action="{{ route('mail.apartments', ['slug' => $apartment->slug ]) }}">
+                @csrf
                 <div class="contact-info">
                     <div class="contact-info-item">
-                        <input type="text" placeholder="Nombre">
+                        <input name="name" type="text" placeholder="Nombre">
                         <p class="contact-sub-info"></p>
                     </div>
                     <div class="contact-info-item">
-                        <input type="text" placeholder="Teléfono">
+                        <input name="phone" type="text" placeholder="Teléfono">
                         <p class="contact-sub-info"></p>
                     </div>
                     <div class="contact-info-item">
-                        <input type="email" placeholder="Email">
+                        <input name="email" type="email" placeholder="Email">
                         <p class="contact-sub-info"></p>
                     </div>
                     <div class="contact-info-item">
-                        <textarea  style="white-space: pre-line;" name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                        <textarea name="message"  style="white-space: pre-line;" name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
                         <p class="contact-sub-info"></p>
                     </div>
                     <div class="btn contact-send right">
-                        <a href="#">Enviar</a>
+                        <button type="submit">Enviar</button>
                     </div>
                 </div>
             </form>

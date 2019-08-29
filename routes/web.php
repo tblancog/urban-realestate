@@ -45,11 +45,11 @@ route::post('import', 'ApartmentController@import');
 
 Route::get('/developers', function () {
   return view('index-developers');
-});
+})->name('developers.index');
 
 Route::get('/houses', function () {
   return view('index-houses');
-});
+})->name('houses.index');
 
 Route::get('/developers_details', function () {
   return view('developers-details');
@@ -69,6 +69,10 @@ Route::get('/appraisals', 'HomeController@staticPage')->name('appraisals.index')
 Route::get('/credits', 'HomeController@staticPage')->name('credits.index');
 Route::get('/contact', 'HomeController@staticPage')->name('contact.index');
 Route::get('/nosotros', 'HomeController@staticPage')->name('nosotros.index');
+
+// Mail
+Route::post('/inquiry/building/{building}', 'BuildingController@mail')->name('mail.buildings');
+Route::post('/inquiry/apartments/{apartment}', 'ApartmentController@mail')->name('mail.apartments');
 
 // Fallback page
 Route::get('/{path}',function(){
