@@ -393,6 +393,7 @@
                                     <option value="Reservado">Reservado</option>
                                     <option value="En_venta">En venta</option>
                                     <option value="En_Alquiler">Alquiler</option>
+                                    <option value="Vendido">Vendido</option>
                                 </select>
                                 <has-error :form="form" field="status"></has-error>
                             </div>
