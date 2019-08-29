@@ -185,7 +185,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($building->apartments as $ap)
+                            @forelse ($building->apartments->sortBy('floor') as $ap)
                             <tr>
                                 <th scope="row">{{ $ap->floor }}</th>
                                 <td>{{ $ap->area }} m<sup>2</sup></td>
