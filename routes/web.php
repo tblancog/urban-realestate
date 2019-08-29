@@ -45,11 +45,11 @@ route::post('import', 'ApartmentController@import');
 
 Route::get('/developers', function () {
   return view('index-developers');
-});
+})->name('developers.index');
 
 Route::get('/houses', function () {
   return view('index-houses');
-});
+})->name('houses.index');
 
 Route::get('/developers_details', function () {
   return view('developers-details');
