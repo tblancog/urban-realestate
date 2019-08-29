@@ -66,8 +66,8 @@
                 @include('apartment.box', $apartment)
             @endforeach
         </div>
-        <div class="row">
-            <div class="col-lg-1 pull-right">{{ $apartments->fragment('apartments-fragment')->links() }}</div>
+        <div class="row pull-right mr-3">
+            <div class="col-lg-1 paginadoHome">{{ $apartments->fragment('apartments-fragment')->links() }}</div>
         </div>
     </div>
     </div>
