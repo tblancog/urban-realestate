@@ -28,6 +28,7 @@ class ApartmentRequest extends FormRequest
           'price' => 'numeric|between:0,10000000',
           'description' => 'required|string|max:2048',
           'status' => 'required',
+          'building_id' => 'required'
         ];
     }
 }
