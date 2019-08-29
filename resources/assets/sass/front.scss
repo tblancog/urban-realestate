@@ -4392,7 +4392,7 @@
          }
      }
 
-         a {
+         a, button {
              text-transform: uppercase;
              background-color: #fff;
              border: #51B848 2px solid;
@@ -4401,6 +4401,7 @@
              font-size: 18px;
              color: #51B848;
              transition: .3s;
+             cursor: pointer;
 
              &:hover {
                  background-color: #51B848;

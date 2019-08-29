@@ -70,6 +70,10 @@ Route::get('/credits', 'HomeController@staticPage')->name('credits.index');
 Route::get('/contact', 'HomeController@staticPage')->name('contact.index');
 Route::get('/nosotros', 'HomeController@staticPage')->name('nosotros.index');
 
+// Mail
+Route::post('/inquiry/building/{building}', 'BuildingController@mail')->name('mail.buildings');
+Route::post('/inquiry/apartments/{apartment}', 'ApartmentController@mail')->name('mail.apartments');
+
 // Fallback page
 Route::get('/{path}',function(){
   return redirect('/dashboard');
