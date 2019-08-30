@@ -7,15 +7,18 @@ use App\Amenity;
 use App\Config;
 use Illuminate\Http\Request;
 use App\Http\Requests\BuildingRequest;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BuildingInquiry;
+
 
 class BuildingController extends Controller
 {
 
   public function index(){
-    
+
     $buildings = Building::latest()->paginate(5);
     $config = Config::where('module','investments')->get()->pluck('value', 'key');
-    return view('index', ['buildings'=> $buildings, 
+    return view('index', ['buildings'=> $buildings,
                                'config'=> $config] );
   }
 
@@ -31,7 +34,7 @@ class BuildingController extends Controller
         $building->amenities()->sync(
           Amenity::whereIn('title', $request->amenities)->get()
         );
-        
+
         return ['message' => 'Edificio creado', 'id'=> $building->id];
     }
 
@@ -74,5 +77,14 @@ class BuildingController extends Controller
         $item->delete();
 
         return ['message' => 'Building deleted'];
+    }
+
+    public function mail(Request $request, Building $building) {
+
+        $user = collect($request->except('_token'));
+        Mail::to('info@urbanrealestate.com.ar', 'Info')
+             ->send(new BuildingInquiry($building, $user));
+
+        return back()->with('success', 'Gracias por contactarte con nostros, respondemos a la brevedad');
     }
 }

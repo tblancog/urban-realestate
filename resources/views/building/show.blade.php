@@ -104,7 +104,32 @@
                 <h2 class="detailStatus right">{{ $building->contact_phone }}</h2>
               </div>
               <div style="clear:both"aca></div>
-              <form class="formDetail formBuilding">
+               <form class="formDetail formBuilding">
+               {{-- <form class="formDetail formBuilding" method="POST" action="{{ route('mail.buildings', ['slug' => $building->slug ]) }}"> --}}
+                @csrf
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <input name="name" type="text" placeholder="Nombre">
+                        <p class="contact-sub-info"></p>
+                    </div>
+                    <div class="contact-info-item">
+                        <input name="phone" type="text" placeholder="Teléfono">
+                        <p class="contact-sub-info"></p>
+                    </div>
+                    <div class="contact-info-item">
+                        <input name="email" type="email" placeholder="Email">
+                        <p class="contact-sub-info"></p>
+                    </div>
+                    <div class="contact-info-item">
+                        <textarea name="message"  style="white-space: pre-line;" name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                        <p class="contact-sub-info"></p>
+                    </div>
+                    <div class="btn contact-send right">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </div>
+            </form>
+              {{-- <form class="formDetail formBuilding">
                 <div class="contact-info">
                     <div class="contact-info-item">
                         <input type="text" placeholder="Nombre">
@@ -126,7 +151,7 @@
                         <a href="#">Enviar</a>
                     </div>
                 </div>
-            </form>
+            </form> --}}
             </div><!-- end boxDetail -->
 
           </div><!-- end row a-->

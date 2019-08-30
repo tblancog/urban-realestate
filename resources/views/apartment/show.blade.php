@@ -135,12 +135,6 @@
                         </li>
 
                   @endforeach
-                  {{-- @foreach ($apartment->building->amenities as $amenity)
-                    <li class="list-inline-item">
-                      <img class="amenitieIcon" src="/img/icons/amenities/{{ $amenity->icon }}" alt="{{ $amenity->title }}">
-                      <p class="amenitieText" style="text-transform: capitalize;">{{ $amenity->title }}</p>
-                    </li>
-                  @endforeach --}}
                 </ul>
               </div>
             </div>
@@ -168,7 +162,7 @@
                         <p class="contact-sub-info"></p>
                     </div>
                     <div class="contact-info-item">
-                        <textarea name="message"  style="white-space: pre-line;" name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                        <textarea  name="message"  style="white-space: pre-line;" name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
                         <p class="contact-sub-info"></p>
                     </div>
                     <div class="btn contact-send right">
