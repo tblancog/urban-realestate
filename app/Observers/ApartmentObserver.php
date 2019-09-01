@@ -47,14 +47,10 @@ class ApartmentObserver
      */
     public function deleting(Apartment $apartment)
     {
-      // Before deleting apartment make sure it deletes its image folder and apartment image relations as well
-      $dir = $apartment->img_path;
-      if(file_exists($dir)){
-        \Storage::deleteDirectory($dir);
-      }
-
       // Check if apartment has related apartment models
       if( $apartment->images()->exists() ){
+        $files = $apartment->images->pluck('path');
+        \Storage::delete($files->toArray());
         $apartment->images()->delete();
       }
     }

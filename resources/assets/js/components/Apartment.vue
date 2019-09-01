@@ -655,7 +655,7 @@
                     // Send request to the server
                     if (result.value) {
                         console.log('Respondí sí')
-                        axios.post('api/apartments/' + item.slug + '/clone').then((res) => {
+                        axios.post('api/apartments/' + item.id + '/clone').then((res) => {
                             const data = res.data
                             swal(
                                 'Duplicado!',

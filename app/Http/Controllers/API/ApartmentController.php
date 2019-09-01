@@ -111,8 +111,9 @@ class ApartmentController extends Controller
      * @param  \App\Apartment  $apartment
      * @return \Illuminate\Http\Response
      */
-    public function clone(Apartment $apartment)
+    public function clone($id)
     {
+        $apartment = Apartment::find($id);
         $clone = $apartment->duplicateApartament();
         return $clone;
     }

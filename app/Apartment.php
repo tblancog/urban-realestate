@@ -62,8 +62,7 @@ class Apartment extends Model
     public function getImgPathAttribute()
     {
         return config('images.properties_upload_path') .
-            $this->table . '/' .
-            $this->attributes['id'] . '/';
+            $this->table . '/' ;
     }
 
      public function scopeFilterByRequest($query, Request $request)
@@ -91,16 +90,23 @@ class Apartment extends Model
         $saved = $clone->save();
 
         // Copy images in new location if there are images
-        $dir = $this->img_path;
-        if( $saved &&
-            $this->images()->exists() &&
-            is_dir( $dir ) ) {
-
-            // \File::copyDirectory($dir, config('images.properties_upload_path') . str_slug($clone->title));
-            \File::copyDirectory($dir, $clone->img_path);
-
+        if( $saved && $this->images()->exists() ) {
             foreach ($this->images as $image) {
-                $clone->images()->create($image->toArray());
+
+                if( file_exists( $image->path ) ) {
+
+                    // New filename
+                    $info = pathinfo($image->path);
+                    $ext = $info['extension'];
+                    $id = uniqid();
+                    $newFilename = "apartment_$id.$ext";
+
+                    \File::copy( $image->path, $clone->img_path.$newFilename );
+                    $newImage = ['apartment_id' => $clone->id,
+                                 'filename'=> $newFilename,
+                                 'order'=> $image->order ];
+                    $clone->images()->create( $newImage );
+                }
             }
         }
         return $clone;

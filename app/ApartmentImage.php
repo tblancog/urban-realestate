@@ -18,8 +18,7 @@ class ApartmentImage extends Model
     public function getPathAttribute()
     {
         $path = config('images.properties_upload_path') .
-            'apartments/' .
-            $this->apartment->id . '/' . $this->filename;
+            'apartments/'. $this->filename;
         return $path;
     }
 }
