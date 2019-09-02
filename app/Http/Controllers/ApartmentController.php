@@ -7,7 +7,8 @@ use App\Apartment;
 use League\Csv\Reader;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ApartmentInquiry;
-
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ApartmentImport;
 
 
 class ApartmentController extends Controller
@@ -63,5 +64,9 @@ class ApartmentController extends Controller
               ->send(new ApartmentInquiry($apartment, $user));
 
         return back()->with('success', 'Gracias por contactarte con nostros, respondemos a la brevedad');
+    }
+
+    public function import(Request $request, ApartmentImport $importer) {
+        Excel::import($importer, $request->file('file'));
     }
 }

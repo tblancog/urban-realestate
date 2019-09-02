@@ -18,7 +18,7 @@
                             <div class="col-md-12">
                                 <div class="row my-3">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="file" name="file" ref="file" v-on:change="handleFileUpload()" accept="text/csv">
+                                        <input type="file" class="custom-file-input" id="file" name="file" ref="file" v-on:change="handleFileUpload()">
                                         <label class="custom-file-label" for="customFile">Choose file</label>
                                         <small id="passwordHelpInline" class="text-muted">
                                             solo CSV
@@ -53,7 +53,7 @@
             submitFile(){
                 let formData = new FormData();
                 formData.append('file', this.file);
-                axios.post( '/batch',
+                axios.post( '/import',
                             formData,
                             {
                                 headers: {
