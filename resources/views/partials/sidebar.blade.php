@@ -69,15 +69,6 @@
 
                 @endcan
                 <li class="nav-item">
-                    <h3 class="text-uppercase text-center">Real State</h3>
-                    <router-link to="/sliderAdmin" class="nav-link">
-                        <i class="nav-icon fa fa-images green"></i>
-                        <p>
-                            Slideshow
-                        </p>
-                    </router-link>
-                </li>
-                <li class="nav-item">
                     <router-link to="/sliderAdmin" class="nav-link">
                         <i class="nav-icon fa fa-images green"></i>
                         <p>
