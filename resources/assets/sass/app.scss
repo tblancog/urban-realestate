@@ -1,4 +1,3 @@
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
@@ -14,31 +13,34 @@ $fa-font-path: "../webfonts";
 
 
 .navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-.router-link-exact-active{
+
+.router-link-exact-active {
     background-color: #3f51b5;
-    color:#fff !important;
+    color: #fff !important;
 }
 
 
 @media print {
-    .nav.nav-tabs li:not(.active){
+    .nav.nav-tabs li:not(.active) {
         display: none;
     }
-    .invoice{
-    	padding: 10px 20px;
+
+    .invoice {
+        padding: 10px 20px;
     }
 
-    .invoice{
-		background-position: center center;
-		background-repeat: no-repeat;
+    .invoice {
+        background-position: center center;
+        background-repeat: no-repeat;
 
-	}
-	.table-responsive table{
-		background-color: transparent !important;
-	}
+    }
+
+    .table-responsive table {
+        background-color: transparent !important;
+    }
 
 }
 
@@ -287,6 +289,7 @@ a {
 
         .collapse.navbar-collapse {
             .navbar-nav {
+
                 .nav-item {
                     .nav-link {
                         font-family: "AvantGarde";
@@ -382,8 +385,8 @@ a {
     margin-top: 30px;
 }
 
-.btn-success{
-  background: $green;
+.btn-success {
+    background: $green;
 }
 
 // BUILDING VUE
@@ -399,6 +402,7 @@ a {
                             border: 1px solid #7d7d7d;
                             color: #7d7d7d;
                         }
+
                         &.active {
                             .page-link {
                                 background-color: #51B848;
@@ -413,13 +417,25 @@ a {
     }
 }
 
-.form-group button.vs__clear{
-  background: transparent;
+.form-group button.vs__clear {
+    background: transparent;
 }
+
 a[aria-expanded=true] .fa-chevron-right {
     display: none;
 }
 
 a[aria-expanded=false] .fa-chevron-down {
     display: none;
+}
+
+.nav-sidebar {
+    .nav-item {
+        h3 {
+            font-size: 1.5em;
+            font-weight: bolder;
+            color: #C2C7D0;
+            text-align: center;
+        }
+    }
 }

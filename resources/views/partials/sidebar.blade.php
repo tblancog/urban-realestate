@@ -69,6 +69,15 @@
 
                 @endcan
                 <li class="nav-item">
+                    <h3 class="text-uppercase text-center">Real State</h3>
+                    <router-link to="/sliderAdmin" class="nav-link">
+                        <i class="nav-icon fa fa-images green"></i>
+                        <p>
+                            Slideshow
+                        </p>
+                    </router-link>
+                </li>
+                <li class="nav-item">
                     <router-link to="/sliderAdmin" class="nav-link">
                         <i class="nav-icon fa fa-images green"></i>
                         <p>
@@ -121,6 +130,27 @@
                         <i class="nav-icon fa fa-envelope green"></i>
                         <p>
                             Contacto
+                        </p>
+                    </router-link>
+                </li>
+                <li class="nav-item">
+                    <br>
+                    <h3 class="text-uppercase text-center">Developers</h3>
+                    <router-link to="/projectsAdmin" class="nav-link">
+                        <i class="nav-icon fa fa-home green"></i>
+                        <p>
+                            Proyectos
+                        </p>
+                    </router-link>
+                </li>
+
+                  <li class="nav-item">
+                    <br>
+                    <h3 class="text-uppercase text-center">Houses</h3>
+                    <router-link to="/housesAdmin" class="nav-link">
+                        <i class="nav-icon fa fa-home green"></i>
+                        <p>
+                            Casas
                         </p>
                     </router-link>
                 </li>
