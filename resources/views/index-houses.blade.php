@@ -301,8 +301,8 @@
             </div>
 
             <div class="col-12 pressSection">
-                  @include ('partials.contact-form')
-            </div>
+                @include ('forms.contact-form-hd')
+          </div>
 
         </div>
     </div>
