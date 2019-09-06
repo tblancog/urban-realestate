@@ -1,6 +1,5 @@
 <div class="m-0-auto text-center">
 
-    <h1>Formulario para houses y developers</h1>
     <form class="formHD">
         <div class="form-group">
             <div class="form-group">
