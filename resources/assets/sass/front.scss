@@ -5298,3 +5298,45 @@ textarea {
 .developers {
     background: $color-white;
 }
+
+.formHD {
+    background: transparent;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.formHD .form-control {
+    margin-bottom: 10px;
+}
+
+.formHD input,
+.formHD textarea {
+    background: white !important;
+    border: 1px solid #646464 !important;
+}
+
+.formHD textarea.form-control {
+    height: 100px !important;
+}
+
+.formHD label {
+    text-align: left;
+    width: 15%;
+}
+
+.formHD input,
+.formHD textarea {
+    text-align: left;
+    width: 85%;
+}
+
+.formHD .btn {
+    font-family: 'MyriadPro-Regular', sans-serif;
+    background: transparent;
+    font-size: 1.2rem;
+    margin: 1% 0 0 11%;
+}
+
+.formHD .btn:hover {
+    text-decoration: underline !important;
+}
