@@ -101,7 +101,7 @@
 
 
 <!-- ##### Propiedades en Venta Area Start ##### -->
-<section class="featured-properties-area"> 
+<section class="featured-properties-area">
     <div class="">
         <div class="row">
             <div class="col-12">
@@ -120,7 +120,7 @@
                     <div class="property-thumb">
                         <div class="property-info">
                             <h4 class="content content2">Torre</h4>
-                            <h2 class="title title2">Quesevenda</h2>                            
+                            <h2 class="title title2">Quesevenda</h2>
                             <h5 class="content txtInfo">+ info</h5>
                         </div>
                         <img src="img/developers/1.jpg" alt="">
@@ -137,7 +137,7 @@
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>                           
+                            <h4 class="content">by Horace</h4>
                             <h5 class="content txtInfo">+ info</h5>
                         </div>
                         <img src="img/developers/2.jpg" alt="">
@@ -154,7 +154,7 @@
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>                           
+                            <h4 class="content">by Horace</h4>
                             <h5 class="content txtInfo">+ info</h5>
                         </div>
                         <img src="img/developers/3.jpg" alt="">
@@ -171,7 +171,7 @@
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>                           
+                            <h4 class="content">by Horace</h4>
                             <h5 class="content txtInfo">+ info</h5>
                         </div>
                         <img src="img/developers/4.jpg" alt="">
@@ -188,7 +188,7 @@
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>                           
+                            <h4 class="content">by Horace</h4>
                             <h5 class="content txtInfo">+ info</h5>
                         </div>
                         <img src="img/developers/5.jpg" alt="">
@@ -205,7 +205,7 @@
                     <div class="property-thumb">
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>                           
+                            <h4 class="content">by Horace</h4>
                             <h5 class="content txtInfo">+ info</h5>
                         </div>
                         <img src="img/developers/6.jpg" alt="">
@@ -226,30 +226,30 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                                
+
                 <div class="col-12 secDevelopers">
                     <p id="constructora" class="txtOtherSection"> <img src="img/core-img/imgDevelopers.jpg" align="left"  alt="Developers"><b >Constructora</b> <br>URBAN DEVELOPERS es una empresa constructora que brinda a sus clientes un sistema integral de soluciones, abarcando todos los servicios necesarios para la materialización, puesta en marcha, desarrollo y mantenimiento de obras. Las prestaciones ofrecidas por la empresa le permiten brindar soluciones constructivas en obras civiles e industriales de infraestructura urbana y regional.
                     </p>
-                    
-                    <div class="clear"></div>   
+
+                    <div class="clear"></div>
                     <p class="txtOtherSection">
-                        Somos una empresa 20 años de trayectoria, enfocada en la construcción, gerenciamiento y negocios inmobiliarios. Creemos en el trabajo en equipo como herramienta para superar obstáculos y general alianzas positivas. <br> 
-                        Trabajamos día a día en una gestión integral que cumpla con los plazos pactados, la optimización de costos, la calidad de nuestro producto y, como prioridad, generar la confianza de nuestros clientes. Nuestro trabajo es innovador, moderno, de calidad y enfocado en la excelencia. 
+                        Somos una empresa 20 años de trayectoria, enfocada en la construcción, gerenciamiento y negocios inmobiliarios. Creemos en el trabajo en equipo como herramienta para superar obstáculos y general alianzas positivas. <br>
+                        Trabajamos día a día en una gestión integral que cumpla con los plazos pactados, la optimización de costos, la calidad de nuestro producto y, como prioridad, generar la confianza de nuestros clientes. Nuestro trabajo es innovador, moderno, de calidad y enfocado en la excelencia.
                     </p>
 
                     <p class="txtOtherSection">
-                        <img src="img/core-img/imgDevelopers2.jpg" class="imgLarge"  alt="Developers">  
+                        <img src="img/core-img/imgDevelopers2.jpg" class="imgLarge"  alt="Developers">
                     </p>
 
-                    <p class="txtOtherSection"> 
+                    <p class="txtOtherSection">
                     En URBAN DEVELOPERS  entendemos que “LA OBRA” no es una simple construcción o remodelación, sino que representa sueños, esfuerzos, proyectos y objetivos de nuestros clientes.
                     </p>
 
-                    <p class="txtOtherSection"> 
+                    <p class="txtOtherSection">
                         Tanto la calidad de nuestras obras como los profesionales con los que trabajamos, hacen que nuestra empresa sea líder en el rubro. Lo hacemos con profesionalismo y entrega, atendiendo las necesidades de quienes nos eligen para que sus proyectos y sueños se vean reflejados al final de nuestro trabajo.
                     </p>
-                    <p class="txtOtherSection"> 
-                    Convertimos ideas en proyectos con historia. 
+                    <p class="txtOtherSection">
+                    Convertimos ideas en proyectos con historia.
                     </p>
 
                 </div>
@@ -258,7 +258,7 @@
                     <h2 id="servicios" class="text-left">Servicios</h2>
                 </div>
                 <div class="col-12 developers-content">
-                    <p class="txtOtherSection">URBAN DEVELOPERS ofrece un completo portfolio con los servicios que el cliente requiere para la construcción de un proyecto concentrando en una sola firma las diferentes fases para su ejecución: 
+                    <p class="txtOtherSection">URBAN DEVELOPERS ofrece un completo portfolio con los servicios que el cliente requiere para la construcción de un proyecto concentrando en una sola firma las diferentes fases para su ejecución:
                     </p>
 
                     <ul class="ulOtherSection">
@@ -281,13 +281,13 @@
                     <li><a href=""><img src="img/core-img/imgDevelopers-prensa3.jpg" alt="Prensa"></a></li>
                 </ul>
             </div>
-            
+
             <div class="col-12 wow fadeInUp titleOhterSection">
                 <h2 id="contacto" class="text-center">Contacto</h2>
             </div>
 
             <div class="col-12 pressSection">
-                  @include ('partials.contact-form')
+                  @include ('forms.contact-form-hd')
             </div>
 
         </div>
