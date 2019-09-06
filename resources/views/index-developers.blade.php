@@ -3,68 +3,14 @@
 @section('content')
 
 <!-- ##### Front Header Area Start ##### -->
-{{-- @include('partials.front-header') --}}
+@include('partials.front-header-developers')
 
 <!-- Preloader -->
 <div id="preloader">
     <div class="south-load"></div>
 </div>
 
-<!-- ##### Header Area Start ##### -->
-<header class="header-area">
 
-    <!-- Main Header Area -->
-    <div class="main-header-area" id="stickyHeader">
-        <div class="classy-nav-container breakpoint-off">
-            <!-- Classy Menu -->
-            <div class="head-title">Constructora</div>
-            <nav class="classy-navbar justify-content-between" id="southNav">
-
-                <!-- Logo -->
-                <a class="nav-brand" href="index.html"><img src="img/core-img/urban_developers.png" alt=""></a>
-
-                <!-- Navbar Toggler -->
-                <div class="classy-navbar-toggler">
-                    <span class="navbarToggler"><span></span><span></span><span></span></span>
-                </div>
-
-                <!-- Menu -->
-                <div class="classy-menu classy-menu-others">
-
-                    <!-- close btn -->
-                    <div class="classycloseIcon">
-                        <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                    </div>
-
-                    <!-- Nav Start -->
-                    <div class="classynav classynav2">
-                        <ul>
-                        <li><a href="#proyectos">Proyecto</a></li>
-                            <li><a href="#constructora">Constructora</a></li>
-                            <li><a href="#servicios">Servicios</a></li>
-                            <li><a href="#prensa">Prensa</a></li>
-                            <li><a href="#contacto">Contacto</a></li>
-                        </ul>
-
-                        <!-- Search Form -->
-                        <div class="south-search-form">
-                            <form action="#" method="post">
-                                <input type="search" name="search" id="search"
-                                    placeholder="Busca por nombre o dirección ...">
-                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
-
-                        <!-- Search Button -->
-                        <!-- <a href="#" class="searchbtn"><i class="fa" aria-hidden="true"></i></a> -->
-                    </div>
-                    <!-- Nav End -->
-                </div>
-            </nav>
-        </div>
-    </div>
-</header>
-<!-- ##### Header Area End ##### -->
 
 <!-- ##### Hero Area Start ##### -->
 <section class="hero-area">
@@ -125,7 +71,9 @@
                         <div class="property-info">
                             <h4 class="content content2">Torre</h4>
                             <h2 class="title title2">Quesevenda</h2>
-                            <h5 class="content txtInfo">+ info</h5>
+                            <a href="{{ route('developers.details') }}">
+                                <h5 class="content txtInfo">+ info</h5>
+                            </a>
                         </div>
                         <img src="img/developers/1.jpg" alt="">
                     </div>
@@ -142,7 +90,9 @@
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
                             <h4 class="content">by Horace</h4>
-                            <h5 class="content txtInfo">+ info</h5>
+                            <a href="{{ route('developers.details') }}">
+                                <h5 class="content txtInfo">+ info</h5>
+                            </a>
                         </div>
                         <img src="img/developers/2.jpg" alt="">
                     </div>
@@ -159,7 +109,9 @@
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
                             <h4 class="content">by Horace</h4>
-                            <h5 class="content txtInfo">+ info</h5>
+                            <a href="{{ route('developers.details') }}">
+                                <h5 class="content txtInfo">+ info</h5>
+                            </a>
                         </div>
                         <img src="img/developers/3.jpg" alt="">
                     </div>
@@ -176,7 +128,9 @@
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
                             <h4 class="content">by Horace</h4>
-                            <h5 class="content txtInfo">+ info</h5>
+                            <a href="{{ route('developers.details') }}">
+                                <h5 class="content txtInfo">+ info</h5>
+                            </a>
                         </div>
                         <img src="img/developers/4.jpg" alt="">
                     </div>
@@ -193,7 +147,9 @@
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
                             <h4 class="content">by Horace</h4>
-                            <h5 class="content txtInfo">+ info</h5>
+                            <a href="{{ route('developers.details') }}">
+                                <h5 class="content txtInfo">+ info</h5>
+                            </a>
                         </div>
                         <img src="img/developers/5.jpg" alt="">
                     </div>
@@ -210,7 +166,9 @@
                         <div class="property-info">
                             <h2 class="title">Torre Quesevenda</h2>
                             <h4 class="content">by Horace</h4>
-                            <h5 class="content txtInfo">+ info</h5>
+                            <a href="{{ route('developers.details') }}">
+                                <h5 class="content txtInfo">+ info</h5>
+                            </a>
                         </div>
                         <img src="img/developers/6.jpg" alt="">
                     </div>

@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- ##### Front Header Area Start ##### -->
-@include('partials.front-header')
+@include('partials.front-header-houses')
 
 <!-- Preloader -->
 <div id="preloader">
@@ -13,11 +13,11 @@
 <div class="container-fluid contentDetailHd">
 
     <div class="row first-row"> <!-- start row 1 -->
-    
+
         <div class="col-md-6 col-sm-12">
             <img src="img/bg-img/feature1.jpg" alt="">
         </div>
-    
+
         <div class="col-md-6 col-sm-12">
             <div class="detailsHD">
                 <h6>Proyecto</h6>
@@ -40,7 +40,7 @@
                 <p>La edificación evidenció, claros signos del paso del tiempo y los sistemas constructivos empleados en su construcción la hacían incompatible con los estándares de calidad y confort impuestos por la actual forma de vida. El conjunto arquitectónico presentaba una distribución interior que no respondía a las nuevas necesidades, pues los niveles funcionan como pisos independientes, comunicados por medio de una escalera exterior que dificulta el carácter unitario del residencial. Por otro lado la vivienda presenta patologías derivadas del agua, ocasionadas por el precario sistema de protección del semisótano. Para subsanar todas las patologías detectadas y responder a las necesidades requeridas por sus usuarios, se realizó un riguroso diagnostico con el objetivo de alcanzar la óptima consolidación de la vivienda.</p>
             </div>
         </div>
-    
+
       </div> <!-- end row 1 -->
 
 </div> <!-- end container-fluid -->

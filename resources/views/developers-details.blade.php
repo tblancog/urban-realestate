@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- ##### Front Header Area Start ##### -->
-{{-- @include('partials.front-header') --}}
+@include('partials.front-header-developers')
 
 <!-- Preloader -->
 <div id="preloader">
@@ -13,11 +13,11 @@
 <div class="container-fluid contentDetailHd">
 
     <div class="row first-row"> <!-- start row 1 -->
-    
+
         <div class="col-md-6 col-sm-12">
             <img src="img/bg-img/feature1.jpg" alt="">
         </div>
-    
+
         <div class="col-md-6 col-sm-12">
             <div class="detailsHD">
                 <h6>Proyecto</h6>
@@ -41,7 +41,7 @@
                 </p>
             </div>
         </div>
-    
+
       </div> <!-- end row 1 -->
 
 </div> <!-- end container-fluid -->

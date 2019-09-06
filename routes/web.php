@@ -47,17 +47,16 @@ Route::get('/developers', function () {
   return view('index-developers');
 })->name('developers.index');
 
+Route::get('/developers_details', function () {
+  return view('developers-details');
+})->name('developers.details');
+
 Route::get('/houses', function () {
   return view('index-houses');
 })->name('houses.index');
-
-Route::get('/developers_details', function () {
-  return view('developers-details');
-});
-
 Route::get('/houses_details', function () {
   return view('houses-details');
-});
+})->name('houses.details');
 
 // Route::get('/modal-details', function () {
 //   return view('modalDetails');
