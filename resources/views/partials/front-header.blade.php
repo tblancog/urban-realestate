@@ -73,13 +73,13 @@
                         </ul>
 
                         <!-- Search Form -->
-                        <div class="south-search-form">
+                        {{-- <div class="south-search-form">
                             <form action="#" method="post">
                                 <input type="search" name="search" id="search"
                                     placeholder="Busca por nombre o dirección ...">
                                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
-                        </div>
+                        </div> --}}
 
                         <!-- Search Button -->
                         <!-- <a href="#" class="searchbtn"><i class="fa" aria-hidden="true"></i></a> -->

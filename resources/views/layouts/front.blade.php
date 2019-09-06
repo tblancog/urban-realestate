@@ -22,7 +22,9 @@
 </head>
 
 <body>
-  <div id="app">
+
+
+  <div id="app" class="{{ request()->segment(1) }}">
     @yield('content')
   </div>
   <!-- ##### Call To Action Area End ##### -->

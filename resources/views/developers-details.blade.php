@@ -1,13 +1,9 @@
 @extends('layouts.front')
 
-{{-- @push('styles')
-
-@endpush --}}
-
 @section('content')
 
 <!-- ##### Front Header Area Start ##### -->
-@include('partials.front-header')
+{{-- @include('partials.front-header') --}}
 
 <!-- Preloader -->
 <div id="preloader">

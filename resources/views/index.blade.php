@@ -7,7 +7,17 @@
 </div>
 
 <!-- ##### Front Header Area Start ##### -->
-@include('partials.front-header')
+@component('partials.front-header')
+    {{-- @slot('menu')
+        Forbidden
+    @endslot
+    @slot('search')
+        Forbidden
+    @endslot --}}
+
+    You are not allowed to access this resource!
+@endcomponent
+{{-- @include('partials.front-header') --}}
 <!-- ##### Front Header Area End ##### -->
 
 

@@ -1,9 +1,5 @@
 @extends('layouts.front')
 
-{{-- @push('styles')
-
-@endpush --}}
-
 @section('content')
 
 <!-- ##### Front Header Area Start ##### -->

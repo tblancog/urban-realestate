@@ -25,10 +25,16 @@ Route::resource('buildings', 'API\BuildingController')
 // Apartment or building images
 Route::delete('images/{id}/apartment', 'ImageController@destroyApartmentImage');
 Route::delete('images/{id}/building', 'ImageController@destroyBuildingImage');
+Route::delete('images/{id}/house', 'ImageController@destroyHouseImage');
 
 
 Route::post('apartments/{id}/clone', 'API\ApartmentController@clone');
 Route::resource('apartments', 'API\ApartmentController')
+        ->only('index', 'store', 'update', 'destroy')
+        ->names(['index'=> '']);
+
+// Houses
+Route::resource('houses', 'API\HouseController')
         ->only('index', 'store', 'update', 'destroy')
         ->names(['index'=> '']);
 Route::resource('config', 'API\ConfigController')->only('index','update');

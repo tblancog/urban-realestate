@@ -1,6 +1,10 @@
 @extends('layouts.front')
 
 @section('content')
+
+<!-- ##### Front Header Area Start ##### -->
+{{-- @include('partials.front-header') --}}
+
 <!-- Preloader -->
 <div id="preloader">
     <div class="south-load"></div>

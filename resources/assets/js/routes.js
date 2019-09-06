@@ -46,14 +46,14 @@ export default [{
         component: require('./components/ApartmentDetail.vue')
     },
     //   Developers
-    {
-        path: '/projectsAdmin',
-        component: require('./components/developers/ProjectAdmin.vue')
-    },
+    // {
+    //     path: '/projectsAdmin',
+    //     component: require('./components/developers/Project.vue')
+    // },
     //   Houses
     {
         path: '/housesAdmin',
-        component: require('./components/houses/HousesAdmin.vue')
+        component: require('./components/houses/House.vue')
     },
     {
         path: '*',
