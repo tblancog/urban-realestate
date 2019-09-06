@@ -5174,3 +5174,32 @@ margin: 0;
     background: #000;
 }
 
+.contentDetailHd{
+    margin-bottom: 5%;
+}
+
+.contentDetailHd .detailsHD {
+    margin-bottom: 4%;
+}
+
+.contentDetailHd .detailsHD h6{
+    font-family: 'MyriadPro-Regular', sans-serif;
+    font-weight: bold;
+    font-size: 1.0rem;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+
+.contentDetailHd .detailsHD h3{
+    font-family: "AvantGarde", sans-serif;
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+.contentDetailHd .detailsHD p{
+    font-family: "AvantGarde", sans-serif;
+    font-size: 1.0rem;
+    font-weight: normal;
+    line-height: normal;
+    text-align: justify;
+}
