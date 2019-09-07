@@ -586,9 +586,10 @@ img {
 
 .project-title2 h2 {
     font-family: "AvantGarde", sans-serif;
-    font-weight: 100;
-    font-size: 1.8rem;
-    text-transform: initial !important
+    font-weight: 600;
+    font-size: 2.2rem;
+    text-transform: initial !important;
+    letter-spacing: 2px;
 }
 
 .project-grid {
@@ -5129,7 +5130,7 @@ textarea {
 
 
 .secDevelopers .txtOtherSection img {
-    width: 40%;
+    width: 48%;
     margin: 25px 25px 25px 0;
 }
 
@@ -5139,8 +5140,9 @@ textarea {
 
 .txtOtherSection b {
     font-family: "AvantGarde", sans-serif;
-    font-weight: 100;
-    font-size: 2em;
+    font-weight: bold;
+    font-size: 2.0em;
+    letter-spacing: 1px;
 }
 
 .txtOtherSection .imgLarge {
@@ -5149,10 +5151,11 @@ textarea {
 
 .txtOtherSection {
     font-family: "AvantGarde", sans-serif;
-    font-size: 0.8em;
+    font-size: 1.2em;
     text-align: justify;
     color: #000000;
     margin: 0;
+    line-height: inherit;
 }
 
 .titleOhterSection {
@@ -5175,9 +5178,14 @@ textarea {
 }
 
 .ulOtherSection {
+    font-size: 1.2rem;
+}
+
+.ulOtherSection {
     padding: 0px 25%;
     -webkit-columns: 2;
     columns: 2;
+    
 
     @media only screen and (max-width: 677px) and (min-width: 375px) {
         -webkit-column-count: 1;
@@ -5303,10 +5311,17 @@ textarea {
     background: transparent;
     width: 75%;
     margin: 0 auto;
+    padding-top: 0;
 }
 
-.formHD .form-control {
-    margin-bottom: 10px;
+.formHD .form-group {
+    margin-bottom: 10px !important;
+    overflow: hidden !important;
+    display: block !important;
+}
+
+.formHD input {
+    height: 40px;
 }
 
 .formHD input,
@@ -5340,3 +5355,8 @@ textarea {
 .formHD .btn:hover {
     text-decoration: underline !important;
 }
+
+.navDashboard h3{
+    color: red !important
+}
+
