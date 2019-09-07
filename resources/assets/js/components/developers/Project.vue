@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Casas</h3>
+            <h3 class="card-title">Proyectos</h3>
             <div class="card-tools">
               <button class="btn btn-success" @click="newModal">
                 Crear Nuevo
@@ -13,8 +13,8 @@
             </div>
           </div>
           <!-- /.card-header -->
-          <div v-if="houses.data && houses.data.length">
-            <div class="media" v-for="house in houses.data" :key="house.id">
+          <div v-if="projects.data && projects.data.length">
+            <div class="media" v-for="project in projects.data" :key="project.id">
               <div class="media-body">
                 <div class="container">
                   <div class="row">
@@ -23,11 +23,11 @@
                         data-toggle="modal"
                         data-target="#exampleModalLong"
                         href="#"
-                        @click="selected = house"
+                        @click="selected = project"
                       >
                         <img
-                          v-if="house.images.length"
-                          :src="house.images[0].path"
+                          v-if="project.images.length"
+                          :src="project.images[0].path"
                           class="img-fluid"
                         />
                       </a>
@@ -38,33 +38,33 @@
                           data-toggle="modal"
                           data-target="#exampleModalLong"
                           href="#"
-                          @click="selected = house"
+                          @click="selected = project"
                         >
-                          <h5 class="mt-0">{{ house.project_name }}</h5>
+                          <h5 class="mt-0">{{ project.project_name }}</h5>
                         </a>
                         <i class="fa fa-map-marker-alt fa-fw"></i>
-                        {{ house.location }}
+                        {{ project.location }}
                         <i class="fa fa-calendar fa-fw"></i>
-                        {{ house.year }}
+                        {{ project.year }}
                         <a
                           href="#"
-                          @click="editModal(house)"
+                          @click="editModal(project)"
                         >
                           <i class="fa fa-edit blue"></i>
                         </a>
                         /
-                        <a href="#" @click="deleteItem(house.slug)">
+                        <a href="#" @click="deleteItem(project.slug)">
                           <i class="fa fa-trash red"></i>
                         </a>
                       </div>
                       <div class="details-card">
-                        <p>{{ house.description.substr(0,200)+'...' }}</p>
+                        <p>{{ project.description.substr(0,200)+'...' }}</p>
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="more-box">
                         <div class="cta-more">
-                          <!-- <router-link :to="{ name: 'houseDetail', params: {  id: house.id } }">
+                          <!-- <router-link :to="{ name: 'projectDetail', params: {  id: project.id } }">
                                                       <a class="btn-more" href="#">Ver más</a>
                           </router-link>-->
                         </div>
@@ -81,11 +81,11 @@
 
             <!-- /.card-body -->
             <div class="card-footer">
-              <pagination :data="houses" @pagination-change-page="getResults"></pagination>
+              <pagination :data="projects" @pagination-change-page="getResults"></pagination>
             </div>
           </div>
           <div v-else>
-            <h5 class="m-5 text-center">No existen casas cargadas</h5>
+            <h5 class="m-5 text-center">No existen proyectos cargados</h5>
           </div>
         </div>
         <!-- /.card -->
@@ -104,8 +104,8 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nueva Casa</h5>
-            <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Casa</h5>
+            <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Proyecto</h5>
+            <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Proyecto</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -228,7 +228,7 @@ export default {
       editmode: false,
       selected: {},
       files: [],
-      houses: [],
+      projects: [],
       form: new Form({
         id: "",
         project_name: "",
@@ -243,8 +243,8 @@ export default {
   },
   methods: {
     getResults(page = 1) {
-      axios.get("api/houses?page=" + page).then(response => {
-        this.houses = response.data;
+      axios.get("api/projects?page=" + page).then(response => {
+        this.projects = response.data;
         let newImgArr = [];
         response.data.data.forEach((current, index) => {
           current.images.forEach((img, idx) => {
@@ -252,7 +252,7 @@ export default {
           });
         });
 
-        this.houses.images = newImgArr;
+        this.projects.images = newImgArr;
       });
     },
     updateItem(selected) {
@@ -264,9 +264,9 @@ export default {
         });
       }
 
-      this.form.put("api/houses/" + selected.slug).then(res => {
+      this.form.put("api/projects/" + selected.slug).then(res => {
         formData.append("id", res.data.id);
-        formData.append('type', 'house');
+        formData.append('type', 'project');
         //   formData.append('selected_slug',  selected.slug)
         axios
           .post("images-upload", formData)
@@ -318,9 +318,9 @@ export default {
         // Send request to the server
         if (result.value) {
           this.form
-            .delete("api/houses/" + slug)
+            .delete("api/projects/" + slug)
             .then(() => {
-              swal("Borrada!", "Casa borrada.", "success");
+              swal("Borrada!", "Proyecto borrada.", "success");
               Fire.$emit("AfterCreate");
             })
             .catch(() => {
@@ -331,13 +331,13 @@ export default {
     },
     deleteImage(event) {
       const id = event.id;
-      this.form.delete("api/images/" + id + "/house/");
+      this.form.delete("api/images/" + id + "/project/");
     },
     async loadItems() {
       let vm = this;
-      axios.all([axios.get("api/houses")]).then(
+      axios.all([axios.get("api/projects")]).then(
         axios.spread(function(res1) {
-          vm.houses = res1.data;
+          vm.projects = res1.data;
           let newImgArr = [];
           res1.data.data.forEach((current, index) => {
             current.images.forEach((img, idx) => {
@@ -345,7 +345,7 @@ export default {
             });
           });
 
-          vm.houses.images = newImgArr;
+          vm.projects.images = newImgArr;
         })
       );
     },
@@ -359,13 +359,13 @@ export default {
         });
       }
 
-      const houseCreate = this.form.post("api/houses");
-      houseCreate.then(res => {
+      const projectCreate = this.form.post("api/projects");
+      projectCreate.then(res => {
         formData.append("id", res.data.id);
-        formData.append("type", "house");
+        formData.append("type", "project");
         axios.post("images-upload", formData).then(() => {
           Fire.$emit("AfterCreate");
-          swal("Creado!", "Casa creada.", "success");
+          swal("Creado!", "Proyecto creada.", "success");
           this.form.reset();
           this.files = [];
           $("#addNew").modal("hide");

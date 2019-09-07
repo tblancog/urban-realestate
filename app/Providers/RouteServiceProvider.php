@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use App\Building;
 use App\Apartment;
 use App\House;
+use App\Project;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -37,6 +38,9 @@ class RouteServiceProvider extends ServiceProvider
         });
         Route::bind('house', function ($value) {
             return House::where('slug', $value)->first() ?? abort(404);
+        });
+        Route::bind('project', function ($value) {
+            return Project::where('slug', $value)->first() ?? abort(404);
         });
     }
 

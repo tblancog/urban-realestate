@@ -8,6 +8,8 @@ return [
 
   'houses_upload_path' => 'uploads/houses/',
 
+  'projects_upload_path' => 'uploads/projects/',
+
   'properties_width'=> 800,
 
   'properties_height'=> 800,
