@@ -16,8 +16,6 @@ class HouseImage extends Model
       return $this->belongsTo('App\House');
     }
     public function getPathAttribute() {
-      $path = config('images.houses_upload_path').
-              'houses/'.$this->filename;
-      return $path;
+      return config('images.houses_upload_path').$this->filename;
     }
 }

@@ -26,7 +26,7 @@ class UsersTableAutoSeeder extends Seeder
                 'type' => 'user',
                 'bio' => NULL,
                 'photo' => 'profile.png',
-                'remember_token' => 'RZHOVHaw15rB0Wa7CEMcVWVxk5YH8DPZUI9YIaGO7ezivXMyPcsPB6whfJbI',
+                'remember_token' => '4Mr2fddRezwVmM5KLHvJfP4kojOlLlHmT5OAwox2ONI9eRmDUtpuRSleW8p1',
                 'created_at' => '2019-07-18 09:54:22',
                 'updated_at' => '2019-07-18 09:54:22',
             ),

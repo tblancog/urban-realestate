@@ -26,7 +26,7 @@
                                 <div class="carousel-inner">
                                     <div v-for="(image, idx) in item.images" :key="image.id"
                                         :class="['carousel-item', { active: idx === 0 }]">
-                                        <img :src="image_path(item, idx, 'buildings')" class="img-fluid">
+                                        <img :src="image.path" class="img-fluid">
                                     </div>
                                 </div>
 

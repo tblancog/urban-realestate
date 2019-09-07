@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use App\Building;
 use App\Apartment;
+use App\House;
+use App\Project;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -31,8 +33,14 @@ class RouteServiceProvider extends ServiceProvider
         Route::bind('building', function ($value) {
             return Building::where('slug', $value)->first() ?? abort(404);
           });
-          Route::bind('apartment', function ($value) {
+        Route::bind('apartment', function ($value) {
             return Apartment::where('slug', $value)->first() ?? abort(404);
+        });
+        Route::bind('house', function ($value) {
+            return House::where('slug', $value)->first() ?? abort(404);
+        });
+        Route::bind('project', function ($value) {
+            return Project::where('slug', $value)->first() ?? abort(404);
         });
     }
 

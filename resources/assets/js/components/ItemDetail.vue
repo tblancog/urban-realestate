@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import utils from "../../mixins/utils.js";
+import utils from "../mixins/utils.js";
 export default {
   props: ["item"],
   mixins: [utils]

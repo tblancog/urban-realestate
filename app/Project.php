@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class House extends Model
+class Project extends Model
 {
     protected $fillable = [
         'project_name',
@@ -16,7 +16,7 @@ class House extends Model
     ];
 
      public function images(){
-      return $this->hasMany('App\HouseImage');
+      return $this->hasMany('App\ProjectImage');
     }
 
     public function setProjectNameAttribute($value){
@@ -25,7 +25,7 @@ class House extends Model
     }
 
      public function getImgPathAttribute() {
-        return config('images.houses_upload_path') .
+        return config('images.projects_upload_path') .
                 $this->table . '/' ;
     }
 }

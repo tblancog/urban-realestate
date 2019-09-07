@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\API;
 
-use App\House;
+use App\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\HouseRequest;
+use App\Http\Requests\ProjectRequest;
 
 
-class HouseController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,15 +17,15 @@ class HouseController extends Controller
      */
     public function index()
     {
-        return House::latest()
+        return Project::latest()
             ->with('images')
             ->paginate(5);
     }
 
-    public function HouseList()
+    public function ProjectList()
     {
 
-        return House::orderBy('title')
+        return Project::orderBy('title')
             ->get(['id', 'title as label']);
     }
 
@@ -35,48 +35,48 @@ class HouseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(HouseRequest $request)
+    public function store(ProjectRequest $request)
     {
-        $house = House::create($request->all());
-        return ['message' => 'Casa creada', 'id' => $house->id];
+        $project = Project::create($request->all());
+        return ['message' => 'Proyecto creado', 'id' => $project->id];
     }
 
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\House  $house
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show($houseId)
+    public function show($projectId)
     {
-        $house = House::find($houseId);
-        return $house;
+        $project = Project::find($projectId);
+        return $project;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\House  $house
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(HouseRequest $request, House $house)
+    public function update(ProjectRequest $request, Project $project)
     {
-        $house->update($request->all());
-        return ['message' => 'Casa actualizada', 'id' => $house->id];
+        $project->update($request->all());
+        return ['message' => 'Proyecto actualizado', 'id' => $project->id];
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\House  $house
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
     public function destroy($item)
     {
         // Get model
-        $item = House::where('slug', $item->slug)->firstOrFail();
+        $item = Project::where('slug', $item->slug)->firstOrFail();
 
         // Delete the model
         $itemDeleted = $item->delete();
