@@ -372,8 +372,8 @@ con deck.',
                 'contact_phone' => '1153294260',
                 'building_id' => '1',
                 'created_at' => '2019-08-20 15:00:01',
-                'updated_at' => '2019-08-20 15:01:31',
-                'code' => 'A',
+                'updated_at' => '2019-09-02 14:45:46',
+                'code' => 'B',
             ),
             12 => 
             array (
@@ -382,7 +382,7 @@ con deck.',
                 'slug' => 'edificio-uh5-3-ambientes',
                 'floor' => '1',
                 'department' => NULL,
-                'price' => '248000',
+                'price' => '250000',
                 'rooms' => '3',
                 'dormitorios' => '2',
                 'banios' => '1',
@@ -411,8 +411,437 @@ con deck.',
                 'contact_phone' => '1153294260',
                 'building_id' => '1',
                 'created_at' => '2019-08-20 15:01:46',
-                'updated_at' => '2019-08-25 21:28:07',
-                'code' => 'F',
+                'updated_at' => '2019-09-03 23:34:32',
+                'code' => 'D',
+            ),
+            13 => 
+            array (
+                'id' => '35',
+                'title' => 'Edificio UH5 - 3 ambientes',
+                'slug' => 'edificio-uh5-3-ambientes',
+                'floor' => '2',
+                'department' => NULL,
+                'price' => '252000',
+                'rooms' => '3',
+                'dormitorios' => '2',
+                'banios' => '1',
+                'toilettes' => '1',
+                'antiguedad' => '0',
+                'expensas' => '0',
+                'orientacion' => 'Norte',
+                'disposicion' => 'Frente',
+                'area' => '69',
+                'area_semicubierta' => '7',
+                'area_total_construido' => '76',
+                'description' => '- PH de categoría con cochera y amenities varios: 
+- piscina/ solárium 
+- parrilla 
+- sum 
+- terraza 
+– cocheras
+Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
+interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
+-Departamentos de 2 y 3 ambientes ubicados en el 1er, 2do y 3er piso.
+-Departamentos de 2 y 4 ambientes con terraza y parrilla privada ubicados en el 4to piso.
+- Planta Baja se encuentra el acceso principal - cocheras cubiertas - y en el fondo se localiza la piscina con solarium - quincho con parrilla - sum - expansión de Terraza
+con deck.',
+                'status' => 'En_venta',
+                'contact_name' => 'Maria',
+                'contact_phone' => '1153294260',
+                'building_id' => '1',
+                'created_at' => '2019-09-02 14:36:50',
+                'updated_at' => '2019-09-02 14:38:35',
+                'code' => 'A',
+            ),
+            14 => 
+            array (
+                'id' => '36',
+                'title' => 'Edificio UH5 - 3 ambientes',
+                'slug' => 'edificio-uh5-3-ambientes',
+                'floor' => '3',
+                'department' => NULL,
+                'price' => '256000',
+                'rooms' => '3',
+                'dormitorios' => '2',
+                'banios' => '1',
+                'toilettes' => '1',
+                'antiguedad' => '0',
+                'expensas' => '0',
+                'orientacion' => 'Norte',
+                'disposicion' => 'Frente',
+                'area' => '69',
+                'area_semicubierta' => '7',
+                'area_total_construido' => '76',
+                'description' => '- PH de categoría con cochera y amenities varios: 
+- piscina/ solárium 
+- parrilla 
+- sum 
+- terraza 
+– cocheras
+Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
+interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
+-Departamentos de 2 y 3 ambientes ubicados en el 1er, 2do y 3er piso.
+-Departamentos de 2 y 4 ambientes con terraza y parrilla privada ubicados en el 4to piso.
+- Planta Baja se encuentra el acceso principal - cocheras cubiertas - y en el fondo se localiza la piscina con solarium - quincho con parrilla - sum - expansión de Terraza
+con deck.',
+                'status' => 'En_venta',
+                'contact_name' => 'Maria',
+                'contact_phone' => '1153294260',
+                'building_id' => '1',
+                'created_at' => '2019-09-02 14:39:00',
+                'updated_at' => '2019-09-02 14:39:37',
+                'code' => 'A',
+            ),
+            15 => 
+            array (
+                'id' => '37',
+                'title' => 'Edificio UH5 - 3 amb con terraza',
+                'slug' => 'edificio-uh5-3-amb-con-terraza',
+                'floor' => '4',
+                'department' => NULL,
+                'price' => '310000',
+                'rooms' => '3',
+                'dormitorios' => '2',
+                'banios' => '1',
+                'toilettes' => '1',
+                'antiguedad' => '0',
+                'expensas' => '0',
+                'orientacion' => 'Norte',
+                'disposicion' => 'Frente',
+                'area' => '69',
+                'area_semicubierta' => '69',
+                'area_total_construido' => '138',
+                'description' => '- PH de categoría con cochera y amenities varios: 
+- piscina/ solárium 
+- parrilla 
+- sum 
+- terraza 
+– cocheras
+Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
+interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
+-Departamentos de 2 y 3 ambientes ubicados en el 1er, 2do y 3er piso.
+-Departamentos de 2 y 4 ambientes con terraza y parrilla privada ubicados en el 4to piso.
+- Planta Baja se encuentra el acceso principal - cocheras cubiertas - y en el fondo se localiza la piscina con solarium - quincho con parrilla - sum - expansión de Terraza
+con deck.',
+                'status' => 'En_venta',
+                'contact_name' => 'Maria',
+                'contact_phone' => '1153294260',
+                'building_id' => '1',
+                'created_at' => '2019-09-02 14:40:53',
+                'updated_at' => '2019-09-02 14:43:53',
+                'code' => 'A',
+            ),
+            16 => 
+            array (
+                'id' => '38',
+                'title' => 'Edificio UH5 - 2 ambientes',
+                'slug' => 'edificio-uh5-2-ambientes',
+                'floor' => '2',
+                'department' => NULL,
+                'price' => '172000',
+                'rooms' => '2',
+                'dormitorios' => '1',
+                'banios' => '1',
+                'toilettes' => '1',
+                'antiguedad' => '0',
+                'expensas' => '0',
+                'orientacion' => 'Norte',
+                'disposicion' => 'Frente',
+                'area' => '44',
+                'area_semicubierta' => '5',
+                'area_total_construido' => '49',
+                'description' => '- PH de categoría con cochera y amenities varios: 
+- piscina/ solárium 
+- parrilla 
+- sum 
+- terraza 
+– cocheras
+Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
+interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
+-Departamentos de 2 y 3 ambientes ubicados en el 1er, 2do y 3er piso.
+-Departamentos de 2 y 4 ambientes con terraza y parrilla privada ubicados en el 4to piso.
+- Planta Baja se encuentra el acceso principal - cocheras cubiertas - y en el fondo se localiza la piscina con solarium - quincho con parrilla - sum - expansión de Terraza
+con deck.',
+                'status' => 'En_venta',
+                'contact_name' => 'Maria',
+                'contact_phone' => '1153294260',
+                'building_id' => '1',
+                'created_at' => '2019-09-02 14:46:02',
+                'updated_at' => '2019-09-02 14:48:23',
+                'code' => 'B',
+            ),
+            17 => 
+            array (
+                'id' => '39',
+                'title' => 'Edificio UH5 - 2 ambientes',
+                'slug' => 'edificio-uh5-2-ambientes',
+                'floor' => '1',
+                'department' => NULL,
+                'price' => '169000',
+                'rooms' => '2',
+                'dormitorios' => '1',
+                'banios' => '1',
+                'toilettes' => '1',
+                'antiguedad' => '0',
+                'expensas' => '0',
+                'orientacion' => 'Norte',
+                'disposicion' => 'Frente',
+                'area' => '44',
+                'area_semicubierta' => '5',
+                'area_total_construido' => '49',
+                'description' => '- PH de categoría con cochera y amenities varios: 
+- piscina/ solárium 
+- parrilla 
+- sum 
+- terraza 
+– cocheras
+Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
+interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
+-Departamentos de 2 y 3 ambientes ubicados en el 1er, 2do y 3er piso.
+-Departamentos de 2 y 4 ambientes con terraza y parrilla privada ubicados en el 4to piso.
+- Planta Baja se encuentra el acceso principal - cocheras cubiertas - y en el fondo se localiza la piscina con solarium - quincho con parrilla - sum - expansión de Terraza
+con deck.',
+                'status' => 'En_venta',
+                'contact_name' => 'Maria',
+                'contact_phone' => '1153294260',
+                'building_id' => '1',
+                'created_at' => '2019-09-02 14:48:37',
+                'updated_at' => '2019-09-02 14:49:53',
+                'code' => 'B',
+            ),
+            18 => 
+            array (
+                'id' => '40',
+                'title' => 'Edificio UH5 - 2 ambientes',
+                'slug' => 'edificio-uh5-2-ambientes',
+                'floor' => '1',
+                'department' => NULL,
+                'price' => '169000',
+                'rooms' => '2',
+                'dormitorios' => '1',
+                'banios' => '1',
+                'toilettes' => '1',
+                'antiguedad' => '0',
+                'expensas' => '0',
+                'orientacion' => 'Norte',
+                'disposicion' => 'Frente',
+                'area' => '44',
+                'area_semicubierta' => '5',
+                'area_total_construido' => '49',
+                'description' => '- PH de categoría con cochera y amenities varios: 
+- piscina/ solárium 
+- parrilla 
+- sum 
+- terraza 
+– cocheras
+Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
+interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
+-Departamentos de 2 y 3 ambientes ubicados en el 1er, 2do y 3er piso.
+-Departamentos de 2 y 4 ambientes con terraza y parrilla privada ubicados en el 4to piso.
+- Planta Baja se encuentra el acceso principal - cocheras cubiertas - y en el fondo se localiza la piscina con solarium - quincho con parrilla - sum - expansión de Terraza
+con deck.',
+                'status' => 'En_venta',
+                'contact_name' => 'Maria',
+                'contact_phone' => '1153294260',
+                'building_id' => '1',
+                'created_at' => '2019-09-02 14:56:03',
+                'updated_at' => '2019-09-02 14:57:06',
+                'code' => 'C',
+            ),
+            19 => 
+            array (
+                'id' => '41',
+                'title' => 'Edificio UH5 - 2 ambientes',
+                'slug' => 'edificio-uh5-2-ambientes',
+                'floor' => '2',
+                'department' => NULL,
+                'price' => '172000',
+                'rooms' => '2',
+                'dormitorios' => '1',
+                'banios' => '1',
+                'toilettes' => '1',
+                'antiguedad' => '0',
+                'expensas' => '0',
+                'orientacion' => 'Norte',
+                'disposicion' => 'Frente',
+                'area' => '44',
+                'area_semicubierta' => '5',
+                'area_total_construido' => '49',
+                'description' => '- PH de categoría con cochera y amenities varios: 
+- piscina/ solárium 
+- parrilla 
+- sum 
+- terraza 
+– cocheras
+Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
+interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
+-Departamentos de 2 y 3 ambientes ubicados en el 1er, 2do y 3er piso.
+-Departamentos de 2 y 4 ambientes con terraza y parrilla privada ubicados en el 4to piso.
+- Planta Baja se encuentra el acceso principal - cocheras cubiertas - y en el fondo se localiza la piscina con solarium - quincho con parrilla - sum - expansión de Terraza
+con deck.',
+                'status' => 'En_venta',
+                'contact_name' => 'Maria',
+                'contact_phone' => '1153294260',
+                'building_id' => '1',
+                'created_at' => '2019-09-02 14:57:21',
+                'updated_at' => '2019-09-02 14:58:02',
+                'code' => 'C',
+            ),
+            20 => 
+            array (
+                'id' => '42',
+                'title' => 'Edificio UH5 - 2 ambientes',
+                'slug' => 'edificio-uh5-2-ambientes',
+                'floor' => '3',
+                'department' => NULL,
+                'price' => '174000',
+                'rooms' => '2',
+                'dormitorios' => '1',
+                'banios' => '1',
+                'toilettes' => '1',
+                'antiguedad' => '0',
+                'expensas' => '0',
+                'orientacion' => 'Norte',
+                'disposicion' => 'Frente',
+                'area' => '44',
+                'area_semicubierta' => '5',
+                'area_total_construido' => '49',
+                'description' => '- PH de categoría con cochera y amenities varios: 
+- piscina/ solárium 
+- parrilla 
+- sum 
+- terraza 
+– cocheras
+Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
+interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
+-Departamentos de 2 y 3 ambientes ubicados en el 1er, 2do y 3er piso.
+-Departamentos de 2 y 4 ambientes con terraza y parrilla privada ubicados en el 4to piso.
+- Planta Baja se encuentra el acceso principal - cocheras cubiertas - y en el fondo se localiza la piscina con solarium - quincho con parrilla - sum - expansión de Terraza
+con deck.',
+                'status' => 'En_venta',
+                'contact_name' => 'Maria',
+                'contact_phone' => '1153294260',
+                'building_id' => '1',
+                'created_at' => '2019-09-02 14:58:17',
+                'updated_at' => '2019-09-03 11:25:47',
+                'code' => 'C',
+            ),
+            21 => 
+            array (
+                'id' => '43',
+                'title' => 'Edificio UH5 - 2 ambientes',
+                'slug' => 'edificio-uh5-2-ambientes',
+                'floor' => '3',
+                'department' => NULL,
+                'price' => '174000',
+                'rooms' => '2',
+                'dormitorios' => '1',
+                'banios' => '1',
+                'toilettes' => '0',
+                'antiguedad' => '0',
+                'expensas' => '0',
+                'orientacion' => 'Norte',
+                'disposicion' => 'Contrafrente',
+                'area' => '44',
+                'area_semicubierta' => '5',
+                'area_total_construido' => '49',
+                'description' => '- PH de categoría con cochera y amenities varios: 
+- piscina/ solárium 
+- parrilla 
+- sum 
+- terraza 
+– cocheras
+Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
+interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
+-Departamentos de 2 y 3 ambientes ubicados en el 1er, 2do y 3er piso.
+-Departamentos de 2 y 4 ambientes con terraza y parrilla privada ubicados en el 4to piso.
+- Planta Baja se encuentra el acceso principal - cocheras cubiertas - y en el fondo se localiza la piscina con solarium - quincho con parrilla - sum - expansión de Terraza
+con deck.',
+                'status' => 'En_venta',
+                'contact_name' => 'Maria',
+                'contact_phone' => '1153294260',
+                'building_id' => '1',
+                'created_at' => '2019-09-03 11:41:54',
+                'updated_at' => '2019-09-03 11:45:10',
+                'code' => 'G',
+            ),
+            22 => 
+            array (
+                'id' => '44',
+                'title' => 'Edificio UH5 - 3 ambientes',
+                'slug' => 'edificio-uh5-3-ambientes',
+                'floor' => '1',
+                'department' => NULL,
+                'price' => '250000',
+                'rooms' => '3',
+                'dormitorios' => '2',
+                'banios' => '1',
+                'toilettes' => '1',
+                'antiguedad' => '0',
+                'expensas' => '0',
+                'orientacion' => 'Norte',
+                'disposicion' => 'Frente',
+                'area' => '69',
+                'area_semicubierta' => '7',
+                'area_total_construido' => '76',
+                'description' => '- PH de categoría con cochera y amenities varios: 
+- piscina/ solárium 
+- parrilla 
+- sum 
+- terraza 
+– cocheras
+Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
+interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
+-Departamentos de 2 y 3 ambientes ubicados en el 1er, 2do y 3er piso.
+-Departamentos de 2 y 4 ambientes con terraza y parrilla privada ubicados en el 4to piso.
+- Planta Baja se encuentra el acceso principal - cocheras cubiertas - y en el fondo se localiza la piscina con solarium - quincho con parrilla - sum - expansión de Terraza
+con deck.',
+                'status' => 'En_venta',
+                'contact_name' => 'Maria',
+                'contact_phone' => '1153294260',
+                'building_id' => '1',
+                'created_at' => '2019-09-03 23:26:17',
+                'updated_at' => '2019-09-03 23:29:32',
+                'code' => 'D',
+            ),
+            23 => 
+            array (
+                'id' => '45',
+                'title' => 'Edificio UH5 - 3 ambientes',
+                'slug' => 'edificio-uh5-3-ambientes',
+                'floor' => '2',
+                'department' => NULL,
+                'price' => '255000',
+                'rooms' => '3',
+                'dormitorios' => '2',
+                'banios' => '1',
+                'toilettes' => '1',
+                'antiguedad' => '0',
+                'expensas' => '0',
+                'orientacion' => 'Norte',
+                'disposicion' => 'Frente',
+                'area' => '69',
+                'area_semicubierta' => '7',
+                'area_total_construido' => '76',
+                'description' => '- PH de categoría con cochera y amenities varios: 
+- piscina/ solárium 
+- parrilla 
+- sum 
+- terraza 
+– cocheras
+Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
+interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
+-Departamentos de 2 y 3 ambientes ubicados en el 1er, 2do y 3er piso.
+-Departamentos de 2 y 4 ambientes con terraza y parrilla privada ubicados en el 4to piso.
+- Planta Baja se encuentra el acceso principal - cocheras cubiertas - y en el fondo se localiza la piscina con solarium - quincho con parrilla - sum - expansión de Terraza
+con deck.',
+                'status' => 'En_venta',
+                'contact_name' => 'Maria',
+                'contact_phone' => '1153294260',
+                'building_id' => '1',
+                'created_at' => '2019-09-03 23:31:22',
+                'updated_at' => '2019-09-03 23:33:21',
+                'code' => 'D',
             ),
         ));
         
