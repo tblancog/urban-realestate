@@ -34,13 +34,8 @@
                     </div>
                     <div class="col-md-6">
                       <div class="info-card">
-                        <a
-                          data-toggle="modal"
-                          data-target="#exampleModalLong"
-                          href="#"
-                          @click="selected = project"
-                        >
-                          <h5 class="mt-0">{{ project.project_name }}</h5>
+                        <a :href="getDetailUrl(projects, 'projects')" target="_blank">
+                            <h5 class="mt-0">{{ project.project_name }}</h5>
                         </a>
                         <i class="fa fa-map-marker-alt fa-fw"></i>
                         {{ project.location }}

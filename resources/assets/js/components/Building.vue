@@ -25,9 +25,9 @@
                                       </div>
                                       <div class="col-md-6">
                                           <div class="info-card">
-                                              <a data-toggle="modal" data-target="#exampleModalLong" href="#" @click="selected = building">
+                                            <a :href="getDetailUrl(building, 'buildings')" target="_blank">
                                                 <h5 class="mt-0">{{ building.title }}</h5>
-                                              </a>
+                                            </a>
                                               <i class="fa fa-map-marker-alt fa-fw"></i>{{ building.address }}
                                               <i class="fa fa-dollar-sign fa-fw"></i>USD {{ building.price }}
                                               <a href="#" @click="editModal(building)">
