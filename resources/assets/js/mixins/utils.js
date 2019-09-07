@@ -54,16 +54,4 @@ export default {
             ]
         }
     },
-    methods: {
-        image_path(item, index = 0, property = 'buildings') {
-            if (!item.hasOwnProperty('images') || item.images.length === 0) {
-                return 'img/core-img/placeholder.svg'
-            }
-            let id = ''
-            if (property == 'buildings') {
-                id = item.id + '/'
-            }
-            return 'uploads/properties/' + property + '/' + id + item.images[index].filename
-        }
-    }
 }

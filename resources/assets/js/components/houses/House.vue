@@ -266,6 +266,7 @@ export default {
 
       this.form.put("api/houses/" + selected.slug).then(res => {
         formData.append("id", res.data.id);
+        formData.append('type', 'house');
         //   formData.append('selected_slug',  selected.slug)
         axios
           .post("images-upload", formData)

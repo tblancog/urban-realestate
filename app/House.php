@@ -19,7 +19,7 @@ class House extends Model
       return $this->hasMany('App\HouseImage');
     }
 
-    public function setTitleAttribute($value){
+    public function setProjectNameAttribute($value){
       $this->attributes['project_name'] = $value;
       $this->attributes['slug'] = str_slug($value);
     }

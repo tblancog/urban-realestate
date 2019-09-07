@@ -8,6 +8,8 @@ use App\Observers\ApartmentObserver;
 use App\Apartment;
 use App\Observers\BuildingObserver;
 use App\Building;
+use App\Observers\HouseObserver;
+use App\House;
 
 
 
@@ -36,6 +38,9 @@ class AppServiceProvider extends ServiceProvider
 
         // Building Observer
         Building::observe(BuildingObserver::class);
+
+        // House Observer
+        House::observe(HouseObserver::class);
     }
 
     /**

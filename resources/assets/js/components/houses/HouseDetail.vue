@@ -43,7 +43,7 @@
                     :key="image.id"
                     :class="['carousel-item', { active: idx === 0 }]"
                   >
-                    <img :src="image_path(item, idx, 'houses')" class="img-fluid" />
+                    <img :src="image.path" class="img-fluid">
                   </div>
                 </div>
 

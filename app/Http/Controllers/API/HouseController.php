@@ -38,7 +38,6 @@ class HouseController extends Controller
     public function store(HouseRequest $request)
     {
         $house = House::create($request->all());
-
         return ['message' => 'Casa creada', 'id' => $house->id];
     }
 
@@ -78,9 +77,6 @@ class HouseController extends Controller
     {
         // Get model
         $item = House::where('slug', $item->slug)->firstOrFail();
-
-        // Delete pictures folder if any
-        \Storage::deleteDirectory($item->img_path);
 
         // Delete the model
         $itemDeleted = $item->delete();

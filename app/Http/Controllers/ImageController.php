@@ -13,15 +13,20 @@ class ImageController extends Controller
 {
   public function upload(Request $request)
   {
-    if($request->type == 'building'){
-      $property = Building::find($request->id);
-      $propertyImg = new BuildingImage();
-      $foreign = 'building_id';
-    }else{
-      $property = Apartment::find($request->id);
-      $propertyImg = new ApartmentImage();
-      $foreign = 'apartment_id';
-    }
+      $property = resolve('App\\'.ucwords($request->type))
+                        ::find($request->id);
+      $propertyImg =  resolve(get_class($property).'Image');
+      $foreign = $request->type.'_id';
+
+    // if($request->type == 'building'){
+    //   $property = Building::find($request->id);
+    //   $propertyImg = new BuildingImage();
+    //   $foreign = 'building_id';
+    // }else{
+    //   $property = Apartment::find($request->id);
+    //   $propertyImg = new ApartmentImage();
+    //   $foreign = 'apartment_id';
+    // }
     if ($request->images && count($request->images) > 0) {
 
       // Create new directory
