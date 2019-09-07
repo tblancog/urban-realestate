@@ -1,11 +1,11 @@
 <?php
 
 use Faker\Generator as Faker;
-use App\House;
+use App\Project;
 
-$factory->define(House::class, function (Faker $faker) {
+$factory->define(Project::class, function (Faker $faker) {
 
-    $houseName = $faker->unique()->numerify('House ####');
+    $houseName = $faker->unique()->numerify('Project ####');
     return [
         'project_name'=> $houseName,
         'slug'=> str_slug($houseName),
