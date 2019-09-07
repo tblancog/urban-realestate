@@ -5,10 +5,10 @@ use App\Project;
 
 $factory->define(Project::class, function (Faker $faker) {
 
-    $houseName = $faker->unique()->numerify('Project ####');
+    $project_name = $faker->unique()->numerify('Project ####');
     return [
-        'project_name'=> $houseName,
-        'slug'=> str_slug($houseName),
+        'project_name'=> $project_name,
+        'slug'=> str_slug($project_name),
         'year'=> $faker->randomElement([2019, 2018, 2017]),
         'location'=> $faker->streetAddress(),
         'services'=> $faker->streetAddress(),
