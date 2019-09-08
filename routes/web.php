@@ -43,13 +43,17 @@ route::post('import', 'ApartmentController@import');
 //   return view('detail-building');
 // });
 
-Route::get('/developers', function () {
-  return view('index-developers');
-})->name('developers.index');
+Route::group(['prefix' => 'developers'], function () {
+    Route::get('/', 'ProjectController@index')->name('developers.index');
+    Route::get('/{project}', 'ProjectController@show')->name('developers.show');
+});
+// Route::get('/developers', function () {
+//   return view('index-developers');
+// })->name('developers.index');
 
-Route::get('/developers_details', function () {
-  return view('developers-details');
-})->name('developers.details');
+// Route::get('/developers_details', function () {
+//   return view('developers-details');
+// })->name('developers.details');
 
 Route::get('/houses', function () {
   return view('index-houses');

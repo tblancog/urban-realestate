@@ -1,4 +1,4 @@
-<!-- ##### Footer Area Start ##### -->
+    <!-- ##### Footer Area Start ##### -->
 
 <section>
     <div class="footer">

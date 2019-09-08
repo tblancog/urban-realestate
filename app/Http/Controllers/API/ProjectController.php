@@ -19,7 +19,7 @@ class ProjectController extends Controller
     {
         return Project::latest()
             ->with('images')
-            ->paginate(5);
+            ->paginate(6);
     }
 
     public function ProjectList()
@@ -85,4 +85,5 @@ class ProjectController extends Controller
             ['message' => ($itemDeleted ? 'Item deleted' : 'Could not delete item')]
         );
     }
+
 }

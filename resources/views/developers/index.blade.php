@@ -51,7 +51,7 @@
 
 
 <!-- ##### Propiedades en Venta Area Start ##### -->
-<section class="featured-properties-area">
+<section id="projects" class="featured-properties-area">
     <div class="">
         <div class="row">
             <div class="col-12">
@@ -62,122 +62,30 @@
         </div>
 
         <div class="row">
+             <!-- Single Featured Property -->
+             @foreach ($items as $item)
+                <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
+                    <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
+                        <!-- Property Thumbnail -->
+                        <a href="{{ route('developers.show', $item->slug) }}">
+                        <div class="property-thumb">
+                            <div class="property-info">
+                                <h4 class="content content2">Proyecto</h4>
+                                <h2 class="title title2">{{ $item->project_name }}</h2>
+                                    <h5 class="content txtInfo">+ info</h5>
+                                </div>
+                                <img src="{{ count($item->images) > 0 ? $item->images->first()->path : '' }}" alt="">
+                            </div>
+                        </a>
+                        <!-- Property Content -->
 
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h4 class="content content2">Torre</h4>
-                            <h2 class="title title2">Quesevenda</h2>
-                            <a href="{{ route('developers.details') }}">
-                                <h5 class="content txtInfo">+ info</h5>
-                            </a>
-                        </div>
-                        <img src="img/developers/1.jpg" alt="">
                     </div>
-                    <!-- Property Content -->
-
                 </div>
-            </div>
 
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
-                            <a href="{{ route('developers.details') }}">
-                                <h5 class="content txtInfo">+ info</h5>
-                            </a>
-                        </div>
-                        <img src="img/developers/2.jpg" alt="">
-                    </div>
-                    <!-- Property Content -->
-
-                </div>
-            </div>
-
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
-                            <a href="{{ route('developers.details') }}">
-                                <h5 class="content txtInfo">+ info</h5>
-                            </a>
-                        </div>
-                        <img src="img/developers/3.jpg" alt="">
-                    </div>
-                    <!-- Property Content -->
-
-                </div>
-            </div>
-
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
-                            <a href="{{ route('developers.details') }}">
-                                <h5 class="content txtInfo">+ info</h5>
-                            </a>
-                        </div>
-                        <img src="img/developers/4.jpg" alt="">
-                    </div>
-                    <!-- Property Content -->
-
-                </div>
-            </div>
-
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
-                            <a href="{{ route('developers.details') }}">
-                                <h5 class="content txtInfo">+ info</h5>
-                            </a>
-                        </div>
-                        <img src="img/developers/5.jpg" alt="">
-                    </div>
-                    <!-- Property Content -->
-
-                </div>
-            </div>
-
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
-                            <a href="{{ route('developers.details') }}">
-                                <h5 class="content txtInfo">+ info</h5>
-                            </a>
-                        </div>
-                        <img src="img/developers/6.jpg" alt="">
-                    </div>
-                    <!-- Property Content -->
-
-                </div>
-            </div>
-
-
+             @endforeach
+        </div>
+        <div class="row pull-right mr-3 paginadoHome">
+            <div class="col-lg-1">{{ $items->fragment('projects')->links() }}</div>
         </div>
     </div>
 </section>
