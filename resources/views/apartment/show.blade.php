@@ -217,6 +217,8 @@
               </div>
               <div style="clear:both"></div>
               <ul class="moreInfo">
+                <li>Piso: <span class="misc-value">{{ $apartment->floor }}</span></li>
+                <li>Departamento: <span class="misc-value">{{ $apartment->code }}</span></li>
                 <li>Ambientes: <span class="misc-value">{{ $apartment->rooms }}</span></li>
                 <li>Dormitorios: <span class="misc-value">{{ $apartment->dormitorios }}</span></li>
                 <li>Baños: <span class="misc-value">{{ $apartment->banios }}</span></li>
