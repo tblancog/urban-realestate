@@ -7,19 +7,8 @@
 </div>
 
 <!-- ##### Front Header Area Start ##### -->
-@component('partials.front-header')
-    {{-- @slot('menu')
-        Forbidden
-    @endslot
-    @slot('search')
-        Forbidden
-    @endslot --}}
-
-    You are not allowed to access this resource!
-@endcomponent
-{{-- @include('partials.front-header') --}}
+@include('partials.top-menu')
 <!-- ##### Front Header Area End ##### -->
-
 
 <!-- ##### Advance Search Area Start ##### -->
 @include('components.search-area')

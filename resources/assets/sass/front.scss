@@ -107,7 +107,9 @@
     margin: 0;
     padding: 0;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 html,
 body {
     width: 100%;
@@ -5185,7 +5187,7 @@ textarea {
     padding: 0px 25%;
     -webkit-columns: 2;
     columns: 2;
-    
+
 
     @media only screen and (max-width: 677px) and (min-width: 375px) {
         -webkit-column-count: 1;

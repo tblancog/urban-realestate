@@ -7,7 +7,7 @@
     <div class="south-load"></div>
 </div>
 
-@include('partials.front-header')
+@include('partials.top-menu')
 
 <section class="container">
   <div class="row">

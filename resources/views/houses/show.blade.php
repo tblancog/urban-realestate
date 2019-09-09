@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- ##### Front Header Area Start ##### -->
-@include('partials.front-header-houses')
+@include('partials.top-menu-houses')
 
 <!-- Preloader -->
 <div id="preloader">

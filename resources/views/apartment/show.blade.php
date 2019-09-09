@@ -7,7 +7,7 @@
 @section('content')
 
 <!-- ##### Front Header Area Start ##### -->
-@include('partials.front-header')
+@include('partials.top-menu')
 <!-- ##### Front Header Area End ##### -->
 
 <!-- Preloader -->
