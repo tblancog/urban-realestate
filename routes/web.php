@@ -47,6 +47,11 @@ Route::group(['prefix' => 'developers'], function () {
     Route::get('/', 'ProjectController@index')->name('developers.index');
     Route::get('/{project}', 'ProjectController@show')->name('developers.show');
 });
+
+Route::group(['prefix' => 'houses'], function () {
+    Route::get('/', 'HouseController@index')->name('houses.index');
+    Route::get('/{house}', 'HouseController@show')->name('houses.show');
+});
 // Route::get('/developers', function () {
 //   return view('index-developers');
 // })->name('developers.index');
@@ -55,12 +60,12 @@ Route::group(['prefix' => 'developers'], function () {
 //   return view('developers-details');
 // })->name('developers.details');
 
-Route::get('/houses', function () {
-  return view('index-houses');
-})->name('houses.index');
-Route::get('/houses_details', function () {
-  return view('houses-details');
-})->name('houses.details');
+// Route::get('/houses', function () {
+//   return view('index-houses');
+// })->name('houses.index');
+// Route::get('/houses_details', function () {
+//   return view('houses-details');
+// })->name('houses.details');
 
 // Route::get('/modal-details', function () {
 //   return view('modalDetails');

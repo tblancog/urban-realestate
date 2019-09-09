@@ -23,7 +23,7 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Project  $apartment
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
     public function show(Project $project)

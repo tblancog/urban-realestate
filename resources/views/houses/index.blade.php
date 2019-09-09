@@ -11,7 +11,7 @@
 </div>
 
 <!-- ##### Header Area Start ###        ## -->
-<header class="header-area">
+{{-- <header class="header-area">
 
     <!-- Main Header Area -->
     <div class="main-header-area" id="stickyHeader">
@@ -64,7 +64,7 @@
             </nav>
         </div>
     </div>
-</header>
+</header> --}}
 <!-- ##### Header Area End ##### -->
 
 <!-- ##### Hero Area Start ##### -->
@@ -115,108 +115,27 @@
         </div>
 
         <div class="row">
+              <!-- Single Featured Property -->
+             @foreach ($items as $item)
+                <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
+                    <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
+                        <!-- Property Thumbnail -->
+                        <a href="{{ route('houses.show', $item->slug) }}">
+                        <div class="property-thumb">
+                            <div class="property-info">
+                                <h4 class="content content2">Proyecto</h4>
+                                <h2 class="title title2">{{ $item->project_name }}</h2>
+                                    <h5 class="content txtInfo">+ info</h5>
+                                </div>
+                                <img src="{{ count($item->images) > 0 ? $item->images->first()->path : '' }}" alt="">
+                            </div>
+                        </a>
+                        <!-- Property Content -->
 
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h4 class="content content2">Torre</h4>
-                            <h2 class="title title2">Quesevenda</h2>
-                            <h5 class="content txtInfo">+ info</h5>
-                        </div>
-                        <img src="img/developers/1.jpg" alt="">
                     </div>
-                    <!-- Property Content -->
-
                 </div>
-            </div>
 
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
-                            <h5 class="content txtInfo">+ info</h5>
-                        </div>
-                        <img src="img/developers/2.jpg" alt="">
-                    </div>
-                    <!-- Property Content -->
-
-                </div>
-            </div>
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
-                            <h5 class="content txtInfo">+ info</h5>
-                        </div>
-                        <img src="img/developers/3.jpg" alt="">
-                    </div>
-                    <!-- Property Content -->
-
-                </div>
-            </div>
-
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
-                            <h5 class="content txtInfo">+ info</h5>
-                        </div>
-                        <img src="img/developers/4.jpg" alt="">
-                    </div>
-                    <!-- Property Content -->
-
-                </div>
-            </div>
-
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
-                            <h5 class="content txtInfo">+ info</h5>
-                        </div>
-                        <img src="img/developers/5.jpg" alt="">
-                    </div>
-                    <!-- Property Content -->
-
-                </div>
-            </div>
-
-            <!-- Single Featured Property -->
-            <div class="project-grid col-12 col-md-4 col-xl-4 col-lg-4">
-                <div class="single-featured-property wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Property Thumbnail -->
-                    <div class="property-thumb">
-                        <div class="property-info">
-                            <h2 class="title">Torre Quesevenda</h2>
-                            <h4 class="content">by Horace</h4>
-                            <h5 class="content txtInfo">+ info</h5>
-                        </div>
-                        <img src="img/developers/6.jpg" alt="">
-                    </div>
-                    <!-- Property Content -->
-
-                </div>
-            </div>
-
+             @endforeach
 
         </div>
     </div>
