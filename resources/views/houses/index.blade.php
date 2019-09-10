@@ -47,12 +47,12 @@
 
 
 <!-- ##### Propiedades en Venta Area Start ##### -->
-<section class="featured-properties-area">
+<section id="proyectos" class="featured-properties-area">
     <div class="">
         <div class="row">
             <div class="col-12">
                 <div class="project-title project-title2 section-heading wow fadeInUp">
-                    <h2 id="proyectos">Proyectos</h2>
+                    <h2>Proyectos</h2>
                 </div>
             </div>
         </div>
@@ -175,6 +175,3 @@
 @include('partials.front-footer')
 
 @endsection
-
-{{-- @push('scripts')
-@endpush --}}
