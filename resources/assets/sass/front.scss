@@ -4389,6 +4389,7 @@ img {
 
 /* 27.0 Nosotros CSS */
 .nosotros-page {
+    padding-top: 6em;
     .section-heading {
         margin-bottom: 15px;
     }
@@ -4791,7 +4792,7 @@ textarea {
 
 
 .first-row {
-    margin-top: 30px;
+    padding-top: 8em;
 
     @media only screen and (max-width: 677px) and (min-width: 375px) {
         margin-top: 15px;

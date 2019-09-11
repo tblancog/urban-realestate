@@ -65,7 +65,7 @@
             @endforeach
         </div>
         <div class="row pull-right mr-3 paginadoHome">
-            <div class="col-lg-1">{{ $apartments->fragment('apartments')->links() }}</div>
+            <div class="col-lg-1">{{ $apartments->links() }}</div>
         </div>
     </div>
     </div>

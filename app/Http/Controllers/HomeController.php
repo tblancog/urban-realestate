@@ -61,7 +61,7 @@ class HomeController extends Controller
                       ->pluck('value', 'key');
       if (in_array($page, ['appraisals', 'credits', 'contact']))
       {
-        return view('contact', compact('config'));
+        return view('real-estate.contact', compact('config'));
       }
       elseif (in_array($page, ['investments'])) {
 
@@ -73,7 +73,7 @@ class HomeController extends Controller
                     compact('config'), compact('buildings')
         );
       }
-      return view($page);
+      return view("real-estate.$page");
     }
 
     public function dashboard(){

@@ -1,20 +1,6 @@
 @extends('layouts.front')
 
-{{-- @push('styles')
-
-@endpush --}}
-
 @section('content')
-
-<!-- ##### Front Header Area Start ##### -->
-@include('partials.top-menu')
-<!-- ##### Front Header Area End ##### -->
-
-<!-- Preloader -->
-<div id="preloader">
-    <div class="south-load"></div>
-</div>
-
 
 <div class="container-fluid">
 
@@ -285,10 +271,6 @@
 
 </div> <!-- end container-fluid -->
 
-
-
-
-
 <!-- ##### Footer Area Start ##### -->
 @include('partials.front-footer')
 
@@ -299,6 +281,5 @@
     function goToSlide(number) {
         $("#myCarousel").carousel(number);
     }
-
 </script>
 @endpush
