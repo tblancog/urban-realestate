@@ -29,6 +29,8 @@
                                     href="{{ route('appraisals.index') }}">Tasaciones</a></li>
                             <li class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}"><a
                                     href="{{ route('credits.index') }}">Crédito</a></li>
+                            <li class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}"><a
+                                    href="#">News</a></li>
                             {{-- <li class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}"><a
                                 href="{{ route('credits.index') }}">News</a></li> --}}
                             <li class="{{ Request::segment(1)=== 'contact' ? 'active' : '' }}"><a
@@ -64,6 +66,7 @@
                             <li><a href="{{ route('investments.index') }}">Inversiones</a></li>
                             <li><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
                             <li><a href="{{ route('credits.index') }}">Crédito</a></li>
+                            <li><a href="#">News</a></li>
                             <li><a href="{{ route('contact.index') }}">Contacto</i></a></li>
                             <li><a href="{{ route('nosotros.index')  }}">Nosotros</a></li>
                             <li><a href="{{ route('home.index')  }}#real-estate">Propiedades</a></li>
