@@ -3,9 +3,10 @@
 @section('content')
 
 
+
 <section class="hero-area">
     @component('components.home-slider', ['slides'=> $slides])
-
+        @include('components.search-area')
     @endcomponent
 </section>
 

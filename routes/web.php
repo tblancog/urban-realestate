@@ -1,11 +1,7 @@
 <?php
-//Route::get('/', function() {
-//  return view('new.index');
-//});
 
 // Auth
 Auth::routes();
-
 
 // Index
 Route::get('/', 'HomeController@index')->name('home.index');
@@ -30,7 +26,6 @@ Route::group(['prefix' => 'real-estate'], function () {
 // Dashboard
 Route::get('/dashboard', 'HomeController@dashboard')->middleware('auth');
 
-
 // Amenities
 Route::get('amenities', function(){
    return $items= App\Amenity::orderBy('title')->get();
@@ -45,13 +40,6 @@ Route::delete('delete-sliders/{id}', 'SliderController@deleteSlide');
 // Image uplooader route
 Route::post('images-upload', 'ImageController@upload');
 
-// excel read
-route::post('import', 'ApartmentController@import');
-
-
-// Route::get('/detail_building', function () {
-//   return view('detail-building');
-// });
 
 Route::group(['prefix' => 'developers'], function () {
     Route::get('/', 'ProjectController@index')->name('developers.index');
@@ -63,6 +51,8 @@ Route::group(['prefix' => 'houses'], function () {
     Route::get('/{house}', 'HouseController@show')->name('houses.show');
 });
 
+// excel read
+route::post('import', 'ApartmentController@import');
 
 
 // Mail

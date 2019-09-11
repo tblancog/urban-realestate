@@ -1,16 +1,9 @@
 @extends('layouts.front')
 
 @section('content')
-<!-- Preloader -->
-
-<div id="preloader">
-    <div class="south-load"></div>
-</div>
-
-@include('partials.top-menu')
 
 <section class="container">
-  <div class="row">
+  <div class="row first-row">
       <div class="col-12">
           <div class="section-heading wow fadeIn">
               @if($apartments->count())
@@ -82,6 +75,9 @@
                 @foreach ($apartments as $apartment)
                     @include('apartment.box', $apartment)
                 @endforeach
+            </div>
+            <div class="row pull-right paginadoHome">
+                <div class="col-lg-1">{{ $apartments->links() }}</div>
             </div>
         </div>
     </section>

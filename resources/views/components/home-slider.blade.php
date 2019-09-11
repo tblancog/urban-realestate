@@ -17,6 +17,6 @@
           @endforeach
         </div>
 
-
+        {{ $slot }}
     </div>
 
