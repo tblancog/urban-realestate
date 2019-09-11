@@ -836,7 +836,7 @@ img {
 }
 
 .header-area {
-    /*position: absolute;*/
+    position: absolute;
     z-index: 10000;
     width: 100%;
     height: 135px;
@@ -1318,7 +1318,7 @@ img {
      position: absolute;
      top: 0;
  */
-    margin-top: -135px;
+    // margin-top: -135px;
 
     .owl-prev,
     .owl-next {
@@ -4320,7 +4320,6 @@ img {
 
 .appraisals-page {
     margin: 0 auto;
-    margin-top: 20px;
 
     .appraisals-title {
         text-align: center;
@@ -4377,10 +4376,9 @@ img {
     line-height: initial;
 }
 
-.investments-page {
-    .appraisals-title {
-        margin-top: 20px;
-    }
+.investments-page,
+.appraisals-page {
+    padding-top: 8em;
 }
 
 /* 26.0 Modal Details Area CSS */

@@ -44,7 +44,7 @@ class HomeController extends Controller
                               ->orderBy('location')
                               ->get(['location']);
 
-        return view('index', ['buildings'=> $buildings,
+        return view('real-estate.index', ['buildings'=> $buildings,
                               'apartments'=> $apartments,
                               'slides'=> $slides,
                               'locations'=> $locations,
@@ -54,7 +54,8 @@ class HomeController extends Controller
     public function staticPage(Request $request)
     {
 
-      $page = str_replace('/', '', $request->getRequestUri());
+      $page = explode('/', $request->getRequestUri());
+      $page = $page[ count($page) - 1 ];
       $config = Config::where('module', $page)
                       ->get()
                       ->pluck('value', 'key');
@@ -68,7 +69,7 @@ class HomeController extends Controller
                             ->latest()
                             ->with('images')
                             ->paginate(5);
-        return view('investments',
+        return view('real-estate.investments',
                     compact('config'), compact('buildings')
         );
       }

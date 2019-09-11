@@ -95,7 +95,7 @@
 
                 <div class="col-12 secDevelopers">
 
-                    <p class="txtOtherSection"> <img src="img/core-img/imgHouses.jpg" align="left"  alt="Houses"><b id="estudio">Estudio</b> <br>Urban houses es un estudio de arquitectura integral orientado a la realización de obras civiles, comerciales e industriales, integrado por los arquitectos Horacio Fondevila, Leonardo Aguilar y asociados. Fundado en el año 2006, por profesionales con experiencia en diversas áreas de la arquitectura y en empresas constructoras de primera línea, con amplia práctica en la construcción, desarrollo y gestión de obras de envergadura.
+                    <p class="txtOtherSection"> <img src="{{ asset('img/core-img/imgHouses.jpg') }}" align="left"  alt="Houses"><b id="estudio">Estudio</b> <br>Urban houses es un estudio de arquitectura integral orientado a la realización de obras civiles, comerciales e industriales, integrado por los arquitectos Horacio Fondevila, Leonardo Aguilar y asociados. Fundado en el año 2006, por profesionales con experiencia en diversas áreas de la arquitectura y en empresas constructoras de primera línea, con amplia práctica en la construcción, desarrollo y gestión de obras de envergadura.
                     </p>
 
                     <div class="clear"></div>
@@ -109,14 +109,14 @@
                     </p>
 
                     <p class="txtOtherSection">
-                        <img src="img/core-img/imgHouses2.jpg" class="imgLarge"  alt="Developers">
+                        <img src="{{ asset('img/core-img/imgHouses2.jpg') }}" class="imgLarge"  alt="Developers">
                     </p>
 
                     <p class="txtOtherSection">
                     Desde su constitución el estudio ha encarado la realización tanto de emprendimientos inmobiliarios, como así también de viviendas unifamiliares, arquitectura comercial y hospitalaria, buscando brindar un alto nivel de diseño y gestión con el objetivo de materializar proyectos eficientes tanto para el inversor como para el usuario final. Para ello tiene como objeto primordial un especial tratamiento del espacio arquitectónico, un diseño de vanguardia con una moderna estética, poniendo especial énfasis tanto en los detalles como en la elección de materiales nobles y de primera calidad.
                     </p>
 
-                    <p class="txtOtherSection"> <img class="imgRight" src="img/core-img/imgHouses3.jpg" align="right"  alt="Houses"><b >Socios</b> <br>Se encuentra formado por el Arquitecto Horacio Agustín Fondevila Salcedo, graduado de la UBA en el año 2004; habiendo obtenido los posgrados de “Desarrollo de emprendimientos inmobiliarios” en el año 2006 y de “Project management” en el año 2007, ambos en la UB, y por sus socios, los Arq. Leonardo Adrián Aguilar y S.A.U.  que además de sus tareas en el campo de la construcción y el diseño, realizan tareas de investigación y docencia en la facultad de arquitectura de la UBA.
+                    <p class="txtOtherSection"> <img class="imgRight" src="{{ asset('img/core-img/imgHouses3.jpg') }}" align="right"  alt="Houses"><b >Socios</b> <br>Se encuentra formado por el Arquitecto Horacio Agustín Fondevila Salcedo, graduado de la UBA en el año 2004; habiendo obtenido los posgrados de “Desarrollo de emprendimientos inmobiliarios” en el año 2006 y de “Project management” en el año 2007, ambos en la UB, y por sus socios, los Arq. Leonardo Adrián Aguilar y S.A.U.  que además de sus tareas en el campo de la construcción y el diseño, realizan tareas de investigación y docencia en la facultad de arquitectura de la UBA.
                     </p>
 
                 </div>
@@ -152,9 +152,9 @@
             </div>
             <div id="prensa" class="col-12 pressSection">
                 <ul>
-                    <li><a href=""><img src="img/core-img/imgDevelopers-prensa1.jpg" alt="Prensa"></a></li>
-                    <li><a href=""><img src="img/core-img/imgDevelopers-prensa2.jpg" alt="Prensa"></a></li>
-                    <li><a href=""><img src="img/core-img/imgDevelopers-prensa3.jpg" alt="Prensa"></a></li>
+                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa1.jpg') }}" alt="Prensa"></a></li>
+                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa2.jpg') }}" alt="Prensa"></a></li>
+                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa3.jpg') }}" alt="Prensa"></a></li>
                 </ul>
             </div>
 

@@ -99,7 +99,7 @@
             <div class="col-12">
 
                 <div class="col-12 secDevelopers">
-                    <p id="constructora" class="txtOtherSection"> <img src="img/core-img/imgDevelopers.jpg" align="left"  alt="Developers"><b >Constructora</b> <br>URBAN DEVELOPERS es una empresa constructora que brinda a sus clientes un sistema integral de soluciones, abarcando todos los servicios necesarios para la materialización, puesta en marcha, desarrollo y mantenimiento de obras. Las prestaciones ofrecidas por la empresa le permiten brindar soluciones constructivas en obras civiles e industriales de infraestructura urbana y regional.
+                    <p id="constructora" class="txtOtherSection"> <img src="{{ asset('img/core-img/imgDevelopers.jpg') }}" align="left"  alt="Developers"><b >Constructora</b> <br>URBAN DEVELOPERS es una empresa constructora que brinda a sus clientes un sistema integral de soluciones, abarcando todos los servicios necesarios para la materialización, puesta en marcha, desarrollo y mantenimiento de obras. Las prestaciones ofrecidas por la empresa le permiten brindar soluciones constructivas en obras civiles e industriales de infraestructura urbana y regional.
                     </p>
 
                     <div class="clear"></div>
@@ -109,7 +109,7 @@
                     </p>
 
                     <p class="txtOtherSection">
-                        <img src="img/core-img/imgDevelopers2.jpg" class="imgLarge"  alt="Developers">
+                        <img src="{{ asset('img/core-img/imgDevelopers2.jpg') }}" class="imgLarge"  alt="Developers">
                     </p>
 
                     <p class="txtOtherSection">
@@ -147,9 +147,9 @@
             </div>
             <div class="col-12 pressSection">
                 <ul>
-                    <li><a href=""><img src="img/core-img/imgDevelopers-prensa1.jpg" alt="Prensa"></a></li>
-                    <li><a href=""><img src="img/core-img/imgDevelopers-prensa2.jpg" alt="Prensa"></a></li>
-                    <li><a href=""><img src="img/core-img/imgDevelopers-prensa3.jpg" alt="Prensa"></a></li>
+                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa1.jpg') }}" alt="Prensa"></a></li>
+                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa2.jpg') }}" alt="Prensa"></a></li>
+                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa3.jpg') }}" alt="Prensa"></a></li>
                 </ul>
             </div>
 
