@@ -15,13 +15,12 @@
     @case('developers')
         {{-- Developers Menu--}}
         <!-- Front Header Area -->
-        {{-- @include('developers.top-menu') --}}
+        @include('developers.top-menu')
     @break
     @case('houses')
         {{-- Houses --}}
         <!-- Front Header Area Menu-->
-        {{-- @include('houses.top-menu') --}}
-
+        @include('houses.top-menu')
     @break
     @default
         {{-- Real state Menu --}}

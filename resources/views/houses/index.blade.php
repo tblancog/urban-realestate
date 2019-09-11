@@ -2,15 +2,6 @@
 
 @section('content')
 
-<!-- ##### Front Header Area Start ##### -->
-@include('partials.top-menu')
-
-<!-- Preloader -->
-<div id="preloader">
-    <div class="south-load"></div>
-</div>
-
-<!-- ##### Hero Area Start ##### -->
 <section class="hero-area">
     <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-1.jpg);">
         <div class="hero-slides owl-carousel">
@@ -42,9 +33,6 @@
 
 
 </section>
-<!-- ##### Hero Area End ##### -->
-
-
 
 <!-- ##### Propiedades en Venta Area Start ##### -->
 <section id="proyectos" class="featured-properties-area">

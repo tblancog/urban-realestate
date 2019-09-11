@@ -2,18 +2,6 @@
 
 @section('content')
 
-<!-- ##### Front Header Area Start ##### -->
-@include('partials.top-menu')
-
-
-<!-- Preloader -->
-<div id="preloader">
-    <div class="south-load"></div>
-</div>
-
-
-
-<!-- ##### Hero Area Start ##### -->
 <section class="hero-area">
     <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-1.jpg);">
         <div class="hero-slides owl-carousel">
@@ -47,11 +35,8 @@
 
 
 </section>
-<!-- ##### Hero Area End ##### -->
 
 
-
-<!-- ##### Propiedades en Venta Area Start ##### -->
 <section id="projects" class="featured-properties-area">
     <div class="">
         <div class="row">
@@ -86,13 +71,11 @@
              @endforeach
         </div>
         <div class="row pull-right mr-3 paginadoHome">
-            <div class="col-lg-1">{{ $items->fragment('projects')->links() }}</div>
+            <div class="col-lg-1">{{ $items->links() }}</div>
         </div>
     </div>
 </section>
-<!-- ##### Propiedades en Venta Area End ##### -->
 
-<!-- ##### Developers Section ##### -->
 <section class="developers-section">
     <div class="container">
         <div class="row">
@@ -147,9 +130,9 @@
             </div>
             <div class="col-12 pressSection">
                 <ul>
-                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa1.jpg') }}" alt="Prensa"></a></li>
-                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa2.jpg') }}" alt="Prensa"></a></li>
-                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa3.jpg') }}" alt="Prensa"></a></li>
+                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa1.jpg') }}" alt="Prensa"></a></li>
+                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa2.jpg') }}" alt="Prensa"></a></li>
+                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa3.jpg') }}" alt="Prensa"></a></li>
                 </ul>
             </div>
 
@@ -165,11 +148,6 @@
     </div>
 </section>
 
-
-<!-- ##### Footer Area Start ##### -->
 @include('partials.front-footer')
 
 @endsection
-
-{{-- @push('scripts')
-@endpush --}}

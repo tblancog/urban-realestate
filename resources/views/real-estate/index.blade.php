@@ -3,25 +3,12 @@
 @section('content')
 
 
-<!-- ##### Front Header Area Start ##### -->
-<!-- ##### Front Header Area End ##### -->
-
-<!-- ##### Advance Search Area Start ##### -->
-{{-- @include('components.search-area') --}}
-<!-- ##### Advance Search Area End ##### -->
-
-<!-- ##### Hero Area Start ##### -->
 <section class="hero-area">
     @component('components.home-slider', ['slides'=> $slides])
 
     @endcomponent
-    {{-- @include('components.home-slider', ['slides'=> $slides]) --}}
 </section>
-<!-- ##### Hero Area End ##### -->
 
-
-
-<!-- ##### Propiedades en Venta Area Start ##### -->
 <section class="featured-properties-area my-10">
     <div class="container-fluid">
         <div class="row">

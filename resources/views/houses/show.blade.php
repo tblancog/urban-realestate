@@ -2,14 +2,6 @@
 
 @section('content')
 
-<!-- ##### Front Header Area Start ##### -->
-@include('partials.top-menu')
-
-<!-- Preloader -->
-<div id="preloader">
-    <div class="south-load"></div>
-</div>
-
 <div class="container-fluid contentDetailHd">
 
     <div class="row first-row"> <!-- start row 1 -->
