@@ -1,17 +1,3 @@
-@push('styles')
-  <style>
-    .classynav a:hover,
-    .classynav a:focus
-    {
-      color: #dddddd;
-    }
-  </style>
-@endpush
-
-<!-- ##### Header Area Start ##### -->
-<header class="header-area">
-
-    <!-- Main Header Area -->
     <div class="main-header-area" id="stickyHeader">
         <div class="classy-nav-container breakpoint-off">
             <!-- Classy Menu -->
@@ -19,7 +5,7 @@
             <nav class="classy-navbar justify-content-between" id="southNav">
 
                 <!-- Logo -->
-                <a class="nav-brand" href="index.html"><img src="img/core-img/urban_developers.png" alt=""></a>
+                <a class="nav-brand" href="{{ route('developers.index') }}"><img src="{{ asset('img/core-img/urban_developers.png') }}" alt=""></a>
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
@@ -37,11 +23,11 @@
                     <!-- Nav Start -->
                     <div class="classynav classynav2">
                         <ul>
-                        <li><a href="#proyectos">Proyecto</a></li>
-                            <li><a href="#constructora">Constructora</a></li>
-                            <li><a href="#servicios">Servicios</a></li>
-                            <li><a href="#prensa">Prensa</a></li>
-                            <li><a href="#contacto">Contacto</a></li>
+                            <li><a href="{{ route('developers.index') }}#projects">Proyecto</a></li>
+                            <li><a href="{{ route('developers.index') }}#constructora">Constructora</a></li>
+                            <li><a href="{{ route('developers.index') }}#servicios">Servicios</a></li>
+                            <li><a href="{{ route('developers.index') }}#prensa">Prensa</a></li>
+                            <li><a href="{{ route('developers.index') }}#contacto">Contacto</a></li>
                         </ul>
 
                         <!-- Search Form -->
@@ -61,5 +47,3 @@
             </nav>
         </div>
     </div>
-</header>
-<!-- ##### Header Area End ##### -->

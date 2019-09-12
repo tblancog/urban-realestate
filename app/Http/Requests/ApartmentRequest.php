@@ -24,7 +24,7 @@ class ApartmentRequest extends FormRequest
     public function rules()
     {
         return [
-          'title' => 'required|string|max:191|unique:buildings,'.$this->id,
+          'title' => 'required|string|max:191|unique:apartments,'.$this->id,
           'price' => 'numeric|between:0,10000000',
           'description' => 'required|string|max:2048',
           'status' => 'required',

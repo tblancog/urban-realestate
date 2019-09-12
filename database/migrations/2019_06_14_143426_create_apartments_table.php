@@ -15,8 +15,8 @@ class CreateApartmentsTable extends Migration
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 50);
-            $table->string('slug', 75);
+            $table->string('title', 50)->unique();
+            $table->string('slug', 75)->unique();
 
             $table->string('floor', 2)->nullable();
             $table->string('department', 2)->nullable();

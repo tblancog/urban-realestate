@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\House;
 use Illuminate\Http\Request;
+use App\Project;
 
-class HouseController extends Controller
+class ProjectController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -15,20 +14,20 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $items = House::latest()
+        $items = Project::latest()
             ->with('images')
             ->paginate(6);
-        return view('houses.index', compact('items'));
+        return view('developers.index', compact('items'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\House  $apartment
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(House $house)
+    public function show(Project $project)
     {
-      return view('houses.show', compact('house'));
+      return view('developers.show', compact('project'));
     }
 }

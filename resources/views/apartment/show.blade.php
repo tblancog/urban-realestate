@@ -1,20 +1,6 @@
 @extends('layouts.front')
 
-{{-- @push('styles')
-
-@endpush --}}
-
 @section('content')
-
-<!-- ##### Front Header Area Start ##### -->
-@include('partials.front-header')
-<!-- ##### Front Header Area End ##### -->
-
-<!-- Preloader -->
-<div id="preloader">
-    <div class="south-load"></div>
-</div>
-
 
 <div class="container-fluid">
 
@@ -217,6 +203,8 @@
               </div>
               <div style="clear:both"></div>
               <ul class="moreInfo">
+                <li>Piso: <span class="misc-value">{{ $apartment->floor }}</span></li>
+                <li>Departamento: <span class="misc-value">{{ $apartment->code }}</span></li>
                 <li>Ambientes: <span class="misc-value">{{ $apartment->rooms }}</span></li>
                 <li>Dormitorios: <span class="misc-value">{{ $apartment->dormitorios }}</span></li>
                 <li>Baños: <span class="misc-value">{{ $apartment->banios }}</span></li>
@@ -244,6 +232,7 @@
   </div> <!-- end row 4 -->
 
 
+  @if( $apartment->features->contains('type', 'additional'))
   <div class="row"> <!-- start row 5 -->
     <div class="col-md-6 col-sm-12 boxDetail">
               <div class="">
@@ -261,8 +250,9 @@
                 @endforeach
              </ul>
     </div><!-- end boxDetail -->
+    @endif
 
-
+    @if( $apartment->features->contains('type', 'rooms') )
     <div class="col-md-6 col-sm-12 boxDetail">
               <div class="">
                 <h2 class="titleMoreInfo left"><b>Ambientes</b></h2>
@@ -278,14 +268,11 @@
                 @endforeach
              </ul>
     </div><!-- end boxDetail -->
+    @endif
 
   </div> <!-- end row 5 -->
 
 </div> <!-- end container-fluid -->
-
-
-
-
 
 <!-- ##### Footer Area Start ##### -->
 @include('partials.front-footer')
@@ -297,6 +284,5 @@
     function goToSlide(number) {
         $("#myCarousel").carousel(number);
     }
-
 </script>
 @endpush

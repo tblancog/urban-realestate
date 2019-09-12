@@ -25,6 +25,16 @@
 
 
   <div id="app" class="{{ request()->segment(1) }}">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="south-load"></div>
+    </div>
+
+    {{-- Top Menu --}}
+    @include('partials.top-menu')
+
+    {{-- Content of all site --}}
     @yield('content')
   </div>
   <!-- ##### Call To Action Area End ##### -->

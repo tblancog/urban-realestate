@@ -54,4 +54,9 @@ export default {
             ]
         }
     },
+    methods: {
+        getDetailUrl(property, type) {
+            return type + '/' + property.slug
+        }
+    }
 }

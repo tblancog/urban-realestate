@@ -6,7 +6,7 @@
           <div class="ribbon">
           <span class="@status_class($apartment->status)">@status_show($apartment->status)</span>
           </div>
-              <img src="{{ count($apartment->images) > 0 ? $apartment->images->first()->path : '' }}" alt="">
+              <img src="{{ count($apartment->images) > 0 ? asset($apartment->images->first()->path) : '' }}" alt="">
             </div>
             <!-- Property Content -->
             <div class="property-content">

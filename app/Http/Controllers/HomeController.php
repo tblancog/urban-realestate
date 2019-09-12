@@ -44,7 +44,7 @@ class HomeController extends Controller
                               ->orderBy('location')
                               ->get(['location']);
 
-        return view('index', ['buildings'=> $buildings,
+        return view('real-estate.index', ['buildings'=> $buildings,
                               'apartments'=> $apartments,
                               'slides'=> $slides,
                               'locations'=> $locations,
@@ -54,13 +54,14 @@ class HomeController extends Controller
     public function staticPage(Request $request)
     {
 
-      $page = str_replace('/', '', $request->getRequestUri());
+      $page = explode('/', $request->getRequestUri());
+      $page = $page[ count($page) - 1 ];
       $config = Config::where('module', $page)
                       ->get()
                       ->pluck('value', 'key');
       if (in_array($page, ['appraisals', 'credits', 'contact']))
       {
-        return view('contact', compact('config'));
+        return view('real-estate.contact', compact('config'));
       }
       elseif (in_array($page, ['investments'])) {
 
@@ -68,11 +69,11 @@ class HomeController extends Controller
                             ->latest()
                             ->with('images')
                             ->paginate(5);
-        return view('investments',
+        return view('real-estate.investments',
                     compact('config'), compact('buildings')
         );
       }
-      return view($page);
+      return view("real-estate.$page");
     }
 
     public function dashboard(){
@@ -81,9 +82,8 @@ class HomeController extends Controller
 
     public function search(Request $request){
 
-      $apartments = Apartment::filterByRequest($request)->paginate();
-    //   dd($apartments);
-      return view('search', [
+      $apartments = Apartment::filterByRequest($request)->paginate(6);
+      return view('real-estate.search', [
         'apartments'=> $apartments,
         'input'=> $request
       ]);

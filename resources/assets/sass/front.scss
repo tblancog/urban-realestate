@@ -107,7 +107,6 @@
     margin: 0;
     padding: 0;
 }
-
 html,
 body {
     width: 100%;
@@ -502,6 +501,7 @@ img {
     text-align: center;
     width: 50px;
     line-height: 46px;
+
     @include trans-duration(500ms);
 
     &:hover {
@@ -837,7 +837,7 @@ img {
 }
 
 .header-area {
-    /*position: absolute;*/
+    position: absolute;
     z-index: 10000;
     width: 100%;
     height: 135px;
@@ -1319,7 +1319,7 @@ img {
      position: absolute;
      top: 0;
  */
-    margin-top: -135px;
+    // margin-top: -135px;
 
     .owl-prev,
     .owl-next {
@@ -4321,7 +4321,6 @@ img {
 
 .appraisals-page {
     margin: 0 auto;
-    margin-top: 20px;
 
     .appraisals-title {
         text-align: center;
@@ -4378,10 +4377,9 @@ img {
     line-height: initial;
 }
 
-.investments-page {
-    .appraisals-title {
-        margin-top: 20px;
-    }
+.investments-page,
+.appraisals-page {
+    padding-top: 8em;
 }
 
 /* 26.0 Modal Details Area CSS */
@@ -4392,6 +4390,7 @@ img {
 
 /* 27.0 Nosotros CSS */
 .nosotros-page {
+    padding-top: 6em;
     .section-heading {
         margin-bottom: 15px;
     }
@@ -4794,7 +4793,7 @@ textarea {
 
 
 .first-row {
-    margin-top: 30px;
+    padding-top: 8em;
 
     @media only screen and (max-width: 677px) and (min-width: 375px) {
         margin-top: 15px;
@@ -5185,7 +5184,7 @@ textarea {
     padding: 0px 25%;
     -webkit-columns: 2;
     columns: 2;
-    
+
 
     @media only screen and (max-width: 677px) and (min-width: 375px) {
         -webkit-column-count: 1;
@@ -5246,7 +5245,7 @@ textarea {
 
 .paginadoHome {
     clear: both;
-    margin-top: 35px;
+    margin: 0em 20px;
 }
 
 .paginadoHome .page-item .page-link {
@@ -5304,8 +5303,34 @@ textarea {
 
 .houses,
 .developers {
+
     background: $color-white;
+    &.houses ~ #scrollUp {
+        background: $bg-houses;
+    }
+    &.developers ~ #scrollUp {
+        background: $bg-developers;
+    }
 }
+.houses{
+    // Preloader
+    .south-load {
+        border-color: $bg-houses;
+        border-top-color: $bg-houses;
+        border-left-color: $bg-houses;
+        border-right-color: $body-bg;
+    }
+}
+.developers{
+    // Preloader
+    .south-load {
+        border-color: $bg-developers;
+        border-top-color: $bg-developers;
+        border-left-color: $bg-developers;
+        border-right-color: $body-bg;
+    }
+}
+
 
 .formHD {
     background: transparent;

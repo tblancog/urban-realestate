@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Casas</h3>
+            <h3 class="card-title">Noticias</h3>
             <div class="card-tools">
               <button class="btn btn-success" @click="newModal">
                 Crear Nuevo
@@ -13,8 +13,8 @@
             </div>
           </div>
           <!-- /.card-header -->
-          <div v-if="houses.data && houses.data.length">
-            <div class="media" v-for="house in houses.data" :key="house.id">
+          <div v-if="noticias.data && noticias.data.length">
+            <div class="media" v-for="noticia in noticias.data" :key="noticia.id">
               <div class="media-body">
                 <div class="container">
                   <div class="row">
@@ -23,51 +23,43 @@
                         data-toggle="modal"
                         data-target="#exampleModalLong"
                         href="#"
-                        @click="selected = house"
+                        @click="selected = noticia"
                       >
                         <img
-                          v-if="house.images.length"
-                          :src="house.images[0].path"
+                          v-if="noticia.images.length"
+                          :src="noticia.images[0].path"
                           class="img-fluid"
                         />
                       </a>
                     </div>
                     <div class="col-md-6">
                       <div class="info-card">
-                        <!-- <a
-                          data-toggle="modal"
-                          data-target="#exampleModalLong"
-                          href="#"
-                          @click="selected = house"
-                        >
-                          <h5 class="mt-0">{{ house.project_name }}</h5>
-                        </a> -->
-                        <a :href="getDetailUrl(house, 'houses')" target="_blank">
-                            <h5 class="mt-0">{{ house.project_name }}</h5>
+                        <a :href="getDetailUrl(noticias, 'noticias')" target="_blank">
+                            <h5 class="mt-0">{{ noticia.noticia_name }}</h5>
                         </a>
                         <i class="fa fa-map-marker-alt fa-fw"></i>
-                        {{ house.location }}
+                        {{ noticia.location }}
                         <i class="fa fa-calendar fa-fw"></i>
-                        {{ house.year }}
+                        {{ noticia.year }}
                         <a
                           href="#"
-                          @click="editModal(house)"
+                          @click="editModal(noticia)"
                         >
                           <i class="fa fa-edit blue"></i>
                         </a>
                         /
-                        <a href="#" @click="deleteItem(house.slug)">
+                        <a href="#" @click="deleteItem(noticia.slug)">
                           <i class="fa fa-trash red"></i>
                         </a>
                       </div>
                       <div class="details-card">
-                        <p>{{ house.description.substr(0,200)+'...' }}</p>
+                        <p>{{ noticia.description.substr(0,200)+'...' }}</p>
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="more-box">
                         <div class="cta-more">
-                          <!-- <router-link :to="{ name: 'houseDetail', params: {  id: house.id } }">
+                          <!-- <router-link :to="{ name: 'noticiaDetail', params: {  id: noticia.id } }">
                                                       <a class="btn-more" href="#">Ver más</a>
                           </router-link>-->
                         </div>
@@ -84,11 +76,11 @@
 
             <!-- /.card-body -->
             <div class="card-footer">
-              <pagination :data="houses" @pagination-change-page="getResults"></pagination>
+              <pagination :data="noticias" @pagination-change-page="getResults"></pagination>
             </div>
           </div>
           <div v-else>
-            <h5 class="m-5 text-center">No existen casas cargadas</h5>
+            <h5 class="m-5 text-center">No existen Noticias cargados</h5>
           </div>
         </div>
         <!-- /.card -->
@@ -107,8 +99,8 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nueva Casa</h5>
-            <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Casa</h5>
+            <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Proyecto</h5>
+            <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Proyecto</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -124,21 +116,21 @@
                 ></image-uploader>
               </div>
 
-              <!-- Project name -->
+              <!-- noticia name -->
               <div class="form-group col-lg-9">
                 <div class>
                   <input
-                    v-model="form.project_name"
+                    v-model="form.noticia_name"
                     type="text"
-                    name="project_name"
+                    name="noticia_name"
                     placeholder="Proyecto"
                     class="form-control"
-                    :class="{ 'is-invalid': form.errors.has('project_name') }"
+                    :class="{ 'is-invalid': form.errors.has('noticia_name') }"
                   />
-                  <has-error :form="form" field="project_name"></has-error>
+                  <has-error :form="form" field="noticia_name"></has-error>
                 </div>
               </div>
-              <!-- Project name -->
+              <!-- noticia name -->
               <div class="form-group col-lg-4">
                 <div class>
                   <input
@@ -231,10 +223,10 @@ export default {
       editmode: false,
       selected: {},
       files: [],
-      houses: [],
+      noticias: [],
       form: new Form({
         id: "",
-        project_name: "",
+        noticia_name: "",
         year: "",
         location: "",
 
@@ -246,8 +238,8 @@ export default {
   },
   methods: {
     getResults(page = 1) {
-      axios.get("api/houses?page=" + page).then(response => {
-        this.houses = response.data;
+      axios.get("api/noticias?page=" + page).then(response => {
+        this.noticias = response.data;
         let newImgArr = [];
         response.data.data.forEach((current, index) => {
           current.images.forEach((img, idx) => {
@@ -255,7 +247,7 @@ export default {
           });
         });
 
-        this.houses.images = newImgArr;
+        this.noticias.images = newImgArr;
       });
     },
     updateItem(selected) {
@@ -267,9 +259,9 @@ export default {
         });
       }
 
-      this.form.put("api/houses/" + selected.slug).then(res => {
+      this.form.put("api/noticias/" + selected.slug).then(res => {
         formData.append("id", res.data.id);
-        formData.append('type', 'house');
+        formData.append('type', 'noticia');
         //   formData.append('selected_slug',  selected.slug)
         axios
           .post("images-upload", formData)
@@ -321,9 +313,9 @@ export default {
         // Send request to the server
         if (result.value) {
           this.form
-            .delete("api/houses/" + slug)
+            .delete("api/noticias/" + slug)
             .then(() => {
-              swal("Borrada!", "Casa borrada.", "success");
+              swal("Borrada!", "Proyecto borrada.", "success");
               Fire.$emit("AfterCreate");
             })
             .catch(() => {
@@ -334,13 +326,13 @@ export default {
     },
     deleteImage(event) {
       const id = event.id;
-      this.form.delete("api/images/" + id + "/house/");
+      this.form.delete("api/images/" + id + "/noticia/");
     },
     async loadItems() {
       let vm = this;
-      axios.all([axios.get("api/houses")]).then(
+      axios.all([axios.get("api/noticias")]).then(
         axios.spread(function(res1) {
-          vm.houses = res1.data;
+          vm.noticias = res1.data;
           let newImgArr = [];
           res1.data.data.forEach((current, index) => {
             current.images.forEach((img, idx) => {
@@ -348,7 +340,7 @@ export default {
             });
           });
 
-          vm.houses.images = newImgArr;
+          vm.noticias.images = newImgArr;
         })
       );
     },
@@ -362,13 +354,13 @@ export default {
         });
       }
 
-      const houseCreate = this.form.post("api/houses");
-      houseCreate.then(res => {
+      const noticiaCreate = this.form.post("api/noticias");
+      noticiaCreate.then(res => {
         formData.append("id", res.data.id);
-        formData.append("type", "house");
+        formData.append("type", "noticia");
         axios.post("images-upload", formData).then(() => {
           Fire.$emit("AfterCreate");
-          swal("Creado!", "Casa creada.", "success");
+          swal("Creado!", "Proyecto creada.", "success");
           this.form.reset();
           this.files = [];
           $("#addNew").modal("hide");
