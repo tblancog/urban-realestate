@@ -232,6 +232,7 @@
   </div> <!-- end row 4 -->
 
 
+  @if( $apartment->features->contains('type', 'additional'))
   <div class="row"> <!-- start row 5 -->
     <div class="col-md-6 col-sm-12 boxDetail">
               <div class="">
@@ -249,8 +250,9 @@
                 @endforeach
              </ul>
     </div><!-- end boxDetail -->
+    @endif
 
-
+    @if( $apartment->features->contains('type', 'rooms') )
     <div class="col-md-6 col-sm-12 boxDetail">
               <div class="">
                 <h2 class="titleMoreInfo left"><b>Ambientes</b></h2>
@@ -266,6 +268,7 @@
                 @endforeach
              </ul>
     </div><!-- end boxDetail -->
+    @endif
 
   </div> <!-- end row 5 -->
 
