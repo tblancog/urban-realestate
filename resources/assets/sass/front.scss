@@ -5140,8 +5140,8 @@ textarea {
 
 .txtOtherSection b {
     font-family: "AvantGarde", sans-serif;
-    font-weight: bold;
-    font-size: 2.0em;
+    font-weight: normal;
+    font-size: 1.6rem;
     letter-spacing: 1px;
 }
 
@@ -5151,13 +5151,13 @@ textarea {
 
 .txtOtherSection {
     font-family: "AvantGarde", sans-serif;
-    font-size: 1.2em;
+    font-size: 1.0em;
     text-align: justify;
     color: #000000;
     margin: 0;
     line-height: inherit;
+    font-weight: normal;
 }
-
 .titleOhterSection {
     margin: 5% 0 2%;
 }
@@ -5178,7 +5178,7 @@ textarea {
 }
 
 .ulOtherSection {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
 }
 
 .ulOtherSection {
@@ -5290,7 +5290,7 @@ textarea {
 
 .contentDetailHd .detailsHD h3 {
     font-family: "AvantGarde", sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.0rem;
     font-weight: normal;
 }
 
