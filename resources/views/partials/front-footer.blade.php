@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="text-center">
-                            <a href="{{ route('home.index') }}">
+                            <a href="https://goo.gl/maps/SqDyQdypVFvKcHkp9" target="_blank">
                                 <img class="footer-icons" src="{{ asset('./img/core-img/icFooter1.png') }}"
                                     alt="Real state">&nbsp;Cullen 4836 - CABA
                             </a>
@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="text-center">
-                            <a href="{{ route('developers.index') }}">
+                            <a href="https://wa.me/5491153294260" target="_blank">
                                 <img class="footer-icons" src="{{ asset('./img/core-img/icFooter2.png') }}"
                                     alt="Developers">
                                     &nbsp;+5411-5329-4260
@@ -22,9 +22,9 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="text-center">
-                            <a href="{{ route('houses.index') }}">
+                            <a href="{{ route('contact.index') }}">
                                 <img class="footer-icons" src="{{ asset('./img/core-img/icFooter3.png') }}"
-                                    alt="Houses">&nbsp;mep.urban@gmail.com
+                                    >&nbsp;mep.urban@gmail.com
                             </a>
                             @if( in_array(request()->segment(1), ['developers', 'houses']) )
                             <a href="https://www.facebook.com/urbanrealestate.ar/" target="_blank"><img width="50px;" src="{{ asset('/img/icons/icFacebook.png') }}" alt="Facebook"></a>
