@@ -5303,12 +5303,31 @@ textarea {
 
 .houses,
 .developers {
+
     background: $color-white;
     &.houses ~ #scrollUp {
         background: $bg-houses;
     }
     &.developers ~ #scrollUp {
         background: $bg-developers;
+    }
+}
+.houses{
+    // Preloader
+    .south-load {
+        border-color: $bg-houses;
+        border-top-color: $bg-houses;
+        border-left-color: $bg-houses;
+        border-right-color: $body-bg;
+    }
+}
+.developers{
+    // Preloader
+    .south-load {
+        border-color: $bg-developers;
+        border-top-color: $bg-developers;
+        border-left-color: $bg-developers;
+        border-right-color: $body-bg;
     }
 }
 
