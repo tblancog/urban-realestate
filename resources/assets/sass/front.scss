@@ -501,6 +501,7 @@ img {
     text-align: center;
     width: 50px;
     line-height: 46px;
+
     @include trans-duration(500ms);
 
     &:hover {
@@ -5303,7 +5304,14 @@ textarea {
 .houses,
 .developers {
     background: $color-white;
+    &.houses ~ #scrollUp {
+        background: $bg-houses;
+    }
+    &.developers ~ #scrollUp {
+        background: $bg-developers;
+    }
 }
+
 
 .formHD {
     background: transparent;
