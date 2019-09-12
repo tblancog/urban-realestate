@@ -72,7 +72,7 @@
                 <li style="border-bottom: 1px solid #4f5962; margin: 10px 0 15px;"></li>
 
                 <li><h3 style="font-family: 'AvantGarde', sans-serif; color: #C2C7D0;font-size: 1.1rem; text-transform: uppercase;padding: 0 0 8px 0; margin: 0px 0 10px 0; padding: 0;" class="">Real Estate</h3></li>
-                
+
                 <li class="nav-item">
                     <router-link to="/sliderAdmin" class="nav-link">
                         <i class="nav-icon fa fa-images green"></i>
@@ -129,12 +129,20 @@
                         </p>
                     </router-link>
                 </li>
+                <li class="nav-item">
+                    <router-link to="/newsAdmin" class="nav-link">
+                        <i class="nav-icon fa fa-newspaper green"></i>
+                        <p>
+                            News
+                        </p>
+                    </router-link>
+                </li>
 
                 <li style="border-bottom: 1px solid #4f5962; margin: 10px 0 15px;"></li>
 
                 <li><h3 style="font-family: 'AvantGarde', sans-serif; color: #C2C7D0;font-size: 1.1rem; text-transform: uppercase;padding: 0 0 8px 0; margin: 0px 0 10px 0; padding: 0;" class="">Developers</h3></li>
-                
-                <li class="nav-item">                    
+
+                <li class="nav-item">
                     <router-link to="/projectsAdmin" class="nav-link">
                         <i class="nav-icon fa fa-home green"></i>
                         <p>Proyectos</p>
@@ -144,7 +152,7 @@
                 <li style="border-bottom: 1px solid #4f5962; margin: 10px 0 15px;"></li>
 
                 <li><h3 style="font-family: 'AvantGarde', sans-serif; color: #C2C7D0;font-size: 1.1rem; text-transform: uppercase;padding: 0 0 8px 0; margin: 0px 0 10px 0; padding: 0;" class="">Houses</h3></li>
-                
+
                 <li class="nav-item">
                     <router-link to="/housesAdmin" class="nav-link">
                         <i class="nav-icon fa fa-home green"></i>
