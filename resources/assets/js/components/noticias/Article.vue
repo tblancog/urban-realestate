@@ -13,8 +13,8 @@
             </div>
           </div>
           <!-- /.card-header -->
-          <div v-if="noticias.data && noticias.data.length">
-            <div class="media" v-for="noticia in noticias.data" :key="noticia.id">
+          <div v-if="articles.data && articles.data.length">
+            <div class="media" v-for="article in articles.data" :key="article.id">
               <div class="media-body">
                 <div class="container">
                   <div class="row">
@@ -23,43 +23,43 @@
                         data-toggle="modal"
                         data-target="#exampleModalLong"
                         href="#"
-                        @click="selected = noticia"
+                        @click="selected = article"
                       >
                         <img
-                          v-if="noticia.images.length"
-                          :src="noticia.images[0].path"
+                          v-if="article.images.length"
+                          :src="article.images[0].path"
                           class="img-fluid"
                         />
                       </a>
                     </div>
                     <div class="col-md-6">
                       <div class="info-card">
-                        <a :href="getDetailUrl(noticias, 'noticias')" target="_blank">
-                            <h5 class="mt-0">{{ noticia.noticia_name }}</h5>
+                        <a :href="getDetailUrl(articles, 'articles')" target="_blank">
+                            <h5 class="mt-0">{{ article.article_name }}</h5>
                         </a>
                         <i class="fa fa-map-marker-alt fa-fw"></i>
-                        {{ noticia.location }}
+                        {{ article.location }}
                         <i class="fa fa-calendar fa-fw"></i>
-                        {{ noticia.year }}
+                        {{ article.year }}
                         <a
                           href="#"
-                          @click="editModal(noticia)"
+                          @click="editModal(article)"
                         >
                           <i class="fa fa-edit blue"></i>
                         </a>
                         /
-                        <a href="#" @click="deleteItem(noticia.slug)">
+                        <a href="#" @click="deleteItem(article.slug)">
                           <i class="fa fa-trash red"></i>
                         </a>
                       </div>
                       <div class="details-card">
-                        <p>{{ noticia.description.substr(0,200)+'...' }}</p>
+                        <p>{{ article.description.substr(0,200)+'...' }}</p>
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="more-box">
                         <div class="cta-more">
-                          <!-- <router-link :to="{ name: 'noticiaDetail', params: {  id: noticia.id } }">
+                          <!-- <router-link :to="{ name: 'articleDetail', params: {  id: article.id } }">
                                                       <a class="btn-more" href="#">Ver más</a>
                           </router-link>-->
                         </div>
@@ -76,7 +76,7 @@
 
             <!-- /.card-body -->
             <div class="card-footer">
-              <pagination :data="noticias" @pagination-change-page="getResults"></pagination>
+              <pagination :data="articles" @pagination-change-page="getResults"></pagination>
             </div>
           </div>
           <div v-else>
@@ -99,8 +99,8 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Proyecto</h5>
-            <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Proyecto</h5>
+            <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Artículo</h5>
+            <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Artículo</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -116,21 +116,21 @@
                 ></image-uploader>
               </div>
 
-              <!-- noticia name -->
+              <!-- article name -->
               <div class="form-group col-lg-9">
                 <div class>
                   <input
-                    v-model="form.noticia_name"
+                    v-model="form.article_name"
                     type="text"
-                    name="noticia_name"
-                    placeholder="Proyecto"
+                    name="article_name"
+                    placeholder="Artículo"
                     class="form-control"
-                    :class="{ 'is-invalid': form.errors.has('noticia_name') }"
+                    :class="{ 'is-invalid': form.errors.has('article_name') }"
                   />
-                  <has-error :form="form" field="noticia_name"></has-error>
+                  <has-error :form="form" field="article_name"></has-error>
                 </div>
               </div>
-              <!-- noticia name -->
+              <!-- article name -->
               <div class="form-group col-lg-4">
                 <div class>
                   <input
@@ -223,10 +223,10 @@ export default {
       editmode: false,
       selected: {},
       files: [],
-      noticias: [],
+      articles: [],
       form: new Form({
         id: "",
-        noticia_name: "",
+        article_name: "",
         year: "",
         location: "",
 
@@ -238,8 +238,8 @@ export default {
   },
   methods: {
     getResults(page = 1) {
-      axios.get("api/noticias?page=" + page).then(response => {
-        this.noticias = response.data;
+      axios.get("api/articles?page=" + page).then(response => {
+        this.articles = response.data;
         let newImgArr = [];
         response.data.data.forEach((current, index) => {
           current.images.forEach((img, idx) => {
@@ -247,7 +247,7 @@ export default {
           });
         });
 
-        this.noticias.images = newImgArr;
+        this.articles.images = newImgArr;
       });
     },
     updateItem(selected) {
@@ -259,9 +259,9 @@ export default {
         });
       }
 
-      this.form.put("api/noticias/" + selected.slug).then(res => {
+      this.form.put("api/articles/" + selected.slug).then(res => {
         formData.append("id", res.data.id);
-        formData.append('type', 'noticia');
+        formData.append('type', 'article');
         //   formData.append('selected_slug',  selected.slug)
         axios
           .post("images-upload", formData)
@@ -313,9 +313,9 @@ export default {
         // Send request to the server
         if (result.value) {
           this.form
-            .delete("api/noticias/" + slug)
+            .delete("api/articles/" + slug)
             .then(() => {
-              swal("Borrada!", "Proyecto borrada.", "success");
+              swal("Borrada!", "Artículo borrada.", "success");
               Fire.$emit("AfterCreate");
             })
             .catch(() => {
@@ -326,13 +326,13 @@ export default {
     },
     deleteImage(event) {
       const id = event.id;
-      this.form.delete("api/images/" + id + "/noticia/");
+      this.form.delete("api/images/" + id + "/article/");
     },
     async loadItems() {
       let vm = this;
-      axios.all([axios.get("api/noticias")]).then(
+      axios.all([axios.get("api/articles")]).then(
         axios.spread(function(res1) {
-          vm.noticias = res1.data;
+          vm.articles = res1.data;
           let newImgArr = [];
           res1.data.data.forEach((current, index) => {
             current.images.forEach((img, idx) => {
@@ -340,7 +340,7 @@ export default {
             });
           });
 
-          vm.noticias.images = newImgArr;
+          vm.articles.images = newImgArr;
         })
       );
     },
@@ -354,13 +354,13 @@ export default {
         });
       }
 
-      const noticiaCreate = this.form.post("api/noticias");
-      noticiaCreate.then(res => {
+      const articleCreate = this.form.post("api/articles");
+      articleCreate.then(res => {
         formData.append("id", res.data.id);
-        formData.append("type", "noticia");
+        formData.append("type", "article");
         axios.post("images-upload", formData).then(() => {
           Fire.$emit("AfterCreate");
-          swal("Creado!", "Proyecto creada.", "success");
+          swal("Creado!", "Artículo creada.", "success");
           this.form.reset();
           this.files = [];
           $("#addNew").modal("hide");

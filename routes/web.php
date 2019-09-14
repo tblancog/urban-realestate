@@ -51,6 +51,11 @@ Route::group(['prefix' => 'houses'], function () {
     Route::get('/{house}', 'HouseController@show')->name('houses.show');
 });
 
+Route::group(['prefix' => 'articles'], function () {
+    Route::get('/', 'ArticleController@index')->name('articles.index');
+    Route::get('/{articles}', 'ArticleController@show')->name('articles.show');
+});
+
 // excel read
 route::post('import', 'ApartmentController@import');
 

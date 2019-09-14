@@ -44,8 +44,14 @@ Route::resource('projects', 'API\ProjectController')
         ->only('index', 'store', 'update', 'destroy')
         ->names(['index'=> '']);
 
+// News
+Route::resource('articles', 'API\ArticleController')
+        ->only('index', 'store', 'update', 'destroy')
+        ->names(['index'=> '']);
+
 // Config
-Route::resource('config', 'API\ConfigController')->only('index','update');
+Route::resource('config', 'API\ConfigController')
+        ->only('index','update');
 
 
 

@@ -362,437 +362,458 @@ class ApartmentImagesTableAutoSeeder extends Seeder
             ),
             49 => 
             array (
-                'id' => '95',
-                'filename' => 'apartment_5d5c2cf01a120.png',
-                'order' => '0',
-                'apartment_id' => '14',
-            ),
-            50 => 
-            array (
-                'id' => '96',
-                'filename' => 'apartment_5d5c32a077cc0.png',
-                'order' => '0',
-                'apartment_id' => '14',
-            ),
-            51 => 
-            array (
-                'id' => '97',
-                'filename' => 'apartment_5d5c32a1c2925.png',
-                'order' => '1',
-                'apartment_id' => '14',
-            ),
-            52 => 
-            array (
-                'id' => '98',
-                'filename' => 'apartment_5d5c32a302144.png',
-                'order' => '2',
-                'apartment_id' => '14',
-            ),
-            53 => 
-            array (
-                'id' => '99',
-                'filename' => 'apartment_5d5c32a48f9e4.png',
-                'order' => '3',
-                'apartment_id' => '14',
-            ),
-            54 => 
-            array (
                 'id' => '115',
                 'filename' => 'apartment_5d5c344bd3826.jpg',
                 'order' => '0',
                 'apartment_id' => '18',
             ),
-            55 => 
+            50 => 
             array (
                 'id' => '117',
                 'filename' => 'apartment_5d5c344d98237.jpg',
                 'order' => '2',
                 'apartment_id' => '18',
             ),
-            56 => 
+            51 => 
             array (
                 'id' => '118',
                 'filename' => 'apartment_5d5c344df3787.jpg',
                 'order' => '3',
                 'apartment_id' => '18',
             ),
-            57 => 
+            52 => 
             array (
                 'id' => '120',
                 'filename' => 'apartment_5d5c3633ebab7.jpg',
                 'order' => '0',
                 'apartment_id' => '18',
             ),
-            58 => 
+            53 => 
             array (
                 'id' => '137',
                 'filename' => 'apartment_5d5c3aad5623d.jpg',
                 'order' => '0',
                 'apartment_id' => '17',
             ),
-            59 => 
+            54 => 
             array (
                 'id' => '138',
                 'filename' => 'apartment_5d5c3aadc91b8.jpg',
                 'order' => '1',
                 'apartment_id' => '17',
             ),
-            60 => 
+            55 => 
             array (
                 'id' => '139',
                 'filename' => 'apartment_5d5c3aae3cd0b.jpg',
                 'order' => '2',
                 'apartment_id' => '17',
             ),
-            61 => 
+            56 => 
             array (
                 'id' => '140',
                 'filename' => 'apartment_5d5c3aae9b9cc.jpg',
                 'order' => '3',
                 'apartment_id' => '17',
             ),
-            62 => 
+            57 => 
             array (
                 'id' => '164',
                 'filename' => 'apartment_5d6d53328794b.jpg',
                 'order' => '0',
                 'apartment_id' => '35',
             ),
-            63 => 
+            58 => 
             array (
                 'id' => '165',
                 'filename' => 'apartment_5d6d5332b9f26.jpg',
                 'order' => '2',
                 'apartment_id' => '35',
             ),
-            64 => 
+            59 => 
             array (
                 'id' => '166',
                 'filename' => 'apartment_5d6d5332cb973.jpg',
                 'order' => '3',
                 'apartment_id' => '35',
             ),
-            65 => 
+            60 => 
             array (
                 'id' => '167',
                 'filename' => 'apartment_5d6d5332d8011.jpg',
                 'order' => '0',
                 'apartment_id' => '35',
             ),
-            66 => 
+            61 => 
             array (
                 'id' => '168',
                 'filename' => 'apartment_5d6d53b50e91b.jpg',
                 'order' => '0',
                 'apartment_id' => '36',
             ),
-            67 => 
+            62 => 
             array (
                 'id' => '169',
                 'filename' => 'apartment_5d6d53b549e07.jpg',
                 'order' => '2',
                 'apartment_id' => '36',
             ),
-            68 => 
+            63 => 
             array (
                 'id' => '170',
                 'filename' => 'apartment_5d6d53b552620.jpg',
                 'order' => '3',
                 'apartment_id' => '36',
             ),
-            69 => 
+            64 => 
             array (
                 'id' => '171',
                 'filename' => 'apartment_5d6d53b559d3f.jpg',
                 'order' => '0',
                 'apartment_id' => '36',
             ),
-            70 => 
+            65 => 
             array (
                 'id' => '172',
                 'filename' => 'apartment_5d6d54256a552.jpg',
                 'order' => '0',
                 'apartment_id' => '37',
             ),
-            71 => 
+            66 => 
             array (
                 'id' => '174',
                 'filename' => 'apartment_5d6d5425d0c83.jpg',
                 'order' => '3',
                 'apartment_id' => '37',
             ),
-            72 => 
+            67 => 
             array (
                 'id' => '175',
                 'filename' => 'apartment_5d6d5425e7cf3.jpg',
                 'order' => '0',
                 'apartment_id' => '37',
             ),
-            73 => 
+            68 => 
             array (
                 'id' => '176',
                 'filename' => 'apartment_5d6d54dab901c.jpeg',
                 'order' => '0',
                 'apartment_id' => '37',
             ),
-            74 => 
+            69 => 
             array (
                 'id' => '177',
                 'filename' => 'apartment_5d6d54dba9c03.jpeg',
                 'order' => '1',
                 'apartment_id' => '37',
             ),
-            75 => 
+            70 => 
             array (
                 'id' => '178',
                 'filename' => 'apartment_5d6d554b1f0e4.jpeg',
                 'order' => '0',
                 'apartment_id' => '17',
             ),
-            76 => 
+            71 => 
             array (
                 'id' => '181',
                 'filename' => 'apartment_5d6d555b3a3ed.jpg',
                 'order' => '2',
                 'apartment_id' => '38',
             ),
-            77 => 
+            72 => 
             array (
                 'id' => '184',
                 'filename' => 'apartment_5d6d55e9a7494.jpeg',
                 'order' => '0',
                 'apartment_id' => '38',
             ),
-            78 => 
+            73 => 
             array (
                 'id' => '185',
                 'filename' => 'apartment_5d6d55ea0331a.jpeg',
                 'order' => '1',
                 'apartment_id' => '38',
             ),
-            79 => 
+            74 => 
             array (
                 'id' => '186',
                 'filename' => 'apartment_5d6d55ea4696f.jpeg',
                 'order' => '2',
                 'apartment_id' => '38',
             ),
-            80 => 
+            75 => 
             array (
                 'id' => '187',
                 'filename' => 'apartment_5d6d55ea7f86d.jpeg',
                 'order' => '3',
                 'apartment_id' => '38',
             ),
-            81 => 
+            76 => 
             array (
                 'id' => '189',
                 'filename' => 'apartment_5d6d55f6137b9.jpeg',
                 'order' => '0',
                 'apartment_id' => '39',
             ),
-            82 => 
+            77 => 
             array (
                 'id' => '190',
                 'filename' => 'apartment_5d6d55f61b131.jpeg',
                 'order' => '1',
                 'apartment_id' => '39',
             ),
-            83 => 
+            78 => 
             array (
                 'id' => '191',
                 'filename' => 'apartment_5d6d55f623628.jpeg',
                 'order' => '2',
                 'apartment_id' => '39',
             ),
-            84 => 
+            79 => 
             array (
                 'id' => '192',
                 'filename' => 'apartment_5d6d55f62ace9.jpeg',
                 'order' => '3',
                 'apartment_id' => '39',
             ),
-            85 => 
+            80 => 
             array (
                 'id' => '193',
                 'filename' => 'apartment_5d6d56422e397.jpeg',
                 'order' => '0',
                 'apartment_id' => '39',
             ),
-            86 => 
+            81 => 
             array (
                 'id' => '194',
                 'filename' => 'apartment_5d6d57b348954.jpeg',
                 'order' => '0',
                 'apartment_id' => '40',
             ),
-            87 => 
+            82 => 
             array (
                 'id' => '195',
                 'filename' => 'apartment_5d6d57b351aed.jpeg',
                 'order' => '1',
                 'apartment_id' => '40',
             ),
-            88 => 
+            83 => 
             array (
                 'id' => '196',
                 'filename' => 'apartment_5d6d57b35df88.jpeg',
                 'order' => '2',
                 'apartment_id' => '40',
             ),
-            89 => 
+            84 => 
             array (
                 'id' => '197',
                 'filename' => 'apartment_5d6d57b36a276.jpeg',
                 'order' => '3',
                 'apartment_id' => '40',
             ),
-            90 => 
+            85 => 
             array (
                 'id' => '198',
                 'filename' => 'apartment_5d6d57b3765a6.jpeg',
                 'order' => '0',
                 'apartment_id' => '40',
             ),
-            91 => 
+            86 => 
             array (
                 'id' => '199',
                 'filename' => 'apartment_5d6d5801954b9.jpg',
                 'order' => '2',
                 'apartment_id' => '41',
             ),
-            92 => 
+            87 => 
             array (
                 'id' => '200',
                 'filename' => 'apartment_5d6d5801d5c25.jpeg',
                 'order' => '0',
                 'apartment_id' => '41',
             ),
-            93 => 
+            88 => 
             array (
                 'id' => '201',
                 'filename' => 'apartment_5d6d5801e88e0.jpeg',
                 'order' => '1',
                 'apartment_id' => '41',
             ),
-            94 => 
+            89 => 
             array (
                 'id' => '202',
                 'filename' => 'apartment_5d6d580203e37.jpeg',
                 'order' => '2',
                 'apartment_id' => '41',
             ),
-            95 => 
+            90 => 
             array (
                 'id' => '203',
                 'filename' => 'apartment_5d6d580211e67.jpeg',
                 'order' => '3',
                 'apartment_id' => '41',
             ),
-            96 => 
+            91 => 
             array (
                 'id' => '204',
                 'filename' => 'apartment_5d6d5839b1acb.jpg',
                 'order' => '0',
                 'apartment_id' => '42',
             ),
-            97 => 
+            92 => 
             array (
                 'id' => '205',
                 'filename' => 'apartment_5d6d583a00b1f.jpg',
                 'order' => '1',
                 'apartment_id' => '42',
             ),
-            98 => 
+            93 => 
             array (
                 'id' => '206',
                 'filename' => 'apartment_5d6d583a10ca9.jpg',
                 'order' => '2',
                 'apartment_id' => '42',
             ),
-            99 => 
+            94 => 
             array (
                 'id' => '208',
                 'filename' => 'apartment_5d6d583a445ed.jpeg',
                 'order' => '0',
                 'apartment_id' => '42',
             ),
-            100 => 
+            95 => 
             array (
                 'id' => '209',
                 'filename' => 'apartment_5d6e7bb2809e8.jpg',
                 'order' => '0',
                 'apartment_id' => '43',
             ),
-            101 => 
+            96 => 
             array (
                 'id' => '210',
                 'filename' => 'apartment_5d6e7bb2d73e9.jpg',
                 'order' => '1',
                 'apartment_id' => '43',
             ),
-            102 => 
+            97 => 
             array (
                 'id' => '213',
                 'filename' => 'apartment_5d6e7c7923812.jpeg',
                 'order' => '0',
                 'apartment_id' => '43',
             ),
-            103 => 
+            98 => 
             array (
                 'id' => '214',
                 'filename' => 'apartment_5d6e7c79f15b9.jpeg',
                 'order' => '1',
                 'apartment_id' => '43',
             ),
-            104 => 
+            99 => 
             array (
                 'id' => '215',
                 'filename' => 'apartment_5d6e7c7a5e7bd.jpeg',
                 'order' => '2',
                 'apartment_id' => '43',
             ),
-            105 => 
+            100 => 
             array (
                 'id' => '216',
                 'filename' => 'apartment_5d6f20c99f8a2.jpg',
                 'order' => '0',
                 'apartment_id' => '44',
             ),
-            106 => 
+            101 => 
             array (
                 'id' => '217',
                 'filename' => 'apartment_5d6f20ca09458.jpg',
                 'order' => '2',
                 'apartment_id' => '44',
             ),
-            107 => 
+            102 => 
             array (
                 'id' => '218',
                 'filename' => 'apartment_5d6f20ca146c8.jpg',
                 'order' => '3',
                 'apartment_id' => '44',
             ),
-            108 => 
+            103 => 
             array (
                 'id' => '219',
                 'filename' => 'apartment_5d6f20ca28e67.jpg',
                 'order' => '0',
                 'apartment_id' => '44',
             ),
-            109 => 
+            104 => 
             array (
                 'id' => '222',
                 'filename' => 'apartment_5d6f21fab8049.jpg',
                 'order' => '3',
                 'apartment_id' => '45',
             ),
-            110 => 
+            105 => 
             array (
                 'id' => '223',
                 'filename' => 'apartment_5d6f21fac8ee7.jpg',
                 'order' => '0',
                 'apartment_id' => '45',
+            ),
+            106 => 
+            array (
+                'id' => '224',
+                'filename' => 'apartment_5d7978c84d369.jpeg',
+                'order' => '0',
+                'apartment_id' => '14',
+            ),
+            107 => 
+            array (
+                'id' => '225',
+                'filename' => 'apartment_5d7978c93ab49.jpeg',
+                'order' => '1',
+                'apartment_id' => '14',
+            ),
+            108 => 
+            array (
+                'id' => '226',
+                'filename' => 'apartment_5d7978c96905f.jpeg',
+                'order' => '2',
+                'apartment_id' => '14',
+            ),
+            109 => 
+            array (
+                'id' => '227',
+                'filename' => 'apartment_5d7978c98bef4.jpeg',
+                'order' => '3',
+                'apartment_id' => '14',
+            ),
+            110 => 
+            array (
+                'id' => '228',
+                'filename' => 'apartment_5d7979892e9b4.jpeg',
+                'order' => '0',
+                'apartment_id' => '13',
+            ),
+            111 => 
+            array (
+                'id' => '229',
+                'filename' => 'apartment_5d7979896060b.jpeg',
+                'order' => '1',
+                'apartment_id' => '13',
+            ),
+            112 => 
+            array (
+                'id' => '230',
+                'filename' => 'apartment_5d7979897dfea.jpeg',
+                'order' => '2',
+                'apartment_id' => '13',
+            ),
+            113 => 
+            array (
+                'id' => '231',
+                'filename' => 'apartment_5d797989af54f.jpeg',
+                'order' => '3',
+                'apartment_id' => '13',
             ),
         ));
         

@@ -10,6 +10,8 @@ return [
 
   'projects_upload_path' => 'uploads/projects/',
 
+  'articles_upload_path' => 'uploads/articles/',
+
   'properties_width'=> 800,
 
   'properties_height'=> 800,

@@ -47,7 +47,7 @@ export default [{
     },
     {
         path: '/newsAdmin',
-        component: require('./components/noticias/Noticia.vue')
+        component: require('./components/noticias/Article.vue')
     },
     //   Developers
     {
