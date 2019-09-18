@@ -27,6 +27,7 @@ Route::delete('images/{id}/apartment', 'ImageController@destroyApartmentImage');
 Route::delete('images/{id}/building', 'ImageController@destroyBuildingImage');
 Route::delete('images/{id}/house', 'ImageController@destroyHouseImage');
 Route::delete('images/{id}/project', 'ImageController@destroyProjectImage');
+Route::delete('images/{id}/article', 'ImageController@destroyArticleImage');
 
 
 Route::post('apartments/{id}/clone', 'API\ApartmentController@clone');

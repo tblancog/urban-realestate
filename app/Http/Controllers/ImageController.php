@@ -7,6 +7,7 @@ use App\ApartmentImage;
 use App\BuildingImage;
 use App\HouseImage;
 use App\ProjectImage;
+use App\ArticleImage;
 
 class ImageController extends Controller
 {
@@ -20,8 +21,11 @@ class ImageController extends Controller
     if ($request->images && count($request->images) > 0) {
 
       // Create new directory
-      $image_path = $property->img_path;
-      \Storage::makeDirectory($image_path);
+    $image_path = $property->img_path;
+    if(!\File::exists($image_path)) {
+        // path does not exist
+        \Storage::makeDirectory($image_path);
+    }
 
       collect($request->images)->each(function($img, $index) use ($property, $request, $image_path, $propertyImg, $foreign) {
 
@@ -74,6 +78,16 @@ class ImageController extends Controller
 
   public function destroyProjectImage($id) {
     $img = ProjectImage::findOrFail($id);
+    $result = false;
+    if($img) {
+      $result = \Storage::delete($img->path) && $img->delete();
+      return response()->json(['msg'=> 'Delete', compact('result')], 202);
+    }
+    return response()->json(['msg'=> 'Delete failed', compact('result')], 500);
+  }
+
+  public function destroyArticleImage($id) {
+    $img = ArticleImage::findOrFail($id);
     $result = false;
     if($img) {
       $result = \Storage::delete($img->path) && $img->delete();

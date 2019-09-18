@@ -7,7 +7,7 @@
             <h3 class="card-title">Noticias</h3>
             <div class="card-tools">
               <button class="btn btn-success" @click="newModal">
-                Crear Nuevo
+                Crear Nueva
                 <i class="fas fa-plus fa-fw"></i>
               </button>
             </div>
@@ -27,7 +27,7 @@
                       >
                         <img
                           v-if="article.images.length"
-                          :src="article.images[0].path"
+                          :src="imageZero(article)"
                           class="img-fluid"
                         />
                       </a>
@@ -80,7 +80,7 @@
             </div>
           </div>
           <div v-else>
-            <h5 class="m-5 text-center">No existen Noticias cargados</h5>
+            <h5 class="m-5 text-center">No existen proyectos cargados</h5>
           </div>
         </div>
         <!-- /.card -->
@@ -99,14 +99,15 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Artículo</h5>
-            <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Artículo</h5>
+            <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Proyecto</h5>
+            <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Proyecto</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <form @submit.prevent="editmode ? updateItem(selected) : createItem()">
             <div class="modal-body">
+
               <!-- Image uploader -->
               <div class="form-group col-lg-12 d-none d-lg-block">
                 <image-uploader
@@ -116,62 +117,18 @@
                 ></image-uploader>
               </div>
 
-              <!-- article name -->
+                 <!-- article name -->
               <div class="form-group col-lg-9">
                 <div class>
                   <input
-                    v-model="form.article_name"
+                    v-model="form.title"
                     type="text"
-                    name="article_name"
+                    name="title"
                     placeholder="Artículo"
                     class="form-control"
-                    :class="{ 'is-invalid': form.errors.has('article_name') }"
+                    :class="{ 'is-invalid': form.errors.has('title') }"
                   />
-                  <has-error :form="form" field="article_name"></has-error>
-                </div>
-              </div>
-              <!-- article name -->
-              <div class="form-group col-lg-4">
-                <div class>
-                  <input
-                    v-model="form.year"
-                    type="text"
-                    name="year"
-                    placeholder="Año"
-                    class="form-control"
-                    :class="{ 'is-invalid': form.errors.has('year') }"
-                  />
-                  <has-error :form="form" field="year"></has-error>
-                </div>
-              </div>
-
-              <!-- Location -->
-              <div class="form-group col-lg-9">
-                <div class>
-                  <input
-                    v-model="form.location"
-                    type="text"
-                    name="location"
-                    placeholder="Ubicación"
-                    class="form-control"
-                    :class="{ 'is-invalid': form.errors.has('location') }"
-                  />
-                  <has-error :form="form" field="location"></has-error>
-                </div>
-              </div>
-
-              <!-- services -->
-              <div class="form-group col-lg-9">
-                <div class>
-                  <input
-                    v-model="form.services"
-                    type="text"
-                    name="services"
-                    placeholder="Services"
-                    class="form-control"
-                    :class="{ 'is-invalid': form.errors.has('services') }"
-                  />
-                  <has-error :form="form" field="services"></has-error>
+                  <has-error :form="form" field="title"></has-error>
                 </div>
               </div>
 
@@ -226,19 +183,22 @@ export default {
       articles: [],
       form: new Form({
         id: "",
-        article_name: "",
-        year: "",
-        location: "",
-
-        services: "",
         description: "",
         images: []
       })
     };
   },
+  watch: {
+    '$route' (to, from) {
+      this.loadItems(to.params.section)
+    }
+  },
   methods: {
+    imageZero(a) {
+        return '/'+a.images[0].path
+    },
     getResults(page = 1) {
-      axios.get("api/articles?page=" + page).then(response => {
+      axios.get("/api/articles?page=" + page).then(response => {
         this.articles = response.data;
         let newImgArr = [];
         response.data.data.forEach((current, index) => {
@@ -259,17 +219,17 @@ export default {
         });
       }
 
-      this.form.put("api/articles/" + selected.slug).then(res => {
+      this.form.put("/api/articles/" + selected.slug).then(res => {
         formData.append("id", res.data.id);
-        formData.append('type', 'article');
-        //   formData.append('selected_slug',  selected.slug)
+        formData.append('section', this.$route.params.section);
+        formData.append("type", "article");
         axios
-          .post("images-upload", formData)
+          .post("/images-upload", formData)
           .then(() => {
             Fire.$emit("AfterCreate");
             swal(
-              "Actualizado!",
-              "Información de edificio actualizada.",
+              "Actualizada!",
+              "Información de noticia actualizada.",
               "success"
             );
             this.form.reset();
@@ -313,9 +273,9 @@ export default {
         // Send request to the server
         if (result.value) {
           this.form
-            .delete("api/articles/" + slug)
+            .delete("/api/articles/" + slug)
             .then(() => {
-              swal("Borrada!", "Artículo borrada.", "success");
+              swal("Borrada!", "Noticia borrada.", "success");
               Fire.$emit("AfterCreate");
             })
             .catch(() => {
@@ -326,25 +286,22 @@ export default {
     },
     deleteImage(event) {
       const id = event.id;
-      this.form.delete("api/images/" + id + "/article/");
+      this.form.delete("/api/images/" + id + "/article/");
     },
-    async loadItems() {
+    async loadItems(section = 'real-estate') {
       let vm = this;
-      axios.all([axios.get("api/articles")]).then(
-        axios.spread(function(res1) {
-          vm.articles = res1.data;
+      axios.get("/api/articles?section="+section).then( res => {
+          vm.articles = res.data;
           let newImgArr = [];
-          res1.data.data.forEach((current, index) => {
+          res.data.data.forEach((current, index) => {
             current.images.forEach((img, idx) => {
               newImgArr.push(img.path);
             });
           });
 
           vm.articles.images = newImgArr;
-        })
-      );
+        });
     },
-
     createItem() {
       this.$Progress.start();
       const formData = new FormData();
@@ -354,13 +311,13 @@ export default {
         });
       }
 
-      const articleCreate = this.form.post("api/articles");
+      const articleCreate = this.form.post("/api/articles");
       articleCreate.then(res => {
         formData.append("id", res.data.id);
         formData.append("type", "article");
-        axios.post("images-upload", formData).then(() => {
+        axios.post("/images-upload", formData).then(() => {
           Fire.$emit("AfterCreate");
-          swal("Creado!", "Artículo creada.", "success");
+          swal("Creado!", "Noticia creada.", "success");
           this.form.reset();
           this.files = [];
           $("#addNew").modal("hide");

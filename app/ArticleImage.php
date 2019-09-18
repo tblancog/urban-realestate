@@ -16,6 +16,6 @@ class ArticleImage extends Model
       return $this->belongsTo('App\Article');
     }
     public function getPathAttribute() {
-      return config('images.article_upload_path').$this->filename;
+      return config('images.articles_upload_path').$this->filename;
     }
 }

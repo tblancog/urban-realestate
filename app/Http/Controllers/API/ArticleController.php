@@ -17,9 +17,18 @@ class ArticleController extends Controller
      */
     public function index()
     {
+
         return Article::latest()
             ->with('images')
+            ->where('section', request()->get('section'))
             ->paginate(6);
+    }
+
+    public function ArticleList()
+    {
+
+        return Article::orderBy('title')
+            ->get(['id', 'title as label']);
     }
 
     /**
@@ -31,7 +40,7 @@ class ArticleController extends Controller
     public function store(ArticleRequest $request)
     {
         $article = Article::create($request->all());
-        return ['message' => 'Noticia creada', 'id' => $article->id];
+        return ['message' => 'Proyecto creado', 'id' => $article->id];
     }
 
 
@@ -57,7 +66,7 @@ class ArticleController extends Controller
     public function update(ArticleRequest $request, Article $article)
     {
         $article->update($request->all());
-        return ['message' => 'Noticia actualizada', 'id' => $article->id];
+        return ['message' => 'Proyecto actualizado', 'id' => $article->id];
     }
 
     /**

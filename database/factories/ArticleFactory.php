@@ -8,6 +8,7 @@ $factory->define(Article::class, function (Faker $faker) {
     return [
         'title'=> $title,
         'slug'=> str_slug($title),
+        'section'=> $faker->randomElement(['real-estate', 'houses', 'developers']),
         'description'=> $faker->paragraph( rand(2, 4) , true)
     ];
 });

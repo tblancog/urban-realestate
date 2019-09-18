@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    protected $table = 'articles';
     protected $fillable = [
         'title',
         'slug',
@@ -22,7 +23,6 @@ class Article extends Model
     }
 
      public function getImgPathAttribute() {
-        return config('images.articles_upload_path') .
-                $this->table . '/' ;
+        return config('images.articles_upload_path');
     }
 }
