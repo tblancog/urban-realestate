@@ -22,7 +22,7 @@ class Article extends Model
       $this->attributes['slug'] = str_slug($value);
     }
 
-     public function getImgPathAttribute() {
+    public function getImgPathAttribute() {
         return config('images.articles_upload_path');
     }
 }

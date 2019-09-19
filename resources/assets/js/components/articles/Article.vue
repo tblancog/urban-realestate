@@ -35,7 +35,7 @@
                     <div class="col-md-6">
                       <div class="info-card">
                         <a :href="getDetailUrl(articles, 'articles')" target="_blank">
-                            <h5 class="mt-0">{{ article.article_name }}</h5>
+                            <h5 class="mt-0">{{ article.title }}</h5>
                         </a>
                         <i class="fa fa-map-marker-alt fa-fw"></i>
                         {{ article.location }}
@@ -183,6 +183,7 @@ export default {
       articles: [],
       form: new Form({
         id: "",
+        title: "",
         description: "",
         images: []
       })
@@ -195,7 +196,7 @@ export default {
   },
   methods: {
     imageZero(a) {
-        return '/'+a.images[0].path
+        return '/'+a.images[0].url
     },
     getResults(page = 1) {
       axios.get("/api/articles?page=" + page).then(response => {
@@ -203,7 +204,7 @@ export default {
         let newImgArr = [];
         response.data.data.forEach((current, index) => {
           current.images.forEach((img, idx) => {
-            newImgArr.push(img.path);
+            newImgArr.push(img.url);
           });
         });
 
@@ -295,7 +296,7 @@ export default {
           let newImgArr = [];
           res.data.data.forEach((current, index) => {
             current.images.forEach((img, idx) => {
-              newImgArr.push(img.path);
+              newImgArr.push(img.url);
             });
           });
 

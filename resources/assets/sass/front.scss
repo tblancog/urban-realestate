@@ -4165,7 +4165,9 @@ img {
 
 /* 24.0 Investment Area CSS */
 
-.investments-page {
+.investments-page,
+.articles-page
+ {
     background: #E4E4E4;
 
     .card {
@@ -4378,7 +4380,8 @@ img {
 }
 
 .investments-page,
-.appraisals-page {
+.appraisals-page
+{
     padding-top: 8em;
 }
 
@@ -5385,3 +5388,26 @@ textarea {
     color: red !important
 }
 
+.articles-page {
+    padding-top: 12em;
+    h2 {
+        color: #1b732f;
+        font-size: 1.7em;
+    }
+    h3{
+        color: gray;
+        font-size: 1.5em;
+    }
+    p {
+        color: black;
+        padding: 2em 0 2em 0;
+        font-size: 1em;
+        line-break: 1.5em;
+        &.subset{
+            line-break: 1;
+        }
+    }
+    h3, p {
+        font-weight: normal;
+    }
+}
