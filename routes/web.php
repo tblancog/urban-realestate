@@ -53,7 +53,7 @@ Route::group(['prefix' => 'houses'], function () {
 
 Route::group(['prefix' => 'articles'], function () {
     Route::get('/', 'ArticleController@index')->name('articles.index');
-    Route::get('/{articles}', 'ArticleController@show')->name('articles.show');
+    Route::get('/{article}', 'ArticleController@show')->name('articles.show');
 });
 
 // excel read

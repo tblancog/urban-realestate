@@ -51,7 +51,15 @@ export default [{
         component: require('./components/developers/Project.vue')
     },
     {
-        path: '/articlesAdmin/:section',
+        path: '/articlesReal',
+        component: require('./components/articles/Article.vue'),
+    },
+    {
+        path: '/articlesDevelopers',
+        component: require('./components/articles/Article.vue'),
+    },
+    {
+        path: '/articlesHouses',
         component: require('./components/articles/Article.vue'),
     },
     //   Houses

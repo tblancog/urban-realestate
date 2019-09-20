@@ -130,7 +130,8 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/articlesAdmin/real-estate" class="nav-link">
+                    {{-- <router-link to="/articlesAdmin" class="nav-link"> --}}
+                    <router-link :to="{ path: '/articlesReal', query: { section: 'real-estate' }}" class="nav-link">
                         <i class="nav-icon fa fa-newspaper green"></i>
                         <p>
                             News
@@ -148,8 +149,8 @@
                         <p>Proyectos</p>
                     </router-link>
                 </li>
-                 <li class="nav-item">
-                    <router-link to="/articlesAdmin/developers" class="nav-link">
+                <li class="nav-item">
+                    <router-link :to="{ path: '/articlesDevelopers', query: { section: 'developers' }}" class="nav-link">
                         <i class="nav-icon fa fa-newspaper green"></i>
                         <p>
                             News
@@ -168,7 +169,7 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/articlesAdmin/houses" class="nav-link">
+                    <router-link :to="{ path: '/articlesHouses', query: { section: 'houses' }}" class="nav-link">
                         <i class="nav-icon fa fa-newspaper green"></i>
                         <p>
                             News

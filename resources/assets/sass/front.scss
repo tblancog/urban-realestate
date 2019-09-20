@@ -5389,7 +5389,7 @@ textarea {
 }
 
 .articles-page {
-    padding-top: 12em;
+    padding-top: 10em;
     h2 {
         color: #1b732f;
         font-size: 1.7em;
@@ -5397,14 +5397,19 @@ textarea {
     h3{
         color: gray;
         font-size: 1.5em;
+        &.date{
+            font-size: 1.2em;
+        }
     }
     p {
         color: black;
-        padding: 2em 0 2em 0;
+        padding: 1em 0 2em 0;
+        text-align: justify;
         font-size: 1em;
-        line-break: 1.5em;
+        line-height: 1.5;
         &.subset{
-            line-break: 1;
+            line-height: 1.4;
+            font-size: 16px;
         }
     }
     h3, p {

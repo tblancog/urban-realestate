@@ -18,7 +18,7 @@ class ArticleController extends Controller
             ->where('section', request()->get('section'))
             ->with('images')
             ->paginate(12);
-        return view('articles.index', compact('items'));
+        return view('articles.index', ['items'=> $items->appends( ['section'=> request()->get('section')])]);
     }
 
     /**

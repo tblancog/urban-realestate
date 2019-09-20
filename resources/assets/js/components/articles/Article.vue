@@ -99,8 +99,8 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Proyecto</h5>
-            <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Proyecto</h5>
+            <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nueva Noticia</h5>
+            <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Noticia</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -185,26 +185,28 @@ export default {
         id: "",
         title: "",
         description: "",
-        images: []
+        images: [],
+        section: ""
       })
     };
   },
   watch: {
     '$route' (to, from) {
-      this.loadItems(to.params.section)
+        this.form.section = to.query.section
+        this.loadItems(this.form.section)
     }
   },
   methods: {
     imageZero(a) {
-        return '/'+a.images[0].url
+        return '/'+a.images[0].path
     },
     getResults(page = 1) {
-      axios.get("/api/articles?page=" + page).then(response => {
+      axios.get("api/articles?page=" + page + "&section="+this.$route.query.section).then(response => {
         this.articles = response.data;
         let newImgArr = [];
         response.data.data.forEach((current, index) => {
           current.images.forEach((img, idx) => {
-            newImgArr.push(img.url);
+            newImgArr.push(img.path);
           });
         });
 
@@ -220,9 +222,9 @@ export default {
         });
       }
 
-      this.form.put("/api/articles/" + selected.slug).then(res => {
+      this.form.put("api/articles/" + selected.slug).then(res => {
         formData.append("id", res.data.id);
-        formData.append('section', this.$route.params.section);
+        formData.append('section', this.$route.query.section);
         formData.append("type", "article");
         axios
           .post("/images-upload", formData)
@@ -239,7 +241,7 @@ export default {
 
             this.$Progress.finish();
             Fire.$emit("AfterCreate");
-            this.loadItems();
+            this.loadItems(this.$route.query.section);
           })
           .catch(() => {
             this.$Progress.fail();
@@ -274,7 +276,7 @@ export default {
         // Send request to the server
         if (result.value) {
           this.form
-            .delete("/api/articles/" + slug)
+            .delete("api/articles/" + slug)
             .then(() => {
               swal("Borrada!", "Noticia borrada.", "success");
               Fire.$emit("AfterCreate");
@@ -287,16 +289,16 @@ export default {
     },
     deleteImage(event) {
       const id = event.id;
-      this.form.delete("/api/images/" + id + "/article/");
+      this.form.delete("api/images/" + id + "/article/");
     },
     async loadItems(section = 'real-estate') {
       let vm = this;
-      axios.get("/api/articles?section="+section).then( res => {
+      axios.get("api/articles?section="+section).then( res => {
           vm.articles = res.data;
           let newImgArr = [];
           res.data.data.forEach((current, index) => {
             current.images.forEach((img, idx) => {
-              newImgArr.push(img.url);
+              newImgArr.push(img.path);
             });
           });
 
@@ -312,7 +314,7 @@ export default {
         });
       }
 
-      const articleCreate = this.form.post("/api/articles");
+      const articleCreate = this.form.post("api/articles");
       articleCreate.then(res => {
         formData.append("id", res.data.id);
         formData.append("type", "article");
@@ -329,6 +331,7 @@ export default {
     }
   },
   created() {
+      this.form.section = this.$route.query.section
     // Fire.$on('searching', () => {
     //     let query = this.$parent.search;
     //     axios.get('api/findUser?q=' + query)
@@ -339,7 +342,7 @@ export default {
 
     //         })
     // })
-    this.loadItems();
+    this.loadItems(this.$route.query.section);
     Fire.$on("AfterCreate", () => {
       this.loadItems();
     });
