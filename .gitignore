@@ -3,6 +3,7 @@
 /public/fonts/**/*
 /public/js/app.js
 /public/css/**/*
+/public/img/core-img/*
 public/images/slides/**/*
 /public/storage
 /public/mix-manifest.json
