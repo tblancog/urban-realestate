@@ -5306,27 +5306,27 @@ textarea {
 
     background: $color-white;
     &.houses ~ #scrollUp {
-        background: $bg-houses;
+        background: $bg-developers;
     }
     &.developers ~ #scrollUp {
-        background: $bg-developers;
+        background: $bg-houses;
     }
 }
 .houses{
     // Preloader
     .south-load {
-        border-color: $bg-houses;
-        border-top-color: $bg-houses;
-        border-left-color: $bg-houses;
+        border-color: $bg-developers;
+        border-top-color: $bg-developers;
+        border-left-color: $bg-developers;
         border-right-color: $body-bg;
     }
 }
 .developers{
     // Preloader
     .south-load {
-        border-color: $bg-developers;
-        border-top-color: $bg-developers;
-        border-left-color: $bg-developers;
+        border-color: $bg-houses;
+        border-top-color: $bg-houses;
+        border-left-color: $bg-houses;
         border-right-color: $body-bg;
     }
 }
@@ -5385,3 +5385,10 @@ textarea {
     color: red !important
 }
 
+.developers .main-header-area .classynav ul li a, .houses .main-header-area .classynav ul li a{
+    font-size: 1.0rem !important;
+}
+
+.developers .nav-brand img, .houses .nav-brand img{
+    width: 85% !important;
+}
