@@ -2,10 +2,9 @@
 
 @section('content')
 
-
-
 <section class="hero-area">
-    @component('components.home-slider', ['slides'=> $slides])
+    @component('components.home-slider', [ 'slides'=> $slides,
+                                           'section'=> 'real-estate' ])
         @include('components.search-area')
     @endcomponent
 </section>

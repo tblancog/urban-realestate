@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\House;
 use Illuminate\Http\Request;
+use  App\Slider;
 
 class HouseController extends Controller
 {
@@ -15,10 +16,13 @@ class HouseController extends Controller
      */
     public function index()
     {
+        $slides = Slider::orderBy('index')->where('section', 'houses')->get();
         $items = House::latest()
             ->with('images')
             ->paginate(6);
-        return view('houses.index', compact('items'));
+        return view('houses.index', ['items'=> $items,
+                                     'slides'=> $slides
+        ]);
     }
 
     /**

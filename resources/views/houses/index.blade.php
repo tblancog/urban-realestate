@@ -3,6 +3,12 @@
 @section('content')
 
 <section class="hero-area">
+    @component('components.home-slider', ['slides'=> $slides,
+                                          'section'=> 'houses' ])
+    @endcomponent
+</section>
+
+{{-- <section class="hero-area">
     <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-1.jpg);">
         <div class="hero-slides owl-carousel">
             <!-- Single Hero Slide -->
@@ -30,9 +36,7 @@
                 </div>
             </div>
         </div>
-
-
-</section>
+</section> --}}
 
 <!-- ##### Propiedades en Venta Area Start ##### -->
 <section id="proyectos" class="featured-properties-area">

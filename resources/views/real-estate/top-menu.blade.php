@@ -23,6 +23,7 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul id="desktop-nav">
+                            <li><a href="{{ route('home.index')  }}#apartments">Propiedades</a></li>
                             <li class="{{ Request::segment(1)=== 'investments' ? 'active' : '' }}"><a
                                     href="{{ route('investments.index') }}">Inversiones</a></li>
                             <li class="{{ Request::segment(1)=== 'appraisals' ? 'active' : '' }}"><a
@@ -61,6 +62,7 @@
                         </ul>
 
                         <ul id="mobile-nav">
+                            <li><a href="{{ route('home.index')  }}#apartments">Propiedades</a></li>
                             <li><a href="{{ route('investments.index') }}">Inversiones</a></li>
                             <li><a href="{{ route('appraisals.index') }}">Tasaciones</a></li>
                             <li><a href="{{ route('credits.index') }}">Crédito</a></li>

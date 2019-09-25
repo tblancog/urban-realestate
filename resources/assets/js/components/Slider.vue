@@ -6,7 +6,7 @@
                 <div class="card">
                     <form enctype="multipart/form-data">
                         <div class="card-header">
-                            <h3 class="card-title">Administrar slider de Home</h3>
+                            <h3 class="card-title">Administrar slider de {{ $route.query.section }}</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-success" @click="addSlide">Crear Nuevo <i
                                         class="fas fa-plus fa-fw"></i></button>
@@ -83,9 +83,16 @@
             return {
                 attachments: [],
                 slideshow: [],
-                formData: new FormData()
+                formData: new FormData(),
+                section: ''
             }
 
+        },
+        watch: {
+            '$route' (to, from) {
+                this.section = to.query.section
+                this.loadItems()
+            }
         },
         methods: {
             addSlide() {
@@ -94,7 +101,8 @@
                     subtitle: '',
                     link: '',
                     imageData: '',
-                    fileAttached: []
+                    fileAttached: [],
+                    section: this.$route.query.section
                 }, )
             },
             removeSlide(id, idx) {
@@ -110,6 +118,7 @@
                 this.prepareImageData()
                 this.formData.append( 'slide', JSON.stringify(slide) )
                 this.formData.append( 'index', index )
+                this.formData.append( 'section', this.$route.query.section )
                 axios.post('/upload-sliders', this.formData, config)
                     .then( (res)=> {
                         Fire.$emit('AfterCreate');
@@ -167,21 +176,25 @@
                     // Start the reader job - read file as a data url (base64 format)
                     reader.readAsDataURL(input.files[0]);
                 }
+            },
+            loadItems() {
+                axios.get('/get-sliders?section='+this.$route.query.section).then( (res) => {
+                this.slideshow = res.data.sliders.map( (el)=> {
+                    return {
+                        id: el.id,
+                        title: el.title,
+                        subtitle: el.subtitle,
+                        link: el.link,
+                        imageData: el.base64img,
+                        path: el.path,
+                        section: el.section
+                    }
+                })
+                })
             }
         },
         created(){
-          axios.get('/get-sliders').then( (res) => {
-            this.slideshow = res.data.sliders.map( (el)=> {
-              return {
-                  id: el.id,
-                  title: el.title,
-                  subtitle: el.subtitle,
-                  link: el.link,
-                  imageData: el.base64img,
-                  path: el.path
-              }
-            } )
-          })
+          this.loadItems()
         }
     }
 

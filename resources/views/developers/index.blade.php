@@ -1,8 +1,13 @@
 @extends('layouts.front')
 
 @section('content')
-
 <section class="hero-area">
+    @component('components.home-slider', ['slides'=> $slides,
+                                          'section'=> 'developers'])
+    @endcomponent
+</section>
+
+{{-- <section class="hero-area">
     <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-1.jpg);">
         <div class="hero-slides owl-carousel">
             <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-1.jpg);">
@@ -34,7 +39,7 @@
         </div>
 
 
-</section>
+</section> --}}
 
 
 <section id="projects" class="featured-properties-area">

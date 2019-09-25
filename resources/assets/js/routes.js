@@ -8,7 +8,7 @@ export default [{
     },
     //   Real Estate
     {
-        path: '/sliderAdmin',
+        path: '/slidersReal',
         component: require('./components/Slider.vue')
     },
     {
@@ -47,6 +47,10 @@ export default [{
     },
     //   Developers
     {
+        path: '/slidersDevelopers',
+        component: require('./components/Slider.vue')
+    },
+    {
         path: '/projectsAdmin',
         component: require('./components/developers/Project.vue')
     },
@@ -63,6 +67,10 @@ export default [{
         component: require('./components/articles/Article.vue'),
     },
     //   Houses
+    {
+        path: '/slidersHouses',
+        component: require('./components/Slider.vue')
+    },
     {
         path: '/housesAdmin',
         component: require('./components/houses/House.vue')

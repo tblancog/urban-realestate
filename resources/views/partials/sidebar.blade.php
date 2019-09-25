@@ -74,7 +74,7 @@
                 <li><h3 style="font-family: 'AvantGarde', sans-serif; color: #C2C7D0;font-size: 1.1rem; text-transform: uppercase;padding: 0 0 8px 0; margin: 0px 0 10px 0; padding: 0;" class="">Real Estate</h3></li>
 
                 <li class="nav-item">
-                    <router-link to="/sliderAdmin" class="nav-link">
+                    <router-link :to="{ path:'/slidersReal', query: { 'section': 'real-estate' } }" class="nav-link">
                         <i class="nav-icon fa fa-images green"></i>
                         <p>
                             Slideshow
@@ -130,7 +130,6 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    {{-- <router-link to="/articlesAdmin" class="nav-link"> --}}
                     <router-link :to="{ path: '/articlesReal', query: { section: 'real-estate' }}" class="nav-link">
                         <i class="nav-icon fa fa-newspaper green"></i>
                         <p>
@@ -142,7 +141,14 @@
                 <li style="border-bottom: 1px solid #4f5962; margin: 10px 0 15px;"></li>
 
                 <li><h3 style="font-family: 'AvantGarde', sans-serif; color: #C2C7D0;font-size: 1.1rem; text-transform: uppercase;padding: 0 0 8px 0; margin: 0px 0 10px 0; padding: 0;" class="">Developers</h3></li>
-
+                <li class="nav-item">
+                    <router-link :to="{ path:'/slidersDevelopers', query: { 'section': 'developers' } }" class="nav-link">
+                        <i class="nav-icon fa fa-images green"></i>
+                        <p>
+                            Slideshow
+                        </p>
+                    </router-link>
+                </li>
                 <li class="nav-item">
                     <router-link to="/projectsAdmin" class="nav-link">
                         <i class="nav-icon fa fa-home green"></i>
@@ -162,6 +168,14 @@
 
                 <li><h3 style="font-family: 'AvantGarde', sans-serif; color: #C2C7D0;font-size: 1.1rem; text-transform: uppercase;padding: 0 0 8px 0; margin: 0px 0 10px 0; padding: 0;" class="">Houses</h3></li>
 
+                <li class="nav-item">
+                    <router-link :to="{ path:'/slidersHouses', query: { 'section': 'houses' } }" class="nav-link">
+                        <i class="nav-icon fa fa-images green"></i>
+                        <p>
+                            Slideshow
+                        </p>
+                    </router-link>
+                </li>
                 <li class="nav-item">
                     <router-link to="/housesAdmin" class="nav-link">
                         <i class="nav-icon fa fa-home green"></i>

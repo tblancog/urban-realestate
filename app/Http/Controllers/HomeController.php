@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $slides = Slider::orderBy('index')->get();
+        $slides = Slider::orderBy('index')->where('section', 'real-estate')->get();
 
         $buildings = Building::where('is_featured', true)
                             ->latest()
@@ -45,9 +45,9 @@ class HomeController extends Controller
                               ->get(['location']);
 
         return view('real-estate.index', ['buildings'=> $buildings,
-                              'apartments'=> $apartments,
-                              'slides'=> $slides,
-                              'locations'=> $locations,
+                                        'apartments'=> $apartments,
+                                        'slides'=> $slides,
+                                        'locations'=> $locations,
         ]);
     }
 

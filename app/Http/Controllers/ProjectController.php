@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use  App\Slider;
 
 class ProjectController extends Controller
 {
@@ -14,10 +15,14 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        $slides = Slider::orderBy('index')->where('section', 'developers')->get();
+        // dd(asset($slides->first()->path));
         $items = Project::latest()
             ->with('images')
             ->paginate(6);
-        return view('developers.index', compact('items'));
+        return view('developers.index', ['items'=> $items,
+                                         'slides'=> $slides
+        ]);
     }
 
     /**
