@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PasswordResetsTableAutoSeeder extends Seeder
+class ArticlesTableAutoSeeder extends Seeder
 {
 
     /**
@@ -14,7 +14,7 @@ class PasswordResetsTableAutoSeeder extends Seeder
     {
         
 
-        \DB::table('password_resets')->delete();
+        \DB::table('articles')->delete();
         
         
         

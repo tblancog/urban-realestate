@@ -269,7 +269,7 @@ export default {
             Fire.$emit("AfterCreate");
             swal(
               "Actualizado!",
-              "Información de edificio actualizada.",
+              "Información de proyecto actualizada.",
               "success"
             );
             this.form.reset();

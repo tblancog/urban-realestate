@@ -8,6 +8,7 @@ use App\Building;
 use App\Apartment;
 use App\House;
 use App\Project;
+use App\Article;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -41,6 +42,9 @@ class RouteServiceProvider extends ServiceProvider
         });
         Route::bind('project', function ($value) {
             return Project::where('slug', $value)->first() ?? abort(404);
+        });
+        Route::bind('article', function ($value) {
+            return Article::where('slug', $value)->first() ?? abort(404);
         });
     }
 

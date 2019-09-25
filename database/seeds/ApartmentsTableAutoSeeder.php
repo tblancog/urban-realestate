@@ -12,12 +12,12 @@ class ApartmentsTableAutoSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('apartments')->delete();
-        
+
         \DB::table('apartments')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => '4',
                 'title' => 'Edificio G 3051 - 3 Ambientes',
@@ -36,7 +36,7 @@ class ApartmentsTableAutoSeeder extends Seeder
                 'area' => '76',
                 'area_semicubierta' => NULL,
                 'area_total_construido' => NULL,
-                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities. 
+                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities.
 Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite con vestidor y toilette de recepción y al contra frente dieciséis unidades monoambientes. En el segundo retiro se proyectan la portería, un sauna con toilette y ducha y una expansión aterrazada con parilla común. En la terraza del último nivel se ubica un solárium y una pequeña piscina con jacuzzi. El espacio de guardacoches destinado en la planta baja tiene una capacidad para 8 vehículos.',
                 'status' => 'En_obra',
                 'contact_name' => 'Maria',
@@ -46,7 +46,7 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'updated_at' => '2019-08-20 14:20:11',
                 'code' => 'A',
             ),
-            1 => 
+            1 =>
             array (
                 'id' => '5',
                 'title' => 'Edificio G 3051 - 3 Ambientes',
@@ -65,7 +65,7 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'area' => '76',
                 'area_semicubierta' => NULL,
                 'area_total_construido' => NULL,
-                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities. 
+                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities.
 Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite con vestidor y toilette de recepción y al contra frente dieciséis unidades monoambientes. En el segundo retiro se proyectan la portería, un sauna con toilette y ducha y una expansión aterrazada con parilla común. En la terraza del último nivel se ubica un solárium y una pequeña piscina con jacuzzi. El espacio de guardacoches destinado en la planta baja tiene una capacidad para 8 vehículos.',
                 'status' => 'En_obra',
                 'contact_name' => 'Maria',
@@ -75,12 +75,12 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'updated_at' => '2019-08-20 14:18:08',
                 'code' => 'A',
             ),
-            2 => 
+            2 =>
             array (
                 'id' => '6',
-                'title' => 'Edificio G 3051 - 1 Ambiente',
-                'slug' => 'edificio-g-3051-1-ambiente',
-                'floor' => '2',
+                'title' => 'TEST2 Edificio G 3051 - 1 Ambiente',
+                'slug' => 'test2-edificio-g-3051-1-ambiente',
+                'floor' => '3',
                 'department' => NULL,
                 'price' => '95940',
                 'rooms' => '1',
@@ -94,24 +94,24 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'area' => '37',
                 'area_semicubierta' => NULL,
                 'area_total_construido' => NULL,
-                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities. 
+                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities.
 Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite con vestidor y toilette de recepción y al contra frente dieciséis unidades monoambientes. En el segundo retiro se proyectan la portería, un sauna con toilette y ducha y una expansión aterrazada con parilla común. En la terraza del último nivel se ubica un solárium y una pequeña piscina con jacuzzi. El espacio de guardacoches destinado en la planta baja tiene una capacidad para 8 vehículos.',
                 'status' => 'En_obra',
                 'contact_name' => 'Maria',
                 'contact_phone' => '1153294260',
                 'building_id' => '2',
                 'created_at' => '2019-08-20 14:24:30',
-                'updated_at' => '2019-08-20 14:28:26',
+                'updated_at' => '2019-09-10 12:26:02',
                 'code' => 'A',
             ),
-            3 => 
+            3 =>
             array (
                 'id' => '7',
-                'title' => 'Edificio G 3051 - 1 Ambiente',
-                'slug' => 'edificio-g-3051-1-ambiente',
-                'floor' => '1',
+                'title' => 'XEdificio G 3051 - 1 Ambiente',
+                'slug' => 'xedificio-g-3051-1-ambiente',
+                'floor' => '6',
                 'department' => NULL,
-                'price' => '92250',
+                'price' => '99630',
                 'rooms' => '1',
                 'dormitorios' => '1',
                 'banios' => '1',
@@ -123,17 +123,17 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'area' => '37',
                 'area_semicubierta' => NULL,
                 'area_total_construido' => NULL,
-                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities. 
+                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities.
 Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite con vestidor y toilette de recepción y al contra frente dieciséis unidades monoambientes. En el segundo retiro se proyectan la portería, un sauna con toilette y ducha y una expansión aterrazada con parilla común. En la terraza del último nivel se ubica un solárium y una pequeña piscina con jacuzzi. El espacio de guardacoches destinado en la planta baja tiene una capacidad para 8 vehículos.',
                 'status' => 'En_obra',
                 'contact_name' => 'Maria',
                 'contact_phone' => '1153294260',
                 'building_id' => '2',
                 'created_at' => '2019-08-20 14:25:28',
-                'updated_at' => '2019-08-20 14:25:28',
+                'updated_at' => '2019-09-10 12:09:01',
                 'code' => 'A',
             ),
-            4 => 
+            4 =>
             array (
                 'id' => '8',
                 'title' => 'Edificio G 3051 - 1 Ambiente',
@@ -152,17 +152,17 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'area' => '37',
                 'area_semicubierta' => NULL,
                 'area_total_construido' => NULL,
-                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities. 
+                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities.
 Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite con vestidor y toilette de recepción y al contra frente dieciséis unidades monoambientes. En el segundo retiro se proyectan la portería, un sauna con toilette y ducha y una expansión aterrazada con parilla común. En la terraza del último nivel se ubica un solárium y una pequeña piscina con jacuzzi. El espacio de guardacoches destinado en la planta baja tiene una capacidad para 8 vehículos.',
                 'status' => 'En_obra',
                 'contact_name' => 'Maria',
                 'contact_phone' => '1153294260',
                 'building_id' => '2',
                 'created_at' => '2019-08-20 14:25:38',
-                'updated_at' => '2019-08-20 14:31:45',
+                'updated_at' => '2019-09-10 12:49:08',
                 'code' => 'A',
             ),
-            5 => 
+            5 =>
             array (
                 'id' => '9',
                 'title' => 'Edificio G 3051 - 1 Ambiente',
@@ -181,7 +181,7 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'area' => '37',
                 'area_semicubierta' => NULL,
                 'area_total_construido' => NULL,
-                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities. 
+                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities.
 Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite con vestidor y toilette de recepción y al contra frente dieciséis unidades monoambientes. En el segundo retiro se proyectan la portería, un sauna con toilette y ducha y una expansión aterrazada con parilla común. En la terraza del último nivel se ubica un solárium y una pequeña piscina con jacuzzi. El espacio de guardacoches destinado en la planta baja tiene una capacidad para 8 vehículos.',
                 'status' => 'En_obra',
                 'contact_name' => 'Maria',
@@ -191,7 +191,7 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'updated_at' => '2019-08-20 14:34:13',
                 'code' => 'A',
             ),
-            6 => 
+            6 =>
             array (
                 'id' => '10',
                 'title' => 'Edificio G 3051 - 3 Ambientes',
@@ -210,7 +210,7 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'area' => '76',
                 'area_semicubierta' => NULL,
                 'area_total_construido' => NULL,
-                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities. 
+                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities.
 Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite con vestidor y toilette de recepción y al contra frente dieciséis unidades monoambientes. En el segundo retiro se proyectan la portería, un sauna con toilette y ducha y una expansión aterrazada con parilla común. En la terraza del último nivel se ubica un solárium y una pequeña piscina con jacuzzi. El espacio de guardacoches destinado en la planta baja tiene una capacidad para 8 vehículos.',
                 'status' => 'En_obra',
                 'contact_name' => 'Maria',
@@ -220,7 +220,7 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'updated_at' => '2019-08-20 14:36:47',
                 'code' => 'A',
             ),
-            7 => 
+            7 =>
             array (
                 'id' => '11',
                 'title' => 'Edificio G 3051 - 3 Ambientes',
@@ -239,7 +239,7 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'area' => '76',
                 'area_semicubierta' => NULL,
                 'area_total_construido' => NULL,
-                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities. 
+                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities.
 Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite con vestidor y toilette de recepción y al contra frente dieciséis unidades monoambientes. En el segundo retiro se proyectan la portería, un sauna con toilette y ducha y una expansión aterrazada con parilla común. En la terraza del último nivel se ubica un solárium y una pequeña piscina con jacuzzi. El espacio de guardacoches destinado en la planta baja tiene una capacidad para 8 vehículos.',
                 'status' => 'En_obra',
                 'contact_name' => 'Maria',
@@ -249,7 +249,7 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'updated_at' => '2019-08-20 14:39:14',
                 'code' => 'A',
             ),
-            8 => 
+            8 =>
             array (
                 'id' => '12',
                 'title' => 'Edificio G 3051 - 2 Ambientes',
@@ -268,7 +268,7 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'area' => '66',
                 'area_semicubierta' => NULL,
                 'area_total_construido' => NULL,
-                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities. 
+                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities.
 Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite con vestidor y toilette de recepción y al contra frente dieciséis unidades monoambientes. En el segundo retiro se proyectan la portería, un sauna con toilette y ducha y una expansión aterrazada con parilla común. En la terraza del último nivel se ubica un solárium y una pequeña piscina con jacuzzi. El espacio de guardacoches destinado en la planta baja tiene una capacidad para 8 vehículos.',
                 'status' => 'En_obra',
                 'contact_name' => 'Maria',
@@ -278,12 +278,12 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'updated_at' => '2019-08-20 14:43:29',
                 'code' => 'A',
             ),
-            9 => 
+            9 =>
             array (
                 'id' => '13',
                 'title' => 'Edificio G 3051-1 Amb. Modular',
                 'slug' => 'edificio-g-3051-1-amb-modular',
-                'floor' => '2',
+                'floor' => '3',
                 'department' => NULL,
                 'price' => '115700',
                 'rooms' => '1',
@@ -293,21 +293,21 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'antiguedad' => '0',
                 'expensas' => '0',
                 'orientacion' => 'Norte',
-                'disposicion' => 'Frente',
-                'area' => '45',
-                'area_semicubierta' => NULL,
-                'area_total_construido' => NULL,
-                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities. 
+                'disposicion' => 'Contrafrente',
+                'area' => '39',
+                'area_semicubierta' => '5',
+                'area_total_construido' => '45',
+                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities.
 Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite con vestidor y toilette de recepción y al contra frente dieciséis unidades monoambientes. En el segundo retiro se proyectan la portería, un sauna con toilette y ducha y una expansión aterrazada con parilla común. En la terraza del último nivel se ubica un solárium y una pequeña piscina con jacuzzi. El espacio de guardacoches destinado en la planta baja tiene una capacidad para 8 vehículos.',
-                'status' => 'En_obra',
+                'status' => 'Reservado',
                 'contact_name' => 'Maria',
                 'contact_phone' => '1153294260',
                 'building_id' => '2',
                 'created_at' => '2019-08-20 14:46:01',
-                'updated_at' => '2019-08-25 18:24:16',
-                'code' => 'A',
+                'updated_at' => '2019-09-11 19:47:36',
+                'code' => 'C',
             ),
-            10 => 
+            10 =>
             array (
                 'id' => '14',
                 'title' => 'Edificio G 3051 - 1 Ambiente Modular',
@@ -322,21 +322,21 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'antiguedad' => '0',
                 'expensas' => '0',
                 'orientacion' => 'Norte',
-                'disposicion' => 'Frente',
-                'area' => '45',
-                'area_semicubierta' => NULL,
-                'area_total_construido' => NULL,
-                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities. 
+                'disposicion' => 'Contrafrente',
+                'area' => '39',
+                'area_semicubierta' => '5',
+                'area_total_construido' => '44',
+                'description' => 'Galvan 3051 es un edificio de departamentos residenciales aptos profesionales que ofrecen el máximo confort articulando espacios flexibles para vivir, trabajar y estudiar o como proyecto de inversión. El emprendimiento se desarrolla en un terreno de 1815 m2, consta de planta baja libre, siete niveles y un primer retiro con viviendas más otro con espacios comunes y amenities.
 Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite con vestidor y toilette de recepción y al contra frente dieciséis unidades monoambientes. En el segundo retiro se proyectan la portería, un sauna con toilette y ducha y una expansión aterrazada con parilla común. En la terraza del último nivel se ubica un solárium y una pequeña piscina con jacuzzi. El espacio de guardacoches destinado en la planta baja tiene una capacidad para 8 vehículos.',
                 'status' => 'En_obra',
                 'contact_name' => 'Maria',
                 'contact_phone' => '1153294260',
                 'building_id' => '2',
                 'created_at' => '2019-08-20 14:49:41',
-                'updated_at' => '2019-08-20 14:51:07',
-                'code' => 'A',
+                'updated_at' => '2019-09-11 19:44:22',
+                'code' => 'C',
             ),
-            11 => 
+            11 =>
             array (
                 'id' => '17',
                 'title' => 'Edificio UH5 - 2 ambientes',
@@ -355,11 +355,11 @@ Al frente se ubican siete unidades de 3 ambientes y una de 2 ambientes en suite 
                 'area' => '44',
                 'area_semicubierta' => '5',
                 'area_total_construido' => '49',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -375,7 +375,7 @@ con deck.',
                 'updated_at' => '2019-09-02 14:45:46',
                 'code' => 'B',
             ),
-            12 => 
+            12 =>
             array (
                 'id' => '18',
                 'title' => 'Edificio UH5 - 3 ambientes',
@@ -394,11 +394,11 @@ con deck.',
                 'area' => '69',
                 'area_semicubierta' => '7',
                 'area_total_construido' => '76',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -414,7 +414,7 @@ con deck.',
                 'updated_at' => '2019-09-03 23:34:32',
                 'code' => 'D',
             ),
-            13 => 
+            13 =>
             array (
                 'id' => '35',
                 'title' => 'Edificio UH5 - 3 ambientes',
@@ -433,11 +433,11 @@ con deck.',
                 'area' => '69',
                 'area_semicubierta' => '7',
                 'area_total_construido' => '76',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -453,7 +453,7 @@ con deck.',
                 'updated_at' => '2019-09-02 14:38:35',
                 'code' => 'A',
             ),
-            14 => 
+            14 =>
             array (
                 'id' => '36',
                 'title' => 'Edificio UH5 - 3 ambientes',
@@ -472,11 +472,11 @@ con deck.',
                 'area' => '69',
                 'area_semicubierta' => '7',
                 'area_total_construido' => '76',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -492,7 +492,7 @@ con deck.',
                 'updated_at' => '2019-09-02 14:39:37',
                 'code' => 'A',
             ),
-            15 => 
+            15 =>
             array (
                 'id' => '37',
                 'title' => 'Edificio UH5 - 3 amb con terraza',
@@ -511,11 +511,11 @@ con deck.',
                 'area' => '69',
                 'area_semicubierta' => '69',
                 'area_total_construido' => '138',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -531,7 +531,7 @@ con deck.',
                 'updated_at' => '2019-09-02 14:43:53',
                 'code' => 'A',
             ),
-            16 => 
+            16 =>
             array (
                 'id' => '38',
                 'title' => 'Edificio UH5 - 2 ambientes',
@@ -550,11 +550,11 @@ con deck.',
                 'area' => '44',
                 'area_semicubierta' => '5',
                 'area_total_construido' => '49',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -570,7 +570,7 @@ con deck.',
                 'updated_at' => '2019-09-02 14:48:23',
                 'code' => 'B',
             ),
-            17 => 
+            17 =>
             array (
                 'id' => '39',
                 'title' => 'Edificio UH5 - 2 ambientes',
@@ -589,11 +589,11 @@ con deck.',
                 'area' => '44',
                 'area_semicubierta' => '5',
                 'area_total_construido' => '49',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -609,7 +609,7 @@ con deck.',
                 'updated_at' => '2019-09-02 14:49:53',
                 'code' => 'B',
             ),
-            18 => 
+            18 =>
             array (
                 'id' => '40',
                 'title' => 'Edificio UH5 - 2 ambientes',
@@ -628,11 +628,11 @@ con deck.',
                 'area' => '44',
                 'area_semicubierta' => '5',
                 'area_total_construido' => '49',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -648,7 +648,7 @@ con deck.',
                 'updated_at' => '2019-09-02 14:57:06',
                 'code' => 'C',
             ),
-            19 => 
+            19 =>
             array (
                 'id' => '41',
                 'title' => 'Edificio UH5 - 2 ambientes',
@@ -667,11 +667,11 @@ con deck.',
                 'area' => '44',
                 'area_semicubierta' => '5',
                 'area_total_construido' => '49',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -687,7 +687,7 @@ con deck.',
                 'updated_at' => '2019-09-02 14:58:02',
                 'code' => 'C',
             ),
-            20 => 
+            20 =>
             array (
                 'id' => '42',
                 'title' => 'Edificio UH5 - 2 ambientes',
@@ -706,11 +706,11 @@ con deck.',
                 'area' => '44',
                 'area_semicubierta' => '5',
                 'area_total_construido' => '49',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -726,7 +726,7 @@ con deck.',
                 'updated_at' => '2019-09-03 11:25:47',
                 'code' => 'C',
             ),
-            21 => 
+            21 =>
             array (
                 'id' => '43',
                 'title' => 'Edificio UH5 - 2 ambientes',
@@ -745,11 +745,11 @@ con deck.',
                 'area' => '44',
                 'area_semicubierta' => '5',
                 'area_total_construido' => '49',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -765,7 +765,7 @@ con deck.',
                 'updated_at' => '2019-09-03 11:45:10',
                 'code' => 'G',
             ),
-            22 => 
+            22 =>
             array (
                 'id' => '44',
                 'title' => 'Edificio UH5 - 3 ambientes',
@@ -784,11 +784,11 @@ con deck.',
                 'area' => '69',
                 'area_semicubierta' => '7',
                 'area_total_construido' => '76',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -804,7 +804,7 @@ con deck.',
                 'updated_at' => '2019-09-03 23:29:32',
                 'code' => 'D',
             ),
-            23 => 
+            23 =>
             array (
                 'id' => '45',
                 'title' => 'Edificio UH5 - 3 ambientes',
@@ -823,11 +823,11 @@ con deck.',
                 'area' => '69',
                 'area_semicubierta' => '7',
                 'area_total_construido' => '76',
-                'description' => '- PH de categoría con cochera y amenities varios: 
-- piscina/ solárium 
-- parrilla 
-- sum 
-- terraza 
+                'description' => '- PH de categoría con cochera y amenities varios:
+- piscina/ solárium
+- parrilla
+- sum
+- terraza
 – cocheras
 Los departamentos poseen calefacción por losa radiante regulable en forma independiente; pisos de porcelanato; grifería con cierre cerámico hidromet o similar;
 interiores de placard y mobiliario de cocina con horno y anafe eléctrico; instalación de conductos para split y spar.
@@ -844,7 +844,7 @@ con deck.',
                 'code' => 'D',
             ),
         ));
-        
-        
+
+
     }
 }

@@ -45,14 +45,22 @@ export default [{
         path: '/apartmentList/:id',
         component: require('./components/ApartmentDetail.vue')
     },
-    {
-        path: '/newsAdmin',
-        component: require('./components/noticias/Noticia.vue')
-    },
     //   Developers
     {
         path: '/projectsAdmin',
         component: require('./components/developers/Project.vue')
+    },
+    {
+        path: '/articlesReal',
+        component: require('./components/articles/Article.vue'),
+    },
+    {
+        path: '/articlesDevelopers',
+        component: require('./components/articles/Article.vue'),
+    },
+    {
+        path: '/articlesHouses',
+        component: require('./components/articles/Article.vue'),
     },
     //   Houses
     {

@@ -12,9 +12,13 @@ class ApartmentObserver
      * @param  \App\Apartment  $apartment
      * @return void
      */
-    public function created(Apartment $apartment)
+    public function creating(Apartment $apartment)
     {
-        //
+        $apartment->slug = str_slug($apartment->title.'-'.
+                                    $apartment->price.'-'.
+                                    $apartment->floor.'-'.
+                                    $apartment->code
+        );
     }
 
     /**
@@ -23,9 +27,13 @@ class ApartmentObserver
      * @param  \App\Apartment  $apartment
      * @return void
      */
-    public function updated(Apartment $apartment)
+    public function updating(Apartment $apartment)
     {
-        //
+        $apartment->slug = str_slug($apartment->title.'-'.
+                                    $apartment->price.'-'.
+                                    $apartment->floor.'-'.
+                                    $apartment->code
+        );
     }
 
     /**
