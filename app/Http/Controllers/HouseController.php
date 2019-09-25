@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\House;
 use Illuminate\Http\Request;
 use  App\Slider;
+use  App\Article;
 
 class HouseController extends Controller
 {
@@ -20,8 +21,15 @@ class HouseController extends Controller
         $items = House::latest()
             ->with('images')
             ->paginate(6);
+
+        $articles = Article::latest()
+            ->where('section', request()->get('section'))
+            ->with('images')
+            // ->InRandomOrder()
+            ->take(4);
         return view('houses.index', ['items'=> $items,
-                                     'slides'=> $slides
+                                     'slides'=> $slides,
+                                     'articles'=> $articles,
         ]);
     }
 
