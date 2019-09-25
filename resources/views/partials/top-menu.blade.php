@@ -10,23 +10,21 @@
 
 <!-- ##### Front Header Area Start ##### -->
 <header class="header-area">
-    @switch( request()->segment(1) )
 
-    @case('developers')
-        {{-- Developers Menu--}}
-        <!-- Front Header Area -->
+    {{-- Developers Menu--}}
+    @if( request()->segment(1) ==='developers' ||
+         request()->input('section') === 'developers')
         @include('developers.top-menu')
-    @break
-    @case('houses')
-        {{-- Houses --}}
-        <!-- Front Header Area Menu-->
+
+    {{-- Houses menu--}}
+    @elseif( request()->segment(1) ==='houses' ||
+         request()->input('section') === 'houses')
         @include('houses.top-menu')
-    @break
-    @default
-        {{-- Real state Menu --}}
-        <!-- Front Header Area -->
+
+    {{-- Real estate menu--}}
+    @else
         @include('real-estate.top-menu')
-    @endswitch
+    @endif
 
 </header>
 <!-- ##### Front Header Area End ##### -->

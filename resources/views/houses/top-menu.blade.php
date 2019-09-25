@@ -27,6 +27,7 @@
                             <li><a href="{{ route('houses.index') }}#estudio">Estudio</a></li>
                             <li><a href="{{ route('houses.index') }}#servicios">Servicios</a></li>
                             <li><a href="{{ route('houses.index') }}#prensa">Prensa</a></li>
+                            <li><a href="{{ route('articles.index',['section'=> 'houses']) }}">News</a></li>
                             <li><a href="{{ route('houses.index') }}#contacto">Contacto</a></li>
                         </ul>
 

@@ -7,41 +7,6 @@
     @endcomponent
 </section>
 
-{{-- <section class="hero-area">
-    <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-1.jpg);">
-        <div class="hero-slides owl-carousel">
-            <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-1.jpg);">
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-2.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <!-- <h2 data-animation="fadeInUp" data-delay="100ms">La casa de tus sueños</h2> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(img/slider-img/slider-3.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <!-- <h2 data-animation="fadeInUp" data-delay="100ms">Proyectos en marcha</h2> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-</section> --}}
-
-
 <section id="projects" class="featured-properties-area">
     <div class="">
         <div class="row">
