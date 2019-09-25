@@ -82,7 +82,7 @@
 <!-- ##### Developers Section ##### -->
 <section class="developers-section">
     <div class="container">
-        <div class="row">
+        <div class="">
             <div class="col-12">
 
                 <div class="col-12 secDevelopers">

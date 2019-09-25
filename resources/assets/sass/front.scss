@@ -4165,9 +4165,7 @@ img {
 
 /* 24.0 Investment Area CSS */
 
-.investments-page,
-.articles-page
- {
+.investments-page {
     background: #E4E4E4;
 
     .card {
@@ -4380,8 +4378,7 @@ img {
 }
 
 .investments-page,
-.appraisals-page
-{
+.appraisals-page {
     padding-top: 8em;
 }
 
@@ -5309,27 +5306,27 @@ textarea {
 
     background: $color-white;
     &.houses ~ #scrollUp {
-        background: $bg-houses;
+        background: $bg-developers;
     }
     &.developers ~ #scrollUp {
-        background: $bg-developers;
+        background: $bg-houses;
     }
 }
 .houses{
     // Preloader
     .south-load {
-        border-color: $bg-houses;
-        border-top-color: $bg-houses;
-        border-left-color: $bg-houses;
+        border-color: $bg-developers;
+        border-top-color: $bg-developers;
+        border-left-color: $bg-developers;
         border-right-color: $body-bg;
     }
 }
 .developers{
     // Preloader
     .south-load {
-        border-color: $bg-developers;
-        border-top-color: $bg-developers;
-        border-left-color: $bg-developers;
+        border-color: $bg-houses;
+        border-top-color: $bg-houses;
+        border-left-color: $bg-houses;
         border-right-color: $body-bg;
     }
 }
@@ -5388,31 +5385,10 @@ textarea {
     color: red !important
 }
 
-.articles-page {
-    padding-top: 10em;
-    h2 {
-        color: #1b732f;
-        font-size: 1.7em;
-    }
-    h3{
-        color: gray;
-        font-size: 1.5em;
-        &.date{
-            font-size: 1.2em;
-        }
-    }
-    p {
-        color: black;
-        padding: 1em 0 2em 0;
-        text-align: justify;
-        font-size: 1em;
-        line-height: 1.5;
-        &.subset{
-            line-height: 1.4;
-            font-size: 16px;
-        }
-    }
-    h3, p {
-        font-weight: normal;
-    }
+.developers .main-header-area .classynav ul li a, .houses .main-header-area .classynav ul li a{
+    font-size: 1.0rem !important;
+}
+
+.developers .nav-brand img, .houses .nav-brand img{
+    width: 85% !important;
 }
