@@ -60,22 +60,24 @@
         <div class="row logosUrbanFooter">
             <div class="col-4 colLogos">
                 <a href="{{ route('home.index') }}" target="_blank"><img src="{{ asset('img/core-img/icLogoFooter1.png') }}" alt=""></a>
-                <p style="background:#007d3f;">PROPIEDADES</p>
-            </div>
-            <div class="col-4 colLogos">
-                <a href="{{ route('developers.index') }}" target="_blank"><img src="{{ asset('img/core-img/icLogoFooter2.png') }}" alt=""></a>
-                <p style="background:#b62126;">CONSTRUCTORA</p>
-            </div>
-            <div class="col-4 colLogos">
-                <a href="{{ route('houses.index') }}" target="_blank"><img src="{{ asset('img/core-img/icLogoFooter3.png') }}" alt=""></a>
-                <p style="background:#006fcb;">ARQUITECTURA</p>
+                    <p style="background:#007d3f;">PROPIEDADES</p>
+                </div>
+                <div class="col-4 colLogos">
+                    <a href="{{ route('developers.index') }}" target="_blank"><img src="{{ asset('img/core-img/icLogoFooter2.png') }}" alt=""></a>
+                    <p style="background:#b62126;">CONSTRUCTORA</p>
+                </div>
+                <div class="col-4 colLogos">
+                    <a href="{{ route('houses.index') }}" target="_blank"><img src="{{ asset('img/core-img/icLogoFooter3.png') }}" alt=""></a>
+                    <p style="background:#006fcb;">ARQUITECTURA</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- ##### Otras propiedades Area End ##### -->
+    </section>
+    <!-- ##### Otras propiedades Area End ##### -->
 
-<!-- ##### Footer Area Start ##### -->
-@include('partials.front-footer')
+    <!-- ##### Footer Area Start ##### -->
+    @unless(request()->segment(1) === '')
+        @include('partials.front-footer')
+    @endunless
 
 @endsection

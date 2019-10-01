@@ -143,7 +143,7 @@
                 <li><h3 style="font-family: 'AvantGarde', sans-serif; color: #C2C7D0;font-size: 1.1rem; text-transform: uppercase;padding: 0 0 8px 0; margin: 0px 0 10px 0; padding: 0;" class="">Developers</h3></li>
                 <li class="nav-item">
                     <router-link :to="{ path:'/slidersDevelopers', query: { 'section': 'developers' } }" class="nav-link">
-                        <i class="nav-icon fa fa-images green"></i>
+                        <i class="nav-icon fa fa-images red"></i>
                         <p>
                             Slideshow
                         </p>
@@ -151,13 +151,13 @@
                 </li>
                 <li class="nav-item">
                     <router-link to="/projectsAdmin" class="nav-link">
-                        <i class="nav-icon fa fa-home green"></i>
+                        <i class="nav-icon fa fa-home red"></i>
                         <p>Proyectos</p>
                     </router-link>
                 </li>
                 <li class="nav-item">
                     <router-link :to="{ path: '/articlesDevelopers', query: { section: 'developers' }}" class="nav-link">
-                        <i class="nav-icon fa fa-newspaper green"></i>
+                        <i class="nav-icon fa fa-newspaper red"></i>
                         <p>
                             News
                         </p>
@@ -170,7 +170,7 @@
 
                 <li class="nav-item">
                     <router-link :to="{ path:'/slidersHouses', query: { 'section': 'houses' } }" class="nav-link">
-                        <i class="nav-icon fa fa-images green"></i>
+                        <i class="nav-icon fa fa-images blue"></i>
                         <p>
                             Slideshow
                         </p>
@@ -178,13 +178,13 @@
                 </li>
                 <li class="nav-item">
                     <router-link to="/housesAdmin" class="nav-link">
-                        <i class="nav-icon fa fa-home green"></i>
+                        <i class="nav-icon fa fa-home blue"></i>
                         <p>Casas</p>
                     </router-link>
                 </li>
                 <li class="nav-item">
                     <router-link :to="{ path: '/articlesHouses', query: { section: 'houses' }}" class="nav-link">
-                        <i class="nav-icon fa fa-newspaper green"></i>
+                        <i class="nav-icon fa fa-newspaper blue"></i>
                         <p>
                             News
                         </p>

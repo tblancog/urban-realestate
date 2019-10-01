@@ -23,20 +23,24 @@
 
 <body>
 
+    <div class="page-container container-{{ request()->input('section') ?? request()->segment(1) }}">
 
-  <div id="app" class="{{ request()->segment(1) }}">
+        <div id="app" class="content-wrap {{ request()->segment(1) }}">
+            <!-- Preloader -->
+            <div id="preloader">
+                <div class="south-load"></div>
+            </div>
 
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="south-load"></div>
+            {{-- Top Menu --}}
+            @include('partials.top-menu')
+
+            {{-- Content of all site --}}
+            @yield('content')
+
+            <!-- ##### Footer Area Start ##### -->
+            @include('partials.front-footer')
+        </div>
     </div>
-
-    {{-- Top Menu --}}
-    @include('partials.top-menu')
-
-    {{-- Content of all site --}}
-    @yield('content')
-  </div>
   <!-- ##### Call To Action Area End ##### -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->

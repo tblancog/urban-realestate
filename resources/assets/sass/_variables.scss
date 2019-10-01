@@ -1,15 +1,15 @@
-
 // Body
 $body-bg: #f8fafc;
 
 // Typography
 $font-family: 'MyriadPro-Regular';
-$font-family-sans-serif: "Nunito", sans-serif;
+$font-family-sans-serif: "Nunito",
+sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
 // Colors
-$blue: #3490dc;
+$blue: #1d92d1;
 $indigo: #6574cd;
 $purple: #9561e2;
 $pink: #f66D9b;
@@ -24,46 +24,42 @@ $cyan: #6cb2eb;
 $bg-houses: #1d92d1;
 $bg-developers: #ef1e1e;
 
-.blue{
+.blue {
     color: $blue;
 }
 
-.indigo{
+.indigo {
     color: $indigo;
 }
 
-.purple{
+.purple {
     color: $purple;
 }
 
-.pink{
+.pink {
     color: $pink;
 }
 
-.red
-{
+.red {
     color: $red;
 }
-.orange{
+
+.orange {
     color: $orange;
 }
 
-.yellow{
+.yellow {
     color: $yellow;
 }
 
-.green{
+.green {
     color: $green;
 }
 
-.teal{
+.teal {
     color: $teal;
 }
 
-.cyan{
+.cyan {
     color: $cyan;
 }
-
-
-
-

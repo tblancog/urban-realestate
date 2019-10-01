@@ -219,7 +219,4 @@
 </section>
 
 
-<!-- ##### Footer Area Start ##### -->
-@include('partials.front-footer')
-
 @endsection
