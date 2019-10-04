@@ -30,8 +30,8 @@
                                     href="{{ route('appraisals.index') }}">Tasaciones</a></li>
                             <li class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}"><a
                                     href="{{ route('credits.index') }}">Crédito</a></li>
-                            {{-- <li class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}"><a
-                                    href="{{ route('articles.index',['section'=> 'real-estate']) }}">News</a></li> --}}
+                            <li class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}"><a
+                                    href="{{ route('articles.index',['section'=> 'real-estate']) }}">News</a></li>
                             <li class="{{ Request::segment(1)=== 'contact' ? 'active' : '' }}"><a
                                     href="{{ route('contact.index') }}">
                                     <img class="link" src="{{ asset('img/core-img/icContacto.png') }}" alt="">

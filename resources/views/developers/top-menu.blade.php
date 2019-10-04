@@ -27,7 +27,7 @@
                             <li><a href="{{ route('developers.index') }}#constructora">Constructora</a></li>
                             <li><a href="{{ route('developers.index') }}#servicios">Servicios</a></li>
                             <li><a href="{{ route('developers.index') }}#prensa">Prensa</a></li>
-                            {{-- <li><a href="{{ route('articles.index',['section'=> 'developers']) }}">News</a></li> --}}
+                            <li><a href="{{ route('articles.index',['section'=> 'developers']) }}">News</a></li>
                             <li><a href="{{ route('developers.index') }}#contacto">Contacto</a></li>
                         </ul>
 
