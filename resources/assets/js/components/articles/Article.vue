@@ -35,11 +35,13 @@
                     <div class="col-md-6">
                       <div class="info-card">
                         <a :href="getDetailUrl(articles, 'articles')" target="_blank">
-                            <h5 class="mt-0">{{ article.title }}</h5>
+                          <h5 class="mt-0">{{ article.title }}</h5>
                         </a>
                         <i class="fa fa-map-marker-alt fa-fw"></i>
                         {{ article.location }}
-                        <i class="fa fa-calendar fa-fw"></i>
+                        <i
+                          class="fa fa-calendar fa-fw"
+                        ></i>
                         {{ article.year }}
                         <a
                           href="#"
@@ -53,7 +55,7 @@
                         </a>
                       </div>
                       <div class="details-card">
-                        <p>{{ article.description.substr(0,200)+'...' }}</p>
+                        <p>{{ article.description ? article.description.substr(0,200)+'...' : '(Sin descripción)' }}</p>
                       </div>
                     </div>
                     <div class="col-md-3">
@@ -107,7 +109,6 @@
           </div>
           <form @submit.prevent="editmode ? updateItem(selected) : createItem()">
             <div class="modal-body">
-
               <!-- Image uploader -->
               <div class="form-group col-lg-12 d-none d-lg-block">
                 <image-uploader
@@ -117,7 +118,7 @@
                 ></image-uploader>
               </div>
 
-                 <!-- article name -->
+              <!-- article name -->
               <div class="form-group col-lg-9">
                 <div class>
                   <input
@@ -191,27 +192,31 @@ export default {
     };
   },
   watch: {
-    '$route' (to, from) {
-        this.form.section = to.query.section
-        this.loadItems(this.form.section)
+    $route(to, from) {
+      this.form.section = to.query.section;
+      this.loadItems(this.form.section);
     }
   },
   methods: {
     imageZero(a) {
-        return '/'+a.images[0].path
+      return "/" + a.images[0].path;
     },
     getResults(page = 1) {
-      axios.get("api/articles?page=" + page + "&section="+this.$route.query.section).then(response => {
-        this.articles = response.data;
-        let newImgArr = [];
-        response.data.data.forEach((current, index) => {
-          current.images.forEach((img, idx) => {
-            newImgArr.push(img.path);
+      axios
+        .get(
+          "api/articles?page=" + page + "&section=" + this.$route.query.section
+        )
+        .then(response => {
+          this.articles = response.data;
+          let newImgArr = [];
+          response.data.data.forEach((current, index) => {
+            current.images.forEach((img, idx) => {
+              newImgArr.push(img.path);
+            });
           });
-        });
 
-        this.articles.images = newImgArr;
-      });
+          this.articles.images = newImgArr;
+        });
     },
     updateItem(selected) {
       this.$Progress.start();
@@ -224,7 +229,7 @@ export default {
 
       this.form.put("api/articles/" + selected.slug).then(res => {
         formData.append("id", res.data.id);
-        formData.append('section', this.$route.query.section);
+        formData.append("section", this.$route.query.section);
         formData.append("type", "article");
         axios
           .post("/images-upload", formData)
@@ -291,19 +296,19 @@ export default {
       const id = event.id;
       this.form.delete("api/images/" + id + "/article/");
     },
-    async loadItems(section = 'real-estate') {
+    async loadItems(section = "real-estate") {
       let vm = this;
-      axios.get("api/articles?section="+section).then( res => {
-          vm.articles = res.data;
-          let newImgArr = [];
-          res.data.data.forEach((current, index) => {
-            current.images.forEach((img, idx) => {
-              newImgArr.push(img.path);
-            });
+      axios.get("api/articles?section=" + section).then(res => {
+        vm.articles = res.data;
+        let newImgArr = [];
+        res.data.data.forEach((current, index) => {
+          current.images.forEach((img, idx) => {
+            newImgArr.push(img.path);
           });
-
-          vm.articles.images = newImgArr;
         });
+
+        vm.articles.images = newImgArr;
+      });
     },
     createItem() {
       this.$Progress.start();
@@ -331,7 +336,7 @@ export default {
     }
   },
   created() {
-      this.form.section = this.$route.query.section
+    this.form.section = this.$route.query.section;
     // Fire.$on('searching', () => {
     //     let query = this.$parent.search;
     //     axios.get('api/findUser?q=' + query)
