@@ -96,15 +96,9 @@
                 </div>
             </div>
             <div class="col-12 wow fadeInUp titleOhterSection">
-                <h2 id="prensa" class="text-center">Prensa</h2>
+                <h2 class="text-center">Prensa</h2>
             </div>
-            <div class="col-12 pressSection">
-                <ul>
-                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa1.jpg') }}" alt="Prensa"></a></li>
-                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa2.jpg') }}" alt="Prensa"></a></li>
-                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa3.jpg') }}" alt="Prensa"></a></li>
-                </ul>
-            </div>
+            @include('articles.slider', $articles)
 
             <div class="col-12 wow fadeInUp titleOhterSection">
                 <h2 id="contacto" class="text-center">Contacto</h2>

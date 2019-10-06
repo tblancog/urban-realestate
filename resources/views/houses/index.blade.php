@@ -168,55 +168,71 @@
             <div class="col-12 wow fadeInUp titleOhterSection">
                 <h2 class="text-center">Prensa</h2>
             </div>
-            {{-- <div id="prensa" class="col-12 pressSection">
-                <ul>
-                    <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa1.jpg') }}" alt="Prensa"></a>
-            </li>
-            <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa2.jpg') }}" alt="Prensa"></a></li>
-            <li><a href=""><img src="{{ asset('img/core-img/imgDevelopers-prensa3.jpg') }}" alt="Prensa"></a></li>
-            </ul>
-        </div> --}}
-        <div class="bd-example m-auto">
-            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    @foreach( $articles as $idx => $article)
-                    {{ dump($article) }}
-                        {{-- <div class="carousel-item {{ $idx === 0 ? 'active' : '' }}">
-                            <img src="{{ asset('img/core-img/imgDevelopers-prensa1.jpg') }}" class="d-block w-100" alt="{{ $article->title }}">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{ $article->title }}</h5>
-                            </div>
-                        </div> --}}
-                    @endforeach
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+            @include('articles.slider', $articles)
+
+
+            <div class="col-12 wow fadeInUp titleOhterSection">
+                <h2 id="contacto" class="text-center">Contacto</h2>
             </div>
+
+            <div class="col-12 pressSection">
+                @include ('forms.contact-form-hd')
+            </div>
+
         </div>
-
-
-        <div class="col-12 wow fadeInUp titleOhterSection">
-            <h2 id="contacto" class="text-center">Contacto</h2>
-        </div>
-
-        <div class="col-12 pressSection">
-            @include ('forms.contact-form-hd')
-        </div>
-
-    </div>
     </div>
 </section>
 
+@push('styles')
+<style>
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+        display: flex;
+    }
 
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(33%);
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-33%);
+    }
+
+    .carousel-inner .carousel-item-right,
+    .carousel-inner .carousel-item-left {
+        transform: translateX(0);
+
+    }
+
+</style>
+@endpush
+
+@push('scripts')
+<script>
+    $('#recipeCarousel').carousel({
+        interval: 10000
+    })
+
+    $('.carousel .carousel-item').each(function () {
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        for (var i = 0; i < 3; i++) {
+            next = next.next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+
+            next.children(':first-child').clone().appendTo($(this));
+        }
+    });
+
+</script>
+@endpush
 @endsection

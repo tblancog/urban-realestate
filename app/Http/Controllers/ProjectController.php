@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
-use  App\Slider;
+use App\Slider;
+use App\Article;
 
 class ProjectController extends Controller
 {
@@ -20,8 +21,15 @@ class ProjectController extends Controller
         $items = Project::latest()
             ->with('images')
             ->paginate(6);
+        $articles = Article::latest()
+            ->where('section', 'houses')
+            ->with('images')
+            ->take(4)
+            ->get();
+
         return view('developers.index', ['items'=> $items,
-                                         'slides'=> $slides
+                                         'slides'=> $slides,
+                                         'articles'=> $articles
         ]);
     }
 

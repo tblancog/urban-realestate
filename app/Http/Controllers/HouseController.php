@@ -23,10 +23,10 @@ class HouseController extends Controller
             ->paginate(6);
 
         $articles = Article::latest()
-            ->where('section', request()->get('section'))
+            ->where('section', 'houses')
             ->with('images')
-            // ->InRandomOrder()
-            ->take(4);
+            ->take(4)
+            ->get();
         return view('houses.index', ['items'=> $items,
                                      'slides'=> $slides,
                                      'articles'=> $articles,
