@@ -23,12 +23,12 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="{{ route('houses.index') }}#proyectos">Proyecto</a></li>
-                            <li><a href="{{ route('houses.index') }}#estudio">Estudio</a></li>
-                            <li><a href="{{ route('houses.index') }}#servicios">Servicios</a></li>
-                            <li><a href="{{ route('houses.index') }}#prensa">Prensa</a></li>
-                            <li><a href="{{ route('articles.index',['section'=> 'houses']) }}">News</a></li>
-                            <li><a href="{{ route('houses.index') }}#contacto">Contacto</a></li>
+                            <li><a href="{{ route('houses.index', false) }}#proyectos">Proyecto</a></li>
+                            <li><a href="{{ route('houses.index', false) }}#estudio">Estudio</a></li>
+                            <li><a href="{{ route('houses.index', false) }}#servicios">Servicios</a></li>
+                            <li><a href="{{ route('houses.index', false) }}#prensa">Prensa</a></li>
+                            <li><a href="{{ route('articles.index',['section'=> 'houses'], false) }}">News</a></li>
+                            <li><a href="{{ route('houses.index', false) }}#contacto">Contacto</a></li>
                         </ul>
 
                         {{-- <ul id="desktop-nav">
