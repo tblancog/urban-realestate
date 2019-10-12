@@ -62,7 +62,7 @@
                                 <h2 class="title title2">{{ $item->project_name }}</h2>
                                 <h5 class="content txtInfo">+ info</h5>
                             </div>
-                            <img src="{{ count($item->images) > 0 ? $item->images->first()->path : '' }}" alt="">
+                            <img src="{{ count($item->images) > 0 ? asset($item->images->first()->path) : '' }}" alt="">
                         </div>
                     </a>
                     <!-- Property Content -->
