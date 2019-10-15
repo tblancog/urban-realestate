@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'AvantGarde';
-    src: url('../fonts/Avant Garde Book BT.ttf');
+    src: url('./../fonts/Avant Garde Book BT.ttf');
 }
 
-@import '../css/bootstrap.min.css';
+@import './../css/bootstrap.min.css';
 
 body {
     font-family: "AvantGarde";
