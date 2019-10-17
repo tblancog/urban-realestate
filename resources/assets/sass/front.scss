@@ -5379,9 +5379,11 @@ textarea {
     font-size: 1rem !important;
 }
 
+.houses .nav-brand img,
 .developers .nav-brand img,
-.houses .nav-brand img {
-    width: 85% !important;
+.articles .nav-brand img {
+    width: 185px;
+    padding: .10em;
 }
 
 .articles-page {

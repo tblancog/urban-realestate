@@ -25,7 +25,7 @@
                                       </div>
                                       <div class="col-md-6">
                                           <div class="info-card">
-                                            <a :href="getDetailUrl(building, 'buildings')" target="_blank">
+                                            <a :href="getDetailUrl(building, 'buildings', 'real-estate')" target="_blank">
                                                 <h5 class="mt-0">{{ building.title }}</h5>
                                             </a>
                                               <i class="fa fa-map-marker-alt fa-fw"></i>{{ building.address }}

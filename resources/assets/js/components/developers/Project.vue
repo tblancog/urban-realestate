@@ -34,12 +34,14 @@
                     </div>
                     <div class="col-md-6">
                       <div class="info-card">
-                        <a :href="getDetailUrl(projects, 'projects')" target="_blank">
-                            <h5 class="mt-0">{{ project.project_name }}</h5>
+                        <a :href="getDetailUrl(projects, 'developers')" target="_blank">
+                          <h5 class="mt-0">{{ project.project_name }}</h5>
                         </a>
                         <i class="fa fa-map-marker-alt fa-fw"></i>
                         {{ project.location }}
-                        <i class="fa fa-calendar fa-fw"></i>
+                        <i
+                          class="fa fa-calendar fa-fw"
+                        ></i>
                         {{ project.year }}
                         <a
                           href="#"
@@ -261,7 +263,7 @@ export default {
 
       this.form.put("api/projects/" + selected.slug).then(res => {
         formData.append("id", res.data.id);
-        formData.append('type', 'project');
+        formData.append("type", "project");
         //   formData.append('selected_slug',  selected.slug)
         axios
           .post("images-upload", formData)

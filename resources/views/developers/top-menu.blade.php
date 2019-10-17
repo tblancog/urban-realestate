@@ -23,12 +23,12 @@
                     <!-- Nav Start -->
                     <div class="classynav classynav2">
                         <ul>
-                            <li><a href="{{ route('developers.index') }}#projects">Proyecto</a></li>
-                            <li><a href="{{ route('developers.index') }}#constructora">Constructora</a></li>
-                            <li><a href="{{ route('developers.index') }}#servicios">Servicios</a></li>
-                            <li><a href="{{ route('developers.index') }}#prensa">Prensa</a></li>
+                            <li><a href="{{ route('developers.index', false) }}#projects">Proyecto</a></li>
+                            <li><a href="{{ route('developers.index', false) }}#constructora">Constructora</a></li>
+                            <li><a href="{{ route('developers.index', false) }}#servicios">Servicios</a></li>
+                            <li><a href="{{ route('developers.index', false) }}#prensa">Prensa</a></li>
                             <li><a href="{{ route('articles.index',['section'=> 'developers']) }}">News</a></li>
-                            <li><a href="{{ route('developers.index') }}#contacto">Contacto</a></li>
+                            <li><a href="{{ route('developers.index', false) }}#contacto">Contacto</a></li>
                         </ul>
 
                         <!-- Search Form -->

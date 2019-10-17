@@ -55,8 +55,11 @@ export default {
         }
     },
     methods: {
-        getDetailUrl(property, type) {
-            return type + '/' + property.slug
+        getDetailUrl(property, type, base) {
+            if (base) {
+                base = base + '/'
+            }
+            return base + type + '/' + property.slug
         }
     }
 }
