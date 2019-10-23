@@ -47,7 +47,7 @@
                 <h3>{{ $house->project_name }}</h3>
             </div>
             <div class="detailsHD">
-                <h6>Año</h6>
+                <h6>Superficie</h6>
                 <h3>{{ $house->year }}</h3>
 
             </div>

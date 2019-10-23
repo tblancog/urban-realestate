@@ -145,7 +145,7 @@
                     v-model="form.year"
                     type="text"
                     name="year"
-                    placeholder="Año"
+                    placeholder="Superficie"
                     class="form-control"
                     :class="{ 'is-invalid': form.errors.has('year') }"
                   />
