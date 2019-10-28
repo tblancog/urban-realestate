@@ -6,6 +6,10 @@ use App\House;
 use Illuminate\Http\Request;
 use  App\Slider;
 use  App\Article;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\HousesInquiry;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 
 class HouseController extends Controller
 {
@@ -42,5 +46,16 @@ class HouseController extends Controller
     public function show(House $house)
     {
       return view('houses.show', compact('house'));
+    }
+
+    public function mail(Request $request) {
+
+    $user = collect($request->except('_token'));
+    Mail::to( 'info@urbanhouses.com.ar', 'Info')
+            ->send(new HousesInquiry($user));
+
+    return Redirect::to(URL::previous() . "#contacto")
+                        ->with('success', 'Gracias por contactarte con nosotros, respondemos a la brevedad')->with('success', 'Gracias por contactarte con nosotros, respondemos a la brevedad');
+
     }
 }

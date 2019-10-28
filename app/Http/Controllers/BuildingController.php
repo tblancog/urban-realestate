@@ -85,6 +85,6 @@ class BuildingController extends Controller
         Mail::to('info@urbanrealestate.com.ar', 'Info')
              ->send(new BuildingInquiry($building, $user));
 
-        return back()->with('success', 'Gracias por contactarte con nostros, respondemos a la brevedad');
+        return back()->with('success', 'Gracias por contactarte con nosotros, respondemos a la brevedad');
     }
 }

@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Project;
 use App\Slider;
 use App\Article;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\DevelopersInquiry;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 
 class ProjectController extends Controller
 {
@@ -42,5 +46,16 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
       return view('developers.show', compact('project'));
+    }
+
+    public function mail(Request $request) {
+
+        $user = collect($request->except('_token'));
+        Mail::to( 'info@urbandevelopers.com.ar', 'Info')
+              ->send(new DevelopersInquiry($user));
+
+        return Redirect::to(URL::previous() . "#contacto")
+                         ->with('success', 'Gracias por contactarte con nosotros, respondemos a la brevedad')->with('success', 'Gracias por contactarte con nosotros, respondemos a la brevedad');
+
     }
 }

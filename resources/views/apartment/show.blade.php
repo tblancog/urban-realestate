@@ -132,6 +132,9 @@
               </div>
               <div style="clear:both"aca></div>
 
+            @component('partials.flash-message')
+            @endcomponent
+
             <form class="formDetail formDepto" method="POST" action="{{ route('mail.apartments', ['slug' => $apartment->slug ]) }}">
                 @csrf
                 <div class="contact-info">

@@ -61,8 +61,10 @@ route::post('import', 'ApartmentController@import');
 
 
 // Mail
-// Route::post('/inquiry/building/{building}', 'BuildingController@mail')->name('mail.buildings');
+Route::post('/inquiry/building/{building}', 'BuildingController@mail')->name('mail.buildings');
 Route::post('/inquiry/apartments/{apartment}', 'ApartmentController@mail')->name('mail.apartments');
+Route::post('/inquiry/developers', 'ProjectController@mail')->name('mail.developers');
+Route::post('/inquiry/houses', 'HouseController@mail')->name('mail.houses');
 
 // Fallback page
 Route::get('/{path}',function() {

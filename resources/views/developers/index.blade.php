@@ -105,7 +105,7 @@
             </div>
 
             <div class="col-12 pressSection">
-                  @include ('forms.contact-form-hd')
+                  @include('forms.contact-form-hd', ['action_route'=>route('mail.developers')])
             </div>
 
         </div>
