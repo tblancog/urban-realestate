@@ -86,14 +86,14 @@
                 </div>
 
                 <div class="col-md-12 col-sm-12 boxDetail">
+                    @component('partials.flash-message')
+                    @endcomponent
                     <div class="">
                         <h2 class="detailPrice left"><b>CONTACTO</b></h2>
                         <h2 class="detailStatus right">{{ $building->contact_phone }}</h2>
                     </div>
                     <div style="clear:both" aca></div>
-                    <form class="formDetail formBuilding">
-                        {{-- <form class="formDetail formBuilding" method="POST" action="{{ route('mail.buildings', ['slug' => $building->slug ]) }}">
-                        --}}
+                    <form class="formDetail formDepto" method="POST" action="{{ route('mail.buildings', ['slug' => $building->slug ]) }}">
                         @csrf
                         <div class="contact-info">
                             <div class="contact-info-item">

@@ -78,12 +78,12 @@ class BuildingController extends Controller
 
         return ['message' => 'Building deleted'];
     }
-
+    
     public function mail(Request $request, Building $building) {
 
         $user = collect($request->except('_token'));
-        Mail::to('info@urbanrealestate.com.ar', 'Info')
-             ->send(new BuildingInquiry($building, $user));
+        Mail::to( 'info@urbanrealestate.com.ar', 'Info')
+              ->send(new BuildingInquiry($building, $user));
 
         return back()->with('success', 'Gracias por contactarte con nosotros, respondemos a la brevedad');
     }
