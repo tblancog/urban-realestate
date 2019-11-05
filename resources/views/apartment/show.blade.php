@@ -126,14 +126,14 @@
             </div>
 
             <div class="col-md-12 col-sm-12 boxDetail">
+            @component('partials.flash-message')
+            @endcomponent
               <div class="">
                 <h2 class="detailPrice left"><b>CONTACTO</b></h2>
                 <h2 class="detailStatus right">{{ $apartment->contact_phone }}</h2>
               </div>
               <div style="clear:both"aca></div>
 
-            @component('partials.flash-message')
-            @endcomponent
 
             <form class="formDetail formDepto" method="POST" action="{{ route('mail.apartments', ['slug' => $apartment->slug ]) }}">
                 @csrf

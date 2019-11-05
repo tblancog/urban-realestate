@@ -4834,7 +4834,7 @@ textarea {
     }
 }
 
-.boxDetail>div {
+.boxDetail>div:not(.alert) {
     background: white;
     overflow: hidden;
 }
