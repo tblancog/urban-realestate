@@ -95,7 +95,6 @@ class HomeController extends Controller
 
     public function mail(Request $request) {
 
-        dd($request->except('_token'));
         $user = collect($request->except('_token'));
         Mail::to( 'info@urbanrealestate.com.ar', 'Info')
               ->send(new DefaultInquiry($user));

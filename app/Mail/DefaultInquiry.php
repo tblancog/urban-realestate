@@ -30,9 +30,8 @@ class DefaultInquiry extends Mailable
      */
     public function build()
     {
-        dd($this->user);
         return $this->from( $this->user['email'], $this->user['name'])
-            ->view('emails.properties.inquiry')
+            ->view('emails.default')
             ->subject('[Solicitud de info]')
             ->with([ 'user'=> $this->user ]);
 

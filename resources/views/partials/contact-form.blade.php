@@ -1,3 +1,6 @@
+@component('partials.flash-message')
+@endcomponent
+
 <form class="formDetail formDepto" method="POST" action="{{ route('mail.contact') }}">
     @csrf
     <div class="form-row">
