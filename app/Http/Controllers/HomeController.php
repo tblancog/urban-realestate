@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use  App\Apartment;
-use  App\Building;
-use  App\Slider;
-use  App\Config;
+use App\Apartment;
+use App\Building;
+use App\Slider;
+use App\Config;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\DefaultInquiry;
+
+
 class HomeController extends Controller
 {
     /**
@@ -87,5 +91,15 @@ class HomeController extends Controller
         'apartments'=> $apartments,
         'input'=> $request
       ]);
+    }
+
+    public function mail(Request $request) {
+
+        dd($request->except('_token'));
+        $user = collect($request->except('_token'));
+        Mail::to( 'info@urbanrealestate.com.ar', 'Info')
+              ->send(new DefaultInquiry($user));
+
+        return back()->with('success', 'Gracias por contactarte con nosotros, respondemos a la brevedad');
     }
 }

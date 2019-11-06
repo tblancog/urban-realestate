@@ -61,6 +61,7 @@ route::post('import', 'ApartmentController@import');
 
 
 // Mail
+Route::post('/inquiry', 'HomeController@mail')->name('mail.contact');
 Route::post('/inquiry/building/{building}', 'BuildingController@mail')->name('mail.buildings');
 Route::post('/inquiry/apartments/{apartment}', 'ApartmentController@mail')->name('mail.apartments');
 Route::post('/inquiry/developers', 'ProjectController@mail')->name('mail.developers');
