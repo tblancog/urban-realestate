@@ -133,7 +133,7 @@
                     <router-link :to="{ path: '/articlesReal', query: { section: 'real-estate' }}" class="nav-link">
                         <i class="nav-icon fa fa-newspaper green"></i>
                         <p>
-                            News
+                            Prensa
                         </p>
                     </router-link>
                 </li>
@@ -159,7 +159,7 @@
                     <router-link :to="{ path: '/articlesDevelopers', query: { section: 'developers' }}" class="nav-link">
                         <i class="nav-icon fa fa-newspaper red"></i>
                         <p>
-                            News
+                            Prensa
                         </p>
                     </router-link>
                 </li>
@@ -186,7 +186,7 @@
                     <router-link :to="{ path: '/articlesHouses', query: { section: 'houses' }}" class="nav-link">
                         <i class="nav-icon fa fa-newspaper blue"></i>
                         <p>
-                            News
+                            Prensa
                         </p>
                     </router-link>
                 </li>

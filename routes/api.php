@@ -45,7 +45,7 @@ Route::resource('projects', 'API\ProjectController')
         ->only('index', 'store', 'update', 'destroy')
         ->names(['index'=> '']);
 
-// News
+// Prensa
 Route::resource('articles', 'API\ArticleController')
         ->only('index', 'store', 'update', 'destroy')
         ->names(['index'=> '']);

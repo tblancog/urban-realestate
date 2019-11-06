@@ -95,10 +95,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-12 wow fadeInUp titleOhterSection">
+            {{-- <div class="col-12 wow fadeInUp titleOhterSection">
                 <h2 class="text-center">Prensa</h2>
             </div>
-            @include('articles.slider', $articles)
+            @include('articles.slider', $articles) --}}
 
             <div class="col-12 wow fadeInUp titleOhterSection">
                 <h2 id="contacto" class="text-center">Contacto</h2>

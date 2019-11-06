@@ -26,8 +26,7 @@
                             <li><a href="{{ route('houses.index', [], false) }}#proyectos">Proyecto</a></li>
                             <li><a href="{{ route('houses.index', [], false) }}#estudio">Estudio</a></li>
                             <li><a href="{{ route('houses.index', [], false) }}#servicios">Servicios</a></li>
-                            <li><a href="{{ route('houses.index', [], false) }}#prensa">Prensa</a></li>
-                            <li><a href="{{ route('articles.index',['section'=> 'houses']) }}">News</a></li>
+                            <li><a href="{{ route('articles.index',['section'=> 'houses']) }}">Prensa</a></li>
                             <li><a href="{{ route('houses.index', [], false) }}#contacto">Contacto</a></li>
                         </ul>
 
@@ -39,7 +38,7 @@
                         <li class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}"><a
                                 href="{{ route('credits.index') }}">Crédito</a></li>
                         <li class="{{ Request::segment(1)=== 'credits' ? 'active' : '' }}"><a
-                                href="{{ route('credits.index') }}">News</a></li>
+                                href="{{ route('credits.index') }}">Prensa</a></li>
                         <li class="{{ Request::segment(1)=== 'contact' ? 'active' : '' }}"><a
                                 href="{{ route('contact.index') }}">
                                 <img class="link" src="{{ asset('img/core-img/icContacto.png') }}" alt="">
@@ -52,7 +51,6 @@
                             <li><a href="{{ route('houses.index', [], false) }}#proyectos">Proyecto</a></li>
                             <li><a href="{{ route('houses.index', [], false) }}#constructora">Estudio</a></li>
                             <li><a href="{{ route('houses.index', [], false) }}#servicios">Servicios</a></li>
-                            <li><a href="{{ route('houses.index', [], false) }}#prensa">Prensa</a></li>
                             <li><a href="{{ route('houses.index', [], false) }}#contacto">Contacto</a></li>
 
                         </ul>
