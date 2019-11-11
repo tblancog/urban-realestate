@@ -187,7 +187,7 @@ export default {
         title: "",
         description: "",
         images: [],
-        section: ""
+        section: this.$route.query.section
       })
     };
   },
@@ -323,6 +323,7 @@ export default {
       articleCreate.then(res => {
         formData.append("id", res.data.id);
         formData.append("type", "article");
+        formData.append("section", this.$route.query.section);
         axios.post("/images-upload", formData).then(() => {
           Fire.$emit("AfterCreate");
           swal("Creado!", "Noticia creada.", "success");
@@ -349,7 +350,7 @@ export default {
     // })
     this.loadItems(this.$route.query.section);
     Fire.$on("AfterCreate", () => {
-      this.loadItems();
+      this.loadItems(this.$route.query.section);
     });
   }
 };

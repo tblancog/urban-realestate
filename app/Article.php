@@ -11,6 +11,7 @@ class Article extends Model
         'title',
         'slug',
         'description',
+        'section'
     ];
 
      public function images(){
