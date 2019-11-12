@@ -193,8 +193,7 @@ export default {
   },
   watch: {
     $route(to, from) {
-      this.form.section = to.query.section;
-      this.loadItems(this.form.section);
+      this.loadItems(to.query.section);
     }
   },
   methods: {

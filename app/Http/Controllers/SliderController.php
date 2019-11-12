@@ -62,8 +62,8 @@ class SliderController extends Controller
                           'link' =>  $slide->link,
                           'subtitle' =>  $slide->subtitle,
                           'section'=> $slide->section
-                        ],
-                    );
+                        ]
+            );
         return response()->json(['msg' => 'Updated'], 204);
     }
 
