@@ -193,7 +193,8 @@ export default {
   },
   watch: {
     $route(to, from) {
-      this.loadItems(to.query.section);
+      this.form.section = to.query.section;
+      this.loadItems(this.form.section);
     }
   },
   methods: {
@@ -320,6 +321,7 @@ export default {
 
       const articleCreate = this.form.post("api/articles");
       articleCreate.then(res => {
+        console.log(this.form.section);
         formData.append("id", res.data.id);
         formData.append("type", "article");
         formData.append("section", this.$route.query.section);
