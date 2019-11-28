@@ -82,7 +82,7 @@
             </div>
           </div>
           <div v-else>
-            <h5 class="m-5 text-center">No existen proyectos cargados</h5>
+            <h5 class="m-5 text-center">No existen obras cargadas</h5>
           </div>
         </div>
         <!-- /.card -->

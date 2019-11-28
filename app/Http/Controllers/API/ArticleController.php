@@ -40,7 +40,7 @@ class ArticleController extends Controller
     public function store(ArticleRequest $request)
     {
         $article = Article::create($request->all());
-        return ['message' => 'Proyecto creado', 'id' => $article->id];
+        return ['message' => 'Obra creada', 'id' => $article->id];
     }
 
 
@@ -66,7 +66,7 @@ class ArticleController extends Controller
     public function update(ArticleRequest $request, Article $article)
     {
         $article->update($request->all());
-        return ['message' => 'Proyecto actualizado', 'id' => $article->id];
+        return ['message' => 'Obra actualizada', 'id' => $article->id];
     }
 
     /**

@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="project-title project-title2 section-heading wow fadeInUp">
-                    <h2>Proyectos</h2>
+                    <h2>Obras</h2>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
                         <a href="{{ route('developers.show', $item->slug) }}">
                         <div class="property-thumb">
                             <div class="property-info">
-                                <h4 class="content content2">Proyecto</h4>
+                                <h4 class="content content2">Obra</h4>
                                 <h2 class="title title2">{{ $item->project_name }}</h2>
                                     <h5 class="content txtInfo">+ info</h5>
                                 </div>

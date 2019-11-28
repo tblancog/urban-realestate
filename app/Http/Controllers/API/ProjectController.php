@@ -38,7 +38,7 @@ class ProjectController extends Controller
     public function store(ProjectRequest $request)
     {
         $project = Project::create($request->all());
-        return ['message' => 'Proyecto creado', 'id' => $project->id];
+        return ['message' => 'Obra creada', 'id' => $project->id];
     }
 
 
@@ -64,7 +64,7 @@ class ProjectController extends Controller
     public function update(ProjectRequest $request, Project $project)
     {
         $project->update($request->all());
-        return ['message' => 'Proyecto actualizado', 'id' => $project->id];
+        return ['message' => 'Obra actualizada', 'id' => $project->id];
     }
 
     /**

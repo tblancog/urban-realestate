@@ -4,10 +4,10 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Proyectos</h3>
+            <h3 class="card-title">Obras</h3>
             <div class="card-tools">
               <button class="btn btn-success" @click="newModal">
-                Crear Nuevo
+                Crear Nueva
                 <i class="fas fa-plus fa-fw"></i>
               </button>
             </div>
@@ -82,7 +82,7 @@
             </div>
           </div>
           <div v-else>
-            <h5 class="m-5 text-center">No existen proyectos cargados</h5>
+            <h5 class="m-5 text-center">No existen obras cargadas</h5>
           </div>
         </div>
         <!-- /.card -->
@@ -101,8 +101,8 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nuevo Proyecto</h5>
-            <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Proyecto</h5>
+            <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Crear Nueva Obra</h5>
+            <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Obra</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -125,7 +125,7 @@
                     v-model="form.project_name"
                     type="text"
                     name="project_name"
-                    placeholder="Proyecto"
+                    placeholder="Obra"
                     class="form-control"
                     :class="{ 'is-invalid': form.errors.has('project_name') }"
                   />
@@ -271,7 +271,7 @@ export default {
             Fire.$emit("AfterCreate");
             swal(
               "Actualizado!",
-              "Información de proyecto actualizada.",
+              "Información de obra actualizada.",
               "success"
             );
             this.form.reset();
@@ -317,7 +317,7 @@ export default {
           this.form
             .delete("api/projects/" + slug)
             .then(() => {
-              swal("Borrada!", "Proyecto borrada.", "success");
+              swal("Borrada!", "obra borrada.", "success");
               Fire.$emit("AfterCreate");
             })
             .catch(() => {
@@ -362,7 +362,7 @@ export default {
         formData.append("type", "project");
         axios.post("images-upload", formData).then(() => {
           Fire.$emit("AfterCreate");
-          swal("Creado!", "Proyecto creada.", "success");
+          swal("Creado!", "obra creada.", "success");
           this.form.reset();
           this.files = [];
           $("#addNew").modal("hide");

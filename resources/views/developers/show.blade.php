@@ -42,7 +42,7 @@
 
         <div class="col-md-6 col-sm-12">
             <div class="detailsHD">
-                <h6>Proyecto</h6>
+                <h6>Obra</h6>
                 <h3>{{ $project->project_name }}</h3>
             </div>
             <div class="detailsHD">

@@ -8,7 +8,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Administrar slider de {{ $route.query.section }}</h3>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-success" @click="addSlide">Crear Nuevo <i
+                                <button type="button" class="btn btn-success" @click="addSlide">Crear Nueva <i
                                         class="fas fa-plus fa-fw"></i></button>
                             </div>
                         </div>

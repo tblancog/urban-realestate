@@ -23,7 +23,7 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="{{ route('houses.index', [], false) }}#proyectos">Proyecto</a></li>
+                            <li><a href="{{ route('houses.index', [], false) }}#proyectos">Obra</a></li>
                             <li><a href="{{ route('houses.index', [], false) }}#estudio">Estudio</a></li>
                             <li><a href="{{ route('houses.index', [], false) }}#servicios">Servicios</a></li>
                             <li><a href="{{ route('articles.index',['section'=> 'houses']) }}">Prensa</a></li>
@@ -48,7 +48,7 @@
 
                         <ul id="mobile-nav">
 
-                            <li><a href="{{ route('houses.index', [], false) }}#proyectos">Proyecto</a></li>
+                            <li><a href="{{ route('houses.index', [], false) }}#proyectos">Obra</a></li>
                             <li><a href="{{ route('houses.index', [], false) }}#constructora">Estudio</a></li>
                             <li><a href="{{ route('houses.index', [], false) }}#servicios">Servicios</a></li>
                             <li><a href="{{ route('houses.index', [], false) }}#contacto">Contacto</a></li>

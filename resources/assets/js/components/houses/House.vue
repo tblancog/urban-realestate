@@ -131,7 +131,7 @@
                     v-model="form.project_name"
                     type="text"
                     name="project_name"
-                    placeholder="Proyecto"
+                    placeholder="Obra"
                     class="form-control"
                     :class="{ 'is-invalid': form.errors.has('project_name') }"
                   />
