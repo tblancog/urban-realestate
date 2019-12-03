@@ -1,4 +1,4 @@
-@if(request()->segment(1) === 'developers')
+@if(request()->segment(1) === 'developers' || request()->get('section') === 'developers')
     <div class="col-lg-4">
         <div class="text-center">
             <a href="https://wa.me/5491145234418" target="_blank">
@@ -21,7 +21,7 @@
         </div>
     </div>
 
-@elseif(request()->segment(1) === 'houses')
+@elseif(request()->segment(1) === 'houses' || request()->get('section') === 'houses')
     <div class="col-lg-4">
         <div class="text-center">
             <a href="https://wa.me/5491153294260" target="_blank">

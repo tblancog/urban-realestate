@@ -14,7 +14,8 @@
 
     <div v-show="!images.length">
       <i class="fa fa-cloud-upload"></i>
-      <p>Arrastra hasta 5 imágenes (max 700kb)</p>
+      <p>Arrastra hasta 8 imágenes</p>
+      <p>mayores a 800px pero maximo 1mb</p>
       <div>o</div>
       <div class="file-input">
         <label for="file">selecciona</label>
@@ -50,7 +51,7 @@ export default {
   data: () => ({
     isDragging: false,
     dragCount: 0,
-    MAX_SIZE: 700,
+    MAX_SIZE: 1000,
     MAX_IMAGES: 8,
     cannotAdd: false
   }),
