@@ -11,10 +11,14 @@ class Article extends Model
         'title',
         'slug',
         'description',
-        'section'
+        'section',
+        'source',
+    ];
+    protected $dates = [
+      'created_at'
     ];
 
-     public function images(){
+    public function images(){
       return $this->hasMany('App\ArticleImage');
     }
 
@@ -26,4 +30,10 @@ class Article extends Model
     public function getImgPathAttribute() {
         return config('images.articles_upload_path');
     }
+
+    // public function setCreatedAtAttribute($value)
+    // {
+    //     $this->attributes['created_at'] = Carbon::createFromFormat('dd/MM/yyyy',$value);
+
+    // }
 }

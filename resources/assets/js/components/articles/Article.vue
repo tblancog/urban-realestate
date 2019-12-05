@@ -147,7 +147,34 @@
                 ></textarea>
                 <has-error :form="form" field="description"></has-error>
               </div>
+              <!-- Date -->
+              <div class="form-group col-lg-9">
+                <datepicker v-model="form.created_at" 
+                          name="created_at"
+                          placeholder="Fecha de publicación"
+                          :input-class="{ 'form-control': true, 'is-invalid': form.errors.has('created_at') }"
+                          :language="es"
+                          :format="'dd/MM/yyyy'"
+                          ></datepicker>
+                <has-error :form="form" field="created_at"></has-error>
+              </div>
+
+              <!-- Link -->
+              <div class="form-group col-lg-9">
+                <div class>
+                  <input
+                    v-model="form.source"
+                    type="text"
+                    name="source"
+                    placeholder="Link"
+                    class="form-control"
+                    :class="{ 'is-invalid': form.errors.has('source') }"
+                  />
+                  <has-error :form="form" field="source"></has-error>
+                </div>
+              </div>
             </div>
+
 
             <!-- Buttons -->
             <div class="modal-footer">
@@ -168,16 +195,21 @@
 <script>
 import ImageUploader from "../../components/ImageUploader";
 import ItemDetail from "../ItemDetail";
+import Datepicker from 'vuejs-datepicker';
 import utils from "../../mixins/utils.js";
+import {en, es} from 'vuejs-datepicker/dist/locale';
 
 export default {
   components: {
     ImageUploader,
-    ItemDetail
+    ItemDetail,
+    Datepicker
   },
   mixins: [utils],
   data() {
     return {
+      es,
+      en,
       editmode: false,
       selected: {},
       files: [],
@@ -187,7 +219,9 @@ export default {
         title: "",
         description: "",
         images: [],
-        section: this.$route.query.section
+        section: this.$route.query.section,
+        source: '',
+        created_at: ''
       })
     };
   },

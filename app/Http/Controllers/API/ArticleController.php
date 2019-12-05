@@ -6,7 +6,7 @@ use App\Article;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleRequest;
-
+use Carbon\Carbon;
 
 class ArticleController extends Controller
 {
@@ -39,8 +39,11 @@ class ArticleController extends Controller
      */
     public function store(ArticleRequest $request)
     {
-        $article = Article::create($request->all());
-        return ['message' => 'Obra creada', 'id' => $article->id];
+      // dd($request->created_at);
+      $article = Article::create($request->all());
+      $article->created_at = Carbon::parse($request->created_at)->timezone(config('app.timezone'));
+      $article->save();
+      return ['message' => 'Noticia creada', 'id' => $article->id];
     }
 
 
@@ -65,8 +68,9 @@ class ArticleController extends Controller
      */
     public function update(ArticleRequest $request, Article $article)
     {
+        $article->created_at = Carbon::parse($request->created_at)->timezone(config('app.timezone'));
         $article->update($request->all());
-        return ['message' => 'Obra actualizada', 'id' => $article->id];
+        return ['message' => 'Noticia actualizada', 'id' => $article->id];
     }
 
     /**

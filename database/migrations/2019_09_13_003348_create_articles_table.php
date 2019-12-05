@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration
             $table->string('section')->default('real-estate');
             $table->string('slug');
             $table->text('description')->nullable();
+            $table->text('source')->nullable();
             $table->timestamps();
         });
     }

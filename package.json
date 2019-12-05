@@ -15,7 +15,7 @@
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
-        "lodash": "^4.17.4",
+        "lodash": "^4.17.15",
         "popper.js": "^1.12",
         "vue": "^2.5.7"
     },
@@ -30,6 +30,8 @@
         "vform": "^1.0.0",
         "vue-progressbar": "^0.7.5",
         "vue-router": "^3.0.1",
-        "vue-select": "^3.1.0"
+        "vue-select": "^3.1.0",
+        "vue2-datepicker": "^3.2.1",
+        "vuejs-datepicker": "^1.6.2"
     }
 }

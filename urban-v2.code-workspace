@@ -2,10 +2,6 @@
 	"folders": [
     {
       "path": "."
-    },
-    {
-      "name": "urban @ 44e3809",
-      "uri": "gitlens://44e3809/home/tony/Documents/d/urban?{\"path\":\"/home/tony/Documents/d/urban\",\"ref\":\"44e38097cb2da19029d1fb15cd651818243863a7\",\"repoPath\":\"/home/tony/Documents/d/urban\"}"
     }
   ],
   "settings": {
