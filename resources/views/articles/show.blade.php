@@ -4,7 +4,6 @@
 <div class="articles-page">
     <div class="container">
         <h2>{{ $article->title }}</h2>
-        <h3>{{ $article->created_at->format('M d, Y') }}</h3>
         <div class="row">
             <div class="col-lg-12">
                 <p>{!! nl2br($article->description) !!} </p>

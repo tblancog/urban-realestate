@@ -8,7 +8,7 @@
         </div>
         <div class="row py-5">
         @foreach ($items as $item)
-            <div class="col-lg-6">
+            <div class="col-lg-6 my-4">
                 <a href="{{ route('articles.show',  ['article'=> $item->slug,
                                                       'section'=> $item->section ]) }}">
                     <h2>{{ $item->title }}</h2>
