@@ -13,7 +13,7 @@
                         @csrf
                         <div class="row">
                             {{-- Operación --}}
-                            <div class="col-md-6 col-lg-2 px-0">
+                            <div class="col-md-5 col-lg-2 px-0">
                               <div class="form-group">
                                 <select class="form-control" name="status" id="status" placeholder="Comprar">
                                   <option>Operacion</option>
@@ -23,7 +23,7 @@
                               </div>
                             </div>
                             {{-- Tipo --}}
-                            <div class="col-md-6 col-lg-2 px-0">
+                            <div class="col-md-4 col-lg-2 px-0">
                                 <div class="form-group">
                                     <select name="type" class="form-control" id="type">
                                         <option>Tipo</option>
@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                               {{-- Barrios --}}
-                            <div class="col-md-6 col-lg-4 px-0">
+                            <div class="col-md-7 col-lg-4 px-0">
                                 <div class="form-group">
                                   <select name="location" class="form-control" id="location">
                                       <option value="">Zona</option>
