@@ -52,7 +52,7 @@ export default {
     isDragging: false,
     dragCount: 0,
     MAX_SIZE: 1000,
-    MAX_IMAGES: 8,
+    MAX_IMAGES: 7,
     cannotAdd: false
   }),
   methods: {
