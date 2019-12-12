@@ -21,7 +21,6 @@
                     </a>
                     </div>
                     <div class="col-lg-5 p-0">
-                        <h3 class="date">{{ $item->created_at->format('M d, Y') }}</h3>
                         <p class="subset p-0">{{ ( strlen($item->description) > 300) ? substr($item->description, 0, 300).'...' : $item->description }}</p>
                         <div class="col-lg-12 p-0">
                             <a class="link" href="{{ route('articles.show', ['article'=> $item->slug,
