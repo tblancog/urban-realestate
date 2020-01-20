@@ -14,7 +14,7 @@
             <div class="other-top">
                 <p class="top-amb">{{ $apartment->rooms }} amb.</p>
                 <div class="top-area">
-                    {{ $apartment->area }}m <sup>2</sup>
+                    {{ $apartment->area_total_construido }}m <sup>2</sup>
                 </div>
             </div>
             <div class="other-bot">
