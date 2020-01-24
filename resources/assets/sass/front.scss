@@ -385,14 +385,18 @@ img {
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.9);
-    background: -webkit-linear-gradient(top,
-            rgba(0, 0, 0, 1) 0%,
-            rgba(0, 0, 0, 0.9) 90%,
-            rgba(0, 0, 0, 0) 100%);
-    background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 1) 0%,
-            rgba(0, 0, 0, 0.9) 90%,
-            rgba(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(
+        top,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.9) 90%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.9) 90%,
+        rgba(0, 0, 0, 0) 100%
+    );
 }
 
 .bg-gray {
@@ -452,7 +456,9 @@ img {
 }
 
 .south-load {
-    @include animation(1500ms linear 0s normal none infinite running south-load);
+    @include animation(
+        1500ms linear 0s normal none infinite running south-load
+    );
     background: transparent;
     border-color: $color-white;
     border-top-color: $bg-default;
@@ -618,7 +624,6 @@ img {
 }
 
 .developers-content {
-
     /*margin-bottom: 50px;*/
     ul {
         li {
@@ -714,23 +719,29 @@ img {
 .dark .classynav ul li .dropdown,
 .dark.classy-nav-container,
 .dark .classynav ul li .megamenu,
-.dark.breakpoint-on .classynav>ul>li>a,
+.dark.breakpoint-on .classynav > ul > li > a,
 .dark.breakpoint-on .classy-navbar .classy-menu {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.6+0,0.5+99 */
-    background: -moz-linear-gradient(top,
-            rgba(0, 0, 0, 0.6) 0%,
-            rgba(0, 0, 0, 0.5) 99%,
-            rgba(0, 0, 0, 0.7) 100%);
+    background: -moz-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.5) 99%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,
-            rgba(0, 0, 0, 0.6) 0%,
-            rgba(0, 0, 0, 0.5) 99%,
-            rgba(0, 0, 0, 0.7) 100%);
+    background: -webkit-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.5) 99%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.6) 0%,
-            rgba(0, 0, 0, 0.5) 99%,
-            rgba(0, 0, 0, 0.7) 100%);
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.5) 99%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#99000000', endColorstr='#80000000', GradientType=0);
     /* IE6-9 */
@@ -790,17 +801,23 @@ img {
 
             .classy-navbar {
                 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0.5+100 */
-                background: -moz-linear-gradient(left,
-                        rgba(0, 0, 0, 1) 0%,
-                        rgba(0, 0, 0, 0.5) 100%);
+                background: -moz-linear-gradient(
+                    left,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 0.5) 100%
+                );
                 /* FF3.6-15 */
-                background: -webkit-linear-gradient(left,
-                        rgba(0, 0, 0, 1) 0%,
-                        rgba(0, 0, 0, 0.5) 100%);
+                background: -webkit-linear-gradient(
+                    left,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 0.5) 100%
+                );
                 /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right,
-                        rgba(0, 0, 0, 1) 0%,
-                        rgba(0, 0, 0, 0.5) 100%);
+                background: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 0.5) 100%
+                );
                 /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
                 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#80000000', GradientType=1);
                 /* IE6-9 */
@@ -832,7 +849,8 @@ img {
         }
     }
 
-    li:hover {}
+    li:hover {
+    }
 
     @media (max-width: 991px) {
         display: none;
@@ -894,20 +912,26 @@ img {
                                             top: 21px !important;
                                             left: -30px !important;
                                             /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.6+0,0.5+99 */
-                                            background: -moz-linear-gradient(top,
-                                                    rgba(0, 0, 0, 0.6) 0%,
-                                                    rgba(0, 0, 0, 0.6) 99%,
-                                                    rgba(0, 0, 0, 0.6) 100%);
+                                            background: -moz-linear-gradient(
+                                                top,
+                                                rgba(0, 0, 0, 0.6) 0%,
+                                                rgba(0, 0, 0, 0.6) 99%,
+                                                rgba(0, 0, 0, 0.6) 100%
+                                            );
                                             /* FF3.6-15 */
-                                            background: -webkit-linear-gradient(top,
-                                                    rgba(0, 0, 0, 0.6) 0%,
-                                                    rgba(0, 0, 0, 0.6) 99%,
-                                                    rgba(0, 0, 0, 0.6) 100%);
+                                            background: -webkit-linear-gradient(
+                                                top,
+                                                rgba(0, 0, 0, 0.6) 0%,
+                                                rgba(0, 0, 0, 0.6) 99%,
+                                                rgba(0, 0, 0, 0.6) 100%
+                                            );
                                             /* Chrome10-25,Safari5.1-6 */
-                                            background: linear-gradient(to bottom,
-                                                    rgba(0, 0, 0, 0.6) 0%,
-                                                    rgba(0, 0, 0, 0.6) 99%,
-                                                    rgba(0, 0, 0, 0.6) 100%);
+                                            background: linear-gradient(
+                                                to bottom,
+                                                rgba(0, 0, 0, 0.6) 0%,
+                                                rgba(0, 0, 0, 0.6) 99%,
+                                                rgba(0, 0, 0, 0.6) 100%
+                                            );
                                             /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
                                             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#99000000', endColorstr='#80000000', GradientType=0);
                                             /* IE6-9 */
@@ -1035,25 +1059,37 @@ img {
 
     .classy-nav-container {
         background: rgba(255, 255, 255, 1);
-        background: -moz-linear-gradient(left,
-                rgba(255, 255, 255, 1) 0%,
-                rgba(255, 255, 255, 0.1) 100%);
-        background: -webkit-gradient(left top,
-                right top,
-                color-stop(0%, rgba(255, 255, 255, 1)),
-                color-stop(100%, rgba(255, 255, 255, 0.1)));
-        background: -webkit-linear-gradient(left,
-                rgba(255, 255, 255, 1) 0%,
-                rgba(255, 255, 255, 0.1) 100%);
-        background: -o-linear-gradient(left,
-                rgba(255, 255, 255, 1) 0%,
-                rgba(255, 255, 255, 0.1) 100%);
-        background: -ms-linear-gradient(left,
-                rgba(255, 255, 255, 1) 0%,
-                rgba(255, 255, 255, 0.1) 100%);
-        background: linear-gradient(to right,
-                rgba(255, 255, 255, 1) 0%,
-                rgba(255, 255, 255, 0.1) 100%);
+        background: -moz-linear-gradient(
+            left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.1) 100%
+        );
+        background: -webkit-gradient(
+            left top,
+            right top,
+            color-stop(0%, rgba(255, 255, 255, 1)),
+            color-stop(100%, rgba(255, 255, 255, 0.1))
+        );
+        background: -webkit-linear-gradient(
+            left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.1) 100%
+        );
+        background: -o-linear-gradient(
+            left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.1) 100%
+        );
+        background: -ms-linear-gradient(
+            left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.1) 100%
+        );
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.1) 100%
+        );
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1);
     }
 
@@ -2380,7 +2416,6 @@ img {
     }
 }
 
-
 .page-container {
     position: relative;
     min-height: 100vh;
@@ -3063,7 +3098,7 @@ img {
     z-index: 1;
 
     .realtor-info {
-        >img {
+        > img {
             width: 100%;
         }
     }
@@ -3395,7 +3430,6 @@ img {
 
 .leave-comment-area,
 .south-contact-area {
-
     .comment-form,
     .contact-form {
         h5 {
@@ -3757,7 +3791,8 @@ img {
         }
     }
 
-    .dept-slider {}
+    .dept-slider {
+    }
 
     .dept-details {
         margin-bottom: 30px;
@@ -4223,9 +4258,11 @@ img {
 
                         .info-card {
                             padding-bottom: 10px;
-                            background-image: linear-gradient(to right,
-                                    #7d7d7d 33%,
-                                    rgba(255, 255, 255, 0) 0%);
+                            background-image: linear-gradient(
+                                to right,
+                                #7d7d7d 33%,
+                                rgba(255, 255, 255, 0) 0%
+                            );
                             background-position: bottom;
                             background-size: 6px 2px;
                             background-repeat: repeat-x;
@@ -4281,8 +4318,10 @@ img {
                         }
 
                         .more-box {
-                            background-image: linear-gradient(#7d7d7d 33%,
-                                    rgba(255, 255, 255, 0) 0%);
+                            background-image: linear-gradient(
+                                #7d7d7d 33%,
+                                rgba(255, 255, 255, 0) 0%
+                            );
                             background-position: left;
                             background-size: 2px 7px;
                             background-repeat: repeat-y;
@@ -4601,13 +4640,14 @@ img {
         margin-left: initial;
     }
 
-    .carousel-indicators>li {
+    .carousel-indicators > li {
         width: initial;
         height: initial;
         text-indent: initial;
     }
 
-    .carousel-indicators>li.active img {}
+    .carousel-indicators > li.active img {
+    }
 
     .carousel-thumbnail img {
         height: auto !important;
@@ -4822,9 +4862,10 @@ textarea {
     }
 }
 
-.boxDetail:first-child {}
+.boxDetail:first-child {
+}
 
-.boxAmenitiesDepto>div {
+.boxAmenitiesDepto > div {
     @media only screen and (max-width: 677px) and (min-width: 375px) {
         min-height: auto;
     }
@@ -4834,7 +4875,7 @@ textarea {
     }
 }
 
-.boxDetail>div:not(.alert) {
+.boxDetail > div:not(.alert) {
     background: white;
     overflow: hidden;
 }
@@ -4962,7 +5003,8 @@ textarea {
     vertical-align: text-top;
 }
 
-.amenitieIcon {}
+.amenitieIcon {
+}
 
 .amenitieText {
     text-align: center;
@@ -5090,6 +5132,10 @@ textarea {
     padding: 0 20px 20px 20px;
     min-height: 117px;
 
+    &.additionals {
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
     @media only screen and (max-width: 677px) and (min-width: 375px) {
         -webkit-column-count: 1;
         column-count: 1;
@@ -5289,19 +5335,18 @@ textarea {
 }
 
 .container-houses {
-    &~#scrollUp {
+    & ~ #scrollUp {
         background: $bg-houses;
     }
 }
 
 .container-developers {
-    &~#scrollUp {
+    & ~ #scrollUp {
         background: $bg-developers;
     }
 }
 
 .houses {
-
     // Preloader
     .south-load {
         border-color: $bg-houses;
@@ -5312,7 +5357,6 @@ textarea {
 }
 
 .developers {
-
     // Preloader
     .south-load {
         border-color: $bg-developers;
@@ -5384,12 +5428,12 @@ textarea {
 .developers .nav-brand img,
 .articles .nav-brand img {
     width: 185px;
-    padding: .10em;
+    padding: 0.1em;
 }
 
 .articles-page {
     padding-top: 8em;
-    p{
-      line-height: 1.8;
+    p {
+        line-height: 1.8;
     }
 }

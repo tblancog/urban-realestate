@@ -243,7 +243,7 @@
                 <h2 class="titleMoreInfo left"><b>Adicionales</b></h2>
               </div>
               <div style="clear:both"></div>
-              <ul class="moreInfo">
+              <ul class="moreInfo additionals">
 
                 @foreach ( $apartment->features as $feature )
                     @continue($feature->type !== 'additional')
