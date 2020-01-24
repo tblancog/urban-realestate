@@ -91,7 +91,7 @@
                               'superficie' => [
                                   'icon' => '/img/icons/superficie.svg',
                                   'title' => 'superficie',
-                                  'value' => $apartment->area. 'm<sup>2</sup>'
+                                  'value' => $apartment->area_total_construido. 'm<sup>2</sup>'
                                 ],
                                 'rooms' => [
                                     'icon' => '/img/icons/cama.svg',
