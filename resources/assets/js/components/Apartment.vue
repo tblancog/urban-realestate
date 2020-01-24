@@ -252,6 +252,15 @@
                                             </div>
                                             <has-error :form="form" field="toilettes"></has-error>
 
+                                            <!-- Cocheras -->
+                                            <div class="form-group col-lg-4">
+                                                <label for="cocheras">Cocheras</label>
+                                                <input id="cocheras" v-model="form.cocheras" type="number"
+                                                    name="cocheras" placeholder="cocheras" class="form-control"
+                                                    :class="{ 'is-invalid': form.errors.has('cocheras') }" />
+                                            </div>
+                                            <has-error :form="form" field="cocheras"></has-error>
+
                                             <!-- Antigüedad -->
                                             <div class="form-group col-lg-4">
                                                 <label for="antiguedad">Antigüedad (años)</label>
@@ -492,6 +501,7 @@
                     dormitorios: '',
                     banios: '',
                     toilettes: '',
+                    cocheras: '',
                     antiguedad: '',
                     expensas: '',
                     orientacion: '',

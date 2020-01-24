@@ -27,6 +27,7 @@ class Apartment extends Model
       'expensas',
       'orientacion',
       'disposicion',
+      'cocheras',
 
       // Area
       'area',

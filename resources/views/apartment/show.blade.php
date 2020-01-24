@@ -106,7 +106,7 @@
                                 'cochera' => [
                                     'icon' => '/img/icons/amen_02.png',
                                     'title' => 'cochera',
-                                    'value' => 1
+                                    'value' => $apartment->cocheras
                                 ],
                                 'amenities' => [
                                     'icon' => '/img/icons/pileta.svg',
@@ -114,12 +114,13 @@
                                     'value' => $apartment->building->amenities->count()
                                 ],
                     ] as $overview)
+                    @if( $overview['value'] !== '0')
                         <li class="list-inline-item">
                             <img class="amenitieIcon" src="{{ $overview['icon'] }}" alt="{{ $overview['title'] }}">
                             <p class="amenitieText text-uppercase">{{ $overview['title'] }}</p>
                             <p class="amenitieText amenitieValue">{!! $overview['value'] !!}</p>
                         </li>
-
+                    @endif
                   @endforeach
                 </ul>
               </div>

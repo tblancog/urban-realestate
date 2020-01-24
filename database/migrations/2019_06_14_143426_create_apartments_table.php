@@ -29,6 +29,7 @@ class CreateApartmentsTable extends Migration
             $table->integer('banios')->nullable();
             $table->integer('toilettes')->nullable();
             $table->integer('antiguedad')->nullable();
+            $table->integer('cocheras')->nullable();
             $table->unsignedBigInteger('expensas')->nullable();
             $table->string('orientacion')->nullable();
             $table->string('disposicion')->nullable();
